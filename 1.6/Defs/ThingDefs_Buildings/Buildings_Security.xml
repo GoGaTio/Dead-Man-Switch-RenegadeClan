@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_BaseCannonBuilding">
+    <defName>DMSRC_Turret_Straj</defName>
+    <label>Straj</label>
+    <description>An ancient design of a remote controlled turret widely used on armored vehicles and mech armor platforms.</description>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Turrets/DMS_Weapon_Base</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2.25</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <fillPercent>0.6</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>1500</WorkToBuild>
+      <Beauty>-2</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</outOfFuelMessage>
+        <fuelFilter>
+          <thingDefs>
+            <li>ReinforcedBarrel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelIsMortarBarrel>true</fuelIsMortarBarrel>
+        <fuelCapacity>400</fuelCapacity>
+        <fuelMultiplier>200</fuelMultiplier>
+        <initialFuelPercent>0.5</initialFuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>0.5</minimumFueledThreshold>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <initialAllowAutoRefuel>true</initialAllowAutoRefuel>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>200</initialConfigurableTargetFuelLevel>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <fuelIconPath>Things/Item/Resource/ReinforcedBarrel/ReinforcedBarrel</fuelIconPath>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+    </comps>
+    <building>
+      <turretGunDef>DMSRC_Gun_Straj</turretGunDef>
+      <turretTopDrawSize>1</turretTopDrawSize>
+      <turretBurstWarmupTime>1.5</turretBurstWarmupTime>
+      <turretBurstCooldownTime>1</turretBurstCooldownTime>
+    </building>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <costList>
+      <Steel>150</Steel>
+      <Tungsteel>120</Tungsteel>
+      <ComponentStamped>5</ComponentStamped>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <uiIconPath>Things/Turrets/DMS_5ETs16U</uiIconPath>
+    <uiIconScale>1.2</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>DMSRC_Gun_Straj</defName>
+    <label>straj</label>
+    <description>kord</description>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_Gun_Straj</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.9</AccuracyTouch>
+      <AccuracyShort>0.8</AccuracyShort>
+      <AccuracyMedium>0.5</AccuracyMedium>
+      <AccuracyLong>0.2</AccuracyLong>
+      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_Shotgun</defaultProjectile>
+        <requireLineOfSight>true</requireLineOfSight>
+        <warmupTime>1.5</warmupTime>
+        <range>15.9</range>
+        <ai_AvoidFriendlyFireRadius>7.9</ai_AvoidFriendlyFireRadius>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>Shot_Shotgun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>10</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_BeamDefence</defName>
+    <label>beam defence</label>
+    <description>A stationary beam emitter. Intercepts bullets and other projectiles, but requires a lot of power.</description>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_BeamDefence</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(1.7, 0.75, 0.8)</volume>
+        <offset>(0.15, 0, 0)</offset>
+      </shadowData>
+    </graphicData>
+    <costList>
+      <Steel>100</Steel>
+      <Tungsteel>75</Tungsteel>
+      <DMS_Ceramics>25</DMS_Ceramics>
+      <ComponentStamped>4</ComponentStamped>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+      <DMSRC_ComponentGBEP>1</DMSRC_ComponentGBEP>
+    </costList>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.6</fillPercent>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <designationCategory>DMS_Category</designationCategory>
+    <uiOrder>2450</uiOrder>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Mass>25</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+    </killedLeavings>
+    <tickerType>Normal</tickerType>
+    <filthLeaving>Filth_MachineBits</filthLeaving>
+    <comps>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>800</basePowerConsumption>
+      </li>
+      <li Class="DMSRC.CompProperties_BeamDefence">
+        <range>14.9</range>
+        <mote>DMSRC_Mote_BeamDefence</mote>
+        <interceptSameFaction>false</interceptSameFaction>
+        <barColor>(0.5, 0.1, 0.5)</barColor>
+        <barColorAlt>(0.25, 0.05, 0.25)</barColorAlt>
+        <chargeRegenInterval>120</chargeRegenInterval>
+        <inactiveRegenOffset>80</inactiveRegenOffset>
+        <interceptSound>BeamGraser_Shooting_Resolve</interceptSound>
+        <offset>(0, 0, 1)</offset>
+        <intercepts>
+          <li>
+            <type>Bullet</type>
+          </li>
+          <li>
+            <type>FireArrow</type>
+          </li>
+          <li>
+            <type>Projectile_SpawnsThing</type>
+          </li>
+          <li>
+            <type>Projectile_Explosive</type>
+            <maxExplosionRadius>2.8</maxExplosionRadius>
+          </li>
+        </intercepts>
+      </li>
+
+    </comps>
+  </ThingDef>
+
+</Defs>

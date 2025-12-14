@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnKindDef ParentName="DMSRC_RenegadeBase" Name="DMSRC_Renegade">
+    <defName>DMSRC_Renegade</defName>
+    <label>renegade</label>
+    <combatPower>30</combatPower>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <apparelMoney>700~1000</apparelMoney>
+    <specificApparelRequirements>
+      <li>
+        <color>(84, 26, 56)</color>
+      </li>
+    </specificApparelRequirements>
+    <weaponTags>
+      <li>A_Pistol</li>
+    </weaponTags>
+    <weaponMoney>300~700</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_Renegade">
+    <defName>DMSRC_Renegade_Player</defName>
+    <defaultFactionType>DMSRC_PlayerRenegades</defaultFactionType>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+
+  <!--=======================Officer===============================-->
+
+  <PawnKindDef ParentName="DMSRC_OfficerBase">
+    <defName>DMSRC_OfficerCombat</defName>
+    <label>combat commander</label>
+    <combatPower>55</combatPower>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <apparelMoney>700~1000</apparelMoney>
+    <apparelRequired>
+      <li>DMS_Apparel_PowerSkeleton</li>
+      <li MayRequire="ceteam.combatextended">CE_Apparel_Backpack</li>
+      <li>DMS_Apparel_UnitSuit</li>
+      <li>DMS_Apparel_TacticalVest</li>
+    </apparelRequired>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>10~15</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>10~15</range>
+      </li>
+    </skills>
+    <weaponTags>
+      <li>A_AR_LongRifle</li>
+      <li>A_SG_LongRifle</li>
+    </weaponTags>
+    <techHediffsRequired>
+      <li>DeathAcidifier</li>
+      <li>Painstopper</li>
+    </techHediffsRequired>
+    <specificApparelRequirements>
+      <li>
+        <color>(84, 26, 56)</color>
+      </li>
+    </specificApparelRequirements>
+    <weaponMoney>1000~1600</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef Name="DMSRC_OfficerHighBase" ParentName="DMSRC_OfficerBase">
+    <defName>DMSRC_OfficerHigh</defName>
+    <label>officer</label>
+    <combatPower>30</combatPower>
+    <apparelMoney>1200~1700</apparelMoney>
+    <minApparelQuality>Good</minApparelQuality>
+    <apparelRequired>
+      <li>DMS_Apparel_TacticalCloak</li>
+      <li>DMS_Apparel_TacticalVest</li>
+      <li>Apparel_Pants</li>
+      <li>DMS_Apparel_SoftKepi</li>
+    </apparelRequired>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>5~12</range>
+      </li>
+      <li>
+        <skill>Intellectual</skill>
+        <range>5~12</range>
+      </li>
+    </skills>
+    <weaponTags>
+      <li>A_Pistol</li>
+    </weaponTags>
+    <specificApparelRequirements>
+      <li>
+        <color>(84, 26, 56)</color>
+      </li>
+    </specificApparelRequirements>
+    <weaponMoney>1000~1600</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_OfficerHighBase">
+    <defName>DMSRC_OfficerHigh_Player</defName>
+    <defaultFactionType>DMSRC_PlayerRenegades</defaultFactionType>
+    <apparelIgnorePollution>true</apparelIgnorePollution>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+
+  <PawnKindDef Name="DMSRC_ThinkerBase" ParentName="DMSRC_OfficerBase">
+    <defName>DMSRC_Thinker</defName>
+    <label>thinker</label>
+    <combatPower>35</combatPower>
+    <minApparelQuality>Excellent</minApparelQuality>
+    <apparelMoney>9200~10000</apparelMoney>
+    <apparelRequired>
+      <li>DMSRC_Apparel_ProcessorHelmet</li>
+      <li>Apparel_Robe</li>
+      <li>Apparel_Pants</li>
+      <li>DMS_Apparel_TacticalVest</li>
+    </apparelRequired>
+    <weaponTags>
+      <li>A_Pistol</li>
+    </weaponTags>
+    <weaponMoney>1000~1600</weaponMoney>
+    <skills>
+      <li>
+        <skill>Artistic</skill>
+        <range>5~10</range>
+      </li>
+      <li>
+        <skill>Intellectual</skill>
+        <range>10~15</range>
+      </li>
+    </skills>
+    <specificApparelRequirements Inherit="False">
+      <li>
+        <color>(84, 26, 56)</color>
+      </li>
+      <li>
+        <bodyPartGroup>UpperHead</bodyPartGroup>
+        <apparelDef>DMSRC_Apparel_ProcessorHelmet</apparelDef>
+        <color>(84, 26, 56)</color>
+        <ignoreNaked>true</ignoreNaked>
+        <requiredTag>DMSRC_Thinker</requiredTag>
+      </li>
+    </specificApparelRequirements>
+    <techHediffsRequired>
+      <li>DMSRC_Neurointerface</li>
+    </techHediffsRequired>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_ThinkerBase">
+    <defName>DMSRC_Thinker_Player</defName>
+    <defaultFactionType>DMSRC_PlayerRenegades</defaultFactionType>
+    <weaponTags Inherit="False" />
+  </PawnKindDef>
+
+</Defs>

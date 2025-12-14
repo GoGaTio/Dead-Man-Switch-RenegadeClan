@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>DMSRC_Shot_Firecracker</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DMSRC_Shot_Fast</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.9~1.1</pitchRange>
+        <volumeRange>12~18</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DMSRC_Null</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DMSRC_Shot_Fast</clipPath>
+          </li>
+        </grains>
+        <volumeRange>0.01~0.01</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DMSRC_FocusedBeam</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/Artillery/Mortar_Explode_Dry</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10~10</volumeRange>
+        <pitchRange>0.4~0.5</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>DMSRC_Shot_Firecracker_Alt</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DMSRC_Shot</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.9~1.1</pitchRange>
+        <volumeRange>20~20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

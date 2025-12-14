@@ -1,0 +1,917 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\deadmanswitchrenegadeclan\\1.6\\source\\dmsrenegadeclan\\things\\facilityentrance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:things\\facilityentrance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Odyssey\\Defs\\ThingDefs_Buildings\\Buildings_Ancient.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\ThingDefs_Buildings\\Buildings_Structure.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Quest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Sites\\Underground.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\MapGeneration\\EncounterMapGenerator.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\deadmanswitchrenegadeclan\\1.6\\source\\dmsrenegadeclan\\mapgen\\genstep_mission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:mapgen\\genstep_mission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Sites\\Containers.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3469398006\\1.6\\Defs\\ThingDef_Building\\BuildingDefs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\MapGeneration\\CommonMapGenerator.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Odyssey\\Defs\\MapGeneration\\AncientStockpileMapGenerator.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\deadmanswitchrenegadeclan\\1.6\\source\\dmsrenegadeclan\\harmony\\renegades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:harmony\\renegades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Faction\\Factions_Renegades.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Faction\\Factions_Player.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\PawnKindDefs_Humanlikes\\PawnKinds_Player.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\Hediffs_Global_Misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Royalty\\Defs\\FactionDefs\\Faction_Empire.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Biotech\\Defs\\Stats\\Stats_Pawns_General.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\PawnKinds\\PawnKinds_Renegade_Human.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\PawnKinds\\PawnKinds_Renegade_Base.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\BodyParts\\Hediffs_Implants_BrainChips.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\BodyParts\\Hediffs_Base.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\gamecomponent_renegades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:gamecomponent_renegades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Ronins.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_UltraHeavy_Malevolence.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Bodies\\Bodies_Malevolence.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Malice.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Stats.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\deadmanswitchrenegadeclan\\1.6\\source\\dmsrenegadeclan\\abilitylauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:abilitylauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Abilities\\Abilities_Misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\Races_Automatroid_Heavy_Tarbosaurus.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Bodies\\BodyPartGroups.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\BodyPartsDef.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Heavy.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Medium.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun_Heavy.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Abilities\\Abilities_Command.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\harmony\\overseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:harmony\\overseer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\misc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:misc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\focusedbeam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:focusedbeam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Jobs.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\thingcomps\\compuseeffect_callrenegades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:thingcomps\\compuseeffect_callrenegades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\things\\inactivemech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:things\\inactivemech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Scenario.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Ranged_Medium.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\quests\\questpart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:quests\\questpart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\mapgen\\prefab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:mapgen\\prefab.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\QuestScriptDefs\\Script_Trade.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\things\\building_securitycontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:things\\building_securitycontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\eliteraid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}|DMSRenegadeClan.csproj|solutionrelative:eliteraid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 27,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "DefOf.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\DefOf.cs",
+              "RelativeDocumentMoniker": "DefOf.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\DefOf.cs",
+              "RelativeToolTip": "DefOf.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T16:08:39.925Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Abilities_Command.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Abilities\\Abilities_Command.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Abilities\\Abilities_Command.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Abilities\\Abilities_Command.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Abilities\\Abilities_Command.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-10-26T16:27:07.997Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Overseer.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Harmony\\Overseer.cs",
+              "RelativeDocumentMoniker": "Harmony\\Overseer.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Harmony\\Overseer.cs",
+              "RelativeToolTip": "Harmony\\Overseer.cs",
+              "ViewState": "AgIAAIECAAAAAAAAAAAqwHACAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T16:49:00.74Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Script_Trade.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\QuestScriptDefs\\Script_Trade.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\QuestScriptDefs\\Script_Trade.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\QuestScriptDefs\\Script_Trade.xml",
+              "RelativeToolTip": "..\\..\\Defs\\QuestScriptDefs\\Script_Trade.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-11-23T10:05:52.183Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Ranged_Medium.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Ranged_Medium.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\ThingDefs_Misc\\Ranged_Medium.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Ranged_Medium.xml",
+              "RelativeToolTip": "..\\..\\Defs\\ThingDefs_Misc\\Ranged_Medium.xml",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAAAB8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-10-26T16:34:22.357Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Building_SecurityContainer.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Things\\Building_SecurityContainer.cs",
+              "RelativeDocumentMoniker": "Things\\Building_SecurityContainer.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Things\\Building_SecurityContainer.cs",
+              "RelativeToolTip": "Things\\Building_SecurityContainer.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAuwKAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T06:44:11.024Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GameComponent_Renegades.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\GameComponent_Renegades.cs",
+              "RelativeDocumentMoniker": "GameComponent_Renegades.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\GameComponent_Renegades.cs",
+              "RelativeToolTip": "GameComponent_Renegades.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAgwMMAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T08:25:48.677Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "EliteRaid.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\EliteRaid.cs",
+              "RelativeDocumentMoniker": "EliteRaid.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\EliteRaid.cs",
+              "RelativeToolTip": "EliteRaid.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAKQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T06:55:42.545Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "CompUseEffect_CallRenegades.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\ThingComps\\CompUseEffect_CallRenegades.cs",
+              "RelativeDocumentMoniker": "ThingComps\\CompUseEffect_CallRenegades.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\ThingComps\\CompUseEffect_CallRenegades.cs",
+              "RelativeToolTip": "ThingComps\\CompUseEffect_CallRenegades.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAYwGsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T07:18:35.666Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Utility.cs",
+              "RelativeDocumentMoniker": "Utility.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Utility.cs",
+              "RelativeToolTip": "Utility.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAvwB8BAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T18:24:13.842Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Jobs.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Jobs.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Misc\\Jobs.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Jobs.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Misc\\Jobs.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-10-29T18:03:16.949Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Requests.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Requests.cs",
+              "RelativeDocumentMoniker": "Requests.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Requests.cs",
+              "RelativeToolTip": "Requests.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAUwLEAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T16:39:51.563Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "FocusedBeam.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\FocusedBeam.cs",
+              "RelativeDocumentMoniker": "FocusedBeam.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\FocusedBeam.cs",
+              "RelativeToolTip": "FocusedBeam.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwDEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T18:43:00.027Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Misc.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Misc.cs",
+              "RelativeDocumentMoniker": "Misc.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Misc.cs",
+              "RelativeToolTip": "Misc.cs",
+              "ViewState": "AgIAALABAAAAAAAAAAAnwL4BAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T17:36:15.938Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "InactiveMech.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Things\\InactiveMech.cs",
+              "RelativeDocumentMoniker": "Things\\InactiveMech.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Things\\InactiveMech.cs",
+              "RelativeToolTip": "Things\\InactiveMech.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAhwHQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T17:38:11.068Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Scenario.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Scenario.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Misc\\Scenario.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Scenario.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Misc\\Scenario.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-11-23T17:37:21.81Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Prefab.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\MapGen\\Prefab.cs",
+              "RelativeDocumentMoniker": "MapGen\\Prefab.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\MapGen\\Prefab.cs",
+              "RelativeToolTip": "MapGen\\Prefab.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAqwHEAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T17:15:46.455Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "QuestPart.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Quests\\QuestPart.cs",
+              "RelativeDocumentMoniker": "Quests\\QuestPart.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Quests\\QuestPart.cs",
+              "RelativeToolTip": "Quests\\QuestPart.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAgwKAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T14:17:22.073Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Buildings_Structure.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\ThingDefs_Buildings\\Buildings_Structure.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Data\\Core\\Defs\\ThingDefs_Buildings\\Buildings_Structure.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\ThingDefs_Buildings\\Buildings_Structure.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Data\\Core\\Defs\\ThingDefs_Buildings\\Buildings_Structure.xml",
+              "ViewState": "AgIAALcAAAAAAAAAAAAAABkBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T16:32:13.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Buildings_Ancient.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Odyssey\\Defs\\ThingDefs_Buildings\\Buildings_Ancient.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Data\\Odyssey\\Defs\\ThingDefs_Buildings\\Buildings_Ancient.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Odyssey\\Defs\\ThingDefs_Buildings\\Buildings_Ancient.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Data\\Odyssey\\Defs\\ThingDefs_Buildings\\Buildings_Ancient.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T14:51:56.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Buildings_Misc.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Misc.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\ThingDefs_Buildings\\Buildings_Misc.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Misc.xml",
+              "RelativeToolTip": "..\\..\\Defs\\ThingDefs_Buildings\\Buildings_Misc.xml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T19:43:49.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GenStep_Mission.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\MapGen\\GenStep_Mission.cs",
+              "RelativeDocumentMoniker": "MapGen\\GenStep_Mission.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\MapGen\\GenStep_Mission.cs",
+              "RelativeToolTip": "MapGen\\GenStep_Mission.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:17:44.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EncounterMapGenerator.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\MapGeneration\\EncounterMapGenerator.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Data\\Core\\Defs\\MapGeneration\\EncounterMapGenerator.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\MapGeneration\\EncounterMapGenerator.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Data\\Core\\Defs\\MapGeneration\\EncounterMapGenerator.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T13:16:23.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CommonMapGenerator.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\MapGeneration\\CommonMapGenerator.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Data\\Core\\Defs\\MapGeneration\\CommonMapGenerator.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\MapGeneration\\CommonMapGenerator.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Data\\Core\\Defs\\MapGeneration\\CommonMapGenerator.xml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAkwNkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T13:16:01.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AncientStockpileMapGenerator.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Odyssey\\Defs\\MapGeneration\\AncientStockpileMapGenerator.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Data\\Odyssey\\Defs\\MapGeneration\\AncientStockpileMapGenerator.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Odyssey\\Defs\\MapGeneration\\AncientStockpileMapGenerator.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Data\\Odyssey\\Defs\\MapGeneration\\AncientStockpileMapGenerator.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T13:15:15.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Underground.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Sites\\Underground.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Sites\\Underground.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Sites\\Underground.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Sites\\Underground.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T13:15:03.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Containers.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Sites\\Containers.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Sites\\Containers.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Sites\\Containers.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Sites\\Containers.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T13:14:51.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FacilityEntrance.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Things\\FacilityEntrance.cs",
+              "RelativeDocumentMoniker": "Things\\FacilityEntrance.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Things\\FacilityEntrance.cs",
+              "RelativeToolTip": "Things\\FacilityEntrance.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwDsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:08:53.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Buildings_Quest.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Quest.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\ThingDefs_Buildings\\Buildings_Quest.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Quest.xml",
+              "RelativeToolTip": "..\\..\\Defs\\ThingDefs_Buildings\\Buildings_Quest.xml",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAkwNkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T13:06:43.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BuildingDefs.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3469398006\\1.6\\Defs\\ThingDef_Building\\BuildingDefs.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3469398006\\1.6\\Defs\\ThingDef_Building\\BuildingDefs.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3469398006\\1.6\\Defs\\ThingDef_Building\\BuildingDefs.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3469398006\\1.6\\Defs\\ThingDef_Building\\BuildingDefs.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T12:47:45.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Faction_Empire.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Royalty\\Defs\\FactionDefs\\Faction_Empire.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Data\\Royalty\\Defs\\FactionDefs\\Faction_Empire.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Royalty\\Defs\\FactionDefs\\Faction_Empire.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Data\\Royalty\\Defs\\FactionDefs\\Faction_Empire.xml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T12:08:49.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Renegades.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Harmony\\Renegades.cs",
+              "RelativeDocumentMoniker": "Harmony\\Renegades.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\Harmony\\Renegades.cs",
+              "RelativeToolTip": "Harmony\\Renegades.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T12:07:46.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PawnKinds_Player.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\PawnKindDefs_Humanlikes\\PawnKinds_Player.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Data\\Core\\Defs\\PawnKindDefs_Humanlikes\\PawnKinds_Player.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\PawnKindDefs_Humanlikes\\PawnKinds_Player.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Data\\Core\\Defs\\PawnKindDefs_Humanlikes\\PawnKinds_Player.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T11:44:18.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Factions_Player.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Faction\\Factions_Player.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Faction\\Factions_Player.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Faction\\Factions_Player.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Faction\\Factions_Player.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T11:42:08.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PawnKinds_Renegade_Base.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\PawnKinds\\PawnKinds_Renegade_Base.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\PawnKinds\\PawnKinds_Renegade_Base.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\PawnKinds\\PawnKinds_Renegade_Base.xml",
+              "RelativeToolTip": "..\\..\\Defs\\PawnKinds\\PawnKinds_Renegade_Base.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T11:40:02.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PawnKinds_Renegade_Human.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\PawnKinds\\PawnKinds_Renegade_Human.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\PawnKinds\\PawnKinds_Renegade_Human.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\PawnKinds\\PawnKinds_Renegade_Human.xml",
+              "RelativeToolTip": "..\\..\\Defs\\PawnKinds\\PawnKinds_Renegade_Human.xml",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAABAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T11:36:55.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Factions_Renegades.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Faction\\Factions_Renegades.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Faction\\Factions_Renegades.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Faction\\Factions_Renegades.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Faction\\Factions_Renegades.xml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T11:36:10.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Stats_Pawns_General.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Biotech\\Defs\\Stats\\Stats_Pawns_General.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Data\\Biotech\\Defs\\Stats\\Stats_Pawns_General.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Biotech\\Defs\\Stats\\Stats_Pawns_General.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Data\\Biotech\\Defs\\Stats\\Stats_Pawns_General.xml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T11:12:46.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Stats.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Stats.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Misc\\Stats.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Misc\\Stats.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Misc\\Stats.xml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswDQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T11:11:31.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Hediffs_Base.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\BodyParts\\Hediffs_Base.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\HediffDefs\\BodyParts\\Hediffs_Base.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\BodyParts\\Hediffs_Base.xml",
+              "RelativeToolTip": "..\\..\\Defs\\HediffDefs\\BodyParts\\Hediffs_Base.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T10:42:24.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Hediffs_Implants_BrainChips.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\BodyParts\\Hediffs_Implants_BrainChips.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\HediffDefs\\BodyParts\\Hediffs_Implants_BrainChips.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\BodyParts\\Hediffs_Implants_BrainChips.xml",
+              "RelativeToolTip": "..\\..\\Defs\\HediffDefs\\BodyParts\\Hediffs_Implants_BrainChips.xml",
+              "ViewState": "AgIAAFkDAAAAAAAAAAAAAIMDAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-14T10:40:31.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AbilityLauncher.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\AbilityLauncher.cs",
+              "RelativeDocumentMoniker": "AbilityLauncher.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Source\\DMSRenegadeClan\\AbilityLauncher.cs",
+              "RelativeToolTip": "AbilityLauncher.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwFAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T10:33:42.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Abilities_Misc.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Abilities\\Abilities_Misc.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Abilities\\Abilities_Misc.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Abilities\\Abilities_Misc.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Abilities\\Abilities_Misc.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:40:46.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Hediffs_Global_Misc.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\Hediffs_Global_Misc.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\HediffDefs\\Hediffs_Global_Misc.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\HediffDefs\\Hediffs_Global_Misc.xml",
+              "RelativeToolTip": "..\\..\\Defs\\HediffDefs\\Hediffs_Global_Misc.xml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAC4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:39:04.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Races_Automatroid_Heavy_Tarbosaurus.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\Races_Automatroid_Heavy_Tarbosaurus.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\Races_Automatroid_Heavy_Tarbosaurus.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\Races_Automatroid_Heavy_Tarbosaurus.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\Races_Automatroid_Heavy_Tarbosaurus.xml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAIcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:37:31.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Races_Automatroid_UltraHeavy_Malevolence.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_UltraHeavy_Malevolence.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\ThingDefs_Races\\Races_Automatroid_UltraHeavy_Malevolence.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_UltraHeavy_Malevolence.xml",
+              "RelativeToolTip": "..\\..\\Defs\\ThingDefs_Races\\Races_Automatroid_UltraHeavy_Malevolence.xml",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAALAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:36:37.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "BodyPartGroups.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Bodies\\BodyPartGroups.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Bodies\\BodyPartGroups.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Bodies\\BodyPartGroups.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Bodies\\BodyPartGroups.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:36:23.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "BodyPartsDef.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\BodyPartsDef.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\BodyPartsDef.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\BodyPartsDef.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_race\\BodyPartsDef.xml",
+              "ViewState": "AgIAACYDAAAAAAAAAAAAADoDAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:34:31.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Bodies_Malevolence.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Bodies\\Bodies_Malevolence.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\Bodies\\Bodies_Malevolence.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\Bodies\\Bodies_Malevolence.xml",
+              "RelativeToolTip": "..\\..\\Defs\\Bodies\\Bodies_Malevolence.xml",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAswKIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:33:54.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "MilitaryGun_Heavy.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun_Heavy.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun_Heavy.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun_Heavy.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun_Heavy.xml",
+              "ViewState": "AgIAAFMBAAAAAAAAAAAAAF0BAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:32:16.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Ranged_Heavy.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Heavy.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Heavy.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Heavy.xml",
+              "RelativeToolTip": "..\\..\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Heavy.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:32:11.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Ranged_Medium.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Medium.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Medium.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Medium.xml",
+              "RelativeToolTip": "..\\..\\Defs\\ThingDefs_Misc\\Weapons\\Ranged_Medium.xml",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAJMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:30:53.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MilitaryGun.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\workshop\\content\\294100\\3121742525\\1.6\\Defs\\Things_Weapon\\MilitaryGun.xml",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:30:18.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Races_Automatroid_Medium_Ronins.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Ronins.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Ronins.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Ronins.xml",
+              "RelativeToolTip": "..\\..\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Ronins.xml",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAL4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:28:16.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Races_Automatroid_Medium_Malice.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Malice.xml",
+              "RelativeDocumentMoniker": "..\\..\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Malice.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\DeadManSwitchRenegadeClan\\1.6\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Malice.xml",
+              "RelativeToolTip": "..\\..\\Defs\\ThingDefs_Races\\Races_Automatroid_Medium_Malice.xml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-13T18:25:21.889Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

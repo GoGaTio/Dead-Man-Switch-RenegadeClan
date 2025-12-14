@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+  <Operation Class="PatchOperationInsert">
+    <xpath>Defs/ThinkTreeDef[defName="DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[@Class ="ThinkNode_ConditionalRecharging"]</xpath>
+    <order>Append</order>
+    <value>
+      <li Class="DMSRC.JobGiver_RepairMechs" />
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="DMS_Caravan_TributeCollector"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_BuySingleDef">
+        <thingDef>DMSRC_ProcessorCore</thingDef>
+      </li>
+      <li Class="StockGenerator_BuySingleDef">
+        <thingDef>DMSRC_ComponentGBEP</thingDef>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[thingClass="Building_CommsConsole"]/comps</xpath>
+    <value>
+      <li Class="DMSRC.CompProperties_CallRenegades">
+        <useJob>DMSRC_TalkToRenegades</useJob>
+        <useLabel>Summon diabolus threat</useLabel>
+        <floatMenuOptionPriority>InitiateSocial</floatMenuOptionPriority>
+        <floatMenuFactionIcon>DMSRC_RenegadeClan</floatMenuFactionIcon>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

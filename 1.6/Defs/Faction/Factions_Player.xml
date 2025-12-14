@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>DMSRC_PlayerRenegades</defName>
+    <label>Renegade group</label>
+    <description>A colony of recently-arrived off-worlders.</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>DMSRC_Renegade_Player</basicMemberKind>
+    <pawnSingular>renegade</pawnSingular>
+    <pawnsPlural>renegades</pawnsPlural>
+    <techLevel>Spacer</techLevel>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <allowedCultures><li>Astropolitan</li></allowedCultures>
+    <melaninRange>0~0.1</melaninRange>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Pioneer</li>
+          <li>Offworld</li>
+          <li>Researcher</li>
+          <li>DMSCommon</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+      <li>ClassicStart</li>
+      <li>ClassicStartTechprints</li>
+    </startingTechprintsResearchTags>
+    <apparelStuffFilter Inherit="False">
+      <thingDefs>
+        <li>Synthread</li>
+        <li>Tungsteel</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+
+</Defs>

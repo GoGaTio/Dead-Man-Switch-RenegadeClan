@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Focus -->
+  <BossDef>
+    <defName>DMSRC_Boss_Focus</defName>
+    <kindDef>DMSRC_Mech_Focus</kindDef>
+    <appearAfterTicks>7200000</appearAfterTicks>
+    <!-- 2 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroupNonMechanitor">
+    <defName>DMSRC_Focus</defName>
+    <boss>DMSRC_Boss_Focus</boss>
+    <waves>
+      <li>
+        <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>2</DMS_Mech_Soldat>
+          <DMSRC_Mech_Stancher>1</DMSRC_Mech_Stancher>
+        </escorts>
+      </li>
+      <li>
+        <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>5</DMS_Mech_Soldat>
+          <DMS_Mech_Arquebusier>3</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>2</DMSRC_Mech_Stancher>
+        </escorts>
+      </li>
+      <li>
+        <!-- 2 - Repeat starts here -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Arquebusier>6</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>4</DMSRC_Mech_Stancher>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li>
+        <!-- 3 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>6</DMSRC_Mech_Stancher>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li>
+        <!-- 4 -->
+        <bossCount>2</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>12</DMS_Mech_Soldat>
+          <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>6</DMSRC_Mech_Stancher>
+          <DMS_Mech_Sergeant>1</DMS_Mech_Sergeant>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li>
+        <!-- 5 -->
+        <bossCount>3</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>12</DMS_Mech_Soldat>
+          <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
+          <DMS_Mech_Sergeant>2</DMS_Mech_Sergeant>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li>
+        <!-- 6 -->
+        <bossCount>3</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
+          <DMS_Mech_Gecko>1</DMS_Mech_Gecko>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+      <li>
+        <!-- 7 -->
+        <bossCount>4</bossCount>
+        <escorts>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>10</DMSRC_Mech_Stancher>
+          <DMS_Mech_Sergeant>2</DMS_Mech_Sergeant>
+          <DMS_Mech_Gecko>3</DMS_Mech_Gecko>
+        </escorts>
+        <bossApparel>
+          <li>
+            <thing>Apparel_HeavyShield</thing>
+          </li>
+        </bossApparel>
+      </li>
+    </waves>
+    <leaderDescription>This {LEADERKIND_label} was one of the special machines deployed all over this planet. Though it has been out of command for a considerable time due to the loss of their original commander.</leaderDescription>
+    <rewardDef>DMSRC_ComponentGBEP</rewardDef>
+  </BossgroupDef>
+
+  <!-- Malevolence -->
+  <BossDef>
+    <defName>DMSRC_Boss_Malevolence</defName>
+    <kindDef>DMSRC_Mech_Malevolence</kindDef>
+    <appearAfterTicks>7200000</appearAfterTicks>
+    <!-- 2 years -->
+  </BossDef>
+
+  <BossgroupDef ParentName="BaseBossgroupNonMechanitor">
+    <defName>DMSRC_Malevolence</defName>
+    <boss>DMSRC_Boss_Malevolence</boss>
+    <waves>
+      <li>
+        <!-- 0 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
+        </escorts>
+      </li>
+      <li>
+        <!-- 1 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>3</DMS_Mech_Iguana>
+          <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
+        </escorts>
+      </li>
+      <li>
+        <!-- 2 - Repeat starts here -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMSRC_Mech_Focus>1</DMSRC_Mech_Focus>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>7</DMS_Mech_Ronin>
+        </escorts>
+      </li>
+      <li>
+        <!-- 3 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>6</DMS_Mech_Iguana>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>10</DMS_Mech_Ronin>
+        </escorts>
+      </li>
+      <li>
+        <!-- 4 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>8</DMS_Mech_Iguana>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
+        </escorts>
+      </li>
+      <li>
+        <!-- 5 -->
+        <bossCount>1</bossCount>
+        <escorts>
+          <DMS_Mech_Iguana>8</DMS_Mech_Iguana>
+          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>8</DMS_Mech_Ronin>
+          <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
+        </escorts>
+      </li>
+    </waves>
+    <leaderDescription>This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral</leaderDescription>
+    <rewardDef>DMSRC_ProcessorCore</rewardDef>
+  </BossgroupDef>
+
+</Defs>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>DMSRC_ProcessorHelmet</defName>
+    <label>processor helmet</label>
+    <description>A crown-like headpiece with stubby spikes that poke the head uncomfortably. It is used to put the wearer in pain.</description>
+    <hediffClass>DMSRC.Hediff_ProcessorHelmet</hediffClass>
+    <stages>
+      <li>
+        <label>connected</label>
+        <statOffsets>
+          <DMSRC_Neurocapacity>10</DMSRC_Neurocapacity>
+          <ResearchSpeed>0.1</ResearchSpeed>
+          <HackingSpeed>0.1</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.1</StudyEfficiency>
+          <MechBandwidth>12</MechBandwidth>
+        </statOffsets>
+        <statFactors>
+          <DMSRC_NeuroControlPower>2</DMSRC_NeuroControlPower>
+        </statFactors>
+      </li>
+    </stages>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>DMSRC_Mote_NeuroControlLine</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>Things/Mote/DMSRC_NeuroControlLink</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <HediffDef>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defName>DMSRC_NeuroControl</defName>
+    <label>neurocontrol</label>
+    <description>Invisible.</description>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="DMSRC.HediffCompProperties_NeuroControl">
+        <customMote>DMSRC_Mote_NeuroControlLine</customMote>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>DMSRC_ArtifuscleDegradation</defName>
+    <label>artifuscle degradation</label>
+    <description>Artifuscle in the body of this automatroid degrade because of gamma irradiation.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+    <maxSeverity>1</maxSeverity>
+    <initialSeverity>0.01</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.1</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>initial</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>minor</label>
+        <becomeVisible>true</becomeVisible>
+        <minSeverity>0.1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.95</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <setMax>0.95</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>0.40</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.80</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <setMax>0.80</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>serious</label>
+        <minSeverity>0.60</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.55</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <setMax>0.55</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>0.80</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.30</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <setMax>0.30</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>DMSRC_BeamIllness</defName>
+    <label>beam illness</label>
+    <description>Health effects that are caused by being exposed to high amounts of gamma radiation in a short period of time.\nAt high doses, beam illness is lethal. Even at low doses, it can lead to various chronic diseases.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.7, 1.0, 1.0)</defaultLabelColor>
+    <lethalSeverity>1</lethalSeverity>
+    <initialSeverity>0.01</initialSeverity>
+    <canApplyDodChanceForCapacityChanges>true</canApplyDodChanceForCapacityChanges>
+    <makesSickThought>true</makesSickThought>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.2</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_MessageAboveSeverity">
+        <severity>0.35</severity>
+        <messageType>NeutralEvent</messageType>
+        <message>{0_nameDef} is now suffering from duplicate sickness.</message>
+      </li>
+      <li Class="HediffCompProperties_SurgeryInspectable">
+        <surgicalDetectionDesc>{PAWN_nameDef} is showing signs of beam illness. Keep {PAWN_objective} away from sources of gamma irradiation.</surgicalDetectionDesc>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>initial</label>
+        <becomeVisible>false</becomeVisible>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>OrganDecay</hediff>
+            <mtbDays>60</mtbDays>
+            <partsToAffect>
+              <li>Heart</li>
+              <li>Liver</li>
+              <li>Lung</li>
+              <li>Kidney</li>
+              <li>Stomach</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Dementia</hediff>
+            <mtbDays>150</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Carcinoma</hediff>
+            <mtbDays>70</mtbDays>
+            <canAffectAnyLivePart>true</canAffectAnyLivePart>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <label>minor</label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.1</minSeverity>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>OrganDecay</hediff>
+            <mtbDays>37</mtbDays>
+            <partsToAffect>
+              <li>Heart</li>
+              <li>Liver</li>
+              <li>Lung</li>
+              <li>Kidney</li>
+              <li>Stomach</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Dementia</hediff>
+            <mtbDays>37</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Carcinoma</hediff>
+            <mtbDays>111</mtbDays>
+            <canAffectAnyLivePart>true</canAffectAnyLivePart>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>0.35</minSeverity>
+        <vomitMtbDays>5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>OrganDecay</hediff>
+            <mtbDays>37</mtbDays>
+            <partsToAffect>
+              <li>Heart</li>
+              <li>Liver</li>
+              <li>Lung</li>
+              <li>Kidney</li>
+              <li>Stomach</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Dementia</hediff>
+            <mtbDays>37</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Carcinoma</hediff>
+            <mtbDays>111</mtbDays>
+            <canAffectAnyLivePart>true</canAffectAnyLivePart>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <label>serious</label>
+        <minSeverity>0.60</minSeverity>
+        <vomitMtbDays>1</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>OrganDecay</hediff>
+            <mtbDays>37</mtbDays>
+            <partsToAffect>
+              <li>Heart</li>
+              <li>Liver</li>
+              <li>Lung</li>
+              <li>Kidney</li>
+              <li>Stomach</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Dementia</hediff>
+            <mtbDays>37</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Carcinoma</hediff>
+            <mtbDays>111</mtbDays>
+            <canAffectAnyLivePart>true</canAffectAnyLivePart>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>0.80</minSeverity>
+        <vomitMtbDays>0.5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.10</setMax>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>OrganDecay</hediff>
+            <mtbDays>1</mtbDays>
+            <partsToAffect>
+              <li>Heart</li>
+              <li>Liver</li>
+              <li>Lung</li>
+              <li>Kidney</li>
+              <li>Stomach</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Dementia</hediff>
+            <mtbDays>2</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>Carcinoma</hediff>
+            <mtbDays>1</mtbDays>
+            <canAffectAnyLivePart>true</canAffectAnyLivePart>
+          </li>
+        </hediffGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnKindDef Name="DMSRC_BaseAutomatroidRenegade" ParentName="BaseAutomatroidKind" Abstract="True">
+    <defaultFactionType>Mechanoid</defaultFactionType>
+    <!--defaultFactionType>DMSRC_RenegadeClan</defaultFactionType-->
+    <allowInMechClusters>false</allowInMechClusters>
+    <isFighter>true</isFighter>
+    <destroyGearOnDrop>false</destroyGearOnDrop>
+    <canStrip>false</canStrip>
+    <factionHostileOnDeath>false</factionHostileOnDeath>
+    <factionHostileOnKill>false</factionHostileOnKill>
+    <minGenerationAge>0</minGenerationAge>
+    <maxGenerationAge>50</maxGenerationAge>
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+    <weaponMoney>1300~4000</weaponMoney>
+    <combatPower>100</combatPower>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>3000~4000</techHediffsMoney>
+    <overrideDebugActionCategory>RenegadeClan</overrideDebugActionCategory>
+  </PawnKindDef>
+
+  <PawnKindDef Name="DMSRC_RenegadeBase" Abstract="True">
+    <race>Human</race>
+    <initialResistanceRange>17~24</initialResistanceRange>
+    <initialWillRange>6~12</initialWillRange>
+    <defaultFactionType>DMSRC_RenegadeClan</defaultFactionType>
+    <chemicalAddictionChance>0</chemicalAddictionChance>
+    <backstoryCryptosleepCommonality>0.05</backstoryCryptosleepCommonality>
+    <gearHealthRange>0.75~2.0</gearHealthRange>
+    <invNutrition>2.55</invNutrition>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <disallowedTraits>
+      <li>Nudist</li>
+      <li>BodyPurist</li>
+      <li>Gay</li>
+      <li>Bisexual</li>
+    </disallowedTraits>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <apparelIgnorePollution>true</apparelIgnorePollution>
+  </PawnKindDef>
+
+  <PawnKindDef Name="DMSRC_OfficerBase" ParentName="DMSRC_RenegadeBase" Abstract="True">
+    <combatPower>40</combatPower>
+    <initialResistanceRange>57~84</initialResistanceRange>
+    <initialWillRange>34~92</initialWillRange>
+    <isFighter>true</isFighter>
+    <gearHealthRange>0.85~2</gearHealthRange>
+    <apparelMoney>1000~3000</apparelMoney>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <techHediffsChance>0.04</techHediffsChance>
+    <techHediffsMoney>2200~7000</techHediffsMoney>
+    <backstoryCategories>
+      <li>DMS_Officer</li>
+      <li>Mili_Expert</li>
+    </backstoryCategories>
+    <disallowedTraits>
+      <li>Brawler</li>
+      <li>Pyromaniac</li>
+    </disallowedTraits>
+    <humanPregnancyChance>0</humanPregnancyChance>
+    <!--<techHediffsTags>
+      <li>DMS_BM_Bionic</li>
+      <li>Advanced</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>-->
+    <maxGenerationAge>50</maxGenerationAge>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+    <modExtensions>
+      <li Class="DMSRC.PawnGenExtension">
+        <unRecruitableChanceOverride></unRecruitableChanceOverride>
+        <genderChanceOverride>1</genderChanceOverride>
+        <melaninRange>0~0.2</melaninRange>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+</Defs>

@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioBedroom_1</defName>
+    <size>(33,33)</size>
+    <tags>
+      <li>DMSRC_Scenario</li>
+      <li>DMSRC_Bedroom</li>
+    </tags>
+    <things>
+      <BookcaseSmall>
+        <position>(8, 0, 7)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>WoodLog</stuff>
+      </BookcaseSmall>
+      <BookcaseSmall>
+        <position>(9, 0, 9)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+      </BookcaseSmall>
+      <Dresser>
+        <position>(10, 0, 7)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </Dresser>
+      <Dresser>
+        <position>(5, 0, 10)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </Dresser>
+      <Autodoor>
+        <rects>
+          <li>(12,10,12,10)</li>
+          <li>(10,12,10,12)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Autodoor>
+      <Bed>
+        <positions>
+          <li>(12, 0, 5)</li>
+          <li>(7, 0, 9)</li>
+        </positions>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Bed>
+      <EndTable>
+        <rects>
+          <li>(13,5,13,5)</li>
+          <li>(8,9,8,9)</li>
+        </rects>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </EndTable>
+      <Wall>
+        <rects>
+          <li>(5,8,10,8)</li>
+          <li>(10,9,10,9)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Wall>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioBedroom_2</defName>
+    <size>(33,33)</size>
+    <tags>
+      <li>DMSRC_Scenario</li>
+      <li>DMSRC_Bedroom</li>
+    </tags>
+    <things>
+      <BookcaseSmall>
+        <position>(7, 0, 8)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+      </BookcaseSmall>
+      <BookcaseSmall>
+        <position>(9, 0, 9)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>WoodLog</stuff>
+      </BookcaseSmall>
+      <Dresser>
+        <position>(9, 0, 5)</position>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </Dresser>
+      <Dresser>
+        <position>(7, 0, 9)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </Dresser>
+      <Autodoor>
+        <rects>
+          <li>(12,10,12,10)</li>
+          <li>(10,12,10,12)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Autodoor>
+      <Bed>
+        <positions>
+          <li>(9, 0, 7)</li>
+          <li>(5, 0, 12)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Bed>
+      <EndTable>
+        <rects>
+          <li>(9,8,9,8)</li>
+          <li>(5,13,5,13)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </EndTable>
+      <Wall>
+        <rects>
+          <li>(8,5,8,10)</li>
+          <li>(9,10,9,10)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Wall>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioMechs_1</defName>
+    <size>(33,33)</size>
+    <tags>
+      <li>DMSRC_Scenario</li>
+      <li>DMSRC_Mechroom</li>
+    </tags>
+    <things>
+      <Autodoor>
+        <position>(12, 0, 10)</position>
+        <stuff>Steel</stuff>
+      </Autodoor>
+      <DMS_Recharger>
+        <position>(10, 0, 6)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMS_Recharger>
+      <DMSRC_InactiveMech>
+        <rects>
+          <li>(8,6,8,6)</li>
+          <li>(6,7,6,7)</li>
+          <li>(9,7,9,7)</li>
+          <li>(6,9,6,9)</li>
+          <li>(9,9,9,9)</li>
+          <li>(8,11,8,11)</li>
+        </rects>
+      </DMSRC_InactiveMech>
+      <DMS_MechGestatorSmall>
+        <position>(12, 0, 6)</position>
+      </DMS_MechGestatorSmall>
+      <HiTechResearchBench>
+        <position>(7, 0, 12)</position>
+        <stuff>Steel</stuff>
+      </HiTechResearchBench>
+      <Shelf>
+        <position>(5, 0, 5)</position>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(5, 0, 7)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <AncientMilitaryCrate>
+        <rects>
+          <li>(13,8,13,8)</li>
+          <li>(5,11,5,11)</li>
+        </rects>
+      </AncientMilitaryCrate>
+      <AncientCrate>
+        <rects>
+          <li>(7,5,7,5)</li>
+          <li>(6,6,6,6)</li>
+          <li>(6,11,6,11)</li>
+          <li>(9,11,9,11)</li>
+        </rects>
+      </AncientCrate>
+      <AncientShoppingCart>
+        <position>(5, 0, 8)</position>
+      </AncientShoppingCart>
+      <AncientSecurityTurret>
+        <rects>
+          <li>(8,8,8,8)</li>
+          <li>(5,10,5,10)</li>
+        </rects>
+      </AncientSecurityTurret>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioMechs_2</defName>
+    <size>(33,33)</size>
+    <tags>
+      <li>DMSRC_Scenario</li>
+      <li>DMSRC_Mechroom</li>
+    </tags>
+    <things>
+      <Autodoor>
+        <position>(10, 0, 12)</position>
+        <stuff>Steel</stuff>
+      </Autodoor>
+      <DMS_Recharger>
+        <position>(13, 0, 8)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMS_Recharger>
+      <DMSRC_InactiveMech>
+        <rects>
+          <li>(9,7,9,7)</li>
+          <li>(11,8,11,8)</li>
+          <li>(6,9,6,9)</li>
+          <li>(8,9,8,9)</li>
+          <li>(7,11,7,11)</li>
+          <li>(8,12,8,12)</li>
+        </rects>
+      </DMSRC_InactiveMech>
+      <DMS_MechGestatorSmall>
+        <position>(6, 0, 6)</position>
+      </DMS_MechGestatorSmall>
+      <HiTechResearchBench>
+        <position>(11, 0, 6)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </HiTechResearchBench>
+      <Shelf>
+        <position>(5, 0, 13)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(7, 0, 13)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <AncientMilitaryCrate>
+        <rects>
+          <li>(5,9,5,9)</li>
+          <li>(5,11,5,11)</li>
+        </rects>
+      </AncientMilitaryCrate>
+      <AncientCrate>
+        <rects>
+          <li>(8,5,8,5)</li>
+          <li>(12,7,12,7)</li>
+          <li>(6,10,6,10)</li>
+          <li>(9,13,9,13)</li>
+        </rects>
+      </AncientCrate>
+      <AncientShoppingCart>
+        <position>(9, 0, 10)</position>
+      </AncientShoppingCart>
+      <AncientSecurityTurret>
+        <rects>
+          <li>(5,8,5,8)</li>
+          <li>(12,9,12,9)</li>
+        </rects>
+      </AncientSecurityTurret>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioMechs_3</defName>
+    <size>(33,33)</size>
+    <tags>
+      <li>DMSRC_Scenario</li>
+      <li>DMSRC_Mechroom</li>
+    </tags>
+    <things>
+      <Autodoor>
+        <position>(12, 0, 10)</position>
+        <stuff>Steel</stuff>
+      </Autodoor>
+      <DMS_Recharger>
+        <position>(13, 0, 8)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMS_Recharger>
+      <DMSRC_InactiveMech>
+        <rects>
+          <li>(9,6,9,6)</li>
+          <li>(9,8,9,8)</li>
+          <li>(11,8,11,8)</li>
+          <li>(8,9,8,9)</li>
+          <li>(8,11,8,11)</li>
+          <li>(7,12,7,12)</li>
+        </rects>
+      </DMSRC_InactiveMech>
+      <DMS_MechGestatorSmall>
+        <position>(6, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMS_MechGestatorSmall>
+      <HiTechResearchBench>
+        <position>(6, 0, 10)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </HiTechResearchBench>
+      <Shelf>
+        <position>(11, 0, 5)</position>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(13, 0, 5)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <AncientMilitaryCrate>
+        <rects>
+          <li>(10,5,10,5)</li>
+          <li>(9,12,9,12)</li>
+          <li>(6,13,6,13)</li>
+        </rects>
+      </AncientMilitaryCrate>
+      <AncientCrate>
+        <rects>
+          <li>(12,6,12,7)</li>
+          <li>(7,8,7,8)</li>
+          <li>(8,13,9,13)</li>
+        </rects>
+      </AncientCrate>
+      <AncientShoppingCart>
+        <position>(8, 0, 5)</position>
+      </AncientShoppingCart>
+      <AncientSecurityTurret>
+        <rects>
+          <li>(10,7,10,7)</li>
+          <li>(5,13,5,13)</li>
+        </rects>
+      </AncientSecurityTurret>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioGen_1</defName>
+    <size>(33,33)</size>
+    <tags>
+      <li>DMSRC_Scenario</li>
+      <li>DMSRC_Techroom</li>
+    </tags>
+    <things>
+      <DMSRC_CompactGenerator>
+        <positions>
+          <li>(5, 0, 12)</li>
+          <li>(7, 0, 12)</li>
+        </positions>
+      </DMSRC_CompactGenerator>
+      <CommsConsole>
+        <position>(12, 0, 9)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </CommsConsole>
+      <ToolCabinet>
+        <position>(13, 0, 7)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </ToolCabinet>
+      <Autodoor>
+        <rects>
+          <li>(10,12,10,12)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Autodoor>
+      <AncientLamp>
+        <position>(7, 0, 8)</position>
+      </AncientLamp>
+      <FirefoamPopper>
+        <position>(8, 0, 8)</position>
+      </FirefoamPopper>
+      <AncientMicrowave>
+        <position>(9, 0, 13)</position>
+      </AncientMicrowave>
+      <AncientGenerator>
+        <position>(5, 0, 5)</position>
+      </AncientGenerator>
+      <Shelf>
+        <position>(11, 0, 7)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(10, 0, 8)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioGen_2</defName>
+    <size>(33,33)</size>
+    <tags>
+      <li>DMSRC_Scenario</li>
+      <li>DMSRC_Techroom</li>
+    </tags>
+    <things>
+      <DMSRC_CompactGenerator>
+        <positions>
+          <li>(12, 0, 5)</li>
+          <li>(12, 0, 7)</li>
+        </positions>
+      </DMSRC_CompactGenerator>
+      <CommsConsole>
+        <position>(9, 0, 11)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </CommsConsole>
+      <ToolCabinet>
+        <position>(8, 0, 13)</position>
+      </ToolCabinet>
+      <Autodoor>
+        <rects>
+          <li>(12,10,12,10)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Autodoor>
+      <AncientLamp>
+        <position>(7, 0, 10)</position>
+      </AncientLamp>
+      <FirefoamPopper>
+        <position>(8, 0, 8)</position>
+      </FirefoamPopper>
+      <AncientMicrowave>
+        <position>(7, 0, 13)</position>
+      </AncientMicrowave>
+      <AncientGenerator>
+        <position>(5, 0, 12)</position>
+      </AncientGenerator>
+      <Shelf>
+        <position>(5, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(6, 0, 5)</position>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioGen_3</defName>
+    <size>(33,33)</size>
+    <tags>
+      <li>DMSRC_Scenario</li>
+      <li>DMSRC_Techroom</li>
+    </tags>
+    <things>
+      <DMSRC_CompactGenerator>
+        <positions>
+          <li>(5, 0, 5)</li>
+          <li>(7, 0, 5)</li>
+        </positions>
+      </DMSRC_CompactGenerator>
+      <CommsConsole>
+        <position>(5, 0, 12)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </CommsConsole>
+      <ToolCabinet>
+        <position>(6, 0, 8)</position>
+      </ToolCabinet>
+      <Autodoor>
+        <rects>
+          <li>(12,10,12,10)</li>
+          <li>(10,12,10,12)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Autodoor>
+      <AncientLamp>
+        <position>(9, 0, 10)</position>
+      </AncientLamp>
+      <FirefoamPopper>
+        <position>(9, 0, 8)</position>
+      </FirefoamPopper>
+      <AncientMicrowave>
+        <position>(9, 0, 13)</position>
+      </AncientMicrowave>
+      <AncientGenerator>
+        <positions>
+          <li>(10, 0, 5)</li>
+          <li>(12, 0, 5)</li>
+        </positions>
+      </AncientGenerator>
+      <Wall>
+        <rects>
+          <li>(5,9,10,9)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Wall>
+      <Shelf>
+        <position>(5, 0, 8)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(13, 0, 7)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+  </DMSRC.RPrefabDef>
+
+</Defs>

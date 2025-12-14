@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef>
+    <defName>DMSRC_Neurointerface</defName>
+    <label>neurointerface</label>
+    <description>A neural implant which allows to install neural subimplants.\n\nEach subimplant requires 1 neurocapacity that can be increased by other neuroimplants or special apparel.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <techLevel>Spacer</techLevel>
+    <useHitPoints>true</useHitPoints>
+    <pathCost>14</pathCost>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Never</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <thingCategories>
+      <li>DMSRC_BodyPartsNeural</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>0</Beauty>
+      <Mass>0.05</Mass>
+      <MarketValue>1200</MarketValue>
+      <DeteriorationRate>5</DeteriorationRate>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(107,101,113)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>DMSRC_Neurointerface</defName>
+    <label>neurointerface</label>
+    <description>A neural implant which allows to install neural subimplants.\n\nEach subimplant requires 1 neurocapacity that can be increased by other neuroimplants or special apparel.</description>
+    <hediffClass>DMSRC.Hediff_Neurointerface</hediffClass>
+    <isBad>false</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <DMSRC_Neurocapacity>10</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>DMSRC_InstallNeurointerface</defName>
+    <label>install neurointerface</label>
+    <description>Install a neurointerface.</description>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_Neurointerface</ThingDef>
+      <HediffDef>DMSRC_Neurointerface</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing neurointerface.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMSRC_Neurointerface</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DMSRC_Neurointerface</li>
+      </thingDefs>
+      <disallowedThingDefs>
+        <li>MedicineHerbal</li>
+      </disallowedThingDefs>
+    </fixedIngredientFilter>
+    <deathOnFailedSurgeryChance>0.95</deathOnFailedSurgeryChance>
+    <skillRequirements>
+      <Medicine>10</Medicine>
+    </skillRequirements>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>DMSRC_Neurointerface</addsHediff>
+  </RecipeDef>
+
+  <!--===================Chips=========================-->
+
+  <ThingDef ParentName="DMSRC_NeuroChipBase">
+    <defName>DMSRC_Neuroamplifier</defName>
+    <label>neuroamplifier</label>
+    <description>A neural implant which increases consciousness by stimulating neurons.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>10</Artifuscle>
+      <Plasfiber>5</Plasfiber>
+      <ComponentStamped>1</ComponentStamped>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant neuroamplifier</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_Neuroamplifier</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <maxSeverity>5</maxSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_HighNeuroChipBase">
+    <defName>DMSRC_Neuroamplifier_High</defName>
+    <label>neuroamplifier (high)</label>
+    <description>A neural implant which increases consciousness by stimulating neurons.\n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>15</Artifuscle>
+      <Plasfiber>10</Plasfiber>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant neuroamplifier</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_Neuroamplifier</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <requiresExistingHediff>true</requiresExistingHediff>
+        <minSeverity>5</minSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="DMSRC_ChipHediffBase">
+    <defName>DMSRC_Neuroamplifier</defName>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_Neuroamplifier</ThingDef>
+      <ThingDef>DMSRC_Neuroamplifier_High</ThingDef>
+    </descriptionHyperlinks>
+    <label>neuroamplifier</label>
+    <description>A neural implant which increases consciousness by stimulating neurons.\n\nThis implant can be installed up to 10 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>6</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.30</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>7</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.35</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>8</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.40</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>9</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.45</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>10</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.50</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMSRC_NeuroChipBase">
+    <defName>DMSRC_Subinterface</defName>
+    <label>neural subinterface</label>
+    <description>A neural implant which increases neurocapacity, allowing to install more neural implants.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>10</Artifuscle>
+      <Plasfiber>5</Plasfiber>
+      <ComponentStamped>2</ComponentStamped>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant subinterface</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_Subinterface</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <maxSeverity>5</maxSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_HighNeuroChipBase">
+    <defName>DMSRC_Subinterface_High</defName>
+    <label>neural subinterface (high)</label>
+    <description>A neural implant which increases neurocapacity, allowing to install more neural implants.\n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>15</Artifuscle>
+      <Plasfiber>5</Plasfiber>
+      <ComponentStamped>2</ComponentStamped>
+      <Neurocomputer>1</Neurocomputer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant subinterface</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_Subinterface</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <requiresExistingHediff>true</requiresExistingHediff>
+        <minSeverity>5</minSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="DMSRC_ChipHediffBase" >
+    <defName>DMSRC_Subinterface</defName>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_Subinterface</ThingDef>
+      <ThingDef>DMSRC_Subinterface_High</ThingDef>
+    </descriptionHyperlinks>
+    <label>neural subinterface</label>
+    <description>A neural implant which increases neurocapacity, allowing to install more neural implants.\n\nThis implant can be installed up to 10 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>2</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>4</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>6</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>8</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>10</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>6</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>12</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>7</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>14</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>8</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>16</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>9</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>18</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>10</minSeverity>
+        <statOffsets>
+          <DMSRC_Neurocapacity>20</DMSRC_Neurocapacity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMSRC_NeuroChipBase">
+    <defName>DMSRC_Interlink</defName>
+    <label>neural interlink</label>
+    <description>A neural implant which increases a mechanitor's bandwidth, forming speed and the work speed of a mechanitor's mechs.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>10</Artifuscle>
+      <Plasfiber>10</Plasfiber>
+      <ComponentTransmitter>1</ComponentTransmitter>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant neural interlink</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_Interlink</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <maxSeverity>5</maxSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_HighNeuroChipBase">
+    <defName>DMSRC_Interlink_High</defName>
+    <label>neural interlink (high)</label>
+    <description>A neural implant which increases a mechanitor's bandwidth, forming speed and the work speed of a mechanitor's mechs.\n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>15</Artifuscle>
+      <Plasfiber>15</Plasfiber>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentTransmitter>1</ComponentTransmitter>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant neural interlink</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_Interlink</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <requiresExistingHediff>true</requiresExistingHediff>
+        <minSeverity>5</minSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="DMSRC_ChipHediffBase" >
+    <defName>DMSRC_Interlink</defName>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_Interlink</ThingDef>
+      <ThingDef>DMSRC_Interlink_High</ThingDef>
+    </descriptionHyperlinks>
+    <label>neural interlink</label>
+    <description>A neural implant which increases a mechanitor's bandwidth, forming speed and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 10 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <MechBandwidth>2</MechBandwidth>
+          <MechFormingSpeed>0.1</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.05</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <MechBandwidth>4</MechBandwidth>
+          <MechFormingSpeed>0.2</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.10</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <MechBandwidth>6</MechBandwidth>
+          <MechFormingSpeed>0.3</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.15</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <statOffsets>
+          <MechBandwidth>8</MechBandwidth>
+          <MechFormingSpeed>0.4</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.20</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+          <MechBandwidth>10</MechBandwidth>
+          <MechFormingSpeed>0.5</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.25</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>6</minSeverity>
+        <statOffsets>
+          <MechBandwidth>12</MechBandwidth>
+          <MechFormingSpeed>0.6</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.30</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>7</minSeverity>
+        <statOffsets>
+          <MechBandwidth>14</MechBandwidth>
+          <MechFormingSpeed>0.7</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.35</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>8</minSeverity>
+        <statOffsets>
+          <MechBandwidth>16</MechBandwidth>
+          <MechFormingSpeed>0.8</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.40</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>9</minSeverity>
+        <statOffsets>
+          <MechBandwidth>18</MechBandwidth>
+          <MechFormingSpeed>0.9</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.45</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>10</minSeverity>
+        <statOffsets>
+          <MechBandwidth>20</MechBandwidth>
+          <MechFormingSpeed>1</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.50</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMSRC_NeuroChipBase">
+    <defName>DMSRC_NeuroStimulator</defName>
+    <label>neural stimulator</label>
+    <description>\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>10</Artifuscle>
+      <Plasfiber>5</Plasfiber>
+      <ComponentStamped>3</ComponentStamped>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentTransmitter>1</ComponentTransmitter> 
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant </useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef></hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <maxSeverity>5</maxSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="DMSRC_HighNeuroChipBase">
+    <defName>DMSRC_NeuroStimulator_High</defName>
+    <label>neural stimulator (high)</label>
+    <description>A neural implant which increases \n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>15</Artifuscle>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentTransmitter>1</ComponentTransmitter>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant high sublink</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef></hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <requiresExistingHediff>true</requiresExistingHediff>
+        <minSeverity>5</minSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="DMSRC_ChipHediffBase">
+    <defName>DMSRC_NeuroStimulator</defName>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_NeuroStimulator</ThingDef>
+      <ThingDef>DMSRC_NeuroStimulator_High</ThingDef>
+    </descriptionHyperlinks>
+    <label>neural stimulator</label>
+    <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.075</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <ReadingSpeed>0.05</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.15</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <ReadingSpeed>0.05</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.225</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <ReadingSpeed>0.05</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.3</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <ReadingSpeed>0.05</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.375</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <ReadingSpeed>0.05</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>6</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.45</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <ReadingSpeed>0.05</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>7</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.525</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <ReadingSpeed>0.05</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>8</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.6</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <ReadingSpeed>0.05</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>9</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.675</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.75</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.5</StudyEfficiency>
+          <ReadingSpeed>0.5</ReadingSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>10</minSeverity>
+        <statOffsets>
+          <ResearchSpeed>0.75</ResearchSpeed>
+          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.75</HackingSpeed>
+          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.5</StudyEfficiency>
+          <ReadingSpeed>0.5</ReadingSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMSRC_HighNeuroChipBase">
+    <defName>DMSRC_MoodNullifier</defName>
+    <label>moral nullifier</label>
+    <description>An implant which decreases moral and social thoughts.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>20</Artifuscle>
+      <Plasfiber>10</Plasfiber>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant moral nullifier</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_MoodNullifier</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <maxSeverity>5</maxSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="DMSRC_ChipHediffBase">
+    <defName>DMSRC_MoodNullifier</defName>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_MoodNullifier</ThingDef>
+    </descriptionHyperlinks>
+    <label>moral nullifier</label>
+    <description>An implant which decreases moral and social thoughts.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <pctAllThoughtNullification>0.2</pctAllThoughtNullification>
+        <overrideMoodBase>0.45</overrideMoodBase>
+        <opinionOfOthersFactor>0.8</opinionOfOthersFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.03</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <TameAnimalChance>0.8</TameAnimalChance>
+          <TrainAnimalChance>0.8</TrainAnimalChance>
+          <BondAnimalChanceFactor>0.8</BondAnimalChanceFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <pctAllThoughtNullification>0.4</pctAllThoughtNullification>
+        <overrideMoodBase>0.55</overrideMoodBase>
+        <opinionOfOthersFactor>0.6</opinionOfOthersFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.06</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <TameAnimalChance>0.6</TameAnimalChance>
+          <TrainAnimalChance>0.6</TrainAnimalChance>
+          <BondAnimalChanceFactor>0.6</BondAnimalChanceFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <pctAllThoughtNullification>0.6</pctAllThoughtNullification>
+        <overrideMoodBase>0.65</overrideMoodBase>
+        <opinionOfOthersFactor>0.4</opinionOfOthersFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.09</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <TameAnimalChance>0.4</TameAnimalChance>
+          <TrainAnimalChance>0.4</TrainAnimalChance>
+          <BondAnimalChanceFactor>0.4</BondAnimalChanceFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <blocksInspirations>true</blocksInspirations>
+        <pctAllThoughtNullification>0.8</pctAllThoughtNullification>
+        <overrideMoodBase>0.75</overrideMoodBase>
+        <opinionOfOthersFactor>0.2</opinionOfOthersFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.12</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <TameAnimalChance>0.2</TameAnimalChance>
+          <TrainAnimalChance>0.2</TrainAnimalChance>
+          <BondAnimalChanceFactor>0.2</BondAnimalChanceFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <blocksMentalBreaks>true</blocksMentalBreaks>
+        <blocksInspirations>true</blocksInspirations>
+        <pctAllThoughtNullification>1</pctAllThoughtNullification>
+        <overrideMoodBase>0.85</overrideMoodBase>
+        <opinionOfOthersFactor>0</opinionOfOthersFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <TameAnimalChance>0</TameAnimalChance>
+          <TrainAnimalChance>0</TrainAnimalChance>
+          <BondAnimalChanceFactor>0</BondAnimalChanceFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="DMSRC_NeuroChipBase">
+    <defName>DMSRC_NeuroControlChip</defName>
+    <label>neurocontrol chip</label>
+    <description>An implant which allows to remotely control ally mechanoids functions, increasing its characteristics.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>15</Artifuscle>
+      <Plasfiber>5</Plasfiber>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant neurocontrol chip</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_NeuroControlChip</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <maxSeverity>5</maxSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="DMSRC_ChipHediffBase">
+    <defName>DMSRC_NeuroControlChip</defName>
+    <hediffClass>DMSRC.Hediff_NeuroControlChip</hediffClass>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_NeuroControlChip</ThingDef>
+    </descriptionHyperlinks>
+    <label>neurocontrol chip</label>
+    <description>An implant which allows to remotely control ally mechanoids functions, increasing its characteristics.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+          <li>DMSRC_NeuroControl</li>
+        </abilityDefs>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroControlPower>1</DMSRC_NeuroControlPower>
+          <DMSRC_NeuroControlRange>4.9</DMSRC_NeuroControlRange>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroControlPower>2</DMSRC_NeuroControlPower>
+          <DMSRC_NeuroControlRange>9.9</DMSRC_NeuroControlRange>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroControlPower>3</DMSRC_NeuroControlPower>
+          <DMSRC_NeuroControlRange>14.9</DMSRC_NeuroControlRange>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroControlPower>4</DMSRC_NeuroControlPower>
+          <DMSRC_NeuroControlRange>19.9</DMSRC_NeuroControlRange>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroControlPower>5</DMSRC_NeuroControlPower>
+          <DMSRC_NeuroControlRange>24.9</DMSRC_NeuroControlRange>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <AbilityDef>
+    <defName>DMSRC_NeuroControl</defName>
+    <label>neurocontrol</label>
+    <description>Remotely control mechanoid, increasing its characteristics.</description>
+    <targetRequired>true</targetRequired>
+    <iconPath>UI/Gizmos/ShieldMech</iconPath>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>0</cooldownTicksRange>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>4.9</range>
+      <drawAimPie>true</drawAimPie>
+      <requireLineOfSight>true</requireLineOfSight>
+      <warmupTime>0</warmupTime>
+      <rangeStat>DMSRC_NeuroControlRange</rangeStat>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="DMSRC.CompProperties_NeuroControl"/>
+    </comps>
+  </AbilityDef>
+
+  <ThingDef ParentName="DMSRC_HighNeuroChipBase">
+    <defName>DMSRC_NeuroInterceptor</defName>
+    <label>neural interceptor</label>
+    <description>An implant which allows to intercept control of enemy automatroid, making it an ally.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <costList>
+      <Artifuscle>20</Artifuscle>
+      <Plasfiber>10</Plasfiber>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentTransmitter>1</ComponentTransmitter>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Implant neural interceptor</useLabel>
+        <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>DMSRC_NeuroInterceptor</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <canUpgrade>true</canUpgrade>
+        <maxSeverity>5</maxSeverity>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef ParentName="DMSRC_ChipHediffBase">
+    <defName>DMSRC_NeuroInterceptor</defName>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_NeuroInterceptor</ThingDef>
+    </descriptionHyperlinks>
+    <label>neural interceptor</label>
+    <description>An implant which allows to intercept control of enemy automatroid, making it an ally.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+          <li>DMSRC_NeuroIntercept</li>
+        </abilityDefs>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroInterceptRange>3.9</DMSRC_NeuroInterceptRange>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroInterceptRange>7.9</DMSRC_NeuroInterceptRange>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroInterceptRange>11.9</DMSRC_NeuroInterceptRange>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroInterceptRange>15.9</DMSRC_NeuroInterceptRange>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <statOffsets>
+          <DMSRC_NeuroInterceptRange>19.9</DMSRC_NeuroInterceptRange>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <AbilityDef>
+    <defName>DMSRC_NeuroIntercept</defName>
+    <label>intercept control</label>
+    <description>Remotely take control over enemy automatroid, making it an ally.</description>
+    <targetRequired>true</targetRequired>
+    <iconPath>UI/Gizmos/ShieldMech</iconPath>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>0</cooldownTicksRange>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>DMSRC.Verb_ControlMech</verbClass>
+      <range>3.9</range>
+      <drawAimPie>true</drawAimPie>
+      <requireLineOfSight>true</requireLineOfSight>
+      <rangeStat>DMSRC_NeuroInterceptRange</rangeStat>
+      <warmupTime>5</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="DMSRC.CompProperties_InterceptControl"/>
+    </comps>
+  </AbilityDef>
+
+</Defs>

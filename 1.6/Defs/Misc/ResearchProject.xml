@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMSRC_ModularAutomatroid</defName>
+    <label>Modular Automatroid</label>
+    <description>These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_BattleFrame</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>1.90</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMSRC_Firecrackers</defName>
+    <label>FSR munition</label>
+    <description>Allows to create ammo, that creates spark streams and flame blast at the impact position.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>MultiAnalyzer</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>2.532</researchViewY>
+    <!--<requiredAnalyzed>
+      <li>DMSRC_DataCard_Firecrackers</li>
+    </requiredAnalyzed>-->
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMSRC_BeamFocusing</defName>
+    <label>beam focusing</label>
+    <description>These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMS_Plasfiber</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>1.866</researchViewY>
+    <requiredAnalyzed>
+      <li>DMSRC_ComponentGBEP</li>
+    </requiredAnalyzed>
+  </ResearchProjectDef> 
+  
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMSRC_Overseer</defName>
+    <label>"Overlord" project</label>
+    <description>Project "Overlord" was developed by an almost independent branch of one of the colonial fleets. When Renegade Crisis began they decided to join separatists, providing advanced command Automatroids for growing renegades army. Allows for the construction of advanced self-aware command Automatroids.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <hiddenPrerequisites>
+      <li>DMS_DeadMansSwitch</li>
+      <li>MultiAnalyzer</li>
+    </hiddenPrerequisites>
+    <researchViewX>10.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+    <requiredAnalyzed>
+      <li>DMSRC_ProcessorCore</li>
+    </requiredAnalyzed>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->command automatroids</li>
+        <li>subject->processor array</li>
+
+        <li>subject_story->found destroyed renegades facility with survived data</li>
+        <li>subject_story->deserted from Colonial fleet to find better place for research</li>
+        <li>subject_story->collected a large amount of historical documents about Renegade Crisis</li>
+
+        <li>subject_gerund->creating hyperadvanced processors</li>
+        <li>subject_gerund->thinking about the weakness of mass production</li>
+        <li>subject_gerund->working with next gen AI</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMSRC_NeuroChips</defName>
+    <label>neurochips</label>
+    <description>Allows to create ammo, that creates spark streams and flame blast at the impact position.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>DMS_Prosthetic</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>5.50</researchViewY>
+    <!--requiredAnalyzed>
+      <li>DMSRC_DataCard_NeuroChips</li>
+    </requiredAnalyzed>-->
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="DMS_BaseTech">
+    <defName>DMSRC_HighNeuroChips</defName>
+    <label>high neurochips</label>
+    <description>These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>DMSRC_NeuroChips</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>5.50</researchViewY>
+    <!--requiredAnalyzed>
+      <li>DMSRC_DataCard_HighNeuroChips</li>
+    </requiredAnalyzed-->
+  </ResearchProjectDef> 
+
+</Defs>

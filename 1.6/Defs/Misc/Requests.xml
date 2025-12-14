@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DMSRC.RenegadesRequestDef>
+    <defName>TradeRequest</defName>
+    <requestClass>DMSRC.TradeRequest</requestClass>
+    <label>trade request</label>
+    <description>TODO</description>
+    <sitePartDef>DMSRC_ContainerRenegades</sitePartDef>
+  </DMSRC.RenegadesRequestDef>
+  
+</Defs>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ApparelBase">
+    <defName>DMSRC_Apparel_ProcessorHelmet</defName>
+    <label>processor helmet</label>
+    <description>A crown-like headpiece with stubby inward-facing spikes that poke the head. It is used to induce pain in the wearer.</description>
+    <thingCategories>
+      <li>Headgear</li>
+    </thingCategories>
+    <costList>
+      <Tungsteel>30</Tungsteel>
+      <Plasfiber>25</Plasfiber>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentStamped>2</ComponentStamped>
+      <ComponentSpacer>1</ComponentSpacer>
+      <DMSRC_ProcessorCore>1</DMSRC_ProcessorCore>
+    </costList>
+    <costStuffCount>70</costStuffCount>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <disallowedThingDefs>
+          <li>Silver</li>
+          <li>Gold</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+      <displayPriority>205</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.8, 0.8)</drawSize>
+    </graphicData>
+    <equippedStatOffsets>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.15</SlaveSuppressionOffset>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.6</VacuumResistance>
+    </equippedStatOffsets>
+    <uiIconScale>1.25</uiIconScale>
+    <generateCommonality>0.5</generateCommonality>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>21000</WorkToMake>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <Flammability>0</Flammability>
+      <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>3</EquipDelay>
+    </statBases>
+    <apparel>
+      <countsAsClothingForNudity>true</countsAsClothingForNudity>
+      <parentTagDef>ApparelHead</parentTagDef>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>DMSRC_Thinker</li>
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+    <comps>
+      <li Class="DMSRC.CompProperties_ProcessorHelmet">
+        <hediff>DMSRC_ProcessorHelmet</hediff>
+      </li>
+      <li Class="CompProperties_Biocodable"/>
+    </comps>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.33,0.33,0.33)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.65,0.65,0.65)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.4,0.3,0.15)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <min>(0.3,0.3,0.3)</min>
+          <max>(0.5,0.5,0.5)</max>
+        </li>
+        <li>
+          <weight>6</weight>
+          <min>(0.5,0.5,0.5)</min>
+          <max>(1,1,1)</max>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+</Defs>

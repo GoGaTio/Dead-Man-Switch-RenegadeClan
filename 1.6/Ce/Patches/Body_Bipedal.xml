@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- ========== Add groups entry if it doesn't exist already ========== -->
+
+	<!-- Special -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMSRC_Turret"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMSRC_Turret"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMSRC_Turret"]/parts/li[def="DMS_SniperHead"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMSRC_Turret"]/parts/li[def="DMS_SniperHead"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal"]/corePart/parts/li[def="MechanicalHead"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal"]/corePart/parts/li[def="MechanicalHead"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- Common -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation> 
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="MechanicalArm"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="MechanicalArm"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="MechanicalArm"]/parts/li[def="MechanicalHand"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="MechanicalArm"]/parts/li[def="MechanicalHand"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="MechanicalFoot"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="MechanicalFoot"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="DMS_ArmourPlate"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="DMS_ArmourPlate"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMS_ArmourPlate"]/groups</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMS_ArmourPlate"]</xpath>
+			<value>
+				<groups />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- ========== Add armor coverage ========== -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal"]/corePart/parts/li[def="MechanicalHead"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMSRC_Turret"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMSRC_Turret"]/parts/li[def="DMS_SniperHead"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="MechanicalArm"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalShoulder"]/parts/li[def="MechanicalArm"]/parts/li[def="MechanicalHand"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="MechanicalFoot"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="MechanicalLeg"]/parts/li[def="DMS_ArmourPlate"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BodyDef[defName="DMSRC_Bipedal" or defName="DMSRC_BipedalWithTurret"]/corePart/parts/li[def="DMS_ArmourPlate"]/groups</xpath>
+		<value>
+			<li>CoveredByNaturalArmor</li>
+		</value>
+	</Operation>
+
+
+
+</Patch>

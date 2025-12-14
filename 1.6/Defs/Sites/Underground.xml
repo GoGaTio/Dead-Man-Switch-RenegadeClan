@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MapGeneratorDef>
+    <defName>DMSRC_UndergroundFacility</defName>
+    <label>underground facility</label>
+    <isUnderground>true</isUnderground>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>Underground</biome>
+      <temperature>15</temperature>
+      <canBeCleaned>true</canBeCleaned>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>RockChunks</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <SitePartDef>
+    <defName>DMSRC_LogisticCenter</defName>
+    <label>container</label>
+    <description>A container with valuable items.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>UI/Icons/DMSRC_ContainerSite</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <tags>
+      <li>DMSRC_LogisticCenter</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMSRC_LogisticCenter</defName>
+    <linkWithSite>DMSRC_LogisticCenter</linkWithSite>
+    <order>1460</order>
+    <genStep Class="DMSRC.GenStep_RPrefab">
+      <prefabs>
+        <li>DMSRC_BroadcastPoint_2</li>
+      </prefabs>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>DMSRC_UndergroundFacility</defName>
+    <order>551</order>
+    <genStep Class="DMSRC.GenStep_RPrefab">
+      <useStaticPrefab>true</useStaticPrefab>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

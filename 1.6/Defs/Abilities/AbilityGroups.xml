@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityGroupDef>
+    <defName>DMSRC_Overseer</defName>
+    <cooldownTicks>420000</cooldownTicks>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+  </AbilityGroupDef>
+
+</Defs>

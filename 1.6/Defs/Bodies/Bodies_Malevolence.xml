@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BodyDef>
+    <defName>DMSRC_Malevolence</defName>
+    <label>malevolence</label>
+    <corePart>
+      <def>DMS_HeavyChassis</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>DMSRC_ArmoredHead</def>
+          <coverage>0.25</coverage>
+          <height>Top</height>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+          <parts>
+            <li>
+              <def>DMSRC_ProcessorCore</def>
+              <coverage>0.03</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>DMSRC_ProcessorCore</def>
+              <coverage>0.03</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>DMSRC_ProcessorCore</def>
+              <coverage>0.03</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>DMS_CompactSenser</def>
+              <!--these sensors are hide in the corners under thick armor so mostly untargetable-->
+              <customLabel>left compact sensor</customLabel>
+              <coverage>0.007</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>DMS_CompactSenser</def>
+              <customLabel>right compact sensor</customLabel>
+              <coverage>0.007</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>DMS_CompactSenser</def>
+              <customLabel>back compact sensor</customLabel>
+              <coverage>0.007</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>DMSRC_Turret</def>
+              <customLabel>right turret</customLabel>
+              <coverage>0.07</coverage>
+              <parts>
+                <li>
+                  <def>SightSensor</def>
+                  <coverage>0.1</coverage>
+                </li>
+                <li>
+                  <def>SightSensor</def>
+                  <customLabel>thermal imager</customLabel>
+                  <coverage>0.1</coverage>
+                </li>
+                <li>
+                  <def>SightSensor</def>
+                  <customLabel>phased array radar</customLabel>
+                  <coverage>0.1</coverage>
+                </li>
+              </parts>
+            </li>
+            <li>
+              <def>DMSRC_Turret</def>
+              <customLabel>left turret</customLabel>
+              <coverage>0.07</coverage>
+              <groups>
+                <li>HeadAttackTool</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>SightSensor</def>
+                  <customLabel>guidance sensor</customLabel>
+                  <coverage>0.1</coverage>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>DMSRC_ArmoredLeg</def>
+          <customLabel>front left leg</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>DMSRC_LeftArmoredLeg</li>
+          </groups>
+          <parts>
+            <li>
+              <def>DMS_ArmourPlate</def>
+              <customLabel>leg armour plate</customLabel>
+              <coverage>0.4</coverage>
+              <depth>Outside</depth>
+            </li>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>left foot</customLabel>
+              <coverage>0.1</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>DMSRC_ArmoredLeg</def>
+          <customLabel>front right leg</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>DMSRC_RightArmoredLeg</li>
+          </groups>
+          <parts>
+            <li>
+              <def>DMS_ArmourPlate</def>
+              <customLabel>leg armour plate</customLabel>
+              <coverage>0.4</coverage>
+              <depth>Outside</depth>
+            </li>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>right foot</customLabel>
+              <coverage>0.1</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>DMSRC_ArmoredLeg</def>
+          <customLabel>rear left leg</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>LeftMechanicalLeg</li>
+          </groups>
+          <parts>
+            <li>
+              <def>DMS_ArmourPlate</def>
+              <customLabel>leg armour plate</customLabel>
+              <coverage>0.3</coverage>
+              <depth>Outside</depth>
+            </li>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>left foot</customLabel>
+              <coverage>0.2</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>DMSRC_ArmoredLeg</def>
+          <customLabel>rear right leg</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>RightMechanicalLeg</li>
+          </groups>
+          <parts>
+            <li>
+              <def>DMS_ArmourPlate</def>
+              <customLabel>leg armour plate</customLabel>
+              <coverage>0.3</coverage>
+              <depth>Outside</depth>
+            </li>
+            <li>
+              <def>MechanicalFoot</def>
+              <customLabel>right foot</customLabel>
+              <coverage>0.2</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MechanicalShoulder</def>
+          <customLabel>left weapon mount</customLabel>
+          <coverage>0.02</coverage>
+          <parts>
+            <li>
+              <def>MechanicalArm</def>
+              <customLabel>horizontal rotor</customLabel>
+              <coverage>0.85</coverage>
+              <parts>
+                <li>
+                  <def>MechanicalHand</def>
+                  <customLabel>vertical rotor</customLabel>
+                  <coverage>0.2</coverage>
+                  <height>Bottom</height>
+                  <parts>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>ammo feeder</customLabel>
+                      <coverage>0.15</coverage>
+                      <groups>
+                        <li>LeftHand</li>
+                      </groups>
+                    </li>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>range finder</customLabel>
+                      <coverage>0.15</coverage>
+                      <groups>
+                        <li>LeftHand</li>
+                        <li>MiddleFingers</li>
+                      </groups>
+                    </li>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>trigger safety</customLabel>
+                      <coverage>0.15</coverage>
+                      <groups>
+                        <li>LeftHand</li>
+                      </groups>
+                    </li>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>mount lock</customLabel>
+                      <coverage>0.15</coverage>
+                      <groups>
+                        <li>LeftHand</li>
+                      </groups>
+                    </li>
+                  </parts>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>MechanicalShoulder</def>
+          <customLabel>right weapon mount</customLabel>
+          <coverage>0.02</coverage>
+          <parts>
+            <li>
+              <def>MechanicalArm</def>
+              <customLabel>horizontal rotor</customLabel>
+              <coverage>0.85</coverage>
+              <parts>
+                <li>
+                  <def>MechanicalHand</def>
+                  <customLabel>vertical rotor</customLabel>
+                  <coverage>0.2</coverage>
+                  <height>Bottom</height>
+                  <parts>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>ammo feeder</customLabel>
+                      <coverage>0.15</coverage>
+                      <groups>
+                        <li>RightHand</li>
+                      </groups>
+                    </li>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>range finder</customLabel>
+                      <coverage>0.15</coverage>
+                      <groups>
+                        <li>RightHand</li>
+                        <li>MiddleFingers</li>
+                      </groups>
+                    </li>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>weapon safety</customLabel>
+                      <coverage>0.15</coverage>
+                      <groups>
+                        <li>RightHand</li>
+                      </groups>
+                    </li>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>mount lock</customLabel>
+                      <coverage>0.15</coverage>
+                      <groups>
+                        <li>RightHand</li>
+                      </groups>
+                    </li>
+                  </parts>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>DMS_ArmourPlate</def>
+          <customLabel>waist armour plate</customLabel>
+          <coverage>0.1</coverage>
+          <depth>Outside</depth>
+        </li>
+        <li>
+          <def>DMS_ArmourPlate</def>
+          <customLabel>chest armour plate</customLabel>
+          <coverage>0.05</coverage>
+          <depth>Outside</depth>
+        </li>
+        <li>
+          <def>DMS_Battery</def>
+          <customLabel>main battery array</customLabel>
+          <coverage>0.02</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>DMS_Battery</def>
+          <customLabel>secondary battery array</customLabel>
+          <coverage>0.02</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>FluidReprocessor</def>
+          <coverage>0.015</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>FluidReprocessor</def>
+          <coverage>0.015</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>FluidReprocessor</def>
+          <coverage>0.015</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>FluidReprocessor</def>
+          <coverage>0.015</coverage>
+          <depth>Inside</depth>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+
+</Defs>

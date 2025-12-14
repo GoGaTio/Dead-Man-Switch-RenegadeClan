@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RulePackDef>
+    <defName>DMSRC_MechPersona</defName>
+    <rulePack>
+      <rulesStrings>
+
+        <li>r_name(p=2)->[AnimalBadass]</li>
+        <li>r_name->[Animal]</li>
+        <li>r_name(p=7)->[nameFemale]</li>
+        <li>r_name(p=7)->[nameMale]</li>
+
+      </rulesStrings>
+      <rulesRaw>
+        <li Class="Rule_NamePerson">
+          <keyword>nameMale</keyword>
+          <gender>Male</gender>
+        </li>
+        <li Class="Rule_NamePerson">
+          <keyword>nameFemale</keyword>
+          <gender>Female</gender>
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+</Defs>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef>
+    <defName>DMSRC_FocusedBeam</defName>
+    <label>focused beam</label>
+    <workerClass>DMSRC.DamageWorker_BeamExplosion</workerClass>
+    <externalViolence>true</externalViolence>
+    <!--<isExplosive>true</isExplosive>-->
+    <deathMessage>{0} has been beamed to death.</deathMessage>
+    <hediff>BeamWound</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Heat</armorCategory>
+    <minDamageToFragment>15</minDamageToFragment>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <defaultDamage>1</defaultDamage>
+    <defaultArmorPenetration>9</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>0.8</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>0.4</buildingDamageFactorPassable>
+    <plantDamageFactor>2</plantDamageFactor>
+    <corpseDamageFactor>0.05</corpseDamageFactor>
+    <explosionAffectOutsidePartsOnly>true</explosionAffectOutsidePartsOnly>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.96, 0.05, 0.96, 0.1)</explosionColorCenter>
+    <explosionColorEdge>(0.96, 0.05, 0.96, 0.1)</explosionColorEdge>
+    <soundExplosion>DMSRC_FocusedBeam</soundExplosion>
+    <combatLogRules>Damage_Flame</combatLogRules>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <ignoreShields>true</ignoreShields>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>DMSRC_Firecracker</defName>
+    <label>firecracker</label>
+    <workerClass>DMSRC.DamageWorker_Firecracker</workerClass>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has burned to death.</deathMessage>
+    <hediff>Burn</hediff>
+    <armorCategory>Heat</armorCategory>
+    <minDamageToFragment>15</minDamageToFragment>
+    <defaultDamage>5</defaultDamage>
+    <defaultArmorPenetration>0.2</defaultArmorPenetration>
+    <explosionHeatEnergyPerCell>10</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastFlame</explosionCellFleck>
+    <explosionColorCenter>(1, 0.7, 0.7, 0.05)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7, 0.05)</explosionColorEdge>
+    <combatLogRules>Damage_Flame</combatLogRules>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <soundExplosion>DMSRC_Null</soundExplosion>
+    <scaleDamageToBuildingsBasedOnFlammability>true</scaleDamageToBuildingsBasedOnFlammability>
+  </DamageDef>
+
+</Defs>

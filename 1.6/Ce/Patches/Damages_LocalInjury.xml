@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- ========== Add DefModExtension ========== -->
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/DamageDef[defName="DMSRC_FocusedBeam"]</xpath>
+		<value>
+			<li Class="CombatExtended.DamageDefExtensionCE">
+				<harmOnlyOutsideLayers>true</harmOnlyOutsideLayers>
+				<isAmbientDamage>true</isAmbientDamage>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/DamageDef[defName="DMSRC_Firecracker"]/defaultArmorPenetration</xpath>
+		<value>
+			<defaultArmorPenetration>0.4</defaultArmorPenetration>
+		</value>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ApparelNoQualityBase">
+    <thingClass>BroadshieldPack</thingClass>
+    <defName>DMSRC_Apparel_PackBeamInterceptor</defName>
+    <label>interceptor beam pack</label>
+    <description>A single-use man-portable low-shield projector. Deployed on the ground, it generates a circular shield that allows bullets out but not in. The unit is designed to last only a short time before burning out.\n\nMany ultratech combat squads owe their lives to a shield pack deployed at just the right time.</description>
+    <techLevel>Industrial</techLevel>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>1</maxCharges>
+        <destroyOnEmpty>true</destroyOnEmpty>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>shield</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_DeployBroadshield</verbClass>
+        <label>deploy low-shield</label>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <targetable>false</targetable>
+        <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+        <onlyManualCast>True</onlyManualCast>
+      </li>
+    </verbs>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
+      <researchPrerequisite>ShieldBelt</researchPrerequisite>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <displayPriority>340</displayPriority>
+    </recipeMaker>
+    <costList>
+      <BroadshieldCore>1</BroadshieldCore>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/BroadshieldPack/BroadshieldPack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.7,0.7)</drawSize>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <WorkToMake>14000</WorkToMake>
+      <Mass>3</Mass>
+      <Flammability>0.4</Flammability>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <generateAllowChance>0.15</generateAllowChance>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <scoreOffset>4</scoreOffset>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>BeltDefensePop</li>
+      </tags>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/BroadshieldPack/BroadshieldPack</wornGraphicPath>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+        <north>
+          <offset>(0,-0.15)</offset>
+        </north>
+        <south>
+          <offset>(0,-0.15)</offset>
+        </south>
+        <east>
+          <offset>(-0.35,-0.1)</offset>
+          <thin><offset>(0.05,0)</offset></thin>
+          <hulk><offset>(-0.15,0)</offset></hulk>
+          <fat> <offset>(-0.20,0)</offset></fat>
+        </east>
+        <west>
+          <offset>(0.35,-0.1)</offset>
+          <thin><offset>(-0.05,0)</offset></thin>
+          <hulk><offset>(0.15,0)</offset></hulk>
+          <fat> <offset>(0.20,0)</offset></fat>
+        </west>
+
+        <male>  <scale>(0.4,0.4)</scale></male>
+        <female><scale>(0.4,0.4)</scale></female>
+        <thin>  <scale>(0.4,0.4)</scale></thin>
+        <hulk>  <scale>(0.51,0.51)</scale></hulk>
+        <fat>   <scale>(0.51,0.51)</scale></fat>
+      </wornGraphicData>
+    </apparel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+      <li>Armor</li>
+    </tradeTags>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+  </ThingDef>-->
+
+  <ThingDef ParentName="ApparelNoQualityBase">
+    <defName>DMSRC_Apparel_PackScanner</defName>
+    <label>scanner pack</label>
+    <description>A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. These turrets are effective for flanking and distracting enemies. However, the turret's limited AI can't be directly controlled, so it can cause friendly fire incidents. The turret battery lasts for several hours.</description>
+    <graphicData>
+      <texPath>Things/Apparel/DMSRC_ScannerPack/DMSRC_ScannerPack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.7,0.7)</drawSize>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0.5</Flammability>
+      <EquipDelay>1</EquipDelay>
+    </statBases>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <costList>
+      <Steel>10</Steel>
+      <Tungsteel>10</Tungsteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
+      <researchPrerequisite>TurretPack</researchPrerequisite>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <displayPriority>360</displayPriority>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <mergeVerbGizmos>false</mergeVerbGizmos>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <scoreOffset>4</scoreOffset>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <wornGraphicPath>Things/Apparel/DMSRC_ScannerPack/DMSRC_ScannerPack</wornGraphicPath>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+        <north>
+          <offset>(0,-0.15)</offset>
+        </north>
+        <south>
+          <offset>(0,0.1)</offset>
+          <scale>(1.3,1)</scale>
+          <!--frame covered by pawn body unless we stretch-->
+        </south>
+        <east>
+          <offset>(-0.35,-0.05)</offset>
+          <thin>
+            <offset>(0.05,0)</offset>
+          </thin>
+          <hulk>
+            <offset>(-0.1,0)</offset>
+          </hulk>
+          <fat>
+            <offset>(-0.15,0)</offset>
+          </fat>
+        </east>
+        <west>
+          <offset>(0.35,-0.05)</offset>
+          <thin>
+            <offset>(-0.05,0)</offset>
+          </thin>
+          <hulk>
+            <offset>(0.1,0)</offset>
+          </hulk>
+          <fat>
+            <offset>(0.15,0)</offset>
+          </fat>
+        </west>
+        <male>
+          <scale>(0.8,0.8)</scale>
+        </male>
+        <female>
+          <scale>(0.75,0.75)</scale>
+        </female>
+        <thin>
+          <scale>(0.7,0.7)</scale>
+        </thin>
+        <hulk>
+          <scale>(0.8,0.8)</scale>
+        </hulk>
+        <fat>
+          <scale>(0.8,0.8)</scale>
+        </fat>
+      </wornGraphicData>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_ApparelVerbOwnerCharged">
+        <hotKey>Misc4</hotKey>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <maxCharges>1</maxCharges>
+        <destroyOnEmpty>true</destroyOnEmpty>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_LaunchProjectileStaticOneUse</verbClass>
+        <label>deploy scanner</label>
+        <defaultProjectile>DMSRC_Grenade_ScannerPack</defaultProjectile>
+        <warmupTime>1.0</warmupTime>
+        <range>22.9</range>
+        <burstShotCount>1</burstShotCount>
+        <onlyManualCast>true</onlyManualCast>
+        <hasStandardCommand>true</hasStandardCommand>
+        <targetable>true</targetable>
+        <violent>false</violent>
+        <targetParams>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <soundCast>ThrowGrenade</soundCast>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+        <canGoWild>false</canGoWild>
+      </li>
+    </verbs>
+    <tradeTags>
+      <li>Clothing</li>
+    </tradeTags>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>DMSRC_Grenade_ScannerPack</defName>
+    <label>scanner pack capsule</label>
+    <thingClass>Projectile_SpawnsThing</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/DMSRC_ScannerPack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <speed>41</speed>
+      <spawnsThingDef>DMSRC_PerimeterScannerTemp</spawnsThingDef>
+      <tryAdjacentFreeSpaces>true</tryAdjacentFreeSpaces>
+    </projectile>
+  </ThingDef>
+
+</Defs>

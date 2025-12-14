@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>DMSRC_RenegadeClan</defName>
+    <label>renegades clan</label>
+    <categoryTag>DMSRC_RenegadeClan</categoryTag>
+    <description>A militarized colonial organization led by an AI Overlord who optimises warfare with brutal efficiency. They are a warlike people operating as a military meritocracy. Every individual is expected to take responibility for their actions and their battlespace, and anyone willing to fight can find their place among their ranks.</description>
+    <pawnSingular>renegade</pawnSingular>
+    <pawnsPlural>renegades</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <configurationListOrderPriority>2172</configurationListOrderPriority>
+    <melaninRange>0~0.1</melaninRange>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <leaderTitle>count</leaderTitle>
+    <hidden>true</hidden>
+    <hiddenIdeo>true</hiddenIdeo>
+    <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
+    <basicMemberKind>DMSRC_Renegade</basicMemberKind>
+    <factionIconPath>UI/Faction/DMSRC_RenegadeClanIcon</factionIconPath>
+    <fixedName>Renegade clan</fixedName>
+    <settlementNameMaker>DMS_VanguardBase</settlementNameMaker>
+    <allowedCultures>
+      <li MayRequire="Ludeon.RimWorld.Ideology">DMS_Nara_Culture</li>
+    </allowedCultures>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+    </requiredMemes>
+    <allowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+    </allowedMemes>
+    <disallowedPrecepts>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">Execution_Required</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Honorable</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Classic</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Abhorrent</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_HorribleNoSell</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_HorribleSellOK</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">Corpses_Ugly</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Exalted</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Standard</li>
+    </disallowedPrecepts>
+    <structureMemeWeights Inherit="False">
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">99</Structure_Ideological>
+    </structureMemeWeights>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances Inherit="False">
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">999</Baseliner>
+      </xenotypeChances>
+    </xenotypeSet>
+    <permanentEnemyToEveryoneExcept>
+      <li>DMSRC_PlayerRenegades</li>
+      <li>OutlanderCivil</li>
+      <li>TribeCivil</li>
+      <li>PlayerTribe</li>
+      <li>PlayerColony</li>
+      <li>Ancients</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Beggars</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">ResearchExpedition</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">GravshipCrew</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">TradersGuild</li>
+    </permanentEnemyToEveryoneExcept>
+    <techLevel>Spacer</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Pioneer</li>
+          <li>DMSRC_Common</li>
+          <li>Researcher</li>
+          <li>DMSCommon</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <apparelStuffFilter Inherit="False">
+      <thingDefs>
+        <li>Synthread</li>
+        <li>Tungsteel</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </apparelStuffFilter>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <colorSpectrum>
+      <li>(84, 26, 56)</li>
+    </colorSpectrum>
+    <fixedLeaderKinds>
+      <li>DMS_Officer_Leader</li>
+    </fixedLeaderKinds>
+    <attackersDownPercentageRangeForAutoFlee>0.95~1</attackersDownPercentageRangeForAutoFlee>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0.35)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <raidLootMaker>DMSRC_RenegadesLoot</raidLootMaker>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(500, 270)</li>
+        <li>(1000, 300)</li>
+        <li>(3000, 9999)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <!-- Infantry + melee mix ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
+          <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
+          <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
+          <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
+          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>4</DMSRC_Mech_Stancher>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <DMSRC_OfficerCombat>0.5</DMSRC_OfficerCombat>
+          <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
+          <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+          <DMS_Mech_Dogge>5</DMS_Mech_Dogge>
+          <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
+          <DMSRC_Mech_Stancher>3</DMSRC_Mech_Stancher>
+          <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>10</commonality>
+        <options>
+          <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
+          <DMS_Mech_Dogge>2</DMS_Mech_Dogge>
+          <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+          <DMSRC_Mech_Stancher>1.5</DMSRC_Mech_Stancher>
+          <DMS_Mech_Caretta>1</DMS_Mech_Caretta>
+          <DMSRC_Mech_Malevolence>1</DMSRC_Mech_Malevolence>
+          <DMSRC_Mech_Focus>2</DMSRC_Mech_Focus>
+        </options>
+      </li>
+      <li>
+        <!-- breach fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>10</commonality>
+        <options>
+          <DMSRC_OfficerCombat>0.5</DMSRC_OfficerCombat>
+          <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
+          <DMS_Mech_Grenadier>6</DMS_Mech_Grenadier>
+          <DMSRC_Mech_Stancher>4</DMSRC_Mech_Stancher>
+          <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+          <DMS_Mech_Protector>5</DMS_Mech_Protector>
+          <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
+          <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <disallowedRaidAgeRestrictions>
+      <li>Children</li>
+    </disallowedRaidAgeRestrictions>
+  </FactionDef>
+
+  <ThingSetMakerDef>
+    <defName>DMSRC_RenegadesLoot</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+            <li>MedicineIndustrial</li>
+            <li>Uranium</li>
+            <li>MealSurvivalPack</li>
+            <li>DMS_CombatRation</li>
+            <li>ComponentStamped</li>
+            <li>Plasfiber</li>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+</Defs>

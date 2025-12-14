@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>DMSRC_FSR</defName>
+		<label>concentrated charge</label>
+		<labelShort>conc.</labelShort>
+		<description>Focuses charged particles around the tip of the core for improved armor penetration at the cost of stopping power.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>DMSRC_FSR</defName>
+		<label>FSR</label>
+		<parent>Ammo</parent>
+		<iconPath>UI/Icons/ThingCategories/AmmoAdvanced</iconPath>
+	</ThingCategoryDef> 
+
+</Defs>

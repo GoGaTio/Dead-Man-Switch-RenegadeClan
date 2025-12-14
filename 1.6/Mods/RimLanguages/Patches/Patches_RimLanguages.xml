@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/FactionLanguages.LanguageFamilyDef[defName="Human"]/factionDialects</xpath>
+				<value>
+					<li>
+						<dialectDef>DMSRC_NewLatin</dialectDef>
+						<factions>
+							<li>DMSRC_RenegadeClan</li>
+							<li>DMSRC_PlayerRenegades</li>
+						</factions>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

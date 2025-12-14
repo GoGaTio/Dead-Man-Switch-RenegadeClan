@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_Shell_SZF</defName>
+    <label>SZF-57</label>
+    <description>A large propulsion rocket. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_SZF</texPath>
+      <graphicClass>DMSRC.Graphic_StackCount_Direct</graphicClass>
+      <!--<flipExtraRotation>80</flipExtraRotation>-->
+      <onGroundRandomRotateAngle>180</onGroundRandomRotateAngle>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <tickerType>Normal</tickerType>
+    <stackLimit>6</stackLimit>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MaxHitPoints>230</MaxHitPoints>
+      <MarketValue>550</MarketValue>
+      <Mass>25</Mass>
+      <Flammability>0.7</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>5.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explosiveExpandPerStackcount>4.6</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+        <wickTicks>30~60</wickTicks>
+      </li>
+    </comps>
+    <projectileWhenLoaded>DMSRC_Bullet_SZF</projectileWhenLoaded>
+    <costList>
+      <Steel>50</Steel>
+      <Chemfuel>60</Chemfuel>
+      <ComponentStamped>2</ComponentStamped>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>Mortars</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMSRC_Bullet_SZF</defName>
+    <label>SZF-57</label>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Projectile/DMSRC_SZF</texPath>
+      <drawSize>(2.5, 2.5)</drawSize>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <shadowSize>2</shadowSize>
+      <damageDef>Bomb</damageDef>
+      <!--<spinRate>20</spinRate>-->
+      <damageAmountBase>50</damageAmountBase>
+      <speed>41</speed>
+      <arcHeightFactor>5</arcHeightFactor>
+      <explosionRadius>5.9</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_ContainerTransponder</defName>
+    <label>cargo transponder</label>
+    <description>A transponder that connects a , even over a great distance. Mechanitors are capable of controlling many mechanoids using a mix of psychic and electromagnetic signals.\n\nDecrypting the transponder will allow you to pinpoint the location of the last mechanitor who controlled the mechanoid.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/Item/Special/MechanitorComplexMap</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <category>Item</category>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
+    <selectable>true</selectable>
+    <statBases>
+      <Mass>0.1</Mass>
+      <Flammability>0</Flammability>
+      <MarketValue>200</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUseableDatacore</compClass>
+        <useJob>ReadDatacore</useJob>
+        <useLabel>Decrypt transponder</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>DatacoreRead</soundOnUsed>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+      <li Class="CompProperties_UseEffectGiveQuest">
+        <quest>DMSRC_ContainerLoot</quest>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Can be decrypted at a research bench.\nSelect a colonist and right-click this to decrypt it.</inspectString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_AncientBroadcaster</defName>
+    <label>ancient broadcaster</label>
+    <description>A high-power communication relay to be used in the colony for emergency reinforcements. The identification code of this rescue protocol has long been abandoned, so only those mechanized units that are feral will take the bait.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Resource/EncryptedTransmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>ThingWithComps</thingClass>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>1.7</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+      <MarketValue>2300</MarketValue>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <tradeability>None</tradeability>
+    <!--Only from quests and containers-->
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Attract subjugator threat</useLabel>
+        <useDuration>900</useDuration>
+        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+      </li>
+      <li Class="DMS.CompPropertiesUseable_SummonRaid">
+        <bossgroupDef>DMSRC_Malevolence</bossgroupDef>
+        <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechanoidsWakeUp</soundOnUsed>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf">
+        <delayTicks>120</delayTicks>
+        <spawnKilledLeavings>false</spawnKilledLeavings>
+        <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

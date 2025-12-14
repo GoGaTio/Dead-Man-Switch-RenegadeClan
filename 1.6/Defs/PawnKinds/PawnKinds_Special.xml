@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef ParentName="MechanitorBase">
+    <defName>DMSRC_DummyMechanitor</defName>
+    <apparelMoney>0~1000</apparelMoney>
+    <apparelRequired Inherit="False" />
+    <techHediffsTags Inherit="False" />
+    <forcedTraits Inherit="False" />
+    <defaultFactionType Inherit="False" />
+  </PawnKindDef>
+
+</Defs>

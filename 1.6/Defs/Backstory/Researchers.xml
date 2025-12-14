@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--============================== Industrial world ============================-->
+
+
+  <BackstoryDef>
+    <defName>DMSRC_Researcher1</defName>
+    <title>human computer</title>
+    <titleShort>computer</titleShort>
+    <description>[PAWN_nameDef] turned out to have an excellent memory and a gift for performing complex calculations in [PAWN_possessive] head. An industrial-world dictator decided to employ [PAWN_nameDef] to keep track of [PAWN_possessive] state's finances and expenditure.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Artistic</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Shooting>3</Shooting>
+      <Intellectual>7</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+      <li>Scientist</li>
+      <li>Researcher</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+
+  <BackstoryDef>
+    <defName>DMSRC_Researcher2</defName>
+    <title>joywire artist</title>
+    <titleShort>joywirer</titleShort>
+    <description>[PAWN_nameDef] worked in an urbworld lab developing cutting-edge joywire software to maximize user pleasure.\n\nWhen the local government imposed harsh restrictions on joywire manufacturing, [PAWN_pronoun] began selling [PAWN_possessive] products on the black market.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Artistic>3</Artistic>
+      <Intellectual>2</Intellectual>
+      <Medicine>2</Medicine>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+      <li>Scientist</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+
+  <BackstoryDef>
+    <defName>DMSRC_Researcher3</defName>
+    <title>caveworld illuminator</title>
+    <titleShort>illuminator</titleShort>
+    <description>Among tunnel-dwellers, those with vision as strong as [PAWN_nameDef]'s are revered as sages. [PAWN_pronoun] would lead the way, marking spots to dig with bioluminescent fungus and warning others of impending danger.</description>
+    <slot>Adulthood</slot>
+    <requiredWorkTags>
+      <li>Mining</li>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Mining>3</Mining>
+      <Social>2</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+	    <li>Miner</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <forcedTraits>
+      <Undergrounder>0</Undergrounder>
+    </forcedTraits>
+  </BackstoryDef>
+
+
+  <BackstoryDef>
+    <defName>DMSRC_Researcher4</defName>
+    <title>starship janitor</title>
+    <titleShort>janitor</titleShort>
+    <description>While other passengers pass the years between star systems in cryptosleep sarcophagi, [PAWN_nameDef] had to wake up at periodic intervals to perform inspections, check the navigation systems, and to oil the mechanoids.</description>
+    <slot>Adulthood</slot>
+    <requiredWorkTags>
+      <li>ManualDumb</li>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Construction>2</Construction>
+      <Crafting>3</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+      <li>Researcher</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+  </BackstoryDef>
+
+
+  <BackstoryDef>
+    <defName>DMSRC_Researcher5</defName>
+    <title>possessed scientist</title>
+    <titleShort>scientist</titleShort>
+    <description>[PAWN_nameDef] was possessed with an idea of advanced AI, [PAWN_pronoun] tried to work in many organizations, but none of them had enough resources to hold [PAWN_possessive] projects.
+\nOnce [PAWN_nameDef] was on planet controlled by Colonial Fleet, where [PAWN_pronoun] was join secret research center. studying and classifying the plant and animal life [PAWN_pronoun] found in the hopes of creating a complete catalogue.</description>
+    <slot>Adulthood</slot>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <workDisables>
+      <li>Animals</li>
+      <li>PlantWork</li>
+    </workDisables>
+    <skillGains>
+      <Crafting>4</Crafting>
+      <Shooting>3</Shooting>
+      <Intellectual>6</Intellectual>
+      <Medicine>2</Medicine>
+    </skillGains>
+    <spawnCategories>
+      <li>DMSRC_Researcher</li>
+    </spawnCategories>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <possessions>
+      <DMSRC_ProcessorCore>1</DMSRC_ProcessorCore>
+    </possessions>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMSRC_Researcher6</defName>
+    <title>space tactician</title>
+    <titleShort>tactician</titleShort>
+    <description>[PAWN_nameDef] joined the space navy in an unstable system, fraught with large-scale interplanetary wars. [PAWN_pronoun] turned out to have a sharp mind for battle, and became adept at commanding combat units to great effect.</description>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Social</li>
+      <li>Artistic</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+    <skillGains>
+      <Shooting>4</Shooting>
+      <Intellectual>4</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Pirate</li>
+      <li>ImperialCommon</li>
+    </spawnCategories>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+  </BackstoryDef>
+
+</Defs>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ThingSetMakerDef>
+    <defName>DMSRC_SecurityContainer_NaraBlue</defName>
+    <root Class="ThingSetMaker_Sum">
+      <options>
+
+        <!-- Weapons -->
+        <li>
+          <chance>0.2</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_Gun_Recoilless</li>
+                  <li>DMS_Gun_2A38M</li>
+                  <li>DMS_HeavyMachineGun</li>
+                  <li>DMS_Autocannon</li>
+                  <li>DMS_SniperCannon</li>
+                  <li>DMS_M214Gatlinggun</li>
+                  <li>DMS_DeposableRocketLauncher</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <li>
+          <chance>0.8</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_AssaultPiercer</li>
+                  <li>DMS_PDW</li>
+                  <li>DMS_SurvivalRifle</li>
+                  <li>DMS_LightMachineGun</li>
+                  <li>DMS_AutomaticGrenadeLauncher</li>
+                  <li>DMS_SniperGrenadeLauncher</li>
+                  <li>DMS_MarksmanRifle</li>
+                  <li>DMS_BattleRifle</li>
+                  <li>DMS_SemiAutoRifle</li>
+                  <li>DMS_AssaultRifle</li>
+                  <li>DMS_AssaultShotgun</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Shells -->
+        <li>
+          <chance>0.2</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Shell_BlasterSmoke</li>
+                  <li>Shell_HighExplosive</li>
+                  <li>Shell_EMP</li>
+                  <li>Shell_Smoke</li>
+                  <li>Shell_Incendiary</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~5</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Apparel -->
+        <li>
+          <chance>0.4</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_Apparel_PowerSkeleton</li>
+                </thingDefs>
+
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.4</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_Apparel_HazardSuit</li>
+                  <li>DMS_Apparel_BionicSuit</li>
+                  <li>DMS_Apparel_ArrayHelmet</li>
+                  <li>DMS_Apparel_Gunlink</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Prosthetics -->
+        <li>
+          <chance>0.4</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Trader</qualityGenerator>
+              <!-- Just in case -->
+              <filter>
+                <thingDefs>
+                  <li>PowerClaw</li>
+                  <li>Joywire</li>
+                  <li>Painstopper</li>
+                  <li>DMS_NutrientPort</li>
+                  <li>DMS_ProstheticLeg</li>
+                  <li>DMS_ProstheticArm</li>
+                  <li>DMS_ProstheticEye</li>
+                  <li>DMS_ProstheticKidney</li>
+                  <li>DMS_ProstheticLung</li>
+                  <li>DMS_ProstheticSpine</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <li>
+          <chance>0.25</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Reward</qualityGenerator>
+              <!-- Just in case -->
+              <filter>
+                <thingDefs>
+                  <li>PowerClaw</li>
+                  <li>Joywire</li>
+                  <li>Painstopper</li>
+                  <li>DMS_NutrientPort</li>
+                  <li>DMS_ProstheticLeg</li>
+                  <li>DMS_ProstheticArm</li>
+                  <li>DMS_ProstheticEye</li>
+                  <li>DMS_ProstheticKidney</li>
+                  <li>DMS_ProstheticLung</li>
+                  <li>DMS_ProstheticSpine</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Techprints -->
+        <!-- note this is intended to ignore player needs entirely, it gives entirely random techprints -->
+        <li>
+          <chance>0.1</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>Techprint</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+
+        <!-- Components -->
+        <li>
+          <chance>1</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentIndustrial</li>
+                </thingDefs>
+              </filter>
+              <countRange>5~11</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>1</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentStamped</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~8</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.55</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~3</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Resources -->
+        <li>
+          <chance>1</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Polyester</li>
+                  <li>Synthread</li>
+                </thingDefs>
+              </filter>
+              <countRange>60~150</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.3</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Plasfiber</li>
+                </thingDefs>
+              </filter>
+              <countRange>45~75</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.55</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Tungsteel</li>
+                </thingDefs>
+              </filter>
+              <countRange>45~210</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.7</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Silver</li>
+                </thingDefs>
+              </filter>
+              <countRange>500~2500</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.45</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Gold</li>
+                </thingDefs>
+              </filter>
+              <countRange>10~40</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <li>
+          <chance>0.3</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Uranium</li>
+                </thingDefs>
+              </filter>
+              <countRange>25~55</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Boss caller -->
+        <li>
+          <chance>0.55</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_EncryptedTransmitter</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <chance>0.15</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_EncryptedTransmitter</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Neutroamine -->
+        <li>
+          <chance>0.55</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Neutroamine</li>
+                </thingDefs>
+              </filter>
+              <countRange>20~40</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Survival meals -->
+        <li>
+          <chance>1</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MealSurvivalPack</li>
+                </thingDefs>
+              </filter>
+              <countRange>25~45</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Chocolate -->
+        <li>
+          <chance>0.4</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Chocolate</li>
+                </thingDefs>
+              </filter>
+              <countRange>23~54</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Meds -->
+        <li>
+          <chance>1</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineIndustrial</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~12</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <li>
+          <chance>0.2</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MedicineUltratech</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~3</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+
+</Defs>

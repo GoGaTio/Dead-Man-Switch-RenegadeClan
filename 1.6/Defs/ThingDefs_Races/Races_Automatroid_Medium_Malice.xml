@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Malice -->
+  <ThingDef ParentName="DMSRC_BasePersonaHumanoid">
+    <defName>DMSRC_Mech_Malice</defName>
+    <label>Malice</label>
+    <description>Modified version of Arquebusier with advanced processor array that allows to control other mechs.</description>
+    <statBases>
+      <BandwidthCost>4</BandwidthCost>
+      <MoveSpeed>4.5</MoveSpeed>
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+      <AimingDelayFactor>0.9</AimingDelayFactor>
+      <WastepacksPerRecharge>6</WastepacksPerRecharge>
+    </statBases>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+    <race>
+      <mechFixedSkillLevel>14</mechFixedSkillLevel>
+      <body>DMSRC_Humanoid_Persona</body>
+      <baseBodySize>1.1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+      <mechWorkTypePriorities>
+        <Smithing>1</Smithing>
+        <BasicWorker>2</BasicWorker>
+        <Construction>1</Construction>
+        <Crafting>1</Crafting>
+        <Research>1</Research>
+        <Tailoring>3</Tailoring>
+      </mechWorkTypePriorities>
+      <mechEnabledWorkTypes>
+        <li>Construction</li>
+        <li>Crafting</li>
+        <li>Smithing</li>
+        <li>Tailoring</li>
+        <li>Research</li>
+        <li MayRequire="frozensnowfox.complexjobs">FSFDeconstruct</li>
+        <li MayRequire="frozensnowfox.complexjobs">FSFRepair</li>
+        <li MayRequire="frozensnowfox.complexjobs">FSFDeliver</li>
+      </mechEnabledWorkTypes>
+    </race>
+    <butcherProducts>
+      <DMS_ChunkSlag>1</DMS_ChunkSlag>
+      <Tungsteel>55</Tungsteel>
+    </butcherProducts>
+    <comps>
+      <li Class="DMSRC.CompProperties_CompOverseerMech">
+        <commandRange>19.9</commandRange>
+        <controlGroups>2</controlGroups>
+        <bandwidth>12</bandwidth>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>Gun</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>ShortShots</li>
+          <li>CE_SMG</li>
+          <li>SimpleGun</li>
+          <li>A_AR_LongRifle</li>
+          <li>A_SAR_LongRifle</li>
+          <li>A_BR_LongRifle</li>
+          <li>A_MG_Light</li>
+          <li>ElephantGun</li>
+          <li>SniperRifle</li>
+          <li>AssaultRifle</li>
+          <li>A_SR_LongRifle</li>
+          <li>A_DMR_LongRifle</li>
+          <li>IndustrialGunAdvanced</li>
+          <li>Simple_LongRange</li>
+          <li>A_SC_LongRifle</li>
+          <li>A_SR_GrenadeLauncher</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons>
+          <li MayRequire="vanillaexpanded.vwehw">VWE_Gun_UraniumSlugRifle</li>
+        </BypassUsableWeapons>
+      </li>
+      <li Class="Fortified.TurretMannableExtension"/>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMSRC_Mech_Malice</defName>
+    <label>Malice</label>
+    <race>DMSRC_Mech_Malice</race>
+    <isFighter>true</isFighter>
+    <combatPower>110</combatPower>
+    <maxPerGroup>1</maxPerGroup>
+    <aiAvoidCover>false</aiAvoidCover>
+    <isBoss>true</isBoss>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/DMSRC_Hipparch</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/DMSRC_Hipparch</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>DMSRC_LightFirecracker</li>
+      <li>A_AR_LongRifle</li>
+      <li>A_SR_GrenadeLauncher</li>
+      <li>A_SR_LongRifle</li>
+      <li>A_SC_LongRifle</li>
+      <li>A_MG_Light</li>
+      <li>A_DMR_LongRifle</li>
+    </weaponTags>
+    <abilities>
+      <li>DMSRC_HipparchCommand</li>
+      <li>DMSRC_EmergencyBattery</li>
+    </abilities>
+    <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
+  </PawnKindDef>
+
+</Defs>

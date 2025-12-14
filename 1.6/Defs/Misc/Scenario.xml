@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ScenPartDef>
+    <defName>DMSRC_PlayerArrivesNearPrefab</defName>
+    <label>shuttle crash</label>
+    <category>Fixed</category>
+    <scenPartClass>DMSRC.ScenPart_PlayerArrivesPrefab</scenPartClass>
+  </ScenPartDef>
+
+  <ScenarioDef ParentName="ScenarioBase">
+    <defName>DMSRC_Scenario</defName>
+    <label>Renegades</label>
+    <description>A legendary pilot decides to retire and start a different story.</description>
+    <scenario>
+      <name>Renegades</name>
+      <summary>A legendary pilot decides to retire and start a different story.</summary>
+      <description>
+        You have been an officer in the Colonial Orbital Marines for thirty years...but actually hundreds of years. Traveling through countless stars and participating in wars end up becoming a living legend with your mobile dragoon.
+
+        Comrades who joined in the same period as you were no longer there, died on the battlefield, from old age, or chose to stay in those colonial worlds during the colonization again and again.
+        And you, still driving your old-generation dragoons. Even if you know that the old will eventually leave and the new will come, you still feel reluctant to leave this mobile dragoon that has been with you for several years.
+
+        Everything may become obsolete in the innovations of time and technology. but whatever how no longer useful they were, they are still solid proof that you have come from the past to the present. the proof that you came from that harsh era. the proof that the past exists.
+
+        Finally, you decide to retire, at least leave a different story for this weapon, not only war, and death, and soon the approval report for your application is issued.
+      </description>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>DMSRC_PlayerRenegades</factionDef>
+      </playerFaction>
+      <parts>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <summarized>true</summarized>
+          <pawnChoiceCount>5</pawnChoiceCount>
+          <leftBehindPawnKind>DMSRC_OfficerHigh_Player</leftBehindPawnKind>
+          <kindCounts>
+            <li>
+              <kindDef>DMSRC_Thinker_Player</kindDef>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+            <li>
+              <kindDef>DMSRC_OfficerHigh_Player</kindDef>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+          </kindCounts>
+        </li>
+        <!-- Player starting stuff spawn method-->
+        <li Class="DMSRC.ScenPart_PlayerArrivesPrefab">
+          <def>DMSRC_PlayerArrivesNearPrefab</def>
+          <visible>false</visible>
+          <prefabOptions>
+            <li>
+              <def>DMSRC_ScenarioBase_1</def>
+              <clearRects>
+                <li>(4,4,14,14)</li>
+                <li>(18,4,28,14)</li>
+                <li>(4,18,14,28)</li>
+                <li>(18,18,28,28)</li>
+                <li>(10,10,22,22)</li>
+              </clearRects>
+              <roofRects>
+                <li>(4,4,14,14)</li>
+                <li>(18,4,28,14)</li>
+                <li>(4,18,14,28)</li>
+                <li>(18,18,28,28)</li>
+                <li>(10,10,22,22)</li>
+              </roofRects>
+              <spawnCells>
+                <li>(14,0,17)</li>
+                <li>(17,0,17)</li>
+              </spawnCells>
+              <requiredTags>
+                <li>DMSRC_Techroom</li>
+                <li>DMSRC_Mechroom</li>
+                <li>DMSRC_Bedroom</li>
+              </requiredTags>
+              <tagsMaxOnce>
+                <!--<li>DMSRC_Techroom</li>-->
+                <li>DMSRC_Mechroom</li>
+                <li>DMSRC_Bedroom</li>
+              </tagsMaxOnce>
+              <tag>DMSRC_Scenario</tag>
+            </li>
+          </prefabOptions>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_PDW</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentTransmitter</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>40</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentStamped</thingDef>
+          <count>25</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>20</count>
+        </li>
+
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Neuroglue</thingDef>
+          <count>24</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentSpacer</thingDef>
+          <count>4</count>
+        </li>
+
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMSRC_Mech_Malice</mechKind>
+          <overseenByPlayerPawnChance>0</overseenByPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMS_Mech_Soldat</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMS_Mech_Soldat</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMS_Mech_Arquebusier</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+
+        <li Class="ScenPart_DisableMapGen">
+          <def>DisableExostriderRemains</def>
+        </li>
+
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_EquipmentAdvanced</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_EquipmentBasis</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_Legion</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMSRC_NeuroChips</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMSRC_Firecrackers</project>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

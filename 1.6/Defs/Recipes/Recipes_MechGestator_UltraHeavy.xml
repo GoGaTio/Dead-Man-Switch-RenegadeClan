@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
+    <defName>DMSRC_Make_Malevolence</defName>
+    <label>Gestate Malevolence</label>
+    <description>Gestate a Malevolence Automatroid.</description>
+    <products>
+      <DMSRC_Mech_Malevolence>1</DMSRC_Mech_Malevolence>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>ComponentTransmitter</ThingDef>
+      <ThingDef>DMSRC_ProcessorCore</ThingDef>
+      <ThingDef>DMSRC_Mech_Malevolence</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisites>
+      <li>DMSRC_Overseer</li>
+    </researchPrerequisites>
+    <gestationCycles>12</gestationCycles>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>550</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasfiber</li>
+          </thingDefs>
+        </filter>
+        <count>70</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>225</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentTransmitter</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMSRC_ProcessorCore</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <AbilityDef>
+    <defName>DMSRC_EmergencyBattery</defName>
+    <label>emergency battery</label>
+    <description>Use the reserve battery to keep functioning a bit more.</description>
+    <iconPath>UI/Abilities/DMSRC_EmergencyBattery</iconPath>
+    <charges>1</charges>
+    <hostile>false</hostile>
+    <groupAbility>true</groupAbility>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>600000</cooldownTicksRange>
+    <aiCanUse>false</aiCanUse>
+    <ai_IsOffensive>false</ai_IsOffensive>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <warmupTime>0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <soundCast>ShieldMech_Start</soundCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="DMSRC.CompProperties_EmergencyBattery">
+        <amount>30</amount>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="DMS_AutomatroidTurretGun">
+    <defName>DMSRC_Gun_LinzaMount</defName>
+    <label>GL-9/B "Linza"</label>
+    <description>A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. Because of the health risks, grasers are usually only used by mechanoids. This one was made to interface directly with a mechanoid wielder and draw from its power source.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_BeamGun_Linza</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>20</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.9</AccuracyShort>
+      <AccuracyMedium>0.2</AccuracyMedium>
+      <AccuracyLong>0.05</AccuracyLong>
+      <RangedWeapon_Cooldown>1.10</RangedWeapon_Cooldown>
+      <MarketValue>2000</MarketValue>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>DMSRC.Verb_FocusedBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>2.3</warmupTime>
+        <showBurstShotStats>false</showBurstShotStats>
+        <range>41.9</range>
+        <minRange>2.9</minRange>
+        <beamFullWidthRange>11.9</beamFullWidthRange>
+        <burstShotCount>30</burstShotCount>
+        <beamWidth>10</beamWidth>
+        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+        <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <requireLineOfSight>false</requireLineOfSight>
+        <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.5</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="DMSRC.CompProperties_FocusedBeam">
+        <explosionDamage>10</explosionDamage>
+        <explosionRange>1.9</explosionRange>
+        <beamMoteDef>DMSRC_Mote_BeamLarge</beamMoteDef>
+        <damageDef>DMSRC_FocusedBeam</damageDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AutomatroidTurretGun">
+    <defName>DMSRC_Gun_SubjugatorAutoCannon</defName>
+    <label>Autocannon</label>
+    <description>A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. Because of the health risks, grasers are usually only used by mechanoids. This one was made to interface directly with a mechanoid wielder and draw from its power source.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>20</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.9</AccuracyShort>
+      <AccuracyMedium>0.2</AccuracyMedium>
+      <AccuracyLong>0.05</AccuracyLong>
+      <RangedWeapon_Cooldown>1.10</RangedWeapon_Cooldown>
+      <MarketValue>2000</MarketValue>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_AutoCannon</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>29.9</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>DMSRC_Shot_Firecracker</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <forcedMissRadius>3</forcedMissRadius>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMSRC_Bullet_AutoCannon</defName>
+    <label>howitzer shell</label>
+    <thingClass>Fortified.Projectile_ConeExplosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+    <projectile>
+      <speed>70</speed>
+      <damageDef>Bomb</damageDef>
+      <screenShakeFactor>0</screenShakeFactor>
+      <damageAmountBase>27</damageAmountBase>
+      <armorPenetrationBase>0.71</armorPenetrationBase>
+      <stoppingPower>8</stoppingPower>
+      <explosionRadius>1.4</explosionRadius>
+    </projectile>
+    <modExtensions>
+      <li Class="Fortified.ExplosiveExtension">
+        <damage>Bullet</damage>
+        <damageAmount>12</damageAmount>
+        <armorPen>0.1</armorPen>
+        <preExplosionOffset>4</preExplosionOffset>
+        <range>8</range>
+        <swayAngle>60</swayAngle>
+        <doVisualEffects>false</doVisualEffects>
+        <sound>Explosion_Rocket</sound>
+        <effecterDef>DMS_ConeExplosion</effecterDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AutomatroidTurretGun">
+    <defName>DMSRC_FirecrackerMounted</defName>
+    <label>Mounted FSR launcher</label>
+    <description>A Supressive weapon chambered in pistol rounds.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it.</description>
+    <graphicData>
+      <texPath>Things/Turrets/DMS_Gun_LMG</texPath>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.9</AccuracyShort>
+      <AccuracyMedium>0.3</AccuracyMedium>
+      <AccuracyLong>0.2</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_Firecracker_Heavy</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>29.9</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>DMSRC_Shot_Firecracker</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+</Defs>

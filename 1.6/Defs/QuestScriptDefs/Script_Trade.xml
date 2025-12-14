@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--<QuestScriptDef>
+    <defName>DMSRC_ContainerTrade</defName>
+    <rootMinPoints>0</rootMinPoints>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <sendAvailableLetter>false</sendAvailableLetter>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[containerAdjective] [containerNoun]</li>
+        <li>containerAdjective->Valuable</li>
+        <li>containerAdjective->Important</li>
+        <li>containerAdjective->Forgotten</li>
+        <li>containerAdjective->Hidden</li>
+        <li>containerAdjective->Secret</li>
+        <li>containerAdjective->Prepared</li>
+        <li>containerAdjective->Sealed</li>
+        <li>containerNoun->crate</li>
+        <li>containerNoun->container</li>
+        <li>containerNoun->cargo</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->You have decrypted a transponder, revealing the location of a sealed security container with valuable loot.</li>
+
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <sitePartsTags>
+            <li><tag>DMSRC_ContainerRenegadeTrade</tag></li>
+          </sitePartsTags>
+        </li>
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$faction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <siteFaction>$faction</siteFaction>
+          </parms>
+        </li>
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+        <li Class="QuestNode_Letter">
+          <label TKey="DMSRC_LetterLabelContainerTrade">[resolvedQuestName]</label>
+          <letterDef>PositiveEvent</letterDef>
+          <text TKey="DMSRC_LetterTextContainerTrade">You have decrypted a transponder, revealing the location of a sealed security container with valuable loot.</text>
+        </li>
+
+        <li Class="QuestNode_SignalActivable">
+          <inSignal>site.MapRemoved</inSignal>
+          <inSignalEnable>site.MapGenerated</inSignalEnable>
+          <node Class="QuestNode_End">
+            <outcome>Success</outcome>
+          </node>
+        </li>
+      </nodes>
+    </root>
+    
+  </QuestScriptDef>-->
+
+</Defs>

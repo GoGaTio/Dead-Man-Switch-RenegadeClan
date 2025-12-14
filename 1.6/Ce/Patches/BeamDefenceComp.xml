@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher" or defName="DMSRC_BeamDefence" or defName="DMSRC_BeamDefencePack"]/comps/li[@Class="DMSRC.CompProperties_BeamDefence"]/intercepts</xpath>
+		<value>
+		     <li>
+		       <type>CombatExtended.BulletCE</type>
+		     </li>
+		     <li>
+		       <type>CombatExtended.ProjectileCE_Bursting</type>
+		     </li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMSRC_BeamDefence"]/comps/li[@Class="DMSRC.CompProperties_BeamDefence"]/intercepts</xpath>
+		<value>
+          <li>
+		       <type>CombatExtended.ProjectileCE_Explosive</type>
+		     </li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher" or defName="DMSRC_BeamDefencePack"]/comps/li[@Class="DMSRC.CompProperties_BeamDefence"]/intercepts</xpath>
+		<value>
+          <li>
+		       <type>CombatExtended.ProjectileCE_Explosive</type>
+		       <maxExplosionRadius>2.1</maxExplosionRadius>
+		     </li>
+		</value>
+	</Operation>
+
+</Patch>

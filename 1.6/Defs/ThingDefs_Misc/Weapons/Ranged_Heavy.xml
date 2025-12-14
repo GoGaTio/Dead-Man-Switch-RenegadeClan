@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun">
+    <defName>DMSRC_FirecrackerMachineGun</defName>
+    <label>FSR Heavy repeater</label>
+    <description>An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis version has underbarrel grenade launcher, that allows to launch frag grenade once before reloading.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+      <li>Ranged</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>DMSRC_HeavyFirecracker</li>
+      <li>DMS_DragoonGun</li>
+      <li>DMS_MechWeaponHeavy</li>
+      <li>A_SuppressWeaponHeavy</li>
+      <li>DMS_VehicleWeapon</li>
+    </weaponTags>
+    <generateCommonality>0.3</generateCommonality>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_FirecrackerMG</texPath>
+      <drawSize>2.25</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>85000</WorkToMake>
+      <Mass>5.75</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.40</AccuracyShort>
+      <AccuracyMedium>0.25</AccuracyMedium>
+      <AccuracyLong>0.10</AccuracyLong>
+      <RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>DMSRC_Firecrackers</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <costList>
+      <Tungsteel>85</Tungsteel>
+      <ComponentStamped>7</ComponentStamped>
+      <ComponentSpacer>2</ComponentSpacer>
+      <DMS_Ceramics>45</DMS_Ceramics>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_Firecracker_Medium</defaultProjectile>
+        <warmupTime>2.3</warmupTime>
+        <range>39.9</range>
+        <burstShotCount>10</burstShotCount>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <soundCast>DMSRC_Shot_Firecracker</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>HeavyAutomatroid</EquippableDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

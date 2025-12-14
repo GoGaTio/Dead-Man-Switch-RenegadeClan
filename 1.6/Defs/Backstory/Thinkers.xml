@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>DMSRC_Thinker1</defName>
+    <title>thinker</title>
+    <titleShort>thinker</titleShort>
+    <description>[PAWN_nameDef] became an adult in our colony. [PAWN_possessive] story is still being written.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+        <li>DMSRC_Thinker</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <skillGains>
+      <Melee>4</Melee>
+      <Shooting>4</Shooting>
+    </skillGains>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMSRC_Thinker2</defName>
+    <title>inhumane one</title>
+    <titleShort>inhumane</titleShort>
+    <description>[PAWN_nameDef] became an adult in our colony. [PAWN_possessive] story is still being written.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+        <li>DMSRC_Thinker</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <skillGains>
+      <Melee>4</Melee>
+      <Shooting>4</Shooting>
+    </skillGains>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>DMSRC_Thinker3</defName>
+    <title>human computer</title>
+    <titleShort>computer</titleShort>
+    <description>[PAWN_nameDef] became an adult in our colony. [PAWN_possessive] story is still being written.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+        <li>DMSRC_Thinker</li>
+    </spawnCategories>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <skillGains>
+      <Melee>4</Melee>
+      <Shooting>4</Shooting>
+    </skillGains>
+  </BackstoryDef>
+
+</Defs>

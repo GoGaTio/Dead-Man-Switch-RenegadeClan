@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>DMSRC_ControlMech</defName>
+    <driverClass>DMSRC.JobDriver_ControlMech</driverClass>
+    <reportString>taking control of TargetA.</reportString>
+  </JobDef>
+  
+  <JobDef>
+    <defName>DMSRC_RepairMech</defName>
+    <driverClass>DMSRC.JobDriver_RepairMech</driverClass>
+    <reportString>repairing TargetA.</reportString>
+  </JobDef>
+  
+  <JobDef>
+    <defName>DMSRC_OpenContainer</defName>
+    <driverClass>DMSRC.JobDriver_OpenContainer</driverClass>
+    <reportString>opening TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>DMSRC_TalkToRenegades</defName>
+    <driverClass>DMSRC.JobDriver_TalkToRenegades</driverClass>
+    <reportString>using TargetA.</reportString>
+  </JobDef>
+  
+</Defs>

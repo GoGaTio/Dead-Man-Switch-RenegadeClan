@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationConditional">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[defName = "DMS_Mech_Jaeger"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName = "DMS_Mech_Jaeger"]</xpath>
+      <value>
+        <comps>
+          <li Class="Fortified.CompProperties_Camouflage">
+            <ticksUntilRecover>1200</ticksUntilRecover>
+            <detectedLetterLabel>Jaeger revealed</detectedLetterLabel>
+            <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
+            <detectedMessage>A jaeger has appeared!</detectedMessage>
+            <baseDetectRange>10</baseDetectRange>
+            <texPath>UI/Ability/Camouflage</texPath>
+            <commandKey>DMSRC_Saboteur</commandKey>
+          </li>
+        </comps>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName = "DMS_Mech_Jaeger"]/comps</xpath>
+      <value>
+        <li Class="Fortified.CompProperties_Camouflage">
+          <ticksUntilRecover>1200</ticksUntilRecover>
+          <detectedLetterLabel>Jaeger revealed</detectedLetterLabel>
+          <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
+          <detectedMessage>A jaeger has appeared!</detectedMessage>
+          <baseDetectRange>10</baseDetectRange>
+          <texPath>UI/Ability/Camouflage</texPath>
+          <commandKey>DMSRC_Saboteur</commandKey>
+        </li>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/PawnKindDef[defName="DMS_Mech_Jaeger"]/abilities/li[text() = "DMS_Camouflage"]</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[defName = "DMS_Mech_Noctula"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName = "DMS_Mech_Noctula"]</xpath>
+      <value>
+        <comps>
+          <li Class="Fortified.CompProperties_Camouflage">
+            <ticksUntilRecover>1200</ticksUntilRecover>
+            <detectedLetterLabel>Noctula revealed</detectedLetterLabel>
+            <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
+            <detectedMessage>A noctula has appeared!</detectedMessage>
+            <baseDetectRange>10</baseDetectRange>
+            <texPath>UI/Ability/Camouflage</texPath>
+            <commandKey>DMSRC_Saboteur</commandKey>
+          </li>
+        </comps>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName = "DMS_Mech_Noctula"]/comps</xpath>
+      <value>
+        <li Class="Fortified.CompProperties_Camouflage">
+          <ticksUntilRecover>1200</ticksUntilRecover>
+          <detectedLetterLabel>Noctula revealed</detectedLetterLabel>
+          <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
+          <detectedMessage>A noctula has appeared!</detectedMessage>
+          <baseDetectRange>10</baseDetectRange>
+          <texPath>UI/Ability/Camouflage</texPath>
+          <commandKey>DMSRC_Saboteur</commandKey>
+        </li>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/PawnKindDef[defName="DMS_Mech_Noctula"]/abilities/li[text() = "DMS_Camouflage"]</xpath>
+  </Operation>
+
+</Patch>

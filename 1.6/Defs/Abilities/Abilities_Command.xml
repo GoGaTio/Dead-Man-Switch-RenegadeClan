@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityDef Abstract="True" Name="DMSRC_MechCommandAbility">
+    <hostile>false</hostile>
+    <groupAbility>true</groupAbility>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <showOnCharacterCard>false</showOnCharacterCard>
+    <statBases>
+      <Ability_Duration>30000</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0</warmupTime>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <HediffDef Abstract="True" Name="DMSRC_MechCommandHediff">
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.85, 0.9, 0.45)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>25000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+    </comps>
+  </HediffDef>
+
+
+  <AbilityDef ParentName="DMSRC_MechCommandAbility">
+    <defName>DMSRC_HipparchCommand</defName>
+    <label>hipparch command</label>
+    <description>Connect with nearby mechanoids to share combat data and tactics.</description>
+    <!--<iconPath>UI/Abilities/MU_ShieldBoost</iconPath>-->
+    <groupDef>DMSRC_Overseer</groupDef>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <statBases>
+      <Ability_EffectRadius>7.9</Ability_EffectRadius>
+      <Ability_Duration>30000</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <range>7.9</range>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>DMSRC_HipparchCommand</hediffDef>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="DMSRC_MechCommandHediff">
+    <defName>DMSRC_HipparchCommand</defName>
+    <label>hipparch command</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>This mechanoid shield is boosted by overcharge of core casing.\n\nThe boost makes shield much more durable, but also consumes energy and requires components for another use.</description>
+    <comps>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <compClass>Fortified.HediffComp_GiveHediffsInRangeMech</compClass>
+        <hediff>DMSRC_HipparchCommand_Other</hediff>
+        <range>7.9</range>
+        <onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetSelf>false</canTargetSelf>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetHumans>false</canTargetHumans>
+          <canTargetMechs>true</canTargetMechs>
+        </targetingParameters>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MechEnergyUsageFactor>2</MechEnergyUsageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="DMSRC_MechCommandHediff">
+    <defName>DMSRC_HipparchCommand_Other</defName>
+    <label>hipparch command</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>This mechanoid shield is boosted by overcharge of core casing.\n\nThe boost makes shield much more durable, but also consumes energy and requires components for another use.</description>
+    <comps>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>10</maxDistance>
+        <customMote>Mote_CombatCommandLinkLine</customMote>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+          <MeleeHitChance>3</MeleeHitChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <AbilityDef ParentName="DMSRC_MechCommandAbility">
+    <defName>DMSRC_MechCommand</defName>
+    <label>mech command</label>
+    <description>Connect with nearby mechanoids to share combat data and tactics.</description>
+    <!--<iconPath>UI/Abilities/MU_ShieldBoost</iconPath>-->
+    <groupDef>DMSRC_Overseer</groupDef>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <statBases>
+      <Ability_EffectRadius>7.9</Ability_EffectRadius>
+      <Ability_Duration>30000</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <range>7.9</range>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>DMSRC_MechCommand</hediffDef>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="DMSRC_MechCommandHediff">
+    <defName>DMSRC_MechCommand</defName>
+    <label>mech command</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>This mechanoid shield is boosted by overcharge of core casing.\n\nThe boost makes shield much more durable, but also consumes energy and requires components for another use.</description>
+    <comps>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <compClass>Fortified.HediffComp_GiveHediffsInRangeMech</compClass>
+        <hediff>DMSRC_RangedBuff</hediff>
+        <range>7.9</range>
+        <onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetSelf>false</canTargetSelf>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetHumans>false</canTargetHumans>
+          <canTargetMechs>true</canTargetMechs>
+        </targetingParameters>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MechEnergyUsageFactor>4</MechEnergyUsageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="DMSRC_MechCommandHediff">
+    <defName>DMSRC_RangedBuff</defName>
+    <label>shield boost</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>This mechanoid shield is boosted by overcharge of core casing.\n\nThe boost makes shield much more durable, but also consumes energy and requires components for another use.</description>
+    <comps>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>10</maxDistance>
+        <customMote>Mote_CombatCommandLinkLine</customMote>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+          <MeleeHitChance>3</MeleeHitChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+</Defs>

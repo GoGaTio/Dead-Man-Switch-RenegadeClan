@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="MoteBase" Name="DMSRCBeamMote">
+    <defName>DMSRC_Mote_Beam</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Mote/DMSRC_FocusedBeam</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/DMSRC_BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/DMSRC_BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>-4 </_ScrollSpeedA>
+        <_ScrollSpeedB>3</_ScrollSpeedB>
+        <_Intensity>2</_Intensity>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRCBeamMote">
+    <defName>DMSRC_Mote_BeamUnmaintained</defName>
+    <mote>
+      <solidTime>0.1</solidTime>
+      <needsMaintenance>false</needsMaintenance>
+      <fadeOutUnmaintained>false</fadeOutUnmaintained>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRCBeamMote">
+    <defName>DMSRC_Mote_BeamLarge</defName>
+    <graphicData>
+      <drawSize>(1.5, 1)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>DMSRC_Mote_BeamDefence</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Mote/DMSRC_FocusedBeam</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/DMSRC_BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/DMSRC_BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>-4 </_ScrollSpeedA>
+        <_ScrollSpeedB>3</_ScrollSpeedB>
+        <_Intensity>2</_Intensity>
+      </shaderParameters>
+      <drawSize>(0.7, 1)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

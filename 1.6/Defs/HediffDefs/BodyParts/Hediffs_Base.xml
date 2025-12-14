@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>DMSRC_BodyPartsNeural</defName>
+    <label>neurotech</label>
+    <parent>BodyParts</parent>
+  </ThingCategoryDef>
+
+  <ThingDef Abstract="True" Name="DMSRC_NeuroChipBase">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <techLevel>Spacer</techLevel>
+    <useHitPoints>true</useHitPoints>
+    <pathCost>14</pathCost>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Never</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <thingCategories>
+      <li>DMSRC_BodyPartsNeural</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <Mass>0.015</Mass>
+      <MarketValue>1200</MarketValue>
+      <DeteriorationRate>5</DeteriorationRate>
+      <WorkToMake>3200</WorkToMake>
+      <MaxInstallCount>5</MaxInstallCount>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(107,101,113)</color>
+    </graphicData>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>DMSRC_NeuroChips</researchPrerequisite>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+    <tradeTags>
+      <li>DMSRC_Neural</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="DMSRC_HighNeuroChipBase" ParentName="DMSRC_NeuroChipBase">
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <Mass>0.015</Mass>
+      <MarketValue>1200</MarketValue>
+      <DeteriorationRate>5</DeteriorationRate>
+      <WorkToMake>3200</WorkToMake>
+      <MaxInstallCount>5</MaxInstallCount>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>DMSRC_HighNeuroChips</researchPrerequisite>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+
+  <HediffDef Abstract="True" Name="DMSRC_ChipHediffBase" >
+    <hediffClass>DMSRC.Hediff_NeuroChip</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <priceImpact>true</priceImpact>
+    <initialSeverity>1</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>10</maxSeverity>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <levelIsQuantity>true</levelIsQuantity>
+    <defaultInstallPart>Brain</defaultInstallPart>
+    <duplicationAllowed>false</duplicationAllowed>
+  </HediffDef>
+
+</Defs>

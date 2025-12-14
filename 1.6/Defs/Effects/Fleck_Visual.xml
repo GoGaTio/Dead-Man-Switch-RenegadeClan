@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>DMSRC_PerimeterScannerFlare</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareA</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/LensFlares/LensFlareC</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <color>(1, 0, 0, 0.8)</color>
+        <drawSize>4</drawSize>
+      </li>
+    </randomGraphics>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase">
+    <defName>DMSRC_PerimeterScannerGem</defName>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>.1</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Building/DMSRC_PerimeterScannerAlert</texPath>
+      <shaderType>Mote</shaderType>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>DMSRC_Beam_Glow</defName>
+    <altitudeLayer>LightingOverlay</altitudeLayer>
+    <fadeInTime>0.01</fadeInTime>
+    <solidTime>0.105</solidTime>
+    <fadeOutTime>0.04</fadeOutTime>
+    <graphicData>
+      <graphicClass>Graphic_Fleck</graphicClass>
+      <texPath>Things/Mote/DMSRC_BeamGlow</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>6</drawSize>
+      <color>(1, 1, 1, 0.75)</color>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>DMSRC_Fleck_SparkSmoke</defName>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>.1</solidTime>
+    <fadeOutTime>.65</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>4</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <shaderType>Transparent</shaderType>
+      <drawSize>1</drawSize>
+      <color>(.47, .47, .47, .8)</color>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>DMSRC_Fleck_SparksFast</defName>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0.15</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>-1.5</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Sparks/DMSRC_SparkA</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <drawSize>1</drawSize>
+        <color>(1, .87, .8, 1)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Sparks/DMSRC_SparkB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <drawSize>1</drawSize>
+        <color>(1, .95, .8, 1)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Sparks/DMSRC_SparkC</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <drawSize>1</drawSize>
+        <color>(1, .9, .8, 1)</color>
+      </li>
+    </randomGraphics>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>DMSRC_Fleck_Sparks</defName>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>0.7</solidTime>
+    <fadeOutTime>0</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <growthRate>-.8</growthRate>
+    <randomGraphics>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Sparks/DMSRC_SparkA</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <drawSize>1</drawSize>
+        <color>(1, .87, .8, 1)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Sparks/DMSRC_SparkB</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <drawSize>1</drawSize>
+        <color>(1, .95, .8, 1)</color>
+      </li>
+      <li>
+        <graphicClass>Graphic_Fleck</graphicClass>
+        <texPath>Things/Mote/Sparks/DMSRC_SparkC</texPath>
+        <shaderType>MoteGlow</shaderType>
+        <drawSize>1</drawSize>
+        <color>(1, .9, .8, 1)</color>
+      </li>
+    </randomGraphics>
+    <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+  </FleckDef>
+
+</Defs>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_ProcessorCore</defName>
+    <label>processor core</label>
+    <description>An array of advanced processors, designed to function as control block and AI core.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_ProcessorCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <descriptionHyperlinks>
+      <ResearchProjectDef>DMSRC_Overseer</ResearchProjectDef>
+    </descriptionHyperlinks>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>25</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <RoyalFavorValue>3</RoyalFavorValue>
+      <MaxHitPoints>15</MaxHitPoints>
+      <MarketValue>5100</MarketValue>
+      <Mass>7</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>5</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <isTechHediff>true</isTechHediff>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>1581198271</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Processor core studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the processor core, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the processor core</activateDescString>
+        <jobString>Analyze the processor core</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_ComponentGBEP</defName>
+    <label>gamma beam emissive platform</label>
+    <description>A device that produces a coherent gamma beam. Cannot be replicated on low-tech worlds as it requires Unocttrium for emitter element.</description>
+    <possessionCount>2</possessionCount>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_ComponentGBEP</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>25</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <RoyalFavorValue>1</RoyalFavorValue>
+      <MaxHitPoints>150</MaxHitPoints>
+      <MarketValue>950</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>20</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <isTechHediff>true</isTechHediff>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>1581198272</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Gamma beam emissive platform studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the gamma beam emissive platform, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the gamma beam emissive platform</activateDescString>
+        <jobString>Analyze the gamma beam emissive platform</jobString>
+        <guiLabelString>Choose who should analyze this.</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+
+</Defs>

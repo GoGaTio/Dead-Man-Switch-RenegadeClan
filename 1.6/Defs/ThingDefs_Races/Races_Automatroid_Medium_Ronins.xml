@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BaseAutomatroidHumanRace">
+    <defName>DMSRC_Mech_Saboteur</defName>
+    <label>saboteur</label>
+    <description>Variant of the Ronin specialized in stealth operations and surprise attacks. The Saboteur has active camouflage device and improved manipulators that allows to open almost any door.</description>
+    <statBases>
+      <MoveSpeed>5</MoveSpeed>
+      <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.2</ArmorRating_Heat>
+      <MeleeDodgeChance>9</MeleeDodgeChance>
+      <MeleeHitChance>4</MeleeHitChance>
+      <MeleeCooldownFactor>0.9</MeleeCooldownFactor>
+      <!--<MeleeDamageFactor>1.25</MeleeDamageFactor> Too powerful for sightstealer guy-->
+      <BandwidthCost>3</BandwidthCost>
+      <WastepacksPerRecharge>2</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Humanoid_TypeB</body>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>1.32</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_Camouflage">
+        <ticksUntilRecover>1200</ticksUntilRecover><!-- 15 seconds -->
+        <detectedLetterLabel>Saboteur revealed</detectedLetterLabel>
+        <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
+        <detectedMessage>A saboteur has appeared!</detectedMessage>
+        <texPath>UI/Ability/Camouflage</texPath>
+        <commandKey>DMSRC_Saboteur</commandKey>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>ShortShots</li>
+          <li>DMS_MechWeaponShotgun</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_AR_LongRifle</li>
+          <li>MedievalMeleeBasic</li>
+          <li>MedievalMeleeAdvanced</li>
+          <li>DMS_MeleeWeapon</li>
+          <li>AssaultRifle</li>
+          <li>Minigun</li>
+          <li>V_Gatling556mm</li>
+          <li>A_AP</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Medieval</li>
+          <li>Industrial</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons/>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMSRC_Mech_Saboteur</defName>
+    <label>saboteur</label>
+    <race>DMSRC_Mech_Saboteur</race>
+    <isFighter>true</isFighter>
+    <combatPower>210</combatPower>
+    <immuneToTraps>true</immuneToTraps>
+    <canOpenAnyDoor>true</canOpenAnyDoor>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/DMSRC_Saboteur</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/DMSRC_Saboteur</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>A_Cut_Melee</li>
+    </weaponTags>
+    <startingHediffs>
+      <li>
+        <def>FFF_Camouflage</def>
+      </li>
+    </startingHediffs>
+    <!--<abilities>
+      <li>DMSRC_PlantBomb</li>
+    </abilities>-->
+  </PawnKindDef>
+
+  <ThingDef ParentName="BaseAutomatroidHumanRace">
+    <defName>DMSRC_Mech_Stancher</defName>
+    <label>stancher</label>
+    <description>Variant of the Ronin with improved armor and beam defence devive that allows to intercept incoming bullets and other projectiles.</description>
+    <statBases>
+      <MoveSpeed>5</MoveSpeed>
+      <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <MeleeDodgeChance>10</MeleeDodgeChance>
+      <MeleeHitChance>3</MeleeHitChance>
+      <BandwidthCost>3</BandwidthCost>
+      <WastepacksPerRecharge>2</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Humanoid_TypeB</body>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>1.32</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+    </race>
+    <comps>
+      <li Class="DMSRC.CompProperties_BeamDefence">
+        <range>6.9</range>
+        <mote>DMSRC_Mote_BeamDefence</mote>
+        <interceptSameFaction>false</interceptSameFaction>
+        <barColor>(0.7, 0.1, 0.7)</barColor>
+        <barColorAlt>(0.25, 0.05, 0.25)</barColorAlt>
+        <chargeRegenInterval>150</chargeRegenInterval>
+        <inactiveRegenOffset>90</inactiveRegenOffset>
+        <chargeLossPerIntercept>5</chargeLossPerIntercept>
+        <delay>12</delay>
+        <interceptSound>BeamGraser_Shooting_Resolve</interceptSound>
+        <intercepts>
+          <li>
+            <type>Bullet</type>
+          </li>
+          <li>
+            <type>FireArrow</type>
+          </li>
+          <li>
+            <type>Projectile_Explosive</type>
+            <maxExplosionRadius>2.1</maxExplosionRadius>
+          </li>
+        </intercepts>
+        <useDynamicOffsets>true</useDynamicOffsets>
+        <offsetSouth>
+          <li>(0.45, 0, 0.3)</li>
+          <li>(-0.45, 0, 0.3)</li>
+        </offsetSouth>
+        <offsetNorth>
+          <li>(0.45, 0, 0.05)</li>
+          <li>(-0.45, 0, 0.05)</li>
+        </offsetNorth>
+        <offsetWest>
+          <li>(0.25, 0, -0.05)</li>
+        </offsetWest>
+        <offsetEast>
+          <li>(-0.25, 0, -0.05)</li>
+        </offsetEast>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>SimpleGun</li>
+          <li>ShortShots</li>
+          <li>DMS_MechWeaponShotgun</li>
+          <li>DMS_MechWeaponLight</li>
+          <li>A_AR_LongRifle</li>
+          <li>MedievalMeleeBasic</li>
+          <li>MedievalMeleeAdvanced</li>
+          <li>DMS_MeleeWeapon</li>
+          <li>UltratechMelee</li>
+          <li>A_AP</li>
+        </UsableWeaponTags>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Medieval</li>
+          <li>Industrial</li>
+          <li>Spacer</li>
+          <li>Ultra</li>
+        </UsableTechLevels>
+        <BypassUsableWeapons/>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMSRC_Mech_Stancher</defName>
+    <label>stancher</label>
+    <race>DMSRC_Mech_Stancher</race>
+    <isFighter>true</isFighter>
+    <combatPower>270</combatPower>
+    <immuneToTraps>true</immuneToTraps>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/DMSRC_Stancher</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/DMSRC_Stancher</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>A_SG_LongRifle</li>
+      <li>A_PDW</li>
+      <li>A_AP</li>
+      <li>DMSRC_BeamGraserGun</li>
+    </weaponTags>
+  </PawnKindDef>
+
+</Defs>

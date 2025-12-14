@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef>
+    <defName>DMSRC_InactiveMech</defName>
+    <label>inactive automatroid</label>
+    <description>A chunk of a spacecraft. It seems to have been torn off either by uncontrolled re-entry forces or some kind of weapon.\n\nHaving landed not long ago, it still contains useful resources which you can acquire by deconstructing it.</description>
+    <category>Building</category>
+    <thingClass>DMSRC.InactiveMech</thingClass>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <pathCost>42</pathCost>
+    <blockWind>false</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.50</fillPercent>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+    </building>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <selectable>true</selectable>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>RealtimeOnly</drawerType>
+    <comps>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Deconstruct for valuable resources.</inspectString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_LargeBroadcastAntenna</defName>
+    <label>central command core</label>
+    <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LargeBroadcastAntenna</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(10,10)</drawSize>
+      <shadowData>
+        <volume>(5.03,1.0,4.25)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/CentralCommandCore</uiIconPath>
+    <size>(5,5)</size>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>1</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>3000</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Steel>800</Steel>
+      <Tungsteel>450</Tungsteel>
+      <Neurocomputer>8</Neurocomputer>
+      <ComponentControlChip>1</ComponentControlChip>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>false</ai_chillDestination>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>GeothermalPlant_Ambience</sound>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef Abstract="True" Name="DMSRC_ContainerBase" ParentName="BuildingBase">
+    <label>security container</label>
+    <description>A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted.</description>
+    <thingClass>DMSRC.Building_SecurityContainer</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5, 5)</drawSize>
+      <drawOffset>(0, 0, 0)</drawOffset>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <size>(3,3)</size>
+    <pathCost>65</pathCost>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.6</fillPercent>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <canOverlapZones>false</canOverlapZones>
+    <building>
+      <ai_chillDestination>true</ai_chillDestination>
+      <paintable>false</paintable>
+    </building>
+    <statBases>
+      <WorkToBuild>75000</WorkToBuild>
+      <MaxHitPoints>1500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+    </statBases>
+    <inspectorTabs>
+      <li>DMSRC.ITab_ContentsSecurityContainer</li>
+    </inspectorTabs>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <staticSunShadowHeight>0.4</staticSunShadowHeight>
+  </ThingDef>
+
+  <ThingDef Abstract="True" ParentName="DMSRC_ContainerBase" Name="DMSRC_NaraContainerBase">
+    <label>security container</label>
+    <placeWorkers>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>6000</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>2~4</lockoutDurationHoursRange>
+        <notHackedInspectString>Hack to open.</notHackedInspectString>
+        <hackedInspectString>Opened.</hackedInspectString>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+        <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_NaraContainerBase">
+    <defName>DMSRC_SecurityContainer_NaraRed</defName>
+    <graphicData>
+      <texPath>Things/Building/Containers/DMSRC_ContainerNaraRed</texPath>
+    </graphicData>
+    <comps>
+      <li Class="DMSRC.CompProperties_SecurityContainer">
+        <defaultLoot>DMSRC_SecurityContainer_NaraRed</defaultLoot>
+        <faction>DMS_Army</faction>
+        <graphicData>
+          <texPath>Things/Building/Containers/DMSRC_ContainerOpen</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(5, 5)</drawSize>
+        </graphicData>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_NaraContainerBase">
+    <defName>DMSRC_SecurityContainer_NaraBlue</defName>
+    <graphicData>
+      <texPath>Things/Building/Containers/DMSRC_ContainerNaraBlue</texPath>
+    </graphicData>
+    <comps>
+      <li Class="DMSRC.CompProperties_SecurityContainer">
+        <defaultLoot>DMSRC_SecurityContainer_NaraBlue</defaultLoot>
+        <faction>DMS_Army</faction>
+        <graphicData>
+          <texPath>Things/Building/Containers/DMSRC_ContainerOpen</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(5, 5)</drawSize>
+        </graphicData>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_NaraContainerBase">
+    <defName>DMSRC_SecurityContainer_NaraGreen</defName>
+    <graphicData>
+      <texPath>Things/Building/Containers/DMSRC_ContainerNaraGreen</texPath>
+    </graphicData>
+    <comps>
+      <li Class="DMSRC.CompProperties_SecurityContainer">
+        <defaultLoot>DMSRC_SecurityContainer_NaraGreen</defaultLoot>
+        <faction>DMS_Army</faction>
+        <graphicData>
+          <texPath>Things/Building/Containers/DMSRC_ContainerOpen</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(5, 5)</drawSize>
+        </graphicData>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_ContainerBase">
+    <defName>DMSRC_SecurityContainer_Renegades</defName>
+    <graphicData>
+      <texPath>Things/Building/Containers/DMSRC_ContainerNaraGreen</texPath>
+    </graphicData>
+    <comps>
+      <li Class="DMSRC.CompProperties_SecurityContainer">
+        <graphicData>
+          <texPath>Things/Building/Containers/DMSRC_ContainerOpen</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(5, 5)</drawSize>
+        </graphicData>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

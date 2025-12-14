@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <BodyPartGroupDef>
+    <defName>DMSRC_LeftArmoredLeg</defName>
+    <label>front left leg</label>
+    <labelShort>leg</labelShort>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>DMSRC_RightArmoredLeg</defName>
+    <label>front right leg</label>
+    <labelShort>leg</labelShort>
+  </BodyPartGroupDef>
+
+</Defs>
