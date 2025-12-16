@@ -109,7 +109,7 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Automatroid/DMSRC_Hipparch</texPath>
+          <texPath>Things/Automatroid/DMSRC_Malice</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.3</drawSize>
@@ -117,7 +117,7 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Automatroid/OldTexture/DMSRC_Hipparch</texPath>
+          <texPath>Things/Automatroid/OldTexture/DMSRC_Malice</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.3</drawSize>
@@ -134,7 +134,6 @@
       <li>A_DMR_LongRifle</li>
     </weaponTags>
     <abilities>
-      <li>DMSRC_HipparchCommand</li>
       <li>DMSRC_EmergencyBattery</li>
     </abilities>
     <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>

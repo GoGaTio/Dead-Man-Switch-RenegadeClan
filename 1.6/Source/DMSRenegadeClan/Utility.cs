@@ -373,6 +373,26 @@ namespace DMSRC
                 return defs;
             }
         }
+
+        public static RPrefabDef GetByTag(string tag)
+        {
+            if(Defs.TryRandomElement((x) => x.tags.Contains(tag), out var result))
+            {
+                return result;
+            }
+            return null;
+        }
+
+		public static bool TryGetByTag(string tag, out RPrefabDef result)
+		{
+            result = null;
+			if (Defs.TryRandomElement((x) => x.tags.Contains(tag), out result))
+			{
+				return true;
+			}
+			return false;
+		}
+
 		public static CellRect Clear(this CellRect rect, Map map)
         {
 			Thing.allowDestroyNonDestroyable = true;

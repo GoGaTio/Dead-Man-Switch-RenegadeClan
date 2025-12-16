@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ContainerNara_Red</defName>
+    <size>(3,3)</size>
+    <tags>
+      <li>ContainerNara</li>
+    </tags>
+    <clearRects>
+      <li>(0,0,2,2)</li>
+    </clearRects>
+    <things>
+      <DMSRC_SecurityContainer_NaraRed>
+        <position>(1, 0, 1)</position>
+      </DMSRC_SecurityContainer_NaraRed>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ContainerNara_Blue</defName>
+    <size>(3,3)</size>
+    <tags>
+      <li>ContainerNara</li>
+    </tags>
+    <clearRects>
+      <li>(0,0,2,2)</li>
+    </clearRects>
+    <things>
+      <DMSRC_SecurityContainer_NaraBlue>
+        <position>(1, 0, 1)</position>
+      </DMSRC_SecurityContainer_NaraBlue>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ContainerNara_Green</defName>
+    <size>(3,3)</size>
+    <tags>
+      <li>ContainerNara</li>
+    </tags>
+    <clearRects>
+      <li>(0,0,2,2)</li>
+    </clearRects>
+    <things>
+      <DMSRC_SecurityContainer_NaraGreen>
+        <position>(1, 0, 1)</position>
+      </DMSRC_SecurityContainer_NaraGreen>
+    </things>
+  </DMSRC.RPrefabDef>
+
+</Defs>

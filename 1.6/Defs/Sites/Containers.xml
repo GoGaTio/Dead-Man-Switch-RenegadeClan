@@ -2,7 +2,7 @@
 <Defs>
 
   <SitePartDef>
-    <defName>DMSRC_AntennaPoint</defName>
+    <defName>DMSRC_ContainerNara</defName>
     <label>container</label>
     <description>A container with valuable items.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
@@ -10,18 +10,16 @@
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
     <tags>
-      <li>DMSRC_AntennaPoint</li>
+      <li>DMSRC_ContainerNara</li>
     </tags>
   </SitePartDef>
 
   <GenStepDef>
-    <defName>DMSRC_AntennaPoint</defName>
-    <linkWithSite>DMSRC_AntennaPoint</linkWithSite>
+    <defName>DMSRC_ContainerNara</defName>
+    <linkWithSite>DMSRC_ContainerNara</linkWithSite>
     <order>1460</order>
     <genStep Class="DMSRC.GenStep_RPrefab">
-      <prefabs>
-        <li>DMSRC_BroadcastPoint_2</li>
-      </prefabs>
+      <tag>ContainerNara</tag>
     </genStep>
   </GenStepDef>
 

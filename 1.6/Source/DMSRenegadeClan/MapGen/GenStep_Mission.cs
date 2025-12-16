@@ -60,6 +60,8 @@ namespace DMSRC
 	{
 		public List<RPrefabDef> prefabs;
 
+		public string tag;
+
 		public bool useStaticPrefab = false;
 
 		public static RPrefabDef staticPrefab;
@@ -73,6 +75,10 @@ namespace DMSRC
 			if (useStaticPrefab)
 			{
 				staticPrefab.Generate(center, rot, map, faction);
+			}
+			else if (!tag.NullOrEmpty() && RPrefabUtility.TryGetByTag(tag, out var result))
+			{
+				result.Generate(center, rot, map, faction);
 			}
 			else prefabs.RandomElement().Generate(center, rot, map, faction);
 		}
