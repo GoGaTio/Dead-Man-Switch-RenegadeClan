@@ -67,6 +67,8 @@ namespace DMSRC
 
 		public SoundDef completedSound;
 
+		public IntRange defenceFactorRange = IntRange.One;
+
 		public CompProperties_SecurityContainer()
         {
             compClass = typeof(CompSecurityContainer);
@@ -91,7 +93,16 @@ namespace DMSRC
 			}
 		}
 
-        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
+		public override void PostSpawnSetup(bool respawningAfterLoad)
+		{
+			if (!respawningAfterLoad && !parent.BeingTransportedOnGravship && parent.TryGetComp<CompHackable>(out var comp) && !comp.IsHacked)
+			{
+				comp.defence *= Props.defenceFactorRange.RandomInRange;
+			}
+			base.PostSpawnSetup(respawningAfterLoad);
+		}
+
+		public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
         {
             foreach(var op in base.CompFloatMenuOptions(selPawn))
             {
@@ -102,6 +113,10 @@ namespace DMSRC
 				yield break;
 			}
 			if (selPawn.RaceProps.intelligence < Intelligence.ToolUser)
+			{
+				yield break;
+			}
+			if(parent.TryGetComp<CompHackable>(out var comp) && !comp.IsHacked)
 			{
 				yield break;
 			}

@@ -86,21 +86,21 @@
     <randomGraphics>
       <li>
         <graphicClass>Graphic_Fleck</graphicClass>
-        <texPath>Things/Mote/Sparks/DMSRC_SparkA</texPath>
+        <texPath>Things/Mote/DMSRC_Spark</texPath>
         <shaderType>MoteGlow</shaderType>
         <drawSize>1</drawSize>
         <color>(1, .87, .8, 1)</color>
       </li>
       <li>
         <graphicClass>Graphic_Fleck</graphicClass>
-        <texPath>Things/Mote/Sparks/DMSRC_SparkB</texPath>
+        <texPath>Things/Mote/DMSRC_Spark</texPath>
         <shaderType>MoteGlow</shaderType>
         <drawSize>1</drawSize>
         <color>(1, .95, .8, 1)</color>
       </li>
       <li>
         <graphicClass>Graphic_Fleck</graphicClass>
-        <texPath>Things/Mote/Sparks/DMSRC_SparkC</texPath>
+        <texPath>Things/Mote/DMSRC_Spark</texPath>
         <shaderType>MoteGlow</shaderType>
         <drawSize>1</drawSize>
         <color>(1, .9, .8, 1)</color>
@@ -119,21 +119,21 @@
     <randomGraphics>
       <li>
         <graphicClass>Graphic_Fleck</graphicClass>
-        <texPath>Things/Mote/Sparks/DMSRC_SparkA</texPath>
+        <texPath>Things/Mote/DMSRC_Spark</texPath>
         <shaderType>MoteGlow</shaderType>
         <drawSize>1</drawSize>
         <color>(1, .87, .8, 1)</color>
       </li>
       <li>
         <graphicClass>Graphic_Fleck</graphicClass>
-        <texPath>Things/Mote/Sparks/DMSRC_SparkB</texPath>
+        <texPath>Things/Mote/DMSRC_Spark</texPath>
         <shaderType>MoteGlow</shaderType>
         <drawSize>1</drawSize>
         <color>(1, .95, .8, 1)</color>
       </li>
       <li>
         <graphicClass>Graphic_Fleck</graphicClass>
-        <texPath>Things/Mote/Sparks/DMSRC_SparkC</texPath>
+        <texPath>Things/Mote/DMSRC_Spark</texPath>
         <shaderType>MoteGlow</shaderType>
         <drawSize>1</drawSize>
         <color>(1, .9, .8, 1)</color>

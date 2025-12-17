@@ -5,26 +5,29 @@
   <Operation Class="PatchOperationAdd">
     <success>Always</success>
     <xpath>Defs/RecipeDef[defName = "DMS_ResurrectMediumMech"]/fixedIngredientFilter/thingDefs</xpath>
-      <value>
-        <li>Corpse_DMSRC_Mech_Tumba</li>
-      </value>
+    <value>
+      <li>Corpse_DMSRC_Mech_Saboteur</li>
+      <li>Corpse_DMSRC_Mech_Stancher</li>
+      <li>Corpse_DMSRC_Mech_Malice</li>
+    </value>
   </Operation>
 
   <Operation Class="PatchOperationAdd">
     <success>Always</success>
     <xpath>Defs/RecipeDef[defName = "DMS_ResurrectHeavyMech"]/fixedIngredientFilter/thingDefs</xpath>
-      <value>
-        <li>Corpse_DMSRC_Mech_Kirpich</li>
-        <li>Corpse_DMSRC_Mech_Shufladka</li>
-      </value>
+    <value>
+      <li>Corpse_DMSRC_Mech_Kirpich</li>
+      <li>Corpse_DMSRC_Mech_Shufladka</li>
+    </value>
   </Operation>
 
   <Operation Class="PatchOperationAdd">
     <success>Always</success>
     <xpath>Defs/RecipeDef[defName = "DMS_ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs</xpath>
-      <value>
-        <li>Corpse_DMSRC_Mech_Focus</li>
-      </value>
+    <value>
+      <li>Corpse_DMSRC_Mech_Focus</li>
+      <li>Corpse_DMSRC_Mech_Malevolence</li>
+    </value>
   </Operation>
-	
+
 </Patch>

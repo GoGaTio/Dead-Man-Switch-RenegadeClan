@@ -19,7 +19,10 @@
     <costStuffCount>70</costStuffCount>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <researchPrerequisites>
+        <li>MicroelectronicsBasics</li>
+        <li>DMS_EquipmentElite</li>
+      </researchPrerequisites>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <effectWorking>Smith</effectWorking>

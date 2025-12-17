@@ -64,7 +64,7 @@
       <ComponentStamped>5</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
-    <uiIconPath>Things/Turrets/DMS_5ETs16U</uiIconPath>
+    <uiIconPath>Things/Building/DMSRC_Straj_Icon</uiIconPath>
     <uiIconScale>1.2</uiIconScale>
   </ThingDef>
 

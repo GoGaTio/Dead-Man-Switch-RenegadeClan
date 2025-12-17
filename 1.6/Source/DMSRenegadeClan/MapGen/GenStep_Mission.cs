@@ -69,18 +69,28 @@ namespace DMSRC
 
 		public override void Generate(Map map, GenStepParams parms)
 		{
-			IntVec3 center = map.Center;
-			Faction faction = map.IsPocketMap ? map.PocketMapParent.sourceMap.ParentFaction : map.ParentFaction;
-			Rot4 rot = Rot4.Random;
+			RPrefabDef prefab;
 			if (useStaticPrefab)
 			{
-				staticPrefab.Generate(center, rot, map, faction);
+				prefab = staticPrefab;
 			}
-			else if (!tag.NullOrEmpty() && RPrefabUtility.TryGetByTag(tag, out var result))
+			else if (tag.NullOrEmpty() || !RPrefabUtility.TryGetByTag(tag, out prefab))
 			{
-				result.Generate(center, rot, map, faction);
+				prefab = prefabs.RandomElement();
 			}
-			else prefabs.RandomElement().Generate(center, rot, map, faction);
+			Rot4 rot = Rot4.Random;
+			IntVec2 size = prefab.size;
+			if(rot == Rot4.East ||  rot == Rot4.West)
+			{
+				size = size.Rotated();
+			}
+			CellRect rect = CellRect.WholeMap(map).ContractedBy(10);
+			List<CellRect> largestClearRects = MapGenUtility.GetLargestClearRects(map, size, size * 2, true, -1f, 0.7f, TerrainAffordanceDefOf.Light);
+			largestClearRects.RemoveAll(r => !r.FullyContainedWithin(rect));
+			List<CellRect> orGenerateVar = MapGenerator.GetOrGenerateVar<List<CellRect>>("UsedRects");
+			IntVec3 center = largestClearRects.NullOrEmpty() ? map.Center : largestClearRects.RandomElement().CenterCell;
+			Faction faction = map.IsPocketMap ? map.PocketMapParent.sourceMap.ParentFaction : map.ParentFaction;
+			prefab.Generate(center, rot, map, faction);
 		}
 	}
 }

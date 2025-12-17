@@ -152,7 +152,7 @@ namespace DMSRC
 		}
 	}
 
-	public class Building_SecurityContainer : Building, IThingHolder
+	public class Building_SecurityContainer : Building, IThingHolder, IHackable
 	{
 		public ThingOwner innerContainer;
 
@@ -173,6 +173,18 @@ namespace DMSRC
 				return comp;
             }
         }
+
+		public void OnLockedOut(Pawn pawn = null)
+		{
+		}
+
+		public void OnHacked(Pawn pawn = null)
+		{
+			if (!opened)
+			{
+				Open(pawn);
+			}
+		}
 
 		public bool HasAnyContents => innerContainer.Count > 0;
 

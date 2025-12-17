@@ -108,7 +108,7 @@
             <fixedParams>
               <filter>
                 <thingDefs>
-                  <li>DMS_Apparel_PowerSkelton</li>
+                  <li>DMS_Apparel_PowerSkeleton</li>
                 </thingDefs>
               </filter>
               <countRange>1~3</countRange>

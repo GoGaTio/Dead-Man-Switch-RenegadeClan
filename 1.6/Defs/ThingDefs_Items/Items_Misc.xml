@@ -87,6 +87,7 @@
     <thingCategories>
       <li>ItemsMisc</li>
     </thingCategories>
+    <stackLimit>5</stackLimit>
     <tradeability>None</tradeability>
     <selectable>true</selectable>
     <statBases>

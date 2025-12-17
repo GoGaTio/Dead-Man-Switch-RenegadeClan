@@ -26,7 +26,7 @@
       <color>(0.3, 0.3, 0.3)</color>
     </graphicData>
     <uiIconColor>(0.3, 0.3, 0.3)</uiIconColor>
-    <uiIconPath>Things/Building/Wall/Wall_Atlas_Concrete_UI</uiIconPath>
+    <uiIconPath>Things/Building/Linked/Wall_Atlas_Concrete_UI</uiIconPath>
     <building>
       <isTargetable>true</isTargetable>
       <ai_neverTrashThis>true</ai_neverTrashThis>

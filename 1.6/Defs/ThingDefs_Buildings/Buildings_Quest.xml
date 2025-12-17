@@ -135,6 +135,8 @@
     <blockWind>true</blockWind>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <staticSunShadowHeight>0.4</staticSunShadowHeight>
+    <drawHighlight>true</drawHighlight>
+    <preventGravshipLandingOn>true</preventGravshipLandingOn>
   </ThingDef>
 
   <ThingDef Abstract="True" ParentName="DMSRC_ContainerBase" Name="DMSRC_NaraContainerBase">
@@ -144,7 +146,7 @@
     </placeWorkers>
     <comps>
       <li Class="CompProperties_Hackable">
-        <defence>6000</defence>
+        <defence>600</defence>
         <effectHacking>HackingTerminal</effectHacking>
         <lockoutDurationHoursRange>2~4</lockoutDurationHoursRange>
         <notHackedInspectString>Hack to open.</notHackedInspectString>
@@ -170,6 +172,7 @@
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>(5, 5)</drawSize>
         </graphicData>
+        <defenceFactorRange>20~40</defenceFactorRange>
       </li>
     </comps>
   </ThingDef>
@@ -188,6 +191,7 @@
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>(5, 5)</drawSize>
         </graphicData>
+        <defenceFactorRange>20~40</defenceFactorRange>
       </li>
     </comps>
   </ThingDef>
@@ -206,6 +210,7 @@
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>(5, 5)</drawSize>
         </graphicData>
+        <defenceFactorRange>20~40</defenceFactorRange>
       </li>
     </comps>
   </ThingDef>
