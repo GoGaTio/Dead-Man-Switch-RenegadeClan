@@ -176,7 +176,7 @@ namespace DMSRC
         }
 
         [DebugAction("DMSRC", "Deactivate mech", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        private static void OpenMarket(Pawn p)
+        private static void Deactivate(Pawn p)
         {
             if (p != null)
             {
@@ -188,6 +188,26 @@ namespace DMSRC
                 GenSpawn.Spawn(b, cell, map);
             }
         }
+
+		[DebugAction("DMSRC", "Check Apparel", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		public static void OpenMarket(Pawn p)
+		{
+			if (p != null && p.apparel != null)
+			{
+                string s = "";
+				foreach (Apparel ap in p.apparel.WornApparel)
+                {
+                    s += "\n" + ap.def.defName + ", Wearer: " + ap.Wearer?.LabelCap ?? "null";
+                    if(ap.TryGetComp<CompShield>(out var comp))
+                    {
+                        s += ", Shield energy:" + comp.Energy + ", IsApparel: " + comp.IsApparel + ", State: " + comp.ShieldState.ToString();
+                        s += ", (" + comp.parent.GetStatValue(StatDefOf.EnergyShieldRechargeRate) + "/" + comp.parent.GetStatValue(StatDefOf.EnergyShieldEnergyMax) + ")";
+
+					}
+                }
+                Log.Message(s);
+			}
+		}
 
 		/*[DebugAction("Generation", null, false, false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
 		private static void CreatePrefab()

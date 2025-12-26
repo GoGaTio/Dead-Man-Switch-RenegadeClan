@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/Fortified.HeavyEquippableDef[defName="AverageHumanCanUse" or defName="LightAutomatroid" or defName="StandardAutomatroid" or defName="BulkyAutomatroid"]/EquippableWithApparel</xpath>
+    <value>
+      <li>DMSRC_Apparel_AssaultArmor</li>
+      <li>DMSRC_Apparel_JumperArmor</li>
+      <li>DMSRC_Apparel_DemolisherArmor</li>
+    </value>
+  </Operation>
+
+</Patch>

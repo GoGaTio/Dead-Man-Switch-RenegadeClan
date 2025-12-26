@@ -2,7 +2,7 @@
 <Defs>
 
   <QuestScriptDef>
-    <defName>DMSRC_</defName>
+    <defName>DMSRC_DefendTest</defName>
     <rootSelectionWeight>1.1</rootSelectionWeight>
     <defaultChallengeRating>1</defaultChallengeRating>
     <expireDaysRange>4~8</expireDaysRange>
@@ -30,11 +30,14 @@
       </rulesStrings>
     </questDescriptionRules>
     <root Class="DMSRC.QuestNode_Root_Site">
-      <giver>Renegades</giver>
+      <giver>ColonialFleet</giver>
       <sitePart>DMSRC_AntennaPoint</sitePart>
+      <oppositeFactionForSite>false</oppositeFactionForSite>
       <mission>
-        <missionClass>DMSRC.QuestPart_Mission_Destroy</missionClass>
+        <missionClass>DMSRC.QuestPart_Mission_Defend</missionClass>
         <targetDef>DMSRC_LargeBroadcastAntenna</targetDef>
+        <wavesCooldown>1000~2000</wavesCooldown>
+        <wavesFromOppositeFaction>true</wavesFromOppositeFaction>
       </mission>
     </root>
   </QuestScriptDef>

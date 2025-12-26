@@ -95,7 +95,7 @@
     </apparelStuffFilter>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
     <colorSpectrum>
-      <li>(84, 26, 56)</li>
+      <li>(94, 36, 66)</li>
     </colorSpectrum>
     <fixedLeaderKinds>
       <li>DMS_Officer_Leader</li>

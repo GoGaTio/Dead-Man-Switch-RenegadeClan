@@ -30,8 +30,8 @@
     <defName>DMSRC_OfficerCombat</defName>
     <label>combat commander</label>
     <combatPower>55</combatPower>
-    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
-    <apparelMoney>700~1000</apparelMoney>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <apparelMoney>1100~1700</apparelMoney>
     <apparelRequired>
       <li>DMS_Apparel_PowerSkeleton</li>
       <li MayRequire="ceteam.combatextended">CE_Apparel_Backpack</li>

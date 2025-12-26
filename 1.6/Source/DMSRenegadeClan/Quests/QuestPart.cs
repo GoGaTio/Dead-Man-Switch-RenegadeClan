@@ -68,6 +68,25 @@ namespace DMSRC
 
 		public IntRange wavesCooldown;
 
+		public IntRange? initialWavesCooldown;
+
+		public SimpleCurve wavesPointsFromQuest = new SimpleCurve
+		{
+			new CurvePoint(200f, 550f),
+			new CurvePoint(400f, 1100f),
+			new CurvePoint(800f, 1600f),
+			new CurvePoint(1600f, 2600f),
+			new CurvePoint(3200f, 3600f),
+			new CurvePoint(30000f, 10000f)
+		};
+
+		public SimpleCurve wavesPointsFromMap = new SimpleCurve
+		{
+			new CurvePoint(1f, 2f)
+		};
+
+		public bool wavesFromOppositeFaction;
+
 		public virtual void ExposeData()
 		{
 			Scribe_Defs.Look(ref targetDef, "targetDef");
@@ -81,6 +100,8 @@ namespace DMSRC
 
 		public SiteMissionProps mission;
 
+		public float points;
+
 		public string inSignalFail;
 
 		public string inSignalSuccess;
@@ -91,6 +112,7 @@ namespace DMSRC
 			Scribe_References.Look(ref site, "site");
 			Scribe_Deep.Look(ref mission, "mission");
 			Scribe_Values.Look(ref inSignalFail, "inSignalFail");
+			Scribe_Values.Look(ref points, "points");
 			Scribe_Values.Look(ref inSignalSuccess, "inSignalSuccess");
 		}
 
@@ -106,6 +128,112 @@ namespace DMSRC
 		{
 			base.Complete(signalArgs);
 			Find.SignalManager.SendSignal(new Signal(inSignalSuccess, signalArgs));
+		}
+	}
+
+	public class QuestPart_MissionWithWaves : QuestPart_Mission
+	{
+		public bool wavesActive = true;
+
+		public int ticksTillNextWave = -1;
+
+		public int wavesSent = 0;
+
+		public int wavesDefeated = 0;
+		public virtual bool CanSendWave
+		{
+			get
+			{
+				if (wavesActive)
+				{
+					return wavesSent <= wavesDefeated;
+				}
+				return false;
+			}
+		}
+
+		protected override void Enable(SignalArgs receivedArgs)
+		{
+			ticksTillNextWave = (mission.initialWavesCooldown ?? mission.wavesCooldown).RandomInRange;
+			base.Enable(receivedArgs);
+		}
+
+		public virtual Faction WavesFaction
+		{
+			get
+			{
+				if (mission.wavesFromOppositeFaction)
+				{
+					if(site.Faction.def == RCDefOf.DMSRC_RenegadeClan)
+					{
+						return GameComponent_Renegades.Find.DMSFaction;
+					}
+					else return GameComponent_Renegades.Find.RenegadesFaction;
+				}
+				return site.Faction;
+			}
+		}
+
+		public override void QuestPartTick()
+		{
+			base.QuestPartTick();
+			if (CanSendWave)
+			{
+				ticksTillNextWave--;
+				if(ticksTillNextWave < 0)
+				{
+					ticksTillNextWave = mission.wavesCooldown.RandomInRange;
+					SendWave();
+				}
+			}
+		}
+
+		public virtual void SendWave(List<Thing> attackTargets = null)
+		{
+			wavesSent++;
+			Map map = site.Map;
+			List<Pawn> list = new List<Pawn>();
+			IncidentParms incidentParms = new IncidentParms();
+			incidentParms.target = map;
+			incidentParms.points = mission.wavesPointsFromMap.Evaluate(StorytellerUtility.DefaultThreatPointsNow(map)) + mission.wavesPointsFromQuest.Evaluate(points);
+			incidentParms.faction = WavesFaction;
+			incidentParms.attackTargets = attackTargets;
+			incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
+			incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeDrop;
+			incidentParms.questTag = this.quest.id + "_WaveNo" + wavesSent + "Sent";
+			Log.Message(incidentParms.questTag);
+			if (!IncidentDefOf.RaidEnemy.Worker.TryExecute(incidentParms))
+			{
+				Log.Error("BRUH");
+			}
+		}
+
+		public override void Notify_QuestSignalReceived(Signal signal)
+		{
+			Log.Message("Notify_QuestSignalReceived: " + signal.tag);
+			if (signal.tag == this.quest.id + "_WaveNo" + wavesSent + "Sent" + ".Fleeing" || signal.tag == this.quest.id + "_WaveNo" + wavesSent + "Sent" + ".AllEnemiesDefeated")
+			{
+				if(wavesDefeated < wavesSent)
+				{
+					wavesDefeated = wavesSent;
+				}
+			}
+			base.Notify_QuestSignalReceived(signal);
+		}
+
+		protected override void ProcessQuestSignal(Signal signal)
+		{
+			Log.Message("ProcessQuestSignal: " + signal.tag);
+			base.ProcessQuestSignal(signal);
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Values.Look(ref wavesActive, "wavesActive");
+			Scribe_Values.Look(ref wavesSent, "wavesSent");
+			Scribe_Values.Look(ref wavesDefeated, "wavesDefeated");
+			Scribe_Values.Look(ref ticksTillNextWave, "ticksTillNextWave", defaultValue: -1);
 		}
 	}
 
@@ -168,27 +296,27 @@ namespace DMSRC
 		}
 	}
 
-	public class QuestPart_Mission_Defend : QuestPart_Mission
+	public class QuestPart_Mission_Defend : QuestPart_MissionWithWaves
 	{
 		public List<Thing> targets;
 
 		public int wavesLeft;
 
-		public int ticksTillNextWaves;
-
 		public override AlertReport AlertReport => new AlertReport() { active = true, culpritsThings = targets };
 
-		public override bool AlertCritical => ticksTillNextWaves < Mathf.Max(2500f, mission.wavesCooldown.min / 2f);
+		public override bool AlertCritical => ticksTillNextWave < Mathf.Max(2500f, mission.wavesCooldown.min / 2f);
 
-		public override string AlertExplanation => "DMSRC_Mission_DefendDesc".Translate(ticksTillNextWaves.ToStringTicksToPeriod(), mission.targetDef.label);
+		public override string AlertExplanation => "DMSRC_Mission_DefendDesc".Translate(ticksTillNextWave.ToStringTicksToPeriod(), mission.targetDef.label);
 
-		public override string AlertLabel => "DMSRC_Mission_DefendLabel".Translate(ticksTillNextWaves.ToStringTicksToPeriod(), mission.targetDef.label);
+		public override string AlertLabel => "DMSRC_Mission_DefendLabel".Translate(ticksTillNextWave.ToStringTicksToPeriod(), mission.targetDef.label);
 
 		protected override void Enable(SignalArgs receivedArgs)
 		{
 			base.Enable(receivedArgs);
 			targets = site.Map.listerThings.ThingsOfDef(mission.targetDef);
+			wavesLeft = 3;
 		}
+
 		public override IEnumerable<GlobalTargetInfo> QuestLookTargets
 		{
 			get
@@ -208,47 +336,9 @@ namespace DMSRC
 			}
 		}
 
-		public void SendWave()
-		{
-			Map map = site.Map;
-			ticksTillNextWaves = mission.wavesCooldown.RandomInRange;
-			Faction faction = (site.Faction?.def == RCDefOf.DMSRC_RenegadeClan) ? GameComponent_Renegades.Find.DMSFaction : GameComponent_Renegades.Find.RenegadesFaction;
-			List<Pawn> list = new List<Pawn>();
-			foreach (Pawn item in GeneratePawns(faction))
-			{
-				if (CellFinder.TryFindRandomEdgeCellWith((IntVec3 x) => x.Standable(map) && !x.Fogged(map) && map.reachability.CanReachColony(x), map, CellFinder.EdgeRoadChance_Ignore, out var result))
-				{
-					GenSpawn.Spawn(item, result, map);
-				}
-				list.Add(item);
-			}
-			if (!list.Any())
-			{
-				return;
-			}
-			LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(faction), map, list);
-			Find.LetterStack.ReceiveLetter("DMSRC_Mission_DefendRaidLabel".Translate(faction.Name), "DMSRC_Mission_DefendRaidDesc".Translate(faction.Name, mission.targetDef.LabelCap), LetterDefOf.ThreatBig, list);
-		}
-
-		private IEnumerable<Pawn> GeneratePawns(Faction faction)
-		{
-			return PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
-			{
-				groupKind = PawnGroupKindDefOf.Combat,
-				tile = site.Map.Tile,
-				faction = faction,
-				points = Mathf.Max(site.ActualThreatPoints, faction.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Combat))
-			});
-		}
-
 		public override void QuestPartTick()
 		{
 			base.QuestPartTick();
-			ticksTillNextWaves--;
-			if(ticksTillNextWaves <= 0)
-			{
-				SendWave();
-			}
 			if (Find.TickManager.TicksGame % 60 != 0 || targets == null)
 			{
 				return;
@@ -271,10 +361,15 @@ namespace DMSRC
 					}
 				}
 			}
-			if (targets.Count <= 0)
+			if (wavesDefeated >= wavesLeft)
 			{
 				Complete();
 			}
+		}
+
+		public override void SendWave(List<Thing> attackTargets = null)
+		{
+			base.SendWave(targets);
 		}
 
 		public override void ExposeData()
@@ -282,7 +377,6 @@ namespace DMSRC
 			base.ExposeData();
 			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
 			Scribe_Values.Look(ref wavesLeft, "wavesLeft");
-			Scribe_Values.Look(ref ticksTillNextWaves, "ticksTillNextWaves");
 		}
 	}
 

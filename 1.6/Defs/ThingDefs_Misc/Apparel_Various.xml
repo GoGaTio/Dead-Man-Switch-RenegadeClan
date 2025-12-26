@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" Name ="DMSRC_BaseAssaultArmor" ParentName="ApparelBase">
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+<thingSetMakerTags><li>DMSRC_AssaultEquipment</li></thingSetMakerTags>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisites>
+        <li>DMSRC_AssaultEquipment</li>
+      </researchPrerequisites>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <disallowedThingDefs>
+          <li>Silver</li>
+          <li>Gold</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+      <displayPriority>205</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <equippedStatOffsets>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.15</SlaveSuppressionOffset>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
+    </equippedStatOffsets>
+    <uiIconScale>1.25</uiIconScale>
+    <generateCommonality>1</generateCommonality>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>3</Mass>
+      <Flammability>0</Flammability>
+      <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+    <Insulation_Cold>60</Insulation_Cold>
+      <Insulation_Heat>10</Insulation_Heat>
+      <EquipDelay>12</EquipDelay>
+    </statBases>
+    <apparel>
+      <countsAsClothingForNudity>true</countsAsClothingForNudity>
+      <parentTagDef>ApparelBody</parentTagDef>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Legs</li>
+        <li>Feet</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>DMSRC_Assault</li>
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+      <soundWear>Wear_PowerArmor</soundWear>
+      <soundRemove>Remove_PowerArmor</soundRemove>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_Biocodable"/>
+    </comps>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.33,0.33,0.33)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.65,0.65,0.65)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.4,0.3,0.15)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <min>(0.3,0.3,0.3)</min>
+          <max>(0.5,0.5,0.5)</max>
+        </li>
+        <li>
+          <weight>6</weight>
+          <min>(0.5,0.5,0.5)</min>
+          <max>(1,1,1)</max>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_BaseAssaultArmor">
+    <defName>DMSRC_Apparel_AssaultArmor</defName>
+    <label>heavy assault armor</label>
+    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance.</description>
+    <costList>
+      <Tungsteel>30</Tungsteel>
+      <Plasfiber>60</Plasfiber>
+<Uranium>30</Uranium>
+      <ComponentStamped>6</ComponentStamped>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <costStuffCount>120</costStuffCount>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.35</MoveSpeed>
+<StaggerDurationFactor>-0.5</StaggerDurationFactor>
+    </equippedStatOffsets>
+    <graphicData>
+      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</texPath>
+    </graphicData>
+    <generateCommonality>1</generateCommonality>
+    <statBases>
+      <WorkToMake>60000</WorkToMake>
+      <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
+    </statBases>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_BaseAssaultArmor">
+    <defName>DMSRC_Apparel_JumperArmor</defName>
+    <label>heavy jumper armor</label>
+    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance.</description>
+    <costList>
+      <Tungsteel>40</Tungsteel>
+      <Plasfiber>60</Plasfiber>
+<Uranium>30</Uranium>
+      <ComponentStamped>7</ComponentStamped>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Chemfuel>100</Chemfuel>
+    </costList>
+    <costStuffCount>130</costStuffCount>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.35</MoveSpeed>
+<StaggerDurationFactor>-0.4</StaggerDurationFactor>
+    </equippedStatOffsets>
+    <graphicData>
+      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</texPath>
+    </graphicData>
+    <generateCommonality>0.5</generateCommonality>
+    <statBases>
+      <WorkToMake>65000</WorkToMake>
+      <StuffEffectMultiplierArmor>1.15</StuffEffectMultiplierArmor>
+      <JumpRange>19.9</JumpRange>
+    </statBases>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>5</maxCharges>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>20</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>jump</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Jump</verbClass>
+        <label>jump</label>
+        <commandIcon>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</commandIcon>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.5</warmupTime>
+        <warmupEffecter>JumpMechWarmupEffect</warmupEffecter>
+        <flightEffecterDef>JumpMechFlightEffect</flightEffecterDef>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+<ThingDef ParentName="DMSRC_BaseAssaultArmor">
+    <defName>DMSRC_Apparel_DemolisherArmor</defName>
+    <label>heavy demolition armor</label>
+    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance.</description>
+    <costList>
+      <Tungsteel>60</Tungsteel>
+      <Plasfiber>80</Plasfiber>
+<Uranium>40</Uranium>
+      <ComponentStamped>8</ComponentStamped>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Chemfuel>90</Chemfuel>
+    </costList>
+    <costStuffCount>150</costStuffCount>
+    <equippedStatOffsets>
+      <MoveSpeed>-1.05</MoveSpeed>
+<Flammability>-0.68</Flammability>
+<StaggerDurationFactor>-1</StaggerDurationFactor>
+    </equippedStatOffsets>
+    <graphicData>
+      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</texPath>
+    </graphicData>
+    <generateCommonality>0.5</generateCommonality>
+    <statBases>
+      <WorkToMake>70000</WorkToMake>
+      <StuffEffectMultiplierArmor>1.25</StuffEffectMultiplierArmor>
+      <Insulation_Heat>70</Insulation_Heat>
+<ArmorRating_Heat>0.15</ArmorRating_Heat>
+    </statBases>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>3</maxCharges>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>30</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>flame blast</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Jump</verbClass>
+        <label>flame blast</label>
+        <commandIcon>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</commandIcon>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.5</warmupTime>
+        <warmupEffecter>JumpWarmupEffect</warmupEffecter>
+        <flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+</Defs>

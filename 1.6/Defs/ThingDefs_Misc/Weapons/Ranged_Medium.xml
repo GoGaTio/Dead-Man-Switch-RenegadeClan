@@ -44,10 +44,10 @@
         <hasStandardCommand>true</hasStandardCommand>
         <warmupTime>2.3</warmupTime>
         <range>34.9</range>
-        <minRange>2.4</minRange>
-        <beamFullWidthRange>11.9</beamFullWidthRange>
+        <minRange>1.9</minRange>
+        <beamFullWidthRange>5.9</beamFullWidthRange>
         <burstShotCount>30</burstShotCount>
-        <beamWidth>10</beamWidth>
+        <beamWidth>3</beamWidth>
         <showBurstShotStats>false</showBurstShotStats>
         <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
         <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>

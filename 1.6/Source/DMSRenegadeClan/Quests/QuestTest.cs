@@ -90,6 +90,21 @@ namespace DMSRC
 
 		public SitePartDef sitePart;
 
+		public bool oppositeFactionForSite = true;
+
+		public Faction SiteFaction(Faction giver)
+		{
+			if (oppositeFactionForSite)
+			{
+				if (giver.def == RCDefOf.DMSRC_RenegadeClan)
+				{
+					return GameComponent_Renegades.Find.DMSFaction;
+				}
+				else return GameComponent_Renegades.Find.RenegadesFaction;
+			}
+			return giver;
+		}
+
 		protected override void RunInt()
 		{
 			Quest quest = QuestGen.quest;
@@ -109,10 +124,10 @@ namespace DMSRC
 			slate.Set("faction", faction); slate.Set("askerIsNull", true);
 			slate.Set<Pawn>("asker", null);
 			Site site = null;
-			if (TileFinder.TryFindNewSiteTile(out var tile, 0, validator: (x) => x.Tile.hilliness != Hilliness.Mountainous))
+			if (TileFinder.TryFindNewSiteTile(out var tile, 0, validator: (x) => x.Tile.hilliness == Hilliness.Flat))
 			{
 				site = SiteMaker.MakeSite(sitePart, tile, faction, false);
-				site.SetFaction(faction);
+				site.SetFaction(SiteFaction(faction));
 			}
 			else
 			{

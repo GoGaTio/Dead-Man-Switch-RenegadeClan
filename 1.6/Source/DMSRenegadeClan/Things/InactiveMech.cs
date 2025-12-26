@@ -115,10 +115,6 @@ namespace DMSRC
 			{
 				InnerPawn.DynamicDrawPhaseAt(phase, drawLoc);
 			}
-			else
-			{
-				Log.Error("hshnsjhsjhn");
-			}
 		}
 
 		public override void SpawnSetup(Map map, bool respawningAfterLoad)

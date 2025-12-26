@@ -190,6 +190,14 @@
     <clearRoofRects>
       <li>(21,20,27,26)</li>
     </clearRoofRects>
+    <clearRects>
+      <li>(11,2,36,27)</li>
+      <li>(19,21,41,43)</li>
+      <li>(33,35,45,47)</li>
+      <li>(6,19,18,32)</li>
+      <li>(-1,2,10,20)</li>
+      <li>(8,-3,20,1)</li>
+    </clearRects>
     <size>(45,45)</size>
     <things>
       <DMS_Turret_MK44_Navy>

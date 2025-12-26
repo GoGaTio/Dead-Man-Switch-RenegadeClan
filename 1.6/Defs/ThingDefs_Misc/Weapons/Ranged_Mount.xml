@@ -29,10 +29,10 @@
         <warmupTime>2.3</warmupTime>
         <showBurstShotStats>false</showBurstShotStats>
         <range>41.9</range>
-        <minRange>2.9</minRange>
-        <beamFullWidthRange>11.9</beamFullWidthRange>
+        <minRange>2.4</minRange>
+        <beamFullWidthRange>7.9</beamFullWidthRange>
         <burstShotCount>30</burstShotCount>
-        <beamWidth>10</beamWidth>
+        <beamWidth>5</beamWidth>
         <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
         <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>
         <soundCastTail>GunTail_Medium</soundCastTail>

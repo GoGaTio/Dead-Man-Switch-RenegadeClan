@@ -84,7 +84,8 @@
     <Compile Include="MapGen\GenStep_Mission.cs" />
     <Compile Include="Quests\QuestPart.cs" />
     <Compile Include="Requests.cs" />
-    <Compile Include="ThingComps\CompModule - Копировать.cs" />
+    <Compile Include="ThingComps\CompWarheadPlatform.cs" />
+    <Compile Include="ThingComps\CompProcessorHelmet.cs" />
     <Compile Include="ThingComps\CompPerimeterScanner.cs" />
     <Compile Include="Things\FacilityEntrance.cs" />
     <Compile Include="Things\InactiveMech.cs" />

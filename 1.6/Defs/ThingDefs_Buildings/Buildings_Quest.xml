@@ -37,6 +37,56 @@
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_WarheadPlatform</defName>
+    <label>central command core</label>
+    <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_WarheadPlatform_Empty</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>1</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>false</ai_chillDestination>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="DMSRC.CompProperties_WarheadPlatform">
+        <chanceToStartFire>0.7</chanceToStartFire>
+        <explosiveRadius>44.9</explosiveRadius>
+        <explosiveDamageType>BombSuper</explosiveDamageType>
+        <damageAmountBase>999</damageAmountBase>
+        <armorPenetrationBase>99</armorPenetrationBase>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+        <graphicData>
+          <texPath>Things/Building/DMSRC_WarheadPlatform</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(2,2)</drawSize>
+        </graphicData>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_LargeBroadcastAntenna</defName>
     <label>central command core</label>
     <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
@@ -56,7 +106,6 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
-    <uiIconPath>Things/Building/CentralCommandCore</uiIconPath>
     <size>(5,5)</size>
     <tickerType>Normal</tickerType>
     <drawerType>MapMeshAndRealTime</drawerType>
@@ -74,8 +123,7 @@
     <costList>
       <Steel>800</Steel>
       <Tungsteel>450</Tungsteel>
-      <Neurocomputer>8</Neurocomputer>
-      <ComponentControlChip>1</ComponentControlChip>
+      <ComponentTransmitter>2</ComponentTransmitter>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <building>
@@ -161,14 +209,14 @@
   <ThingDef ParentName="DMSRC_NaraContainerBase">
     <defName>DMSRC_SecurityContainer_NaraRed</defName>
     <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_ContainerNaraRed</texPath>
+      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraRed</texPath>
     </graphicData>
     <comps>
       <li Class="DMSRC.CompProperties_SecurityContainer">
         <defaultLoot>DMSRC_SecurityContainer_NaraRed</defaultLoot>
         <faction>DMS_Army</faction>
         <graphicData>
-          <texPath>Things/Building/Containers/DMSRC_ContainerOpen</texPath>
+          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>(5, 5)</drawSize>
         </graphicData>
@@ -180,14 +228,14 @@
   <ThingDef ParentName="DMSRC_NaraContainerBase">
     <defName>DMSRC_SecurityContainer_NaraBlue</defName>
     <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_ContainerNaraBlue</texPath>
+      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraBlue</texPath>
     </graphicData>
     <comps>
       <li Class="DMSRC.CompProperties_SecurityContainer">
         <defaultLoot>DMSRC_SecurityContainer_NaraBlue</defaultLoot>
         <faction>DMS_Army</faction>
         <graphicData>
-          <texPath>Things/Building/Containers/DMSRC_ContainerOpen</texPath>
+          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>(5, 5)</drawSize>
         </graphicData>
@@ -199,14 +247,14 @@
   <ThingDef ParentName="DMSRC_NaraContainerBase">
     <defName>DMSRC_SecurityContainer_NaraGreen</defName>
     <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_ContainerNaraGreen</texPath>
+      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraGreen</texPath>
     </graphicData>
     <comps>
       <li Class="DMSRC.CompProperties_SecurityContainer">
         <defaultLoot>DMSRC_SecurityContainer_NaraGreen</defaultLoot>
         <faction>DMS_Army</faction>
         <graphicData>
-          <texPath>Things/Building/Containers/DMSRC_ContainerOpen</texPath>
+          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>(5, 5)</drawSize>
         </graphicData>
@@ -218,12 +266,12 @@
   <ThingDef ParentName="DMSRC_ContainerBase">
     <defName>DMSRC_SecurityContainer_Renegades</defName>
     <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_ContainerNaraGreen</texPath>
+      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraGreen</texPath>
     </graphicData>
     <comps>
       <li Class="DMSRC.CompProperties_SecurityContainer">
         <graphicData>
-          <texPath>Things/Building/Containers/DMSRC_ContainerOpen</texPath>
+          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>(5, 5)</drawSize>
         </graphicData>

@@ -9,6 +9,7 @@
     <expandingIconTexture>UI/Icons/DMSRC_ContainerSite</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
     <tags>
       <li>DMSRC_AntennaPoint</li>
     </tags>
