@@ -9,7 +9,7 @@
 
         <li MayRequire="aoba.deadmanswitch.mobiledragoon">
           <chance>0.15</chance>
-          <thingSetMaker Class="ThingSetMaker_StackCount">
+          <thingSetMaker Class="ThingSetMaker_Count">
             <fixedParams>
               <filter>
                 <categories>

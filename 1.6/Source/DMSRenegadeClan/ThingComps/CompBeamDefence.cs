@@ -239,11 +239,11 @@ namespace DMSRC
 				IntVec3 pos = parent.Position;
 				foreach (IntVec3 cell in new CellRect(pos.x, pos.z, 1, 1).ExpandedBy(range).ClipInsideMap(parent.Map))
 				{
-					List<Thing> list = parent.Map.thingGrid.ThingsListAt(cell).Where((v) => v is Projectile).ToList();
+					List<Thing> list = parent.Map.thingGrid.ThingsListAt(cell);
 					for (int i = 0; i < list.Count; i++)
 					{
 						Thing thing = list[i];
-						if (IsBulletAffected(thing) && Vector3.Distance(thing.DrawPos, parent.TrueCenter()) < Props.range)
+						if (Vector3.Distance(thing.DrawPos, parent.TrueCenter()) < Props.range && IsBulletAffected(thing))
 						{
 							Intercept(thing);
 							return;
@@ -299,7 +299,7 @@ namespace DMSRC
 			{
 				return false;
 			}
-			if (!Props.interceptSameFaction && proj.Launcher.Faction == parent.Faction)
+			if (!Props.interceptSameFaction && !parent.Faction.HostileTo(proj.Launcher.Faction))
 			{
 				return false;
 			}

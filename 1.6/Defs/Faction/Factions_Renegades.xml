@@ -71,6 +71,7 @@
       <li>PlayerColony</li>
       <li>Ancients</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Beggars</li>
+<li MayRequire="Ludeon.RimWorld.Royalty">Empire</li>
       <li MayRequire="Ludeon.RimWorld.Anomaly">ResearchExpedition</li>
       <li MayRequire="Ludeon.RimWorld.Odyssey">GravshipCrew</li>
       <li MayRequire="Ludeon.RimWorld.Odyssey">TradersGuild</li>

@@ -73,7 +73,7 @@
     <Compile Include="AbilityLauncher.cs" />
     <Compile Include="CompAbilityEffect_Notify.cs" />
     <Compile Include="Damages.cs" />
-    <Compile Include="EliteRaid.cs" />
+    <Compile Include="Dialog.cs" />
     <Compile Include="FloatMenuOptionProvider_OverseerMech.cs" />
     <Compile Include="Firecracker.cs" />
     <Compile Include="GameComponent_Renegades.cs" />
@@ -96,14 +96,12 @@
     <Compile Include="MapGen\QuestContainer.cs" />
     <Compile Include="Quests\QuestTest.cs" />
     <Compile Include="ThingComps\CompBeamDefence.cs" />
-    <Compile Include="ThingComps\CompModule.cs" />
     <Compile Include="ThingComps\CompOverseerMech.cs" />
     <Compile Include="DefOf.cs" />
     <Compile Include="FocusedBeam.cs" />
     <Compile Include="Harmony\HarmonyMain.cs" />
     <Compile Include="Harmony\Overseer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThingComps\CompModuleNodes.cs" />
     <Compile Include="ThingComps\CompPersonaApparel.cs" />
     <Compile Include="ThingComps\CompSecurityContainer.cs" />
     <Compile Include="ThingComps\CompUsableNeuroChip.cs" />

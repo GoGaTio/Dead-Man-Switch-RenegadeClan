@@ -56,35 +56,28 @@ using Verse.Steam;
 
 namespace DMSRC
 {
-	/*[HarmonyPatch(typeof(CompShuttle), nameof(CompShuttle.IsPlayerShuttle), MethodType.Getter)]
-	public class Patch_CompShuttle_IsPlayerShuttle
+	[HarmonyPatch(typeof(StockGeneratorUtility), nameof(StockGeneratorUtility.TryMakeForStockSingle))]
+	public class Patch_StockGeneratorUtility_TryMakeForStockSingle
 	{
 		[HarmonyPrefix]
-		public static bool Prefix(CompShuttle __instance, ref bool __result)
+		public static bool Prefix(ThingDef thingDef, int stackCount, Faction faction, ref Thing __result)
 		{
-			if (__instance.parent.def.HasModExtension<DropshipExtension>())
+			if(stackCount > 0 && faction?.def == RCDefOf.DMSRC_RenegadeClan && (thingDef.IsApparel || thingDef.IsWeapon))
 			{
-				__result = true;
+				ThingDef result = null;
+				if (thingDef.MadeFromStuff && !(from x in GenStuff.AllowedStuffsFor(thingDef, TechLevel.Ultra, checkAllowedInStuffGeneration: true)
+												where !PawnWeaponGenerator.IsDerpWeapon(thingDef, x) && faction.def.CanUseStuffForApparel(x)
+												select x).TryRandomElementByWeight((ThingDef x) => x.stuffProps.commonality + 1f, out result))
+				{
+					result = GenStuff.RandomStuffByCommonalityFor(thingDef);
+				}
+				__result = ThingMaker.MakeThing(thingDef, result);
+				__result.stackCount = stackCount;
 				return false;
 			}
 			return true;
 		}
 	}
-
-	[HarmonyPatch(typeof(CompShuttle), nameof(CompShuttle.HasPilot), MethodType.Getter)]
-	public class Patch_CompShuttle_HasPilot
-	{
-		[HarmonyPrefix]
-		public static bool Prefix(CompShuttle __instance, ref bool __result)
-		{
-			if (__instance.parent.def.HasModExtension<DropshipExtension>())
-			{
-				__result = true;
-				return false;
-			}
-			return true;
-		}
-	}*/
 
 	[HarmonyPatch(typeof(FactionDef), "RaidCommonalityFromPoints")]
 	public class Patch_RaidCommonalityFromPoints

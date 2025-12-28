@@ -179,7 +179,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_CompactGenerator</defName>
-    <label>chemfuel powered generator</label>
+    <label>compact generator</label>
     <description>Produces power by consuming chemfuel. Must be periodically refueled by hand.</description>
     <thingClass>Building</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
@@ -201,8 +201,8 @@
     <statBases>
       <MaxHitPoints>300</MaxHitPoints>
       <WorkToBuild>2500</WorkToBuild>
-      <Flammability>1.0</Flammability>
-      <Beauty>-20</Beauty>
+      <Flammability>0.5</Flammability>
+      <Beauty>-5</Beauty>
     </statBases>
     <tickerType>Normal</tickerType>
     <canOverlapZones>false</canOverlapZones>
@@ -210,6 +210,10 @@
     <building>
       <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
     </building>
+<thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+ <minifiedDef>MinifiedThing</minifiedDef>
     <costList>
       <Steel>100</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
@@ -261,7 +265,7 @@
         </affectedDamageDefs>
       </li>
     </comps>
-    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <constructEffect>ConstructMetal</constructEffect>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>

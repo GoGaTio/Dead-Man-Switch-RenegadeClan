@@ -38,11 +38,43 @@
       <li>Gay</li>
       <li>Bisexual</li>
     </disallowedTraits>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <apparelIgnorePollution>true</apparelIgnorePollution>
+  </PawnKindDef>
+
+<PawnKindDef Name="DMSRC_FighterBase" ParentName="DMSRC_RenegadeBase" Abstract="True">
+    <combatPower>40</combatPower>
+    <initialResistanceRange>57~84</initialResistanceRange>
+    <initialWillRange>34~92</initialWillRange>
+    <isFighter>true</isFighter>
+    <gearHealthRange>0.85~2</gearHealthRange>
+    <apparelMoney>4000~4500</apparelMoney>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>2200~7000</techHediffsMoney>
+    <backstoryCategories>
+      <li>FleetChild</li>
+      <li>Mili_Standard</li>
+      <li>Mili_Expert</li>
+    </backstoryCategories>
+    <disallowedTraits>
+      <li>Brawler</li>
+      <li>Pyromaniac</li>
+    </disallowedTraits>
+    <humanPregnancyChance>0</humanPregnancyChance>
+    <techHediffsTags>
+      <li>DMS_BM_Bionic</li>
+      <li>Advanced</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <maxGenerationAge>40</maxGenerationAge>
     <requiredWorkTags>
       <li>Violent</li>
     </requiredWorkTags>
-    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
-    <apparelIgnorePollution>true</apparelIgnorePollution>
+<techHediffsRequired>
+      <li>DeathAcidifier</li>
+      <li>Painstopper</li>
+    </techHediffsRequired>
   </PawnKindDef>
 
   <PawnKindDef Name="DMSRC_OfficerBase" ParentName="DMSRC_RenegadeBase" Abstract="True">
@@ -71,15 +103,8 @@
     </techHediffsTags>-->
     <maxGenerationAge>50</maxGenerationAge>
     <requiredWorkTags>
-      <li>Intellectual</li>
+      <li>Intellectual</li><li>Violent</li>
     </requiredWorkTags>
-    <modExtensions>
-      <li Class="DMSRC.PawnGenExtension">
-        <unRecruitableChanceOverride></unRecruitableChanceOverride>
-        <genderChanceOverride>1</genderChanceOverride>
-        <melaninRange>0~0.2</melaninRange>
-      </li>
-    </modExtensions>
   </PawnKindDef>
 
 </Defs>

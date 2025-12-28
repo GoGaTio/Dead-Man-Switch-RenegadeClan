@@ -84,7 +84,7 @@ namespace DMSRC
 			base.PostLoad();
 		}
 
-		public void Generate(IntVec3 pos, Rot4 rot, Map map, Faction faction)
+		public void Generate(IntVec3 pos, Rot4 rot, Map map, Faction faction, ref List<Thing> things)
 		{
 			IntVec3 root = PrefabUtility.GetRoot(this, pos, rot);
 			Thing.allowDestroyNonDestroyable = true;
@@ -119,6 +119,7 @@ namespace DMSRC
 					comp.Refuel(comp.Props.fuelCapacity - comp.Fuel);
 				}
 			}
+			things.AddRange(generated);
 			foreach (CellRect r in roofRects)
 			{
 				foreach (IntVec3 c in r.Cells)
@@ -142,7 +143,6 @@ namespace DMSRC
 			}
 			foreach (SubPrefabProps sub in subPrefabs)
 			{
-				
 				if (RPrefabUtility.Defs.TryRandomElement((x) => x.tags.Any((y)=> sub.tags.Contains(y)), out var result))
 				{
 					IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedLocalPosition(sub.pos, rot);
@@ -151,7 +151,7 @@ namespace DMSRC
 					{
 						num -= 4;
 					}
-					result.Generate(root + adjustedLocalPosition, new Rot4(num), map, faction);
+					result.Generate(root + adjustedLocalPosition, new Rot4(num), map, faction, ref things);
 				}
 			}
 		}

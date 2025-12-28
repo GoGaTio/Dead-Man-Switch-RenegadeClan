@@ -90,7 +90,8 @@ namespace DMSRC
 			List<CellRect> orGenerateVar = MapGenerator.GetOrGenerateVar<List<CellRect>>("UsedRects");
 			IntVec3 center = largestClearRects.NullOrEmpty() ? map.Center : largestClearRects.RandomElement().CenterCell;
 			Faction faction = map.IsPocketMap ? map.PocketMapParent.sourceMap.ParentFaction : map.ParentFaction;
-			prefab.Generate(center, rot, map, faction);
+			var list = new List<Thing>();
+			prefab.Generate(center, rot, map, faction, ref list);
 		}
 	}
 }

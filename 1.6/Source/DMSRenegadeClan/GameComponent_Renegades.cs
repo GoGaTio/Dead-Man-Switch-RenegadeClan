@@ -82,13 +82,32 @@ namespace DMSRC
 
 		public float playerOpinion = 0;
 
-		public FactionRelationKind playerRep = FactionRelationKind.Neutral;
+		private FactionRelationKind playerRelation = FactionRelationKind.Neutral;
+
+		public FactionRelationKind PlayerRelation
+		{
+			get { return playerRelation; }
+			set
+			{
+				if(playerRelation != value)
+				{
+					ColoredText.ClearCache();
+				}
+				playerRelation = value;
+			}
+		}
 
 		private Faction ofRenegades;
 
 		private Faction ofDMS;
 
 		public List<Thing> things = new List<Thing>();
+
+		public bool contacted = false;
+
+		public int hoursTillContact = -1;
+
+		public bool enemyWithFleet = false;
 
 		public RenegadesRequest MakeRequest(RenegadesRequestDef def)
 		{
@@ -127,15 +146,7 @@ namespace DMSRC
 			{
 				if (ofDMS == null)
 				{
-					FactionDef def = DefDatabase<FactionDef>.GetNamed("DMS_Army");
-					if(def != null)
-					{
-						ofDMS = Verse.Find.FactionManager.FirstFactionOfDef(def);
-					}
-					else
-					{
-						Log.Error("For some reason DMS_Army FactionDef is null");
-					}
+					ofDMS = Verse.Find.FactionManager.FirstFactionOfDef(RCDefOf.DMS_Army);
 				}
 				return ofDMS;
 			}
@@ -143,12 +154,21 @@ namespace DMSRC
 
 		public FactionRelation RelationWithPlayer(Faction faction = null)
 		{
-			return new FactionRelation(faction, playerRep) { baseGoodwill = playerRep == FactionRelationKind.Neutral ? 0 : (playerRep == FactionRelationKind.Hostile ? -75 : 75) };
+			return new FactionRelation(faction, playerRelation) { baseGoodwill = playerRelation == FactionRelationKind.Neutral ? 0 : (playerRelation == FactionRelationKind.Hostile ? -75 : 75) };
 		}
 
 		public GameComponent_Renegades(Game game)
 		{
 			
+		}
+
+		public override void FinalizeInit()
+		{
+			if(hoursTillContact == -1 && !contacted)
+			{
+				hoursTillContact = new IntRange(20, 40).RandomInRange * 24;
+			}
+			base.FinalizeInit();
 		}
 
 		public override void GameComponentTick()
@@ -157,19 +177,33 @@ namespace DMSRC
 			{
 				return;
 			}
+			if (!contacted && playerRelation != FactionRelationKind.Hostile)
+			{
+				hoursTillContact--;
+				if(hoursTillContact <= 0)
+				{
+					ContactPlayer();
+				}
+			}
 			for(int i = 0; i < requests.Count; i++)
 			{
 				requests[i].Tick();
 			}
 		}
 
+		public void ContactPlayer()
+		{
+			Verse.Find.LetterStack.ReceiveLetter("DMSRC_RenegadesContactsLetter_Label".Translate(), "DMSRC_RenegadesContactsLetter_Text".Translate(), RCDefOf.DMSRC_ContactEvent);
+			contacted = true;
+		}
+
 		public float RaidCommonality(float points)
         {
-			if(playerRep != FactionRelationKind.Hostile)
+			if(playerRelation == FactionRelationKind.Hostile)
 			{
-				return 0f;
+				return 1f;
 			}
-			return 1f;
+			return 0f;
         }
 
 		private TraderKindDef def;
@@ -187,6 +221,7 @@ namespace DMSRC
 			things.Clear();
 			ThingSetMakerParams parms = default(ThingSetMakerParams);
 			parms.traderDef = def;
+			parms.makingFaction = RenegadesFaction;
 			things = ThingSetMakerDefOf.TraderStock.root.Generate(parms);
 		}
 
@@ -195,6 +230,7 @@ namespace DMSRC
 			base.ExposeData();
 			Scribe_Collections.Look(ref requests, "requests", LookMode.Deep);
 			Scribe_Values.Look(ref active, "active", true);
+			Scribe_Values.Look(ref contacted, "contacted", true);
 			Scribe_Collections.Look(ref things, "things", LookMode.Deep);
 			ofRenegades = null;
 			ofDMS = null;

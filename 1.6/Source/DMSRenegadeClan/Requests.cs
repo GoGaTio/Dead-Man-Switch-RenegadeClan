@@ -344,6 +344,7 @@ namespace DMSRC
 				{
 					tradeRows.Add(new TradeRow(t, t.stackCount));
 				}
+				tradeRows.Sort((TradeRow ltr, TradeRow rtr) => Comparer(ltr, rtr));
 			}
 			Rect first = new Rect(0, 0, rect.width, 30f);
 			Widgets.DrawLightHighlight(first);
@@ -375,8 +376,8 @@ namespace DMSRC
 			{
 				Log.Error("Exception drawing thing icon for " + ThingDefOf.Silver.defName + ": " + ex.ToString());
 			}
-			Rect outRect = new Rect(0, 30f, rect.width, rect.height - 42f);
-			Rect viewRect = new Rect(0, 30f, outRect.width - 16f, (tradeRows.Count + 2) * 30f);
+			Rect outRect = new Rect(0, 30f, rect.width, Mathf.FloorToInt((rect.height - 42f) / 30f) * 30f);
+			Rect viewRect = new Rect(0, 30f, outRect.width - 16f, (tradeRows.Count) * 30f);
 			bool drawHighlight = false;
 			float num = 30f;
 			//Widgets.DrawLineHorizontal(0f, 32f, viewRect.width);
@@ -395,6 +396,22 @@ namespace DMSRC
 			Widgets.EndScrollView();
 			Widgets.EndGroup();
 		}
+
+		public static int Comparer(TradeRow ltr, TradeRow rtr)
+		{
+			int category = TransferableComparer_Category.Compare(ltr.thing.def, rtr.thing.def);
+			if (category != 0)
+			{
+				return category;
+			}
+			int cost = ltr.thing.MarketValue.CompareTo(rtr.thing.MarketValue);
+			if (cost != 0)
+			{
+				return cost;
+			}
+			return ltr.thing.LabelNoCount.CompareTo(rtr.thing.LabelNoCount);
+		}
+		
 
 		public override Rect DoInterface(float x, float y, float width)
 		{

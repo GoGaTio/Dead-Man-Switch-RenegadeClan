@@ -102,6 +102,11 @@ namespace DMSRC
 			{
 				yield break;
 			}
+			GameComponent_Renegades renegades = GameComponent_Renegades.Find;
+			if(renegades == null || !renegades.contacted)
+			{
+				yield break;
+			}
 			FloatMenuOption floatMenuOption = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(Props.useLabel, delegate
 			{
 				foreach (CompUseEffect comp in parent.GetComps<CompUseEffect>())
@@ -114,7 +119,7 @@ namespace DMSRC
 				Job job = JobMaker.MakeJob(Props.useJob, parent);
 				job.count = 1;
 				myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-			}, priority: Props.floatMenuOptionPriority, iconTex: Icon, iconColor: GameComponent_Renegades.Find.RenegadesFaction.Color), myPawn, parent);
+			}, priority: Props.floatMenuOptionPriority, iconTex: Icon, iconColor: renegades.RenegadesFaction.Color), myPawn, parent);
 			yield return floatMenuOption;
 		}
 

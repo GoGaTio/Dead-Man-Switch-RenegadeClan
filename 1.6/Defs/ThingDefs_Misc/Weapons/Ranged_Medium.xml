@@ -96,7 +96,7 @@
     </tools>
     <comps>
       <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>3</explosionDamage>
+        <explosionDamage>2</explosionDamage>
         <explosionRange>1.1</explosionRange>
         <beamMoteDef>DMSRC_Mote_Beam</beamMoteDef>
         <damageDef>DMSRC_FocusedBeam</damageDef>

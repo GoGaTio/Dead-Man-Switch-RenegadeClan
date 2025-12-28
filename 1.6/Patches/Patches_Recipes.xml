@@ -16,8 +16,7 @@
     <success>Always</success>
     <xpath>Defs/RecipeDef[defName = "DMS_ResurrectHeavyMech"]/fixedIngredientFilter/thingDefs</xpath>
     <value>
-      <li>Corpse_DMSRC_Mech_Kirpich</li>
-      <li>Corpse_DMSRC_Mech_Shufladka</li>
+      <li>Corpse_DMSRC_Mech_Weevil</li>
     </value>
   </Operation>
 

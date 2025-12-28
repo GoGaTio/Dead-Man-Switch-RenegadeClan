@@ -34,6 +34,35 @@
     </graphicData>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>1581198907</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Neurointerface studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the neurointerface, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the neurointerface</activateDescString>
+        <jobString>Analyze the neurointerface</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
     </comps>
   </ThingDef>
 
@@ -530,9 +559,8 @@
     <costList>
       <Artifuscle>10</Artifuscle>
       <Plasfiber>5</Plasfiber>
-      <ComponentStamped>3</ComponentStamped>
+      <ComponentIndustrial>1</ComponentIndustrial>
       <ComponentSpacer>1</ComponentSpacer>
-      <ComponentTransmitter>1</ComponentTransmitter> 
     </costList>
     <comps>
       <li Class="CompProperties_Usable">
@@ -542,7 +570,7 @@
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
       </li>
       <li Class="CompProperties_UseEffectInstallImplant">
-        <hediffDef></hediffDef>
+        <hediffDef>DMSRC_NeuroStimulator</hediffDef>
         <bodyPart>Brain</bodyPart>
         <canUpgrade>true</canUpgrade>
         <maxSeverity>5</maxSeverity>
@@ -555,10 +583,9 @@
     <label>neural stimulator (high)</label>
     <description>A neural implant which increases \n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
     <costList>
-      <Artifuscle>15</Artifuscle>
+      <Artifuscle>15</Artifuscle><Plasfiber>10</Plasfiber>
       <ComponentIndustrial>3</ComponentIndustrial>
-      <ComponentSpacer>3</ComponentSpacer>
-      <ComponentTransmitter>1</ComponentTransmitter>
+      <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <comps>
       <li Class="CompProperties_Usable">
@@ -568,7 +595,7 @@
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
       </li>
       <li Class="CompProperties_UseEffectInstallImplant">
-        <hediffDef></hediffDef>
+        <hediffDef>DMSRC_NeuroStimulator</hediffDef>
         <bodyPart>Brain</bodyPart>
         <canUpgrade>true</canUpgrade>
         <requiresExistingHediff>true</requiresExistingHediff>
@@ -589,90 +616,90 @@
       <li>
         <minSeverity>1</minSeverity>
         <statOffsets>
-          <ResearchSpeed>0.075</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
+          <GlobalLearningFactor>0.05</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.025</JoyFallRateFactor>
+          <HackingSpeed>0.05</HackingSpeed>
           <ReadingSpeed>0.05</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>2</minSeverity>
         <statOffsets>
-          <ResearchSpeed>0.15</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
-          <ReadingSpeed>0.05</ReadingSpeed>
+          <GlobalLearningFactor>0.1</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.05</JoyFallRateFactor>
+          <HackingSpeed>0.1</HackingSpeed>
+          <ReadingSpeed>0.1</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>3</minSeverity>
         <statOffsets>
-          <ResearchSpeed>0.225</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
-          <ReadingSpeed>0.05</ReadingSpeed>
+          <GlobalLearningFactor>0.15</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.075</JoyFallRateFactor>
+          <HackingSpeed>0.15</HackingSpeed>
+          <ReadingSpeed>0.15</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>4</minSeverity>
-        <statOffsets>
-          <ResearchSpeed>0.3</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
-          <ReadingSpeed>0.05</ReadingSpeed>
+       <statOffsets>
+          <GlobalLearningFactor>0.2</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.1</JoyFallRateFactor>
+          <HackingSpeed>0.2</HackingSpeed>
+          <ReadingSpeed>0.2</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>5</minSeverity>
-        <statOffsets>
-          <ResearchSpeed>0.375</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
-          <ReadingSpeed>0.05</ReadingSpeed>
+       <statOffsets>
+          <GlobalLearningFactor>0.25</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.125</JoyFallRateFactor>
+          <HackingSpeed>0.25</HackingSpeed>
+          <ReadingSpeed>0.25</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>6</minSeverity>
-        <statOffsets>
-          <ResearchSpeed>0.45</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
-          <ReadingSpeed>0.05</ReadingSpeed>
+       <statOffsets>
+          <GlobalLearningFactor>0.3</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.15</JoyFallRateFactor>
+          <HackingSpeed>0.3</HackingSpeed>
+          <ReadingSpeed>0.3</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>7</minSeverity>
-        <statOffsets>
-          <ResearchSpeed>0.525</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
-          <ReadingSpeed>0.05</ReadingSpeed>
+       <statOffsets>
+          <GlobalLearningFactor>0.35</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.175</JoyFallRateFactor>
+          <HackingSpeed>0.35</HackingSpeed>
+          <ReadingSpeed>0.35</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>8</minSeverity>
-        <statOffsets>
-          <ResearchSpeed>0.6</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.075</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.05</StudyEfficiency>
-          <ReadingSpeed>0.05</ReadingSpeed>
+       <statOffsets>
+          <GlobalLearningFactor>0.4</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.2</JoyFallRateFactor>
+          <HackingSpeed>0.4</HackingSpeed>
+          <ReadingSpeed>0.4</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>9</minSeverity>
         <statOffsets>
-          <ResearchSpeed>0.675</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.75</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.5</StudyEfficiency>
-          <ReadingSpeed>0.5</ReadingSpeed>
+          <GlobalLearningFactor>0.45</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.225</JoyFallRateFactor>
+          <HackingSpeed>0.45</HackingSpeed>
+          <ReadingSpeed>0.45</ReadingSpeed>
         </statOffsets>
       </li>
       <li>
         <minSeverity>10</minSeverity>
         <statOffsets>
-          <ResearchSpeed>0.75</ResearchSpeed>
-          <HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">0.75</HackingSpeed>
-          <StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">0.5</StudyEfficiency>
+          <GlobalLearningFactor>0.5</GlobalLearningFactor>
+          <JoyFallRateFactor>-0.25</JoyFallRateFactor>
+          <HackingSpeed>0.5</HackingSpeed>
           <ReadingSpeed>0.5</ReadingSpeed>
         </statOffsets>
       </li>

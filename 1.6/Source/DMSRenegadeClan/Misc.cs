@@ -52,39 +52,97 @@ using static UnityEngine.Scripting.GarbageCollector;
 
 namespace DMSRC
 {
-	public class ScenPart_PlayerArrivesPrefab : ScenPart
+	public class ScenPart_Renegades : ScenPart
 	{
-		public class PrefabProps : IExposable
+		public bool startContacted = false;
+
+		public float will;
+
+		public float opinion = 0;
+
+		public FactionRelationKind relations = FactionRelationKind.Neutral;
+
+		public bool enemyWithFleet;
+
+		public IntRange contactInDaysRange = IntRange.Invalid;
+
+		public override void ExposeData()
 		{
-			public PrefabProps() { }
+			base.ExposeData();
+			Scribe_Values.Look(ref startContacted, "startContacted");
+			Scribe_Values.Look(ref will, "will");
+			Scribe_Values.Look(ref opinion, "opinion");
+			Scribe_Values.Look(ref relations, "relations");
+			Scribe_Values.Look(ref enemyWithFleet, "enemyWithFleet", defaultValue: false);
+			Scribe_Values.Look(ref contactInDaysRange, "contactInDaysRange", defaultValue: IntRange.Invalid);
+		}
 
-			public PrefabDef def;
+		public override void PostWorldGenerate()
+		{
+			base.PostWorldGenerate();
+			Apply();
+		}
 
-			public List<CellRect> clearRects = new List<CellRect>();
-
-			public List<CellRect> roofRects = new List<CellRect>();
-
-			public List<IntVec3> spawnCells = new List<IntVec3>();
-
-			public List<string> requiredTags = new List<string>();
-
-			public List<string> tagsMaxOnce = new List<string>();
-
-			public string tag = "";
-
-			public void ExposeData()
+		public void Apply()
+		{
+			GameComponent_Renegades comp = GameComponent_Renegades.Find;
+			if (comp == null)
 			{
-				Scribe_Collections.Look(ref requiredTags, "requiredTags", LookMode.Value);
-				Scribe_Collections.Look(ref tagsMaxOnce, "tagsMaxOnce", LookMode.Value);
-				Scribe_Collections.Look(ref roofRects, "roofRects", LookMode.Value);
-				Scribe_Collections.Look(ref spawnCells, "spawnCells", LookMode.Value);
-				Scribe_Collections.Look(ref clearRects, "clearRects", LookMode.Value);
-				Scribe_Defs.Look(ref def, "def");
-				Scribe_Values.Look(ref tag, "tag");
+				Log.Error("Issue");
+				return;
+			}
+			Faction fleet = comp.DMSFaction;
+			Faction player = Faction.OfPlayerSilentFail;
+			if(fleet == null)
+			{
+				Log.Message("fleet");
+			}
+			if (player == null)
+			{
+				Log.Message("player");
+			}
+			if (enemyWithFleet)
+			{
+				fleet.SetRelation(new FactionRelation(player, FactionRelationKind.Hostile) { baseGoodwill = -200});
+				comp.enemyWithFleet = true;
+			}
+			comp.PlayerRelation = relations;
+			comp.playerOpinion = opinion;
+			if (startContacted)
+			{
+				comp.contacted = true;
+			}
+			else if(contactInDaysRange != IntRange.Invalid)
+			{
+				comp.hoursTillContact = contactInDaysRange.RandomInRange * 24;
 			}
 		}
-		
-		public List<PrefabProps> prefabOptions = new List<PrefabProps>();
+	}
+
+	public class GoodwillSituationWorker_Renegades : GoodwillSituationWorker
+	{
+		public override int GetNaturalGoodwillOffset(Faction other)
+		{
+			if (other.def == RCDefOf.DMS_Army && GameComponent_Renegades.Find.enemyWithFleet)
+			{
+				return -200;
+			}
+			return 0;
+		}
+
+		public override int GetMaxGoodwill(Faction other)
+		{
+			if (other.def == RCDefOf.DMS_Army && GameComponent_Renegades.Find.enemyWithFleet)
+			{
+				return -100;
+			}
+			return 100;
+		}
+	}
+
+	public class ScenPart_PlayerArrivesPrefab : ScenPart
+	{
+		public List<RPrefabDef> prefabOptions = new List<RPrefabDef>();
 
 		public override void ExposeData()
 		{
@@ -98,7 +156,7 @@ namespace DMSRC
 			{
 				return;
 			}
-			PrefabProps prefab = prefabOptions.RandomElement();
+			RPrefabDef prefab = prefabOptions.RandomElement();
 			List<Thing> things = new List<Thing>();
 			List<Pawn> pawns = new List<Pawn>();
 			List<Pawn> mechs = new List<Pawn>();
@@ -144,69 +202,17 @@ namespace DMSRC
 			IntVec3 spot = MapGenerator.PlayerStartSpot;
 			List<Thing> generated = new List<Thing>();
 			Rot4 rot = Rot4.Random;
-			IntVec3 root = PrefabUtility.GetRoot(prefab.def, spot, rot);
+			IntVec3 root = PrefabUtility.GetRoot(prefab, spot, rot);
 			Thing.allowDestroyNonDestroyable = true;
-			try
-			{
-				foreach (CellRect r in prefab.clearRects)
-				{
-					foreach (IntVec3 c in r.Cells)
-					{
-						IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedLocalPosition(c, rot);
-						foreach (Thing t in (root + adjustedLocalPosition).GetThingList(map).ToList())
-						{
-							t.Destroy();
-						}
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				Log.Error("Exception while clearing area: " + ex);
-			}
-			finally
-			{
-				Thing.allowDestroyNonDestroyable = false;
-			}
-			PrefabUtility.SpawnPrefab(prefab.def, map, spot, rot, Faction.OfPlayerSilentFail, generated);
-			List<RPrefabDef> list = DefDatabase<RPrefabDef>.AllDefs.Where((x) => x.tags.Contains(prefab.tag)).ToList();
-			List<string> usedTags = new List<string>();
-			List<Rot4> rots = Rot4.AllRotations.ToList();
-			for (int i = 0; i < 4; i++)
-			{
-				if(list.TryRandomElement((r) => GetPrefab(r, prefab, usedTags), out var p))
-				{
-					usedTags.AddRange(p.tags);
-					Rot4 rot4 = rots.RandomElement();
-					rots.Remove(rot4);
-					PrefabUtility.SpawnPrefab(p, map, spot, rot4, Faction.OfPlayerSilentFail, generated);
-					IntVec3 root2 = PrefabUtility.GetRoot(prefab.def, spot, rot4);
-					foreach (var v in p.GetThings().Where((x) => x.data.def.IsDoor))
-					{
-						IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedThingLocalPosition(v.data, rot4, v.cell);
-						Log.Message((root2 + adjustedLocalPosition).ToString() + ", " + adjustedLocalPosition.ToString());
-						SpawnThing(v.data, map, root2 + adjustedLocalPosition, Faction.OfPlayerSilentFail, generated);
-					}
-				}
-			}
+			prefab.Generate(spot, rot, map, Faction.OfPlayerSilentFail, ref generated);
 			List<IntVec3> itemCells = new List<IntVec3>();
 			List<IntVec3> spawnCells = new List<IntVec3>();
 			foreach (Thing t in generated.ToList().InRandomOrder())
 			{
-				/*if(t is Building b && b.PowerComp != null && !(b.PowerComp is CompPowerTransmitter))
+				if(t is Building_AncientCryptosleepCasket)
 				{
-					CompPower powerComp = b.PowerComp;
-					PowerConnectionMaker.DisconnectFromPowerNet(powerComp);
-					Building transmitter = b.Position.GetTransmitter(map);
-					if (transmitter?.PowerComp != null)
-					{
-						powerComp.ConnectToTransmitter(transmitter.PowerComp);
-					}
-					else
-					{
-						map.powerNetManager.Notify_ConnectorWantsConnect(powerComp);
-					}
-				}*/
+					spawnCells.Add(t.InteractionCell);
+				}
 				if (t.TryGetComp<CompRefuelable>(out var comp))
 				{
 					if (comp.Props.fuelIsMortarBarrel)
@@ -238,18 +244,6 @@ namespace DMSRC
 					itemCells.AddRange(t.OccupiedRect().Cells);
 				}
 			}
-			foreach (CellRect r in prefab.roofRects)
-			{
-				foreach (IntVec3 c in r.Cells)
-				{
-					IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedLocalPosition(c, rot);
-					IntVec3 cell = root + adjustedLocalPosition;
-					if (!cell.Roofed(map))
-					{
-						map.roofGrid.SetRoof(cell, RoofDefOf.RoofConstructed);
-					}
-				}
-			}
 			foreach (Thing thing in things)
 			{
 				GenPlace.TryPlaceThing(thing, itemCells.RandomElement(), map, ThingPlaceMode.Near);
@@ -258,73 +252,14 @@ namespace DMSRC
 			{
 				pawns.AddRange(mechs);
 			}
-			foreach(IntVec3 cell in prefab.spawnCells)
-			{
-				IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedLocalPosition(cell, rot);
-				spawnCells.Add(root + adjustedLocalPosition);
-			}
 			foreach(Pawn p in pawns)
 			{
 				IntVec3 c = spawnCells.RandomElement();
 				GenSpawn.Spawn(p, c, map);
 				spawnCells.Remove(c);
+				map.terrainGrid.SetTerrain(c, TerrainDefOf.Ice);
 			}
 			map.powerNetManager.UpdatePowerNetsAndConnections_First();
-		}
-
-		public bool GetPrefab(RPrefabDef prefab, PrefabProps props, List<string> usedTags)
-		{
-			string s = props.requiredTags.FirstOrDefault((tag)=>!usedTags.Contains(tag));
-			if (!s.NullOrEmpty())
-			{
-				return prefab.tags.Contains(s);
-			}
-			if (!props.tagsMaxOnce.NullOrEmpty() && prefab.tags.Any((x)=>props.tagsMaxOnce.Contains(x) && usedTags.Contains(x)))
-			{
-				return false;
-			}
-			return true;
-		}
-
-		private static void SpawnThing(PrefabThingData data, Map map, IntVec3 cell, Faction faction = null, List<Thing> spawned = null)
-		{
-			foreach (Thing t in cell.GetThingList(map).ToList())
-			{
-				if (t.def.destroyable && t.def.fillPercent > 0)
-				{
-					t.Destroy();
-				}
-			}
-			ThingDef thingDef = data.def;
-			ThingDef stuff = data.stuff;
-			Thing thing = ThingMaker.MakeThing(thingDef, stuff);
-			if (thing.def.CanHaveFaction)
-			{
-				thing.SetFaction(faction);
-			}
-			thing.stackCount = data.stackCountRange.RandomInRange;
-			if (data.hp > 0)
-			{
-				thing.HitPoints = data.hp;
-			}
-			CompColorable comp;
-			if (data.colorDef != null && thing is Building building)
-			{
-				building.ChangePaint(data.colorDef);
-			}
-			else if (data.color != default(Color) && thing.TryGetComp(out comp))
-			{
-				comp.SetColor(data.color);
-			}
-			if (data.quality.HasValue && thing.TryGetComp(out CompQuality comp2))
-			{
-				comp2.SetQuality(data.quality.Value, ArtGenerationContext.Outsider);
-			}
-			thing = GenSpawn.Spawn(thing, cell, map);
-			if (thing != null)
-			{
-				spawned?.Add(thing);
-			}
 		}
 	}
 

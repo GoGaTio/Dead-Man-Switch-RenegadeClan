@@ -67,6 +67,8 @@ namespace DMSRC
 			innerContainer = new ThingOwner<Thing>(this, oneStackOnly: true, LookMode.Deep, removeContentsIfDestroyed: false);
 		}
 
+		public override Graphic Graphic => BaseContent.BadGraphic;
+
 		public Pawn InnerPawn
 		{
 			get
@@ -93,6 +95,10 @@ namespace DMSRC
 			{
 				if (cachedLabel == null)
 				{
+					if(InnerPawn == null)
+					{
+						cachedLabel = base.LabelNoCount;
+					}
 					cachedLabel = "DMSRC_DeactivatedLabel".Translate(InnerPawn.KindLabel, InnerPawn);
 				}
 				return cachedLabel;
@@ -111,10 +117,11 @@ namespace DMSRC
 
 		public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
 		{
-			if(InnerPawn != null)
+			if(InnerPawn == null)
 			{
-				InnerPawn.DynamicDrawPhaseAt(phase, drawLoc);
+				base.DynamicDrawPhaseAt(phase, drawLoc, flip);
 			}
+			else InnerPawn.DynamicDrawPhaseAt(phase, drawLoc);
 		}
 
 		public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -157,25 +164,22 @@ namespace DMSRC
 
 		public override IEnumerable<Gizmo> GetGizmos()
 		{
-			if (DebugSettings.ShowDevGizmos)
+			yield return new Command_Action
 			{
-				yield return new Command_Action
+				defaultLabel = "Open",
+				action = delegate
 				{
-					defaultLabel = "DEV: Open",
-					action = delegate
+					Map map = Map;
+					IntVec3 pos = Position;
+					bool flag = this.DeSpawnOrDeselect();
+					Thing t = GenSpawn.Spawn(InnerPawn, pos, map);
+					Destroy();
+					if (flag)
 					{
-						Map map = Map;
-						IntVec3 pos = Position;
-						bool flag = this.DeSpawnOrDeselect();
-						Thing t = GenSpawn.Spawn(InnerPawn, pos, map);
-						Destroy();
-						if (flag)
-						{
-							Find.Selector.Select(t);
-						}
+						Find.Selector.Select(t);
 					}
-				};
-			}
+				}
+			};
 		}
 
 		public override void ExposeData()

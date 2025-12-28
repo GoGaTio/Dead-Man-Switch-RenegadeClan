@@ -6,7 +6,7 @@
     <defName>DMSRC_ProcessorCore</defName>
     <label>processor core</label>
     <description>An array of advanced processors, designed to function as control block and AI core.</description>
-    <possessionCount>1</possessionCount>
+    <possessionCount>0</possessionCount>
     <graphicData>
       <texPath>Things/Resource/DMSRC_ProcessorCore</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -38,7 +38,7 @@
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
         <completedLetterLabel>Processor core studied: {RESEARCH} unlocked</completedLetterLabel>
-        <completedLetter>By studying the processor core, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetter>By studying the processor core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         <!-- Interactable -->
@@ -69,7 +69,7 @@
     <defName>DMSRC_ComponentGBEP</defName>
     <label>gamma beam emissive platform</label>
     <description>A device that produces a coherent gamma beam. Cannot be replicated on low-tech worlds as it requires Unocttrium for emitter element.</description>
-    <possessionCount>2</possessionCount>
+    <possessionCount>0</possessionCount>
     <graphicData>
       <texPath>Things/Resource/DMSRC_ComponentGBEP</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -98,7 +98,7 @@
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
         <completedLetterLabel>Gamma beam emissive platform studied: {RESEARCH} unlocked</completedLetterLabel>
-        <completedLetter>By studying the gamma beam emissive platform, {STUDIER_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetter>By studying the gamma beam emissive platform, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         <!-- Interactable -->

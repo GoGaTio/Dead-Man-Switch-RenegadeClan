@@ -6,6 +6,7 @@
       <li>ApparelArmor</li>
     </thingCategories>
 <thingSetMakerTags><li>DMSRC_AssaultEquipment</li></thingSetMakerTags>
+<tradeTags><li>DMSRC_AssaultEquipment</li></tradeTags>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
       <researchPrerequisites>

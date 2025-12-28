@@ -28,7 +28,7 @@
       <Mass>0.015</Mass>
       <MarketValue>1200</MarketValue>
       <DeteriorationRate>5</DeteriorationRate>
-      <WorkToMake>3200</WorkToMake>
+      <WorkToMake>5000</WorkToMake>
       <MaxInstallCount>5</MaxInstallCount>
     </statBases>
     <graphicData>
@@ -68,7 +68,7 @@
       <Mass>0.015</Mass>
       <MarketValue>1200</MarketValue>
       <DeteriorationRate>5</DeteriorationRate>
-      <WorkToMake>3200</WorkToMake>
+      <WorkToMake>7500</WorkToMake>
       <MaxInstallCount>5</MaxInstallCount>
     </statBases>
     <recipeMaker>

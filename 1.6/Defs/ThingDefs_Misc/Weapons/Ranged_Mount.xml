@@ -75,7 +75,7 @@
     </tools>
     <comps>
       <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>10</explosionDamage>
+        <explosionDamage>7</explosionDamage>
         <explosionRange>1.9</explosionRange>
         <beamMoteDef>DMSRC_Mote_BeamLarge</beamMoteDef>
         <damageDef>DMSRC_FocusedBeam</damageDef>
@@ -84,7 +84,7 @@
   </ThingDef>
 
   <ThingDef ParentName="DMS_AutomatroidTurretGun">
-    <defName>DMSRC_Gun_SubjugatorAutoCannon</defName>
+    <defName>DMSRC_Gun_WeevilCannon</defName>
     <label>Autocannon</label>
     <description>A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. Because of the health risks, grasers are usually only used by mechanoids. This one was made to interface directly with a mechanoid wielder and draw from its power source.</description>
     <tradeability>None</tradeability>
@@ -93,7 +93,7 @@
     <graphicData>
       <texPath>Things/Projectile/Bullet_Big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.5</drawSize>
+      <drawSize>2</drawSize>
     </graphicData>
     <statBases>
       <Mass>20</Mass>
@@ -102,13 +102,13 @@
       <AccuracyMedium>0.2</AccuracyMedium>
       <AccuracyLong>0.05</AccuracyLong>
       <RangedWeapon_Cooldown>1.10</RangedWeapon_Cooldown>
-      <MarketValue>2000</MarketValue>
+      <MarketValue>500</MarketValue>
     </statBases>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>DMSRC_Bullet_AutoCannon</defaultProjectile>
+        <defaultProjectile>DMSRC_Bullet_WeevilCannon</defaultProjectile>
         <warmupTime>0</warmupTime>
         <range>29.9</range>
         <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
@@ -119,22 +119,11 @@
         <forcedMissRadius>3</forcedMissRadius>
       </li>
     </verbs>
-    <tools>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
-    <defName>DMSRC_Bullet_AutoCannon</defName>
-    <label>howitzer shell</label>
+    <defName>DMSRC_Bullet_WeevilCannon</defName>
+    <label>bullet</label>
     <thingClass>Fortified.Projectile_ConeExplosive</thingClass>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Big</texPath>
@@ -143,21 +132,21 @@
     </graphicData>
     <projectile>
       <speed>70</speed>
-      <damageDef>Bomb</damageDef>
+      <damageDef>Bullet</damageDef>
       <screenShakeFactor>0</screenShakeFactor>
-      <damageAmountBase>27</damageAmountBase>
-      <armorPenetrationBase>0.71</armorPenetrationBase>
-      <stoppingPower>8</stoppingPower>
-      <explosionRadius>1.4</explosionRadius>
+      <damageAmountBase>20</damageAmountBase>
+      <armorPenetrationBase>0.41</armorPenetrationBase>
+      <stoppingPower>2</stoppingPower>
+      <soundExplode>Explosion_Rocket</soundExplode>
     </projectile>
     <modExtensions>
       <li Class="Fortified.ExplosiveExtension">
         <damage>Bullet</damage>
-        <damageAmount>12</damageAmount>
+        <damageAmount>10</damageAmount>
         <armorPen>0.1</armorPen>
-        <preExplosionOffset>4</preExplosionOffset>
-        <range>8</range>
-        <swayAngle>60</swayAngle>
+        <preExplosionOffset>2</preExplosionOffset>
+        <range>4</range>
+        <swayAngle>30</swayAngle>
         <doVisualEffects>false</doVisualEffects>
         <sound>Explosion_Rocket</sound>
         <effecterDef>DMS_ConeExplosion</effecterDef>

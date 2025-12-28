@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ResearchProjectDef ParentName="DMS_BaseTech">
-    <defName>DMSRC_ModularAutomatroid</defName>
-    <label>Modular Automatroid</label>
-    <description>These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist.</description>
-    <baseCost>1000</baseCost>
-    <techLevel>Industrial</techLevel>
-    <prerequisites>
-      <li>DMS_BattleFrame</li>
-      
-    </prerequisites>
-    <researchViewX>6.00</researchViewX>
-    <researchViewY>1.90</researchViewY>
-  </ResearchProjectDef>
 
-<ResearchProjectDef ParentName="DMS_BaseTech">
+  <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMSRC_AssaultEquipment</defName>
     <label>assault equipment</label>
     <description>These massive machines were purpose built for full-scale warfare amongst nations. Unlocks various assault Automatroids which took inspiration from old-war vehicles and technology, but with a modernized twist.</description>
@@ -23,7 +10,7 @@
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>DMS_EquipmentElite</li>
-<li>Fabrication</li>
+      <li>Fabrication</li>
     </prerequisites>
     <researchViewX>3.00</researchViewX>
     <researchViewY>5.00</researchViewY>
@@ -32,7 +19,7 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMSRC_Firecrackers</defName>
     <label>FSR munition</label>
-    <description>Allows to create ammo, that creates spark streams and flame blast at the impact position.</description>
+    <description>Allows to produce ammo, that creates spark streams and flame blast at the impact position.</description>
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
@@ -59,8 +46,8 @@
     <requiredAnalyzed>
       <li>DMSRC_ComponentGBEP</li>
     </requiredAnalyzed>
-  </ResearchProjectDef> 
-  
+  </ResearchProjectDef>
+
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMSRC_Overseer</defName>
     <label>"Overlord" project</label>
@@ -103,9 +90,9 @@
     </prerequisites>
     <researchViewX>4.00</researchViewX>
     <researchViewY>5.50</researchViewY>
-    <!--requiredAnalyzed>
-      <li>DMSRC_DataCard_NeuroChips</li>
-    </requiredAnalyzed>-->
+    <requiredAnalyzed>
+      <li>DMSRC_Neurointerface</li>
+    </requiredAnalyzed>
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
@@ -122,6 +109,6 @@
     <!--requiredAnalyzed>
       <li>DMSRC_DataCard_HighNeuroChips</li>
     </requiredAnalyzed-->
-  </ResearchProjectDef> 
+  </ResearchProjectDef>
 
 </Defs>

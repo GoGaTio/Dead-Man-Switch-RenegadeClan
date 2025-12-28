@@ -8,6 +8,7 @@
     <thingSetMakerTags>
       <li>DMSRC_AssaultEquipment</li>
     </thingSetMakerTags>
+<tradeTags><li>DMSRC_AssaultEquipment</li></tradeTags>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
       <researchPrerequisites>
@@ -39,7 +40,7 @@
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.15</SlaveSuppressionOffset>
       <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.65</VacuumResistance>
       <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
-      <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+      <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
     </equippedStatOffsets>
     <uiIconScale>1.25</uiIconScale>
     <generateCommonality>1</generateCommonality>
@@ -108,7 +109,7 @@
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_AssaultHelmet</defName>
     <label>heavy assault helmet</label>
-    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides toxic gas and vacuum exposure resistance, along with increases shooting accuracy.</description>
+    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>20</Tungsteel>
       <Plasfiber>20</Plasfiber>
@@ -132,7 +133,7 @@
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_ShieldHelmet</defName>
     <label>shield assault helmet</label>
-    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistance, along with increases shooting accuracy.</description>
+    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>30</Tungsteel>
       <Plasfiber>20</Plasfiber>
@@ -158,7 +159,9 @@
     </statBases>
     <apparel>
       <wornGraphicPath>Things/Apparel/DMSRC_ShieldAssaultHelmet/DMSRC_ShieldAssaultHelmet</wornGraphicPath>
-      <useWornGraphicMask>true</useWornGraphicMask>
+      <useWornGraphicMask>true</useWornGraphicMask><tags>
+        <li>DMSRC_ShieldHelmet</li>
+      </tags>
     </apparel>
     <comps>
       <li Class="CompProperties_Shield">
@@ -175,7 +178,7 @@
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_ProcessorHelmet</defName>
     <label>processor helmet</label>
-    <description>An advanced helmet with built-in pricessor core, that allows to use more neuroimplants and control more mechs./n/nAlso provides toxic gas and vacuum exposure resistance, along with increases shooting accuracy.</description>
+    <description>An advanced helmet with built-in processor core, that allows to use more neuroimplants and control more mechs./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>30</Tungsteel>
       <Plasfiber>25</Plasfiber>
@@ -199,7 +202,7 @@
       <Mass>3.5</Mass>
       <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
     </statBases>
-    <thingSetMakerTags Inherit="False" />
+    <thingSetMakerTags Inherit="False" /><tradeTags Inherit="False" />
     <apparel>
       <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
       <tags>

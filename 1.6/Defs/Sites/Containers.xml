@@ -40,7 +40,7 @@
   <GenStepDef>
     <defName>DMSRC_ContainerRenegades</defName>
     <linkWithSite>DMSRC_ContainerRenegades</linkWithSite>
-    <order>460</order>
+    <order>1460</order>
     <genStep Class="DMSRC.GenStep_RenegadesRequest">
     </genStep>
   </GenStepDef>

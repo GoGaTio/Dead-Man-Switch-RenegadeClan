@@ -24,6 +24,47 @@
     <weaponTags Inherit="False" />
   </PawnKindDef>
 
+  <PawnKindDef ParentName="DMSRC_FighterBase">
+    <defName>DMSRC_Stormtrooper</defName>
+    <label>stormtrooper</label>
+    <combatPower>100</combatPower>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+    <apparelMoney>3700~4000</apparelMoney>
+<apparelRequired>
+      <li>DMSRC_Apparel_AssaultArmor</li>
+      <li>DMSRC_Apparel_AssaultHelmet</li>
+      <li>DMS_Apparel_BionicSuit</li>
+    </apparelRequired>
+    <specificApparelRequirements>
+      <li>
+        <color>(84, 26, 56)</color>
+      </li>
+      <li>
+        <bodyPartGroup>FullHead</bodyPartGroup>
+        <alternateTagChoices>
+          <li>
+            <tag>DMSRC_ShieldHelmet</tag>
+            <chance>0.2</chance>
+          </li>
+        </alternateTagChoices>
+      </li>
+    </specificApparelRequirements>
+<skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>10~15</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>10~15</range>
+      </li>
+    </skills>
+    <weaponTags>
+      <li>DMS_MechWeaponHeavy</li><li>DMS_MechWeaponMedium</li>
+    </weaponTags>
+    <weaponMoney>1600~2000</weaponMoney>
+  </PawnKindDef>
+
   <!--=======================Officer===============================-->
 
   <PawnKindDef ParentName="DMSRC_OfficerBase">

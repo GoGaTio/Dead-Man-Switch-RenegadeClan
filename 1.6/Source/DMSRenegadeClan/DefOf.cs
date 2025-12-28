@@ -22,11 +22,13 @@ namespace DMSRC
 
         public static JobDef DMSRC_OpenContainer;
 
-        //public static JobDef DMS_RepairSelf;
-
 		public static FactionDef DMSRC_RenegadeClan;
 
-        public static ThingDef DMSRC_SecurityContainer_NaraRed;
+        public static FactionDef DMS_Army;
+
+        public static LetterDef DMSRC_ContactEvent;
+
+		public static ThingDef DMSRC_SecurityContainer_NaraRed;
 
         public static ThingDef DMSRC_SecurityContainer_NaraBlue;
 

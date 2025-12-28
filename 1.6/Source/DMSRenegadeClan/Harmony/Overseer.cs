@@ -606,7 +606,14 @@ namespace DMSRC
                             {
                                 if (overseer != null)
                                 {
-                                    GenDraw.DrawArrowPointingAt(comp.parent.TrueCenter());
+                                    if (comp.parent.Spawned)
+                                    {
+										GenDraw.DrawArrowPointingAt(comp.parent.TrueCenter());
+									}
+                                    else if (comp.parent.SpawnedOrAnyParentSpawned)
+                                    {
+										GenDraw.DrawArrowPointingAt(comp.parent.PositionHeld.ToVector3());
+									}
                                 }
                             };
                         }
