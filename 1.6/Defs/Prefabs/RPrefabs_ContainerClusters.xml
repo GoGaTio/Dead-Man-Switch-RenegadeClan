@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ContainerNara_Red</defName>
+    <size>(5,5)</size>
+    <tags>
+      <li>ContainerNara</li>
+    </tags>
+    <clearRects>
+      <li>(0,0,4,4)</li>
+    </clearRects>
+    <things>
+      <DMSRC_SecurityContainer_NaraRed>
+        <position>(2, 0, 2)</position>
+      </DMSRC_SecurityContainer_NaraRed>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <PrefabDef>
+    <defName>NewPrefab</defName>
+    <!-- rename -->
+    <size>(9,9)</size>
+    <subPrefabs>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+    </subPrefabs>
+    <things>
+      <DiningChair>
+        <rects>
+          <li>(1,2,1,2)</li>
+          <li>(6,2,6,2)</li>
+          <li>(1,5,1,5)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+      <DiningChair>
+        <position>(4, 0, 7)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>NewPrefab</defName>
+    <!-- rename -->
+    <size>(9,9)</size>
+    <subPrefabs>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+    </subPrefabs>
+    <things>
+      <DiningChair>
+        <rects>
+          <li>(7,3,7,3)</li>
+          <li>(2,4,2,4)</li>
+          <li>(7,7,7,7)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+      <DiningChair>
+        <position>(4, 0, 7)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>NewPrefab</defName>
+    <!-- rename -->
+    <size>(9,9)</size>
+    <subPrefabs>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+    </subPrefabs>
+    <things>
+      <DiningChair>
+        <position>(5, 0, 1)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+      <DiningChair>
+        <position>(1, 0, 4)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+      <DiningChair>
+        <position>(7, 0, 5)</position>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+      <DiningChair>
+        <position>(3, 0, 7)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+    </things>
+  </PrefabDef>
+
+  <PrefabDef>
+    <defName>NewPrefab</defName>
+    <!-- rename -->
+    <size>(9,9)</size>
+    <subPrefabs>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+      <li>
+        <pos></pos>
+        <rotations></rotations>
+        <tag>ContainerNara</tag>
+      </li>
+    </subPrefabs>
+    <things>
+      <DiningChair>
+        <position>(7, 0, 1)</position>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+      <DiningChair>
+        <rects>
+          <li>(2,2,2,2)</li>
+          <li>(1,7,1,7)</li>
+        </rects>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+      <DiningChair>
+        <position>(4, 0, 6)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>WoodLog</stuff>
+        <quality>Normal</quality>
+      </DiningChair>
+    </things>
+  </PrefabDef>
+
+
+</Defs>

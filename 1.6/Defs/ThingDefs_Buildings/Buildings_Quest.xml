@@ -88,9 +88,9 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_LargeBroadcastAntenna</defName>
-    <label>central command core</label>
-    <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
-    <thingClass>Building_WorkTable</thingClass>
+    <label>large broadcast antenna</label>
+    <description>Ultra-large broadcast antenna for planetary communication. Allows to control mechanoids over the world from well-defended command center.</description>
+    <thingClass>Building</thingClass>
     <graphicData>
       <texPath>Things/Building/DMSRC_LargeBroadcastAntenna</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -119,11 +119,14 @@
     <statBases>
       <MaxHitPoints>3000</MaxHitPoints>
       <Flammability>0</Flammability>
+      <WorkToBuild>25000</WorkToBuild>
     </statBases>
     <costList>
-      <Steel>800</Steel>
-      <Tungsteel>450</Tungsteel>
-      <ComponentTransmitter>2</ComponentTransmitter>
+      <Steel>600</Steel>
+      <Tungsteel>200</Tungsteel>
+      <ComponentStamped>10</ComponentStamped>
+      <ComponentIndustrial>15</ComponentIndustrial>
+      <ComponentTransmitter>5</ComponentTransmitter>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <building>
@@ -134,9 +137,16 @@
         <li>DMSRC_Quest</li>
       </buildingTags>
     </building>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
     <comps>
       <li Class="CompProperties_AmbientSound">
         <sound>GeothermalPlant_Ambience</sound>
+      </li>
+      <li Class="Fortified.CompProperties_SubRelay">
+        <relayRange>900</relayRange>
       </li>
     </comps>
   </ThingDef>

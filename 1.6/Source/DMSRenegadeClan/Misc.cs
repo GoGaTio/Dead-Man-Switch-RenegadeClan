@@ -559,14 +559,6 @@ namespace DMSRC
 		}
 	}
 
-	public class PawnGenExtension : DefModExtension
-    {
-		public FloatRange? melaninRange = null;
-
-		public float genderChanceOverride = 0.5f; //1 for male only, 0 for female only
-
-		public float? unRecruitableChanceOverride = null;
-    }
 	public class PlaceWorker_ShowTurretRadius : PlaceWorker
 	{
 		public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map, Thing thingToIgnore = null, Thing thing = null)

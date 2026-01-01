@@ -53,6 +53,7 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 namespace DMSRC
 {
@@ -62,7 +63,7 @@ namespace DMSRC
 		[HarmonyPrefix]
 		public static bool Prefix(ThingDef thingDef, int stackCount, Faction faction, ref Thing __result)
 		{
-			if(stackCount > 0 && faction?.def == RCDefOf.DMSRC_RenegadeClan && (thingDef.IsApparel || thingDef.IsWeapon))
+			if (stackCount > 0 && faction?.def == RCDefOf.DMSRC_RenegadeClan && (thingDef.IsApparel || thingDef.IsWeapon))
 			{
 				ThingDef result = null;
 				if (thingDef.MadeFromStuff && !(from x in GenStuff.AllowedStuffsFor(thingDef, TechLevel.Ultra, checkAllowedInStuffGeneration: true)
@@ -149,6 +150,67 @@ namespace DMSRC
 			if (list.Any((Building_SecurityContainer x) => x.opened && !x.innerContainer.NullOrEmpty()))
 			{
 				__result = false;
+			}
+		}
+	}
+
+	[HarmonyPatch(typeof(PawnGroupMakerUtility), nameof(PawnGroupMakerUtility.GeneratePawns))]
+	public class Patch_Enhance
+	{
+		[HarmonyPostfix]
+		public static IEnumerable<Pawn> Postfix(IEnumerable<Pawn> __result, PawnGroupMakerParms parms)
+		{
+			EnhanceDef def = null;
+			int seed = Rand.Int;
+			if (parms?.faction?.def?.humanlikeFaction == true && !__result.EnumerableNullOrEmpty())
+			{
+				Faction faction = parms.faction;
+				GameComponent_Renegades comp = GameComponent_Renegades.Find;
+				if (comp.active && comp.PlayerRelation == FactionRelationKind.Hostile && faction.HostileTo(Faction.OfPlayerSilentFail))
+				{
+					def = Defs.FirstOrDefault((x) => x.AllowFaction(faction));
+				}
+			}
+			foreach (Pawn p in __result)
+			{
+				if(def != null && p.RaceProps.Humanlike)
+				{
+					if(Rand.ChanceSeeded(def.chanceToEnhanceWeapon, seed))
+					{
+						def.TryEnhanceWeapon(p);
+					}
+					if (Rand.ChanceSeeded(def.chanceToEnhanceApparel, seed))
+					{
+						def.TryEnhanceWeapon(p);
+						if (def.TryEnhanceApparel(p))
+						{
+							def.TryEnhanceApparel(p);
+						}
+					}
+				}
+				seed = Gen.HashCombineInt(seed, p.GetHashCode() + p.LabelNoCount.GetHashCode());
+				yield return p;
+			}
+			if(def != null)
+			{
+				foreach (Pawn p in def.Reinforcements(parms))
+				{
+					yield return p;
+				}
+			}
+		}
+
+		private static List<EnhanceDef> defs;
+
+		public static List<EnhanceDef> Defs
+		{
+			get
+			{
+				if (defs == null)
+				{
+					defs = DefDatabase<EnhanceDef>.AllDefsListForReading;
+				}
+				return defs;
 			}
 		}
 	}

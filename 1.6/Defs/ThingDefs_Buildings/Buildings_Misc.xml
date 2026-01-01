@@ -81,7 +81,7 @@
       <Steel>25</Steel>
     </costList>
   </ThingDef>
-  
+
   <ThingDef ParentName="BuildingBase" Name="DMSRC_Hole">
     <defName>DMSRC_MediumHole</defName>
     <label>facility dormer</label>
@@ -100,6 +100,7 @@
     <size>(5,5)</size>
     <useHitPoints>false</useHitPoints>
     <selectable>true</selectable>
+    <holdsRoof>true</holdsRoof>
     <building>
       <claimable>false</claimable>
       <repairable>false</repairable>
@@ -202,6 +203,7 @@
       <MaxHitPoints>300</MaxHitPoints>
       <WorkToBuild>2500</WorkToBuild>
       <Flammability>0.5</Flammability>
+      <Mass>50</Mass>
       <Beauty>-5</Beauty>
     </statBases>
     <tickerType>Normal</tickerType>
@@ -210,10 +212,10 @@
     <building>
       <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
     </building>
-<thingCategories>
+    <thingCategories>
       <li>BuildingsMisc</li>
     </thingCategories>
- <minifiedDef>MinifiedThing</minifiedDef>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <costList>
       <Steel>100</Steel>
       <ComponentIndustrial>3</ComponentIndustrial>
@@ -420,5 +422,5 @@
       </li>
     </comps>
   </ThingDef>
-  
+
 </Defs>

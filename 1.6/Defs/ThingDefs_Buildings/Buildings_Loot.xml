@@ -20,11 +20,11 @@
       <repairable>true</repairable>
       <deconstructible>true</deconstructible>
       <neverBuildable>true</neverBuildable>
-<paintable>true</paintable>
+      <paintable>true</paintable>
     </building>
     <pathCost>45</pathCost>
   </ThingDef>
-  
+
   <ThingDef ParentName="DMSRC_BaseLootBox">
     <defName>DMSRC_Crate</defName>
     <label>military crate</label>
@@ -125,7 +125,7 @@
     </modExtensions>
   </ThingDef>
 
-<ThingDef ParentName="DMSRC_BaseLootBox">
+  <ThingDef ParentName="DMSRC_BaseLootBox">
     <defName>DMSRC_Drawer</defName>
     <label>drawer</label>
     <description>A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations.</description>
@@ -162,7 +162,7 @@
           <graphicClass>Graphic_Multi</graphicClass>
           <shaderType>CutoutComplex</shaderType>
         </openedGraphicdata>
-<countRange>1</countRange>
+        <countRange>1</countRange>
         <loots>
           <li>DMSRC_Drawer</li>
         </loots>
@@ -170,7 +170,7 @@
     </modExtensions>
   </ThingDef>
 
-<ThingDef ParentName="DMSRC_BaseLootBox">
+  <ThingDef ParentName="DMSRC_BaseLootBox">
     <defName>DMSRC_Locker</defName>
     <label>locker</label>
     <description>A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations.</description>
@@ -199,12 +199,12 @@
           <graphicClass>Graphic_Multi</graphicClass>
           <shaderType>CutoutComplex</shaderType>
         </openedGraphicdata>
-<countRange>1</countRange>
+        <countRange>1</countRange>
         <loots>
           <li>DMSRC_Locker</li>
         </loots>
       </li>
     </modExtensions>
   </ThingDef>
-  
+
 </Defs>

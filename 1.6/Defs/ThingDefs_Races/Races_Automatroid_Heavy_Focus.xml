@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-
-
   <!-- Beam tank -->
   <ThingDef ParentName="BaseAutomatroidRace">
     <defName>DMSRC_Mech_Focus</defName>
@@ -49,8 +47,7 @@
       </li>
     </tools>
     <butcherProducts>
-      <DMS_ChunkSlag>5</DMS_ChunkSlag>
-      <Tungsteel>60</Tungsteel>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
       <Steel>24</Steel>
     </butcherProducts>
     <damageMultipliers>
@@ -72,8 +69,8 @@
     <defName>DMSRC_Mech_Focus</defName>
     <label>focus</label>
     <race>DMSRC_Mech_Focus</race>
-    <combatPower>250</combatPower>
-    <maxPerGroup>4</maxPerGroup>
+    <combatPower>400</combatPower>
+    <maxPerGroup>5</maxPerGroup>
     <isBoss>true</isBoss>
     <destroyGearOnDrop>true</destroyGearOnDrop>
     <abilities>
@@ -98,7 +95,156 @@
       </li>
     </lifeStages>
     <weaponTags/>
-    <weaponMoney>5000~9999</weaponMoney>
+    <weaponMoney>9999~9999</weaponMoney>
+  </PawnKindDef>
+
+  <!-- Beam defence -->
+  <ThingDef ParentName="BaseAutomatroidRace">
+    <defName>DMSRC_Mech_Turnpike</defName>
+    <label>turnpike</label>
+    <description>An unmanned all-terrain tracked beam defence support platform, armed with mounted submachine gun.</description>
+    <statBases>
+      <MoveSpeed>2.5</MoveSpeed>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.3</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.2</ArmorRating_Heat>
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost>5</BandwidthCost>
+      <WastepacksPerRecharge>5</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>DMS_Caterpillar</body>
+      <nameGenerator>DMS_VanguardMechHeavy</nameGenerator>
+      <baseBodySize>3</baseBodySize>
+      <baseHealthScale>5</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+    </race>
+    <comps>
+      <li Class="Fortified.CompPropertiesMultipleTurretGun">
+        <subTurrets>
+          <li>
+            <ID>defense machinegun</ID>
+            <turret>DMS_SubMachineGunMounted</turret>
+            <autoAttack>true</autoAttack>
+            <warmingTime>3</warmingTime>
+            <angleOffset>-90</angleOffset>
+            <renderNodeProperties>
+              <li>
+                <nodeClass>Fortified.PawnRenderNode_SubTurretGun</nodeClass>
+                <workerClass>Fortified.PawnRenderNodeWorker_SubTurretGun</workerClass>
+                <parentTagDef>Body</parentTagDef>
+                <overrideMeshSize>1</overrideMeshSize>
+                <baseLayer>20</baseLayer>
+                <pawnType>Any</pawnType>
+                <drawData>
+                  <defaultData>
+                    <pivot>(0.5,0.5)</pivot>
+                  </defaultData>
+                  <dataEast>
+                    <offset>(0.5,0,-0.5)</offset>
+                  </dataEast>
+                  <dataWest>
+                    <offset>(-0.75,0,0.6)</offset>
+                    <rotationOffset>180</rotationOffset>
+                  </dataWest>
+                  <dataSouth>
+                    <offset>(-0.6,0,-0.5)</offset>
+                  </dataSouth>
+                  <dataNorth>
+                    <offset>(0.6,0,0.9)</offset>
+                  </dataNorth>
+                </drawData>
+              </li>
+            </renderNodeProperties>
+          </li>
+        </subTurrets>
+      </li>
+      <li Class="DMSRC.CompProperties_BeamDefence">
+        <range>14.9</range>
+        <mote>DMSRC_Mote_BeamDefence</mote>
+        <interceptSameFaction>false</interceptSameFaction>
+        <barColor>(0.25, 0.05, 0.25)</barColor>
+        <barColorAlt>(0.10, 0.02, 0.10)</barColorAlt>
+        <chargeRegenInterval>90</chargeRegenInterval>
+        <inactiveRegenOffset>80</inactiveRegenOffset>
+        <interceptSound>BeamGraser_Shooting_Resolve</interceptSound>
+        <offset>(0, 0, 0.51)</offset>
+        <intercepts>
+          <li>
+            <type>Bullet</type>
+          </li>
+          <li>
+            <type>FireArrow</type>
+          </li>
+          <li>
+            <type>Projectile_SpawnsThing</type>
+          </li>
+          <li>
+            <type>Projectile_Explosive</type>
+            <maxExplosionRadius>2.8</maxExplosionRadius>
+          </li>
+        </intercepts>
+      </li>
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <butcherProducts>
+      <DMS_ChunkSlag>3</DMS_ChunkSlag>
+      <Steel>24</Steel>
+    </butcherProducts>
+    <damageMultipliers>
+      <li>
+        <damageDef>Blunt</damageDef>
+        <multiplier>0.75</multiplier>
+      </li>
+      <li>
+        <damageDef>Stab</damageDef>
+        <multiplier>0.5</multiplier>
+      </li>
+    </damageMultipliers>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BaseAutomatroidKind">
+    <defName>DMSRC_Mech_Turnpike</defName>
+    <label>turnpike</label>
+    <race>DMSRC_Mech_Turnpike</race>
+    <combatPower>250</combatPower>
+    <maxPerGroup>7</maxPerGroup>
+    <isBoss>true</isBoss>
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <abilities>
+      <li>DMS_RepairMode</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/DMSRC_Turnpike</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.5</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/DMSRC_Turnpike</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags/>
+    <weaponMoney>9999~9999</weaponMoney>
   </PawnKindDef>
 
 </Defs>

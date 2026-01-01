@@ -231,8 +231,8 @@ namespace DMSRC
 		[DebugAction("DMSRC", "Contact renegades", false, false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
 		public static void Contact()
 		{
-			Log.Message("Hours till contact" + GameComponent_Renegades.Find.hoursTillContact);
-			GameComponent_Renegades.Find.hoursTillContact = 0;
+			//Log.Message("Hours till contact" + GameComponent_Renegades.Find.hoursTillContact);
+			GameComponent_Renegades.Find.contacted = true;
 		}
 	}
 

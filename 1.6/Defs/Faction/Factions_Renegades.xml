@@ -11,6 +11,7 @@
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
     <displayInFactionSelection>false</displayInFactionSelection>
     <configurationListOrderPriority>2172</configurationListOrderPriority>
+    <canGenerateQuestSites>false</canGenerateQuestSites>
     <melaninRange>0~0.1</melaninRange>
     <canSiege>false</canSiege>
     <canStageAttacks>false</canStageAttacks>
@@ -71,7 +72,7 @@
       <li>PlayerColony</li>
       <li>Ancients</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Beggars</li>
-<li MayRequire="Ludeon.RimWorld.Royalty">Empire</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">Empire</li>
       <li MayRequire="Ludeon.RimWorld.Anomaly">ResearchExpedition</li>
       <li MayRequire="Ludeon.RimWorld.Odyssey">GravshipCrew</li>
       <li MayRequire="Ludeon.RimWorld.Odyssey">TradersGuild</li>

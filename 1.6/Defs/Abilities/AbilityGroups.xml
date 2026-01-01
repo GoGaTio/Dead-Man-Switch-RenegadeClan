@@ -4,7 +4,7 @@
   <AbilityGroupDef>
     <defName>DMSRC_Overseer</defName>
     <cooldownTicks>420000</cooldownTicks>
-    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
-  </AbilityGroupDef>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+  </AbilityGroupDef>
 
 </Defs>

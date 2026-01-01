@@ -32,7 +32,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>100</count>
+        <count>150</count>
       </li>
       <li>
         <filter>
@@ -40,7 +40,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>8</count>
       </li>
       <li>
         <filter>
@@ -48,7 +48,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>8</count>
+        <count>12</count>
       </li>
       <li>
         <filter>
@@ -81,6 +81,82 @@
           </thingDefs>
         </filter>
         <count>3</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <!--Turnpike-->
+  <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
+    <defName>DMSRC_Make_Turnpike</defName>
+    <label>Gestate Turnpike</label>
+    <description>Gestate a Focus automatroid.</description>
+    <products>
+      <DMSRC_Mech_Turnpike>1</DMSRC_Mech_Turnpike>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>Neurocomputer</ThingDef>
+      <ThingDef>DMSRC_ComponentGBEP</ThingDef>
+      <ThingDef>DMSRC_Mech_Turnpike</ThingDef>
+    </descriptionHyperlinks>
+    <researchPrerequisites>
+      <li>DMSRC_BeamFocusing</li>
+    </researchPrerequisites>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+        <count>325</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentStamped</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neurocomputer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DMSRC_ComponentGBEP</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
       </li>
     </ingredients>
   </RecipeDef>

@@ -43,7 +43,6 @@
         <beamMaxDeviation>1.5</beamMaxDeviation>
         <beamCurvature>0.6</beamCurvature>
         <stopBurstWithoutLos>false</stopBurstWithoutLos>
-        <requireLineOfSight>false</requireLineOfSight>
         <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
         <beamChanceToStartFire>0.85</beamChanceToStartFire>
         <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
@@ -91,7 +90,7 @@
     <destroyOnDrop>true</destroyOnDrop>
     <relicChance>0</relicChance>
     <graphicData>
-      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <texPath>Things/Weapons/DMSRC_WeevilCannon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>2</drawSize>
     </graphicData>
@@ -119,6 +118,9 @@
         <forcedMissRadius>3</forcedMissRadius>
       </li>
     </verbs>
+    <weaponTags>
+      <li>DMSRC_WeevilCannon</li>
+    </weaponTags>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">

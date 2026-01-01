@@ -67,6 +67,8 @@ namespace DMSRC
 			public RotEnum rotations = RotEnum.All;
 
 			public List<string> tags = new List<string>();
+
+			public string tag;
 		}
 
 		public List<string> tags = new List<string>();
@@ -143,7 +145,7 @@ namespace DMSRC
 			}
 			foreach (SubPrefabProps sub in subPrefabs)
 			{
-				if (RPrefabUtility.Defs.TryRandomElement((x) => x.tags.Any((y)=> sub.tags.Contains(y)), out var result))
+				if (RPrefabUtility.Defs.TryRandomElement((x) => x.tags.Any((y)=> sub.tags.Contains(y) || sub.tag == y), out var result))
 				{
 					IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedLocalPosition(sub.pos, rot);
 					int num = rot.AsInt + sub.rotations.Random().AsInt;
