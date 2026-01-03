@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationSequence">
+    <operations>
+
+      <!-- ========== PawnKind Patches ========== -->
+      <li Class="PatchOperationAddModExtension">
+        <xpath>
+          Defs/PawnKindDef[	defName="DMSRC_Mech_Malice"	]
+        </xpath>
+        <value>
+          <li Class="CombatExtended.LoadoutPropertiesExtension">
+            <primaryMagazineCount>
+              <min>4</min>
+              <max>6</max>
+            </primaryMagazineCount>
+          </li>
+        </value>
+      </li>
+
+      <!-- ======Arquebusier======-->
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]/statBases/AimingDelayFactor</xpath>
+        <value>
+          <CarryWeight>50</CarryWeight>
+          <CarryBulk>30</CarryBulk>
+          <AimingAccuracy>1.5</AimingAccuracy>
+          <AimingDelayFactor>0.8</AimingDelayFactor>
+          <MeleeDodgeChance>0.15</MeleeDodgeChance>
+          <MeleeCritChance>0.10</MeleeCritChance>
+          <MeleeParryChance>0.09</MeleeParryChance>
+          <MaxHitPoints>250</MaxHitPoints>
+          <NightVisionEfficiency>0.9</NightVisionEfficiency>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]/statBases/ArmorRating_Blunt</xpath>
+        <value>
+          <ArmorRating_Blunt>35</ArmorRating_Blunt>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]/statBases/ArmorRating_Sharp</xpath>
+        <value>
+          <ArmorRating_Sharp>16</ArmorRating_Sharp>
+        </value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]/statBases/ArmorRating_Heat</xpath>
+        <value>
+          <ArmorRating_Heat>0.3</ArmorRating_Heat>
+        </value>
+      </li>
+
+      <li Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]/statBases/ShootingAccuracyPawn</xpath>
+      </li>
+
+
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]</xpath>
+          <value>
+            <comps />
+          </value>
+        </nomatch>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]/comps</xpath>
+        <value>
+          <li Class="CombatExtended.CompProperties_ArmorDurability">
+            <Durability>1000</Durability>
+            <Regenerates>true</Regenerates>
+            <RegenInterval>1250</RegenInterval>
+            <RegenValue>5</RegenValue>
+            <Repairable>true</Repairable>
+            <RepairIngredients>
+              <Steel>5</Steel>
+              <Tungsteel>5</Tungsteel>
+            </RepairIngredients>
+            <RepairTime>300</RepairTime>
+            <RepairValue>200</RepairValue>
+            <CanOverHeal>true</CanOverHeal>
+            <MaxOverHeal>89</MaxOverHeal>
+            <MinArmorPct>0.75</MinArmorPct>
+            <!-- <MinArmorValueSharp>10</MinArmorValueSharp>
+				<MinArmorValueBlunt>22</MinArmorValueBlunt>
+				<MinArmorValueHeat>0.2</MinArmorValueHeat>
+				<MinArmorValueElectric>0.1</MinArmorValueElectric> -->
+          </li>
+        </value>
+      </li>
+
+      <!--add partial armor-->
+      <li Class="PatchOperationAddModExtension">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Malice"]</xpath>
+        <value>
+          <li Class="CombatExtended.PartialArmorExt">
+            <stats>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+                <parts>
+                  <li>SightSensor</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+                <parts>
+                  <li>SightSensor</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+                <parts>
+                  <li>HearingSensor</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+                <parts>
+                  <li>HearingSensor</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>1.3</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalHead</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalHead</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalNeck</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalNeck</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalShoulder</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalShoulder</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalArm</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalArm</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalHand</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalHand</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalLeg</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalLeg</li>
+                </parts>
+              </li>
+            </stats>
+          </li>
+        </value>
+      </li>
+
+
+    </operations>
+  </Operation>
+</Patch>

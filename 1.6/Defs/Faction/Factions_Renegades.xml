@@ -145,7 +145,7 @@
           <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
           <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
           <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
-<DMSRC_Mech_Pavise>0.5</DMSRC_Mech_Pavise>
+          <DMSRC_Mech_Pavise>0.5</DMSRC_Mech_Pavise>
         </options>
       </li>
       <li>
@@ -162,7 +162,7 @@
           <DMS_Mech_Caretta>1</DMS_Mech_Caretta>
           <DMSRC_Mech_Malevolence>1</DMSRC_Mech_Malevolence>
           <DMSRC_Mech_Focus>2</DMSRC_Mech_Focus>
-<DMSRC_Mech_Pavise>2.5</DMSRC_Mech_Pavise>
+          <DMSRC_Mech_Pavise>2.5</DMSRC_Mech_Pavise>
         </options>
       </li>
       <li>

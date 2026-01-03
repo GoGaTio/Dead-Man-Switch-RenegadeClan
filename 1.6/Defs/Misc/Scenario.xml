@@ -148,7 +148,7 @@
         </li>
         <li Class="ScenPart_StartingResearch">
           <def>StartingResearch</def>
-          <project>DMSRC_Firecrackers</project>
+          <project>DMSRC_FSRMunitions</project>
         </li>
         <li Class="DMSRC.ScenPart_Renegades">
           <def>DMSRC_Renegades</def>

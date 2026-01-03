@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationSequence">
+    <operations>
+
+      <!-- ========== PawnKind Patches ========== -->
+
+      <li Class="PatchOperationAddModExtension">
+        <xpath>
+          Defs/PawnKindDef[
+          defName="DMSRC_Mech_Stancher"
+          ]
+        </xpath>
+        <value>
+          <li Class="CombatExtended.LoadoutPropertiesExtension">
+            <primaryMagazineCount>
+              <min>4</min>
+              <max>6</max>
+            </primaryMagazineCount>
+          </li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[defName="DMSRC_Mech_Stancher"]/combatPower</xpath>
+        <value>
+          <combatPower>200</combatPower>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[defName="DMSRC_Mech_Saboteur"]/combatPower</xpath>
+        <value>
+          <combatPower>180</combatPower>
+        </value>
+      </li>
+
+      <!-- ====== 浪人型 ======-->
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMS_Mech_Ronin"]/statBases/MeleeDodgeChance</xpath>
+        <value>
+          <CarryWeight>50</CarryWeight>
+          <CarryBulk>20</CarryBulk>
+          <AimingAccuracy>1.2</AimingAccuracy>
+          <ShootingAccuracyPawn>1.4</ShootingAccuracyPawn>
+          <MeleeDodgeChance>0.32</MeleeDodgeChance>
+          <MeleeCritChance>0.18</MeleeCritChance>
+          <MeleeParryChance>0.16</MeleeParryChance>
+          <MaxHitPoints>200</MaxHitPoints>
+          <NightVisionEfficiency>0.8</NightVisionEfficiency>
+          <ReloadSpeed>1.3</ReloadSpeed>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMS_Mech_Ronin"]/statBases/MeleeHitChance</xpath>
+        <value>
+          <MeleeHitChance>0.13</MeleeHitChance>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMS_Mech_Ronin"]/statBases/AimingDelayFactor</xpath>
+        <value>
+          <AimingDelayFactor>0.85</AimingDelayFactor>
+        </value>
+      </li>
+
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]/statBases/ArmorRating_Blunt</xpath>
+        <value>
+          <ArmorRating_Blunt>48</ArmorRating_Blunt>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]/statBases/ArmorRating_Sharp</xpath>
+        <value>
+          <ArmorRating_Sharp>22</ArmorRating_Sharp>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]/statBases/ArmorRating_Heat</xpath>
+        <value>
+          <ArmorRating_Heat>0.4</ArmorRating_Heat>
+        </value>
+      </li>
+
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]</xpath>
+          <value>
+            <comps />
+          </value>
+        </nomatch>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]/comps</xpath>
+        <value>
+          <li Class="CombatExtended.CompProperties_ArmorDurability">
+            <Durability>1400</Durability>
+            <Regenerates>true</Regenerates>
+            <RegenInterval>1250</RegenInterval>
+            <RegenValue>5</RegenValue>
+            <Repairable>true</Repairable>
+            <RepairIngredients>
+              <Steel>5</Steel>
+              <Tungsteel>5</Tungsteel>
+            </RepairIngredients>
+            <RepairTime>300</RepairTime>
+            <RepairValue>200</RepairValue>
+            <CanOverHeal>true</CanOverHeal>
+            <MaxOverHeal>104</MaxOverHeal>
+            <MinArmorPct>0.75</MinArmorPct>
+          </li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAddModExtension">
+        <xpath>
+          Defs/ThingDef[defName="DMSRC_Mech_Stancher" or
+          defName="DMSRC_Mech_Saboteur"]
+        </xpath>
+        <value>
+          <li Class="CombatExtended.PartialArmorExt">
+            <stats>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+                <parts>
+                  <li>DMS_HeadRadar</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+                <parts>
+                  <li>DMS_HeadRadar</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalHead</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalHead</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalNeck</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalNeck</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalThorax</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalThorax</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalShoulder</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalShoulder</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalArm</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalArm</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalHand</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalHand</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+                <parts>
+                  <li>MechanicalLeg</li>
+                </parts>
+              </li>
+              <li>
+                <useStatic>false</useStatic>
+                <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+                <parts>
+                  <li>MechanicalLeg</li>
+                </parts>
+              </li>
+            </stats>
+          </li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/statBases/MeleeDodgeChance</xpath>
+        <value>
+          <CarryWeight>50</CarryWeight>
+          <CarryBulk>20</CarryBulk>
+          <MeleeDodgeChance>0.21</MeleeDodgeChance>
+          <MeleeCritChance>0.26</MeleeCritChance>
+          <MeleeParryChance>0.39</MeleeParryChance>
+          <MaxHitPoints>200</MaxHitPoints>
+          <NightVisionEfficiency>0.8</NightVisionEfficiency>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/statBases/MeleeHitChance</xpath>
+        <value>
+          <MeleeHitChance>0.36</MeleeHitChance>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/statBases/ArmorRating_Blunt</xpath>
+        <value>
+          <ArmorRating_Blunt>25</ArmorRating_Blunt>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/statBases/ArmorRating_Sharp</xpath>
+        <value>
+          <ArmorRating_Sharp>14</ArmorRating_Sharp>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/statBases/ArmorRating_Heat</xpath>
+        <value>
+          <ArmorRating_Heat>0.3</ArmorRating_Heat>
+        </value>
+      </li>
+
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]</xpath>
+          <value>
+            <comps />
+          </value>
+        </nomatch>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/comps</xpath>
+        <value>
+          <li Class="CombatExtended.CompProperties_ArmorDurability">
+            <Durability>1250</Durability>
+            <Regenerates>true</Regenerates>
+            <RegenInterval>750</RegenInterval>
+            <RegenValue>5</RegenValue>
+            <Repairable>true</Repairable>
+            <RepairIngredients>
+              <Steel>5</Steel>
+              <Tungsteel>5</Tungsteel>
+            </RepairIngredients>
+            <RepairTime>300</RepairTime>
+            <RepairValue>200</RepairValue>
+            <CanOverHeal>true</CanOverHeal>
+            <MaxOverHeal>104</MaxOverHeal>
+            <MinArmorPct>0.75</MinArmorPct>
+          </li>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

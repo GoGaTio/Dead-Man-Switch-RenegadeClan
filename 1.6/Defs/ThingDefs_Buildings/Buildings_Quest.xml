@@ -137,10 +137,10 @@
         <li>DMSRC_Quest</li>
       </buildingTags>
     </building>
-<researchPrerequisites MayRequire="Ludeon.RimWorld.Royalty">
+    <researchPrerequisites MayRequire="Ludeon.RimWorld.Royalty">
       <li>DMSRC_WideBroadcast</li>
     </researchPrerequisites>
-<designationCategory MayRequire="Ludeon.RimWorld.Royalty">DMS_Category</designationCategory>
+    <designationCategory MayRequire="Ludeon.RimWorld.Royalty">DMS_Category</designationCategory>
     <uiOrder MayRequire="Ludeon.RimWorld.Royalty">2450</uiOrder>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
@@ -156,7 +156,7 @@
       </li>
     </comps>
   </ThingDef>
-  
+
   <ThingDef Abstract="True" Name="DMSRC_ContainerBase" ParentName="BuildingBase">
     <label>security container</label>
     <description>A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted.</description>
@@ -282,7 +282,7 @@
   <ThingDef ParentName="DMSRC_ContainerBase">
     <defName>DMSRC_SecurityContainer_Renegades</defName>
     <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraGreen</texPath>
+      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerRenegades</texPath>
     </graphicData>
     <comps>
       <li Class="DMSRC.CompProperties_SecurityContainer">

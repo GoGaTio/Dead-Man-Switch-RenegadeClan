@@ -68,18 +68,17 @@ namespace DMSRC
 
 		public int maxDamage;
 
-		public bool CanIntercept(Projectile proj)
+		public bool CanIntercept(Thing proj, float damageAmount)
         {
-			if(proj.DamageDef?.ignoreShields == true) return false;
-			if(maxExplosionRadius > 0 && proj.def.projectile.explosionRadius > maxExplosionRadius)
-            {
-				return false;
-            }
-			if (maxDamage > 0 && proj.DamageAmount > maxDamage)
+			if (maxDamage > 0 && damageAmount > maxDamage)
 			{
 				return false;
 			}
-			if (type.IsAssignableFrom(proj.GetType()))
+			if (maxExplosionRadius > 0 && proj.def.projectile.explosionRadius > maxExplosionRadius)
+			{
+				return false;
+			}
+			if (type.IsAssignableFrom(proj.def.thingClass))
             {
 				return true;
             }
@@ -141,7 +140,14 @@ namespace DMSRC
             {
 				inactiveRegenOffset = chargeRegenInterval - 1;
 			}
+			string s = parentDef.defName + " CompProperties_BeamDefence report:";
+			foreach(var item in intercepts)
+			{
+				s += "\n " + item.type.ToString() + " maxDamage: " + item.maxDamage + " maxExplosionRadius: " + item.maxExplosionRadius;
+			}
+			Log.Message(s);
         }
+
         public Vector3 Offset(Rot4 rot)
         {
             if (useDynamicOffsets)
@@ -298,10 +304,14 @@ namespace DMSRC
 			}
 		}
 
-		private bool IsBulletAffected(Thing target)
+		public virtual bool IsBulletAffected(Thing target)
 		{
 			Projectile proj = target as Projectile;
 			if (proj == null)
+			{
+				return false;
+			}
+			if(proj.DamageDef == DamageDefOf.Vaporize || proj.DamageDef.ignoreShields)
 			{
 				return false;
 			}
@@ -312,7 +322,7 @@ namespace DMSRC
 			bool flag = false;
 			foreach(InterceptProperties item in Props.intercepts)
             {
-                if (item.CanIntercept(proj))
+                if (item.CanIntercept(proj, proj.DamageAmount))
                 {
 					flag = true;
 					break;

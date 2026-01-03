@@ -18,7 +18,7 @@
             </fixedParams>
           </thingSetMaker>
         </li>
-<li MayRequire="aoba.deadmanswitch.mobiledragoon">
+        <li MayRequire="aoba.deadmanswitch.mobiledragoon">
           <weight>5</weight>
           <thingSetMaker Class="ThingSetMaker_Count">
             <fixedParams>
@@ -55,7 +55,10 @@
             <fixedParams>
               <filter>
                 <thingDefs>
-<li>DMS_BattleRifle</li><li>DMS_AssaultRifle</li><li>DMS_AssaultShotgun</li><li>DMSRC_FirecrackerRifle</li>
+                  <li>DMS_BattleRifle</li>
+                  <li>DMS_AssaultRifle</li>
+                  <li>DMS_AssaultShotgun</li>
+                  <li>DMSRC_FSRAssaultRifle</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps" >DMS_KS23K</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_ZlobinRifle</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_YekaterinRifle</li>

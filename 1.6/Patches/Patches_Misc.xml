@@ -27,7 +27,7 @@
     <value>
       <li Class="DMSRC.CompProperties_CallRenegades">
         <useJob>DMSRC_TalkToRenegades</useJob>
-        <useLabel>Summon diabolus threat</useLabel>
+        <useLabel>Call Renegades Clan</useLabel>
         <floatMenuOptionPriority>InitiateSocial</floatMenuOptionPriority>
         <floatMenuFactionIcon>DMSRC_RenegadeClan</floatMenuFactionIcon>
       </li>

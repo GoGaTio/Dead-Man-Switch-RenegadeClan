@@ -47,5 +47,7 @@ namespace DMSRC
 		public static SitePartDef DMSRC_ContainerRenegades;
 
         public static StatDef MeleeWeapon_AverageDPS;
+
+        public static FleckDef DMSRC_Fleck_SparksFast;
 	}
 }

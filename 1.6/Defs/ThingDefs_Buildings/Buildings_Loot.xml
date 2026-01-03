@@ -36,7 +36,7 @@
     </building>
     <graphicData>
       <color>(0.5,0.5,0.5)</color>
-      <texPath>Things/Building/cargo</texPath>
+      <texPath>Things/Building/Containers/DMSRC_Cargo</texPath>
       <drawSize>(4.3,6.45)</drawSize>
       <graphicClass>Graphic_Random</graphicClass>
       <shaderType>CutoutComplex</shaderType>
@@ -52,7 +52,7 @@
       <li Class="Fortified.ModExtension_Lootbox">
         <sound>CrateOpeningStarted</sound>
         <openedGraphicdata>
-          <texPath>Things/Building/cargoOpen</texPath>
+          <texPath>Things/Building/Containers/DMSRC_Cargo_Open</texPath>
           <drawSize>(4.3,6.45)</drawSize>
           <graphicClass>Graphic_Random</graphicClass>
           <shaderType>CutoutComplex</shaderType>
@@ -60,7 +60,6 @@
         <countRange>2~4</countRange>
         <loots>
           <li>DMSRC_PackLoots</li>
-          <li>DMSAC_RTC_CompLoots</li>
         </loots>
       </li>
     </modExtensions>
@@ -72,7 +71,7 @@
     <description>A standard issue equipment crate containing military supplies.</description>
     <rotatable>true</rotatable>
     <graphicData>
-      <texPath>Things/Building/Crate/crate</texPath>
+      <texPath>Things/Building/Containers/DMSRC_Crate</texPath>
       <drawSize>(3,2)</drawSize>
       <graphicClass>Graphic_Random</graphicClass>
       <shaderType>Cutout</shaderType>
@@ -88,7 +87,7 @@
       <li Class="Fortified.ModExtension_Lootbox">
         <sound>CrateOpeningStarted</sound>
         <openedGraphicdata>
-          <texPath>Things/Building/Crate/crateOpen</texPath>
+          <texPath>Things/Building/Containers/DMSRC_Crate_Open</texPath>
           <drawSize>(3,2)</drawSize>
           <graphicClass>Graphic_Random</graphicClass>
           <shaderType>Cutout</shaderType>
@@ -138,7 +137,7 @@
     </modExtensions>
   </ThingDef>
 
-  <ThingDef ParentName="DMSRC_BaseLootBox">
+  <!--<ThingDef ParentName="DMSRC_BaseLootBox">
     <defName>DMSRC_Drawer</defName>
     <label>drawer</label>
     <description>A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations.</description>
@@ -181,41 +180,6 @@
         </loots>
       </li>
     </modExtensions>
-  </ThingDef>
-
-  <ThingDef ParentName="DMSRC_BaseLootBox">
-    <defName>DMSRC_Locker</defName>
-    <label>locker</label>
-    <description>A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations.</description>
-    <rotatable>true</rotatable>
-    <building>
-      <paintable>false</paintable>
-    </building>
-    <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_Locker</texPath>
-      <drawSize>(2,2)</drawSize>
-      <graphicClass>Graphic_Multi</graphicClass>
-    </graphicData>
-    <fillPercent>0.5</fillPercent>
-    <costList>
-      <Steel>40</Steel>
-    </costList>
-    <size>(1,1)</size>
-    <defaultPlacingRot>0</defaultPlacingRot>
-    <modExtensions>
-      <li Class="Fortified.ModExtension_Lootbox">
-        <sound>CrateOpeningStarted</sound>
-        <openedGraphicdata>
-          <texPath>Things/Building/Containers/DMSRC_Locker_Open</texPath>
-          <drawSize>(2,2)</drawSize>
-          <graphicClass>Graphic_Multi</graphicClass>
-        </openedGraphicdata>
-        <countRange>1~2</countRange>
-        <loots>
-          <li>DMSRC_Locker</li>
-        </loots>
-      </li>
-    </modExtensions>
-  </ThingDef>
+  </ThingDef>-->
 
 </Defs>

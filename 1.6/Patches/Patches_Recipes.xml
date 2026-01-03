@@ -14,17 +14,10 @@
 
   <Operation Class="PatchOperationAdd">
     <success>Always</success>
-    <xpath>Defs/RecipeDef[defName = "DMS_ResurrectHeavyMech"]/fixedIngredientFilter/thingDefs</xpath>
-    <value>
-      <li>Corpse_DMSRC_Mech_Weevil</li>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationAdd">
-    <success>Always</success>
     <xpath>Defs/RecipeDef[defName = "DMS_ResurrectUltraheavyMech"]/fixedIngredientFilter/thingDefs</xpath>
     <value>
       <li>Corpse_DMSRC_Mech_Focus</li>
+      <li>Corpse_DMSRC_Mech_Pavise</li>
       <li>Corpse_DMSRC_Mech_Malevolence</li>
     </value>
   </Operation>

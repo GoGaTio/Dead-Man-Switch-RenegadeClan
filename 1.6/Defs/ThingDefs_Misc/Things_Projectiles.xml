@@ -17,7 +17,7 @@
     </projectile>
   </ThingDef>
 
-<ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>DMSRC_Bullet_MediumBeam</defName>
     <label>gamma beam</label>
     <thingClass>Beam</thingClass>
@@ -58,11 +58,6 @@
       <landedEffecter>DMSRC_SparkImpact</landedEffecter>
       <doExplosionVFX>false</doExplosionVFX>
     </projectile>
-    <comps>
-      <li Class="CompProperties_ProjectileEffecter">
-        <effecterDef>DMSRC_SparkStream</effecterDef>
-      </li>
-    </comps>
   </ThingDef>
 
 </Defs>

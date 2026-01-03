@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ========== Tools ========== -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>2.44</cooldownTime>
+          <armorPenetrationBlunt>3.5</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+
+  <!-- ========== Beam Graser ========== -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/statBases/RangedWeapon_Cooldown</xpath>
+    <value>
+      <RangedWeapon_Cooldown>0.56</RangedWeapon_Cooldown>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/warmupTime</xpath>
+    <value>
+      <warmupTime>1.3</warmupTime>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/range</xpath>
+    <value>
+      <range>40</range>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/burstShotCount</xpath>
+    <value>
+      <burstShotCount>10</burstShotCount>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/ticksBetweenBurstShots</xpath>
+    <value>
+      <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+    </value>
+  </Operation>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>DMSRC_FSRAssaultRifle</defName>
+    <statBases>
+      <Mass>8.15</Mass>
+      <Bulk>10.85</Bulk>
+      <SwayFactor>1.57</SwayFactor>
+      <ShotSpread>0.09</ShotSpread>
+      <SightsEfficiency>1.2</SightsEfficiency>
+      <RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
+    </statBases>
+    <Properties>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>DMSRC_Bullet_17x54mmFSR</defaultProjectile>
+      <warmupTime>1.1</warmupTime>
+      <range>45</range>
+      <burstShotCount>5</burstShotCount>
+      <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+      <soundCast>DMSRC_Shot_FSR</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+      <recoilAmount>1.77</recoilAmount>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>15</magazineSize>
+      <reloadTime>3.2</reloadTime>
+      <ammoSet>DMSRC_AmmoSet_17x54mmFSR</ammoSet>
+    </AmmoUser>
+    <FireModes>
+      <aiUseBurstMode>TRUE</aiUseBurstMode>
+      <aiAimMode>AimedShot</aiAimMode>
+      <aimedBurstShotCount>3</aimedBurstShotCount>
+    </FireModes>
+    <weaponTags>
+      <li>CE_AI_AR</li>
+    </weaponTags>
+  </Operation>
+
+</Patch>
