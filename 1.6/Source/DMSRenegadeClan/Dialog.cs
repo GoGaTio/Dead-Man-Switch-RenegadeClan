@@ -206,7 +206,8 @@ namespace EliteRaid
 				{
 					foreach (RenegadesRequest r in renegades.requests.ToList())
 					{
-						Rect rect1 = r.DoInterface(10f, num, viewRect.width);
+						float f = 0;
+						Rect rect1 = r.DoInterface(10f, num, viewRect.width, ref f);
 						num += rect1.height + 6f;
 					}
 				}
@@ -221,6 +222,7 @@ namespace EliteRaid
 					if (report.Accepted)
 					{
 						renegades.requests.Add(request);
+						request.Saved();
 						request = null;
 					}
 					else

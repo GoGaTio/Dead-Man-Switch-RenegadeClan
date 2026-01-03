@@ -71,10 +71,10 @@
     <!--Only from quests and containers-->
     <comps>
       <li Class="CompProperties_Usable">
-        <useJob>UseItem</useJob>
+        <useJob>TriggerObject</useJob>
         <useLabel>Attract malevolence threat</useLabel>
         <useDuration>900</useDuration>
-        <floatMenuFactionIcon>Mechanoid</floatMenuFactionIcon>
+        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
       </li>
       <li Class="DMS.CompPropertiesUseable_SummonRaid">
         <bossgroupDef>DMSRC_Malevolence</bossgroupDef>

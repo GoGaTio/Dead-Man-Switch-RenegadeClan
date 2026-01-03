@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
+  <PawnGroupKindDef>
+    <defName>DMSRC_MilitaryAid</defName>
+    <workerClass>PawnGroupKindWorker_Normal</workerClass>
+  </PawnGroupKindDef>
+  
   <FactionDef ParentName="FactionBase">
     <defName>DMSRC_RenegadeClan</defName>
     <label>renegades clan</label>
@@ -129,6 +135,7 @@
           <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
           <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
           <DMSRC_Mech_Stancher>4</DMSRC_Mech_Stancher>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
         </options>
       </li>
       <li>
@@ -137,6 +144,7 @@
         <commonality>100</commonality>
         <options>
           <DMSRC_OfficerCombat>0.5</DMSRC_OfficerCombat>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
           <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
           <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
           <DMS_Mech_Dogge>5</DMS_Mech_Dogge>
@@ -163,6 +171,7 @@
           <DMSRC_Mech_Malevolence>1</DMSRC_Mech_Malevolence>
           <DMSRC_Mech_Focus>2</DMSRC_Mech_Focus>
           <DMSRC_Mech_Pavise>2.5</DMSRC_Mech_Pavise>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
         </options>
       </li>
       <li>
@@ -178,6 +187,19 @@
           <DMS_Mech_Protector>5</DMS_Mech_Protector>
           <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
           <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+        </options>
+      </li>
+      <li>
+        <!-- Aid -->
+        <kindDef>DMSRC_MilitaryAid</kindDef>
+        <commonality>10</commonality>
+        <options>
+          <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>1.5</DMSRC_Mech_Stancher>
+          <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+          <DMS_Mech_Protector>5</DMS_Mech_Protector>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
         </options>
       </li>
     </pawnGroupMakers>

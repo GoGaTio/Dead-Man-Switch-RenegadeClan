@@ -49,6 +49,8 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 using static DMSRC.TradeRequest;
+using static HarmonyLib.Code;
+using static UnityEngine.GraphicsBuffer;
 
 namespace DMSRC
 {
@@ -65,21 +67,13 @@ namespace DMSRC
 
 		public RenegadesRequestDef def;
 
-		public int silver = -1;
-
 		public int ticksRequested = -1;
-
-		public int ticksPayed = -1;
 
 		public int ticksBeforeArrival = -1;
 
-		public bool paySiteCreated = false;
+		public PlanetTile tile = PlanetTile.Invalid;
 
 		public bool arrived = false;
-
-		public bool payedWithRep = false;
-
-		public PlanetTile tile = PlanetTile.Invalid;
 
 		public RenegadesRequest()
 		{
@@ -89,12 +83,9 @@ namespace DMSRC
 		{
 			Scribe_Values.Look(ref ID, "ID", -1);
 			Scribe_Defs.Look(ref def, "def");
-			Scribe_Values.Look(ref silver, "silver", -1);
+			Scribe_Values.Look(ref arrived, "arrived", false);
 			Scribe_Values.Look(ref ticksRequested, "ticksRequested", -1);
-			Scribe_Values.Look(ref ticksPayed, "ticksPayed", -1);
 			Scribe_Values.Look(ref ticksBeforeArrival, "ticksBeforeArrival", -1);
-			Scribe_Values.Look(ref paySiteCreated, "paySiteCreated", defaultValue: false);
-			Scribe_Values.Look(ref payedWithRep, "payedWithRep", defaultValue: false);
 			Scribe_Values.Look(ref tile, "tile");
 		}
 
@@ -115,22 +106,14 @@ namespace DMSRC
 			}
 		}
 
+		public virtual void Saved()
+		{
+
+		}
+
 		public virtual void Tick()
 		{
-			if (!payedWithRep && !paySiteCreated)
-			{
-				if (Rand.Chance(ChanceToFire))
-				{
-					RequestSite worldObject = (RequestSite)WorldObjectMaker.MakeWorldObject(RCDefOf.DMSRC_RequestSite);
-					TileFinder.TryFindNewSiteTile(out var tile, Find.RandomSurfacePlayerHomeMap.Tile, 2, 7, false, null, 0f, false, TileFinderMode.Random, exitOnFirstTileFound: false, false);
-					worldObject.Tile = tile;
-					worldObject.request = this;
-					worldObject.SetFaction(GameComponent_Renegades.Find.RenegadesFaction);
-					Find.WorldObjects.Add(worldObject);
-					paySiteCreated = true;
-				}
-			}
-			else if (!arrived && (payedWithRep || ticksPayed > 0))
+			if (!arrived && CanArrive())
 			{
 				ticksBeforeArrival--;
 				if (ticksBeforeArrival < 0)
@@ -140,6 +123,8 @@ namespace DMSRC
 				}
 			}
 		}
+
+		public virtual bool CanArrive() => true;
 
 		public virtual void Arrive()
 		{
@@ -166,7 +151,7 @@ namespace DMSRC
 			return true;
 		}
 
-		public virtual Rect DoInterface(float x, float y, float width)
+		public virtual Rect DoInterface(float x, float y, float width, ref float f)
 		{
 			Rect rect = new Rect(x, y, width, 100f);
 			Color color = Color.white;
@@ -178,16 +163,8 @@ namespace DMSRC
 			Widgets.Label(rect1, GenDate.DateFullStringAt(ticksRequested, Find.WorldGrid.LongLatOf(tile)));
 			Text.Anchor = TextAnchor.MiddleLeft;
 			Widgets.InfoCardButton(new Rect(width - 25f, 0, 25f, 25f), def);
-			float f = 25f;
-			int ticks = Find.TickManager.TicksGame - ticksRequested;
-			if (!payedWithRep && ticksPayed == -1)
-			{
-				Widgets.Label(new Rect(0, f, width, 25f), "Requires".Translate() + ": " + ThingDefOf.Silver.LabelCap + " x" + silver);
-				f += 25f;
-				Widgets.Label(new Rect(0, f, width, 25f), ticks < 30000 ? "DMSRC_PaySiteAfter_Range".Translate((30000 - ticks).ToStringTicksToDays(), (120000 - ticks).ToStringTicksToDays()) : "DMSRC_PaySiteAfter_Single".Translate((180000 - ticks).ToStringTicksToDays()));
-				f += 25f;
-			}
-			if (!arrived && (payedWithRep || ticksPayed > 0))
+			f = 25f;
+			if (!arrived && CanArrive())
 			{
 				Widgets.Label(new Rect(0, f, width, 25f), "DMSRC_ArrivalAfter_Single".Translate((ticksBeforeArrival * 2500).ToStringTicksToDays()));
 				f += 25f;
@@ -197,10 +174,56 @@ namespace DMSRC
 		}
 	}
 
-	public class RenegadesRequestWithSite : RenegadesRequest
+	public class AllyRequest : RenegadesRequest
 	{
+
 		public override void Arrive()
 		{
+			base.Arrive();
+			IncidentParms incidentParms = new IncidentParms();
+			incidentParms.target = Find.WorldObjects.MapParentAt(tile).Map;
+			incidentParms.faction = GameComponent_Renegades.Find.RenegadesFaction;
+			incidentParms.raidArrivalModeForQuickMilitaryAid = true;
+			incidentParms.pawnGroupKind = RCDefOf.DMSRC_MilitaryAid;
+			incidentParms.podOpenDelay = 10;
+			incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeDrop;
+			incidentParms.points = 1000f;
+			if (!IncidentDefOf.RaidFriendly.Worker.TryExecute(incidentParms))
+			{
+				Log.Error("Failed to request military aid");
+			}
+		}
+
+		public override AcceptanceReport TrySave(GameComponent_Renegades renegades, Map map)
+		{
+			float num = 0f;
+			ticksRequested = Find.TickManager.TicksGame;
+			tile = map.Tile;
+			return base.TrySave(renegades, map);
+		}
+	}
+
+	public class RenegadesRequestWithSite : RenegadesRequest
+	{
+		public bool paySiteCreated = false;
+
+		public bool payedWithRep = false;
+
+		public int ticksPayed = -1;
+
+		public int silver = -1;
+
+		public override void ExposeData()
+		{
+			Scribe_Values.Look(ref silver, "silver", -1);
+			Scribe_Values.Look(ref ticksPayed, "ticksPayed", -1);
+			Scribe_Values.Look(ref paySiteCreated, "paySiteCreated", defaultValue: false);
+			Scribe_Values.Look(ref payedWithRep, "payedWithRep", defaultValue: false);
+		}
+
+		public override void Arrive()
+		{
+			base.Arrive();
 			SitePartDefWithParams parms = new SitePartDefWithParams(def.sitePartDef, new ContainerSitePartParams
 			{
 				request = this
@@ -214,6 +237,40 @@ namespace DMSRC
 		{
 
 		}
+
+		public override Rect DoInterface(float x, float y, float width, ref float f)
+		{
+			Rect rect = base.DoInterface(x, y, width, ref f);
+			int ticks = Find.TickManager.TicksGame - ticksRequested;
+			if (!payedWithRep && ticksPayed == -1)
+			{
+				Widgets.Label(new Rect(0, f, width, 25f), "Requires".Translate() + ": " + ThingDefOf.Silver.LabelCap + " x" + silver);
+				f += 25f;
+				Widgets.Label(new Rect(0, f, width, 25f), ticks < 30000 ? "DMSRC_PaySiteAfter_Range".Translate((30000 - ticks).ToStringTicksToDays(), (120000 - ticks).ToStringTicksToDays()) : "DMSRC_PaySiteAfter_Single".Translate((180000 - ticks).ToStringTicksToDays()));
+				f += 25f;
+			}
+			return rect;
+		}
+
+		public override void Tick()
+		{
+			if (!payedWithRep && !paySiteCreated)
+			{
+				if (Rand.Chance(ChanceToFire))
+				{
+					RequestSite worldObject = (RequestSite)WorldObjectMaker.MakeWorldObject(RCDefOf.DMSRC_RequestSite);
+					TileFinder.TryFindNewSiteTile(out var tile, Find.RandomSurfacePlayerHomeMap.Tile, 2, 7, false, null, 0f, false, TileFinderMode.Random, exitOnFirstTileFound: false, false);
+					worldObject.Tile = tile;
+					worldObject.request = this;
+					worldObject.SetFaction(GameComponent_Renegades.Find.RenegadesFaction);
+					Find.WorldObjects.Add(worldObject);
+					paySiteCreated = true;
+				}
+			}
+			else base.Tick();
+		}
+
+		public override bool CanArrive() => payedWithRep || ticksPayed > 0;
 	}
 
 	public class TradeRequest : RenegadesRequestWithSite
@@ -411,13 +468,6 @@ namespace DMSRC
 			}
 			return ltr.thing.LabelNoCount.CompareTo(rtr.thing.LabelNoCount);
 		}
-		
-
-		public override Rect DoInterface(float x, float y, float width)
-		{
-			return base.DoInterface(x, y, width);
-		}
-
 		
 		public override void ExposeData()
 		{

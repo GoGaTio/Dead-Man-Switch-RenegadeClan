@@ -56,7 +56,7 @@ namespace DMSRC
 	{
 		private static readonly Texture2D TradeCommandTex = ContentFinder<Texture2D>.Get("UI/Commands/FulfillTradeRequest");
 
-		public RenegadesRequest request;
+		public RenegadesRequestWithSite request;
 
 		public int silver;
 

@@ -92,11 +92,12 @@ namespace DMSRC
 			tmpHighlightCells.Clear();
 			tmpSecondaryHighlightCells.Clear();
 			verbProps.DrawRadiusRing(caster.Position, this);
-			if (target.IsValid)
+			if (!target.IsValid)
 			{
-				GenDraw.DrawTargetHighlight(target);
-				DrawHighlightFieldRadiusAroundTarget(target);
+				return;
 			}
+			GenDraw.DrawTargetHighlight(target);
+			DrawHighlightFieldRadiusAroundTarget(target);
 			CellRect map = CellRect.WholeMap(Caster.Map);
 			calculatePath.Invoke(this, new object[4] { target.CenterVector3, tmpPath, tmpPathCells, false });
 			foreach (IntVec3 tmpPathCell in tmpPathCells)

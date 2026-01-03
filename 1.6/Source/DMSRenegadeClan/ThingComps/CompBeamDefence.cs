@@ -241,40 +241,41 @@ namespace DMSRC
 
 		public override void CompTick()
 		{
-			if (parent.DestroyedOrNull() || !parent.Spawned)
+			if (shouldBeActive && active)
 			{
-				return;
-			}
-			if (delay > 0)
-			{
-				delay--;
-				return;
-			}
-			delay = Props.delay;
-			if (shouldBeActive && active && (Props.activeWhileSleep || compDormant?.Awake != false) && compPowerTrader?.PowerOn != false)
-            {
-				IntVec3 pos = parent.Position;
-				foreach (IntVec3 cell in new CellRect(pos.x, pos.z, 1, 1).ExpandedBy(range).ClipInsideMap(parent.Map))
+				if (delay > 0)
 				{
-					List<Thing> list = parent.Map.thingGrid.ThingsListAt(cell);
-					for (int i = 0; i < list.Count; i++)
+					delay--;
+				}
+				else
+				{
+					delay = Props.delay;
+					if ((Props.activeWhileSleep || compDormant?.Awake != false) && parent.Spawned && compPowerTrader?.PowerOn != false)
 					{
-						Thing thing = list[i];
-						if (Vector3.Distance(thing.DrawPos, parent.TrueCenter()) < Props.range && IsBulletAffected(thing))
+						IntVec3 pos = parent.Position;
+						foreach (IntVec3 cell in new CellRect(pos.x, pos.z, 1, 1).ExpandedBy(range).ClipInsideMap(parent.Map))
 						{
-							Intercept(thing);
-							delay = Props.delayIntercepted;
-							if (compPowerTrader != null)
+							List<Thing> list = parent.Map.thingGrid.ThingsListAt(cell);
+							for (int i = 0; i < list.Count; i++)
 							{
-								compPowerTrader.PowerOutput = 0f - compPowerTrader.Props.PowerConsumption;
+								Thing thing = list[i];
+								if (Vector3.Distance(thing.DrawPos, parent.TrueCenter()) < Props.range && IsBulletAffected(thing))
+								{
+									Intercept(thing);
+									delay = Props.delayIntercepted;
+									if (compPowerTrader != null)
+									{
+										compPowerTrader.PowerOutput = 0f - compPowerTrader.Props.PowerConsumption;
+									}
+									return;
+								}
 							}
-							return;
+						}
+						if (compPowerTrader != null)
+						{
+							compPowerTrader.PowerOutput = 0f - compPowerTrader.Props.idlePowerDraw;
 						}
 					}
-				}
-				if(compPowerTrader != null)
-                {
-					compPowerTrader.PowerOutput = 0f - compPowerTrader.Props.idlePowerDraw;
 				}
 			}
 			if (charge < Props.maxCharge && parent.IsHashIntervalTick(Props.chargeRegenInterval - (active ? 0 : Props.inactiveRegenOffset)))
@@ -410,6 +411,7 @@ namespace DMSRC
 			Widgets.Label(rect4, comp.charge + " / " + comp.Props.maxCharge);
 			Text.Anchor = TextAnchor.UpperLeft;
 			TooltipHandler.TipRegion(rect4, () => tooltip, Gen.HashCombineInt(comp.GetHashCode(), 34242369));
+			Widgets.Checkbox(new Vector2(rect.x + (rect.width - 24f), rect.y), ref comp.shouldBeActive);
 			return new GizmoResult(GizmoState.Clear);
 		}
 	}

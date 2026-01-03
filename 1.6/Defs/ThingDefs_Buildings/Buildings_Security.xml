@@ -125,7 +125,7 @@
       <ComponentStamped>4</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
       <ComponentSpacer>2</ComponentSpacer>
-      <DMSRC_ComponentGBEP>1</DMSRC_ComponentGBEP>
+      <DMSRC_ComponentGBEP>2</DMSRC_ComponentGBEP>
     </costList>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <size>(2,2)</size>
@@ -189,7 +189,7 @@
     </comps>
   </ThingDef>
 
-<ThingDef ParentName="BuildingBase">
+  <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_PerimeterScanner</defName>
     <label>perimeter scanner</label>
     <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</description>
@@ -223,7 +223,7 @@
       <ComponentIndustrial>3</ComponentIndustrial>
       <ComponentStamped>1</ComponentStamped>
     </costList>
-<building>
+    <building>
       <ai_neverTrashThis>true</ai_neverTrashThis>
       <expandHomeArea>false</expandHomeArea>
     </building>
@@ -275,7 +275,7 @@
       <Mass>20</Mass>
     </statBases>
     <building>
-<ai_neverTrashThis>true</ai_neverTrashThis>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
       <claimable>false</claimable>
       <expandHomeArea>false</expandHomeArea>
     </building>

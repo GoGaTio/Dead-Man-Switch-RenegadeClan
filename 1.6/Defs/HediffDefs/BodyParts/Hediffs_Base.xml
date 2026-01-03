@@ -26,7 +26,7 @@
       <MaxHitPoints>100</MaxHitPoints>
       <Beauty>-4</Beauty>
       <Mass>0.015</Mass>
-      <MarketValue>1200</MarketValue>
+      <MarketValue>400</MarketValue>
       <DeteriorationRate>5</DeteriorationRate>
       <WorkToMake>5000</WorkToMake>
       <MaxInstallCount>5</MaxInstallCount>

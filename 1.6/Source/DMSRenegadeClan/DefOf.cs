@@ -49,5 +49,7 @@ namespace DMSRC
         public static StatDef MeleeWeapon_AverageDPS;
 
         public static FleckDef DMSRC_Fleck_SparksFast;
+
+        public static PawnGroupKindDef DMSRC_MilitaryAid;
 	}
 }
