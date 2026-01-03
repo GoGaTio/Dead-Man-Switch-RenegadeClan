@@ -24,24 +24,6 @@
     <isBad>false</isBad>
   </HediffDef>
 
-  <ThingDef ParentName="MoteBase">
-    <defName>DMSRC_Mote_NeuroControlLine</defName>
-    <thingClass>MoteDualAttached</thingClass>
-    <altitudeLayer>MoteLow</altitudeLayer>
-    <mote>
-      <fadeInTime>0.1</fadeInTime>
-      <fadeOutTime>0.1</fadeOutTime>
-      <solidTime>999999</solidTime>
-      <needsMaintenance>True</needsMaintenance>
-      <rotateTowardsTarget>True</rotateTowardsTarget>
-      <scaleToConnectTargets>True</scaleToConnectTargets>
-    </mote>
-    <graphicData>
-      <shaderType>MoteGlow</shaderType>
-      <texPath>Things/Mote/DMSRC_NeuroControlLink</texPath>
-    </graphicData>
-  </ThingDef>
-
   <HediffDef>
     <hediffClass>HediffWithComps</hediffClass>
     <defName>DMSRC_NeuroControl</defName>
@@ -63,7 +45,7 @@
   <HediffDef>
     <defName>DMSRC_ArtifuscleDegradation</defName>
     <label>artifuscle degradation</label>
-    <description>Artifuscle in the body of this automatroid degrade because of gamma irradiation.</description>
+    <description>Artifuscle in the body of this automatroid degrades because of gamma irradiation.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
     <maxSeverity>1</maxSeverity>

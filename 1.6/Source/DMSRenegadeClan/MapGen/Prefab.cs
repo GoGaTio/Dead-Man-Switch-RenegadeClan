@@ -62,7 +62,9 @@ namespace DMSRC
 	{
 		public class SubPrefabProps
 		{
-			public IntVec3 pos;
+			public IntVec3 pos = IntVec3.Invalid;
+
+			public List<IntVec3> positions = new List<IntVec3>();
 
 			public RotEnum rotations = RotEnum.All;
 
@@ -145,15 +147,32 @@ namespace DMSRC
 			}
 			foreach (SubPrefabProps sub in subPrefabs)
 			{
-				if (RPrefabUtility.Defs.TryRandomElement((x) => x.tags.Any((y)=> sub.tags.Contains(y) || sub.tag == y), out var result))
+				if (sub.pos.IsValid)
 				{
-					IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedLocalPosition(sub.pos, rot);
-					int num = rot.AsInt + sub.rotations.Random().AsInt;
-					if (num > 3)
+					if (RPrefabUtility.Defs.TryRandomElement((x) => x.tags.Any((y) => sub.tags.Contains(y) || sub.tag == y), out var result))
 					{
-						num -= 4;
+						IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedLocalPosition(sub.pos, rot);
+						int num = rot.AsInt + sub.rotations.Random().AsInt;
+						if (num > 3)
+						{
+							num -= 4;
+						}
+						result.Generate(root + adjustedLocalPosition, new Rot4(num), map, faction, ref things);
 					}
-					result.Generate(root + adjustedLocalPosition, new Rot4(num), map, faction, ref things);
+					
+				}
+				for (int i = 0; i < sub.positions.Count; i++)
+				{
+					if (RPrefabUtility.Defs.TryRandomElement((x) => x.tags.Any((y) => sub.tags.Contains(y) || sub.tag == y), out var result2))
+					{
+						IntVec3 adjustedLocalPosition2 = PrefabUtility.GetAdjustedLocalPosition(sub.positions[i], rot);
+						int num2 = rot.AsInt + sub.rotations.Random().AsInt;
+						if (num2 > 3)
+						{
+							num2 -= 4;
+						}
+						result2.Generate(root + adjustedLocalPosition2, new Rot4(num2), map, faction, ref things);
+					}
 				}
 			}
 		}

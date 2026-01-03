@@ -26,6 +26,47 @@
   </ThingDef>
 
   <ThingDef ParentName="DMSRC_BaseLootBox">
+    <defName>DMSRC_Cargo</defName>
+    <label>cargo container</label>
+    <description>A standard issue container containing military supplies.</description>
+    <rotatable>true</rotatable>
+    <tickerType>Normal</tickerType>
+    <building>
+      <paintable>true</paintable>
+    </building>
+    <graphicData>
+      <color>(0.5,0.5,0.5)</color>
+      <texPath>Things/Building/cargo</texPath>
+      <drawSize>(4.3,6.45)</drawSize>
+      <graphicClass>Graphic_Random</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <fillPercent>1</fillPercent>
+    <killedLeavingsRanges>
+      <ChunkSlagSteel>2~4</ChunkSlagSteel>
+    </killedLeavingsRanges>
+    <staticSunShadowHeight>0.7</staticSunShadowHeight>
+    <size>(2,4)</size>
+    <defaultPlacingRot>0</defaultPlacingRot>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_Lootbox">
+        <sound>CrateOpeningStarted</sound>
+        <openedGraphicdata>
+          <texPath>Things/Building/cargoOpen</texPath>
+          <drawSize>(4.3,6.45)</drawSize>
+          <graphicClass>Graphic_Random</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+        </openedGraphicdata>
+        <countRange>2~4</countRange>
+        <loots>
+          <li>DMSRC_PackLoots</li>
+          <li>DMSAC_RTC_CompLoots</li>
+        </loots>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_BaseLootBox">
     <defName>DMSRC_Crate</defName>
     <label>military crate</label>
     <description>A standard issue equipment crate containing military supplies.</description>
@@ -33,7 +74,6 @@
     <graphicData>
       <texPath>Things/Building/Crate/crate</texPath>
       <drawSize>(3,2)</drawSize>
-      <drawOffset>(0,0.01,0)</drawOffset>
       <graphicClass>Graphic_Random</graphicClass>
       <shaderType>Cutout</shaderType>
     </graphicData>
@@ -44,24 +84,12 @@
     <staticSunShadowHeight>0.2</staticSunShadowHeight>
     <size>(2,1)</size>
     <defaultPlacingRot>2</defaultPlacingRot>
-    <comps>
-      <li Class="Fortified.CompProperties_RandomColorOnSpawn">
-        <colorChance>0.34</colorChance>
-        <colorDefs>
-          <li>Structure_White</li>
-          <li>Structure_GrayLight</li>
-          <li>Structure_Cream</li>
-          <li>Structure_Limestone</li>
-        </colorDefs>
-      </li>
-    </comps>
     <modExtensions>
       <li Class="Fortified.ModExtension_Lootbox">
         <sound>CrateOpeningStarted</sound>
         <openedGraphicdata>
           <texPath>Things/Building/Crate/crateOpen</texPath>
           <drawSize>(3,2)</drawSize>
-          <drawOffset>(0,0.01,0)</drawOffset>
           <graphicClass>Graphic_Random</graphicClass>
           <shaderType>Cutout</shaderType>
         </openedGraphicdata>
@@ -80,9 +108,7 @@
     <graphicData>
       <texPath>Things/Building/Containers/DMSRC_PackCrate</texPath>
       <drawSize>(3,3)</drawSize>
-      <drawOffset>(0,0.01,0)</drawOffset>
       <graphicClass>Graphic_Random</graphicClass>
-      <shaderType>CutoutComplex</shaderType>
       <shadowData>
         <offset>(0,0,0)</offset>
         <volume>(2,0.8,2)</volume>
@@ -94,17 +120,6 @@
     </costList>
     <size>(2,2)</size>
     <defaultPlacingRot>0</defaultPlacingRot>
-    <comps>
-      <li Class="Fortified.CompProperties_RandomColorOnSpawn">
-        <colorChance>1</colorChance>
-        <colorDefs>
-          <li>Structure_GreenFaded</li>
-          <li>Structure_OrangePastel</li>
-          <li>Structure_Red</li>
-          <li>Structure_White</li>
-        </colorDefs>
-      </li>
-    </comps>
     <modExtensions>
       <li Class="Fortified.ModExtension_Lootbox">
         <sound>CrateOpeningStarted</sound>
@@ -112,9 +127,7 @@
           <texPath>Things/Building/Containers/DMSRC_PackCrate_Open</texPath>
           <drawSize>(3,3)</drawSize>
           <graphicClass>Graphic_Random</graphicClass>
-          <shaderType>CutoutComplex</shaderType>
           <shadowData>
-            <offset>(0,0,0)</offset>
             <volume>(2,0.25,2)</volume>
           </shadowData>
         </openedGraphicdata>
@@ -179,10 +192,9 @@
       <paintable>false</paintable>
     </building>
     <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_PackCrate</texPath>
-      <drawSize>(3,3)</drawSize>
+      <texPath>Things/Building/Containers/DMSRC_Locker</texPath>
+      <drawSize>(2,2)</drawSize>
       <graphicClass>Graphic_Multi</graphicClass>
-      <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <fillPercent>0.5</fillPercent>
     <costList>
@@ -194,12 +206,11 @@
       <li Class="Fortified.ModExtension_Lootbox">
         <sound>CrateOpeningStarted</sound>
         <openedGraphicdata>
-          <texPath>Things/Building/Containers/DMSRC_PackCrate_Open</texPath>
-          <drawSize>(3,3)</drawSize>
+          <texPath>Things/Building/Containers/DMSRC_Locker_Open</texPath>
+          <drawSize>(2,2)</drawSize>
           <graphicClass>Graphic_Multi</graphicClass>
-          <shaderType>CutoutComplex</shaderType>
         </openedGraphicdata>
-        <countRange>1</countRange>
+        <countRange>1~2</countRange>
         <loots>
           <li>DMSRC_Locker</li>
         </loots>

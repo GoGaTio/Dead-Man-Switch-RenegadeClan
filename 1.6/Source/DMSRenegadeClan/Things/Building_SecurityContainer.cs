@@ -246,7 +246,10 @@ namespace DMSRC
 
 		public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
 		{
-			GenExplosion.DoExplosion(this.Position, Map, 1.9f, DamageDefOf.Vaporize, this, ignoredThings: new List<Thing>() { this });
+			if (!opened)
+			{
+				GenExplosion.DoExplosion(this.Position, Map, 2.9f, DamageDefOf.Vaporize, this, ignoredThings: new List<Thing>() { this });
+			}
 			base.Destroy(mode);
 			innerContainer.ClearAndDestroyContents();
 		}

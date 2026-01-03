@@ -17,23 +17,39 @@
     </projectile>
   </ThingDef>
 
+<ThingDef ParentName="BaseBullet">
+    <defName>DMSRC_Bullet_MediumBeam</defName>
+    <label>gamma beam</label>
+    <thingClass>Beam</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>DMSRC_FocusedBeam</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <beamMoteDef>DMSRC_Mote_BeamUnmaintained</beamMoteDef>
+      <beamStartOffset>0.75</beamStartOffset>
+    </projectile>
+  </ThingDef>
+
   <ThingDef ParentName="BaseBullet">
-    <defName>DMSRC_Bullet_Firecracker_Medium</defName>
+    <defName>DMSRC_Bullet_FSR</defName>
     <label>FSR</label>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
-      <drawSize>(.1, .1)</drawSize>
+      <texPath>Things/Mote/DMSRC_Spark</texPath>
+      <drawSize>(.4, .4)</drawSize>
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <thingClass>DMSRC.Firecracker</thingClass>
     <projectile>
       <useGraphicClass>True</useGraphicClass>
-      <shadowSize>0.1</shadowSize>
+      <shadowSize>0</shadowSize>
       <damageDef>Bullet</damageDef>
       <damageAmountBase>12</damageAmountBase>
       <speed>61</speed>
-      <explosionRadius>1.1</explosionRadius>
+      <explosionRadius>1.9</explosionRadius>
       <flyOverhead>false</flyOverhead>
       <screenShakeFactor>-1</screenShakeFactor>
       <filth>Filth_Ash</filth>
@@ -48,86 +64,5 @@
       </li>
     </comps>
   </ThingDef>
-
-  <ThingDef ParentName="BaseBullet">
-    <defName>DMSRC_Bullet_Firecracker_Heavy</defName>
-    <label>FSR</label>
-    <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
-      <drawSize>(.1, .1)</drawSize>
-      <shaderType>MoteGlow</shaderType>
-    </graphicData>
-    <thingClass>DMSRC.Firecracker</thingClass>
-    <projectile>
-      <useGraphicClass>True</useGraphicClass>
-      <shadowSize>0.1</shadowSize>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>19</damageAmountBase>
-      <speed>61</speed>
-      <explosionRadius>1.9</explosionRadius>
-      <flyOverhead>false</flyOverhead>
-      <screenShakeFactor>-1</screenShakeFactor>
-      <filth>Filth_Ash</filth>
-      <filthCount>1</filthCount>
-      <armorPenetrationBase>0.39</armorPenetrationBase>
-      <landedEffecter>DMSRC_SparkImpact</landedEffecter>
-      <doExplosionVFX>false</doExplosionVFX>
-    </projectile>
-    <comps>
-      <li Class="CompProperties_ProjectileEffecter">
-        <effecterDef>DMSRC_SparkStream</effecterDef>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="BaseBullet">
-    <defName>DMSRC_Rocket_Direct</defName>
-    <label>rocket</label>
-    <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
-      <drawSize>(4, 4)</drawSize>
-    </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
-    <projectile>
-      <useGraphicClass>True</useGraphicClass>
-      <shadowSize>1</shadowSize>
-      <damageDef>Bomb</damageDef>
-      <damageAmountBase>50</damageAmountBase>
-      <speed>61</speed>
-      <explosionRadius>2.9</explosionRadius>
-      <flyOverhead>false</flyOverhead>
-      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
-      <soundExplode>Explosion_GiantBomb</soundExplode>
-      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
-      <soundAmbient>MortarRound_Ambient</soundAmbient>
-    </projectile>
-    <comps>
-      <li Class="CompProperties_ProjectileEffecter">
-        <effecterDef>DMSRC_SparkStream</effecterDef>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="BaseBullet">
-    <defName>DMSRC_Bullet_GrenadeLauncher</defName>
-    <label>grenade</label>
-    <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <thingClass>Projectile_Explosive</thingClass>
-    <projectile>
-      <speed>40</speed>
-      <damageDef>Bomb</damageDef>
-      <!-- Use default damage from explosion def -->
-      <explosionRadius>1.9</explosionRadius>
-
-      <arcHeightFactor>0.5</arcHeightFactor>
-      <shadowSize>0.6</shadowSize>
-    </projectile>
-  </ThingDef>
-
 
 </Defs>

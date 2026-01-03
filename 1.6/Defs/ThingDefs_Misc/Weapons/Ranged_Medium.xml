@@ -4,7 +4,7 @@
   <ThingDef ParentName="DMS_AutomatroidGun">
     <defName>DMSRC_Gun_Luch</defName>
     <label>GL-5 "Luch"</label>
-    <description>A high-energy gamma laser which fires a sweeping beam that pierces thick armor and burns targets.\nCauses beam illness, that leads to chronic diseases and death, if is used by organic creature.</description>
+    <description>A high-energy gamma laser which fires a sweeping beam that pierces thick armor and burns targets.\n\nOrganic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough.</description>
     <graphicData>
       <texPath>Things/Weapons/DMSRC_BeamGun_Luch</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -46,7 +46,7 @@
         <range>34.9</range>
         <minRange>1.9</minRange>
         <beamFullWidthRange>5.9</beamFullWidthRange>
-        <burstShotCount>30</burstShotCount>
+        <burstShotCount>20</burstShotCount>
         <beamWidth>3</beamWidth>
         <showBurstShotStats>false</showBurstShotStats>
         <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
@@ -81,128 +81,7 @@
     <weaponTags>
       <li>DMSRC_BeamGraserGun</li>
       <li>A_AR_LongRifle</li>
-      <li>DMS_MechWeaponMedium</li>
-    </weaponTags>
-    <tools>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
-    <comps>
-      <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>2</explosionDamage>
-        <explosionRange>1.1</explosionRange>
-        <beamMoteDef>DMSRC_Mote_Beam</beamMoteDef>
-        <damageDef>DMSRC_FocusedBeam</damageDef>
-      </li>
-    </comps>
-    <modExtensions>
-      <li Class="Fortified.HeavyEquippableExtension">
-        <EquippableDef>LightAutomatroid</EquippableDef>
-      </li>
-    </modExtensions>
-  </ThingDef>
-
-  <ThingDef ParentName="DMS_AutomatroidGun">
-    <defName>DMSRC_Gun_Prizm</defName>
-    <label>GR-1 "Prizm"</label>
-    <description>A high-energy gamma laser which fires a sweeping beam that pierces thick armor and burns targets.\nCauses beam illness, that leads to chronic diseases and death, if is used by organic creature.</description>
-    <graphicData>
-      <texPath>Things/Weapons/DMSRC_BeamGun_Luch</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>2</drawSize>
-    </graphicData>
-    <statBases>
-      <Mass>7.6</Mass>
-      <AccuracyTouch>1</AccuracyTouch>
-      <AccuracyShort>0.5</AccuracyShort>
-      <AccuracyMedium>0.4</AccuracyMedium>
-      <AccuracyLong>0.1</AccuracyLong>
-      <RangedWeapon_Cooldown>1.70</RangedWeapon_Cooldown>
-      <WorkToMake>57000</WorkToMake>
-    </statBases>
-    <soundInteract>Interact_Rifle</soundInteract>
-    <recipeMaker>
-      <researchPrerequisites>
-        <li>DMS_EquipmentElite</li>
-        <li>DMSRC_BeamFocusing</li>
-      </researchPrerequisites>
-    </recipeMaker>
-    <costList>
-      <Tungsteel>80</Tungsteel>
-      <DMS_Ceramics>30</DMS_Ceramics>
-      <Plasfiber>25</Plasfiber>
-      <ComponentStamped>6</ComponentStamped>
-      <ComponentSpacer>2</ComponentSpacer>
-      <DMSRC_ComponentGBEP>1</DMSRC_ComponentGBEP>
-    </costList>
-    <equippedStatOffsets>
-      <MoveSpeed>-0.15</MoveSpeed>
-    </equippedStatOffsets>
-    <generateCommonality>0.17</generateCommonality>
-    <verbs>
-      <!--<li>
-        <verbClass>DMSRC.Verb_FocusedBeam</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <warmupTime>2.3</warmupTime>
-        <range>34.9</range>
-        <minRange>2.4</minRange>
-        <beamFullWidthRange>11.9</beamFullWidthRange>
-        <burstShotCount>30</burstShotCount>
-        <beamWidth>10</beamWidth>
-        <showBurstShotStats>false</showBurstShotStats>
-        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
-        <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
-        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
-        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-        <beamMaxDeviation>1.5</beamMaxDeviation>
-        <beamCurvature>0.6</beamCurvature>
-        <stopBurstWithoutLos>false</stopBurstWithoutLos>
-        <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
-        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
-        <beamStartOffset>0.75</beamStartOffset>
-        <beamLineFleckChanceCurve>
-          <points>
-            <li>(0, 0)</li>
-            <li>(0.65, 0.4)</li>
-            <li>(1, 0.75)</li>
-          </points>
-        </beamLineFleckChanceCurve>
-        <targetParams>
-          <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-      </li>-->
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>DMSRC_Bullet_SmallBeam</defaultProjectile>
-        <warmupTime>1</warmupTime>
-        <range>21.9</range>
-        <burstShotCount>20</burstShotCount>
-        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-        <soundCast>BeamGraser_Shooting_Resolve</soundCast>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-        <!--<aimingChargeMote>Mote_BeamRepeater_Charge</aimingChargeMote>
-        <aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>-->
-      </li>
-    </verbs>
-    <weaponTags>
-      <li>DMSRC_BeamGraserGun</li>
-      <li>A_AR_LongRifle</li>
-      <li>DMS_MechWeaponMedium</li>
+      <li>DMS_MechWeaponMedium</li><li>NoSwitch</li>
     </weaponTags>
     <tools>
       <li>
@@ -231,9 +110,83 @@
   </ThingDef>
 
   <ThingDef ParentName="DMS_AutomatroidGun">
-    <defName>DMSRC_FirecrackerRifle</defName>
+    <defName>DMSRC_Gun_Prizm</defName>
+    <label>GR-4M "Prizm"</label>
+    <description>A high-energy gamma laser which fires a burst of focused direct beams that pierce thick armor and burns targets.\n\nOrganic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough.</description>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_BeamGun_Luch</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>7.6</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>0.5</AccuracyShort>
+      <AccuracyMedium>0.4</AccuracyMedium>
+      <AccuracyLong>0.1</AccuracyLong>
+      <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+      <WorkToMake>57000</WorkToMake>
+    </statBases>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>DMS_EquipmentElite</li>
+        <li>DMSRC_BeamFocusing</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <costList>
+      <Tungsteel>80</Tungsteel>
+      <DMS_Ceramics>20</DMS_Ceramics>
+      <Plasfiber>20</Plasfiber>
+      <ComponentStamped>4</ComponentStamped>
+      <ComponentSpacer>1</ComponentSpacer>
+      <DMSRC_ComponentGBEP>1</DMSRC_ComponentGBEP>
+    </costList>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.15</MoveSpeed>
+    </equippedStatOffsets>
+    <generateCommonality>0.12</generateCommonality>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_SmallBeam</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>34.9</range>
+        <burstShotCount>10</burstShotCount>
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+        <soundCast>BeamGraser_Shooting_Resolve</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>DMSRC_BeamGraserGun</li>
+      <li>A_AR_LongRifle</li>
+      <li>DMS_MechWeaponMedium</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>LightAutomatroid</EquippableDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AutomatroidGun">
+    <defName>DMSRC_FSRAssaultRifle</defName>
     <label>FSR Assault rifle</label>
-    <description>An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis version has underbarrel grenade launcher, that allows to launch frag grenade once before reloading.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
+    <description>An assault rifle designed to use FSR munition.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
     <weaponClasses>
       <li>LongShots</li>
       <li>RangedHeavy</li>
@@ -244,7 +197,7 @@
       <li>A_AR_LongRifle</li>
     </weaponTags>
     <graphicData>
-      <texPath>Things/Weapons/DMSRC_FirecrackerRifle</texPath>
+      <texPath>Things/Weapons/DMSRC_FSRAssaultRifle</texPath>
       <drawSize>1.5</drawSize>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
@@ -260,7 +213,7 @@
     <generateCommonality>0.35</generateCommonality>
     <recipeMaker>
       <researchPrerequisites>
-        <li>DMSRC_Firecrackers</li>
+        <li>DMSRC_FSRMunitions</li>
       </researchPrerequisites>
     </recipeMaker>
     <costList>
@@ -273,12 +226,12 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>DMSRC_Bullet_Firecracker_Medium</defaultProjectile>
+        <defaultProjectile>DMSRC_Bullet_FSR</defaultProjectile>
         <warmupTime>1.5</warmupTime>
         <range>29.9</range>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
-        <soundCast>DMSRC_Shot_Firecracker</soundCast>
+        <soundCast>DMSRC_Shot_FSR</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>

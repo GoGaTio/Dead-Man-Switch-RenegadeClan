@@ -4,7 +4,7 @@
   <ThingDef ParentName="ApparelNoQualityBase">
     <defName>DMSRC_Apparel_PackScanner</defName>
     <label>scanner pack</label>
-    <description>A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. These turrets are effective for flanking and distracting enemies. However, the turret's limited AI can't be directly controlled, so it can cause friendly fire incidents. The turret battery lasts for several hours.</description>
+    <description>A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours.</description>
     <graphicData>
       <texPath>Things/Apparel/DMSRC_ScannerPack/DMSRC_ScannerPack</texPath>
       <graphicClass>Graphic_Single</graphicClass>

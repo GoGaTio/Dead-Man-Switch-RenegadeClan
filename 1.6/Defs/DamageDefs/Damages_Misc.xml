@@ -54,4 +54,13 @@
     <scaleDamageToBuildingsBasedOnFlammability>true</scaleDamageToBuildingsBasedOnFlammability>
   </DamageDef>
 
+<DamageDef ParentName="Bomb">
+    <defName>DMSRC_BombTimed</defName>
+    <defaultDamage>50</defaultDamage>
+    <defaultStoppingPower>2.0</defaultStoppingPower>
+    <defaultArmorPenetration>1.30</defaultArmorPenetration>
+<buildingDamageFactorImpassable>40</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>20</buildingDamageFactorPassable>
+  </DamageDef>
+
 </Defs>

@@ -100,8 +100,8 @@
 
   <!-- Beam defence -->
   <ThingDef ParentName="BaseAutomatroidRace">
-    <defName>DMSRC_Mech_Turnpike</defName>
-    <label>turnpike</label>
+    <defName>DMSRC_Mech_Pavise</defName>
+    <label>pavise</label>
     <description>An unmanned all-terrain tracked beam defence support platform, armed with mounted submachine gun.</description>
     <statBases>
       <MoveSpeed>2.5</MoveSpeed>
@@ -215,9 +215,9 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseAutomatroidKind">
-    <defName>DMSRC_Mech_Turnpike</defName>
-    <label>turnpike</label>
-    <race>DMSRC_Mech_Turnpike</race>
+    <defName>DMSRC_Mech_Pavise</defName>
+    <label>pavise</label>
+    <race>DMSRC_Mech_Pavise</race>
     <combatPower>250</combatPower>
     <maxPerGroup>7</maxPerGroup>
     <isBoss>true</isBoss>

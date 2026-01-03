@@ -6,8 +6,8 @@
 
   <BackstoryDef>
     <defName>DMSRC_Researcher1</defName>
-    <title>human computer</title>
-    <titleShort>computer</titleShort>
+    <title>fleet engineer</title>
+    <titleShort>engineer</titleShort>
     <description>[PAWN_nameDef] turned out to have an excellent memory and a gift for performing complex calculations in [PAWN_possessive] head. An industrial-world dictator decided to employ [PAWN_nameDef] to keep track of [PAWN_possessive] state's finances and expenditure.</description>
     <slot>Adulthood</slot>
     <workDisables>
@@ -21,10 +21,7 @@
       <Intellectual>7</Intellectual>
     </skillGains>
     <spawnCategories>
-      <li>Offworld</li>
-      <li>Pirate</li>
-      <li>Scientist</li>
-      <li>Researcher</li>
+      <li>DMSRC_Researcher</li>
     </spawnCategories>
     <bodyTypeMale>Male</bodyTypeMale>
     <bodyTypeFemale>Female</bodyTypeFemale>
@@ -33,8 +30,8 @@
 
   <BackstoryDef>
     <defName>DMSRC_Researcher2</defName>
-    <title>joywire artist</title>
-    <titleShort>joywirer</titleShort>
+    <title>researcher</title>
+    <titleShort>researcher</titleShort>
     <description>[PAWN_nameDef] worked in an urbworld lab developing cutting-edge joywire software to maximize user pleasure.\n\nWhen the local government imposed harsh restrictions on joywire manufacturing, [PAWN_pronoun] began selling [PAWN_possessive] products on the black market.</description>
     <slot>Adulthood</slot>
     <workDisables>
@@ -49,9 +46,7 @@
       <Medicine>2</Medicine>
     </skillGains>
     <spawnCategories>
-      <li>Offworld</li>
-      <li>Pirate</li>
-      <li>Scientist</li>
+      <li>DMSRC_Researcher</li>
     </spawnCategories>
     <bodyTypeMale>Male</bodyTypeMale>
     <bodyTypeFemale>Female</bodyTypeFemale>
@@ -65,7 +60,7 @@
     <description>Among tunnel-dwellers, those with vision as strong as [PAWN_nameDef]'s are revered as sages. [PAWN_pronoun] would lead the way, marking spots to dig with bioluminescent fungus and warning others of impending danger.</description>
     <slot>Adulthood</slot>
     <requiredWorkTags>
-      <li>Mining</li>
+      <li>Intellectual</li>
       <li>ManualSkilled</li>
     </requiredWorkTags>
     <skillGains>
@@ -73,9 +68,7 @@
       <Social>2</Social>
     </skillGains>
     <spawnCategories>
-      <li>Offworld</li>
-      <li>Pirate</li>
-	    <li>Miner</li>
+      <li>DMSRC_Researcher</li>
     </spawnCategories>
     <bodyTypeMale>Male</bodyTypeMale>
     <bodyTypeFemale>Female</bodyTypeFemale>
@@ -92,6 +85,7 @@
     <description>While other passengers pass the years between star systems in cryptosleep sarcophagi, [PAWN_nameDef] had to wake up at periodic intervals to perform inspections, check the navigation systems, and to oil the mechanoids.</description>
     <slot>Adulthood</slot>
     <requiredWorkTags>
+      <li>Intellectual</li>
       <li>ManualDumb</li>
       <li>ManualSkilled</li>
     </requiredWorkTags>
@@ -100,9 +94,7 @@
       <Crafting>3</Crafting>
     </skillGains>
     <spawnCategories>
-      <li>Offworld</li>
-      <li>ImperialCommon</li>
-      <li>Researcher</li>
+      <li>DMSRC_Researcher</li>
     </spawnCategories>
     <bodyTypeMale>Male</bodyTypeMale>
     <bodyTypeFemale>Female</bodyTypeFemale>
@@ -127,8 +119,8 @@
     <skillGains>
       <Crafting>4</Crafting>
       <Shooting>3</Shooting>
-      <Intellectual>6</Intellectual>
-      <Medicine>2</Medicine>
+      <Intellectual>10</Intellectual>
+      <Medicine>4</Medicine>
     </skillGains>
     <spawnCategories>
       <li>DMSRC_Researcher</li>
@@ -152,15 +144,15 @@
     </workDisables>
     <requiredWorkTags>
       <li>Intellectual</li>
+      <li>Violent</li>
+      <li>ManualSkilled</li>
     </requiredWorkTags>
     <skillGains>
       <Shooting>4</Shooting>
-      <Intellectual>4</Intellectual>
+      <Intellectual>8</Intellectual>
     </skillGains>
     <spawnCategories>
-      <li>Offworld</li>
-      <li>Pirate</li>
-      <li>ImperialCommon</li>
+      <li>DMSRC_Researcher</li>
     </spawnCategories>
     <bodyTypeMale>Thin</bodyTypeMale>
     <bodyTypeFemale>Thin</bodyTypeFemale>

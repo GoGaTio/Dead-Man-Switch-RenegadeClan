@@ -2,7 +2,7 @@
 <Defs>
 
   <ThingDef ParentName="DMS_AutomatroidGun">
-    <defName>DMSRC_FirecrackerPistol</defName>
+    <defName>DMSRC_FSRPistol</defName>
     <label>FSR Light carabine</label>
     <description>An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis version has underbarrel grenade launcher, that allows to launch frag grenade once before reloading.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
     <weaponClasses>
@@ -10,11 +10,11 @@
       <li>Ranged</li>
     </weaponClasses>
     <weaponTags>
-      <li>DMSRC_LightFirecracker</li>
+      <li>DMSRC_LightFSR</li>
       <li>DMS_MechWeaponLight</li>
     </weaponTags>
     <graphicData>
-      <texPath>Things/Weapons/DMSRC_FirecrackerPistol</texPath>
+      <texPath>Things/Weapons/DMSRC_FSRPistol</texPath>
       <drawSize>1.5</drawSize>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
@@ -29,7 +29,7 @@
     </statBases>
     <recipeMaker>
       <researchPrerequisites>
-        <li>DMSRC_Firecrackers</li>
+        <li>DMSRC_FSRMunitions</li>
       </researchPrerequisites>
     </recipeMaker>
     <costList>
@@ -40,12 +40,12 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>DMSRC_Bullet_Firecracker_Medium</defaultProjectile>
+        <defaultProjectile>DMSRC_Bullet_FSR</defaultProjectile>
         <warmupTime>0.5</warmupTime>
         <range>21.9</range>
         <burstShotCount>1</burstShotCount>
         <!--<ticksBetweenBurstShots>12</ticksBetweenBurstShots>-->
-        <soundCast>DMSRC_Shot_Firecracker</soundCast>
+        <soundCast>DMSRC_Shot_FSR</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>

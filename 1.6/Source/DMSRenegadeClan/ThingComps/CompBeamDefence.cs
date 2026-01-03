@@ -183,9 +183,19 @@ namespace DMSRC
 
 		public int range;
 
-		private float cachedPowerOutput;
+		private bool interceptedLastTime;
 
 		private MoteDualAttached mote;
+
+		public override void PostExposeData()
+		{
+			base.PostExposeData();
+			Scribe_Values.Look(ref active, "active", true);
+			Scribe_Values.Look(ref interceptedLastTime, "interceptedLastTime", defaultValue: false);
+			Scribe_Values.Look(ref charge, "charge");
+			Scribe_Values.Look(ref delay, "delay");
+			Scribe_Values.Look(ref shouldBeActive, "shouldBeActive", true);
+		}
 
 		public override void PostPostMake()
         {
@@ -208,9 +218,9 @@ namespace DMSRC
 			compDormant = parent.GetComp<CompCanBeDormant>();
 			compPowerTrader = parent.GetComp<CompPowerTrader>();
 			range = Mathf.CeilToInt(Props.range);
-			if (compPowerTrader != null)
+			if (compPowerTrader != null && interceptedLastTime)
 			{
-				cachedPowerOutput = compPowerTrader.Props.PowerConsumption;
+				compPowerTrader.PowerOutput = 0f - compPowerTrader.Props.PowerConsumption;
 			}
 		}
 
@@ -234,7 +244,8 @@ namespace DMSRC
 				delay--;
 				return;
 			}
-			if(shouldBeActive && active && (Props.activeWhileSleep || compDormant?.Awake != false) && compPowerTrader?.PowerOn != false)
+			delay = Props.delay;
+			if (shouldBeActive && active && (Props.activeWhileSleep || compDormant?.Awake != false) && compPowerTrader?.PowerOn != false)
             {
 				IntVec3 pos = parent.Position;
 				foreach (IntVec3 cell in new CellRect(pos.x, pos.z, 1, 1).ExpandedBy(range).ClipInsideMap(parent.Map))
@@ -246,14 +257,18 @@ namespace DMSRC
 						if (Vector3.Distance(thing.DrawPos, parent.TrueCenter()) < Props.range && IsBulletAffected(thing))
 						{
 							Intercept(thing);
+							if (compPowerTrader != null)
+							{
+								compPowerTrader.PowerOutput = 0f - compPowerTrader.Props.PowerConsumption;
+							}
 							return;
 						}
 					}
 				}
 				if(compPowerTrader != null)
                 {
-					compPowerTrader.powerOutputInt = cachedPowerOutput;
-                }
+					compPowerTrader.PowerOutput = 0f - compPowerTrader.Props.idlePowerDraw;
+				}
 			}
 			if (charge < Props.maxCharge && parent.IsHashIntervalTick(Props.chargeRegenInterval - (active ? 0 : Props.inactiveRegenOffset)))
 			{
@@ -280,15 +295,6 @@ namespace DMSRC
             {
 				charge = 0;
 				active = false;
-				if (compPowerTrader != null)
-				{
-					cachedPowerOutput = compPowerTrader.Props.PowerConsumption;
-				}
-			}
-			delay = Props.delay;
-			if (compPowerTrader != null)
-			{
-				cachedPowerOutput = cachedPowerOutput + Props.powerConsumption;
 			}
 		}
 
@@ -327,11 +333,7 @@ namespace DMSRC
 			}
 		}
 
-		public override void PostExposeData()
-		{
-			base.PostExposeData();
-			Scribe_Values.Look(ref active, "active", true);
-		}
+		
 	}
 	[StaticConstructorOnStartup]
 	public class BeamDefenceGizmo : Gizmo

@@ -4,7 +4,7 @@
   <ThingDef ParentName="DMS_BaseCannonBuilding">
     <defName>DMSRC_Turret_Straj</defName>
     <label>Straj</label>
-    <description>An ancient design of a remote controlled turret widely used on armored vehicles and mech armor platforms.</description>
+    <description>An ancient design of a remote controlled close-combat turret used for indoors defence.</description>
     <techLevel>Industrial</techLevel>
     <graphicData>
       <texPath>Things/Turrets/DMS_Weapon_Base</texPath>
@@ -19,7 +19,7 @@
     <statBases>
       <MaxHitPoints>300</MaxHitPoints>
       <Flammability>0.5</Flammability>
-      <WorkToBuild>1500</WorkToBuild>
+      <WorkToBuild>15000</WorkToBuild>
       <Beauty>-2</Beauty>
       <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
     </statBases>
@@ -71,7 +71,7 @@
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>DMSRC_Gun_Straj</defName>
     <label>straj</label>
-    <description>kord</description>
+    <description>An automatic defence shotgun.</description>
     <graphicData>
       <texPath>Things/Weapons/DMSRC_Gun_Straj</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -158,6 +158,7 @@
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>800</basePowerConsumption>
+        <idlePowerDraw>50</idlePowerDraw>
       </li>
       <li Class="DMSRC.CompProperties_BeamDefence">
         <range>14.9</range>
@@ -184,6 +185,120 @@
             <maxExplosionRadius>2.8</maxExplosionRadius>
           </li>
         </intercepts>
+      </li>
+    </comps>
+  </ThingDef>
+
+<ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_PerimeterScanner</defName>
+    <label>perimeter scanner</label>
+    <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</description>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_PerimeterScanner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.35</fillPercent>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>DMS_Category</designationCategory>
+    <uiOrder>500</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0.7</Flammability>
+      <Mass>20</Mass>
+    </statBases>
+    <costList>
+      <Tungsteel>30</Tungsteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <ComponentStamped>1</ComponentStamped>
+    </costList>
+<building>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <researchPrerequisites>
+      <li>DMS_UAVBasis</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>DMSRC.PlaceWorker_PerimeterScanner</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="DMSRC.CompProperties_PerimeterScanner">
+        <glowRadius>4.9</glowRadius>
+        <glowColor>(200, 0, 0, 0)</glowColor>
+        <range>7</range>
+        <effecter>DMSRC_PerimeterScannerAlert</effecter>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>75</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_PerimeterScannerTemp</defName>
+    <label>perimeter scanner</label>
+    <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</description>
+    <tickerType>Normal</tickerType>
+    <size>(1,1)</size>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_PerimeterScannerTemp</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.25</fillPercent>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <stealable>false</stealable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0.7</Flammability>
+      <Mass>20</Mass>
+    </statBases>
+    <building>
+<ai_neverTrashThis>true</ai_neverTrashThis>
+      <claimable>false</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <costList>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Tungsteel>10</Tungsteel>
+    </costList>
+    <placeWorkers>
+      <li>DMSRC.PlaceWorker_PerimeterScanner</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="DMSRC.CompProperties_PerimeterScanner">
+        <glowRadius>4.9</glowRadius>
+        <glowColor>(200, 0, 0, 0)</glowColor>
+        <range>7</range>
+        <effecter>DMSRC_PerimeterScannerAlert</effecter>
+      </li>
+      <li Class="CompProperties_MechPowerCell">
+        <totalPowerTicks>25000</totalPowerTicks>
+        <killWhenDepleted>true</killWhenDepleted>
+        <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>This perimeter scanner has a limited battery life. Once it runs out, it will stop working entirely.</tooltipOverride>
       </li>
     </comps>
   </ThingDef>

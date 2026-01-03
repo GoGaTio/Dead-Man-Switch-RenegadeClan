@@ -38,7 +38,7 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_WarheadPlatform</defName>
-    <label>central command core</label>
+    <label>warhead platform</label>
     <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
     <thingClass>Building_WorkTable</thingClass>
     <graphicData>
@@ -137,6 +137,11 @@
         <li>DMSRC_Quest</li>
       </buildingTags>
     </building>
+<researchPrerequisites MayRequire="Ludeon.RimWorld.Royalty">
+      <li>DMSRC_WideBroadcast</li>
+    </researchPrerequisites>
+<designationCategory MayRequire="Ludeon.RimWorld.Royalty">DMS_Category</designationCategory>
+    <uiOrder MayRequire="Ludeon.RimWorld.Royalty">2450</uiOrder>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
       <li>PlaceWorker_InvalidOverSubstructure</li>
@@ -147,6 +152,7 @@
       </li>
       <li Class="Fortified.CompProperties_SubRelay">
         <relayRange>900</relayRange>
+        <coverWholeMap>true</coverWholeMap>
       </li>
     </comps>
   </ThingDef>

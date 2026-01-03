@@ -1,216 +1,559 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+
   <DMSRC.RPrefabDef>
-    <defName>DMSRC_ContainerNara_Red</defName>
-    <size>(5,5)</size>
+    <defName>DMSRC_WarehouseStock1</defName>
     <tags>
-      <li>ContainerNara</li>
+      <li>WarehouseStock</li>
     </tags>
-    <clearRects>
-      <li>(0,0,4,4)</li>
-    </clearRects>
+    <size>(9,9)</size>
     <things>
-      <DMSRC_SecurityContainer_NaraRed>
-        <position>(2, 0, 2)</position>
-      </DMSRC_SecurityContainer_NaraRed>
+      <DMSRC_Crate>
+        <positions>
+          <li>(6, 0, 0)</li>
+          <li>(7, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(0, 0, 2)</li>
+          <li>(8, 0, 7)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(6, 0, 2)</li>
+          <li>(2, 0, 5)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(3, 0, 2)</position>
+      </DMSRC_Cargo>
     </things>
   </DMSRC.RPrefabDef>
 
-  <PrefabDef>
-    <defName>NewPrefab</defName>
-    <!-- rename -->
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock2</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
     <size>(9,9)</size>
-    <subPrefabs>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-    </subPrefabs>
     <things>
-      <DiningChair>
-        <rects>
-          <li>(1,2,1,2)</li>
-          <li>(6,2,6,2)</li>
-          <li>(1,5,1,5)</li>
-        </rects>
+      <DMSRC_Crate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(4, 0, 3)</li>
+          <li>(7, 0, 6)</li>
+          <li>(6, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(3, 0, 1)</li>
+          <li>(1, 0, 2)</li>
+          <li>(0, 0, 7)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(2, 0, 5)</position>
         <relativeRotation>Clockwise</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
-      <DiningChair>
-        <position>(4, 0, 7)</position>
-        <relativeRotation>Opposite</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
+      </DMSRC_Cargo>
     </things>
-  </PrefabDef>
+  </DMSRC.RPrefabDef>
 
-  <PrefabDef>
-    <defName>NewPrefab</defName>
-    <!-- rename -->
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock3</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
     <size>(9,9)</size>
-    <subPrefabs>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-    </subPrefabs>
     <things>
-      <DiningChair>
-        <rects>
-          <li>(7,3,7,3)</li>
-          <li>(2,4,2,4)</li>
-          <li>(7,7,7,7)</li>
-        </rects>
+      <DMSRC_Crate>
+        <positions>
+          <li>(2, 0, 1)</li>
+          <li>(8, 0, 6)</li>
+          <li>(6, 0, 8)</li>
+        </positions>
         <relativeRotation>Opposite</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
-      <DiningChair>
-        <position>(4, 0, 7)</position>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(1, 0, 4)</li>
+          <li>(5, 0, 4)</li>
+          <li>(1, 0, 6)</li>
+        </positions>
         <relativeRotation>Counterclockwise</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 2)</li>
+          <li>(5, 0, 6)</li>
+          <li>(7, 0, 7)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <positions>
+          <li>(6, 0, 3)</li>
+          <li>(2, 0, 5)</li>
+        </positions>
+      </DMSRC_Cargo>
     </things>
-  </PrefabDef>
+  </DMSRC.RPrefabDef>
 
-  <PrefabDef>
-    <defName>NewPrefab</defName>
-    <!-- rename -->
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock4</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
     <size>(9,9)</size>
-    <subPrefabs>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-    </subPrefabs>
     <things>
-      <DiningChair>
-        <position>(5, 0, 1)</position>
+      <DMSRC_Crate>
+        <positions>
+          <li>(4, 0, 0)</li>
+          <li>(7, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(7, 0, 0)</position>
         <relativeRotation>Counterclockwise</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
-      <DiningChair>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(6, 0, 7)</position>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 2)</li>
+          <li>(4, 0, 3)</li>
+          <li>(2, 0, 5)</li>
+        </positions>
+      </DMSRC_PackCrate>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock5</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(4, 0, 1)</li>
+          <li>(7, 0, 1)</li>
+          <li>(5, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(5, 0, 8)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(1, 0, 5)</li>
+          <li>(3, 0, 6)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(6, 0, 2)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock6</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(8, 0, 0)</li>
+          <li>(8, 0, 1)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(8, 0, 2)</li>
+          <li>(2, 0, 3)</li>
+          <li>(3, 0, 4)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(3, 0, 2)</li>
+          <li>(4, 0, 5)</li>
+          <li>(0, 0, 7)</li>
+        </positions>
+      </DMSRC_PackCrate>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock7</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(2, 0, 0)</li>
+          <li>(6, 0, 2)</li>
+          <li>(5, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(0, 0, 5)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(0, 0, 1)</li>
+          <li>(0, 0, 3)</li>
+          <li>(6, 0, 3)</li>
+          <li>(5, 0, 5)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(3, 0, 4)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock8</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(6, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+          <li>(5, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(7, 0, 4)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(6, 0, 1)</li>
+          <li>(1, 0, 4)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(3, 0, 4)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock9</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(5, 0, 1)</li>
+          <li>(2, 0, 6)</li>
+          <li>(6, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(1, 0, 3)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(1, 0, 4)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <position>(6, 0, 3)</position>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(2, 0, 3)</position>
+      </DMSRC_Cargo>
+      <DMSRC_Cargo>
+        <position>(6, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock10</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(6, 0, 2)</li>
+          <li>(1, 0, 5)</li>
+          <li>(8, 0, 7)</li>
+          <li>(8, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
         <position>(1, 0, 4)</position>
         <relativeRotation>Clockwise</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
-      <DiningChair>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
         <position>(7, 0, 5)</position>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
-      <DiningChair>
-        <position>(3, 0, 7)</position>
-        <relativeRotation>Opposite</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(6, 0, 0)</li>
+          <li>(1, 0, 1)</li>
+          <li>(7, 0, 2)</li>
+          <li>(2, 0, 4)</li>
+          <li>(1, 0, 6)</li>
+          <li>(5, 0, 6)</li>
+        </positions>
+      </DMSRC_PackCrate>
     </things>
-  </PrefabDef>
+  </DMSRC.RPrefabDef>
 
-  <PrefabDef>
-    <defName>NewPrefab</defName>
-    <!-- rename -->
+  <!--=================================================================================-->
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithHole1</defName>
+    <tags>
+      <li>WarehouseStockWithHole</li>
+    </tags>
     <size>(9,9)</size>
+    <things>
+      <DMSRC_BigHole>
+        <position>(4, 0, 4)</position>
+      </DMSRC_BigHole>
+      <DMSRC_Crate>
+        <position>(5, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(0, 0, 6)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithHole2</defName>
+    <tags>
+      <li>WarehouseStockWithHole</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(6, 0, 0)</li>
+          <li>(4, 0, 2)</li>
+          <li>(7, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(8, 0, 7)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(7, 0, 0)</li>
+          <li>(1, 0, 1)</li>
+          <li>(7, 0, 3)</li>
+          <li>(0, 0, 7)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_SmallHole>
+        <position>(4, 0, 4)</position>
+      </DMSRC_SmallHole>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <!--=================================================================================-->
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithContainer1</defName>
+    <tags>
+      <li>WarehouseStockWithContainer</li>
+    </tags>
     <subPrefabs>
       <li>
-        <pos></pos>
-        <rotations></rotations>
+        <pos>(5, 0, 4)</pos>
         <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
-      </li>
-      <li>
-        <pos></pos>
-        <rotations></rotations>
-        <tag>ContainerNara</tag>
+        <rotations>North, West</rotations>
       </li>
     </subPrefabs>
+    <size>(9,9)</size>
     <things>
-      <DiningChair>
-        <position>(7, 0, 1)</position>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
-      <DiningChair>
-        <rects>
-          <li>(2,2,2,2)</li>
-          <li>(1,7,1,7)</li>
-        </rects>
-        <relativeRotation>Counterclockwise</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
-      <DiningChair>
-        <position>(4, 0, 6)</position>
+      <DMSRC_Crate>
+        <positions>
+          <li>(8, 0, 0)</li>
+          <li>(4, 0, 2)</li>
+          <li>(3, 0, 3)</li>
+          <li>(3, 0, 4)</li>
+        </positions>
         <relativeRotation>Opposite</relativeRotation>
-        <stuff>WoodLog</stuff>
-        <quality>Normal</quality>
-      </DiningChair>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(8, 0, 1)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(0, 0, 5)</li>
+          <li>(5, 0, 6)</li>
+        </positions>
+      </DMSRC_PackCrate>
     </things>
-  </PrefabDef>
+  </DMSRC.RPrefabDef>
 
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithContainer2</defName>
+    <tags>
+      <li>WarehouseStockWithContainer</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <pos>(6, 0, 6)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>North, South, West</rotations>
+      </li>
+    </subPrefabs>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(1, 0, 0)</li>
+          <li>(2, 0, 1)</li>
+          <li>(5, 0, 2)</li>
+          <li>(6, 0, 3)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(2, 0, 4)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(8, 0, 8)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <position>(1, 0, 6)</position>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(3, 0, 4)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithContainer3</defName>
+    <tags>
+      <li>WarehouseStockWithContainer</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <pos>(4, 0, 4)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>North, South, West</rotations>
+      </li>
+    </subPrefabs>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(6, 0, 0)</li>
+          <li>(7, 0, 1)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(3, 0, 7)</li>
+          <li>(4, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(6, 0, 5)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(1, 0, 4)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithContainer4</defName>
+    <tags>
+      <li>WarehouseStockWithContainer</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <pos>(2, 0, 2)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>All</rotations>
+      </li>
+      <li>
+        <pos>(5, 0, 7)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>North, East, West</rotations>
+      </li>
+    </subPrefabs>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <position>(5, 0, 2)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(2, 0, 5)</li>
+          <li>(1, 0, 6)</li>
+          <li>(1, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Cargo>
+        <position>(6, 0, 2)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
 
 </Defs>

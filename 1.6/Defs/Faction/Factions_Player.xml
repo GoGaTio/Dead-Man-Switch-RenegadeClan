@@ -4,7 +4,7 @@
   <FactionDef ParentName="PlayerFactionBase">
     <defName>DMSRC_PlayerRenegades</defName>
     <label>Renegade group</label>
-    <description>A colony of recently-arrived off-worlders.</description>
+    <description>A group of recently aroused renegades.</description>
     <isPlayer>true</isPlayer>
     <basicMemberKind>DMSRC_Renegade_Player</basicMemberKind>
     <pawnSingular>renegade</pawnSingular>

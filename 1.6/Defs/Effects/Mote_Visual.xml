@@ -74,4 +74,41 @@
     </graphicData>
   </ThingDef>
 
+ <ThingDef ParentName="MoteBase">
+    <defName>DMSRC_Mote_NeuroControlLine</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>Things/Mote/DMSRC_NeuroControlLink</texPath>
+    </graphicData>
+  </ThingDef>
+
+ <ThingDef ParentName="MoteBase">
+    <defName>DMSRC_Mote_MalevolenceCommandLine</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>Things/Mote/DMSRC_NeuroControlLink</texPath>
+      <color>(0.9, 0.5, 0.5)</color>
+    </graphicData>
+  </ThingDef>
+
 </Defs>

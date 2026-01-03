@@ -28,16 +28,7 @@
     <scenario>
       <name>Awaiting Renegades</name>
       <summary>A legendary pilot decides to retire and start a different story.</summary>
-      <description>
-        You have been an officer in the Colonial Orbital Marines for thirty years...but actually hundreds of years. Traveling through countless stars and participating in wars end up becoming a living legend with your mobile dragoon.
-
-        Comrades who joined in the same period as you were no longer there, died on the battlefield, from old age, or chose to stay in those colonial worlds during the colonization again and again.
-        And you, still driving your old-generation dragoons. Even if you know that the old will eventually leave and the new will come, you still feel reluctant to leave this mobile dragoon that has been with you for several years.
-
-        Everything may become obsolete in the innovations of time and technology. but whatever how no longer useful they were, they are still solid proof that you have come from the past to the present. the proof that you came from that harsh era. the proof that the past exists.
-
-        Finally, you decide to retire, at least leave a different story for this weapon, not only war, and death, and soon the approval report for your application is issued.
-      </description>
+      <description>You have been awaiting for decades on this Rimworld till high command gave you an order to begin your activity since local renegades cell is already established.\n\nReinitiate systems of base, activate automatroids, contact renegades clan and begin fighting local Colonial Fleet. Take advantage of technology and you hidden position, use command automatroid to realize sabotage missions on fleet infrastructure.</description>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>DMSRC_PlayerRenegades</factionDef>
@@ -76,7 +67,7 @@
         </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
-          <thingDef>DMSRC_FirecrackerPistol</thingDef>
+          <thingDef>DMSRC_FSRPistol</thingDef>
           <count>1</count>
         </li>
         <li Class="ScenPart_StartingThing_Defined">

@@ -35,6 +35,14 @@ namespace DMSRC
 {
 	public class DamageWorker_BeamExplosion : DamageWorker_AddInjury
 	{
+		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
+		{
+			if (explosion.intendedTarget != t && t.Faction != null && t.Faction == explosion.instigator?.Faction)
+			{
+				return;
+			}
+			base.ExplosionDamageThing(explosion, t, damagedThings, ignoredThings, cell);
+		}
 		public override DamageResult Apply(DamageInfo dinfo, Thing victim)
 		{
 			Pawn pawn = victim as Pawn;
@@ -79,6 +87,14 @@ namespace DMSRC
 
 	public class DamageWorker_Firecracker : DamageWorker_AddInjury
 	{
+		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
+		{
+			if(explosion.intendedTarget != t && t.Faction != null && t.Faction == explosion.instigator?.Faction)
+			{
+				return;
+			}
+			base.ExplosionDamageThing(explosion, t, damagedThings, ignoredThings, cell);
+		}
 		public override DamageResult Apply(DamageInfo dinfo, Thing victim)
 		{
 			Pawn pawn = victim as Pawn;

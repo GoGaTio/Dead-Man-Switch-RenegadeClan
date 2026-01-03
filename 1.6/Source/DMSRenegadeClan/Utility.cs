@@ -200,6 +200,44 @@ namespace DMSRC
 			}
 		}
 
+		private static Rot4 Rotation = Rot4.North;
+
+		[DebugAction("DMSRC", "Rotate RPrefab", false, false, false, false, false, 0, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		public static void RotateRPrefab()
+		{
+			Rotation.Rotate(RotationDirection.Clockwise);
+			Messages.Message("RPrefab rotation: " + Rotation.ToStringHuman(), MessageTypeDefOf.NeutralEvent, historical: false);
+		}
+
+		[DebugAction("DMSRC", "Spawn RPrefab", false, false, false, false, false, 0, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		public static List<DebugActionNode> SpawnRPrefab()
+		{
+			List<DebugActionNode> list = new List<DebugActionNode>();
+			foreach (RPrefabDef def in DefDatabase<RPrefabDef>.AllDefsListForReading)
+			{
+				list.Add(new DebugActionNode(def.defName ?? "", DebugActionType.ToolMap)
+				{
+					action = delegate
+					{
+						SpawnAtMouseCell(def);
+					}
+				});
+			}
+			return list;
+		}
+		private static void SpawnAtMouseCell(RPrefabDef def)
+		{
+			IntVec3 intVec = UI.MouseCell();
+			Map currentMap = Find.CurrentMap;
+			if (!intVec.InBounds(currentMap))
+			{
+				return;
+			}
+			Rot4 rotation = Rotation;
+			List<Thing> list = new List<Thing>();
+			def.Generate(intVec, rotation, currentMap, null, ref list);
+		}
+
 		[DebugAction("DMSRC", "Get faction", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
 		public static void GetFaction()
 		{

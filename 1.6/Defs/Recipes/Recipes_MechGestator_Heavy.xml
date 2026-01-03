@@ -33,6 +33,13 @@
           </thingDefs>
         </filter>
         <count>150</count>
+      </li><li>
+        <filter>
+          <thingDefs>
+            <li>DMS_Ceramics</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
       </li>
       <li>
         <filter>
@@ -87,16 +94,16 @@
 
   <!--Turnpike-->
   <RecipeDef ParentName="DMS_SuperHeavyMechanoidRecipe">
-    <defName>DMSRC_Make_Turnpike</defName>
-    <label>Gestate Turnpike</label>
-    <description>Gestate a Focus automatroid.</description>
+    <defName>DMSRC_Make_Pavise</defName>
+    <label>Gestate Pavise</label>
+    <description>Gestate a Pavise automatroid.</description>
     <products>
-      <DMSRC_Mech_Turnpike>1</DMSRC_Mech_Turnpike>
+      <DMSRC_Mech_Pavise>1</DMSRC_Mech_Pavise>
     </products>
     <descriptionHyperlinks>
       <ThingDef>Neurocomputer</ThingDef>
       <ThingDef>DMSRC_ComponentGBEP</ThingDef>
-      <ThingDef>DMSRC_Mech_Turnpike</ThingDef>
+      <ThingDef>DMSRC_Mech_Pavise</ThingDef>
     </descriptionHyperlinks>
     <researchPrerequisites>
       <li>DMSRC_BeamFocusing</li>
@@ -156,7 +163,7 @@
             <li>DMSRC_ComponentGBEP</li>
           </thingDefs>
         </filter>
-        <count>1</count>
+        <count>2</count>
       </li>
     </ingredients>
   </RecipeDef>

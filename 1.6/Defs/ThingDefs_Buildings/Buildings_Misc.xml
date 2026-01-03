@@ -1,87 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>DMSRC_FacilityWall</defName>
-    <label>facility wall</label>
-    <description>A structure with waterproof layers, commonly found in underground facilities.</description>
-    <graphicData>
-      <texPath>Things/Building/Linked/Wall_Atlas_Concrete</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <linkType>CornerFiller</linkType>
-      <linkFlags>
-        <li>Wall</li>
-        <li>Rock</li>
-      </linkFlags>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-        <edgeTop>Damage/Edge</edgeTop>
-        <edgeBot>Damage/Edge</edgeBot>
-        <edgeLeft>Damage/Edge</edgeLeft>
-        <edgeRight>Damage/Edge</edgeRight>
-      </damageData>
-      <color>(0.3, 0.3, 0.3)</color>
-    </graphicData>
-    <uiIconColor>(0.3, 0.3, 0.3)</uiIconColor>
-    <uiIconPath>Things/Building/Linked/Wall_Atlas_Concrete_UI</uiIconPath>
-    <building>
-      <isTargetable>true</isTargetable>
-      <ai_neverTrashThis>true</ai_neverTrashThis>
-      <deconstructible>false</deconstructible>
-      <alwaysDeconstructible>false</alwaysDeconstructible>
-      <claimable>false</claimable>
-      <repairable>false</repairable>
-      <neverBuildable>true</neverBuildable>
-      <paintable>false</paintable>
-      <isInert>true</isInert>
-      <isPlaceOverableWall>true</isPlaceOverableWall>
-      <ai_chillDestination>true</ai_chillDestination>
-      <supportsWallAttachments>true</supportsWallAttachments>
-    </building>
-    <pathCost>120</pathCost>
-    <statBases>
-      <Flammability>0</Flammability>
-      <WorkToBuild>135</WorkToBuild>
-      <MaxHitPoints>2750</MaxHitPoints>
-      <Flammability>0</Flammability>
-    </statBases>
-    <useHitPoints>true</useHitPoints>
-    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-    <holdsRoof>true</holdsRoof>
-    <blockWind>true</blockWind>
-    <blockLight>true</blockLight>
-    <castEdgeShadows>true</castEdgeShadows>
-    <fillPercent>1</fillPercent>
-    <drawStyleCategory>Walls</drawStyleCategory>
-    <coversFloor>true</coversFloor>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
-    <tickerType>Never</tickerType>
-    <rotatable>false</rotatable>
-    <selectable>true</selectable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <canOverlapZones>false</canOverlapZones>
-    <damageMultipliers>
-      <li>
-        <damageDef>Bomb</damageDef>
-        <multiplier>0.25</multiplier>
-      </li>
-      <li>
-        <damageDef>Thump</damageDef>
-        <multiplier>0.5</multiplier>
-      </li>
-    </damageMultipliers>
-    <designationCategory>DMS_Category</designationCategory>
-    <staticSunShadowHeight>1.0</staticSunShadowHeight>
-    <costList>
-      <Steel>25</Steel>
-    </costList>
-  </ThingDef>
-
   <ThingDef ParentName="BuildingBase" Name="DMSRC_Hole">
     <defName>DMSRC_MediumHole</defName>
     <label>facility dormer</label>
@@ -95,6 +14,7 @@
     <thingClass>Building</thingClass>
     <category>Building</category>
     <fillPercent>0</fillPercent>
+    <rotatable>false</rotatable>
     <passability>Impassable</passability>
     <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
     <size>(5,5)</size>
@@ -310,115 +230,6 @@
         <delayTicks>120</delayTicks>
         <spawnKilledLeavings>true</spawnKilledLeavings>
         <effecterDef>MechbandBuildingDestroyed</effecterDef>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="BuildingBase">
-    <defName>DMSRC_PerimeterScanner</defName>
-    <label>perimeter scanner</label>
-    <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible biosignatures within its radius.</description>
-    <tickerType>Normal</tickerType>
-    <size>(1,1)</size>
-    <graphicData>
-      <texPath>Things/Building/DMSRC_PerimeterScanner</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <altitudeLayer>Building</altitudeLayer>
-    <rotatable>false</rotatable>
-    <passability>PassThroughOnly</passability>
-    <fillPercent>0.35</fillPercent>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <designationCategory>DMS_Category</designationCategory>
-    <uiOrder>500</uiOrder>
-    <canOverlapZones>false</canOverlapZones>
-    <thingCategories>
-      <li>BuildingsMisc</li>
-    </thingCategories>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <WorkToBuild>6000</WorkToBuild>
-      <Flammability>0.7</Flammability>
-      <Mass>20</Mass>
-    </statBases>
-    <costList>
-      <Tungsteel>30</Tungsteel>
-      <ComponentIndustrial>3</ComponentIndustrial>
-      <ComponentStamped>1</ComponentStamped>
-    </costList>
-    <researchPrerequisites>
-      <li>ProximityDetector</li>
-    </researchPrerequisites>
-    <placeWorkers>
-      <li>DMSRC.PlaceWorker_PerimeterScanner</li>
-    </placeWorkers>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <comps>
-      <li Class="DMSRC.CompProperties_PerimeterScanner">
-        <glowRadius>4.9</glowRadius>
-        <glowColor>(200, 0, 0, 0)</glowColor>
-        <range>7</range>
-        <effecter>DMSRC_PerimeterScannerAlert</effecter>
-      </li>
-      <li Class="CompProperties_Flickable"/>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>75</basePowerConsumption>
-      </li>
-      <li Class="CompProperties_Breakdownable"/>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="BuildingBase">
-    <defName>DMSRC_PerimeterScannerTemp</defName>
-    <label>perimeter scanner</label>
-    <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible biosignatures within its radius.</description>
-    <tickerType>Normal</tickerType>
-    <size>(1,1)</size>
-    <graphicData>
-      <texPath>Things/Building/DMSRC_PerimeterScannerTemp</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <altitudeLayer>Building</altitudeLayer>
-    <rotatable>false</rotatable>
-    <passability>PassThroughOnly</passability>
-    <fillPercent>0.25</fillPercent>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <canOverlapZones>false</canOverlapZones>
-    <stealable>false</stealable>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <WorkToBuild>6000</WorkToBuild>
-      <Flammability>0.7</Flammability>
-      <Mass>20</Mass>
-    </statBases>
-    <building>
-      <claimable>false</claimable>
-      <expandHomeArea>false</expandHomeArea>
-    </building>
-    <costList>
-      <ComponentIndustrial>1</ComponentIndustrial>
-      <Tungsteel>10</Tungsteel>
-    </costList>
-    <placeWorkers>
-      <li>DMSRC.PlaceWorker_PerimeterScanner</li>
-    </placeWorkers>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <comps>
-      <li Class="DMSRC.CompProperties_PerimeterScanner">
-        <glowRadius>4.9</glowRadius>
-        <glowColor>(200, 0, 0, 0)</glowColor>
-        <range>7</range>
-        <effecter>DMSRC_PerimeterScannerAlert</effecter>
-      </li>
-      <li Class="CompProperties_MechPowerCell">
-        <totalPowerTicks>25000</totalPowerTicks>
-        <killWhenDepleted>true</killWhenDepleted>
-        <labelOverride>Battery power</labelOverride>
-        <tooltipOverride>This perimeter scanner has a limited battery life. Once it runs out, it will stop working entirely.</tooltipOverride>
       </li>
     </comps>
   </ThingDef>
