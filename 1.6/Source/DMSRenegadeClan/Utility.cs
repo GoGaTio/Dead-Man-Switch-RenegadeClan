@@ -270,7 +270,7 @@ namespace DMSRC
 		public static void Contact()
 		{
 			//Log.Message("Hours till contact" + GameComponent_Renegades.Find.hoursTillContact);
-			GameComponent_Renegades.Find.contacted = true;
+			GameComponent_Renegades.Find.ContactPlayer();
 		}
 	}
 

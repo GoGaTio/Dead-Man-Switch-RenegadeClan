@@ -47,7 +47,7 @@
     <description>A high-power communication relay to be used in the colony for emergency reinforcements. The identification code of this rescue protocol has long been abandoned, so only those mechanized units that are feral will take the bait.</description>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Resource/EncryptedTransmitter</texPath>
+      <texPath>Things/Resource/DMSRC_AncientBroadcaster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <thingClass>ThingWithComps</thingClass>

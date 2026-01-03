@@ -93,8 +93,9 @@
       <MarketValue>5000</MarketValue>
     </statBases>
     <recipeMaker>
-      <researchPrerequisites>
-        <li>DMS_EquipmentElite</li>
+      <researchPrerequisites Inherit="False">
+        <li>DMS_Synthroid</li>
+        <li>DMS_EquipmentHeavy</li>
         <li>DMSRC_BeamFocusing</li>
       </researchPrerequisites>
     </recipeMaker>
@@ -162,7 +163,7 @@
     </tools>
     <comps>
       <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>7</explosionDamage>
+        <explosionDamage>9</explosionDamage>
         <explosionRange>1.9</explosionRange>
         <beamMoteDef>DMSRC_Mote_BeamLarge</beamMoteDef>
         <damageDef>DMSRC_FocusedBeam</damageDef>

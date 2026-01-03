@@ -58,6 +58,8 @@ namespace DMSRC
 
 		public RenegadesRequest request;
 
+		public int silver;
+
 		private Material cachedMat;
 
 		public override Material Material
@@ -105,7 +107,7 @@ namespace DMSRC
 			{
 				if (!CaravanInventoryUtility.HasThings(caravan, ThingDefOf.Silver, request.silver))
 				{
-					Messages.Message("CommandFulfillTradeOfferFailInsufficient".Translate(TradeRequestUtility.RequestedThingLabel(ThingDefOf.Silver, request.silver)), MessageTypeDefOf.RejectInput, historical: false);
+					Messages.Message("CommandFulfillTradeOfferFailInsufficient".Translate(TradeRequestUtility.RequestedThingLabel(ThingDefOf.Silver, request.silver - silver)), MessageTypeDefOf.RejectInput, historical: false);
 				}
 				else
 				{
@@ -124,7 +126,7 @@ namespace DMSRC
 
 		private void Fulfill(Caravan caravan)
 		{
-			int remaining = request.silver;
+			int remaining = request.silver - silver;
 			List<Thing> list = CaravanInventoryUtility.TakeThings(caravan, delegate (Thing thing)
 			{
 				if (ThingDefOf.Silver != thing.def)
@@ -144,7 +146,18 @@ namespace DMSRC
 
 		public void DropItems(List<Thing> items)
 		{
-			Fulfilled();
+			foreach (Thing thing in items.ToList())
+			{
+				if(thing.def == ThingDefOf.Silver)
+				{
+					silver += thing.stackCount;
+				}
+				thing.Destroy();
+			}
+			if(silver >= request.silver)
+			{
+				Fulfilled();
+			}
 		}
 
 		public void Fulfilled()
@@ -176,6 +189,13 @@ namespace DMSRC
 			{
 				yield return floatMenuOption;
 			}
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_References.Look(ref request, "DMSRC_renegadesRequest");
+			Scribe_Values.Look(ref silver, "DMSRC_silver");
 		}
 	}
 

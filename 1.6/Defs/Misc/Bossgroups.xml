@@ -37,7 +37,7 @@
           <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
           <DMS_Mech_Arquebusier>6</DMS_Mech_Arquebusier>
           <DMSRC_Mech_Stancher>4</DMSRC_Mech_Stancher>
-<DMSRC_Mech_Pavise>1</DMSRC_Mech_Pavise>
+          <DMSRC_Mech_Pavise>1</DMSRC_Mech_Pavise>
         </escorts>
         <bossApparel>
           <li>
@@ -52,7 +52,7 @@
           <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
           <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
           <DMSRC_Mech_Stancher>6</DMSRC_Mech_Stancher>
-<DMSRC_Mech_Pavise>1</DMSRC_Mech_Pavise>
+          <DMSRC_Mech_Pavise>1</DMSRC_Mech_Pavise>
         </escorts>
         <bossApparel>
           <li>
@@ -68,7 +68,7 @@
           <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
           <DMSRC_Mech_Stancher>6</DMSRC_Mech_Stancher>
           <DMS_Mech_Sergeant>1</DMS_Mech_Sergeant>
-<DMSRC_Mech_Pavise>2</DMSRC_Mech_Pavise>
+          <DMSRC_Mech_Pavise>2</DMSRC_Mech_Pavise>
         </escorts>
         <bossApparel>
           <li>
@@ -84,7 +84,7 @@
           <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
           <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
           <DMS_Mech_Sergeant>2</DMS_Mech_Sergeant>
-<DMSRC_Mech_Pavise>3</DMSRC_Mech_Pavise>
+          <DMSRC_Mech_Pavise>3</DMSRC_Mech_Pavise>
         </escorts>
         <bossApparel>
           <li>
@@ -100,7 +100,7 @@
           <DMS_Mech_Arquebusier>10</DMS_Mech_Arquebusier>
           <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
           <DMS_Mech_Gecko>1</DMS_Mech_Gecko>
-<DMSRC_Mech_Pavise>4</DMSRC_Mech_Pavise>
+          <DMSRC_Mech_Pavise>4</DMSRC_Mech_Pavise>
         </escorts>
         <bossApparel>
           <li>
@@ -117,7 +117,7 @@
           <DMSRC_Mech_Stancher>10</DMSRC_Mech_Stancher>
           <DMS_Mech_Sergeant>2</DMS_Mech_Sergeant>
           <DMS_Mech_Gecko>3</DMS_Mech_Gecko>
-<DMSRC_Mech_Pavise>5</DMSRC_Mech_Pavise>
+          <DMSRC_Mech_Pavise>5</DMSRC_Mech_Pavise>
         </escorts>
         <bossApparel>
           <li>

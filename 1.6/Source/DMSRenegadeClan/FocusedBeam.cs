@@ -65,6 +65,10 @@ namespace DMSRC
 
 		private HashSet<IntVec3> tmpHighlightCells = new HashSet<IntVec3>();
 
+		private HashSet<IntVec3> tmpSecondaryHighlightCells = new HashSet<IntVec3>();
+
+		public static Color secondaryHighliteColor = new Color(0.56f, 0.44f, 0.65f);
+
 		public static MethodInfo calculatePath = AccessTools.Method(typeof(Verb_ShootBeam), "CalculatePath", new Type[4] { typeof(Vector3), typeof(List<Vector3>) , typeof(HashSet<IntVec3>), typeof(bool) }, (Type[])null);
 
 		public static FieldInfo ticksToNextPathStep = AccessTools.Field(typeof(Verb_ShootBeam), "ticksToNextPathStep");
@@ -86,6 +90,7 @@ namespace DMSRC
 		public override void DrawHighlight(LocalTargetInfo target)
 		{
 			tmpHighlightCells.Clear();
+			tmpSecondaryHighlightCells.Clear();
 			verbProps.DrawRadiusRing(caster.Position, this);
 			if (target.IsValid)
 			{
@@ -103,15 +108,19 @@ namespace DMSRC
 				tmpHighlightCells.Add(hitCell);
 				foreach (IntVec3 beamHitNeighbourCell in CellRect.FromCell(hitCell).ExpandedBy(1).Cells)
 				{
-					if (!tmpHighlightCells.Contains(beamHitNeighbourCell) && map.Contains(beamHitNeighbourCell))
+					if (!tmpSecondaryHighlightCells.Contains(beamHitNeighbourCell) && map.Contains(beamHitNeighbourCell))
 					{
-						tmpHighlightCells.Add(beamHitNeighbourCell);
+						tmpSecondaryHighlightCells.Add(beamHitNeighbourCell);
 					}
 				}
 			}
 			if (tmpHighlightCells.Any())
 			{
 				GenDraw.DrawFieldEdges(tmpHighlightCells.ToList(), verbProps.highlightColor ?? Color.white);
+			}
+			if (tmpSecondaryHighlightCells.Any())
+			{
+				GenDraw.DrawFieldEdges(tmpSecondaryHighlightCells.ToList(), secondaryHighliteColor);
 			}
 		}
 

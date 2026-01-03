@@ -56,6 +56,7 @@ using Verse.Sound;
 using Verse.Steam;
 using static DMSRC.TradeRequest;
 using static RimWorld.FleshTypeDef;
+using static RimWorld.PsychicRitualRoleDef;
 using static System.Collections.Specialized.BitVector32;
 using static System.Net.WebRequestMethods;
 
@@ -91,9 +92,11 @@ namespace DMSRC
 			{
 				if(playerRelation != value)
 				{
+					FactionRelationKind prev = playerRelation; 
+					playerRelation = value;
 					ColoredText.ClearCache();
+					Faction.OfPlayerSilentFail?.Notify_RelationKindChanged(RenegadesFaction, prev, false, null, GlobalTargetInfo.Invalid, out var _);
 				}
-				playerRelation = value;
 			}
 		}
 
@@ -109,6 +112,22 @@ namespace DMSRC
 
 		public bool enemyWithFleet = false;
 
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Collections.Look(ref requests, "requests", LookMode.Deep);
+			Scribe_Values.Look(ref playerRelation, "playerRelation", FactionRelationKind.Neutral);
+			Scribe_Values.Look(ref playerOpinion, "playerOpinion", 0);
+			Scribe_Values.Look(ref active, "active", true);
+			Scribe_Values.Look(ref lastID, "lastID", -1);
+			Scribe_Values.Look(ref contacted, "contacted", true);
+			Scribe_Values.Look(ref hoursTillContact, "hoursTillContact", -1);
+			Scribe_Values.Look(ref enemyWithFleet, "enemyWithFleet", false);
+			Scribe_Collections.Look(ref things, "things", LookMode.Deep);
+			ofRenegades = null;
+			ofDMS = null;
+		}
+
 		public RenegadesRequest MakeRequest(RenegadesRequestDef def)
 		{
 			RenegadesRequest obj = (RenegadesRequest)Activator.CreateInstance(def.requestClass);
@@ -119,14 +138,6 @@ namespace DMSRC
 		}
 
 		public static GameComponent_Renegades Find => Current.Game.GetComponent<GameComponent_Renegades>();
-
-		/*public float Interest
-        {
-            get
-            {
-				Faction.OfPlayer.GoodwillWith(DMS.QuestKindDefOf.DMS_Officer_Ceremonist.defaultFactionType)
-            }
-        }*/
 
 		public Faction RenegadesFaction
         {
@@ -162,38 +173,57 @@ namespace DMSRC
 			
 		}
 
-		public override void FinalizeInit()
-		{
-			if(hoursTillContact == -1 && !contacted)
-			{
-				hoursTillContact = new IntRange(20, 40).RandomInRange * 24;
-			}
-			base.FinalizeInit();
-		}
-
 		public override void GameComponentTick()
 		{
 			if(Verse.Find.TickManager.TicksGame % 2500 != 0)
 			{
 				return;
 			}
-			if (!contacted && playerRelation != FactionRelationKind.Hostile)
+			if(playerRelation != FactionRelationKind.Hostile)
 			{
-				hoursTillContact--;
-				if(hoursTillContact <= 0)
+				if (!contacted)
 				{
-					ContactPlayer();
+					hoursTillContact--;
+					if (hoursTillContact <= 0)
+					{
+						ContactPlayer();
+					}
+				}
+				if (Faction.OfPlayerSilentFail?.RelationKindWith(DMSFaction) == FactionRelationKind.Ally)
+				{
+					PlayerRelation = FactionRelationKind.Hostile;
+					playerOpinion = -1;
 				}
 			}
+			
 			for(int i = 0; i < requests.Count; i++)
 			{
 				requests[i].Tick();
 			}
 		}
 
+		public override void StartedNewGame()
+		{
+			base.StartedNewGame();
+			if (hoursTillContact == -1 && !contacted)
+			{
+				hoursTillContact = new IntRange(20, 40).RandomInRange * 24;
+			}
+		}
+
 		public void ContactPlayer()
 		{
-			Verse.Find.LetterStack.ReceiveLetter("DMSRC_RenegadesContactsLetter_Label".Translate(), "DMSRC_RenegadesContactsLetter_Text".Translate(), RCDefOf.DMSRC_ContactEvent);
+			Map map = Verse.Find.CurrentMap;
+			if(map == null || !map.IsPlayerHome)
+			{
+				map = Verse.Find.AnyPlayerHomeMap;
+			}
+			Thing target = null;
+			if(map != null)
+			{
+				target = map.spawnedThings.FirstOrDefault((x) => x.HasComp<CompCallRenegades>());
+			}
+			Verse.Find.LetterStack.ReceiveLetter("DMSRC_RenegadesContactsLetter_Label".Translate(), "DMSRC_RenegadesContactsLetter_Text".Translate(), RCDefOf.DMSRC_ContactEvent, target);
 			contacted = true;
 		}
 
@@ -223,17 +253,6 @@ namespace DMSRC
 			parms.traderDef = def;
 			parms.makingFaction = RenegadesFaction;
 			things = ThingSetMakerDefOf.TraderStock.root.Generate(parms);
-		}
-
-		public override void ExposeData()
-		{
-			base.ExposeData();
-			Scribe_Collections.Look(ref requests, "requests", LookMode.Deep);
-			Scribe_Values.Look(ref active, "active", true);
-			Scribe_Values.Look(ref contacted, "contacted", true);
-			Scribe_Collections.Look(ref things, "things", LookMode.Deep);
-			ofRenegades = null;
-			ofDMS = null;
 		}
 	}
 }

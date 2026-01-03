@@ -95,9 +95,9 @@ namespace DMSRC
 
 		public bool interceptSameFaction;
 
-		public float powerConsumption = 10f;
-
 		public int delay = 10;
+
+		public int delayIntercepted = 3;
 
 		public int maxCharge = 100;
 
@@ -263,6 +263,7 @@ namespace DMSRC
 						if (Vector3.Distance(thing.DrawPos, parent.TrueCenter()) < Props.range && IsBulletAffected(thing))
 						{
 							Intercept(thing);
+							delay = Props.delayIntercepted;
 							if (compPowerTrader != null)
 							{
 								compPowerTrader.PowerOutput = 0f - compPowerTrader.Props.PowerConsumption;

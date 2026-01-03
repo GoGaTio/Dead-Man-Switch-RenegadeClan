@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <DMSRC_DeactivatedLabel>Deactivated {0}</DMSRC_DeactivatedLabel>
+
+  <DMSRC_Controlled>{0}/{1}</DMSRC_Controlled>
+
+  <DMSRC_Mission_Destroyed>{0} destroyed, {1} left.</DMSRC_Mission_Destroyed>
+  
+  <DMSRC_Mission_DefendLabel>Next raid in {0}</DMSRC_Mission_DefendLabel>
+  <DMSRC_Mission_DefendDesc>Defend {1} from arriving raiders.</DMSRC_Mission_DefendDesc>
+  <DMSRC_Mission_DefendRaidLabel>Raid: {0}</DMSRC_Mission_DefendRaidLabel>
+  <DMSRC_Mission_DefendRaidDesc>Raiders from {0} are arriving from all directions. Defend {1}.</DMSRC_Mission_DefendRaidDesc>
+
+</LanguageData>

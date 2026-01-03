@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<li Class="PatchOperationRemove">
+				<xpath>
+          Defs/ThingDef[defName="DMSRC_Turret_Straj"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+			</li>
+      
+			<li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+				<defName>DMSRC_Gun_Straj</defName>
+				<statBases>
+					<RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+					<SightsEfficiency>1.5</SightsEfficiency>
+					<ShotSpread>0.07</ShotSpread>
+					<SwayFactor>1.59</SwayFactor>
+					<Bulk>43</Bulk>
+				</statBases>
+				<Properties>
+					<recoilAmount>0.19</recoilAmount>
+					<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+					<hasStandardCommand>true</hasStandardCommand>
+          <defaultProjectile>Bullet_12Gauge_Buck</defaultProjectile>
+					<warmupTime>0.7</warmupTime>
+					<range>16.9</range>
+					<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+					<burstShotCount>4</burstShotCount>
+          <soundCast>Shot_Shotgun</soundCast>
+          <soundCastTail>GunTail_Heavy</soundCastTail>
+					<targetParams>
+						<canTargetLocations>true</canTargetLocations>
+					</targetParams>
+					<muzzleFlashScale>10</muzzleFlashScale>
+					<recoilPattern>Mounted</recoilPattern>
+				</Properties>
+        <AmmoUser>
+          <magazineSize>40</magazineSize>
+          <reloadTime>6</reloadTime>
+          <ammoSet>AmmoSet_12Gauge</ammoSet>
+        </AmmoUser>
+        <FireModes>
+          <noSingleShot>true</noSingleShot>
+          <aiAimMode>SuppressFire</aiAimMode>
+          <aimedBurstShotCount>2</aimedBurstShotCount>
+        </FireModes>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMSRC_Turret_Straj"]/statBases/ShootingAccuracyTurret </xpath>
+				<value>
+					<ShootingAccuracyTurret>1.5</ShootingAccuracyTurret>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMSRC_Turret_Straj"]/building/turretBurstCooldownTime </xpath>
+				<value>
+					<turretBurstCooldownTime>0.1</turretBurstCooldownTime>
+				</value>
+			</li>
+      
+		</operations>
+	</Operation>
+</Patch>

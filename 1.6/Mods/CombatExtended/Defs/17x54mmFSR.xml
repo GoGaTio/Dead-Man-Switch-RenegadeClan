@@ -72,7 +72,7 @@
 	<!-- ==================== Recipes ========================== -->
 
 	<RecipeDef ParentName="AmmoRecipeBase">
-		<defName>DMSRC_MakeAmmo_17x54mmFSR</defName>
+		<defName>MakeDMSRC_Ammo_17x54mmFSR</defName>
 		<label>make 17x54mm FSR cartridge x500</label>
 		<description>Craft 500 17x54mm FSR cartridges.</description>
 		<jobString>Making 17x54mm FSR cartridges.</jobString>
