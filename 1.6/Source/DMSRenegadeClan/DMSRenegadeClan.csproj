@@ -81,6 +81,7 @@
     <Compile Include="MapGen\Prefab.cs" />
     <Compile Include="MapGen\GenStep_Mission.cs" />
     <Compile Include="Enhancer.cs" />
+    <Compile Include="Quests\Incident.cs" />
     <Compile Include="Quests\QuestPart.cs" />
     <Compile Include="Requests.cs" />
     <Compile Include="ThingComps\CompBroadcastAntenna.cs" />

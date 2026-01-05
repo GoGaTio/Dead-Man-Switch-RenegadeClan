@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <DutyDef>
+    <defName>DMSRC_Sabotage</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_GotoTravelDestination">
+          <wanderOnArrival>false</wanderOnArrival>
+          <locomotionUrgency>Amble</locomotionUrgency>
+        </li>
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+          <ignoreNonCombatants>true</ignoreNonCombatants>
+        </li>
+        <li Class="JobGiver_AIGotoNearestHostile">
+          <ignoreNonCombatants>true</ignoreNonCombatants>
+        </li>
+        <li Class="JobGiver_AIWaitAmbush">
+          <ignoreNonCombatants>true</ignoreNonCombatants>
+          <expireOnNearbyEnemy>true</expireOnNearbyEnemy>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+</Defs>

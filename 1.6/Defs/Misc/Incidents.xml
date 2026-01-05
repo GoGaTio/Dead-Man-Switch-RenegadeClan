@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>DMSRC_Sabotage</defName>
+    <label>sabotage</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>DMSRC.IncidentWorker_Sabotage</workerClass>
+    <baseChance>2.4</baseChance>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>
+    <hidden>true</hidden>
+  </IncidentDef>
+
+</Defs>

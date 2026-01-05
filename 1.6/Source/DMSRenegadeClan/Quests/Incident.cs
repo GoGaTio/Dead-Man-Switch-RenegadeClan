@@ -1,0 +1,130 @@
+using DelaunatorSharp;
+using Gilzoide.ManagedJobs;
+using HarmonyLib;
+using Ionic.Crc;
+using Ionic.Zlib;
+using JetBrains.Annotations;
+using KTrie;
+using LudeonTK;
+using NVorbis.NAudioSupport;
+using RimWorld;
+using RimWorld.BaseGen;
+using RimWorld.IO;
+using RimWorld.Planet;
+using RimWorld.QuestGen;
+using RimWorld.SketchGen;
+using RimWorld.Utility;
+using RuntimeAudioClipLoader;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
+using System.Xml.XPath;
+using System.Xml.Xsl;
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Jobs;
+using UnityEngine;
+using UnityEngine.Jobs;
+using UnityEngine.Profiling;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using Verse;
+using Verse.AI;
+using Verse.AI.Group;
+using Verse.Grammar;
+using Verse.Noise;
+using Verse.Profile;
+using Verse.Sound;
+using Verse.Steam;
+using static System.Collections.Specialized.BitVector32;
+using static UnityEngine.GraphicsBuffer;
+
+namespace DMSRC
+{
+	public class IncidentWorker_Sabotage : IncidentWorker
+	{
+		protected override bool CanFireNowSub(IncidentParms parms)
+		{
+			if (base.CanFireNowSub(parms))
+			{
+				return GameComponent_Renegades.Find.PlayerRelation == FactionRelationKind.Hostile;
+			}
+			return false;
+		}
+
+		public override float ChanceFactorNow(IIncidentTarget target)
+		{
+			return base.ChanceFactorNow(target) * GameComponent_Renegades.Find.RaidCommonality(-1);
+		}
+		protected override bool TryExecuteWorker(IncidentParms parms)
+		{
+			GameComponent_Renegades comp = GameComponent_Renegades.Find;
+			if (comp == null || comp.PlayerRelation != FactionRelationKind.Hostile || comp.RenegadesFaction == null)
+			{
+				return false;
+			}
+			Map map = (Map)parms.target;
+			parms.faction = comp.RenegadesFaction;
+			int count = 3;
+			List<Pawn> list = GenerateSaboteurs(parms, count).ToList();
+			PawnsArrivalModeDefOf.EdgeWalkInDistributed.Worker.TryResolveRaidSpawnCenter(parms);
+			PawnsArrivalModeDefOf.EdgeWalkInDistributed.Worker.Arrive(list, parms);
+			LordMaker.MakeNewLord(parms.faction, new LordJob_Sabotage(), map, list);
+			return true;
+		}
+
+		private IEnumerable<Pawn> GenerateSaboteurs(IncidentParms parms, int count)
+		{
+			Map map = (Map)parms.target;
+			PawnGenerationRequest request = new PawnGenerationRequest(RCDefOf.DMSRC_Mech_Saboteur, parms.faction);
+			for (int i = 0; i < count; i++)
+			{
+				Pawn pawn = PawnGenerator.GeneratePawn(request);
+				if(pawn.inventory != null)
+				{
+					pawn.inventory.TryAddAndUnforbid(ThingMaker.MakeThing(RCDefOf.DMSRC_TimedBomb));
+				}
+				yield return pawn;
+			}
+		}
+	}
+
+	public class LordJob_Sabotage : LordJob
+	{
+		public override StateGraph CreateGraph()
+		{
+			StateGraph stateGraph = new StateGraph();
+			LordToil toil = new LordToil_Sabotage();
+			stateGraph.AddToil(toil);
+			return stateGraph;
+		}
+	}
+
+	public class LordToil_Sabotage : LordToil
+	{
+		public override void UpdateAllDuties()
+		{
+			foreach (Pawn ownedPawn in lord.ownedPawns)
+			{
+				ownedPawn.mindState.duty = new PawnDuty(RCDefOf.DMSRC_Sabotage);
+			}
+		}
+	}
+}

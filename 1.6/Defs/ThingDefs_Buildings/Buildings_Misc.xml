@@ -290,8 +290,8 @@
         <offset>(-0.125,0,0.25)</offset>
         <emissionIntervalCurve>
           <points>
-            <li>0, 0</li>
-            <li>60, 10</li>
+            <li>0, 1</li>
+            <li>90, 10</li>
             <li>120, 20</li>
             <li>2500, 400</li>
             <li>10000, 600</li>

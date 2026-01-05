@@ -83,7 +83,6 @@ namespace DMSRC
 		{
 			base.Notify_Starting();
 			cellInt = new IntVec3(Cell.x, 0, Cell.z);
-			pawn.Map.terrainGrid.SetTerrain(cellInt, TerrainDefOf.Ice);
 			job.count = 1;
 			usingFromInventory = pawn.inventory != null && pawn.inventory.Contains(Item);
 		}

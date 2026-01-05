@@ -1,5 +1,6 @@
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace DMSRC
 {
@@ -8,7 +9,9 @@ namespace DMSRC
     {
         public static PawnKindDef DMSRC_DummyMechanitor;
 
-        public static HediffDef DMSRC_DummyPawn;
+		public static PawnKindDef DMSRC_Mech_Saboteur;
+
+		public static HediffDef DMSRC_DummyPawn;
 
         public static DamageDef DMSRC_Firecracker;
 
@@ -38,6 +41,8 @@ namespace DMSRC
 
         public static ThingDef DMSRC_InactiveMech;
 
+		public static ThingDef DMSRC_TimedBomb;
+
 		public static StatDef DMSRC_Neurocapacity;
 
         public static StatDef DMSRC_NeuroControlPower;
@@ -51,5 +56,7 @@ namespace DMSRC
         public static FleckDef DMSRC_Fleck_SparksFast;
 
         public static PawnGroupKindDef DMSRC_MilitaryAid;
+
+        public static DutyDef DMSRC_Sabotage;
 	}
 }

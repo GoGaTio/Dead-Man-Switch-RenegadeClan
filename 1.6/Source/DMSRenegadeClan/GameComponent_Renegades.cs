@@ -146,6 +146,10 @@ namespace DMSRC
 				if(ofRenegades == null)
 				{
 					ofRenegades = Verse.Find.FactionManager.FirstFactionOfDef(RCDefOf.DMSRC_RenegadeClan);
+					if(ofRenegades == null)
+					{
+						FactionGenerator.CreateFactionAndAddToManager(RCDefOf.DMSRC_RenegadeClan);
+					}
 				}
 				return ofRenegades;
 			}
@@ -208,6 +212,15 @@ namespace DMSRC
 			if (hoursTillContact == -1 && !contacted)
 			{
 				hoursTillContact = new IntRange(20, 40).RandomInRange * 24;
+			}
+		}
+
+		public override void LoadedGame()
+		{
+			base.LoadedGame();
+			if(RenegadesFaction == null)
+			{
+				Log.Message("DMSRC Renegades clan is null");
 			}
 		}
 
