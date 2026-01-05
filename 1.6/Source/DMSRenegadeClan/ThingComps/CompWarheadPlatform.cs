@@ -59,8 +59,6 @@ namespace DMSRC
 	{
 		public GraphicData graphicData;
 
-
-
 		public CompProperties_WarheadPlatform()
         {
             compClass = typeof(CompWarheadPlatform);
@@ -119,7 +117,7 @@ namespace DMSRC
 		public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Deep.Look(ref hasWarhead, "DMSRC_hasWarhead");
+            Scribe_Values.Look(ref hasWarhead, "DMSRC_hasWarhead");
         }
     }
 }

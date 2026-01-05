@@ -40,7 +40,6 @@
     <defName>DMSRC_WarheadPlatform</defName>
     <label>warhead platform</label>
     <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
-    <thingClass>Building_WorkTable</thingClass>
     <graphicData>
       <texPath>Things/Building/DMSRC_WarheadPlatform_Empty</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -50,11 +49,11 @@
     <tickerType>Normal</tickerType>
     <drawerType>MapMeshAndRealTime</drawerType>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
+    <passability>PassThroughOnly</passability>
     <blockWind>true</blockWind>
     <castEdgeShadows>true</castEdgeShadows>
     <canOverlapZones>false</canOverlapZones>
-    <fillPercent>1</fillPercent>
+    <fillPercent>0.3</fillPercent>
     <rotatable>false</rotatable>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
@@ -82,6 +81,53 @@
           <graphicClass>Graphic_Single</graphicClass>
           <drawSize>(2,2)</drawSize>
         </graphicData>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_PowerTransmitter</defName>
+    <label>power network node</label>
+    <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_PowerTransmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>true</ai_chillDestination>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlantSteam</compClass>
+        <basePowerConsumption>-5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>GeothermalPlant_Ambience</sound>
+        <disabledOnUnpowered>true</disabledOnUnpowered>
       </li>
     </comps>
   </ThingDef>
@@ -132,6 +178,7 @@
     <building>
       <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
       <ai_chillDestination>false</ai_chillDestination>
+      <claimable>false</claimable>
       <destroySound>BuildingDestroyed_Metal_Big</destroySound>
       <buildingTags>
         <li>DMSRC_Quest</li>
@@ -141,7 +188,7 @@
       <li>DMSRC_WideBroadcast</li>
     </researchPrerequisites>
     <designationCategory MayRequire="Ludeon.RimWorld.Royalty">DMS_Category</designationCategory>
-    <uiOrder MayRequire="Ludeon.RimWorld.Royalty">2450</uiOrder>
+    <uiOrder MayRequire="Ludeon.RimWorld.Royalty">4900</uiOrder>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
       <li>PlaceWorker_InvalidOverSubstructure</li>
@@ -150,9 +197,13 @@
       <li Class="CompProperties_AmbientSound">
         <sound>GeothermalPlant_Ambience</sound>
       </li>
-      <li Class="Fortified.CompProperties_SubRelay">
-        <relayRange>900</relayRange>
-        <coverWholeMap>true</coverWholeMap>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>5000</basePowerConsumption>
+      </li>
+      <!--CompProperties_BroadcastAntenna should go after CompProperties_Power-->
+      <li Class="DMSRC.CompProperties_BroadcastAntenna">
+        <worldRange>10</worldRange>
       </li>
     </comps>
   </ThingDef>
@@ -219,6 +270,16 @@
         <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
         <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
       </li>
+      <li Class="DMSRC.CompProperties_SecurityContainer">
+        <defaultLoot>DMSRC_SecurityContainer_Nara</defaultLoot>
+        <faction>DMSRC_RenegadeClan</faction>
+        <graphicData>
+          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(5, 5)</drawSize>
+        </graphicData>
+        <defenceFactorRange>20~40</defenceFactorRange>
+      </li>
     </comps>
   </ThingDef>
 
@@ -227,18 +288,6 @@
     <graphicData>
       <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraRed</texPath>
     </graphicData>
-    <comps>
-      <li Class="DMSRC.CompProperties_SecurityContainer">
-        <defaultLoot>DMSRC_SecurityContainer_NaraRed</defaultLoot>
-        <faction>DMS_Army</faction>
-        <graphicData>
-          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>(5, 5)</drawSize>
-        </graphicData>
-        <defenceFactorRange>20~40</defenceFactorRange>
-      </li>
-    </comps>
   </ThingDef>
 
   <ThingDef ParentName="DMSRC_NaraContainerBase">
@@ -246,18 +295,6 @@
     <graphicData>
       <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraBlue</texPath>
     </graphicData>
-    <comps>
-      <li Class="DMSRC.CompProperties_SecurityContainer">
-        <defaultLoot>DMSRC_SecurityContainer_NaraBlue</defaultLoot>
-        <faction>DMS_Army</faction>
-        <graphicData>
-          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>(5, 5)</drawSize>
-        </graphicData>
-        <defenceFactorRange>20~40</defenceFactorRange>
-      </li>
-    </comps>
   </ThingDef>
 
   <ThingDef ParentName="DMSRC_NaraContainerBase">
@@ -265,18 +302,6 @@
     <graphicData>
       <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraGreen</texPath>
     </graphicData>
-    <comps>
-      <li Class="DMSRC.CompProperties_SecurityContainer">
-        <defaultLoot>DMSRC_SecurityContainer_NaraGreen</defaultLoot>
-        <faction>DMS_Army</faction>
-        <graphicData>
-          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>(5, 5)</drawSize>
-        </graphicData>
-        <defenceFactorRange>20~40</defenceFactorRange>
-      </li>
-    </comps>
   </ThingDef>
 
   <ThingDef ParentName="DMSRC_ContainerBase">

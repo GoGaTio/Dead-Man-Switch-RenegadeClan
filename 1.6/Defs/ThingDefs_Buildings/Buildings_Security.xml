@@ -141,7 +141,6 @@
       </buildingTags>
     </building>
     <designationCategory>DMS_Category</designationCategory>
-    <uiOrder>2450</uiOrder>
     <statBases>
       <MaxHitPoints>80</MaxHitPoints>
       <WorkToBuild>8000</WorkToBuild>

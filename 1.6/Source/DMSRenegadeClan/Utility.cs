@@ -272,6 +272,16 @@ namespace DMSRC
 			//Log.Message("Hours till contact" + GameComponent_Renegades.Find.hoursTillContact);
 			GameComponent_Renegades.Find.ContactPlayer();
 		}
+
+		[DebugAction("DMSRC", "Tile covered by broadcast", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolWorld, allowedGameStates = AllowedGameStates.PlayingOnWorld)]
+		public static void TileCoveredByBroadcast()
+		{
+			PlanetTile planetTile = GenWorld.MouseTile();
+			if (planetTile.Valid)
+			{
+				Messages.Message(CompBroadcastAntenna.affectedTiles.Contains(planetTile).ToString(), MessageTypeDefOf.NeutralEvent, false);
+			}
+		}
 	}
 
 	public static class RPrefabUtility

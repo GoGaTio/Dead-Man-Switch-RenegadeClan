@@ -210,7 +210,7 @@
     <costList>
       <Tungsteel>20</Tungsteel>
       <ComponentIndustrial>3</ComponentIndustrial>
-      <ComponentStamped>3</ComponentStamped>
+      <ComponentStamped>2</ComponentStamped>
     </costList>
     <researchPrerequisites>
       <li>DMS_DeadMansSwitch</li>
@@ -230,6 +230,77 @@
         <delayTicks>120</delayTicks>
         <spawnKilledLeavings>true</spawnKilledLeavings>
         <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_TimedBombActive</defName>
+    <label>timed bomb</label>
+    <description>A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/DMSRC_TimedBomb</texPath>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <pathCost>15</pathCost>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.15</fillPercent>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <canOverlapZones>false</canOverlapZones>
+    <building>
+      <ai_chillDestination>true</ai_chillDestination>
+      <paintable>false</paintable>
+      <ai_neverTrashThis>true</ai_neverTrashThis>
+      <claimable>true</claimable>
+      <expandHomeArea>false</expandHomeArea>
+    </building>
+    <statBases>
+      <WorkToBuild>100</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+    </statBases>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <staticSunShadowHeight>0.1</staticSunShadowHeight>
+    <drawHighlight>true</drawHighlight>
+    <preventGravshipLandingOn>true</preventGravshipLandingOn>
+    <comps>
+      <li Class="CompProperties_Hackable">
+        <defence>600</defence>
+        <effectHacking>HackingTerminal</effectHacking>
+        <lockoutDurationHoursRange>2~4</lockoutDurationHoursRange>
+        <notHackedInspectString>Hack to open.</notHackedInspectString>
+        <hackedInspectString>Opened.</hackedInspectString>
+        <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
+        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+        <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
+      </li>
+      <li Class="DMSRC.CompProperties_TimedBomb">
+        <chanceToStartFire>0.7</chanceToStartFire>
+        <explosiveRadius>6.9</explosiveRadius>
+        <explosiveDamageType>DMSRC_BombTimed</explosiveDamageType>
+        <damageAmountBase>100</damageAmountBase>
+        <chanceNeverExplodeFromDamage>0.9</chanceNeverExplodeFromDamage>
+        <offset>(-0.125,0,0.25)</offset>
+        <emissionIntervalCurve>
+          <points>
+            <li>0, 0</li>
+            <li>60, 10</li>
+            <li>120, 20</li>
+            <li>2500, 400</li>
+            <li>10000, 600</li>
+          </points>
+        </emissionIntervalCurve>
+        <timerRange>5000~10000</timerRange>
+        <defenceFactorRange>5~10</defenceFactorRange>
+        <fleck>DMSRC_TimedBombFlash</fleck>
+        <soundOnEmission>DMSRC_Beep</soundOnEmission>
       </li>
     </comps>
   </ThingDef>

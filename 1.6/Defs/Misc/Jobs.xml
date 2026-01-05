@@ -20,6 +20,12 @@
   </JobDef>
 
   <JobDef>
+    <defName>DMSRC_PlantBomb</defName>
+    <driverClass>DMSRC.JobDriver_PlantBomb</driverClass>
+    <reportString>planting TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
     <defName>DMSRC_TalkToRenegades</defName>
     <driverClass>DMSRC.JobDriver_TalkToRenegades</driverClass>
     <reportString>using TargetA.</reportString>

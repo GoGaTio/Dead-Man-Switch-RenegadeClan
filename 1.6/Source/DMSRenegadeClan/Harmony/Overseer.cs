@@ -544,6 +544,11 @@ namespace DMSRC
             {
                 return;
             }
+            if (CompBroadcastAntenna.Affects(mech.Map))
+            {
+                __result = true;
+                return;
+            }
             if (mech.HasComp<CompOverseerMech>())
             {
                 __result = true;
@@ -562,20 +567,31 @@ namespace DMSRC
         }
     }
 
-    /*[HarmonyPatch(typeof(PawnComponentsUtility), "AddAndRemoveDynamicComponents")]
-    public class Patch_PawnComponentsUtility
-    {
-        [HarmonyPostfix]
-        public static void Postfix(Pawn pawn, bool actAsIfSpawned)
-        {
-            if (pawn.HasComp<CompOverseerMech>())
-            {
-                pawn.skills = null;
-            }
-        }
-    }*/
+	[HarmonyPatch(typeof(MapParent), nameof(MapParent.DrawExtraSelectionOverlays))]
+	public static class MapParent_CompBroadcastAntenna
+	{
+		public static void Postfix(MapParent __instance)
+		{
+			if (__instance.HasMap)
+			{
+				int num = 0;
+                Map map = __instance.Map;
+				foreach (var comp in CompBroadcastAntenna.broadcastAntennas)
+                {
+                    if(comp.parent.Map == map)
+                    {
+						num = Mathf.Max(num, comp.Props.worldRange);
+					}
+                }
+				if (num > 0)
+				{
+					GenDraw.DrawWorldRadiusRing(__instance.Tile, num, CompBroadcastAntenna.RadiusMat);
+				}
+			}
+		}
+	}
 
-    [HarmonyPatch(typeof(MechanitorUtility), nameof(MechanitorUtility.GetMechGizmos))]
+	[HarmonyPatch(typeof(MechanitorUtility), nameof(MechanitorUtility.GetMechGizmos))]
     public static class MechanitorUtility_GetMechGizmos
     {
         public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn mech)
@@ -595,7 +611,7 @@ namespace DMSRC
                         if (comp != null)
                         { 
                             command.defaultDesc = "CommandSelectOverseerDesc".Translate();
-                            command.icon = ContentFinder<Texture2D>.Get(comp.Props.selectOverseerIconPath);
+                            command.icon = comp.SelectIcon;
                             command.action = delegate
                             {
                                 Find.Selector.ClearSelection();
@@ -636,20 +652,6 @@ namespace DMSRC
             }
         }
     }
-
-    /*[HarmonyPatch(typeof(Pawn_MechanitorTracker), nameof(Pawn_MechanitorTracker.TotalAvailableControlGroups),
-    MethodType.Getter)]
-    public static class Pawn_MechanitorTracker_TotalAvailableControlGroups
-    {
-        public static void Postfix(ref int __result, Pawn_MechanitorTracker __instance)
-        {
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(__instance.Pawn);
-            if (comp != null)
-            {
-                __result = comp.Props.controlGroups;
-            }
-        }
-    }*/
 
     [HarmonyPatch(typeof(MechanitorUtility), nameof(MechanitorUtility.CanControlMech))]
     public static class Pawn_MechanitorUtility_CanControlMech

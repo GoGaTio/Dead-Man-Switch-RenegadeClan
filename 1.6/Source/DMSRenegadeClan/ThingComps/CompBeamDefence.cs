@@ -313,11 +313,11 @@ namespace DMSRC
 			{
 				return false;
 			}
-			if(proj.DamageDef == DamageDefOf.Vaporize || proj.DamageDef.ignoreShields)
+			if(proj.DamageDef == DamageDefOf.Vaporize || proj.DamageDef?.ignoreShields == true)
 			{
 				return false;
 			}
-			if (!Props.interceptSameFaction && !parent.Faction.HostileTo(proj.Launcher.Faction))
+			if (!Props.interceptSameFaction && parent.Faction?.HostileTo(proj.Launcher?.Faction) != true)
 			{
 				return false;
 			}
@@ -411,7 +411,7 @@ namespace DMSRC
 			Widgets.Label(rect4, comp.charge + " / " + comp.Props.maxCharge);
 			Text.Anchor = TextAnchor.UpperLeft;
 			TooltipHandler.TipRegion(rect4, () => tooltip, Gen.HashCombineInt(comp.GetHashCode(), 34242369));
-			Widgets.Checkbox(new Vector2(rect.x + (rect.width - 24f), rect.y), ref comp.shouldBeActive);
+			Widgets.Checkbox(new Vector2(rect2.x + (rect2.width - 24f), rect2.y), ref comp.shouldBeActive);
 			return new GizmoResult(GizmoState.Clear);
 		}
 	}

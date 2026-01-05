@@ -57,7 +57,7 @@ namespace DMSRC
 	{
 		private MoteDualAttached mote;
 
-		private Thing target;
+		private Thing thingTarget;
 
 		private List<Vector3> tmpPath = new List<Vector3>();
 
@@ -107,7 +107,7 @@ namespace DMSRC
 					continue;
 				}
 				tmpHighlightCells.Add(hitCell);
-				foreach (IntVec3 beamHitNeighbourCell in CellRect.FromCell(hitCell).ExpandedBy(1).Cells)
+				foreach (IntVec3 beamHitNeighbourCell in GetNeighbours(hitCell))
 				{
 					if (!tmpSecondaryHighlightCells.Contains(beamHitNeighbourCell) && map.Contains(beamHitNeighbourCell))
 					{
@@ -122,6 +122,29 @@ namespace DMSRC
 			if (tmpSecondaryHighlightCells.Any())
 			{
 				GenDraw.DrawFieldEdges(tmpSecondaryHighlightCells.ToList(), secondaryHighliteColor);
+			}
+		}
+
+		private List<IntVec3> neighboursCached = new List<IntVec3>();
+
+		private IEnumerable<IntVec3> GetNeighbours(IntVec3 cell)
+		{
+			if (neighboursCached.NullOrEmpty())
+			{
+				neighboursCached = new List<IntVec3>();
+				float range = Comp.Props.explosionRange;
+				IntVec3 zero = IntVec3.Zero;
+				foreach (IntVec3 c in CellRect.FromCell(zero).ExpandedBy(Mathf.CeilToInt(range)))
+				{
+					if(c.DistanceTo(zero) <= range)
+					{
+						neighboursCached.Add(c);
+					}
+				}
+			}
+			foreach(IntVec3 neighbour in neighboursCached)
+			{
+				yield return neighbour + cell;
 			}
 		}
 
@@ -159,11 +182,11 @@ namespace DMSRC
 		public override void WarmupComplete()
 		{
 			base.WarmupComplete();
-			target = null;
+			thingTarget = null;
 			if (base.currentTarget.HasThing && !base.currentTarget.Thing.DestroyedOrNull())
             {
-				target = base.currentTarget.Thing;
-				currentTarget = target.PositionHeld;
+				thingTarget = base.currentTarget.Thing;
+				currentTarget = thingTarget.PositionHeld;
 				currentDestination = LocalTargetInfo.Invalid;
 			}
 			mote = MoteMaker.MakeInteractionOverlay(Comp.Props.beamMoteDef, caster, new TargetInfo(base.InterpolatedPosition.ToIntVec3(), caster.Map));
@@ -173,9 +196,9 @@ namespace DMSRC
 		public override void BurstingTick()
 		{
 			IntVec3 root = Caster.Position;
-			if (target != null && !target.Position.IsValid && target.Map == Caster.Map)
+			if (thingTarget != null && !thingTarget.Position.IsValid && thingTarget.Map == Caster.Map)
 			{
-				currentTarget = target.Position;
+				currentTarget = thingTarget.Position;
 			}
 			base.BurstingTick();
 			TryFindShootLineFromTo(root, currentTarget, out resultingLine);
@@ -211,7 +234,7 @@ namespace DMSRC
 					explosionRange = 0.1f;
 					damage *= 2;
 				}
-				GenExplosion.DoExplosion(cell, Caster.MapHeld, explosionRange, Comp?.Props.damageDef, Caster, damage, 999f, damageFalloff: true, screenShakeFactor: 0f, weapon: this.EquipmentSource?.def, ignoredThings: new List<Thing>() { Caster }, doSoundEffects: false);
+				GenExplosion.DoExplosion(cell, Caster.MapHeld, explosionRange, Comp?.Props.damageDef, Caster, damage, 999f, damageFalloff: true, screenShakeFactor: 0f, weapon: this.EquipmentSource?.def, ignoredThings: new List<Thing>() { Caster }, doSoundEffects: false, intendedTarget: thingTarget);
 			}
 		}
 
@@ -238,6 +261,12 @@ namespace DMSRC
 				verbProps.requireLineOfSight = false;
 			}
 			return b;
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			neighboursCached = null;
 		}
 	}
 }

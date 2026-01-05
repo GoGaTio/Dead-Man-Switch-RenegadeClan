@@ -57,6 +57,118 @@ using Verse.Steam;
 
 namespace DMSRC
 {
+	public class JobDriver_PlantBomb : JobDriver
+	{
+		private IntVec3 Cell => job.GetTarget(TargetIndex.A).Cell;
+
+		private Thing Item => job.GetTarget(TargetIndex.B).Thing;
+
+		private bool usingFromInventory;
+
+		private IntVec3 cellInt;
+
+		public override bool TryMakePreToilReservations(bool errorOnFailed)
+		{
+			return true;
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Values.Look(ref usingFromInventory, "usingFromInventory", defaultValue: false);
+			Scribe_Values.Look(ref cellInt, "DMSRC_cellInt");
+		}
+
+		public override void Notify_Starting()
+		{
+			base.Notify_Starting();
+			cellInt = new IntVec3(Cell.x, 0, Cell.z);
+			pawn.Map.terrainGrid.SetTerrain(cellInt, TerrainDefOf.Ice);
+			job.count = 1;
+			usingFromInventory = pawn.inventory != null && pawn.inventory.Contains(Item);
+		}
+
+		protected override IEnumerable<Toil> MakeNewToils()
+		{
+			foreach (Toil item in PrepareToUseToils())
+			{
+				yield return item;
+			}
+			yield return Toils_Goto.GotoCell(Cell, PathEndMode.Touch);
+			Toil toil = Toils_General.Wait(120);
+			toil.WithProgressBarToilDelay(TargetIndex.A);
+			toil.FailOnCannotReach(TargetIndex.A, PathEndMode.Touch);
+			yield return toil;
+			yield return Toils_General.Do(Plant);
+		}
+
+		private IEnumerable<Toil> PrepareToUseToils()
+		{
+			if (usingFromInventory)
+			{
+				yield return Toils_Misc.TakeItemFromInventoryToCarrier(pawn, TargetIndex.B);
+			}
+			else
+			{
+				yield return ReserveItem();
+				yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.Touch).FailOnDespawnedOrNull(TargetIndex.B);
+				Toil toil = ToilMaker.MakeToil("PickupItem");
+				toil.initAction = delegate
+				{
+					Pawn actor = toil.actor;
+					Job curJob = actor.jobs.curJob;
+					Thing thing = Item;
+					actor.carryTracker.TryStartCarry(thing, 1);
+					if (thing != actor.carryTracker.CarriedThing && actor.Map.reservationManager.ReservedBy(thing, actor, curJob))
+					{
+						actor.Map.reservationManager.Release(thing, actor, curJob);
+					}
+					actor.jobs.curJob.targetA = actor.carryTracker.CarriedThing;
+				};
+				toil.defaultCompleteMode = ToilCompleteMode.Instant;
+				yield return toil;
+			}
+		}
+
+		private Toil ReserveItem()
+		{
+			Toil toil = ToilMaker.MakeToil("ReserveItem");
+			toil.initAction = delegate
+			{
+				if (pawn.Faction != null)
+				{
+					Thing thing = Item;
+					if (pawn.carryTracker.CarriedThing != thing)
+					{
+						if (!pawn.Reserve(thing, job, 1, -1))
+						{
+							Log.Error(string.Concat("DMSRC reservation for ", pawn, " on job ", this, " failed, because it could not register item from ", thing));
+							pawn.jobs.EndCurrentJob(JobCondition.Errored);
+						}
+						job.count = 1;
+					}
+				}
+			};
+			toil.defaultCompleteMode = ToilCompleteMode.Instant;
+			toil.atomicWithPrevious = true;
+			return toil;
+		}
+
+		private void Plant()
+		{
+			CompUseEffectTargetablePlant comp = Item.TryGetComp<CompUseEffectTargetablePlant>();
+			if(comp != null)
+			{
+				Thing t = GenSpawn.Spawn(ThingMaker.MakeThing(comp.Props.plantDef), cellInt, pawn.MapHeld, WipeMode.Vanish);
+				if (t.def.CanHaveFaction)
+				{
+					t.SetFaction(pawn.Faction);
+				}
+			}
+			Item.SplitOff(1).Destroy();
+		}
+	}
+
 	public class JobGiver_RepairMechs : ThinkNode_JobGiver
 	{
 		protected override Job TryGiveJob(Pawn pawn)

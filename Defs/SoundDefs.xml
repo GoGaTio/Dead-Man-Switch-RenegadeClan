@@ -17,6 +17,23 @@
       </li>
     </subSounds>
   </SoundDef>
+  
+  <SoundDef>
+    <defName>DMSRC_Beep</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DMSRC_Beep</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.7~0.8</pitchRange>
+        <volumeRange>30~40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 
   <SoundDef>
     <defName>DMSRC_Null</defName>

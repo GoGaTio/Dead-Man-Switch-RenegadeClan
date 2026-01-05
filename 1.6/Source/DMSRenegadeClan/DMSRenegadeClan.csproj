@@ -70,20 +70,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbilityLauncher.cs" />
+    <Compile Include="Ability.cs" />
     <Compile Include="Damages.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FloatMenuOptionProvider_OverseerMech.cs" />
     <Compile Include="Firecracker.cs" />
     <Compile Include="GameComponent_Renegades.cs" />
     <Compile Include="Harmony\Renegades.cs" />
-    <Compile Include="Harmony\Saboteur.cs" />
     <Compile Include="Jobs.cs" />
     <Compile Include="MapGen\Prefab.cs" />
     <Compile Include="MapGen\GenStep_Mission.cs" />
     <Compile Include="Enhancer.cs" />
     <Compile Include="Quests\QuestPart.cs" />
     <Compile Include="Requests.cs" />
+    <Compile Include="ThingComps\CompBroadcastAntenna.cs" />
+    <Compile Include="ThingComps\CompUseEffectTargetablePlant.cs" />
+    <Compile Include="ThingComps\CompTimedBomb.cs" />
     <Compile Include="ThingComps\CompWarheadPlatform.cs" />
     <Compile Include="ThingComps\CompProcessorHelmet.cs" />
     <Compile Include="ThingComps\CompPerimeterScanner.cs" />

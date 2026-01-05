@@ -57,10 +57,11 @@ namespace DMSRC
 {
 	public class DMSRenegadeClan : Mod
 	{
+		public static Harmony harmonyInstance;
 		public DMSRenegadeClan(ModContentPack content)
 			: base(content)
 		{
-			Harmony harmonyInstance = new Harmony("DMSRenegadeClan_Patch");
+			harmonyInstance = new Harmony("DMSRenegadeClan_Patch");
 			harmonyInstance.PatchAllUncategorized();
 		}
 	}

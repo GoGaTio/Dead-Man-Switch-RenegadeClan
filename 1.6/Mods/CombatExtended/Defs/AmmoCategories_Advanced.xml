@@ -3,16 +3,16 @@
 
 	<CombatExtended.AmmoCategoryDef>
 		<defName>DMSRC_FSR</defName>
-		<label>concentrated charge</label>
-		<labelShort>conc.</labelShort>
-		<description>Focuses charged particles around the tip of the core for improved armor penetration at the cost of stopping power.</description>
+		<label>FSR</label>
+		<labelShort>FSR</labelShort>
+		<description>FSR munition ignites itself and detonate on hit.</description>
 	</CombatExtended.AmmoCategoryDef>
 
 	<ThingCategoryDef>
 		<defName>DMSRC_FSR</defName>
 		<label>FSR</label>
 		<parent>Ammo</parent>
-		<iconPath>UI/Icons/ThingCategories/AmmoAdvanced</iconPath>
-	</ThingCategoryDef> 
+		<iconPath>UI/Icons/FSR_17x54mm</iconPath>
+	</ThingCategoryDef>
 
 </Defs>

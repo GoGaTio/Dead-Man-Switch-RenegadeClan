@@ -85,8 +85,67 @@ namespace DMSRC
 		}
 	}
 
+	public class DamageWorker_IgnoreWalls : DamageWorker_AddInjury
+	{
+		private static List<IntVec3> openCells = new List<IntVec3>();
+
+		private static List<IntVec3> adjWallCells = new List<IntVec3>();
+		public override IEnumerable<IntVec3> ExplosionCellsToHit(IntVec3 center, Map map, float radius, IntVec3? needLOSToCell1 = null, IntVec3? needLOSToCell2 = null, FloatRange? affectedAngle = null)
+		{
+			openCells.Clear();
+			adjWallCells.Clear();
+			float num = affectedAngle?.min ?? 0f;
+			float num2 = affectedAngle?.max ?? 0f;
+			int num3 = GenRadial.NumCellsInRadius(radius);
+			for (int i = 0; i < num3; i++)
+			{
+				IntVec3 intVec = center + GenRadial.RadialPattern[i];
+				if (!intVec.InBounds(map))
+				{
+					continue;
+				}
+				if (affectedAngle.HasValue)
+				{
+					float lengthHorizontal = (intVec - center).LengthHorizontal;
+					float num4 = lengthHorizontal / radius;
+					if (!(lengthHorizontal > 0.5f))
+					{
+						continue;
+					}
+					float num5 = Mathf.Atan2(-(intVec.z - center.z), intVec.x - center.x) * 57.29578f;
+					float num6 = num;
+					float num7 = num2;
+					if (num5 - num6 < -0.5f * num4 || num5 - num7 > 0.5f * num4)
+					{
+						continue;
+					}
+				}
+				openCells.Add(intVec);
+			}
+			/*for (int j = 0; j < openCells.Count; j++)
+			{
+				IntVec3 intVec2 = openCells[j];
+				Building edifice = intVec2.GetEdifice(map);
+				if (!intVec2.Walkable(map) || (edifice != null && edifice.def.Fillage == FillCategory.Full && !(edifice is Building_Door { Open: not false })))
+				{
+					continue;
+				}
+				for (int k = 0; k < 4; k++)
+				{
+					IntVec3 intVec3 = intVec2 + GenAdj.CardinalDirections[k];
+					if (intVec3.InHorDistOf(center, radius) && intVec3.InBounds(map) && !intVec3.Standable(map) && intVec3.GetEdifice(map) != null && !openCells.Contains(intVec3) && !adjWallCells.Contains(intVec3))
+					{
+						adjWallCells.Add(intVec3);
+					}
+				}
+			}*/
+			return openCells.Concat(adjWallCells);
+		}
+	}
+
 	public class DamageWorker_Firecracker : DamageWorker_AddInjury
 	{
+		
 		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
 		{
 			if(explosion.intendedTarget != t && t.Faction != null && t.Faction == explosion.instigator?.Faction)

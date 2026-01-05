@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <FleckDef ParentName="FleckBase">
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <defName>DMSRC_TimedBombFlash</defName>
+    <solidTime>0.05</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <growthRate>37</growthRate>
+    <graphicData>
+      <drawSize>0.20</drawSize>
+      <color>(255, 0, 0, 220)</color>
+      <texPath>Things/Mote/BrightFlash</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </FleckDef>
+
   <FleckDef ParentName="FleckBase_RandomGraphic">
     <defName>DMSRC_PerimeterScannerFlare</defName>
     <altitudeLayer>MoteOverhead</altitudeLayer>

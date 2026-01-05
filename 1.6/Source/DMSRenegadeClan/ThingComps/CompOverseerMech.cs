@@ -62,7 +62,7 @@ namespace DMSRC
 
         public int controlGroups = 2;
 
-        public int bandwidth = 10;
+        public int bandwidth = 6;
 
         public bool canRepair = true;
 
@@ -174,7 +174,21 @@ namespace DMSRC
                 return workMode;
             }
         }
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+
+        private Texture2D selectIcon;
+		public Texture2D SelectIcon
+		{
+			get
+			{
+				if (selectIcon == null)
+				{
+					selectIcon = ContentFinder<Texture2D>.Get(Props.selectOverseerIconPath);
+				}
+				return selectIcon;
+			}
+		}
+
+		public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
             if (Parent.IsColonyMech)
@@ -201,7 +215,7 @@ namespace DMSRC
                 dummyPawn.Name = new NameSingle(parent.LabelCap);
                 for (int num = dummyPawn.health.hediffSet.hediffs.Count - 1; num >= 0; num--)
                 {
-                    Hediff h = dummyPawn.health.hediffSet.hediffs.FirstOrDefault((Hediff x) => x.def != RCDefOf.DMSRC_DummyPawn && !(x is Hediff_Mechlink));
+                    Hediff h = dummyPawn.health.hediffSet.hediffs.FirstOrDefault((Hediff x) => x.def != RCDefOf.DMSRC_DummyPawn && !(x is Hediff_Mechlink) && !x.def.HasModExtension<ForceNotRemoveExtension>());
                     if(h == null)
                     {
                         break;
@@ -337,7 +351,7 @@ namespace DMSRC
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Deep.Look(ref dummyPawn, "dummyPawn");
+            Scribe_Deep.Look(ref dummyPawn, "DMSRC_dummyPawn");
         }
     }
 }

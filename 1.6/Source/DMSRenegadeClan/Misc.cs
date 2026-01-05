@@ -576,29 +576,9 @@ namespace DMSRC
 		}
 	}
 
-	public class Graphic_StackCount_Direct : Graphic_StackCount
+	public class ForceNotRemoveExtension : DefModExtension
 	{
-		public override Graphic SubGraphicFor(Thing thing)
-		{
-			return NewSubGraphicForStackCount(thing.stackCount, thing.def);
-		}
 
-		public Graphic NewSubGraphicForStackCount(int stackCount, ThingDef def)
-		{
-			if(subGraphics.Length <= def.stackLimit)
-            {
-				return subGraphics[stackCount - 1];
-			}
-            else
-            {
-				return subGraphics[subGraphics.Length - 1];
-			}
-		}
-
-		public override string ToString()
-		{
-			return "DMSRC.StackCount(path=" + path + ", count=" + subGraphics.Length + ")";
-		}
 	}
 
 	public class ThingSetMaker_CountDifferent : ThingSetMaker

@@ -101,7 +101,10 @@ namespace DMSRC
 						IntVec3 adjustedLocalPosition = PrefabUtility.GetAdjustedLocalPosition(c, rot);
 						foreach (Thing t in (root + adjustedLocalPosition).GetThingList(map).ToList())
 						{
-							t.Destroy();
+							if(t.def.building?.isPowerConduit != true)
+							{
+								t.Destroy();
+							}
 						}
 					}
 				}

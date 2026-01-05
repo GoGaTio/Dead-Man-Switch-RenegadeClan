@@ -27,7 +27,7 @@
     <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
     <basicMemberKind>DMSRC_Renegade</basicMemberKind>
     <factionIconPath>UI/Faction/DMSRC_RenegadeClanIcon</factionIconPath>
-    <fixedName>Renegade clan</fixedName>
+    <fixedName>Renegades clan</fixedName>
     <settlementNameMaker>DMS_VanguardBase</settlementNameMaker>
     <allowedCultures>
       <li MayRequire="Ludeon.RimWorld.Ideology">DMS_Nara_Culture</li>

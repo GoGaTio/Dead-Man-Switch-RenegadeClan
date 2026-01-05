@@ -54,13 +54,14 @@
     <scaleDamageToBuildingsBasedOnFlammability>true</scaleDamageToBuildingsBasedOnFlammability>
   </DamageDef>
 
-<DamageDef ParentName="Bomb">
+  <DamageDef ParentName="Bomb">
     <defName>DMSRC_BombTimed</defName>
+    <workerClass>DMSRC.DamageWorker_IgnoreWalls</workerClass>
     <defaultDamage>50</defaultDamage>
-    <defaultStoppingPower>2.0</defaultStoppingPower>
+    <defaultStoppingPower>10.0</defaultStoppingPower>
     <defaultArmorPenetration>1.30</defaultArmorPenetration>
-<buildingDamageFactorImpassable>40</buildingDamageFactorImpassable>
-    <buildingDamageFactorPassable>20</buildingDamageFactorPassable>
+    <buildingDamageFactorImpassable>400</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>200</buildingDamageFactorPassable>
   </DamageDef>
 
 </Defs>
