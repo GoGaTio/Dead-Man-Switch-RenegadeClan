@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnKindDef ParentName="DMSRC_FighterBase" Name="DMSRC_DragoonBase" Abstract="True">
+    <aiAvoidCover>true</aiAvoidCover>
+    <isFighter>true</isFighter>
+    <allowRoyalApparelRequirements>false</allowRoyalApparelRequirements>
+    <allowRoyalRoomRequirements>false</allowRoyalRoomRequirements>
+    <canStrip>false</canStrip>
+    <apparelTags>
+      <li>IndustrialMilitaryBasic</li>
+    </apparelTags>
+    <apparelMoney>2000~5000</apparelMoney>
+    <weaponMoney>2000~10000</weaponMoney>
+    <techHediffsRequired>
+      <li>DMS_SensoryFilter</li>
+      <li>DMS_NutrientPort</li>
+      <li>DMS_ProstheticEye</li>
+    </techHediffsRequired>
+    <modExtensions>
+      <li Class="Exosuit.ModExtension_NoIdeoApparel" />
+    </modExtensions>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <apparelRequired>
+      <li>DMS_Apparel_PilotSuit</li>
+      <li>DMS_Apparel_BionicSuit</li>
+    </apparelRequired>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_DragoonBase">
+    <defName>DMSRC_RenegadeDragoon</defName>
+    <label>Subjugator alpha</label>
+    <combatPower>150</combatPower>
+    <weaponTags>
+      <li>DMS_Dragoon_SG</li>
+      <li>DMS_MechWeaponHeavy</li>
+      <li>DMS_DragoonGun</li>
+    </weaponTags>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>14~18</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>8~10</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="Exosuit.ModExtForceApparelGen">
+        <StructurePointRange>1</StructurePointRange>
+        <apparels>
+          <li>DMS_Apparel_PV8_Core</li>
+          <li>DMS_Apparel_Groyne_Helmet</li>
+          <li>DMS_Apparel_PackCargo</li>
+        </apparels>
+        <chanceApparels>
+          <li>
+            <chance>0.25</chance>
+            <apparel>DMS_Apparel_CargoBox</apparel>
+          </li>
+          <li>
+            <chance>0.15</chance>
+            <apparel>DMS_Apparel_Shield</apparel>
+          </li>
+          <li>
+            <chance>0.15</chance>
+            <apparel>DMS_Apparel_InfraredSensor</apparel>
+          </li>
+        </chanceApparels>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(107, 81, 128)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_DragoonBase">
+    <defName>DMSRC_RenegadeDragoon_Explosive</defName>
+    <label>Subjugator beta</label>
+    <combatPower>175</combatPower>
+    <weaponTags>
+      <li>DMS_MechWeaponHeavy</li>
+      <li>DMS_DragoonGun</li>
+      <li>Gun_Recoilless</li>
+    </weaponTags>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>5~12</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>8~12</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="Exosuit.ModExtForceApparelGen">
+        <StructurePointRange>1</StructurePointRange>
+        <apparels>
+          <li>DMS_Apparel_PV8_Core</li>
+          <li>DMS_Apparel_PV8_Helmet</li>
+          <li>DMS_Apparel_CargoBox</li>
+        </apparels>
+        <chanceApparels>
+          <li>
+            <chance>0.25</chance>
+            <apparel>DMS_Apparel_SwarmMissilePod</apparel>
+          </li>
+          <li>
+            <chance>0.15</chance>
+            <apparel>DMS_Apparel_MissilePod</apparel>
+          </li>
+          <li>
+            <chance>0.05</chance>
+            <apparel>DMS_Apparel_MissilePodPlus</apparel>
+          </li>
+        </chanceApparels>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(107, 81, 128)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_DragoonBase">
+    <defName>DMSRC_RenegadeDragoon_Beam</defName>
+    <label>Subjugator gamma</label>
+    <combatPower>225</combatPower>
+    <weaponMoney>6000~10000</weaponMoney>
+    <weaponTags>
+      <li>DMSRC_HeavyBeamCannon</li>
+    </weaponTags>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>5~12</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>14~18</range>
+      </li>
+    </skills>
+    <forcedTraits>
+      <ShootingAccuracy>-1</ShootingAccuracy>
+    </forcedTraits>
+    <modExtensions>
+      <li Class="Exosuit.ModExtForceApparelGen">
+        <StructurePointRange>1</StructurePointRange>
+        <apparels>
+          <li>DMS_Apparel_PV8_Core</li>
+          <li>DMS_Apparel_PV8_Helmet</li>
+          <li>DMS_Apparel_InfraredSensor</li>
+          <li>DMS_Apparel_PackFrame</li>
+        </apparels>
+        <chanceApparels>
+          <li>
+            <chance>0.25</chance>
+            <apparel>DMS_Apparel_MissilePodPlus</apparel>
+          </li>
+          <li>
+            <chance>0.5</chance>
+            <apparel>DMS_Apparel_PulseShield</apparel>
+          </li>
+          <li>
+            <chance>0.05</chance>
+            <apparel>DMS_Apparel_FA47_Helmet</apparel>
+          </li>
+        </chanceApparels>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(107, 81, 128)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+</Defs>

@@ -4,7 +4,7 @@
   <ThingDef ParentName="DMS_AutomatroidGun">
     <defName>DMSRC_FSRPistol</defName>
     <label>FSR Light carabine</label>
-    <description>An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis version has underbarrel grenade launcher, that allows to launch frag grenade once before reloading.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
+    <description>A stub-barreled mech carabine. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.</description>
     <weaponClasses>
       <li>RangedLight</li>
       <li>Ranged</li>
@@ -19,8 +19,8 @@
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
     <statBases>
-      <WorkToMake>45000</WorkToMake>
-      <Mass>5.75</Mass>
+      <WorkToMake>29000</WorkToMake>
+      <Mass>3.2</Mass>
       <AccuracyTouch>0.65</AccuracyTouch>
       <AccuracyShort>0.70</AccuracyShort>
       <AccuracyMedium>0.68</AccuracyMedium>
@@ -33,8 +33,10 @@
       </researchPrerequisites>
     </recipeMaker>
     <costList>
-      <Tungsteel>75</Tungsteel>
-      <ComponentStamped>5</ComponentStamped>
+      <Tungsteel>35</Tungsteel>
+      <ComponentStamped>1</ComponentStamped>
+<ComponentSpacer>1</ComponentSpacer>
+      <DMS_Ceramics>15</DMS_Ceramics>
     </costList>
     <verbs>
       <li>
@@ -55,17 +57,25 @@
         <EquippableDef>AverageHumanCanUse</EquippableDef>
       </li>
     </modExtensions>
-    <tools>
-      <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-    </tools>
+    <tools Inherit="False">
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
   </ThingDef>
 
 </Defs>

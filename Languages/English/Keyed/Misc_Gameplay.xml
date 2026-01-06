@@ -12,4 +12,7 @@
   <DMSRC_Mission_DefendRaidLabel>Raid: {0}</DMSRC_Mission_DefendRaidLabel>
   <DMSRC_Mission_DefendRaidDesc>Raiders from {0} are arriving from all directions. Defend {1}.</DMSRC_Mission_DefendRaidDesc>
 
+  <DMSRC_DetonationCountdown>Detonates in {0}</DMSRC_DetonationCountdown>
+  <DMSRC_DetonationInstigator>Planted by {0}</DMSRC_DetonationInstigator>
+
 </LanguageData>

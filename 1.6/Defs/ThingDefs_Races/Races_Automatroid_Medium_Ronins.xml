@@ -7,8 +7,8 @@
     <description>Variant of the Ronin specialized in stealth operations and surprise attacks. The Saboteur has active camouflage device and improved manipulators that allows to open almost any door.</description>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
-      <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
       <ArmorRating_Heat>1.2</ArmorRating_Heat>
       <MeleeDodgeChance>9</MeleeDodgeChance>
       <MeleeHitChance>4</MeleeHitChance>

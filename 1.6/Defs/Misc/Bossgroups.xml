@@ -118,6 +118,7 @@
           <DMS_Mech_Sergeant>2</DMS_Mech_Sergeant>
           <DMS_Mech_Gecko>3</DMS_Mech_Gecko>
           <DMSRC_Mech_Pavise>5</DMSRC_Mech_Pavise>
+<DMS_Mech_Tarbosaurus>1</DMS_Mech_Tarbosaurus>
         </escorts>
         <bossApparel>
           <li>
@@ -146,6 +147,7 @@
         <!-- 0 -->
         <bossCount>1</bossCount>
         <escorts>
+<DMS_Mech_Soldat>10</DMS_Mech_Soldat>
           <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
         </escorts>
       </li>
@@ -154,6 +156,7 @@
         <bossCount>1</bossCount>
         <escorts>
           <DMS_Mech_Iguana>3</DMS_Mech_Iguana>
+<DMS_Mech_Soldat>10</DMS_Mech_Soldat>
           <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
         </escorts>
       </li>
@@ -161,9 +164,10 @@
         <!-- 2 - Repeat starts here -->
         <bossCount>1</bossCount>
         <escorts>
-          <DMSRC_Mech_Focus>1</DMSRC_Mech_Focus>
+          <DMS_Mech_Iguana>4</DMS_Mech_Iguana>
           <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
-          <DMS_Mech_Ronin>7</DMS_Mech_Ronin>
+          <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
+<DMS_Mech_Tarbosaurus>1</DMS_Mech_Tarbosaurus>
         </escorts>
       </li>
       <li>
@@ -173,6 +177,7 @@
           <DMS_Mech_Iguana>6</DMS_Mech_Iguana>
           <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
           <DMS_Mech_Ronin>10</DMS_Mech_Ronin>
+<DMS_Mech_Tarbosaurus>1</DMS_Mech_Tarbosaurus>
         </escorts>
       </li>
       <li>
@@ -181,7 +186,8 @@
         <escorts>
           <DMS_Mech_Iguana>8</DMS_Mech_Iguana>
           <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
-          <DMS_Mech_Ronin>5</DMS_Mech_Ronin>
+          <DMS_Mech_Ronin>10</DMS_Mech_Ronin>
+<DMS_Mech_Tarbosaurus>2</DMS_Mech_Tarbosaurus>
         </escorts>
       </li>
       <li>
@@ -189,9 +195,11 @@
         <bossCount>1</bossCount>
         <escorts>
           <DMS_Mech_Iguana>8</DMS_Mech_Iguana>
-          <DMS_Mech_Soldat>15</DMS_Mech_Soldat>
-          <DMS_Mech_Ronin>8</DMS_Mech_Ronin>
+          <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+          <DMS_Mech_Ronin>10</DMS_Mech_Ronin>
           <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
+<DMS_Mech_Tarbosaurus>3</DMS_Mech_Tarbosaurus>
+<DMSRC_Mech_Focus>1</DMSRC_Mech_Focus>
         </escorts>
       </li>
     </waves>

@@ -58,6 +58,59 @@ using static UnityEngine.GraphicsBuffer;
 
 namespace DMSRC
 {
+	public class CompUsableAllowTargetMechs : CompUsable
+	{
+		public override AcceptanceReport CanBeUsedBy(Pawn p, bool forced = false, bool ignoreReserveAndReachable = false)
+		{
+			if (p.IsMutant && !Props.allowedMutants.Contains(p.mutant.Def))
+			{
+				return false;
+			}
+			PlanetTile tile = p.MapHeld.Tile;
+			if (tile.Valid && !Props.layerWhitelist.NullOrEmpty() && !Props.layerWhitelist.Contains(tile.LayerDef))
+			{
+				return "CannotPerformPlanetLayer".Translate(tile.LayerDef.gerundLabel.Named("GERUND"), tile.LayerDef.label.Named("LAYER")).Resolve();
+			}
+			if (tile.Valid && !Props.layerBlacklist.NullOrEmpty() && Props.layerBlacklist.Contains(tile.LayerDef))
+			{
+				return "CannotPerformPlanetLayer".Translate(tile.LayerDef.gerundLabel.Named("GERUND"), tile.LayerDef.label.Named("LAYER")).Resolve();
+			}
+			if (parent.TryGetComp<CompPowerTrader>(out var comp) && !comp.PowerOn)
+			{
+				return "NoPower".Translate();
+			}
+			if (!ignoreReserveAndReachable && !p.CanReach(parent, PathEndMode.Touch, Danger.Deadly))
+			{
+				return "NoPath".Translate();
+			}
+			if (!ignoreReserveAndReachable && !p.CanReserve(parent, 1, -1, null, forced))
+			{
+				Pawn pawn = p.Map.reservationManager.FirstRespectedReserver(parent, p) ?? p.Map.physicalInteractionReservationManager.FirstReserverOf(parent);
+				if (pawn != null)
+				{
+					return "ReservedBy".Translate(pawn.LabelShort, pawn);
+				}
+				return "Reserved".Translate();
+			}
+			if (Props.userMustHaveHediff != null && !p.health.hediffSet.HasHediff(Props.userMustHaveHediff))
+			{
+				return "MustHaveHediff".Translate(Props.userMustHaveHediff);
+			}
+			List<ThingComp> allComps = parent.AllComps;
+			for (int i = 0; i < allComps.Count; i++)
+			{
+				if (allComps[i] is CompUseEffect compUseEffect)
+				{
+					AcceptanceReport result = compUseEffect.CanBeUsedBy(p);
+					if (!result.Accepted)
+					{
+						return result;
+					}
+				}
+			}
+			return true;
+		}
+	}
 	public class CompProperties_UseEffectTargetablePlant : CompProperties_UseEffect
 	{
 		public ThingDef plantDef;

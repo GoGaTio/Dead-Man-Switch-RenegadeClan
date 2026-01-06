@@ -7,11 +7,6 @@
     <combatPower>30</combatPower>
     <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
     <apparelMoney>700~1000</apparelMoney>
-    <specificApparelRequirements>
-      <li>
-        <color>(84, 26, 56)</color>
-      </li>
-    </specificApparelRequirements>
     <weaponTags>
       <li>A_Pistol</li>
     </weaponTags>
@@ -30,15 +25,12 @@
     <combatPower>100</combatPower>
     <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
     <apparelMoney>3700~4000</apparelMoney>
-<apparelRequired>
+    <apparelRequired>
       <li>DMSRC_Apparel_AssaultArmor</li>
       <li>DMSRC_Apparel_AssaultHelmet</li>
       <li>DMS_Apparel_BionicSuit</li>
     </apparelRequired>
     <specificApparelRequirements>
-      <li>
-        <color>(84, 26, 56)</color>
-      </li>
       <li>
         <bodyPartGroup>FullHead</bodyPartGroup>
         <alternateTagChoices>
@@ -49,7 +41,7 @@
         </alternateTagChoices>
       </li>
     </specificApparelRequirements>
-<skills>
+    <skills>
       <li>
         <skill>Shooting</skill>
         <range>10~15</range>
@@ -60,7 +52,8 @@
       </li>
     </skills>
     <weaponTags>
-      <li>DMS_MechWeaponHeavy</li><li>DMS_MechWeaponMedium</li>
+      <li>DMS_MechWeaponHeavy</li>
+      <li>DMS_MechWeaponMedium</li>
     </weaponTags>
     <weaponMoney>1600~2000</weaponMoney>
   </PawnKindDef>
@@ -97,11 +90,6 @@
       <li>DeathAcidifier</li>
       <li>Painstopper</li>
     </techHediffsRequired>
-    <specificApparelRequirements>
-      <li>
-        <color>(84, 26, 56)</color>
-      </li>
-    </specificApparelRequirements>
     <weaponMoney>1000~1600</weaponMoney>
   </PawnKindDef>
 
@@ -130,11 +118,6 @@
     <weaponTags>
       <li>A_Pistol</li>
     </weaponTags>
-    <specificApparelRequirements>
-      <li>
-        <color>(84, 26, 56)</color>
-      </li>
-    </specificApparelRequirements>
     <weaponMoney>1000~1600</weaponMoney>
   </PawnKindDef>
 
@@ -160,6 +143,14 @@
     <weaponTags>
       <li>A_Pistol</li>
     </weaponTags>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Scientist</li>
+          <li>DMSRC_Thinker</li>
+        </categories>
+      </li>
+    </backstoryFilters>
     <weaponMoney>1000~1600</weaponMoney>
     <skills>
       <li>
@@ -171,10 +162,7 @@
         <range>10~15</range>
       </li>
     </skills>
-    <specificApparelRequirements Inherit="False">
-      <li>
-        <color>(84, 26, 56)</color>
-      </li>
+    <specificApparelRequirements>
       <li>
         <bodyPartGroup>UpperHead</bodyPartGroup>
         <apparelDef>DMSRC_Apparel_ProcessorHelmet</apparelDef>

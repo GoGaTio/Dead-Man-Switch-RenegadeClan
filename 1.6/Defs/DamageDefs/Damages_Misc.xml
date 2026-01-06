@@ -60,8 +60,9 @@
     <defaultDamage>50</defaultDamage>
     <defaultStoppingPower>10.0</defaultStoppingPower>
     <defaultArmorPenetration>1.30</defaultArmorPenetration>
-    <buildingDamageFactorImpassable>400</buildingDamageFactorImpassable>
-    <buildingDamageFactorPassable>200</buildingDamageFactorPassable>
+    <buildingDamageFactor>10</buildingDamageFactor>
+    <buildingDamageFactorImpassable>40</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>20</buildingDamageFactorPassable>
   </DamageDef>
 
 </Defs>

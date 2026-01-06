@@ -61,14 +61,14 @@
         </targetParams>
       </li>
     </verbs>
-    <tools>
+    <tools Inherit="False">
       <li>
         <label>emitter</label>
         <capacities>
           <li>Blunt</li>
           <li>Poke</li>
         </capacities>
-        <power>9</power>
+        <power>11</power>
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>

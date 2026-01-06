@@ -23,6 +23,16 @@
     <defName>DMSRC_PlantBomb</defName>
     <driverClass>DMSRC.JobDriver_PlantBomb</driverClass>
     <reportString>planting TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>DSMRC_GotoSprint</defName>
+    <driverClass>DMSRC.JobDriver_GotoNoReset</driverClass>
+    <reportString>moving.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <carryThingAfterJob>true</carryThingAfterJob>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
   </JobDef>
 
   <JobDef>

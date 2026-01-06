@@ -83,16 +83,15 @@
       <li>A_AR_LongRifle</li>
       <li>DMS_MechWeaponMedium</li><li>NoSwitch</li>
     </weaponTags>
-    <tools>
+    <tools Inherit="False">
       <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>11</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
     </tools>
     <comps>
       <li Class="DMSRC.CompProperties_FocusedBeam">
@@ -145,7 +144,7 @@
     <equippedStatOffsets>
       <MoveSpeed>-0.15</MoveSpeed>
     </equippedStatOffsets>
-    <generateCommonality>0.12</generateCommonality>
+    <generateCommonality>0.11</generateCommonality>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -165,16 +164,15 @@
       <li>A_AR_LongRifle</li>
       <li>DMS_MechWeaponMedium</li>
     </weaponTags>
-    <tools>
+    <tools Inherit="False">
       <li>
-        <label>barrel</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
     </tools>
     <modExtensions>
       <li Class="Fortified.HeavyEquippableExtension">
@@ -186,7 +184,7 @@
   <ThingDef ParentName="DMS_AutomatroidGun">
     <defName>DMSRC_FSRAssaultRifle</defName>
     <label>FSR Assault rifle</label>
-    <description>An assault rifle designed to use FSR munition.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
+    <description>An assault rifle designed to be used by mech soldiers. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
     <weaponClasses>
       <li>LongShots</li>
       <li>RangedHeavy</li>
@@ -217,7 +215,7 @@
       </researchPrerequisites>
     </recipeMaker>
     <costList>
-      <Tungsteel>50</Tungsteel>
+      <Tungsteel>75</Tungsteel>
       <ComponentStamped>4</ComponentStamped>
       <ComponentSpacer>1</ComponentSpacer>
       <DMS_Ceramics>25</DMS_Ceramics>

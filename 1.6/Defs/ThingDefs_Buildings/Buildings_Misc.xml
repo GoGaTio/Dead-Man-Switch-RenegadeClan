@@ -248,6 +248,7 @@
     <pathCost>15</pathCost>
     <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>0.15</fillPercent>
+    <receivesSignals>true</receivesSignals>
     <tickerType>Normal</tickerType>
     <drawerType>MapMeshAndRealTime</drawerType>
     <canOverlapZones>false</canOverlapZones>
@@ -258,6 +259,13 @@
       <claimable>true</claimable>
       <expandHomeArea>false</expandHomeArea>
     </building>
+    <costList>
+      <Tungsteel>20</Tungsteel>
+      <Polyester>50</Polyester>
+      <ComponentStamped>2</ComponentStamped>
+      <Shell_HighExplosive>10</Shell_HighExplosive>
+    </costList>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <statBases>
       <WorkToBuild>100</WorkToBuild>
       <MaxHitPoints>100</MaxHitPoints>
@@ -275,7 +283,6 @@
         <defence>600</defence>
         <effectHacking>HackingTerminal</effectHacking>
         <lockoutDurationHoursRange>2~4</lockoutDurationHoursRange>
-        <notHackedInspectString>Hack to open.</notHackedInspectString>
         <hackedInspectString>Opened.</hackedInspectString>
         <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
         <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
@@ -293,6 +300,7 @@
             <li>0, 1</li>
             <li>90, 10</li>
             <li>120, 20</li>
+            <li>600, 70</li>
             <li>2500, 400</li>
             <li>10000, 600</li>
           </points>

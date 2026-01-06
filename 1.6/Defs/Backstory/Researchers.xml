@@ -55,8 +55,8 @@
 
   <BackstoryDef>
     <defName>DMSRC_Researcher3</defName>
-    <title>caveworld illuminator</title>
-    <titleShort>illuminator</titleShort>
+    <title>neuroscientist</title>
+    <titleShort>scientist</titleShort>
     <description>Among tunnel-dwellers, those with vision as strong as [PAWN_nameDef]'s are revered as sages. [PAWN_pronoun] would lead the way, marking spots to dig with bioluminescent fungus and warning others of impending danger.</description>
     <slot>Adulthood</slot>
     <requiredWorkTags>
@@ -64,8 +64,9 @@
       <li>ManualSkilled</li>
     </requiredWorkTags>
     <skillGains>
-      <Mining>3</Mining>
-      <Social>2</Social>
+      <Intellectual>6</Intellectual>
+      <Medicine>10</Medicine>
+      <Social>4</Social>
     </skillGains>
     <spawnCategories>
       <li>DMSRC_Researcher</li>
@@ -75,6 +76,9 @@
     <forcedTraits>
       <Undergrounder>0</Undergrounder>
     </forcedTraits>
+<possessions>
+      <DMSRC_Neurointerface>1</DMSRC_Neurointerface>
+    </possessions>
   </BackstoryDef>
 
 

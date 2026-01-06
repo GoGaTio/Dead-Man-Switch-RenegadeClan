@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>DMSRC_Sword</defName>
+		<label>Fortified blade</label>
+		<description>It May look like a normal machete, but this weapon is purpose built for a mech melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease.</description>
+		<graphicData>
+			<texPath>Things/Weapons/DMSRC_Sword</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Industrial</techLevel>
+		<weaponTags>
+			<li>DMS_MeleeWeapon</li>
+			<li>A_Cut_Melee</li>
+		</weaponTags>
+		<statBases>
+			<WorkToMake>35000</WorkToMake>
+			<Mass>3</Mass>
+		</statBases>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+<generateCommonality>0.35</generateCommonality>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<costList>
+			<Tungsteel>60</Tungsteel>
+			<ComponentStamped>3</ComponentStamped>
+<Uranium>45</Uranium>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>LongBlades</li>
+				<li>DMS_EquipmentElite</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<modExtensions>
+			<li Class="Fortified.HeavyEquippableExtension">
+				<EquippableDef>StandardAutomatroid</EquippableDef>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>

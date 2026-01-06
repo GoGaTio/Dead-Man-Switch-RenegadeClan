@@ -15,10 +15,15 @@
     <allowedCultures><li>Astropolitan</li></allowedCultures>
     <melaninRange>0~0.1</melaninRange>
     <backstoryFilters>
-      <li>
-        <categories>
+            <li>
+                <categories>
+                    <li>FleetChild</li>
+                    <li>Mili_Standard</li>
+                    <li>Mili_Expert</li>
+<li>Offworld</li>
+                    <li>Civil_Expert</li>
           <li>Pioneer</li>
-          <li>Offworld</li>
+          <li>DMSRC_Researcher</li>
           <li>Researcher</li>
           <li>DMSCommon</li>
         </categories>

@@ -5,7 +5,7 @@
 		<li>/</li>
 		<li>1.6</li>
 
-		<li IfModActive="dimonsever000.factionlanguages,dimonsever000.factionlanguages_steam">1.6/Mods/RimLanguages</li>
+		<li IfModActive="aoba.deadmanswitch.mobiledragoon">1.6/Mods/DMSMobileDragoon</li>
 		<li IfModActive="ceteam.combatextended,CETeam.CombatExtended_steam">1.6/Mods/CombatExtended</li>
 		
 	</v1.6>

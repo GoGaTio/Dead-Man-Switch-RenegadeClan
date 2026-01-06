@@ -4,7 +4,7 @@
   <ThingDef ParentName="DMS_AutomatroidHeavyGun">
     <defName>DMSRC_FSRMachineGun</defName>
     <label>FSR Heavy repeater</label>
-    <description>An easily mass produced assault rifle designed for mech soldiers equipped with an extra long picatinny rail for all tacticool needs.\n\nThis version has underbarrel grenade launcher, that allows to launch frag grenade once before reloading.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
+    <description>A heavy machine gun with helical magazine designed for use as automatroids weapon. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
     <weaponClasses>
       <li>RangedHeavy</li>
       <li>Ranged</li>
@@ -28,14 +28,14 @@
       </researchPrerequisites>
     </recipeMaker>
     <costList>
-      <Tungsteel>85</Tungsteel>
+      <Tungsteel>165</Tungsteel>
       <ComponentStamped>7</ComponentStamped>
       <ComponentSpacer>2</ComponentSpacer>
-      <DMS_Ceramics>45</DMS_Ceramics>
+      <DMS_Ceramics>55</DMS_Ceramics>
     </costList>
     <statBases>
       <WorkToMake>85000</WorkToMake>
-      <Mass>5.75</Mass>
+      <Mass>76</Mass>
       <AccuracyTouch>0.75</AccuracyTouch>
       <AccuracyShort>0.40</AccuracyShort>
       <AccuracyMedium>0.25</AccuracyMedium>
@@ -49,7 +49,7 @@
         <defaultProjectile>DMSRC_Bullet_FSR</defaultProjectile>
         <warmupTime>2.3</warmupTime>
         <range>39.9</range>
-        <burstShotCount>10</burstShotCount>
+        <burstShotCount>14</burstShotCount>
         <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
         <soundCast>DMSRC_Shot_FSR</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
@@ -150,16 +150,15 @@
         </targetParams>
       </li>
     </verbs>
-    <tools>
+    <tools Inherit="False">
       <li>
-        <label>emitter</label>
-        <capacities>
-          <li>Blunt</li>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
     </tools>
     <comps>
       <li Class="DMSRC.CompProperties_FocusedBeam">

@@ -5,7 +5,7 @@
     <defName>DMSRC_MilitaryAid</defName>
     <workerClass>PawnGroupKindWorker_Normal</workerClass>
   </PawnGroupKindDef>
-  
+
   <FactionDef ParentName="FactionBase">
     <defName>DMSRC_RenegadeClan</defName>
     <label>renegades clan</label>
@@ -24,11 +24,18 @@
     <leaderTitle>count</leaderTitle>
     <hidden>true</hidden>
     <hiddenIdeo>true</hiddenIdeo>
-    <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
+    <leaderForceGenerateNewPawn>false</leaderForceGenerateNewPawn>
     <basicMemberKind>DMSRC_Renegade</basicMemberKind>
     <factionIconPath>UI/Faction/DMSRC_RenegadeClanIcon</factionIconPath>
     <fixedName>Renegades clan</fixedName>
     <settlementNameMaker>DMS_VanguardBase</settlementNameMaker>
+    <fixedIdeo>true</fixedIdeo>
+    <ideoName>Doctrine of the End</ideoName>
+    <ideoDescription>Where is the end of one there is a begining of another. Nothing can last forever. Do what you can do, hide awaiting, watch as the system collapses and you will be awarded for your patience.</ideoDescription>
+    <styles>
+      <li MayRequire="Ludeon.RimWorld.Ideology">DMS_Industrial</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Techist</li>
+    </styles>
     <allowedCultures>
       <li MayRequire="Ludeon.RimWorld.Ideology">DMS_Nara_Culture</li>
     </allowedCultures>
@@ -87,8 +94,12 @@
     <backstoryFilters>
       <li>
         <categories>
+          <li>FleetChild</li>
+          <li>Mili_Standard</li>
+          <li>Mili_Expert</li>
+          <li>Civil_Expert</li>
           <li>Pioneer</li>
-          <li>DMSRC_Common</li>
+          <li>DMSRC_Researcher</li>
           <li>Researcher</li>
           <li>DMSCommon</li>
         </categories>
@@ -103,7 +114,7 @@
     </apparelStuffFilter>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
     <colorSpectrum>
-      <li>(94, 36, 66)</li>
+      <li>(107, 81, 128)</li>
     </colorSpectrum>
     <fixedLeaderKinds>
       <li>DMS_Officer_Leader</li>
@@ -118,7 +129,7 @@
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(500, 270)</li>
-        <li>(1000, 300)</li>
+        <li>(1000, 500)</li>
         <li>(3000, 9999)</li>
       </points>
     </maxPawnCostPerTotalPointsCurve>
@@ -135,6 +146,9 @@
           <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
           <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
           <DMSRC_Mech_Stancher>4</DMSRC_Mech_Stancher>
+          <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.05</DMSRC_RenegadeDragoon_Beam>
           <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
         </options>
       </li>
@@ -172,6 +186,9 @@
           <DMSRC_Mech_Focus>2</DMSRC_Mech_Focus>
           <DMSRC_Mech_Pavise>2.5</DMSRC_Mech_Pavise>
           <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
+          <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Beam>
         </options>
       </li>
       <li>
@@ -187,6 +204,8 @@
           <DMS_Mech_Protector>5</DMS_Mech_Protector>
           <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
           <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Beam>
         </options>
       </li>
       <li>
@@ -215,10 +234,10 @@
         <filter>
           <thingDefs>
             <li>Silver</li>
-            <li>MedicineIndustrial</li>
+            <li>Synthread</li>
             <li>Uranium</li>
-            <li>MealSurvivalPack</li>
-            <li>DMS_CombatRation</li>
+            <li>Plasteel</li>
+            <li>ComponentIndustrial</li>
             <li>ComponentStamped</li>
             <li>Plasfiber</li>
             <li>Tungsteel</li>

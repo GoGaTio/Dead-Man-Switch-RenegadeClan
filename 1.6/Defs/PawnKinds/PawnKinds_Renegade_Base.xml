@@ -38,11 +38,16 @@
       <li>Gay</li>
       <li>Bisexual</li>
     </disallowedTraits>
+    <specificApparelRequirements>
+      <li>
+        <color>(107, 81, 128)</color>
+      </li>
+    </specificApparelRequirements>
     <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
     <apparelIgnorePollution>true</apparelIgnorePollution>
   </PawnKindDef>
 
-<PawnKindDef Name="DMSRC_FighterBase" ParentName="DMSRC_RenegadeBase" Abstract="True">
+  <PawnKindDef Name="DMSRC_FighterBase" ParentName="DMSRC_RenegadeBase" Abstract="True">
     <combatPower>40</combatPower>
     <initialResistanceRange>57~84</initialResistanceRange>
     <initialWillRange>34~92</initialWillRange>
@@ -71,7 +76,7 @@
     <requiredWorkTags>
       <li>Violent</li>
     </requiredWorkTags>
-<techHediffsRequired>
+    <techHediffsRequired>
       <li>DeathAcidifier</li>
       <li>Painstopper</li>
     </techHediffsRequired>
@@ -103,7 +108,8 @@
     </techHediffsTags>-->
     <maxGenerationAge>50</maxGenerationAge>
     <requiredWorkTags>
-      <li>Intellectual</li><li>Violent</li>
+      <li>Intellectual</li>
+      <li>Violent</li>
     </requiredWorkTags>
   </PawnKindDef>
 

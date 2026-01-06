@@ -64,7 +64,7 @@ namespace DMSRC
 		{
 			if (base.CanFireNowSub(parms))
 			{
-				return GameComponent_Renegades.Find.PlayerRelation == FactionRelationKind.Hostile;
+				return GameComponent_Renegades.Find.PlayerRelation == FactionRelationKind.Hostile && (parms.target as Map).regionGrid.AllRooms?.Count > 4;
 			}
 			return false;
 		}
@@ -84,8 +84,6 @@ namespace DMSRC
 			parms.faction = comp.RenegadesFaction;
 			int count = 3;
 			List<Pawn> list = GenerateSaboteurs(parms, count).ToList();
-			PawnsArrivalModeDefOf.EdgeWalkInDistributed.Worker.TryResolveRaidSpawnCenter(parms);
-			PawnsArrivalModeDefOf.EdgeWalkInDistributed.Worker.Arrive(list, parms);
 			LordMaker.MakeNewLord(parms.faction, new LordJob_Sabotage(), map, list);
 			return true;
 		}
@@ -97,10 +95,16 @@ namespace DMSRC
 			for (int i = 0; i < count; i++)
 			{
 				Pawn pawn = PawnGenerator.GeneratePawn(request);
-				if(pawn.inventory != null)
+				if (pawn.inventory != null)
 				{
 					pawn.inventory.TryAddAndUnforbid(ThingMaker.MakeThing(RCDefOf.DMSRC_TimedBomb));
 				}
+				if (!RCellFinder.TryFindRandomPawnEntryCell(out var cell, map, CellFinder.EdgeRoadChance_Hostile))
+				{
+					cell = DropCellFinder.FindRaidDropCenterDistant(map);
+				}
+				cell = CellFinder.RandomClosewalkCellNear(cell, map, 8);
+				GenSpawn.Spawn(pawn, cell, map);
 				yield return pawn;
 			}
 		}
@@ -124,7 +128,116 @@ namespace DMSRC
 			foreach (Pawn ownedPawn in lord.ownedPawns)
 			{
 				ownedPawn.mindState.duty = new PawnDuty(RCDefOf.DMSRC_Sabotage);
+				ownedPawn.mindState.forcedGotoPosition = JobGiver_TryPlantBomb.GetPlantPosition(ownedPawn);
 			}
+		}
+	}
+
+	public class JobGiver_TryPlantBomb : ThinkNode_JobGiver
+	{
+		protected override Job TryGiveJob(Pawn pawn)
+		{
+			if (pawn.CurJobDef == RCDefOf.DMSRC_PlantBomb)
+			{
+				return null;
+			}
+			Thing bomb = pawn.inventory?.innerContainer?.FirstOrDefault((x) => x.def == RCDefOf.DMSRC_TimedBomb) ?? pawn.carryTracker?.innerContainer?.FirstOrDefault((x) => x.def == RCDefOf.DMSRC_TimedBomb);
+			if (bomb == null)
+			{
+				bomb = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForDef(RCDefOf.DMSRC_TimedBomb), PathEndMode.Touch, TraverseParms.For(pawn), 7f);
+				if (bomb == null)
+				{
+					pawn.mindState.forcedGotoPosition = IntVec3.Invalid;
+					return null;
+				}
+				Job job1 = JobMaker.MakeJob(JobDefOf.TakeCountToInventory, bomb);
+				job1.locomotionUrgency = LocomotionUrgency.Sprint;
+				job1.count = 1;
+				return job1;
+			}
+			IntVec3 forcedGotoPosition = pawn.mindState.forcedGotoPosition;
+			if (!forcedGotoPosition.IsValid || (forcedGotoPosition != pawn.Position && !pawn.CanReach(forcedGotoPosition, PathEndMode.Touch, Danger.Deadly)))
+			{
+				pawn.mindState.forcedGotoPosition = GetPlantPosition(pawn);
+				return null;
+			}
+			if (forcedGotoPosition.DistanceTo(pawn.Position) > 15f)
+			{
+				return null;
+			}
+			Job job2 = JobMaker.MakeJob(RCDefOf.DMSRC_PlantBomb, forcedGotoPosition, bomb);
+			job2.count = 1;
+			job2.locomotionUrgency = LocomotionUrgency.Sprint;
+			return job2;
+		}
+
+		public static IntVec3 GetPlantPosition(Pawn pawn)
+		{
+			Map map = pawn.Map;
+			Room room = map.regionGrid.AllRooms?.RandomElementByWeight((r) => r.GetStat(RoomStatDefOf.Wealth));
+			if (room == null)
+			{
+				return IntVec3.Invalid;
+			}
+			if (room.Cells.TryRandomElement((c) => c.GetAffordances(map).Contains(TerrainAffordanceDefOf.Light) && c.Standable(map), out var cell))
+			{
+				return cell;
+			}
+			return IntVec3.Invalid;
+		}
+	}
+
+	public class JobGiver_ForcedGotoSprint : ThinkNode_JobGiver
+	{
+		protected override Job TryGiveJob(Pawn pawn)
+		{
+			IntVec3 forcedGotoPosition = pawn.mindState.forcedGotoPosition;
+			if (!forcedGotoPosition.IsValid)
+			{
+				return null;
+			}
+			if (!pawn.CanReach(forcedGotoPosition, PathEndMode.ClosestTouch, Danger.Deadly))
+			{
+				return null;
+			}
+			Job job = JobMaker.MakeJob(RCDefOf.DSMRC_GotoSprint, forcedGotoPosition);
+			job.locomotionUrgency = LocomotionUrgency.Sprint;
+			return job;
+		}
+	}
+
+	public class JobDriver_GotoNoReset : JobDriver_Goto
+	{
+		public override bool TryMakePreToilReservations(bool errorOnFailed)
+		{
+			pawn.Map.pawnDestinationReservationManager.Reserve(pawn, job, job.targetA.Cell);
+			return true;
+		}
+
+		protected override IEnumerable<Toil> MakeNewToils()
+		{
+			LocalTargetInfo lookAtTarget = job.GetTarget(TargetIndex.B);
+			Toil toil = Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.OnCell);
+			toil.FailOn(() => job.GetTarget(TargetIndex.A).Thing is Pawn pawn && pawn.ParentHolder is Corpse);
+			toil.FailOn(() => job.GetTarget(TargetIndex.A).Thing?.Destroyed ?? false);
+			if (lookAtTarget.IsValid)
+			{
+				toil.tickIntervalAction = (Action<int>)Delegate.Combine(toil.tickIntervalAction, (Action<int>)delegate
+				{
+					pawn.rotationTracker.FaceCell(lookAtTarget.Cell);
+				});
+				toil.handlingFacing = true;
+			}
+			toil.tickAction = (Action)Delegate.Combine(toil.tickAction, (Action)delegate
+			{
+				if (!pawn.IsPsychologicallyInvisible() && pawn.GetRoom()?.GetStat(RoomStatDefOf.Wealth) > 500f)
+				{
+					pawn.mindState.forcedGotoPosition = pawn.Position;
+					EndJobWith(JobCondition.InterruptForced);
+				}
+			});
+			toil.handlingFacing = true;
+			yield return toil;
 		}
 	}
 }

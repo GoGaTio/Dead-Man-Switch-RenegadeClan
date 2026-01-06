@@ -25,6 +25,10 @@ namespace DMSRC
 
         public static JobDef DMSRC_OpenContainer;
 
+		public static JobDef DMSRC_PlantBomb;
+
+        public static JobDef DSMRC_GotoSprint;
+
 		public static FactionDef DMSRC_RenegadeClan;
 
         public static FactionDef DMS_Army;

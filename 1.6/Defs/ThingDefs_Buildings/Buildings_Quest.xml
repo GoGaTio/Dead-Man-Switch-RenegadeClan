@@ -12,6 +12,7 @@
     <blockWind>false</blockWind>
     <passability>PassThroughOnly</passability>
     <fillPercent>0.50</fillPercent>
+<receivesSignals>true</receivesSignals>
     <size>(1,1)</size>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
@@ -55,6 +56,8 @@
     <canOverlapZones>false</canOverlapZones>
     <fillPercent>0.3</fillPercent>
     <rotatable>false</rotatable>
+<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+<receivesSignals>true</receivesSignals>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>0</Flammability>
@@ -72,9 +75,9 @@
       <li Class="DMSRC.CompProperties_WarheadPlatform">
         <chanceToStartFire>0.7</chanceToStartFire>
         <explosiveRadius>44.9</explosiveRadius>
-        <explosiveDamageType>BombSuper</explosiveDamageType>
+        <explosiveDamageType>DMSRC_BombTimed</explosiveDamageType>
         <damageAmountBase>999</damageAmountBase>
-        <armorPenetrationBase>99</armorPenetrationBase>
+        <armorPenetrationBase>999</armorPenetrationBase>
         <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
         <graphicData>
           <texPath>Things/Building/DMSRC_WarheadPlatform</texPath>
@@ -88,7 +91,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_PowerTransmitter</defName>
     <label>power network node</label>
-    <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
+    <description></description>
     <graphicData>
       <texPath>Things/Building/DMSRC_PowerTransmitter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -162,18 +165,29 @@
     <canOverlapZones>false</canOverlapZones>
     <fillPercent>1</fillPercent>
     <rotatable>false</rotatable>
+<receivesSignals>true</receivesSignals>
+<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <statBases>
       <MaxHitPoints>3000</MaxHitPoints>
       <Flammability>0</Flammability>
-      <WorkToBuild>25000</WorkToBuild>
+      <WorkToBuild>60000</WorkToBuild>
     </statBases>
     <costList>
       <Steel>600</Steel>
       <Tungsteel>200</Tungsteel>
-      <ComponentStamped>10</ComponentStamped>
+      <ComponentStamped>20</ComponentStamped>
       <ComponentIndustrial>15</ComponentIndustrial>
-      <ComponentTransmitter>5</ComponentTransmitter>
+      <ComponentTransmitter>5</ComponentTransmitter> <ComponentSpacer>5</ComponentSpacer>
     </costList>
+<killedLeavings>
+      <ChunkSlagSteel>8</ChunkSlagSteel>
+      <Steel>100</Steel>
+      <Tungsteel>40</Tungsteel>
+      <ComponentStamped>7</ComponentStamped>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentTransmitter>1</ComponentTransmitter>
+      <ComponentSpacer>1</ComponentSpacer>
+    </killedLeavings>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <building>
       <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
@@ -197,14 +211,15 @@
       <li Class="CompProperties_AmbientSound">
         <sound>GeothermalPlant_Ambience</sound>
       </li>
+<li Class="DMSRC.CompProperties_BroadcastAntenna">
+        <worldRange>10</worldRange>
+      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>5000</basePowerConsumption>
       </li>
       <!--CompProperties_BroadcastAntenna should go after CompProperties_Power-->
-      <li Class="DMSRC.CompProperties_BroadcastAntenna">
-        <worldRange>10</worldRange>
-      </li>
+      
     </comps>
   </ThingDef>
 

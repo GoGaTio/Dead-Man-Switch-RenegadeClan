@@ -16,7 +16,7 @@
     </descriptionHyperlinks>
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
-    <stackLimit>25</stackLimit>
+    <stackLimit>5</stackLimit>
     <healthAffectsPrice>false</healthAffectsPrice>
     <statBases>
       <RoyalFavorValue>3</RoyalFavorValue>

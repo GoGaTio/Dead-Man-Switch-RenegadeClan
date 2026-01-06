@@ -1,3 +1,20 @@
+using DelaunatorSharp;
+using Gilzoide.ManagedJobs;
+using HarmonyLib;
+using Ionic.Crc;
+using Ionic.Zlib;
+using JetBrains.Annotations;
+using KTrie;
+using LudeonTK;
+using NVorbis.NAudioSupport;
+using RimWorld;
+using RimWorld.BaseGen;
+using RimWorld.IO;
+using RimWorld.Planet;
+using RimWorld.QuestGen;
+using RimWorld.SketchGen;
+using RimWorld.Utility;
+using RuntimeAudioClipLoader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,22 +36,6 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
-using DelaunatorSharp;
-using Gilzoide.ManagedJobs;
-using Ionic.Crc;
-using Ionic.Zlib;
-using JetBrains.Annotations;
-using KTrie;
-using LudeonTK;
-using NVorbis.NAudioSupport;
-using RimWorld;
-using RimWorld.BaseGen;
-using RimWorld.IO;
-using RimWorld.Planet;
-using RimWorld.QuestGen;
-using RimWorld.SketchGen;
-using RimWorld.Utility;
-using RuntimeAudioClipLoader;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -51,7 +52,7 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
-using HarmonyLib;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DMSRC
 {
@@ -75,7 +76,8 @@ namespace DMSRC
 		public CompProperties_TimedBomb()
         {
             compClass = typeof(CompTimedBomb);
-        }
+			explodeOnDestroyed = true;
+		}
     }
 
     public class CompTimedBomb : CompExplosive
@@ -146,7 +148,6 @@ namespace DMSRC
 				Props.soundOnEmission.PlayOneShot(SoundInfo.InMap(parent));
 			}
 		}
-
 		public override void PostDestroy(DestroyMode mode, Map previousMap)
 		{
 			if(defused) destroyedThroughDetonation = true;
@@ -172,7 +173,36 @@ namespace DMSRC
 
 		public override string CompInspectStringExtra()
 		{
-			return timerTicks.ToStringTicksToPeriod();
+			string s = base.CompInspectStringExtra();
+			if(parent.Faction?.HostileTo(Faction.OfPlayerSilentFail) == false || DebugSettings.ShowDevGizmos)
+			{
+				s += "DMSRC_DetonationCountdown".Translate(timerTicks.ToStringTicksToPeriod());
+				//s += timerTicks.ToStringTicksToPeriod()
+			}
+			else if(parent.Faction != null)
+			{
+				s += "DMSRC_DetonationInstigator".Translate(parent.Faction.NameColored.Resolve());
+			}
+			return s;
+		}
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			foreach (Gizmo g in base.CompGetGizmosExtra())
+			{
+				yield return g;
+			}
+			if (DebugSettings.ShowDevGizmos)
+			{
+				yield return new Command_Action
+				{
+					defaultLabel = "DEV: 10 seconds",
+					action = delegate
+					{
+						timerTicks = 600;
+					}
+				};
+			}
 		}
     }
 }

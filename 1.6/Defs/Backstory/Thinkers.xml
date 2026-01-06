@@ -15,7 +15,11 @@
     <skillGains>
       <Melee>4</Melee>
       <Shooting>4</Shooting>
-    </skillGains>
+    </skillGains>
+<possessions>
+      <DMSRC_NeuroInterceptor>1</DMSRC_NeuroInterceptor>
+<DMSRC_Subinterface>1</DMSRC_Subinterface>
+    </possessions>
   </BackstoryDef>
 
   <BackstoryDef>

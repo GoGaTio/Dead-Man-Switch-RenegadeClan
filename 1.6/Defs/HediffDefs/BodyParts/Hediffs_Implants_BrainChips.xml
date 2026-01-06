@@ -348,61 +348,61 @@
       <li>
         <minSeverity>1</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>2</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>3</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>2</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>4</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>6</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>3</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>6</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>9</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>4</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>8</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>12</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>5</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>10</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>15</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>6</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>12</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>18</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>7</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>14</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>21</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>8</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>16</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>24</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>9</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>18</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>27</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
       <li>
         <minSeverity>10</minSeverity>
         <statOffsets>
-          <DMSRC_Neurocapacity>20</DMSRC_Neurocapacity>
+          <DMSRC_Neurocapacity>30</DMSRC_Neurocapacity>
         </statOffsets>
       </li>
     </stages>

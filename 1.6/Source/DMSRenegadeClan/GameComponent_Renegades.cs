@@ -213,14 +213,26 @@ namespace DMSRC
 			{
 				hoursTillContact = new IntRange(20, 40).RandomInRange * 24;
 			}
+			TestOnStartUp();
 		}
 
 		public override void LoadedGame()
 		{
 			base.LoadedGame();
-			if(RenegadesFaction == null)
+			TestOnStartUp();
+		}
+
+		public void TestOnStartUp()
+		{
+			Faction faction = RenegadesFaction;
+			if (faction == null)
 			{
 				Log.Message("DMSRC Renegades clan is null");
+			}
+			else if (Faction.OfPlayerSilentFail?.RelationKindWith(DMSFaction) == FactionRelationKind.Ally)
+			{
+				PlayerRelation = FactionRelationKind.Hostile;
+				playerOpinion = -1;
 			}
 		}
 

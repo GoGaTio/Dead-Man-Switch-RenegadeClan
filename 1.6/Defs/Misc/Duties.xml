@@ -3,26 +3,22 @@
 
   <DutyDef>
     <defName>DMSRC_Sabotage</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
-        <li Class="JobGiver_GotoTravelDestination">
-          <wanderOnArrival>false</wanderOnArrival>
-          <locomotionUrgency>Amble</locomotionUrgency>
-        </li>
-        <li Class="JobGiver_AIFightEnemies">
-          <targetAcquireRadius>65</targetAcquireRadius>
-          <targetKeepRadius>72</targetKeepRadius>
-          <ignoreNonCombatants>true</ignoreNonCombatants>
-        </li>
-        <li Class="JobGiver_AIGotoNearestHostile">
-          <ignoreNonCombatants>true</ignoreNonCombatants>
-        </li>
-        <li Class="JobGiver_AIWaitAmbush">
-          <ignoreNonCombatants>true</ignoreNonCombatants>
-          <expireOnNearbyEnemy>true</expireOnNearbyEnemy>
+        <li Class="DMSRC.JobGiver_TryPlantBomb"/>
+        <li Class="DMSRC.JobGiver_ForcedGotoSprint" />
+        <li Class="DMSRC.JobGiver_TryPlantBomb"/>
+        <li Class="ThinkNode_ConditionalForcedGoto">
+          <invert>true</invert>
+          <subNodes>
+            <li Class="JobGiver_ExitMapBest">
+              <defaultLocomotion>Sprint</defaultLocomotion>
+            </li>
+          </subNodes>
         </li>
       </subNodes>
     </thinkNode>
   </DutyDef>
-  
+
 </Defs>

@@ -11,6 +11,14 @@
   </Operation>
 
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
+    <value>
+      <li>DMSRC_PlayerRenegades</li>
+      <li>DMSRC_RenegadeClan</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/TraderKindDef[defName="DMS_Caravan_TributeCollector"]/stockGenerators</xpath>
     <value>
       <li Class="StockGenerator_BuySingleDef">
