@@ -5,7 +5,6 @@
     <li>1.6</li>
   </supportedVersions>
   <modDependencies>
-
     <li>
       <packageId>ludeon.rimworld.biotech</packageId>
       <displayName>Biotech</displayName>
@@ -26,24 +25,15 @@
     <li>Ludeon.Rimworld.Biotech</li>
     <li>Ludeon.RimWorld.Ideology</li>
     <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
     <li>ceteam.combatextended</li>
     <li>ceteam.combatextended_steam</li>
     <li>Aoba.DeadManSwitch.Core</li>
-    <li>GoGaTio.MechanoidUpgrades</li>
+    <li>aoba.deadmanswitch.mobiledragoon</li>
   </loadAfter>
-  <forceLoadAfter>
-    <li>Ludeon.Rimworld.Biotech</li>
-    <li>Ludeon.RimWorld.Ideology</li>
-    <li>Ludeon.RimWorld.Royalty</li>
-    <li>ceteam.combatextended</li>
-    <li>ceteam.combatextended_steam</li>
-    <li>Aoba.DeadManSwitch.Core</li>
-    <li>GoGaTio.MechanoidUpgrades</li>
-  </forceLoadAfter>
   <packageId>GoGaTio.DeadManSwitch.RenegadeClan</packageId>
-  <description>
-Unoffical add-on for "The Dead Man's Switch" mod.
+  <description>Unoffical add-on for "The Dead Man's Switch" mod.
 \nAdds new faction, technologies, mechs, weapons, implants, events and more.
-\nOriginal mod by AOBA.
-  </description>
+\nOriginal mod by AOBA.</description>
 </ModMetaData>

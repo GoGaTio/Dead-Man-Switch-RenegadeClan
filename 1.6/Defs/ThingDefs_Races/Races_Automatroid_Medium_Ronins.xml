@@ -102,7 +102,7 @@
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMSRC_Mech_Stancher</defName>
     <label>stancher</label>
-    <description>Variant of the Ronin with improved armor and beam defence devive that allows to intercept incoming bullets and other projectiles.</description>
+    <description>Variant of the Ronin with improved armor and beam defence device which allows to intercept incoming bullets and other projectiles.</description>
     <statBases>
       <MoveSpeed>5</MoveSpeed>
       <ArmorRating_Blunt>0.9</ArmorRating_Blunt>

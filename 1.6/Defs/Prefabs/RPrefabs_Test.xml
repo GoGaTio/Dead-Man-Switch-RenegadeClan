@@ -14,37 +14,117 @@
           <li>Barracks9x9</li>
         </tags>
       </li>
-      <li>
-        <pos>(10,0,34)</pos>
-        <tags>
-          <li>EnergyRoom5x5</li>
-        </tags>
-      </li>
     </subPrefabs>
+    <clearRects>
+      <li>(3,2,24,8)</li>
+      <li>(3,9,19,18)</li>
+      <li>(22,12,35,26)</li>
+      <li>(20,15,21,31)</li>
+      <li>(16,19,19,31)</li>
+      <li>(11,23,15,40)</li>
+      <li>(22,27,32,31)</li>
+      <li>(4,28,10,40)</li>
+      <li>(33,29,37,36)</li>
+      <li>(16,32,16,40)</li>
+      <li>(30,32,32,36)</li>
+      <li>(0,38,3,44)</li>
+      <li>(4,41,6,44)</li>
+    </clearRects>
     <roofRects>
       <li>(6,5,16,15)</li>
-      <li>(7,31,13,37)</li>
+      <li>(8,32,12,36)</li>
     </roofRects>
     <clearRoofRects>
-      <li>(21,20,27,26)</li>
+      <li>(20,19,28,27)</li>
     </clearRoofRects>
     <things>
+      <PowerConduit>
+        <rects>
+          <li>(3,2,24,2)</li>
+          <li>(3,3,3,18)</li>
+          <li>(24,3,24,8)</li>
+          <li>(6,5,16,5)</li>
+          <li>(6,6,6,15)</li>
+          <li>(16,6,16,40)</li>
+          <li>(17,8,23,8)</li>
+          <li>(19,9,19,15)</li>
+          <li>(22,12,35,12)</li>
+          <li>(22,13,22,15)</li>
+          <li>(35,13,35,26)</li>
+          <li>(7,15,15,15)</li>
+          <li>(17,15,18,15)</li>
+          <li>(20,15,21,15)</li>
+          <li>(23,15,32,15)</li>
+          <li>(24,16,24,18)</li>
+          <li>(32,16,32,31)</li>
+          <li>(4,18,15,18)</li>
+          <li>(19,18,23,18)</li>
+          <li>(25,18,29,18)</li>
+          <li>(19,19,19,28)</li>
+          <li>(29,19,29,28)</li>
+          <li>(11,23,15,23)</li>
+          <li>(17,23,18,23)</li>
+          <li>(30,23,31,23)</li>
+          <li>(11,24,11,28)</li>
+          <li>(33,26,34,26)</li>
+          <li>(4,28,10,28)</li>
+          <li>(12,28,15,28)</li>
+          <li>(20,28,28,28)</li>
+          <li>(4,29,4,40)</li>
+          <li>(10,29,10,40)</li>
+          <li>(24,29,24,31)</li>
+          <li>(33,29,37,29)</li>
+          <li>(37,30,37,36)</li>
+          <li>(17,31,23,31)</li>
+          <li>(25,31,31,31)</li>
+          <li>(8,32,9,32)</li>
+          <li>(11,32,12,32)</li>
+          <li>(30,32,30,36)</li>
+          <li>(8,33,8,36)</li>
+          <li>(12,33,12,36)</li>
+          <li>(5,34,7,34)</li>
+          <li>(9,34,9,34)</li>
+          <li>(11,34,11,34)</li>
+          <li>(13,34,15,34)</li>
+          <li>(9,36,9,36)</li>
+          <li>(11,36,11,36)</li>
+          <li>(31,36,36,36)</li>
+          <li>(0,38,3,38)</li>
+          <li>(0,39,0,44)</li>
+          <li>(5,40,9,40)</li>
+          <li>(11,40,15,40)</li>
+          <li>(6,41,6,44)</li>
+          <li>(1,44,5,44)</li>
+        </rects>
+      </PowerConduit>
       <DMS_Turret_MK44_Navy>
         <position>(33, 0, 32)</position>
       </DMS_Turret_MK44_Navy>
       <DMSRC_LargeBroadcastAntenna>
         <position>(24, 0, 23)</position>
       </DMSRC_LargeBroadcastAntenna>
+      <DMSRC_PowerTransmitter>
+        <rects>
+          <li>(9,33,9,33)</li>
+          <li>(11,33,11,33)</li>
+          <li>(9,35,9,35)</li>
+          <li>(11,35,11,35)</li>
+        </rects>
+      </DMSRC_PowerTransmitter>
       <Barricade>
         <rects>
           <li>(20,4,22,4)</li>
           <li>(20,5,20,6)</li>
           <li>(22,5,22,6)</li>
           <li>(21,6,21,6)</li>
+          <li>(7,31,13,31)</li>
           <li>(32,31,35,31)</li>
+          <li>(7,32,7,37)</li>
+          <li>(13,32,13,37)</li>
           <li>(32,32,32,34)</li>
           <li>(35,32,35,34)</li>
           <li>(33,34,34,34)</li>
+          <li>(8,37,12,37)</li>
           <li>(2,40,4,40)</li>
           <li>(2,41,2,42)</li>
           <li>(4,41,4,42)</li>
@@ -52,27 +132,52 @@
         </rects>
         <stuff>Tungsteel</stuff>
       </Barricade>
-      <HiddenConduit>
+      <WallLamp>
         <rects>
-          <li>(6,5,16,5)</li>
-          <li>(6,6,6,15)</li>
-          <li>(16,6,16,31)</li>
-          <li>(7,15,15,15)</li>
-          <li>(17,15,32,15)</li>
-          <li>(32,16,32,31)</li>
-          <li>(7,31,15,31)</li>
-          <li>(17,31,31,31)</li>
-          <li>(7,32,7,37)</li>
-          <li>(13,32,13,37)</li>
-          <li>(8,37,12,37)</li>
+          <li>(8,4,8,4)</li>
+          <li>(14,4,14,4)</li>
+          <li>(10,31,10,31)</li>
         </rects>
-      </HiddenConduit>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(5,7,5,7)</li>
+          <li>(5,13,5,13)</li>
+          <li>(7,34,7,34)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(17,7,17,7)</li>
+          <li>(17,13,17,13)</li>
+          <li>(13,34,13,34)</li>
+        </rects>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(8,16,8,16)</li>
+          <li>(14,16,14,16)</li>
+          <li>(10,37,10,37)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+      </WallLamp>
       <DMS_Turret_Okhotnik>
         <rects>
           <li>(21,5,21,5)</li>
           <li>(3,41,3,41)</li>
         </rects>
       </DMS_Turret_Okhotnik>
+      <Turret_RocketswarmLauncher>
+        <position>(13, 0, 25)</position>
+      </Turret_RocketswarmLauncher>
+      <FirefoamPopper>
+        <position>(17, 0, 5)</position>
+      </FirefoamPopper>
+      <FloodLight>
+        <position>(33, 0, 14)</position>
+      </FloodLight>
       <Wall>
         <rects>
           <li>(6,5,16,5)</li>
@@ -86,10 +191,14 @@
           <li>(29,25,29,28)</li>
           <li>(20,28,22,28)</li>
           <li>(26,28,28,28)</li>
-          <li>(7,31,13,31)</li>
-          <li>(7,32,7,37)</li>
-          <li>(13,32,13,37)</li>
-          <li>(8,37,12,37)</li>
+          <li>(8,32,12,32)</li>
+          <li>(8,33,8,36)</li>
+          <li>(10,33,10,36)</li>
+          <li>(12,33,12,36)</li>
+          <li>(9,34,9,34)</li>
+          <li>(11,34,11,34)</li>
+          <li>(9,36,9,36)</li>
+          <li>(11,36,11,36)</li>
         </rects>
         <stuff>Tungsteel</stuff>
       </Wall>
@@ -108,9 +217,12 @@
           <li>(26,18,29,18)</li>
           <li>(16,19,16,28)</li>
           <li>(29,19,29,21)</li>
+          <li>(11,23,15,23)</li>
+          <li>(11,24,11,28)</li>
           <li>(32,26,34,26)</li>
           <li>(32,27,32,29)</li>
-          <li>(4,28,15,28)</li>
+          <li>(4,28,10,28)</li>
+          <li>(12,28,15,28)</li>
           <li>(4,29,4,38)</li>
           <li>(33,29,37,29)</li>
           <li>(37,30,37,36)</li>
@@ -140,8 +252,9 @@
           <li>(16,19,16,40)</li>
           <li>(20,20,20,31)</li>
           <li>(28,20,35,26)</li>
+          <li>(11,23,15,30)</li>
           <li>(21,27,32,31)</li>
-          <li>(4,28,15,30)</li>
+          <li>(4,28,10,30)</li>
           <li>(33,29,37,36)</li>
           <li>(4,31,6,44)</li>
           <li>(14,31,15,40)</li>
@@ -164,54 +277,128 @@
     </terrain>
   </DMSRC.RPrefabDef>
 
+
   <DMSRC.RPrefabDef>
     <defName>DMSRC_BroadcastPoint_2</defName>
     <tags>
       <li>BroadcastPoint</li>
     </tags>
     <subPrefabs>
-      <!--<li>
-        <pos>(11,0,10)</pos>
+      <li>
+        <pos>(30,0,32)</pos>
         <tags>
           <li>Barracks9x9</li>
-        </tags>
-      </li>-->
-      <li>
-        <pos>(8,0,11)</pos>
-        <tags>
-          <li>EnergyRoom5x5</li>
         </tags>
       </li>
     </subPrefabs>
     <roofRects>
-      <li>(6,5,16,15)</li>
-      <li>(7,31,13,37)</li>
+      <li>(6,9,10,13)</li>
+      <li>(25,27,35,37)</li>
     </roofRects>
     <clearRoofRects>
-      <li>(21,20,27,26)</li>
+      <li>(18,12,26,20)</li>
     </clearRoofRects>
     <clearRects>
-      <li>(11,2,36,27)</li>
-      <li>(19,21,41,43)</li>
-      <li>(33,35,45,47)</li>
-      <li>(6,19,18,32)</li>
-      <li>(-1,2,10,20)</li>
-      <li>(8,-3,20,1)</li>
+      <li>(11,0,17,17)</li>
+      <li>(2,5,10,17)</li>
+      <li>(21,5,33,24)</li>
+      <li>(18,8,20,24)</li>
+      <li>(14,18,17,24)</li>
+      <li>(34,19,35,40)</li>
+      <li>(9,22,13,29)</li>
+      <li>(36,24,38,44)</li>
+      <li>(14,25,16,29)</li>
+      <li>(22,25,33,40)</li>
+      <li>(39,38,42,44)</li>
     </clearRects>
     <size>(45,45)</size>
     <things>
+      <PowerConduit>
+        <rects>
+          <li>(11,0,17,0)</li>
+          <li>(11,1,11,5)</li>
+          <li>(17,1,17,8)</li>
+          <li>(2,5,10,5)</li>
+          <li>(21,5,33,5)</li>
+          <li>(2,6,2,17)</li>
+          <li>(8,6,8,17)</li>
+          <li>(21,6,21,8)</li>
+          <li>(33,6,33,19)</li>
+          <li>(14,8,16,8)</li>
+          <li>(18,8,20,8)</li>
+          <li>(22,8,30,8)</li>
+          <li>(6,9,7,9)</li>
+          <li>(9,9,10,9)</li>
+          <li>(14,9,14,24)</li>
+          <li>(22,9,22,11)</li>
+          <li>(30,9,30,24)</li>
+          <li>(6,10,6,13)</li>
+          <li>(10,10,10,13)</li>
+          <li>(3,11,5,11)</li>
+          <li>(7,11,7,11)</li>
+          <li>(9,11,9,11)</li>
+          <li>(11,11,13,11)</li>
+          <li>(17,11,21,11)</li>
+          <li>(23,11,27,11)</li>
+          <li>(17,12,17,21)</li>
+          <li>(27,12,27,21)</li>
+          <li>(7,13,7,13)</li>
+          <li>(9,13,9,13)</li>
+          <li>(15,16,16,16)</li>
+          <li>(28,16,29,16)</li>
+          <li>(3,17,7,17)</li>
+          <li>(9,17,13,17)</li>
+          <li>(31,19,32,19)</li>
+          <li>(34,19,35,19)</li>
+          <li>(35,20,35,24)</li>
+          <li>(18,21,26,21)</li>
+          <li>(9,22,13,22)</li>
+          <li>(22,22,22,40)</li>
+          <li>(9,23,9,29)</li>
+          <li>(15,24,21,24)</li>
+          <li>(23,24,29,24)</li>
+          <li>(31,24,34,24)</li>
+          <li>(36,24,38,24)</li>
+          <li>(16,25,16,29)</li>
+          <li>(38,25,38,40)</li>
+          <li>(23,27,37,27)</li>
+          <li>(25,28,25,37)</li>
+          <li>(35,28,35,37)</li>
+          <li>(10,29,15,29)</li>
+          <li>(23,37,24,37)</li>
+          <li>(26,37,34,37)</li>
+          <li>(36,37,37,37)</li>
+          <li>(39,38,42,38)</li>
+          <li>(42,39,42,44)</li>
+          <li>(23,40,37,40)</li>
+          <li>(36,41,36,44)</li>
+          <li>(37,44,41,44)</li>
+        </rects>
+      </PowerConduit>
       <DMS_Turret_MK44_Navy>
         <position>(12, 0, 25)</position>
       </DMS_Turret_MK44_Navy>
       <DMSRC_LargeBroadcastAntenna>
         <position>(22, 0, 16)</position>
       </DMSRC_LargeBroadcastAntenna>
+      <DMSRC_PowerTransmitter>
+        <rects>
+          <li>(7,10,7,10)</li>
+          <li>(9,10,9,10)</li>
+          <li>(7,12,7,12)</li>
+          <li>(9,12,9,12)</li>
+        </rects>
+      </DMSRC_PowerTransmitter>
       <Barricade>
         <rects>
           <li>(13,2,15,2)</li>
           <li>(13,3,13,4)</li>
           <li>(15,3,15,4)</li>
           <li>(14,4,14,4)</li>
+          <li>(5,8,11,8)</li>
+          <li>(5,9,5,14)</li>
+          <li>(11,9,11,14)</li>
+          <li>(6,14,10,14)</li>
           <li>(11,24,14,24)</li>
           <li>(11,25,11,27)</li>
           <li>(14,25,14,27)</li>
@@ -223,37 +410,64 @@
         </rects>
         <stuff>Tungsteel</stuff>
       </Barricade>
-      <HiddenConduit>
+      <WallLamp>
         <rects>
-          <li>(5,8,30,8)</li>
-          <li>(5,9,5,14)</li>
-          <li>(11,9,11,14)</li>
-          <li>(14,9,14,24)</li>
-          <li>(30,9,30,27)</li>
-          <li>(6,14,10,14)</li>
-          <li>(12,14,13,14)</li>
-          <li>(15,24,29,24)</li>
-          <li>(25,25,25,37)</li>
-          <li>(26,27,29,27)</li>
-          <li>(31,27,35,27)</li>
-          <li>(35,28,35,37)</li>
-          <li>(26,37,34,37)</li>
+          <li>(8,8,8,8)</li>
+          <li>(27,26,27,26)</li>
+          <li>(33,26,33,26)</li>
         </rects>
-      </HiddenConduit>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(5,11,5,11)</li>
+          <li>(24,29,24,29)</li>
+          <li>(24,35,24,35)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(11,11,11,11)</li>
+          <li>(36,29,36,29)</li>
+          <li>(36,35,36,35)</li>
+        </rects>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(8,14,8,14)</li>
+          <li>(27,38,27,38)</li>
+          <li>(33,38,33,38)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+      </WallLamp>
       <DMS_Turret_Okhotnik>
         <rects>
           <li>(14,3,14,3)</li>
           <li>(39,41,39,41)</li>
         </rects>
       </DMS_Turret_Okhotnik>
+      <Turret_RocketswarmLauncher>
+        <position>(32, 0, 21)</position>
+      </Turret_RocketswarmLauncher>
+      <FirefoamPopper>
+        <position>(14, 0, 7)</position>
+      </FirefoamPopper>
+      <FloodLight>
+        <position>(31, 0, 7)</position>
+      </FloodLight>
       <Wall>
         <rects>
-          <li>(5,8,11,8)</li>
           <li>(24,8,30,8)</li>
-          <li>(5,9,5,14)</li>
-          <li>(11,9,11,14)</li>
+          <li>(6,9,10,9)</li>
           <li>(30,9,30,16)</li>
-          <li>(6,14,10,14)</li>
+          <li>(6,10,6,13)</li>
+          <li>(8,10,8,13)</li>
+          <li>(10,10,10,13)</li>
+          <li>(7,11,7,11)</li>
+          <li>(9,11,9,11)</li>
+          <li>(7,13,7,13)</li>
+          <li>(9,13,9,13)</li>
           <li>(17,18,17,21)</li>
           <li>(18,21,20,21)</li>
           <li>(25,27,35,27)</li>
@@ -283,13 +497,16 @@
           <li>(14,18,14,22)</li>
           <li>(27,18,27,21)</li>
           <li>(30,19,32,19)</li>
+          <li>(34,19,35,19)</li>
           <li>(30,20,30,24)</li>
+          <li>(35,20,35,24)</li>
           <li>(24,21,26,21)</li>
           <li>(9,22,13,22)</li>
           <li>(9,23,9,29)</li>
           <li>(16,24,22,24)</li>
           <li>(25,24,27,24)</li>
-          <li>(31,24,38,24)</li>
+          <li>(31,24,34,24)</li>
+          <li>(36,24,38,24)</li>
           <li>(16,25,16,29)</li>
           <li>(22,25,22,40)</li>
           <li>(38,25,38,38)</li>
@@ -312,16 +529,16 @@
           <li>(2,8,4,17)</li>
           <li>(12,8,20,12)</li>
           <li>(12,13,18,17)</li>
-          <li>(26,13,33,19)</li>
+          <li>(26,13,33,26)</li>
           <li>(5,15,11,17)</li>
           <li>(14,18,18,24)</li>
-          <li>(19,20,30,24)</li>
+          <li>(34,19,35,26)</li>
+          <li>(19,20,25,24)</li>
           <li>(9,22,13,29)</li>
-          <li>(31,24,38,26)</li>
+          <li>(36,24,38,44)</li>
           <li>(14,25,16,29)</li>
-          <li>(22,25,30,26)</li>
+          <li>(22,25,25,26)</li>
           <li>(22,27,24,40)</li>
-          <li>(36,27,38,44)</li>
           <li>(25,38,35,40)</li>
           <li>(39,38,42,44)</li>
         </rects>
@@ -343,13 +560,93 @@
   <DMSRC.RPrefabDef>
     <defName>DMSRC_BroadcastPoint_3</defName>
     <size>(45,45)</size>
+    <tags>
+      <li>BroadcastPoint</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <pos>(22,0,10)</pos>
+        <tags>
+          <li>Barracks9x9</li>
+        </tags>
+      </li>
+    </subPrefabs>
+    <roofRects>
+      <li>(17,5,27,15)</li>
+      <li>(16,29,20,33)</li>
+    </roofRects>
+    <clearRoofRects>
+      <li>(16,19,24,27)</li>
+    </clearRoofRects>
+    <clearRects>
+      <li>(14,2,35,8)</li>
+      <li>(14,9,30,23)</li>
+      <li>(8,18,13,25)</li>
+      <li>(31,18,33,23)</li>
+      <li>(14,24,28,31)</li>
+      <li>(12,26,13,37)</li>
+      <li>(14,32,24,37)</li>
+      <li>(25,35,28,41)</li>
+      <li>(22,38,24,41)</li>
+    </clearRects>
     <things>
+      <PowerConduit>
+        <rects>
+          <li>(14,2,35,2)</li>
+          <li>(14,3,14,18)</li>
+          <li>(35,3,35,8)</li>
+          <li>(17,5,27,5)</li>
+          <li>(17,6,17,15)</li>
+          <li>(27,6,27,15)</li>
+          <li>(28,8,34,8)</li>
+          <li>(30,9,30,18)</li>
+          <li>(18,15,26,15)</li>
+          <li>(19,16,19,18)</li>
+          <li>(25,16,25,28)</li>
+          <li>(8,18,13,18)</li>
+          <li>(15,18,18,18)</li>
+          <li>(20,18,24,18)</li>
+          <li>(28,18,29,18)</li>
+          <li>(31,18,33,18)</li>
+          <li>(8,19,8,25)</li>
+          <li>(15,19,15,28)</li>
+          <li>(28,19,28,31)</li>
+          <li>(33,19,33,23)</li>
+          <li>(29,23,32,23)</li>
+          <li>(9,25,14,25)</li>
+          <li>(12,26,12,37)</li>
+          <li>(16,28,24,28)</li>
+          <li>(16,29,20,29)</li>
+          <li>(16,30,16,33)</li>
+          <li>(18,30,18,33)</li>
+          <li>(20,30,20,33)</li>
+          <li>(17,31,17,31)</li>
+          <li>(19,31,19,31)</li>
+          <li>(24,31,27,31)</li>
+          <li>(24,32,24,37)</li>
+          <li>(17,33,17,33)</li>
+          <li>(19,33,19,33)</li>
+          <li>(25,35,28,35)</li>
+          <li>(28,36,28,41)</li>
+          <li>(13,37,23,37)</li>
+          <li>(22,38,22,41)</li>
+          <li>(23,41,27,41)</li>
+        </rects>
+      </PowerConduit>
       <DMS_Turret_MK44_Navy>
         <position>(11, 0, 21)</position>
       </DMS_Turret_MK44_Navy>
       <DMSRC_LargeBroadcastAntenna>
         <position>(20, 0, 23)</position>
       </DMSRC_LargeBroadcastAntenna>
+      <DMSRC_PowerTransmitter>
+        <rects>
+          <li>(17,30,17,30)</li>
+          <li>(19,30,19,30)</li>
+          <li>(17,32,17,32)</li>
+          <li>(19,32,19,32)</li>
+        </rects>
+      </DMSRC_PowerTransmitter>
       <Barricade>
         <rects>
           <li>(31,4,33,4)</li>
@@ -360,6 +657,10 @@
           <li>(10,21,10,23)</li>
           <li>(13,21,13,23)</li>
           <li>(11,23,12,23)</li>
+          <li>(15,28,21,28)</li>
+          <li>(15,29,15,34)</li>
+          <li>(21,29,21,34)</li>
+          <li>(16,34,20,34)</li>
           <li>(24,37,26,37)</li>
           <li>(24,38,24,39)</li>
           <li>(26,38,26,39)</li>
@@ -367,27 +668,49 @@
         </rects>
         <stuff>Tungsteel</stuff>
       </Barricade>
-      <HiddenConduit>
+      <WallLamp>
         <rects>
-          <li>(17,5,27,5)</li>
-          <li>(17,6,17,28)</li>
-          <li>(27,6,27,15)</li>
-          <li>(18,15,26,15)</li>
-          <li>(25,16,25,28)</li>
-          <li>(18,18,24,18)</li>
-          <li>(15,28,16,28)</li>
-          <li>(18,28,24,28)</li>
-          <li>(15,29,15,34)</li>
-          <li>(21,29,21,34)</li>
-          <li>(16,34,20,34)</li>
+          <li>(19,4,19,4)</li>
+          <li>(25,4,25,4)</li>
+          <li>(18,28,18,28)</li>
         </rects>
-      </HiddenConduit>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(16,7,16,7)</li>
+          <li>(16,13,16,13)</li>
+          <li>(15,31,15,31)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(28,7,28,7)</li>
+          <li>(28,13,28,13)</li>
+          <li>(21,31,21,31)</li>
+        </rects>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(19,16,19,16)</li>
+          <li>(25,16,25,16)</li>
+          <li>(18,34,18,34)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+      </WallLamp>
       <DMS_Turret_Okhotnik>
         <rects>
           <li>(32,5,32,5)</li>
           <li>(25,38,25,38)</li>
         </rects>
       </DMS_Turret_Okhotnik>
+      <Turret_RocketswarmLauncher>
+        <position>(30, 0, 20)</position>
+      </Turret_RocketswarmLauncher>
+      <FloodLight>
+        <position>(26, 0, 29)</position>
+      </FloodLight>
       <Wall>
         <rects>
           <li>(17,5,27,5)</li>
@@ -395,11 +718,15 @@
           <li>(27,6,27,15)</li>
           <li>(18,15,26,15)</li>
           <li>(25,18,25,28)</li>
-          <li>(15,28,21,28)</li>
           <li>(24,28,24,28)</li>
-          <li>(15,29,15,34)</li>
-          <li>(21,29,21,34)</li>
-          <li>(16,34,20,34)</li>
+          <li>(16,29,20,29)</li>
+          <li>(16,30,16,33)</li>
+          <li>(18,30,18,33)</li>
+          <li>(20,30,20,33)</li>
+          <li>(17,31,17,31)</li>
+          <li>(19,31,19,31)</li>
+          <li>(17,33,17,33)</li>
+          <li>(19,33,19,33)</li>
         </rects>
         <stuff>Tungsteel</stuff>
       </Wall>
@@ -414,8 +741,11 @@
           <li>(15,18,15,25)</li>
           <li>(18,18,22,18)</li>
           <li>(28,18,29,18)</li>
+          <li>(31,18,33,18)</li>
           <li>(8,19,8,25)</li>
           <li>(28,19,28,31)</li>
+          <li>(33,19,33,23)</li>
+          <li>(29,23,32,23)</li>
           <li>(9,25,14,25)</li>
           <li>(12,26,12,37)</li>
           <li>(24,31,27,31)</li>
@@ -435,11 +765,12 @@
           <li>(14,2,35,4)</li>
           <li>(14,5,16,27)</li>
           <li>(28,5,35,8)</li>
-          <li>(28,9,30,18)</li>
+          <li>(28,9,30,23)</li>
           <li>(17,16,27,19)</li>
           <li>(8,18,13,25)</li>
-          <li>(28,19,28,31)</li>
+          <li>(31,18,33,23)</li>
           <li>(24,20,27,31)</li>
+          <li>(28,24,28,31)</li>
           <li>(12,26,13,37)</li>
           <li>(17,27,23,27)</li>
           <li>(14,28,14,37)</li>
@@ -464,10 +795,10 @@
   </DMSRC.RPrefabDef>
 
   <DMSRC.RPrefabDef>
-    <defName>DMSRC_EnergyRoom5x5_1</defName>
-    <size>(5,5)</size>
+    <defName>DMSRC_Barracks9x9_1</defName>
+    <size>(9,9)</size>
     <tags>
-      <li>EnergyRoom5x5</li>
+      <li>Barracks9x9</li>
     </tags>
     <clearRects>
       <li>(0,0,4,4)</li>
@@ -475,9 +806,9 @@
     </clearRects>
     <things>
       <Door>
-        <rects>
-          <li>(2,5,2,5)</li>
-        </rects>
+        <positions>
+          <li>(4, 0, 9)</li>
+        </positions>
         <stuff>Tungsteel</stuff>
       </Door>
       <Battery>

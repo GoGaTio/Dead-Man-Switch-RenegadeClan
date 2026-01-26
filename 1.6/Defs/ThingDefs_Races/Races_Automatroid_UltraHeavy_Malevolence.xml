@@ -165,7 +165,7 @@
           <li>H_Gatling20mm</li>
           <li>V_Gatling556mm</li>
           <li>DMS_Gun_Recoilless</li>
-<li MayRequire="vanillaexpanded.vwehw">HeavyGun</li>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -213,7 +213,7 @@
     <controlGroupPortraitZoom>0.6</controlGroupPortraitZoom>
     <weaponMoney>9999~9999</weaponMoney>
     <abilities>
-   <li>DMSRC_MalevolenceCommand</li>
+      <li>DMSRC_MalevolenceCommand</li>
       <li>DMSRC_EmergencyBattery</li>
     </abilities>
   </PawnKindDef>

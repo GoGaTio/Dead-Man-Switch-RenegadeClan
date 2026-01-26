@@ -42,7 +42,7 @@
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>Neurocomputer</thingDef>
-        <countRange>0~2</countRange>
+        <countRange>0~3</countRange>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>ComponentControlChip</thingDef>
@@ -124,12 +124,12 @@
       <li Class="StockGenerator_Tag">
         <tradeTag>HiTechArmor</tradeTag>
         <thingDefCountRange>2~4</thingDefCountRange>
-        <countRange>2~4</countRange>
+        <countRange>2~3</countRange>
       </li>
 <li Class="StockGenerator_Tag">
         <tradeTag>DMSRC_AssaultEquipment</tradeTag>
         <thingDefCountRange>2~4</thingDefCountRange>
-        <countRange>2~5</countRange>
+        <countRange>2~4</countRange>
       </li>
 
       <!-- Implants -->

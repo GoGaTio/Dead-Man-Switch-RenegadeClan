@@ -116,6 +116,12 @@ namespace DMSRC
 			Scribe_Values.Look(ref inSignalSuccess, "inSignalSuccess");
 		}
 
+		protected override void Enable(SignalArgs receivedArgs)
+		{
+			base.Enable(receivedArgs);
+
+		}
+
 		public virtual void Fail()
 		{
 			if (!inSignalFail.NullOrEmpty())
@@ -133,13 +139,22 @@ namespace DMSRC
 
 	public class QuestPart_MissionWithWaves : QuestPart_Mission
 	{
+		public override AlertReport AlertReport => new AlertReport() { active = wavesActive && wavesSent == wavesDefeated };
+
+		public override bool AlertCritical => ticksTillNextWave < Mathf.Max(2500f, mission.wavesCooldown.min / 2f);
+
+		public override string AlertExplanation => "DMSRC_Mission_WaveDesc".Translate();
+
+		public override string AlertLabel => "DMSRC_Mission_WaveLabel".Translate(ticksTillNextWave.ToStringTicksToPeriod());
+
 		public bool wavesActive = true;
 
 		public int ticksTillNextWave = -1;
 
-		public int wavesSent = 0;
+		public int wavesSent;
 
-		public int wavesDefeated = 0;
+		public int wavesDefeated;
+
 		public virtual bool CanSendWave
 		{
 			get
@@ -156,6 +171,17 @@ namespace DMSRC
 		{
 			ticksTillNextWave = (mission.initialWavesCooldown ?? mission.wavesCooldown).RandomInRange;
 			base.Enable(receivedArgs);
+			GameComponent_Renegades comp = GameComponent_Renegades.Find;
+			if (WavesFaction.def == RCDefOf.DMSRC_RenegadeClan)
+			{
+				comp.PlayerRelation = FactionRelationKind.Hostile;
+				comp.playerOpinion = -1;
+			}
+			else if(!WavesFaction.HostileTo(Faction.OfPlayerSilentFail))
+			{
+				WavesFaction.SetRelation(new FactionRelation(Faction.OfPlayerSilentFail, FactionRelationKind.Hostile));
+				comp.enemyWithFleet = true;
+			}
 		}
 
 		public virtual Faction WavesFaction
@@ -188,9 +214,12 @@ namespace DMSRC
 			}
 		}
 
+		protected string WaveTag => "Quest" + this.quest.id + ".WaveNo" + wavesSent + "Sent";
+
 		public virtual void SendWave(List<Thing> attackTargets = null)
 		{
 			wavesSent++;
+			Log.Message(wavesSent);
 			Map map = site.Map;
 			List<Pawn> list = new List<Pawn>();
 			IncidentParms incidentParms = new IncidentParms();
@@ -200,31 +229,33 @@ namespace DMSRC
 			incidentParms.attackTargets = attackTargets;
 			incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
 			incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeDrop;
-			incidentParms.questTag = this.quest.id + "_WaveNo" + wavesSent + "Sent";
-			Log.Message(incidentParms.questTag);
+			incidentParms.questTag = WaveTag;
+			//Log.Message(incidentParms.questTag);
 			if (!IncidentDefOf.RaidEnemy.Worker.TryExecute(incidentParms))
 			{
 				Log.Error("BRUH");
+			}
+			foreach(Lord l in map.lordManager.lords)
+			{
+				Log.Message(l.questTags.First());
 			}
 		}
 
 		public override void Notify_QuestSignalReceived(Signal signal)
 		{
-			Log.Message("Notify_QuestSignalReceived: " + signal.tag);
-			if (signal.tag == this.quest.id + "_WaveNo" + wavesSent + "Sent" + ".Fleeing" || signal.tag == this.quest.id + "_WaveNo" + wavesSent + "Sent" + ".AllEnemiesDefeated")
+			Log.Message("Notify_QuestSignalReceived: " + signal.tag + "/" + WaveTag);
+			if (wavesDefeated < wavesSent && (signal.tag == WaveTag + ".Fleeing" || signal.tag == WaveTag + ".AllEnemiesDefeated"))
 			{
-				if(wavesDefeated < wavesSent)
-				{
-					wavesDefeated = wavesSent;
-				}
+				WaveDefeated();
+				Log.Message("TRUE");
 			}
 			base.Notify_QuestSignalReceived(signal);
 		}
 
-		protected override void ProcessQuestSignal(Signal signal)
+		public virtual void WaveDefeated()
 		{
-			Log.Message("ProcessQuestSignal: " + signal.tag);
-			base.ProcessQuestSignal(signal);
+			wavesDefeated++;
+			Log.Message(wavesDefeated + "/" + wavesSent);
 		}
 
 		public override void ExposeData()
@@ -237,83 +268,32 @@ namespace DMSRC
 		}
 	}
 
-	public class QuestPart_Mission_Destroy : QuestPart_Mission
-	{
-		public List<Thing> targets;
-
-		protected override void Enable(SignalArgs receivedArgs)
-		{
-			base.Enable(receivedArgs);
-			targets = site.Map.listerThings.ThingsOfDef(mission.targetDef);
-		}
-		public override IEnumerable<GlobalTargetInfo> QuestLookTargets
-		{
-			get
-			{
-				foreach (GlobalTargetInfo questLookTarget in base.QuestLookTargets)
-				{
-					yield return questLookTarget;
-				}
-				if (targets.NullOrEmpty())
-				{
-					yield break;
-				}
-				for (int i = 0; i < targets.Count; i++)
-				{
-					yield return targets[i];
-				}
-			}
-		}
-
-		public override void QuestPartTick()
-		{
-			base.QuestPartTick();
-			if (Find.TickManager.TicksGame % 60 != 0 || targets == null)
-			{
-				return;
-			}
-			foreach (Thing thing in targets.ToList())
-			{
-				if (thing == null || thing.Destroyed || thing.MapHeld != site.Map)
-				{
-					targets.Remove(thing);
-					if (thing != null && targets.Count > 0)
-					{
-						Messages.Message("DMSRC_Mission_Destroyed".Translate(mission.targetDef.LabelCap, targets.Count), MessageTypeDefOf.TaskCompletion);
-					}
-				}
-			}
-			if (targets.Count <= 0)
-			{
-				Complete();
-			}
-		}
-
-		public override void ExposeData()
-		{
-			base.ExposeData();
-			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
-		}
-	}
-
 	public class QuestPart_Mission_Defend : QuestPart_MissionWithWaves
 	{
 		public List<Thing> targets;
 
 		public int wavesLeft;
 
-		public override AlertReport AlertReport => new AlertReport() { active = true, culpritsThings = targets };
+		public override AlertReport AlertReport => new AlertReport() { active = wavesLeft > 0, culpritsThings = targets };
 
-		public override bool AlertCritical => ticksTillNextWave < Mathf.Max(2500f, mission.wavesCooldown.min / 2f);
+		public override string AlertExplanation => "DMSRC_Mission_DefendDesc".Translate(mission.targetDef.label);
 
-		public override string AlertExplanation => "DMSRC_Mission_DefendDesc".Translate(ticksTillNextWave.ToStringTicksToPeriod(), mission.targetDef.label);
+		public override string AlertLabel => wavesSent == wavesDefeated ? "DMSRC_Mission_DefendWaveLabel".Translate(ticksTillNextWave.ToStringTicksToPeriod()).Resolve() : "DMSRC_Mission_DefendLabel".Translate(mission.targetDef.label).Resolve();
 
-		public override string AlertLabel => "DMSRC_Mission_DefendLabel".Translate(ticksTillNextWave.ToStringTicksToPeriod(), mission.targetDef.label);
+		private string Tag => "Quest" + quest.id + ".DMSRCMission." + mission.targetDef.defName;
 
 		protected override void Enable(SignalArgs receivedArgs)
 		{
 			base.Enable(receivedArgs);
 			targets = site.Map.listerThings.ThingsOfDef(mission.targetDef);
+			foreach (Thing thing in targets.ToList())
+			{
+				if(thing.questTags == null)
+				{
+					thing.questTags = new List<string>();
+				}
+				thing.questTags.Add(Tag);
+			}
 			wavesLeft = 3;
 		}
 
@@ -336,40 +316,40 @@ namespace DMSRC
 			}
 		}
 
-		public override void QuestPartTick()
+		public override void SendWave(List<Thing> attackTargets = null)
 		{
-			base.QuestPartTick();
-			if (Find.TickManager.TicksGame % 60 != 0 || targets == null)
-			{
-				return;
-			}
-			foreach (Thing thing in targets.ToList())
-			{
-				if (thing == null || thing.Destroyed || thing.MapHeld != site.Map)
-				{
-					targets.Remove(thing);
-					if (thing != null)
-					{
-						if(targets.Count > 0)
-						{
-							Messages.Message("DMSRC_Mission_Destroyed".Translate(mission.targetDef.LabelCap, targets.Count), MessageTypeDefOf.ThreatBig);
-						}
-						else
-						{
-							Fail();
-						}
-					}
-				}
-			}
-			if (wavesDefeated >= wavesLeft)
+			base.SendWave(targets);
+		}
+
+		public override void WaveDefeated()
+		{
+			base.WaveDefeated();
+			wavesLeft--;
+			if(wavesLeft <= 0)
 			{
 				Complete();
 			}
 		}
 
-		public override void SendWave(List<Thing> attackTargets = null)
+		public override void Notify_QuestSignalReceived(Signal signal)
 		{
-			base.SendWave(targets);
+			base.Notify_QuestSignalReceived(signal);
+			if(signal.tag == Tag + ".Destroyed")
+			{
+				Thing t = signal.args.GetArg("SUBJECT").arg as Thing;
+				if(t != null)
+				{
+					targets.Remove(t);
+				}
+				if (targets.NullOrEmpty())
+				{
+					Fail();
+				}
+				else
+				{
+					Messages.Message("DMSRC_Mission_Destroyed".Translate(mission.targetDef.LabelCap, targets.Count), MessageTypeDefOf.ThreatBig);
+				}
+			}
 		}
 
 		public override void ExposeData()
@@ -380,15 +360,26 @@ namespace DMSRC
 		}
 	}
 
-	public class QuestPart_Mission_Kill : QuestPart_Mission
+	public class QuestPart_Mission_Kill : QuestPart_MissionWithWaves
 	{
-		public List<Pawn> targets;
+		public List<Pawn> targets = new List<Pawn>();
+
+		public override AlertReport AlertReport
+		{
+			get
+			{
+				AlertReport report = base.AlertReport;
+				report.culpritsPawns = targets;
+				return report;
+			}
+		}
 
 		protected override void Enable(SignalArgs receivedArgs)
 		{
 			base.Enable(receivedArgs);
 			targets = site.Map.mapPawns.PawnsInFaction(site.Faction);
 		}
+
 		public override IEnumerable<GlobalTargetInfo> QuestLookTargets
 		{
 			get
@@ -442,6 +433,83 @@ namespace DMSRC
 				if(targets.Count <= 0)
 				{
 					Complete();
+				}
+			}
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
+		}
+	}
+
+	public class QuestPart_Mission_Destroy : QuestPart_MissionWithWaves
+	{
+		public List<Thing> targets;
+
+		private string Tag => "Quest" + quest.id + ".DMSRCMission." + mission.targetDef.defName;
+
+		public override AlertReport AlertReport
+		{
+			get
+			{
+				AlertReport report = base.AlertReport;
+				report.culpritsThings = targets;
+				return report;
+			}
+		}
+
+		protected override void Enable(SignalArgs receivedArgs)
+		{
+			base.Enable(receivedArgs);
+			targets = site.Map.listerThings.ThingsOfDef(mission.targetDef);
+			foreach (Thing thing in targets.ToList())
+			{
+				if (thing.questTags == null)
+				{
+					thing.questTags = new List<string>();
+				}
+				thing.questTags.Add(Tag);
+			}
+		}
+
+		public override IEnumerable<GlobalTargetInfo> QuestLookTargets
+		{
+			get
+			{
+				foreach (GlobalTargetInfo questLookTarget in base.QuestLookTargets)
+				{
+					yield return questLookTarget;
+				}
+				if (targets.NullOrEmpty())
+				{
+					yield break;
+				}
+				for (int i = 0; i < targets.Count; i++)
+				{
+					yield return targets[i];
+				}
+			}
+		}
+
+		public override void Notify_QuestSignalReceived(Signal signal)
+		{
+			base.Notify_QuestSignalReceived(signal);
+			if (signal.tag == Tag + ".Destroyed")
+			{
+				Thing t = signal.args.GetArg("SUBJECT").arg as Thing;
+				if (t != null)
+				{
+					targets.Remove(t);
+				}
+				if (targets.NullOrEmpty())
+				{
+					Complete();
+				}
+				else
+				{
+					Messages.Message("DMSRC_Mission_Destroyed".Translate(mission.targetDef.LabelCap, targets.Count), MessageTypeDefOf.ThreatBig);
 				}
 			}
 		}

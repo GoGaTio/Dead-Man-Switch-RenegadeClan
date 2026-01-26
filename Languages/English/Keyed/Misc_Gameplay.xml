@@ -6,9 +6,12 @@
   <DMSRC_Controlled>{0}/{1}</DMSRC_Controlled>
 
   <DMSRC_Mission_Destroyed>{0} destroyed, {1} left.</DMSRC_Mission_Destroyed>
-  
-  <DMSRC_Mission_DefendLabel>Next raid in {0}</DMSRC_Mission_DefendLabel>
-  <DMSRC_Mission_DefendDesc>Defend {1} from arriving raiders.</DMSRC_Mission_DefendDesc>
+
+  <DMSRC_Mission_WaveLabel>Reinforcements arrive in {0}</DMSRC_Mission_WaveLabel>
+  <DMSRC_Mission_WaveDesc>Reinforcements will arrive in {0}. Be ready.</DMSRC_Mission_WaveDesc>
+  <DMSRC_Mission_DefendWaveLabel>Next raid in {0}</DMSRC_Mission_DefendWaveLabel>
+  <DMSRC_Mission_DefendLabel>Defend {0}</DMSRC_Mission_DefendLabel>
+  <DMSRC_Mission_DefendDesc>Defend {0} from arriving raiders.</DMSRC_Mission_DefendDesc>
   <DMSRC_Mission_DefendRaidLabel>Raid: {0}</DMSRC_Mission_DefendRaidLabel>
   <DMSRC_Mission_DefendRaidDesc>Raiders from {0} are arriving from all directions. Defend {1}.</DMSRC_Mission_DefendRaidDesc>
 

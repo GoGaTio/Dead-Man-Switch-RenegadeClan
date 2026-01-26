@@ -35,91 +35,91 @@
     </comps>
   </AbilityDef>
 
-<AbilityDef ParentName="DMS_AddHediffSelfBase">
-		<defName>DMSRC_MalevolenceCommand</defName>
-		<label>Tactical calibration</label>
-		<description>Share fire control data with friendly forces within range to improve squad accuracy for short period.</description>
-		<iconPath>UI/Ability/RangeFinder</iconPath>
-<cooldownTicksRange>120000</cooldownTicksRange>
-<groupDef IsNull="True"/>
-		<comps>
-			<li Class="CompProperties_AbilityGiveHediff">
-				<compClass>CompAbilityEffect_GiveHediff</compClass>
-				<hediffDef>DMSRC_MalevolenceCommand</hediffDef>
-				<onlyBrain>true</onlyBrain>
-				<onlyApplyToSelf>true</onlyApplyToSelf>
-				<replaceExisting>true</replaceExisting>
-			</li>
-		</comps>
-		<statBases>
-			<Ability_EffectRadius>14.9</Ability_EffectRadius>
-			<Ability_Duration>100</Ability_Duration>
-		</statBases>
-		<verbProperties>
-			<range>14.9</range>
-<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
- <warmupTime>0</warmupTime>
-		</verbProperties>
-	</AbilityDef>
+  <AbilityDef ParentName="DMS_AddHediffSelfBase">
+    <defName>DMSRC_MalevolenceCommand</defName>
+    <label>Tactical calibration</label>
+    <description>Share fire control data with friendly forces within range to improve squad accuracy for short period.</description>
+    <iconPath>UI/Ability/RangeFinder</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <groupDef IsNull="True"/>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>DMSRC_MalevolenceCommand</hediffDef>
+        <onlyBrain>true</onlyBrain>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+    <statBases>
+      <Ability_EffectRadius>14.9</Ability_EffectRadius>
+      <Ability_Duration>100</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <range>14.9</range>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <warmupTime>0</warmupTime>
+    </verbProperties>
+  </AbilityDef>
 
-	<HediffDef>
-		<defName>DMSRC_MalevolenceCommand</defName>
-		<label>Tactical calibration</label>
-		<description>A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands.</description>
-		<hediffClass>HediffWithComps</hediffClass>
-		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-		<comps>
-			<li Class="HediffCompProperties_Disappears">
-				<showRemainingTime>true</showRemainingTime>
-			</li>
-			<li Class="HediffCompProperties_DisappearsOnDeath" />
-			<li Class="HediffCompProperties_GiveHediffsInRange">
-				<compClass>Fortified.HediffComp_GiveHediffsInRangeMech</compClass>
-				<range>14.9</range>
-				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-				<onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
-				<targetingParameters>
-					<canTargetSelf>false</canTargetSelf>
-					<canTargetPawns>true</canTargetPawns>
-					<canTargetAnimals>false</canTargetAnimals>
-					<canTargetHumans>true</canTargetHumans>
-					<canTargetMechs>true</canTargetMechs>
-				</targetingParameters>
-				<hediff>DMSRC_MalevolenceCommandReceived</hediff>
-			</li>
-		</comps>
-		<isBad>false</isBad>
-	</HediffDef>
+  <HediffDef>
+    <defName>DMSRC_MalevolenceCommand</defName>
+    <label>Tactical calibration</label>
+    <description>A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <compClass>Fortified.HediffComp_GiveHediffsInRangeMech</compClass>
+        <range>14.9</range>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
+        <targetingParameters>
+          <canTargetSelf>false</canTargetSelf>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetHumans>true</canTargetHumans>
+          <canTargetMechs>true</canTargetMechs>
+        </targetingParameters>
+        <hediff>DMSRC_MalevolenceCommandReceived</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
 
-	<HediffDef>
-		<defName>DMSRC_MalevolenceCommandReceived</defName>
-		<label>Received tactical data</label>
-		<description>.</description>
-		<hediffClass>HediffWithComps</hediffClass>
-		<defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
-		<comps>
-			<li Class="HediffCompProperties_Disappears">
-				<showRemainingTime>false</showRemainingTime>
-			</li>
-			<li Class="HediffCompProperties_DisappearsOnDeath" />
-<li Class="HediffCompProperties_Link">
+  <HediffDef>
+    <defName>DMSRC_MalevolenceCommandReceived</defName>
+    <label>Received tactical data</label>
+    <description>.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="HediffCompProperties_Link">
         <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
         <maxDistance>15</maxDistance>
         <customMote>DMSRC_Mote_MalevolenceCommandLine</customMote>
       </li>
-		</comps>
-		<isBad>false</isBad>
-		<stages>
-			<li>
-				<statOffsets>
-					<ShootingAccuracyPawn>3</ShootingAccuracyPawn>
-					<RangedCooldownFactor>-0.25</RangedCooldownFactor>
-				</statOffsets>
-			</li>
-		</stages>
-	</HediffDef>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+          <RangedCooldownFactor>-0.25</RangedCooldownFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
 
-<AbilityDef>
+  <AbilityDef>
     <defName>DMSRC_ResurrectMech</defName>
     <label>resurrect automatroid</label>
     <description>Resurrect a recently-killed mechanoid by externally supercharging its self-repair processes. The mechanoid will come back with some but not all of its wounds healed.</description>
@@ -146,7 +146,8 @@
     </verbProperties>
     <comps>
       <li Class="CompProperties_ResurrectMech">
-        <maxCorpseAgeTicks>3600</maxCorpseAgeTicks><!-- 60 seconds -->
+        <maxCorpseAgeTicks>3600</maxCorpseAgeTicks>
+        <!-- 60 seconds -->
         <costs>
           <li>
             <weightClass>Light</weightClass>

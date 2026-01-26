@@ -121,10 +121,11 @@ namespace DMSRC
 			Map map = Find.Maps.Where((Map m) => m.IsPlayerHome).RandomElement();
 			slate.Set("map", map);
 			Faction faction = fromRenegades ? comp.RenegadesFaction : comp.DMSFaction;
-			slate.Set("faction", faction); slate.Set("askerIsNull", true);
+			slate.Set("faction", faction);
+			slate.Set("askerIsNull", true);
 			slate.Set<Pawn>("asker", null);
 			Site site = null;
-			if (TileFinder.TryFindNewSiteTile(out var tile, 0, validator: (x) => x.Tile.hilliness == Hilliness.Flat))
+			if (TileFinder.TryFindNewSiteTile(out var tile, 0, validator: (x) => x.Tile.hilliness == Hilliness.Flat && x.Tile.Landmark == null, allowedLandmarks: new List<LandmarkDef>(), canBeSpace: false))
 			{
 				site = SiteMaker.MakeSite(sitePart, tile, faction, false);
 				site.SetFaction(SiteFaction(faction));
@@ -188,6 +189,7 @@ namespace DMSRC
 			Log.Message("5");
 			questPart_Mission.signalListenMode = QuestPart.SignalListenMode.OngoingOnly;
 			quest.AddPart(questPart_Mission);
+			quest.End(QuestEndOutcome.Fail, sendStandardLetter: true, inSignal: inSignalFail);
 			quest.End(QuestEndOutcome.Fail, sendStandardLetter: true, inSignal: inSignalRemoved);
 			Log.Message("6");
 			QuestGen.AddQuestDescriptionRules(new List<Rule>

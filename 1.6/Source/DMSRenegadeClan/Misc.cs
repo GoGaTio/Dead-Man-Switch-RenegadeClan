@@ -147,7 +147,7 @@ namespace DMSRC
 		public override void ExposeData()
 		{
 			base.ExposeData();
-			Scribe_Collections.Look(ref prefabOptions, "prefabOptions", LookMode.Deep);
+			Scribe_Collections.Look(ref prefabOptions, "prefabOptions", LookMode.Def);
 		}
 
 		public override void GenerateIntoMap(Map map)
@@ -179,6 +179,7 @@ namespace DMSRC
 					if (p.RaceProps.IsMechanoid)
 					{
 						mechs.Add(p);
+						p.equipment.DestroyAllEquipment();
 					}
 					else
 					{
@@ -239,7 +240,7 @@ namespace DMSRC
 						m.Destroy();
 					}
 				}
-				else if(t.def.building.maxItemsInCell > 1)
+				else if(t.def.building.maxItemsInCell > 1 && !t.def.preventDroppingThingsOn)
 				{
 					itemCells.AddRange(t.OccupiedRect().Cells);
 				}
@@ -257,7 +258,6 @@ namespace DMSRC
 				IntVec3 c = spawnCells.RandomElement();
 				GenSpawn.Spawn(p, c, map);
 				spawnCells.Remove(c);
-				map.terrainGrid.SetTerrain(c, TerrainDefOf.Ice);
 			}
 			map.powerNetManager.UpdatePowerNetsAndConnections_First();
 		}
@@ -436,6 +436,11 @@ namespace DMSRC
 					}
 				}
 			}
+		}
+
+		public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
+		{
+			return base.SpecialDisplayStats(req);
 		}
 	}
 

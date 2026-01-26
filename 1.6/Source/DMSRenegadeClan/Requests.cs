@@ -28,6 +28,7 @@ using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -58,7 +59,7 @@ namespace DMSRC
 	{
 		public Type requestClass = typeof(RenegadesRequest);
 
-		public SitePartDef sitePartDef;
+		public IntRange hoursBeforeArrival = new IntRange(15, 30);
 	}
 
 	public class RenegadesRequest : IExposable, ILoadReferenceable
@@ -75,6 +76,34 @@ namespace DMSRC
 
 		public bool arrived = false;
 
+		protected List<Map> mapsTmp = new List<Map>();
+
+		public List<Map> Maps
+		{
+			get
+			{
+				if (mapsTmp.NullOrEmpty())
+				{
+					mapsTmp = Find.Maps;
+					mapsTmp.RemoveWhere((m) => m.IsPocketMap || m.generatorDef.isUnderground);
+				}
+				return mapsTmp;
+			}
+			set
+			{
+				mapsTmp = value;
+			}
+		}
+
+		public Map Map
+		{
+			get
+			{
+				var maps = Maps;
+				return Maps.First((m)=>m.Tile == tile);
+			}
+		}
+
 		public RenegadesRequest()
 		{
 
@@ -87,23 +116,6 @@ namespace DMSRC
 			Scribe_Values.Look(ref ticksRequested, "ticksRequested", -1);
 			Scribe_Values.Look(ref ticksBeforeArrival, "ticksBeforeArrival", -1);
 			Scribe_Values.Look(ref tile, "tile");
-		}
-
-		public float ChanceToFire
-		{
-			get
-			{
-				int ticks = Find.TickManager.TicksGame - ticksRequested;
-				if (ticks < 30000)
-				{
-					return 0f;
-				}
-				if (ticks > 120000)
-				{
-					return 1f;
-				}
-				return Mathf.Lerp(0f, 1f, ticks / 180000f);
-			}
 		}
 
 		public virtual void Saved()
@@ -146,8 +158,10 @@ namespace DMSRC
 
 		}
 
-		public virtual AcceptanceReport TrySave(GameComponent_Renegades renegades, Map map)
+		public virtual AcceptanceReport TrySave(GameComponent_Renegades renegades)
 		{
+			ticksBeforeArrival = def.hoursBeforeArrival.RandomInRange;
+			ticksRequested = Find.TickManager.TicksGame;
 			return true;
 		}
 
@@ -161,7 +175,6 @@ namespace DMSRC
 			Widgets.BeginGroup(rect);
 			Rect rect1 = new Rect(0, 0, width - 25f, 25f);
 			Widgets.Label(rect1, GenDate.DateFullStringAt(ticksRequested, Find.WorldGrid.LongLatOf(tile)));
-			Text.Anchor = TextAnchor.MiddleLeft;
 			Widgets.InfoCardButton(new Rect(width - 25f, 0, 25f, 25f), def);
 			f = 25f;
 			if (!arrived && CanArrive())
@@ -170,12 +183,16 @@ namespace DMSRC
 				f += 25f;
 			}
 			Widgets.EndGroup();
+			Text.Anchor = TextAnchor.MiddleLeft;
 			return rect;
 		}
 	}
 
-	public class AllyRequest : RenegadesRequest
+	public class AidRequest : RenegadesRequest
 	{
+		public int points = 1000;
+
+		public string editBuffer;
 
 		public override void Arrive()
 		{
@@ -187,93 +204,57 @@ namespace DMSRC
 			incidentParms.pawnGroupKind = RCDefOf.DMSRC_MilitaryAid;
 			incidentParms.podOpenDelay = 10;
 			incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeDrop;
-			incidentParms.points = 1000f;
+			incidentParms.points = points;
 			if (!IncidentDefOf.RaidFriendly.Worker.TryExecute(incidentParms))
 			{
 				Log.Error("Failed to request military aid");
 			}
+			Complete();
 		}
 
-		public override AcceptanceReport TrySave(GameComponent_Renegades renegades, Map map)
+		public override void DrawTab(Rect rect, ref Vector2 scrollPosition, float viewHeight, GameComponent_Renegades renegades)
 		{
-			float num = 0f;
-			ticksRequested = Find.TickManager.TicksGame;
-			tile = map.Tile;
-			return base.TrySave(renegades, map);
+			Widgets.BeginGroup(rect);
+			Rect first = new Rect(5f, 0, rect.width, 60f);
+			Widgets.DrawLightHighlight(first);
+			float width = rect.width;
+			Text.Anchor = TextAnchor.MiddleLeft;
+			Text.Font = GameFont.Small;
+			Rect rectBP = new Rect(first.width - 60, 0, 60, 60);
+			Rect rectNum = new Rect(rectBP.x - 120, 0, 120, 60);
+			Rect rectBM = new Rect(rectNum.x - 60, 0, 60, 60);
+			Rect rectLabel = new Rect(120, 0, rectBM.x - 120, 60);
+			Widgets.TextFieldNumeric(rectNum, ref points, ref editBuffer, 1000, 10000);
+			Text.Anchor = TextAnchor.MiddleCenter;
+			int num = GenUI.CurrentAdjustmentMultiplier();
+			if (Widgets.ButtonText(rectBM, "-") && points > 100)
+			{
+				points = Mathf.Max(points - num, 100);
+				SoundDefOf.Tick_High.PlayOneShotOnCamera();
+				editBuffer = points.ToStringCached();
+			}
+			if (Widgets.ButtonText(rectBP, "+") && points < 10000)
+			{
+				points = Mathf.Min(points + num, 10000);
+				SoundDefOf.Tick_High.PlayOneShotOnCamera();
+				editBuffer = points.ToStringCached();
+			}
+			Widgets.EndGroup();
 		}
-	}
 
-	public class RenegadesRequestWithSite : RenegadesRequest
-	{
-		public bool paySiteCreated = false;
-
-		public bool payedWithRep = false;
-
-		public int ticksPayed = -1;
-
-		public int silver = -1;
+		public override AcceptanceReport TrySave(GameComponent_Renegades renegades)
+		{
+			return base.TrySave(renegades);
+		}
 
 		public override void ExposeData()
 		{
-			Scribe_Values.Look(ref silver, "silver", -1);
-			Scribe_Values.Look(ref ticksPayed, "ticksPayed", -1);
-			Scribe_Values.Look(ref paySiteCreated, "paySiteCreated", defaultValue: false);
-			Scribe_Values.Look(ref payedWithRep, "payedWithRep", defaultValue: false);
+			base.ExposeData();
+			Scribe_Values.Look(ref points, "points");
 		}
-
-		public override void Arrive()
-		{
-			base.Arrive();
-			SitePartDefWithParams parms = new SitePartDefWithParams(def.sitePartDef, new ContainerSitePartParams
-			{
-				request = this
-			});
-			TileFinder.TryFindNewSiteTile(out var tile, Find.RandomSurfacePlayerHomeMap.Tile, 2, 7, false, null, 0f, false, TileFinderMode.Random, exitOnFirstTileFound: false, false);
-			Site site = SiteMaker.MakeSite(Gen.YieldSingle(parms), tile, GameComponent_Renegades.Find.RenegadesFaction);
-			Find.WorldObjects.Add(site);
-		}
-
-		public virtual void FillSite(IntVec3 loc, Map map, GenStepParams parms)
-		{
-
-		}
-
-		public override Rect DoInterface(float x, float y, float width, ref float f)
-		{
-			Rect rect = base.DoInterface(x, y, width, ref f);
-			int ticks = Find.TickManager.TicksGame - ticksRequested;
-			if (!payedWithRep && ticksPayed == -1)
-			{
-				Widgets.Label(new Rect(0, f, width, 25f), "Requires".Translate() + ": " + ThingDefOf.Silver.LabelCap + " x" + silver);
-				f += 25f;
-				Widgets.Label(new Rect(0, f, width, 25f), ticks < 30000 ? "DMSRC_PaySiteAfter_Range".Translate((30000 - ticks).ToStringTicksToDays(), (120000 - ticks).ToStringTicksToDays()) : "DMSRC_PaySiteAfter_Single".Translate((180000 - ticks).ToStringTicksToDays()));
-				f += 25f;
-			}
-			return rect;
-		}
-
-		public override void Tick()
-		{
-			if (!payedWithRep && !paySiteCreated)
-			{
-				if (Rand.Chance(ChanceToFire))
-				{
-					RequestSite worldObject = (RequestSite)WorldObjectMaker.MakeWorldObject(RCDefOf.DMSRC_RequestSite);
-					TileFinder.TryFindNewSiteTile(out var tile, Find.RandomSurfacePlayerHomeMap.Tile, 2, 7, false, null, 0f, false, TileFinderMode.Random, exitOnFirstTileFound: false, false);
-					worldObject.Tile = tile;
-					worldObject.request = this;
-					worldObject.SetFaction(GameComponent_Renegades.Find.RenegadesFaction);
-					Find.WorldObjects.Add(worldObject);
-					paySiteCreated = true;
-				}
-			}
-			else base.Tick();
-		}
-
-		public override bool CanArrive() => payedWithRep || ticksPayed > 0;
 	}
 
-	public class TradeRequest : RenegadesRequestWithSite
+	public class TradeRequest : RenegadesRequest
 	{
 		public List<TradeRow> tradeRows = null;
 
@@ -363,34 +344,6 @@ namespace DMSRC
 
 		}
 
-		public override void Tick()
-		{
-			base.Tick();
-		}
-
-		public override void FillSite(IntVec3 loc, Map map, GenStepParams parms)
-		{
-			CellRect cellRect = CellRect.CenteredOn(loc, 17, 17).ClipInsideMap(map);
-			if (!MapGenerator.TryGetVar<List<CellRect>>("UsedRects", out var var))
-			{
-				var = new List<CellRect>();
-				MapGenerator.SetVar("UsedRects", var);
-			}
-			Building_SecurityContainer container = (Building_SecurityContainer)ThingMaker.MakeThing(RCDefOf.DMSRC_SecurityContainer_Renegades);
-			container.innerContainer.ClearAndDestroyContents();
-			container.innerContainer.TryAddRangeOrTransfer(things.ToList());
-			things.Clear();
-			RimWorld.BaseGen.ResolveParams resolveParams = default(RimWorld.BaseGen.ResolveParams);
-			resolveParams.rect = cellRect;
-			resolveParams.faction = map.ParentFaction;
-			resolveParams.singleThingToSpawn = container;
-			RimWorld.BaseGen.BaseGen.globalSettings.map = map;
-			RimWorld.BaseGen.BaseGen.symbolStack.Push("thing", resolveParams);
-			RimWorld.BaseGen.BaseGen.Generate();
-			MapGenerator.SetVar("RectOfInterest", cellRect);
-			var.Add(cellRect);
-		}
-
 		public override void DrawTab(Rect rect, ref Vector2 scrollPosition, float viewHeight, GameComponent_Renegades renegades)
 		{
 			Widgets.BeginGroup(rect);
@@ -475,8 +428,23 @@ namespace DMSRC
 			Scribe_Collections.Look(ref things, "things", LookMode.Deep);
 		}
 
-		public override AcceptanceReport TrySave(GameComponent_Renegades renegades, Map map)
+		public override void Arrive()
 		{
+			base.Arrive();
+			foreach(Thing t in things.ToList())
+			{
+				TradeUtility.SpawnDropPod(DropCellFinder.TradeDropSpot(Map), Map, t);
+			}
+			Find.LetterStack.ReceiveLetter("DMSRC_RenegadesTradeLetter_Label".Translate(), "DMSRC_RenegadesTradeLetter_Text".Translate(), LetterDefOf.PositiveEvent, things);
+			Complete();
+		}
+
+		public override AcceptanceReport TrySave(GameComponent_Renegades renegades)
+		{
+			if (!tradeRows.Any((t)=>t.countSelected > 0))
+			{
+				return "DMSRC_NoThingsSelected".Translate();
+			}
 			float num = 0f;
 			things = new List<Thing>();
 			foreach (TradeRow row in tradeRows.ToList())
@@ -489,19 +457,14 @@ namespace DMSRC
 						things.Add(row.thing);
 					}
 					else things.Add(row.thing.SplitOff(row.countSelected));
-					num += things.Last().MarketValue;
+					Thing last = things.Last();
+					num += last.MarketValue * last.stackCount;
 				}
 			}
-			if (things.NullOrEmpty())
-			{
-				return "DMSRC_NoThingsSelected".Translate();
-			}
-			silver = Mathf.RoundToInt(num);
+			//silver = Mathf.RoundToInt(num);
 			tradeRows.Clear();
 			tradeRows = null;
-			ticksRequested = Find.TickManager.TicksGame;
-			tile = map.Tile;
-			return base.TrySave(renegades, map);
+			return base.TrySave(renegades);
 		}
 
 		private bool calculated = false;

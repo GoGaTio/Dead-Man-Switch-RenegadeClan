@@ -54,6 +54,37 @@ using Verse.Steam;
 
 namespace DMSRC
 {
+    public class CompProperties_UsableNeuroChip : CompProperties_Usable
+    {
+		public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
+		{
+			foreach (StatDrawEntry item1 in base.SpecialDisplayStats(req))
+			{
+				yield return item1;
+			}
+			foreach (StatDrawEntry item2 in Implant(req.Thing?.def ?? req.Def as ThingDef).stages[0].SpecialDisplayStats())
+			{
+				yield return item2;
+			}
+		}
+
+		public override void ResolveReferences(ThingDef parentDef)
+		{
+			base.ResolveReferences(parentDef);
+			if(parentDef.descriptionHyperlinks == null)
+			{
+				parentDef.descriptionHyperlinks = new List<DefHyperlink>();
+			}
+			parentDef.descriptionHyperlinks.Add(new DefHyperlink(Implant(parentDef)));
+		}
+
+		public HediffDef Implant(ThingDef parentDef) => parentDef?.GetCompProperties<CompProperties_UseEffectInstallImplant>()?.hediffDef;
+
+		public CompProperties_UsableNeuroChip()
+		{
+			compClass = typeof(CompUsableNeuroChip);
+		}
+	}
 	public class CompUsableNeuroChip : CompUsableImplant
 	{
         public override AcceptanceReport CanBeUsedBy(Pawn p, bool forced = false, bool ignoreReserveAndReachable = false)

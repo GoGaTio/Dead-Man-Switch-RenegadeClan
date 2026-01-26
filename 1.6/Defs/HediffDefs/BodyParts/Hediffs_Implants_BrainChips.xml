@@ -139,8 +139,7 @@
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant neuroamplifier</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -165,8 +164,7 @@
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant neuroamplifier</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -294,8 +292,7 @@
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant subinterface</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -320,8 +317,7 @@
       <Neurocomputer>1</Neurocomputer>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant subinterface</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -418,8 +414,7 @@
       <ComponentTransmitter>1</ComponentTransmitter>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant neural interlink</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -444,8 +439,7 @@
       <ComponentTransmitter>1</ComponentTransmitter>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant neural interlink</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -555,7 +549,7 @@
   <ThingDef ParentName="DMSRC_NeuroChipBase">
     <defName>DMSRC_NeuroStimulator</defName>
     <label>neural stimulator</label>
-    <description>\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <description>A\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
     <costList>
       <Artifuscle>10</Artifuscle>
       <Plasfiber>5</Plasfiber>
@@ -563,10 +557,9 @@
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
-        <useLabel>Implant </useLabel>
+        <useLabel>Implant neural stimulator</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
       </li>
       <li Class="CompProperties_UseEffectInstallImplant">
@@ -577,21 +570,21 @@
       </li>
     </comps>
   </ThingDef>
-  
+
   <ThingDef ParentName="DMSRC_HighNeuroChipBase">
     <defName>DMSRC_NeuroStimulator_High</defName>
     <label>neural stimulator (high)</label>
     <description>A neural implant which increases \n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
     <costList>
-      <Artifuscle>15</Artifuscle><Plasfiber>10</Plasfiber>
+      <Artifuscle>15</Artifuscle>
+      <Plasfiber>10</Plasfiber>
       <ComponentIndustrial>3</ComponentIndustrial>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
-        <useLabel>Implant high sublink</useLabel>
+        <useLabel>Implant high neural stimulator</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
       </li>
       <li Class="CompProperties_UseEffectInstallImplant">
@@ -642,7 +635,7 @@
       </li>
       <li>
         <minSeverity>4</minSeverity>
-       <statOffsets>
+        <statOffsets>
           <GlobalLearningFactor>0.2</GlobalLearningFactor>
           <JoyFallRateFactor>-0.1</JoyFallRateFactor>
           <HackingSpeed>0.2</HackingSpeed>
@@ -651,7 +644,7 @@
       </li>
       <li>
         <minSeverity>5</minSeverity>
-       <statOffsets>
+        <statOffsets>
           <GlobalLearningFactor>0.25</GlobalLearningFactor>
           <JoyFallRateFactor>-0.125</JoyFallRateFactor>
           <HackingSpeed>0.25</HackingSpeed>
@@ -660,7 +653,7 @@
       </li>
       <li>
         <minSeverity>6</minSeverity>
-       <statOffsets>
+        <statOffsets>
           <GlobalLearningFactor>0.3</GlobalLearningFactor>
           <JoyFallRateFactor>-0.15</JoyFallRateFactor>
           <HackingSpeed>0.3</HackingSpeed>
@@ -669,7 +662,7 @@
       </li>
       <li>
         <minSeverity>7</minSeverity>
-       <statOffsets>
+        <statOffsets>
           <GlobalLearningFactor>0.35</GlobalLearningFactor>
           <JoyFallRateFactor>-0.175</JoyFallRateFactor>
           <HackingSpeed>0.35</HackingSpeed>
@@ -678,7 +671,7 @@
       </li>
       <li>
         <minSeverity>8</minSeverity>
-       <statOffsets>
+        <statOffsets>
           <GlobalLearningFactor>0.4</GlobalLearningFactor>
           <JoyFallRateFactor>-0.2</JoyFallRateFactor>
           <HackingSpeed>0.4</HackingSpeed>
@@ -717,8 +710,7 @@
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant moral nullifier</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -842,8 +834,7 @@
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant neurocontrol chip</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -916,7 +907,7 @@
     <label>neurocontrol</label>
     <description>Remotely control mechanoid, increasing its characteristics.</description>
     <targetRequired>true</targetRequired>
-    <iconPath>UI/Gizmos/ShieldMech</iconPath>
+    <iconPath>UI/Abilities/DMSRC_NeuroControl</iconPath>
     <showPsycastEffects>False</showPsycastEffects>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
@@ -954,8 +945,7 @@
       <ComponentTransmitter>1</ComponentTransmitter>
     </costList>
     <comps>
-      <li Class="CompProperties_Usable">
-        <compClass>DMSRC.CompUsableNeuroChip</compClass>
+      <li Class="DMSRC.CompProperties_UsableNeuroChip">
         <useJob>UseItem</useJob>
         <useLabel>Implant neural interceptor</useLabel>
         <userMustHaveHediff>DMSRC_Neurointerface</userMustHaveHediff>
@@ -1022,7 +1012,7 @@
     <label>intercept control</label>
     <description>Remotely take control over enemy automatroid, making it an ally.</description>
     <targetRequired>true</targetRequired>
-    <iconPath>UI/Gizmos/ShieldMech</iconPath>
+    <iconPath>UI/Abilities/DMSRC_NeuroIntercept</iconPath>
     <showPsycastEffects>False</showPsycastEffects>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>

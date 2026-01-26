@@ -69,6 +69,7 @@ namespace DMSRC
 		}
 	}
 
+	[StaticConstructorOnStartup]
 	public class CompBroadcastAntenna : ThingComp
 	{
 		public static List<CompBroadcastAntenna> broadcastAntennas = new List<CompBroadcastAntenna>();
@@ -91,7 +92,7 @@ namespace DMSRC
 		public override void PostSpawnSetup(bool respawningAfterLoad)
 		{
 			base.PostSpawnSetup(respawningAfterLoad);
-			if(parent.Faction == Faction.OfPlayerSilentFail)
+			if(parent.Faction == Faction.OfPlayerSilentFail && parent.GetComp<CompPowerTrader>()?.PowerOn != false)
 			{
 				broadcastAntennas.Add(this);
 				Update();

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>DMSRC_DestroyBroadcastPoint</defName>
+    <rootSelectionWeight>1.1</rootSelectionWeight>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <expireDaysRange>1~2</expireDaysRange>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <isRootSpecial>true</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[destroy] [antenna]</li>
+        <li>destroy->Destroy</li>
+        <li>destroy->Sabotage Of</li>
+        <li>destroy->Attack On</li>
+        <li>antenna->Signal Tower</li>
+        <li>antenna->Radar</li>
+        <li>antenna->Broadcaster</li>
+        <li>antenna->Antenna</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A nearby settlement, [faction_name], has a special trade request.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMSRC.QuestNode_Root_Site">
+      <giver>Renegades</giver>
+      <sitePart>DMSRC_AntennaPoint</sitePart>
+      <oppositeFactionForSite>true</oppositeFactionForSite>
+      <timeoutTicks>120000</timeoutTicks>
+      <mission>
+        <missionClass>DMSRC.QuestPart_Mission_Destroy</missionClass>
+        <targetDef>DMSRC_LargeBroadcastAntenna</targetDef>
+        <wavesCooldown>1000~2000</wavesCooldown>
+        <initialWavesCooldown>5000~7500</initialWavesCooldown>
+        <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
+      </mission>
+    </root>
+  </QuestScriptDef>
+</Defs>

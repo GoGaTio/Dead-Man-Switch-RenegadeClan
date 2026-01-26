@@ -6,7 +6,15 @@
     <requestClass>DMSRC.TradeRequest</requestClass>
     <label>trade request</label>
     <description>TODO</description>
-    <sitePartDef>DMSRC_ContainerRenegades</sitePartDef>
+    <hoursBeforeArrival>20~30</hoursBeforeArrival>
+  </DMSRC.RenegadesRequestDef>
+
+  <DMSRC.RenegadesRequestDef>
+    <defName>AidRequest</defName>
+    <requestClass>DMSRC.AidRequest</requestClass>
+    <label>aid request</label>
+    <description>TODO</description>
+    <hoursBeforeArrival>1~4</hoursBeforeArrival>
   </DMSRC.RenegadesRequestDef>
   
 </Defs>

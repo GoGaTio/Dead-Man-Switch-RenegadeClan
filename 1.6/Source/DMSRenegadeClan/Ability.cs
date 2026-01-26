@@ -70,6 +70,8 @@ namespace DMSRC
 				return 1f;
 			}
 		}
+
+		public override bool HidePawnTooltips => true;
 	}
 
 	public class CompProperties_InterceptControl : CompProperties_AbilityEffect
@@ -163,6 +165,23 @@ namespace DMSRC
 				chip.RemovePawn(chip.controlledPawns.First());
 			}
 			chip.ControlPawn(pawn);
+		}
+
+		public override string ExtraLabelMouseAttachment(LocalTargetInfo target)
+		{
+			Hediff_NeuroControlChip chip = Chip;
+			if (chip == null || !target.TryGetPawn(out var pawn))
+			{
+				return base.ExtraLabelMouseAttachment(target);
+			}
+			if (chip.controlledPawns.Contains(pawn))
+			{
+				return "Remove".Translate().CapitalizeFirst();
+			}
+			else
+			{
+				return "Add".Translate().CapitalizeFirst();
+			}
 		}
 	}
 

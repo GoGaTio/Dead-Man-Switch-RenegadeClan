@@ -152,6 +152,9 @@
     </killedLeavings>
     <tickerType>Normal</tickerType>
     <filthLeaving>Filth_MachineBits</filthLeaving>
+    <researchPrerequisites>
+      <li>DMSRC_BeamFocusing</li>
+    </researchPrerequisites>
     <comps>
       <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Power">

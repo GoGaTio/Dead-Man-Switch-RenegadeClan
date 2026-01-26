@@ -94,9 +94,9 @@
 	</Operation>
 
 	<Operation Class="PatchOperationConditional">
-		<xpath>Defs/BodyDef[defName="DMSRC_Humanoid_Persona"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/groups</xpath>
+		<xpath>Defs/BodyDef[defName="DMSRC_Humanoid_Persona"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMSRC_ArmoredHead"]/groups</xpath>
 		<nomatch Class="PatchOperationAdd">
-			<xpath>Defs/BodyDef[defName="DMSRC_Humanoid_Persona"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]</xpath>
+			<xpath>Defs/BodyDef[defName="DMSRC_Humanoid_Persona"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMSRC_ArmoredHead"]</xpath>
 			<value>
 				<groups />
 			</value>
@@ -176,7 +176,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/BodyDef[defName="DMSRC_Humanoid_Persona"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMS_SniperHead"]/groups</xpath>
+		<xpath>Defs/BodyDef[defName="DMSRC_Humanoid_Persona"]/corePart/parts/li[def="MechanicalNeck"]/parts/li[def="DMSRC_ArmoredHead"]/groups</xpath>
 		<value>
 			<li>CoveredByNaturalArmor</li>
 		</value>

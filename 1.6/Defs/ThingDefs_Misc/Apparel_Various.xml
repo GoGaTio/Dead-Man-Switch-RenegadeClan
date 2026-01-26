@@ -5,8 +5,12 @@
     <thingCategories>
       <li>ApparelArmor</li>
     </thingCategories>
-<thingSetMakerTags><li>DMSRC_AssaultEquipment</li></thingSetMakerTags>
-<tradeTags><li>DMSRC_AssaultEquipment</li></tradeTags>
+    <thingSetMakerTags>
+      <li>DMSRC_AssaultEquipment</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>DMSRC_AssaultEquipment</li>
+    </tradeTags>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
       <researchPrerequisites>
@@ -50,7 +54,7 @@
       <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-    <Insulation_Cold>60</Insulation_Cold>
+      <Insulation_Cold>60</Insulation_Cold>
       <Insulation_Heat>10</Insulation_Heat>
       <EquipDelay>12</EquipDelay>
     </statBases>
@@ -119,17 +123,17 @@
     <costList>
       <Tungsteel>30</Tungsteel>
       <Plasfiber>60</Plasfiber>
-<Uranium>30</Uranium>
+      <Uranium>30</Uranium>
       <ComponentStamped>6</ComponentStamped>
       <ComponentSpacer>2</ComponentSpacer>
     </costList>
     <costStuffCount>120</costStuffCount>
     <equippedStatOffsets>
       <MoveSpeed>-0.35</MoveSpeed>
-<StaggerDurationFactor>-0.5</StaggerDurationFactor>
+      <StaggerDurationFactor>-0.5</StaggerDurationFactor>
     </equippedStatOffsets>
     <graphicData>
-      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</texPath>
+      <texPath>Things/Apparel/DMSRC_HeavyAssaultArmor/Apparel</texPath>
     </graphicData>
     <generateCommonality>1</generateCommonality>
     <statBases>
@@ -137,7 +141,7 @@
       <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
     </statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Apparel/DMSRC_HeavyAssaultArmor/Apparel</wornGraphicPath>
     </apparel>
   </ThingDef>
 
@@ -148,7 +152,7 @@
     <costList>
       <Tungsteel>40</Tungsteel>
       <Plasfiber>60</Plasfiber>
-<Uranium>30</Uranium>
+      <Uranium>30</Uranium>
       <ComponentStamped>7</ComponentStamped>
       <ComponentSpacer>2</ComponentSpacer>
       <Chemfuel>100</Chemfuel>
@@ -156,10 +160,10 @@
     <costStuffCount>130</costStuffCount>
     <equippedStatOffsets>
       <MoveSpeed>-0.35</MoveSpeed>
-<StaggerDurationFactor>-0.4</StaggerDurationFactor>
+      <StaggerDurationFactor>-0.4</StaggerDurationFactor>
     </equippedStatOffsets>
     <graphicData>
-      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</texPath>
+      <texPath>Things/Apparel/DMSRC_HeavyAssaultArmor/Apparel</texPath>
     </graphicData>
     <generateCommonality>0.5</generateCommonality>
     <statBases>
@@ -168,7 +172,7 @@
       <JumpRange>19.9</JumpRange>
     </statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Apparel/DMSRC_HeavyAssaultArmor/Apparel</wornGraphicPath>
     </apparel>
     <comps>
       <li Class="CompProperties_ApparelReloadable">
@@ -204,14 +208,14 @@
     </verbs>
   </ThingDef>
 
-<ThingDef ParentName="DMSRC_BaseAssaultArmor">
+  <ThingDef ParentName="DMSRC_BaseAssaultArmor">
     <defName>DMSRC_Apparel_DemolisherArmor</defName>
     <label>heavy demolition armor</label>
     <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance.</description>
     <costList>
       <Tungsteel>60</Tungsteel>
       <Plasfiber>80</Plasfiber>
-<Uranium>40</Uranium>
+      <Uranium>40</Uranium>
       <ComponentStamped>8</ComponentStamped>
       <ComponentSpacer>2</ComponentSpacer>
       <Chemfuel>90</Chemfuel>
@@ -219,21 +223,21 @@
     <costStuffCount>150</costStuffCount>
     <equippedStatOffsets>
       <MoveSpeed>-1.05</MoveSpeed>
-<Flammability>-0.68</Flammability>
-<StaggerDurationFactor>-1</StaggerDurationFactor>
+      <Flammability>-0.68</Flammability>
+      <StaggerDurationFactor>-1</StaggerDurationFactor>
     </equippedStatOffsets>
     <graphicData>
-      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</texPath>
+      <texPath>Things/Apparel/DMSRC_HeavyAssaultArmor/Apparel</texPath>
     </graphicData>
     <generateCommonality>0.5</generateCommonality>
     <statBases>
       <WorkToMake>70000</WorkToMake>
       <StuffEffectMultiplierArmor>1.25</StuffEffectMultiplierArmor>
       <Insulation_Heat>70</Insulation_Heat>
-<ArmorRating_Heat>0.15</ArmorRating_Heat>
+      <ArmorRating_Heat>0.15</ArmorRating_Heat>
     </statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Apparel/DMSRC_HeavyAssaultArmor/Apparel</wornGraphicPath>
     </apparel>
     <comps>
       <li Class="CompProperties_ApparelReloadable">
@@ -268,5 +272,5 @@
       </li>
     </verbs>
   </ThingDef>
-  
+
 </Defs>

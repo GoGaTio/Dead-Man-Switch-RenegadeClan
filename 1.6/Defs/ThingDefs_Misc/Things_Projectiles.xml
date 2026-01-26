@@ -14,6 +14,7 @@
       <damageAmountBase>5</damageAmountBase>
       <beamMoteDef>DMSRC_Mote_BeamUnmaintained</beamMoteDef>
       <beamStartOffset>0.75</beamStartOffset>
+      <armorPenetrationBase>1</armorPenetrationBase>
     </projectile>
   </ThingDef>
 
@@ -30,6 +31,7 @@
       <damageAmountBase>10</damageAmountBase>
       <beamMoteDef>DMSRC_Mote_BeamUnmaintained</beamMoteDef>
       <beamStartOffset>0.75</beamStartOffset>
+      <armorPenetrationBase>1</armorPenetrationBase>
     </projectile>
   </ThingDef>
 

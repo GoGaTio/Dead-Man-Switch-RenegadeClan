@@ -8,7 +8,7 @@
     <externalViolence>true</externalViolence>
     <!--<isExplosive>true</isExplosive>-->
     <deathMessage>{0} has been beamed to death.</deathMessage>
-    <hediff>BeamWound</hediff>
+    <hediff>DMSRC_FocusedBeamBurn</hediff>
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
     <impactSoundType>Blunt</impactSoundType>
     <armorCategory>Heat</armorCategory>

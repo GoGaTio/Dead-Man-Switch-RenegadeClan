@@ -149,6 +149,7 @@
       <li Class="DMSRC.CompProperties_UseEffectTargetablePlant">
         <jobDef>DMSRC_PlantBomb</jobDef>
         <plantDef>DMSRC_TimedBombActive</plantDef>
+        <timerRange>2~4</timerRange>
       </li>
     </comps>
   </ThingDef>

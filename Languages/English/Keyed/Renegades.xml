@@ -11,6 +11,10 @@
   <DMSRC_RenegadesDialod_RequestsDisabled>Should be ally to send requests</DMSRC_RenegadesDialod_RequestsDisabled>
 
   <DMSRC_Currency>Silver</DMSRC_Currency>
-  
+
+  <DMSRC_RenegadesPaySiteLetter_Label>Contact about trade</DMSRC_RenegadesPaySiteLetter_Label>
+  <DMSRC_RenegadesPaySiteLetter_Text>Renegades sent location where you will leave silver for your trade request.</DMSRC_RenegadesPaySiteLetter_Text>
+  <DMSRC_RenegadesContainerSiteLetter_Label>Trade request location</DMSRC_RenegadesContainerSiteLetter_Label>
+  <DMSRC_RenegadesContainerSiteLetter_Text>Renegades sent location where you can find your trade request.</DMSRC_RenegadesContainerSiteLetter_Text>
   
 </LanguageData>

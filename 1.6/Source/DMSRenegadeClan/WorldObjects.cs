@@ -56,10 +56,6 @@ namespace DMSRC
 	{
 		private static readonly Texture2D TradeCommandTex = ContentFinder<Texture2D>.Get("UI/Commands/FulfillTradeRequest");
 
-		public RenegadesRequestWithSite request;
-
-		public int silver;
-
 		private Material cachedMat;
 
 		public override Material Material
@@ -72,130 +68,6 @@ namespace DMSRC
 				}
 				return cachedMat;
 			}
-		}
-
-		public override string GetInspectString()
-		{
-			string s = base.GetInspectString();
-			if (!s.NullOrEmpty())
-			{
-				s += "\n";
-			}
-			s += "Requires".Translate() + ": " + ThingDefOf.Silver.LabelCap + " x" + request.silver;
-			return s;
-		}
-
-		public override IEnumerable<Gizmo> GetCaravanGizmos(Caravan caravan)
-		{
-			foreach(Gizmo g in base.GetCaravanGizmos(caravan))
-			{
-				yield return g;
-			}
-			if(!caravan.pather.Moving && caravan.Tile == this.Tile)
-			{
-				yield return FulfillRequestCommand(caravan);
-			}
-		}
-
-		private Command FulfillRequestCommand(Caravan caravan)
-		{
-			Command_Action command_Action = new Command_Action();
-			command_Action.defaultLabel = "CommandFulfillTradeOffer".Translate();
-			command_Action.defaultDesc = "CommandFulfillTradeOfferDesc".Translate();
-			command_Action.icon = TradeCommandTex;
-			command_Action.action = delegate
-			{
-				if (!CaravanInventoryUtility.HasThings(caravan, ThingDefOf.Silver, request.silver))
-				{
-					Messages.Message("CommandFulfillTradeOfferFailInsufficient".Translate(TradeRequestUtility.RequestedThingLabel(ThingDefOf.Silver, request.silver - silver)), MessageTypeDefOf.RejectInput, historical: false);
-				}
-				else
-				{
-					Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("CommandFulfillTradeOfferConfirm".Translate(GenLabel.ThingLabel(ThingDefOf.Silver, null, request.silver)), delegate
-					{
-						Fulfill(caravan);
-					}));
-				}
-			};
-			if (!CaravanInventoryUtility.HasThings(caravan, ThingDefOf.Silver, request.silver))
-			{
-				command_Action.Disable("CommandFulfillTradeOfferFailInsufficient".Translate(TradeRequestUtility.RequestedThingLabel(ThingDefOf.Silver, request.silver)));
-			}
-			return command_Action;
-		}
-
-		private void Fulfill(Caravan caravan)
-		{
-			int remaining = request.silver - silver;
-			List<Thing> list = CaravanInventoryUtility.TakeThings(caravan, delegate (Thing thing)
-			{
-				if (ThingDefOf.Silver != thing.def)
-				{
-					return 0;
-				}
-				int num2 = Mathf.Min(remaining, thing.stackCount);
-				remaining -= num2;
-				return num2;
-			});
-			for (int num = 0; num < list.Count; num++)
-			{
-				list[num].Destroy();
-			}
-			Fulfilled();
-		}
-
-		public void DropItems(List<Thing> items)
-		{
-			foreach (Thing thing in items.ToList())
-			{
-				if(thing.def == ThingDefOf.Silver)
-				{
-					silver += thing.stackCount;
-				}
-				thing.Destroy();
-			}
-			if(silver >= request.silver)
-			{
-				Fulfilled();
-			}
-		}
-
-		public void Fulfilled()
-		{
-			request.ticksPayed = Find.TickManager.TicksGame;
-			request.ticksBeforeArrival = new IntRange(25, 80).RandomInRange;
-			this.Destroy();
-		}
-
-		public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Caravan caravan)
-		{
-			foreach (FloatMenuOption floatMenuOption in base.GetFloatMenuOptions(caravan))
-			{
-				yield return floatMenuOption;
-			}
-			foreach (FloatMenuOption floatMenuOption2 in CaravanArrivalAction_VisitRequestSite.GetFloatMenuOptions(caravan, this))
-			{
-				yield return floatMenuOption2;
-			}
-		}
-
-		public override IEnumerable<FloatMenuOption> GetTransportersFloatMenuOptions(IEnumerable<IThingHolder> pods, Action<PlanetTile, TransportersArrivalAction> launchAction)
-		{
-			foreach (FloatMenuOption transportersFloatMenuOption in base.GetTransportersFloatMenuOptions(pods, launchAction))
-			{
-				yield return transportersFloatMenuOption;
-			}
-			foreach (FloatMenuOption floatMenuOption in TransportersArrivalAction_GiveToRenegades.GetFloatMenuOptions(launchAction, pods, this))
-			{
-				yield return floatMenuOption;
-			}
-		}
-
-		public override void ExposeData()
-		{
-			base.ExposeData();
-			Scribe_References.Look(ref request, "DMSRC_renegadesRequest");
-			Scribe_Values.Look(ref silver, "DMSRC_silver");
 		}
 	}
 
@@ -296,7 +168,7 @@ namespace DMSRC
 			{
 				tmpContainedThings.AddRange(transporters[i].innerContainer);
 			}
-			site.DropItems(tmpContainedThings);
+			//site.DropItems(tmpContainedThings);
 			tmpContainedThings.Clear();
 			//Messages.Message("MessageTransportPodsArrivedAndAddedToCaravan".Translate(site.Name), site, MessageTypeDefOf.TaskCompletion);
 		}

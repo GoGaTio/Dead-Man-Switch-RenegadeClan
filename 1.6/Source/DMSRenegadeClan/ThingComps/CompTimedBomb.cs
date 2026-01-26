@@ -69,8 +69,6 @@ namespace DMSRC
 			new CurvePoint(0f, 0f)
 		};
 
-		public IntRange timerRange = new IntRange();
-
 		public IntRange defenceFactorRange = IntRange.One;
 
 		public CompProperties_TimedBomb()
@@ -91,12 +89,6 @@ namespace DMSRC
 		public int ticksTillEmit = 360;
 
 		protected override bool CanEverExplodeFromDamage => !defused;
-
-		public override void PostPostMake()
-		{
-			timerTicks = Props.timerRange.RandomInRange;
-			base.PostPostMake();
-		}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
 		{

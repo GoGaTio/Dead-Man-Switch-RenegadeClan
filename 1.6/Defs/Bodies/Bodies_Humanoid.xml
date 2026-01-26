@@ -16,7 +16,7 @@
           <height>Top</height>
           <parts>
             <li>
-              <def>DMS_SniperHead</def>
+              <def>DMSRC_ArmoredHead</def>
               <coverage>0.40</coverage>
               <groups>
                 <li>HeadAttackTool</li>

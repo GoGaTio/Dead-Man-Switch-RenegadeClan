@@ -46,13 +46,17 @@ namespace DMSRC
 		public override DamageResult Apply(DamageInfo dinfo, Thing victim)
 		{
 			Pawn pawn = victim as Pawn;
-			if (pawn != null && pawn.Faction == Faction.OfPlayer)
+			if (pawn != null)
 			{
 				Find.TickManager.slower.SignalForceNormalSpeedShort();
 				if (pawn.RaceProps.IsFlesh)
 				{
 					Hediff hediff = pawn.health.GetOrAddHediff(RCDefOf.DMSRC_BeamIllness);
 					hediff.Severity += 0.005f * dinfo.Amount;
+				}
+				if (pawn.Faction == Faction.OfPlayer)
+				{
+					Find.TickManager.slower.SignalForceNormalSpeedShort();
 				}
 			}
 			Map map = victim.Map;
@@ -145,7 +149,6 @@ namespace DMSRC
 
 	public class DamageWorker_Firecracker : DamageWorker_AddInjury
 	{
-		
 		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
 		{
 			if(explosion.intendedTarget != t && t.Faction != null && t.Faction == explosion.instigator?.Faction)

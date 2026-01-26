@@ -305,7 +305,6 @@
             <li>10000, 600</li>
           </points>
         </emissionIntervalCurve>
-        <timerRange>5000~10000</timerRange>
         <defenceFactorRange>5~10</defenceFactorRange>
         <fleck>DMSRC_TimedBombFlash</fleck>
         <soundOnEmission>DMSRC_Beep</soundOnEmission>

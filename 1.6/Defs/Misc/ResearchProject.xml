@@ -5,7 +5,7 @@
     <defName>DMSRC_AssaultEquipment</defName>
     <label>assault equipment</label>
     <description>Produce assault armor and variants, developed for direct combat.</description>
-    <baseCost>3000</baseCost>
+    <baseCost>5000</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>DMS_EquipmentElite</li>
@@ -24,21 +24,21 @@
     <prerequisites>
       <li>MultiAnalyzer</li>
     </prerequisites>
-    <researchViewX>4.00</researchViewX>
-    <researchViewY>2.532</researchViewY>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.90</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMSRC_BeamFocusing</defName>
     <label>beam focusing</label>
     <description>Produce beam weaponry and defence equipment using Unocttrium emitter elements.</description>
-    <baseCost>1000</baseCost>
+    <baseCost>1500</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>DMS_Plasfiber</li>
     </prerequisites>
-    <researchViewX>4.00</researchViewX>
-    <researchViewY>1.866</researchViewY>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>0.90</researchViewY>
     <requiredAnalyzed>
       <li>DMSRC_ComponentGBEP</li>
     </requiredAnalyzed>
@@ -48,14 +48,14 @@
     <defName>DMSRC_Overseer</defName>
     <label>"Overlord" project</label>
     <description>Project "Overlord" was developed by an almost independent branch of one of the colonial fleets. When Renegade Crisis began they decided to join separatists, providing advanced command Automatroids for growing renegades army. Allows for the construction of advanced self-aware command Automatroids.</description>
-    <baseCost>3000</baseCost>
+    <baseCost>4000</baseCost>
     <techLevel>Ultra</techLevel>
     <hiddenPrerequisites>
       <li>DMS_DeadMansSwitch</li>
       <li>MultiAnalyzer</li>
     </hiddenPrerequisites>
     <researchViewX>10.00</researchViewX>
-    <researchViewY>5.00</researchViewY>
+    <researchViewY>0.50</researchViewY>
     <requiredAnalyzed>
       <li>DMSRC_ProcessorCore</li>
     </requiredAnalyzed>
@@ -82,10 +82,10 @@
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
-      <li>DMS_Prosthetic</li>
+      <li>DMS_Hybrid</li>
     </prerequisites>
-    <researchViewX>4.00</researchViewX>
-    <researchViewY>5.50</researchViewY>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
     <requiredAnalyzed>
       <li>DMSRC_Neurointerface</li>
     </requiredAnalyzed>
@@ -100,15 +100,15 @@
     <prerequisites>
       <li>DMSRC_NeuroChips</li>
     </prerequisites>
-    <researchViewX>6.00</researchViewX>
-    <researchViewY>5.50</researchViewY>
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef MayRequire="Ludeon.RimWorld.Royalty" ParentName="DMS_BaseTech">
     <defName>DMSRC_WideBroadcast</defName>
     <label>Wide broadcast</label>
     <description>Build broadcast antennas to control mechs over large distances.</description>
-    <baseCost>1000</baseCost>
+    <baseCost>1500</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
       <li>DMS_Mechlink</li>

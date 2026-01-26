@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
 		<defName>DMSRC_Sword</defName>
 		<label>Fortified blade</label>
-		<description>It May look like a normal machete, but this weapon is purpose built for a mech melee combat capability.\n\nWith its high frequency vibrating edge, it can cut through most things with ease.</description>
+		<description>.</description>
 		<graphicData>
 			<texPath>Things/Weapons/DMSRC_Sword</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

@@ -8,7 +8,7 @@
       <li>Map_PlayerHome</li>
     </targetTags>
     <workerClass>DMSRC.IncidentWorker_Sabotage</workerClass>
-    <baseChance>2.4</baseChance>
+    <baseChance>2</baseChance>
     <category>ThreatBig</category>
     <pointsScaleable>true</pointsScaleable>
     <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>

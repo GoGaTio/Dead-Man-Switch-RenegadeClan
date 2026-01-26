@@ -12,7 +12,7 @@
     <blockWind>false</blockWind>
     <passability>PassThroughOnly</passability>
     <fillPercent>0.50</fillPercent>
-<receivesSignals>true</receivesSignals>
+    <receivesSignals>true</receivesSignals>
     <size>(1,1)</size>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
@@ -56,8 +56,8 @@
     <canOverlapZones>false</canOverlapZones>
     <fillPercent>0.3</fillPercent>
     <rotatable>false</rotatable>
-<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-<receivesSignals>true</receivesSignals>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <receivesSignals>true</receivesSignals>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>0</Flammability>
@@ -91,7 +91,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_PowerTransmitter</defName>
     <label>power network node</label>
-    <description></description>
+    <description>todo</description>
     <graphicData>
       <texPath>Things/Building/DMSRC_PowerTransmitter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -165,8 +165,8 @@
     <canOverlapZones>false</canOverlapZones>
     <fillPercent>1</fillPercent>
     <rotatable>false</rotatable>
-<receivesSignals>true</receivesSignals>
-<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <receivesSignals>true</receivesSignals>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <statBases>
       <MaxHitPoints>3000</MaxHitPoints>
       <Flammability>0</Flammability>
@@ -177,9 +177,10 @@
       <Tungsteel>200</Tungsteel>
       <ComponentStamped>20</ComponentStamped>
       <ComponentIndustrial>15</ComponentIndustrial>
-      <ComponentTransmitter>5</ComponentTransmitter> <ComponentSpacer>5</ComponentSpacer>
+      <ComponentTransmitter>5</ComponentTransmitter>
+      <ComponentSpacer>5</ComponentSpacer>
     </costList>
-<killedLeavings>
+    <killedLeavings>
       <ChunkSlagSteel>8</ChunkSlagSteel>
       <Steel>100</Steel>
       <Tungsteel>40</Tungsteel>
@@ -211,15 +212,14 @@
       <li Class="CompProperties_AmbientSound">
         <sound>GeothermalPlant_Ambience</sound>
       </li>
-<li Class="DMSRC.CompProperties_BroadcastAntenna">
-        <worldRange>10</worldRange>
-      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>5000</basePowerConsumption>
       </li>
       <!--CompProperties_BroadcastAntenna should go after CompProperties_Power-->
-      
+      <li Class="DMSRC.CompProperties_BroadcastAntenna">
+        <worldRange>10</worldRange>
+      </li>
     </comps>
   </ThingDef>
 

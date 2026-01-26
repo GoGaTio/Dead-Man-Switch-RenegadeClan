@@ -55,8 +55,11 @@ using HarmonyLib;
 
 namespace DMSRC
 {
+	[StaticConstructorOnStartup]
 	public class InactiveMech : ThingWithComps, IThingHolder
 	{
+		public static readonly Texture2D Icon = ContentFinder<Texture2D>.Get("UI/Icons/WorkMode/SelfShutdown");
+
 		public ThingOwner<Thing> innerContainer;
 
 		[Unsaved(false)]
@@ -164,9 +167,15 @@ namespace DMSRC
 
 		public override IEnumerable<Gizmo> GetGizmos()
 		{
+			if(Faction != Faction.OfPlayerSilentFail)
+			{
+				yield break;
+			}
 			yield return new Command_Action
 			{
-				defaultLabel = "Open",
+				defaultLabel = "Activate".Translate(),
+				defaultDesc = "Activate".Translate(),
+				icon = Icon,
 				action = delegate
 				{
 					Map map = Map;

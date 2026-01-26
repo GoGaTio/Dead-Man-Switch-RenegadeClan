@@ -32,7 +32,7 @@
       <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
-      <!--<mechFixedSkillLevel>6</mechFixedSkillLevel>-->
+      <mechFixedSkillLevel>8</mechFixedSkillLevel>
       <lifeStageAges>
         <li>
           <def>DMS_Automatroid_BrandNew</def>

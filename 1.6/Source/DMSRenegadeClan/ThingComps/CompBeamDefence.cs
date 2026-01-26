@@ -140,12 +140,6 @@ namespace DMSRC
             {
 				inactiveRegenOffset = chargeRegenInterval - 1;
 			}
-			string s = parentDef.defName + " CompProperties_BeamDefence report:";
-			foreach(var item in intercepts)
-			{
-				s += "\n " + item.type.ToString() + " maxDamage: " + item.maxDamage + " maxExplosionRadius: " + item.maxExplosionRadius;
-			}
-			Log.Message(s);
         }
 
         public Vector3 Offset(Rot4 rot)

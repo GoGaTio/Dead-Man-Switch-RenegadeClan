@@ -30,6 +30,7 @@ using UnityEngine.Jobs;
 using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using Fortified;
 
 namespace DMSRC
 {
@@ -86,6 +87,34 @@ namespace DMSRC
 				return comp;
             }
         }
+
+		private CompVehicleWeapon vehicleWeaponInt = null;
+
+		public CompVehicleWeapon VehicleWeapon
+		{
+			get
+			{
+				if (vehicleWeaponInt == null)
+				{
+					vehicleWeaponInt = Caster.TryGetComp<CompVehicleWeapon>();
+				}
+				return vehicleWeaponInt;
+			}
+		}
+
+		private CompMultipleTurretGun multipleTurretGunInt = null;
+
+		public CompMultipleTurretGun MultipleTurretGun
+		{
+			get
+			{
+				if (multipleTurretGunInt == null)
+				{
+					multipleTurretGunInt = Caster.TryGetComp<CompMultipleTurretGun>();
+				}
+				return multipleTurretGunInt;
+			}
+		}
 
 		public override void DrawHighlight(LocalTargetInfo target)
 		{
@@ -214,11 +243,29 @@ namespace DMSRC
 				vector = root.ToVector3Shifted() + normalized * num;
 				intVec = vector.ToIntVec3();
 			}
-			Vector3 offsetA = normalized * verbProps.beamStartOffset;
+			Vector3 offsetA = Vector3.zero;
+			Vector3 offsetB = normalized * verbProps.beamStartOffset;
+			if (CasterIsPawn)
+			{
+				if(VehicleWeapon != null && EquipmentSource == CasterPawn.equipment.Primary)
+				{
+					offsetA = VehicleWeapon.Props.drawData.OffsetForRot(CasterPawn.Rotation);
+					//offsetB = Vector3Utility.FromAngleFlat(VehicleWeapon.TargetAngle).normalized;
+				}
+				else
+				{
+					SubTurret turret = MultipleTurretGun?.turrets?.FirstOrDefault((x) => x.turret == EquipmentSource);
+					if(turret != null)
+					{
+						offsetA = turret.TurretProp.renderNodeProperties.First().drawData.OffsetForRot(CasterPawn.Rotation);
+						//offsetB = Vector3Utility.FromAngleFlat(turret.curRotation).normalized;
+					}
+				}
+			}
 			Vector3 vector3 = vector - intVec.ToVector3Shifted();
 			if (mote != null)
 			{
-				mote.UpdateTargets(new TargetInfo(root, caster.Map), new TargetInfo(intVec, caster.Map), offsetA, vector3);
+				mote.UpdateTargets(new TargetInfo(root, caster.Map), new TargetInfo(intVec, caster.Map), offsetA + offsetB, vector3);
 				mote.Maintain();
 			}
 		}
@@ -250,7 +297,6 @@ namespace DMSRC
 			{
 				verbProps.requireLineOfSight = true;
 				b = base.CanHitTargetFrom(root, targ);
-				
 			}
 			catch (Exception ex)
 			{

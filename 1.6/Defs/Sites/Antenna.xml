@@ -3,10 +3,10 @@
 
   <SitePartDef>
     <defName>DMSRC_AntennaPoint</defName>
-    <label>container</label>
+    <label>broadcast antenna</label>
     <description>A container with valuable items.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>UI/Icons/DMSRC_ContainerSite</expandingIconTexture>
+    <expandingIconTexture>World/DMSRC_BroadcastAntenna</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
     <considerEnteringAsAttack>false</considerEnteringAsAttack>
@@ -20,9 +20,7 @@
     <linkWithSite>DMSRC_AntennaPoint</linkWithSite>
     <order>1460</order>
     <genStep Class="DMSRC.GenStep_RPrefab">
-      <prefabs>
-        <li>DMSRC_BroadcastPoint_2</li>
-      </prefabs>
+      <tag>BroadcastPoint</tag>
     </genStep>
   </GenStepDef>
 

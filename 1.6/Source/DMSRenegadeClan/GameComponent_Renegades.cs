@@ -277,7 +277,26 @@ namespace DMSRC
 			ThingSetMakerParams parms = default(ThingSetMakerParams);
 			parms.traderDef = def;
 			parms.makingFaction = RenegadesFaction;
-			things = ThingSetMakerDefOf.TraderStock.root.Generate(parms);
+			List<Thing> list = ThingSetMakerDefOf.TraderStock.root.Generate(parms);
+			foreach(Thing item in list.ToList())
+			{
+				if (item.def.stackLimit <= 1)
+				{
+					things.Add(item);
+				}
+				else
+				{
+					Thing t = things.FirstOrDefault((x) => x.CanStackWith(item));
+					if (t == null)
+					{
+						things.Add(item);
+					}
+					else
+					{
+						t.TryAbsorbStack(item, false);
+					}
+				}
+			}
 		}
 	}
 }

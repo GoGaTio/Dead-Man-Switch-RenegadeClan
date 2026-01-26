@@ -117,6 +117,8 @@ namespace DMSRC
 
 		public JobDef jobDef;
 
+		public IntRange timerRange = new IntRange();
+
 		public TargetingParameters targetingParameters = new TargetingParameters
 		{
 			canTargetPawns = false,
@@ -137,6 +139,8 @@ namespace DMSRC
 		private IntVec3 selectedTarget;
 
 		private Pawn caster;
+
+		public float hoursCooldownSelected;
 
 		public CompProperties_UseEffectTargetablePlant Props => (CompProperties_UseEffectTargetablePlant)props;
 
@@ -166,6 +170,7 @@ namespace DMSRC
 		{
 			base.PostExposeData();
 			Scribe_Values.Look(ref selectedTarget, "selectedTarget");
+			Scribe_Values.Look(ref hoursCooldownSelected, "hoursCooldownSelected");
 		}
 
 		public override bool SelectedUseOption(Pawn p)
@@ -246,6 +251,34 @@ namespace DMSRC
 				return false;
 			}
 			return true;
+		}
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			foreach (Gizmo item in base.CompGetGizmosExtra())
+			{
+				yield return item;
+			}
+			Command_Action command_Action = new Command_Action();
+			command_Action.action = delegate
+			{
+				hoursCooldownSelected = Mathf.Max(hoursCooldownSelected - 0.1f, Props.timerRange.min);
+			};
+			command_Action.defaultLabel = "DMSRC_DecreaseTimer".Translate(hoursCooldownSelected);
+			command_Action.defaultDesc = "DMSRC_DecreaseTimer".Translate(hoursCooldownSelected);
+			command_Action.hotKey = KeyBindingDefOf.Misc5;
+			command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower");
+			yield return command_Action;
+			Command_Action command_Action2 = new Command_Action();
+			command_Action2.action = delegate
+			{
+				hoursCooldownSelected = Mathf.Min(hoursCooldownSelected + 0.1f, Props.timerRange.min);
+			};
+			command_Action2.defaultLabel = "DMSRC_IncreaseTimer".Translate(hoursCooldownSelected);
+			command_Action2.defaultDesc = "DMSRC_IncreaseTimer".Translate(hoursCooldownSelected);
+			command_Action2.hotKey = KeyBindingDefOf.Misc4;
+			command_Action2.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower");
+			yield return command_Action2;
 		}
 	}
 }

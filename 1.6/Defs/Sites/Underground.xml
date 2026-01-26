@@ -25,7 +25,7 @@
     <label>container</label>
     <description>A container with valuable items.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>UI/Icons/DMSRC_ContainerSite</expandingIconTexture>
+    <expandingIconTexture>World/DMSRC_ContainerSite</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
     <tags>

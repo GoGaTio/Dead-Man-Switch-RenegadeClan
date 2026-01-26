@@ -1,5 +1,4 @@
 using DelaunatorSharp;
-using EliteRaid;
 using Gilzoide.ManagedJobs;
 using Ionic.Crc;
 using Ionic.Zlib;

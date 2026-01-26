@@ -35,12 +35,6 @@ namespace DMSRC
 
         public static LetterDef DMSRC_ContactEvent;
 
-		public static ThingDef DMSRC_SecurityContainer_NaraRed;
-
-        public static ThingDef DMSRC_SecurityContainer_NaraBlue;
-
-        public static ThingDef DMSRC_SecurityContainer_NaraGreen;
-
 		public static ThingDef DMSRC_SecurityContainer_Renegades;
 
         public static ThingDef DMSRC_InactiveMech;
@@ -50,10 +44,6 @@ namespace DMSRC
 		public static StatDef DMSRC_Neurocapacity;
 
         public static StatDef DMSRC_NeuroControlPower;
-
-		public static WorldObjectDef DMSRC_RequestSite;
-
-		public static SitePartDef DMSRC_ContainerRenegades;
 
         public static StatDef MeleeWeapon_AverageDPS;
 

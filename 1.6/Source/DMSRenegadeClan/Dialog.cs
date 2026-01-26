@@ -59,9 +59,8 @@ using Verse.Steam;
 using static HarmonyLib.Code;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
-namespace EliteRaid
+namespace DMSRC
 {
-	
 	public class Dialog_Renegades : Window
 	{
 		private GameComponent_Renegades renegades;
@@ -193,7 +192,15 @@ namespace EliteRaid
 						list.Add(new FloatMenuOption(def.label, delegate
 						{
 							request = renegades.MakeRequest(def);
-							request.tile = map.Tile;
+							if(map.IsPocketMap || map.generatorDef.isUnderground)
+							{
+								request.tile = Find.RandomPlayerHomeMap.Tile;
+							}
+							else
+							{
+								request.tile = map.Tile;
+							}
+							request.Maps = null;
 						}, extraPartWidth: 29f, extraPartOnGUI: (Rect r) => Widgets.InfoCardButton(r.x + 5f, r.y + (r.height - 24f) / 2f,def)));
 					}
 					Find.WindowStack.Add(new FloatMenu(list));
@@ -216,9 +223,22 @@ namespace EliteRaid
 			else
 			{
 				request.DrawTab(new Rect(0f, 58f, rect.width, rect.height - 58f), ref scrollPosition, viewHeight, renegades);
+				
+				if (Widgets.ButtonText(new Rect(rect.width - 303f, 5f, 96f, 48f), request.Map.Parent.LabelCap))
+				{
+					List<FloatMenuOption> list = new List<FloatMenuOption>();
+					foreach (Map map in request.Maps)
+					{
+						list.Add(new FloatMenuOption(map.Parent.LabelCap, delegate
+						{
+							request.tile = map.Tile;
+						}));
+					}
+					Find.WindowStack.Add(new FloatMenu(list));
+				}
 				if (Widgets.ButtonText(new Rect(rect.width - 202f, 5f, 96f, 48f), "Save".Translate().CapitalizeFirst()))
 				{
-					AcceptanceReport report = request.TrySave(renegades, map);
+					AcceptanceReport report = request.TrySave(renegades);
 					if (report.Accepted)
 					{
 						renegades.requests.Add(request);

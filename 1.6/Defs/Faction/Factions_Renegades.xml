@@ -143,9 +143,9 @@
           <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
           <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
           <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
-          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+          <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
           <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
-          <DMSRC_Mech_Stancher>4</DMSRC_Mech_Stancher>
+          <DMSRC_Mech_Stancher>6</DMSRC_Mech_Stancher>
           <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Explosive>
           <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.05</DMSRC_RenegadeDragoon_Beam>
@@ -199,8 +199,8 @@
           <DMSRC_OfficerCombat>0.5</DMSRC_OfficerCombat>
           <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
           <DMS_Mech_Grenadier>6</DMS_Mech_Grenadier>
-          <DMSRC_Mech_Stancher>4</DMSRC_Mech_Stancher>
-          <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+          <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
+          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
           <DMS_Mech_Protector>5</DMS_Mech_Protector>
           <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
           <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
@@ -215,8 +215,8 @@
         <options>
           <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
           <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
-          <DMSRC_Mech_Stancher>1.5</DMSRC_Mech_Stancher>
-          <DMS_Mech_Ronin>6</DMS_Mech_Ronin>
+          <DMSRC_Mech_Stancher>4.5</DMSRC_Mech_Stancher>
+          <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
           <DMS_Mech_Protector>5</DMS_Mech_Protector>
           <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
         </options>

@@ -113,16 +113,16 @@
     <label>GR-4M "Prizm"</label>
     <description>A high-energy gamma laser which fires a burst of focused direct beams that pierce thick armor and burns targets.\n\nOrganic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough.</description>
     <graphicData>
-      <texPath>Things/Weapons/DMSRC_BeamGun_Luch</texPath>
+      <texPath>Things/Weapons/DMSRC_BeamGun_Prizm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>2</drawSize>
     </graphicData>
     <statBases>
       <Mass>7.6</Mass>
       <AccuracyTouch>1</AccuracyTouch>
-      <AccuracyShort>0.5</AccuracyShort>
-      <AccuracyMedium>0.4</AccuracyMedium>
-      <AccuracyLong>0.1</AccuracyLong>
+      <AccuracyShort>0.9</AccuracyShort>
+      <AccuracyMedium>0.7</AccuracyMedium>
+      <AccuracyLong>0.6</AccuracyLong>
       <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
       <WorkToMake>57000</WorkToMake>
     </statBases>
@@ -144,13 +144,13 @@
     <equippedStatOffsets>
       <MoveSpeed>-0.15</MoveSpeed>
     </equippedStatOffsets>
-    <generateCommonality>0.11</generateCommonality>
+    <generateCommonality>0.09</generateCommonality>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>DMSRC_Bullet_SmallBeam</defaultProjectile>
-        <warmupTime>1</warmupTime>
+        <warmupTime>0.7</warmupTime>
         <range>34.9</range>
         <burstShotCount>10</burstShotCount>
         <ticksBetweenBurstShots>7</ticksBetweenBurstShots>

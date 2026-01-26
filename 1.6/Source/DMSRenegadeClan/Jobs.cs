@@ -1,6 +1,5 @@
 using DelaunatorSharp;
 using DMS;
-using EliteRaid;
 using Fortified;
 using Gilzoide.ManagedJobs;
 using Ionic.Crc;
@@ -163,6 +162,8 @@ namespace DMSRC
 				{
 					t.SetFaction(pawn.Faction);
 				}
+				int ticks = pawn.Faction == Faction.OfPlayerSilentFail ? Mathf.RoundToInt(comp.hoursCooldownSelected * 2500) : comp.Props.timerRange.RandomInRange * 2500;
+				t.TryGetComp<CompTimedBomb>().timerTicks = ticks;
 			}
 			Item.SplitOff(1).Destroy();
 		}

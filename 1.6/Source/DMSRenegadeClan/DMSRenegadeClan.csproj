@@ -71,6 +71,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability.cs" />
+    <Compile Include="Apex\CompCorpseDamagerToHD.cs" />
+    <Compile Include="Apex\DamageWorker_Push.cs" />
+    <Compile Include="Apex\GrapplingHook.cs" />
+    <Compile Include="Apex\HediffComp_DisruptInvisibilityInLight.cs" />
+    <Compile Include="Apex\Verb_ShootMultiple.cs" />
     <Compile Include="Damages.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FloatMenuOptionProvider_OverseerMech.cs" />
@@ -96,7 +101,6 @@
     <Compile Include="Misc.cs" />
     <Compile Include="ThingComps\CompUseEffect_CallRenegades.cs" />
     <Compile Include="Things\OverseerMech.cs" />
-    <Compile Include="MapGen\QuestContainer.cs" />
     <Compile Include="Quests\QuestTest.cs" />
     <Compile Include="ThingComps\CompBeamDefence.cs" />
     <Compile Include="ThingComps\CompOverseerMech.cs" />
