@@ -42,19 +42,6 @@
   </BodyPartDef>
 
   <BodyPartDef>
-    <defName>DMSRC_ModuleMount</defName>
-    <label>module mount</label>
-    <hitPoints>20</hitPoints>
-    <frostbiteVulnerability>0</frostbiteVulnerability>
-    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
-    <skinCovered>false</skinCovered>
-    <solid>true</solid>
-    <alive>false</alive>
-    <bleedRate>0</bleedRate>
-  </BodyPartDef>
-
-
-  <BodyPartDef>
     <defName>DMSRC_Turret</defName>
     <label>turret</label>
     <hitPoints>35</hitPoints>

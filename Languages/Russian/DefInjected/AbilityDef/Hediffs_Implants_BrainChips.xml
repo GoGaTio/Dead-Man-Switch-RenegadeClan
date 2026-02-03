@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: neurocontrol -->
+  <DMSRC_NeuroControl.label>нейроконтроль</DMSRC_NeuroControl.label>
+  <!-- EN: Remotely control mechanoid, increasing its characteristics. -->
+  <DMSRC_NeuroControl.description>Дистанционно перенаправить часть контроля над механоидом на нейроимплант.</DMSRC_NeuroControl.description>
+  
+  <!-- EN: intercept control -->
+  <DMSRC_NeuroIntercept.label>перехватить управление</DMSRC_NeuroIntercept.label>
+  <!-- EN: Remotely take control over enemy automatroid, making it an ally. -->
+  <DMSRC_NeuroIntercept.description>Дистанционно перехватить контроль над вражеским автоматроидом.</DMSRC_NeuroIntercept.description>
+  
+</LanguageData>

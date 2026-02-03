@@ -161,7 +161,7 @@
       <options>
         <!-- Map -->
         <li MayRequire="Ludeon.RimWorld.Odyssey">
-          <weight>1.75</weight>
+          <weight>0.5</weight>
           <thingSetMaker Class="ThingSetMaker_Count">
             <fixedParams>
               <qualityGenerator>Trader</qualityGenerator>
@@ -206,7 +206,7 @@
           </thingSetMaker>
         </li>
         <li>
-          <weight>1.5</weight>
+          <weight>0.75</weight>
           <thingSetMaker Class="ThingSetMaker_StackCount">
             <fixedParams>
               <filter>

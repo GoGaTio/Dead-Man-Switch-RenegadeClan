@@ -549,7 +549,7 @@
   <ThingDef ParentName="DMSRC_NeuroChipBase">
     <defName>DMSRC_NeuroStimulator</defName>
     <label>neural stimulator</label>
-    <description>A\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <description>A neural implant which increases learning speed.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
     <costList>
       <Artifuscle>10</Artifuscle>
       <Plasfiber>5</Plasfiber>
@@ -574,7 +574,7 @@
   <ThingDef ParentName="DMSRC_HighNeuroChipBase">
     <defName>DMSRC_NeuroStimulator_High</defName>
     <label>neural stimulator (high)</label>
-    <description>A neural implant which increases \n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
+    <description>A neural implant which increases learning speed.\n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect.</description>
     <costList>
       <Artifuscle>15</Artifuscle>
       <Plasfiber>10</Plasfiber>
@@ -604,7 +604,7 @@
       <ThingDef>DMSRC_NeuroStimulator_High</ThingDef>
     </descriptionHyperlinks>
     <label>neural stimulator</label>
-    <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+    <description>An implant which increases learning speed.\n\nThis implant can be installed up to 10 times to increase its effect.</description>
     <stages>
       <li>
         <minSeverity>1</minSeverity>

@@ -85,6 +85,45 @@
                   <customLabel>guidance sensor</customLabel>
                   <coverage>0.1</coverage>
                 </li>
+                <li>
+                  <def>MechanicalArm</def>
+                  <customLabel>horizontal rotor</customLabel>
+                  <coverage>0.45</coverage>
+                  <parts>
+                    <li>
+                      <def>MechanicalHand</def>
+                      <customLabel>vertical rotor</customLabel>
+                      <coverage>0.65</coverage>
+                      <height>Bottom</height>
+                      <parts>
+                        <li>
+                          <def>MechanicalFinger</def>
+                          <customLabel>ammo feeder</customLabel>
+                          <coverage>0.15</coverage>
+                          <groups>
+                            <li>LeftHand</li>
+                          </groups>
+                        </li>
+                        <li>
+                          <def>MechanicalFinger</def>
+                          <customLabel>trigger safety</customLabel>
+                          <coverage>0.15</coverage>
+                          <groups>
+                            <li>LeftHand</li>
+                          </groups>
+                        </li>
+                        <li>
+                          <def>MechanicalFinger</def>
+                          <customLabel>mount lock</customLabel>
+                          <coverage>0.15</coverage>
+                          <groups>
+                            <li>LeftHand</li>
+                          </groups>
+                        </li>
+                      </parts>
+                    </li>
+                  </parts>
+                </li>
               </parts>
             </li>
           </parts>
@@ -174,116 +213,6 @@
               <def>MechanicalFoot</def>
               <customLabel>right foot</customLabel>
               <coverage>0.2</coverage>
-            </li>
-          </parts>
-        </li>
-        <li>
-          <def>MechanicalShoulder</def>
-          <customLabel>left weapon mount</customLabel>
-          <coverage>0.02</coverage>
-          <parts>
-            <li>
-              <def>MechanicalArm</def>
-              <customLabel>horizontal rotor</customLabel>
-              <coverage>0.85</coverage>
-              <parts>
-                <li>
-                  <def>MechanicalHand</def>
-                  <customLabel>vertical rotor</customLabel>
-                  <coverage>0.2</coverage>
-                  <height>Bottom</height>
-                  <parts>
-                    <li>
-                      <def>MechanicalFinger</def>
-                      <customLabel>ammo feeder</customLabel>
-                      <coverage>0.15</coverage>
-                      <groups>
-                        <li>LeftHand</li>
-                      </groups>
-                    </li>
-                    <li>
-                      <def>MechanicalFinger</def>
-                      <customLabel>range finder</customLabel>
-                      <coverage>0.15</coverage>
-                      <groups>
-                        <li>LeftHand</li>
-                        <li>MiddleFingers</li>
-                      </groups>
-                    </li>
-                    <li>
-                      <def>MechanicalFinger</def>
-                      <customLabel>trigger safety</customLabel>
-                      <coverage>0.15</coverage>
-                      <groups>
-                        <li>LeftHand</li>
-                      </groups>
-                    </li>
-                    <li>
-                      <def>MechanicalFinger</def>
-                      <customLabel>mount lock</customLabel>
-                      <coverage>0.15</coverage>
-                      <groups>
-                        <li>LeftHand</li>
-                      </groups>
-                    </li>
-                  </parts>
-                </li>
-              </parts>
-            </li>
-          </parts>
-        </li>
-        <li>
-          <def>MechanicalShoulder</def>
-          <customLabel>right weapon mount</customLabel>
-          <coverage>0.02</coverage>
-          <parts>
-            <li>
-              <def>MechanicalArm</def>
-              <customLabel>horizontal rotor</customLabel>
-              <coverage>0.85</coverage>
-              <parts>
-                <li>
-                  <def>MechanicalHand</def>
-                  <customLabel>vertical rotor</customLabel>
-                  <coverage>0.2</coverage>
-                  <height>Bottom</height>
-                  <parts>
-                    <li>
-                      <def>MechanicalFinger</def>
-                      <customLabel>ammo feeder</customLabel>
-                      <coverage>0.15</coverage>
-                      <groups>
-                        <li>RightHand</li>
-                      </groups>
-                    </li>
-                    <li>
-                      <def>MechanicalFinger</def>
-                      <customLabel>range finder</customLabel>
-                      <coverage>0.15</coverage>
-                      <groups>
-                        <li>RightHand</li>
-                        <li>MiddleFingers</li>
-                      </groups>
-                    </li>
-                    <li>
-                      <def>MechanicalFinger</def>
-                      <customLabel>weapon safety</customLabel>
-                      <coverage>0.15</coverage>
-                      <groups>
-                        <li>RightHand</li>
-                      </groups>
-                    </li>
-                    <li>
-                      <def>MechanicalFinger</def>
-                      <customLabel>mount lock</customLabel>
-                      <coverage>0.15</coverage>
-                      <groups>
-                        <li>RightHand</li>
-                      </groups>
-                    </li>
-                  </parts>
-                </li>
-              </parts>
             </li>
           </parts>
         </li>

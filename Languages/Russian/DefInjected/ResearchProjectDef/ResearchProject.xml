@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: assault equipment -->
+  <DMSRC_AssaultEquipment.label>штурмовое снаряжение</DMSRC_AssaultEquipment.label>
+  <!-- EN: Produce assault armor and variants, developed for direct combat. -->
+  <DMSRC_AssaultEquipment.description>Производите штурмовое снаряжение, разработанное для прямого сражения.</DMSRC_AssaultEquipment.description>
+  
+  <!-- EN: beam focusing -->
+  <DMSRC_BeamFocusing.label>фокусировка лучей</DMSRC_BeamFocusing.label>
+  <!-- EN: Produce beam weaponry and defence equipment using Unocttrium emitter elements. -->
+  <DMSRC_BeamFocusing.description>Производите лучевое оружие и защитные устройства используя Уносктриумовые излучательные элементы.</DMSRC_BeamFocusing.description>
+  
+  <!-- EN: FSR munition -->
+  <DMSRC_FSRMunitions.label>FSR аммуниция</DMSRC_FSRMunitions.label>
+  <!-- EN: Allows to produce ammo, that creates spark streams and flame blast at the impact position. -->
+  <DMSRC_FSRMunitions.description>Производите оружие разработанное для стрельбы специализированными боеприпасами, которые оставляют поток искр и поджигающий взрыв в точке удара.</DMSRC_FSRMunitions.description>
+  
+  <!-- EN: high neurochips -->
+  <DMSRC_HighNeuroChips.label>продвинутые нейрочипы</DMSRC_HighNeuroChips.label>
+  <!-- EN: Produce upgraded neurochips and specified implants. -->
+  <DMSRC_HighNeuroChips.description>Производите продвинутые нейроимпланты, совместимые с нейроинтерфейсом.</DMSRC_HighNeuroChips.description>
+  
+  <!-- EN: neurochips -->
+  <DMSRC_NeuroChips.label>нейрочипы</DMSRC_NeuroChips.label>
+  <!-- EN: Produce neuroimplants compatible with neurointerface. -->
+  <DMSRC_NeuroChips.description>Производите нейроимпланты, совместимые с нейроинтерфейсом.</DMSRC_NeuroChips.description>
+  
+  <!-- EN: "Overlord" project -->
+  <DMSRC_Overseer.label>проект "Оверлорд"</DMSRC_Overseer.label>
+  <!-- EN: Project "Overlord" was developed by an almost independent branch of one of the colonial fleets. When Renegade Crisis began they decided to join separatists, providing advanced command Automatroids for growing renegades army. Allows for the construction of advanced self-aware command Automatroids. -->
+  <DMSRC_Overseer.description>Проект "Оверлорд" был разработан почти полностью независимым отделением колониального флота. Когда начался Кризис отступников, они решили присоединиться к сепаратистам, предоставляя командных автоматроидов растущей армии отступников. Позволяет производить продвинутых командных автоматроидов.</DMSRC_Overseer.description>
+  <!-- EN:
+    <li>subject->command automatroids</li>
+    <li>subject->processor array</li>
+    <li>subject_story->found destroyed renegades facility with survived data</li>
+    <li>subject_story->deserted from Colonial fleet to find better place for research</li>
+    <li>subject_story->collected a large amount of historical documents about Renegade Crisis</li>
+    <li>subject_gerund->creating hyperadvanced processors</li>
+    <li>subject_gerund->thinking about the weakness of mass production</li>
+    <li>subject_gerund->working with next gen AI</li>
+  -->
+  <DMSRC_Overseer.generalRules.rulesStrings>
+    <li>subject->командные автоматроиды</li>
+    <li>subject->обрабатывающее ядро</li>
+    <li>subject_story->found destroyed renegades facility with survived data</li>
+    <li>subject_story->deserted from Colonial fleet to find better place for research</li>
+    <li>subject_story->собирает уникальные структуры процессоров</li>
+    <li>subject_gerund->создавать продвинутые процессоры</li>
+    <li>subject_gerund->thinking about the weakness of mass production</li>
+    <li>subject_gerund->работает с ИИ</li>
+  </DMSRC_Overseer.generalRules.rulesStrings>
+  
+  <!-- EN: Wide broadcast -->
+  <DMSRC_WideBroadcast.label>Широкая передача</DMSRC_WideBroadcast.label>
+  <!-- EN: Build broadcast antennas to control mechs over large distances. -->
+  <DMSRC_WideBroadcast.description>Постройте антенны широкой передачи, для контроля механоидов на больших расстояниях.</DMSRC_WideBroadcast.description>
+  
+</LanguageData>

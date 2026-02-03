@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: install neurointerface -->
+  <DMSRC_InstallNeurointerface.label>установить нейроинтерфейс</DMSRC_InstallNeurointerface.label>
+  <!-- EN: Install a neurointerface. -->
+  <DMSRC_InstallNeurointerface.description>Установить нейроинтерфейс.</DMSRC_InstallNeurointerface.description>
+  <!-- EN: Installing neurointerface. -->
+  <DMSRC_InstallNeurointerface.jobString>Устанавливает нейроинтерфейс.</DMSRC_InstallNeurointerface.jobString>
+  
+</LanguageData>

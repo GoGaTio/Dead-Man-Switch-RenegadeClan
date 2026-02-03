@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: FSR -->
+  <DMSRC_Bullet_FSR.label>FSR</DMSRC_Bullet_FSR.label>
+  
+  <!-- EN: gamma beam -->
+  <DMSRC_Bullet_MediumBeam.label>гамма-луч</DMSRC_Bullet_MediumBeam.label>
+  
+  <!-- EN: gamma beam -->
+  <DMSRC_Bullet_SmallBeam.label>гамма-луч</DMSRC_Bullet_SmallBeam.label>
+  
+</LanguageData>

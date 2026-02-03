@@ -15,9 +15,9 @@
     <minDamageToFragment>15</minDamageToFragment>
     <makesAnimalsFlee>true</makesAnimalsFlee>
     <defaultDamage>1</defaultDamage>
-    <defaultArmorPenetration>9</defaultArmorPenetration>
-    <buildingDamageFactorImpassable>0.8</buildingDamageFactorImpassable>
-    <buildingDamageFactorPassable>0.6</buildingDamageFactorPassable>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+    <buildingDamageFactorImpassable>1.5</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>1</buildingDamageFactorPassable>
     <plantDamageFactor>2</plantDamageFactor>
     <corpseDamageFactor>0.05</corpseDamageFactor>
     <explosionAffectOutsidePartsOnly>true</explosionAffectOutsidePartsOnly>

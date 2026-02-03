@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_AutomatroidGun">
+    <defName>DMSRC_FSRPistol</defName>
+    <label>FSR Light carabine</label>
+    <description>A stub-barreled mech carabine. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.</description>
+    <weaponClasses>
+      <li>RangedLight</li>
+      <li>Ranged</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>DMSRC_LightFSR</li>
+      <li>DMS_MechWeaponLight</li>
+    </weaponTags>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_FSRPistol</texPath>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>29000</WorkToMake>
+      <Mass>3.2</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.68</AccuracyMedium>
+      <AccuracyLong>0.63</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>DMSRC_FSRMunitions</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <costList>
+      <Tungsteel>35</Tungsteel>
+      <ComponentStamped>1</ComponentStamped>
+      <ComponentSpacer>1</ComponentSpacer>
+      <DMS_Ceramics>15</DMS_Ceramics>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_FSR</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>21.9</range>
+        <burstShotCount>1</burstShotCount>
+        <!--<ticksBetweenBurstShots>12</ticksBetweenBurstShots>-->
+        <soundCast>DMSRC_Shot_FSR</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>AverageHumanCanUse</EquippableDef>
+      </li>
+    </modExtensions>
+    <tools Inherit="False">
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+
+  <ThingDef ParentName="DMS_AutomatroidGun">
+    <defName>DMSRC_FSRAssaultRifle</defName>
+    <label>FSR Assault rifle</label>
+    <description>An assault rifle designed to be used by mech soldiers. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+      <li>Ranged</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>DMS_MechWeaponMeduim</li>
+      <li>A_AR_LongRifle</li>
+    </weaponTags>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_FSRAssaultRifle</texPath>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>5.75</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.60</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <generateCommonality>0.35</generateCommonality>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>DMSRC_FSRMunitions</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <costList>
+      <Tungsteel>75</Tungsteel>
+      <ComponentStamped>4</ComponentStamped>
+      <ComponentSpacer>1</ComponentSpacer>
+      <DMS_Ceramics>25</DMS_Ceramics>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_FSR</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>29.9</range>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <soundCast>DMSRC_Shot_FSR</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>LightAutomatroid</EquippableDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+
+  <ThingDef ParentName="DMS_AutomatroidHeavyGun">
+    <defName>DMSRC_FSRMachineGun</defName>
+    <label>FSR Heavy repeater</label>
+    <description>A heavy machine gun with helical magazine designed for use as automatroids weapon. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</description>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+      <li>Ranged</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>DMSRC_HeavyFSR</li>
+      <li>DMS_DragoonGun</li>
+      <li>DMS_MechWeaponHeavy</li>
+      <li>A_SuppressWeaponHeavy</li>
+      <li>DMS_VehicleWeapon</li>
+    </weaponTags>
+    <generateCommonality>0.3</generateCommonality>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_FSRMG</texPath>
+      <drawSize>2.25</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>DMSRC_FSRMunitions</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <costList>
+      <Tungsteel>165</Tungsteel>
+      <ComponentStamped>7</ComponentStamped>
+      <ComponentSpacer>2</ComponentSpacer>
+      <DMS_Ceramics>55</DMS_Ceramics>
+    </costList>
+    <statBases>
+      <WorkToMake>85000</WorkToMake>
+      <Mass>76</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.40</AccuracyShort>
+      <AccuracyMedium>0.25</AccuracyMedium>
+      <AccuracyLong>0.10</AccuracyLong>
+      <RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_FSR</defaultProjectile>
+        <warmupTime>2.3</warmupTime>
+        <range>39.9</range>
+        <burstShotCount>14</burstShotCount>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <soundCast>DMSRC_Shot_FSR</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>HeavyAutomatroid</EquippableDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+
+</Defs>

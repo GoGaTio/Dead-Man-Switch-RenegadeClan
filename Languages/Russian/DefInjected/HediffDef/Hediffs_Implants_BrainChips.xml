@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: neural interlink -->
+  <DMSRC_Interlink.label>нейроинтерлинк</DMSRC_Interlink.label>
+  <!-- EN: A neural implant which increases a mechanitor's bandwidth, forming speed and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Interlink.description>Нейроимплант, увеличивающий пропускную способность, количество групп контроля и скорость работы механоидов.\n\nЭтот имплант может быть установлен до 5 раз, для усиления эффекта.</DMSRC_Interlink.description>
+  
+  <!-- EN: moral nullifier -->
+  <DMSRC_MoodNullifier.label>моральный подавитель</DMSRC_MoodNullifier.label>
+  <!-- EN: An implant which decreases moral and social thoughts.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_MoodNullifier.description>Нейроимплант, убирающий моральные угрызения и социальные отношения.\n\nЭтот имплант может быть установлен до 5 раз, для усиления эффекта.</DMSRC_MoodNullifier.description>
+  
+  <!-- EN: neuroamplifier -->
+  <DMSRC_Neuroamplifier.label>нейроусилитель</DMSRC_Neuroamplifier.label>
+  <!-- EN: A neural implant which increases consciousness by stimulating neurons.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Neuroamplifier.description>Нейроимплант, усиливающий нейронную активность.\n\nЭтот имплант может быть установлен до 10 раз, для усиления эффекта.</DMSRC_Neuroamplifier.description>
+  
+  <!-- EN: neurocontrol chip -->
+  <DMSRC_NeuroControlChip.label>чип нейроконтроля</DMSRC_NeuroControlChip.label>
+  <!-- EN: An implant which allows to remotely control ally mechanoids functions, increasing its characteristics.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_NeuroControlChip.description>Нейроимплант, позволяющий перенаправлять часть процессов механоида на себя, усиливая характеристики механоида.\n\nЭтот имплант может быть установлен до 5 раз, для усиления эффекта.</DMSRC_NeuroControlChip.description>
+  
+  <!-- EN: neural interceptor -->
+  <DMSRC_NeuroInterceptor.label>нейроперехватчик</DMSRC_NeuroInterceptor.label>
+  <!-- EN: An implant which allows to intercept control of enemy automatroid, making it an ally.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_NeuroInterceptor.description>Нейроимплант, позволяющий перехватывать управление надо вражеским автоматроидом.\n\nЭтот имплант может быть установлен до 5 раз, для усиления эффекта.</DMSRC_NeuroInterceptor.description>
+  
+  <!-- EN: neurointerface -->
+  <DMSRC_Neurointerface.label>нейроинтерфейс</DMSRC_Neurointerface.label>
+  <!-- EN: A neural implant which allows to install neural subimplants.\n\nEach subimplant requires 1 neurocapacity that can be increased by other neuroimplants or special apparel. -->
+  <DMSRC_Neurointerface.description>Нейроимплант, позволяющий устанавливать другие нейроимпланты.\n\nКаждый субимплант требует 1 нейровместимость, которая может быть увеличена другими нейроимплантами и специальным снаряжением.</DMSRC_Neurointerface.description>
+  
+  <!-- EN: neural stimulator -->
+  <DMSRC_NeuroStimulator.label>нейростимулятор</DMSRC_NeuroStimulator.label>
+  <!-- EN: An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_NeuroStimulator.description>Нейроимплант, увеличивающий скорость обучения.\n\nЭтот имплант может быть установлен до 10 раз, для усиления эффекта.</DMSRC_NeuroStimulator.description>
+  
+  <!-- EN: neural subinterface -->
+  <DMSRC_Subinterface.label>нейросубинтерфейс</DMSRC_Subinterface.label>
+  <!-- EN: A neural implant which increases neurocapacity, allowing to install more neural implants.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Subinterface.description>Нейроимплант, позволяющий устанавливать больше других нейроимплантов.\n\nЭтот имплант может быть установлен до 10 раз, для усиления эффекта.</DMSRC_Subinterface.description>
+  
+</LanguageData>

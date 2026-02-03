@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: FSR Assault rifle -->
+  <DMSRC_FSRAssaultRifle.label>FSR Assault rifle</DMSRC_FSRAssaultRifle.label>
+  <!-- EN: An assault rifle designed to be used by mech soldiers. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMSRC_FSRAssaultRifle.description>An assault rifle designed to be used by mech soldiers. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMSRC_FSRAssaultRifle.description>
+  <!-- EN: stock -->
+  <DMSRC_FSRAssaultRifle.tools.stock.label>stock</DMSRC_FSRAssaultRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMSRC_FSRAssaultRifle.tools.barrel.label>barrel</DMSRC_FSRAssaultRifle.tools.barrel.label>
+  <!-- EN: FSR Assault rifle -->
+  <DMSRC_FSRAssaultRifle.verbs.Verb_Shoot.label>FSR Assault rifle</DMSRC_FSRAssaultRifle.verbs.Verb_Shoot.label>
+  
+  <!-- EN: FSR Heavy repeater -->
+  <DMSRC_FSRMachineGun.label>FSR Heavy repeater</DMSRC_FSRMachineGun.label>
+  <!-- EN: A heavy machine gun with helical magazine designed for use as automatroids weapon. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
+  <DMSRC_FSRMachineGun.description>A heavy machine gun with helical magazine designed for use as automatroids weapon. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.
+
+This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMSRC_FSRMachineGun.description>
+  <!-- EN: stock -->
+  <DMSRC_FSRMachineGun.tools.stock.label>stock</DMSRC_FSRMachineGun.tools.stock.label>
+  <!-- EN: barrel -->
+  <DMSRC_FSRMachineGun.tools.barrel.label>barrel</DMSRC_FSRMachineGun.tools.barrel.label>
+  <!-- EN: FSR Heavy repeater -->
+  <DMSRC_FSRMachineGun.verbs.Verb_Shoot.label>FSR Heavy repeater</DMSRC_FSRMachineGun.verbs.Verb_Shoot.label>
+  
+  <!-- EN: FSR Light carabine -->
+  <DMSRC_FSRPistol.label>FSR Light carabine</DMSRC_FSRPistol.label>
+  <!-- EN: A stub-barreled mech carabine. Reinforced barrel and complex breech-mechanism allows to use FSR ammo. -->
+  <DMSRC_FSRPistol.description>A stub-barreled mech carabine. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.</DMSRC_FSRPistol.description>
+  <!-- EN: grip -->
+  <DMSRC_FSRPistol.tools.grip.label>grip</DMSRC_FSRPistol.tools.grip.label>
+  <!-- EN: barrel -->
+  <DMSRC_FSRPistol.tools.barrel.label>barrel</DMSRC_FSRPistol.tools.barrel.label>
+  <!-- EN: FSR Light carabine -->
+  <DMSRC_FSRPistol.verbs.Verb_Shoot.label>FSR Light carabine</DMSRC_FSRPistol.verbs.Verb_Shoot.label>
+  
+</LanguageData>

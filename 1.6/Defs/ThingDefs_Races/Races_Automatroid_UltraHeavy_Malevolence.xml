@@ -34,10 +34,32 @@
       </detritusLeavings>
     </race>
     <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(1,0,0)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-1,0,0)</offset>
+            <layer>-20</layer>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.4,0,0)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.4,0,0)</offset>
+            <layer>-20</layer>
+          </dataNorth>
+        </drawData>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.06</rotationSmoothTime>
+      </li>
       <li Class="DMSRC.CompProperties_CompOverseerMech">
         <commandRange>39.9</commandRange>
         <controlGroups>4</controlGroups>
         <bandwidth>39</bandwidth>
+        <instantControl>true</instantControl>
+        <canRepair>false</canRepair>
         <selectOverseerIconPath>UI/Icons/DMSRC_SelectMalevolence</selectOverseerIconPath>
       </li>
     </comps>

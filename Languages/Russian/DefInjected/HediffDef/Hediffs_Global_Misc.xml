@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: artifuscle degradation -->
+  <DMSRC_ArtifuscleDegradation.label>artifuscle degradation</DMSRC_ArtifuscleDegradation.label>
+  <!-- EN: Artifuscle in the body of this automatroid degrades because of gamma irradiation. -->
+  <DMSRC_ArtifuscleDegradation.description>Artifuscle in the body of this automatroid degrades because of gamma irradiation.</DMSRC_ArtifuscleDegradation.description>
+  <!-- EN: initial -->
+  <DMSRC_ArtifuscleDegradation.stages.initial.label>initial</DMSRC_ArtifuscleDegradation.stages.initial.label>
+  <!-- EN: minor -->
+  <DMSRC_ArtifuscleDegradation.stages.minor.label>minor</DMSRC_ArtifuscleDegradation.stages.minor.label>
+  <!-- EN: moderate -->
+  <DMSRC_ArtifuscleDegradation.stages.moderate.label>moderate</DMSRC_ArtifuscleDegradation.stages.moderate.label>
+  <!-- EN: serious -->
+  <DMSRC_ArtifuscleDegradation.stages.serious.label>serious</DMSRC_ArtifuscleDegradation.stages.serious.label>
+  <!-- EN: extreme -->
+  <DMSRC_ArtifuscleDegradation.stages.extreme.label>extreme</DMSRC_ArtifuscleDegradation.stages.extreme.label>
+  
+  <!-- EN: beam illness -->
+  <DMSRC_BeamIllness.label>лучевая болезнь</DMSRC_BeamIllness.label>
+  <!-- EN: Health effects that are caused by being exposed to high amounts of gamma radiation in a short period of time.\nAt high doses, beam illness is lethal. Even at low doses, it can lead to various chronic diseases. -->
+  <DMSRC_BeamIllness.description>Состояние здоровья вызванное действием большого количества гамма-лучей за короткий временной промежуток.\nПри высоких дозах смертельно, однако даже при малых дозах может вызывать различные хронические заболевания.</DMSRC_BeamIllness.description>
+  <!-- EN: {0_nameDef} is now suffering from beam illness. -->
+  <DMSRC_BeamIllness.comps.HediffComp_MessageAboveSeverity.message>{0_nameDef} теперь страдает от лучевой болезни.</DMSRC_BeamIllness.comps.HediffComp_MessageAboveSeverity.message>
+  <!-- EN: {PAWN_nameDef} is showing signs of beam illness. Keep {PAWN_objective} away from sources of gamma irradiation. -->
+  <DMSRC_BeamIllness.comps.HediffComp_SurgeryInspectable.surgicalDetectionDesc>{PAWN_nameDef} показывет признаки лучевой болезни. Держите {PAWN_objective} подальше от источников гамма лучей.</DMSRC_BeamIllness.comps.HediffComp_SurgeryInspectable.surgicalDetectionDesc>
+  <!-- EN: initial -->
+  <DMSRC_BeamIllness.stages.initial.label>начальная</DMSRC_BeamIllness.stages.initial.label>
+  <!-- EN: minor -->
+  <DMSRC_BeamIllness.stages.minor.label>незначительная</DMSRC_BeamIllness.stages.minor.label>
+  <!-- EN: moderate -->
+  <DMSRC_BeamIllness.stages.moderate.label>средняя</DMSRC_BeamIllness.stages.moderate.label>
+  <!-- EN: serious -->
+  <DMSRC_BeamIllness.stages.serious.label>серьёзная</DMSRC_BeamIllness.stages.serious.label>
+  <!-- EN: extreme -->
+  <DMSRC_BeamIllness.stages.extreme.label>экстремальная</DMSRC_BeamIllness.stages.extreme.label>
+  
+  <!-- EN: neurocontrol -->
+  <DMSRC_NeuroControl.label>нейроконтроль</DMSRC_NeuroControl.label>
+  <!-- EN: This mechanoid is in share control by neuroimplant. -->
+  <DMSRC_NeuroControl.description>This mechanoid is in share control by neuroimplant.</DMSRC_NeuroControl.description>
+  
+  <!-- EN: processor helmet -->
+  <DMSRC_ProcessorHelmet.label>обрабатывающий шлем</DMSRC_ProcessorHelmet.label>
+  <!-- EN: Connected processor helmet. -->
+  <DMSRC_ProcessorHelmet.description>подсоединённый обрабатывающий шлем.</DMSRC_ProcessorHelmet.description>
+  <!-- EN: connected -->
+  <DMSRC_ProcessorHelmet.stages.connected.label>подсоединён</DMSRC_ProcessorHelmet.stages.connected.label>
+  
+</LanguageData>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: An enemy automatroid has appeared out of thin air! -->
+  <DMS_Mech_Jaeger.comps.CompCamouflage.detectedLetterDesc>Вражеский автоматроид проявился на пустом месте!</DMS_Mech_Jaeger.comps.CompCamouflage.detectedLetterDesc>
+  <!-- EN: Saboteur revealed -->
+  <DMS_Mech_Jaeger.comps.CompCamouflage.detectedLetterLabel>Егерь проявился</DMS_Mech_Jaeger.comps.CompCamouflage.detectedLetterLabel>
+  <!-- EN: A saboteur has appeared! -->
+  <DMS_Mech_Jaeger.comps.CompCamouflage.detectedMessage>Егерь проявился!</DMS_Mech_Jaeger.comps.CompCamouflage.detectedMessage>
+
+  <!-- EN: An enemy automatroid has appeared out of thin air! -->
+  <DMS_Mech_Noctula.comps.CompCamouflage.detectedLetterDesc>Вражеский автоматроид проявился на пустом месте!</DMS_Mech_Noctula.comps.CompCamouflage.detectedLetterDesc>
+  <!-- EN: Saboteur revealed -->
+  <DMS_Mech_Noctula.comps.CompCamouflage.detectedLetterLabel>Ноктула проявилась</DMS_Mech_Noctula.comps.CompCamouflage.detectedLetterLabel>
+  <!-- EN: A saboteur has appeared! -->
+  <DMS_Mech_Noctula.comps.CompCamouflage.detectedMessage>Ноктула проявилась!</DMS_Mech_Noctula.comps.CompCamouflage.detectedMessage>
+  
+</LanguageData>

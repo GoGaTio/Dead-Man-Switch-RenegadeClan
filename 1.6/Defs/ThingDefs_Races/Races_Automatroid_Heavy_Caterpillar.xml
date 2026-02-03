@@ -6,7 +6,7 @@
     <defName>DMSRC_Mech_Focus</defName>
     <label>focus</label>
     <description>A mobile assault platform equipped with a powerful beam cannon, designed to easily cut through thick armor.</description>
-    <uiIconPath>Things/Automatroid/DMSRC_Focus_UIIcon</uiIconPath>
+    <uiIconPath>Things/Automatroid/DMSRC_Focus_Icon</uiIconPath>
     <statBases>
       <MoveSpeed>2.5</MoveSpeed>
       <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
@@ -164,10 +164,11 @@
         <range>14.9</range>
         <mote>DMSRC_Mote_BeamDefence</mote>
         <interceptSameFaction>false</interceptSameFaction>
-        <barColor>(0.25, 0.05, 0.25)</barColor>
-        <barColorAlt>(0.10, 0.02, 0.10)</barColorAlt>
-        <chargeRegenInterval>90</chargeRegenInterval>
-        <inactiveRegenOffset>80</inactiveRegenOffset>
+        <barColor>(107, 81, 128)</barColor>
+        <barColorAlt>(54, 40, 64)</barColorAlt>
+        <chargeRegenInterval>600</chargeRegenInterval>
+        <inactiveRegenOffset>100</inactiveRegenOffset>
+        <maxCharge>50</maxCharge>
         <interceptSound>BeamGraser_Shooting_Resolve</interceptSound>
         <offset>(0, 0, 0.51)</offset>
         <intercepts>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: GL-9 "Linza" -->
+  <DMSRC_Gun_Linza.label>GL-9 "Linza"</DMSRC_Gun_Linza.label>
+  <!-- EN: A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets.\n\nOrganic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough. -->
+  <DMSRC_Gun_Linza.description>A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets.
+
+Organic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough.</DMSRC_Gun_Linza.description>
+  <!-- EN: emitter -->
+  <DMSRC_Gun_Linza.tools.emitter.label>emitter</DMSRC_Gun_Linza.tools.emitter.label>
+  <!-- EN: GL-9 "Linza" -->
+  <DMSRC_Gun_Linza.verbs.Verb_FocusedBeam.label>GL-9 "Linza"</DMSRC_Gun_Linza.verbs.Verb_FocusedBeam.label>
+  
+  <!-- EN: GL-9/B "Linza" -->
+  <DMSRC_Gun_LinzaMount.label>GL-9/B "Linza"</DMSRC_Gun_LinzaMount.label>
+  <!-- EN: A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. This one was made to interface directly with a mobile or stationary platform and draw from its power source.\n\nOrganic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough. -->
+  <DMSRC_Gun_LinzaMount.description>A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. This one was made to interface directly with a mobile or stationary platform and draw from its power source.
+
+Organic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough.</DMSRC_Gun_LinzaMount.description>
+  <!-- EN: emitter -->
+  <DMSRC_Gun_LinzaMount.tools.emitter.label>emitter</DMSRC_Gun_LinzaMount.tools.emitter.label>
+  <!-- EN: GL-9/B "Linza" -->
+  <DMSRC_Gun_LinzaMount.verbs.Verb_FocusedBeam.label>GL-9/B "Linza"</DMSRC_Gun_LinzaMount.verbs.Verb_FocusedBeam.label>
+  
+  <!-- EN: GL-5 "Luch" -->
+  <DMSRC_Gun_Luch.label>GL-5 "Luch"</DMSRC_Gun_Luch.label>
+  <!-- EN: A high-energy gamma laser which fires a sweeping beam that pierces thick armor and burns targets.\n\nOrganic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough. -->
+  <DMSRC_Gun_Luch.description>A high-energy gamma laser which fires a sweeping beam that pierces thick armor and burns targets.
+
+Organic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough.</DMSRC_Gun_Luch.description>
+  <!-- EN: stock -->
+  <DMSRC_Gun_Luch.tools.stock.label>stock</DMSRC_Gun_Luch.tools.stock.label>
+  <!-- EN: emitter -->
+  <DMSRC_Gun_Luch.tools.emitter.label>emitter</DMSRC_Gun_Luch.tools.emitter.label>
+  <!-- EN: GL-5 "Luch" -->
+  <DMSRC_Gun_Luch.verbs.Verb_FocusedBeam.label>GL-5 "Luch"</DMSRC_Gun_Luch.verbs.Verb_FocusedBeam.label>
+  
+</LanguageData>

@@ -12,12 +12,12 @@
       <parts>
         <li>
           <def>MechanicalNeck</def>
-          <coverage>0.07</coverage>
+          <coverage>0.1</coverage>
           <height>Top</height>
           <parts>
             <li>
               <def>DMSRC_ArmoredHead</def>
-              <coverage>0.40</coverage>
+              <coverage>0.80</coverage>
               <groups>
                 <li>HeadAttackTool</li>
               </groups>
@@ -60,7 +60,7 @@
             </li>
             <li>
               <def>DMS_ArmourPlate</def>
-              <coverage>0.40</coverage>
+              <coverage>0.18</coverage>
               <height>Top</height>
             </li>
           </parts>
@@ -122,7 +122,7 @@
         </li>
         <li>
           <def>MechanicalShoulder</def>
-          <customLabel>right mechanical shoulder</customLabel>
+          <customLabel>right shoulder</customLabel>
           <coverage>0.10</coverage>
           <parts>
             <li>

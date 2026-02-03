@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: neural interlink -->
+  <DMSRC_Interlink.label>neural interlink</DMSRC_Interlink.label>
+  <!-- EN: A neural implant which increases a mechanitor's bandwidth, forming speed and the work speed of a mechanitor's mechs.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Interlink.description>A neural implant which increases a mechanitor's bandwidth, forming speed and the work speed of a mechanitor's mechs.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_Interlink.description>
+  <!-- EN: Implant neural interlink -->
+  <DMSRC_Interlink.comps.CompUsableNeuroChip.useLabel>Implant neural interlink</DMSRC_Interlink.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neural interlink (high) -->
+  <DMSRC_Interlink_High.label>neural interlink (high)</DMSRC_Interlink_High.label>
+  <!-- EN: A neural implant which increases a mechanitor's bandwidth, forming speed and the work speed of a mechanitor's mechs.\n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Interlink_High.description>A neural implant which increases a mechanitor's bandwidth, forming speed and the work speed of a mechanitor's mechs.
+
+This high-tier implant can be increase effect count up to 10.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_Interlink_High.description>
+  <!-- EN: Implant neural interlink -->
+  <DMSRC_Interlink_High.comps.CompUsableNeuroChip.useLabel>Implant neural interlink</DMSRC_Interlink_High.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: moral nullifier -->
+  <DMSRC_MoodNullifier.label>moral nullifier</DMSRC_MoodNullifier.label>
+  <!-- EN: An implant which decreases moral and social thoughts.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_MoodNullifier.description>An implant which decreases moral and social thoughts.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_MoodNullifier.description>
+  <!-- EN: Implant moral nullifier -->
+  <DMSRC_MoodNullifier.comps.CompUsableNeuroChip.useLabel>Implant moral nullifier</DMSRC_MoodNullifier.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neuroamplifier -->
+  <DMSRC_Neuroamplifier.label>neuroamplifier</DMSRC_Neuroamplifier.label>
+  <!-- EN: A neural implant which increases consciousness by stimulating neurons.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Neuroamplifier.description>A neural implant which increases consciousness by stimulating neurons.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_Neuroamplifier.description>
+  <!-- EN: Implant neuroamplifier -->
+  <DMSRC_Neuroamplifier.comps.CompUsableNeuroChip.useLabel>Implant neuroamplifier</DMSRC_Neuroamplifier.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neuroamplifier (high) -->
+  <DMSRC_Neuroamplifier_High.label>neuroamplifier (high)</DMSRC_Neuroamplifier_High.label>
+  <!-- EN: A neural implant which increases consciousness by stimulating neurons.\n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Neuroamplifier_High.description>A neural implant which increases consciousness by stimulating neurons.
+
+This high-tier implant can be increase effect count up to 10.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_Neuroamplifier_High.description>
+  <!-- EN: Implant neuroamplifier -->
+  <DMSRC_Neuroamplifier_High.comps.CompUsableNeuroChip.useLabel>Implant neuroamplifier</DMSRC_Neuroamplifier_High.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neurocontrol chip -->
+  <DMSRC_NeuroControlChip.label>neurocontrol chip</DMSRC_NeuroControlChip.label>
+  <!-- EN: An implant which allows to remotely control ally mechanoids functions, increasing its characteristics.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_NeuroControlChip.description>An implant which allows to remotely control ally mechanoids functions, increasing its characteristics.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_NeuroControlChip.description>
+  <!-- EN: Implant neurocontrol chip -->
+  <DMSRC_NeuroControlChip.comps.CompUsableNeuroChip.useLabel>Implant neurocontrol chip</DMSRC_NeuroControlChip.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neural interceptor -->
+  <DMSRC_NeuroInterceptor.label>neural interceptor</DMSRC_NeuroInterceptor.label>
+  <!-- EN: An implant which allows to intercept control of enemy automatroid, making it an ally.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_NeuroInterceptor.description>An implant which allows to intercept control of enemy automatroid, making it an ally.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_NeuroInterceptor.description>
+  <!-- EN: Implant neural interceptor -->
+  <DMSRC_NeuroInterceptor.comps.CompUsableNeuroChip.useLabel>Implant neural interceptor</DMSRC_NeuroInterceptor.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neurointerface -->
+  <DMSRC_Neurointerface.label>neurointerface</DMSRC_Neurointerface.label>
+  <!-- EN: A neural implant which allows to install neural subimplants.\n\nEach subimplant requires 1 neurocapacity that can be increased by other neuroimplants or special apparel. -->
+  <DMSRC_Neurointerface.description>A neural implant which allows to install neural subimplants.
+
+Each subimplant requires 1 neurocapacity that can be increased by other neuroimplants or special apparel.</DMSRC_Neurointerface.description>
+  <!-- EN: Analyze the neurointerface -->
+  <DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the neurointerface</DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <!-- EN: Analyze... -->
+  <DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.activateLabelString>
+  <!-- EN: By studying the neurointerface, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
+  <DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the neurointerface, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+
+Your researchers can now use research benches to begin researching how to actually use the technology.</DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.completedLetter>
+  <!-- EN: Neurointerface studied: {RESEARCH} unlocked -->
+  <DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Neurointerface studied: {RESEARCH} unlocked</DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+  <!-- EN: Choose who should analyze this -->
+  <DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.guiLabelString>
+  <!-- EN: Can be analyzed by a colonist. -->
+  <DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.inspectString>
+  <!-- EN: Analyze the neurointerface -->
+  <DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.jobString>Analyze the neurointerface</DMSRC_Neurointerface.comps.CompAnalyzableUnlockResearch.jobString>
+  
+  <!-- EN: neural stimulator -->
+  <DMSRC_NeuroStimulator.label>neural stimulator</DMSRC_NeuroStimulator.label>
+  <!-- EN: A\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_NeuroStimulator.description>A
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_NeuroStimulator.description>
+  <!-- EN: Implant neural stimulator -->
+  <DMSRC_NeuroStimulator.comps.CompUsableNeuroChip.useLabel>Implant neural stimulator</DMSRC_NeuroStimulator.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neural stimulator (high) -->
+  <DMSRC_NeuroStimulator_High.label>neural stimulator (high)</DMSRC_NeuroStimulator_High.label>
+  <!-- EN: A neural implant which increases \n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_NeuroStimulator_High.description>A neural implant which increases 
+
+This high-tier implant can be increase effect count up to 10.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_NeuroStimulator_High.description>
+  <!-- EN: Implant high neural stimulator -->
+  <DMSRC_NeuroStimulator_High.comps.CompUsableNeuroChip.useLabel>Implant high neural stimulator</DMSRC_NeuroStimulator_High.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neural subinterface -->
+  <DMSRC_Subinterface.label>neural subinterface</DMSRC_Subinterface.label>
+  <!-- EN: A neural implant which increases neurocapacity, allowing to install more neural implants.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Subinterface.description>A neural implant which increases neurocapacity, allowing to install more neural implants.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_Subinterface.description>
+  <!-- EN: Implant subinterface -->
+  <DMSRC_Subinterface.comps.CompUsableNeuroChip.useLabel>Implant subinterface</DMSRC_Subinterface.comps.CompUsableNeuroChip.useLabel>
+  
+  <!-- EN: neural subinterface (high) -->
+  <DMSRC_Subinterface_High.label>neural subinterface (high)</DMSRC_Subinterface_High.label>
+  <!-- EN: A neural implant which increases neurocapacity, allowing to install more neural implants.\n\nThis high-tier implant can be increase effect count up to 10.\n\nIt can be self-installed without surgery.\n\nThis implant can be installed up to 5 times to increase its effect. -->
+  <DMSRC_Subinterface_High.description>A neural implant which increases neurocapacity, allowing to install more neural implants.
+
+This high-tier implant can be increase effect count up to 10.
+
+It can be self-installed without surgery.
+
+This implant can be installed up to 5 times to increase its effect.</DMSRC_Subinterface_High.description>
+  <!-- EN: Implant subinterface -->
+  <DMSRC_Subinterface_High.comps.CompUsableNeuroChip.useLabel>Implant subinterface</DMSRC_Subinterface_High.comps.CompUsableNeuroChip.useLabel>
+  
+</LanguageData>

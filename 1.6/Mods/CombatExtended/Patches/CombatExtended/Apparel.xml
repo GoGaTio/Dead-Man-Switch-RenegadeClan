@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DMSRC_BaseAssaultArmor"]/equippedStatOffsets</xpath>
+    <value>
+      <CarryWeight>60</CarryWeight>
+      <CarryBulk>30</CarryBulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DMSRC_BaseAssaultHelmet" or @Name="DMSRC_BaseAssaultArmor"]/stuffCategories</xpath>
+    <value>
+      <li>Steeled</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Apparel_AssaultArmor" or defName="DMSRC_Apparel_AssaultHelmet" or defName="DMSRC_Apparel_ProcessorHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
+    <value>
+      <StuffEffectMultiplierArmor>15</StuffEffectMultiplierArmor>
+      <ArmorRating_Blunt>15</ArmorRating_Blunt>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DMSRC_Apparel_JumperArmor"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="DMSRC_Apparel_JumperArmor"]/statBases/StuffEffectMultiplierArmor</xpath>
+      <value>
+        <StuffEffectMultiplierArmor>13</StuffEffectMultiplierArmor>
+        <ArmorRating_Blunt>13</ArmorRating_Blunt>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Apparel_ShieldHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
+    <value>
+      <StuffEffectMultiplierArmor>9</StuffEffectMultiplierArmor>
+      <ArmorRating_Blunt>9</ArmorRating_Blunt>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DMSRC_BaseAssaultHelmet"]/apparel/layers</xpath>
+    <value>
+      <li>StrappedHead</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DMSRC_BaseAssaultArmor"]/statBases</xpath>
+    <value>
+      <Bulk>100</Bulk>
+      <WornBulk>10</WornBulk>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DMSRC_BaseAssaultHelmet"]/statBases</xpath>
+    <value>
+      <Bulk>10</Bulk>
+      <WornBulk>1</WornBulk>
+      <NightVisionEfficiency_Apparel>0.6</NightVisionEfficiency_Apparel>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DMSRC_BaseAssaultArmor"]/equippedStatOffsets</xpath>
+    <value>
+      <Suppressability>-0.55</Suppressability>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DMSRC_BaseAssaultHelmet"]/equippedStatOffsets</xpath>
+    <value>
+      <AimingAccuracy>0.15</AimingAccuracy>
+      <SmokeSensitivity>-1</SmokeSensitivity>
+      <Suppressability>-0.3</Suppressability>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Apparel_ShieldHelmet"]/statBases/EnergyShieldRechargeRate</xpath>
+    <value>
+      <EnergyShieldRechargeRate>0.5</EnergyShieldRechargeRate>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Apparel_ShieldHelmet"]/statBases/EnergyShieldEnergyMax</xpath>
+    <value>
+      <EnergyShieldEnergyMax>2</EnergyShieldEnergyMax>
+    </value>
+  </Operation>
+
+</Patch>

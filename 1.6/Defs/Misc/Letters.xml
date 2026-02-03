@@ -7,6 +7,7 @@
     <flashColor>(164, 106, 231)</flashColor>
     <flashInterval>90</flashInterval>
     <arriveSound>LetterArrive</arriveSound>
+    <letterClass>DMSRC.ChoiceLetter_RenegadesOffer</letterClass>
   </LetterDef>
 
 </Defs>

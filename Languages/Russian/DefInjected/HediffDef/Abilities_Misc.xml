@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Tactical calibration -->
+  <DMSRC_MalevolenceCommand.label>Тактическая калибрация</DMSRC_MalevolenceCommand.label>
+  <!-- EN: A large amount of fire control data is being shared with surrounding friendly forces through this unit. -->
+  <DMSRC_MalevolenceCommand.description>Передача тактических данных ближайшим союзным механоидам.</DMSRC_MalevolenceCommand.description>
+  
+  <!-- EN: Received tactical data -->
+  <DMSRC_MalevolenceCommandReceived.label>Полученные тактические данные</DMSRC_MalevolenceCommandReceived.label>
+  <!-- EN: Received tactical data from command automatroid. -->
+  <DMSRC_MalevolenceCommandReceived.description>Тактические данные, полученные от командного механойда.</DMSRC_MalevolenceCommandReceived.description>
+  
+</LanguageData>

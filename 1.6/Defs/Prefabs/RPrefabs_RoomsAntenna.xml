@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_RoomAntenna_1</defName>
+    <tags>
+      <li>RoomAntenna</li>
+    </tags>
+    <size>(9,9)</size>
+    <clearRects>
+      <li>(4,9,4,9)</li>
+    </clearRects>
+    <things>
+      <Autodoor>
+        <rects>
+          <li>(4,9,4,9)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Autodoor>
+      <CommsConsole>
+        <position>(4, 0, 0)</position>
+      </CommsConsole>
+      <CommsConsole>
+        <position>(1, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </CommsConsole>
+      <CommsConsole>
+        <position>(7, 0, 6)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </CommsConsole>
+      <Armchair>
+        <position>(4, 0, 2)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <Armchair>
+        <position>(3, 0, 6)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <Armchair>
+        <position>(5, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <DMS_BandNode>
+        <positions>
+          <li>(1, 0, 0)</li>
+          <li>(6, 0, 0)</li>
+        </positions>
+      </DMS_BandNode>
+      <WallLamp>
+        <position>(1, 0, 5)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(7, 0, 5)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <DMSRC_Drawer>
+        <rects>
+          <li>(0,0,0,0)</li>
+          <li>(8,0,8,0)</li>
+        </rects>
+      </DMSRC_Drawer>
+      <ShelfSmall>
+        <rects>
+          <li>(3,8,3,8)</li>
+          <li>(5,8,5,8)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </ShelfSmall>
+      <Wall>
+        <rects>
+          <li>(0,5,0,8)</li>
+          <li>(8,5,8,8)</li>
+          <li>(1,8,2,8)</li>
+          <li>(6,8,7,8)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Wall>
+      <Shelf>
+        <position>(0, 0, 4)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(8, 0, 3)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(2, 0, 4)</li>
+          <li>(7, 0, 4)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+    <terrain>
+      <PavedTile>
+        <rects>
+          <li>(0,0,8,8)</li>
+        </rects>
+      </PavedTile>
+    </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_RoomAntenna_2</defName>
+    <tags>
+      <li>RoomAntenna</li>
+    </tags>
+    <size>(9,9)</size>
+    <clearRects>
+      <li>(4,9,4,9)</li>
+    </clearRects>
+    <things>
+      <Autodoor>
+        <rects>
+          <li>(4,9,4,9)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Autodoor>
+      <CommsConsole>
+        <position>(4, 0, 2)</position>
+      </CommsConsole>
+      <CommsConsole>
+        <positions>
+          <li>(1, 0, 8)</li>
+          <li>(7, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </CommsConsole>
+      <Armchair>
+        <position>(4, 0, 4)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <Armchair>
+        <rects>
+          <li>(1,6,1,6)</li>
+          <li>(7,6,7,6)</li>
+        </rects>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <DMS_BandNode>
+        <positions>
+          <li>(2, 0, 0)</li>
+          <li>(5, 0, 0)</li>
+        </positions>
+      </DMS_BandNode>
+      <WallLamp>
+        <position>(4, 0, 2)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(0, 0, 6)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(8, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <DMSRC_Drawer>
+        <rects>
+          <li>(0,0,0,0)</li>
+          <li>(8,0,8,0)</li>
+        </rects>
+      </DMSRC_Drawer>
+      <ShelfSmall>
+        <rects>
+          <li>(1,0,1,0)</li>
+          <li>(7,0,7,0)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </ShelfSmall>
+      <Wall>
+        <rects>
+          <li>(4,0,4,1)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Wall>
+      <Shelf>
+        <positions>
+          <li>(0, 0, 6)</li>
+          <li>(3, 0, 8)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(8, 0, 5)</li>
+          <li>(5, 0, 7)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+    <terrain>
+      <PavedTile>
+        <rects>
+          <li>(0,0,8,8)</li>
+        </rects>
+      </PavedTile>
+    </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_RoomAntenna_3</defName>
+    <tags>
+      <li>RoomAntenna</li>
+    </tags>
+    <size>(9,9)</size>
+    <clearRects>
+      <li>(4,9,4,9)</li>
+    </clearRects>
+    <things>
+      <Autodoor>
+        <rects>
+          <li>(4,9,4,9)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Autodoor>
+      <CommsConsole>
+        <positions>
+          <li>(1, 0, 0)</li>
+          <li>(4, 0, 0)</li>
+          <li>(7, 0, 0)</li>
+        </positions>
+      </CommsConsole>
+      <Armchair>
+        <rects>
+          <li>(1,2,1,2)</li>
+          <li>(4,2,4,2)</li>
+          <li>(7,2,7,2)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <DMS_BandNode>
+        <positions>
+          <li>(0, 0, 4)</li>
+          <li>(7, 0, 4)</li>
+        </positions>
+      </DMS_BandNode>
+      <WallLamp>
+        <position>(4, 0, 3)</position>
+      </WallLamp>
+      <WallLamp>
+        <position>(2, 0, 5)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(6, 0, 5)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(4, 0, 7)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </WallLamp>
+      <DMSRC_Drawer>
+        <position>(0, 0, 7)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Drawer>
+      <DMSRC_Drawer>
+        <position>(8, 0, 7)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Drawer>
+      <ShelfSmall>
+        <position>(0, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </ShelfSmall>
+      <ShelfSmall>
+        <position>(8, 0, 6)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </ShelfSmall>
+      <Wall>
+        <rects>
+          <li>(3,4,5,6)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Wall>
+      <Shelf>
+        <positions>
+          <li>(1, 0, 8)</li>
+          <li>(3, 0, 8)</li>
+          <li>(6, 0, 8)</li>
+          <li>(8, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+    <terrain>
+      <PavedTile>
+        <rects>
+          <li>(0,0,8,8)</li>
+        </rects>
+      </PavedTile>
+    </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_RoomAntenna_4</defName>
+    <tags>
+      <li>RoomAntenna</li>
+    </tags>
+    <size>(9,9)</size>
+    <clearRects>
+      <li>(4,9,4,9)</li>
+    </clearRects>
+    <things>
+      <Autodoor>
+        <rects>
+          <li>(4,9,4,9)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Autodoor>
+      <CommsConsole>
+        <position>(4, 0, 0)</position>
+      </CommsConsole>
+      <CommsConsole>
+        <position>(1, 0, 2)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </CommsConsole>
+      <CommsConsole>
+        <position>(7, 0, 2)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </CommsConsole>
+      <Armchair>
+        <position>(3, 0, 2)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <Armchair>
+        <position>(4, 0, 2)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <Armchair>
+        <position>(5, 0, 2)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <DMS_BandNode>
+        <positions>
+          <li>(0, 0, 7)</li>
+          <li>(7, 0, 7)</li>
+        </positions>
+      </DMS_BandNode>
+      <WallLamp>
+        <position>(1, 0, 3)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(7, 0, 3)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <DMSRC_Drawer>
+        <rects>
+          <li>(2,8,2,8)</li>
+          <li>(6,8,6,8)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Drawer>
+      <ShelfSmall>
+        <rects>
+          <li>(3,8,3,8)</li>
+          <li>(5,8,5,8)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </ShelfSmall>
+      <Wall>
+        <rects>
+          <li>(0,0,2,0)</li>
+          <li>(6,0,8,0)</li>
+          <li>(0,1,0,3)</li>
+          <li>(8,1,8,3)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Wall>
+      <Shelf>
+        <positions>
+          <li>(0, 0, 4)</li>
+          <li>(7, 0, 4)</li>
+        </positions>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(0, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <position>(8, 0, 5)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+    <terrain>
+      <PavedTile>
+        <rects>
+          <li>(0,0,8,8)</li>
+        </rects>
+      </PavedTile>
+    </terrain>
+  </DMSRC.RPrefabDef>
+
+</Defs>

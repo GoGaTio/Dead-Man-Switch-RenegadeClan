@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: military aid request -->
+  <AidRequest.label>запрос военной помощи</AidRequest.label>
+  <!-- EN: Request a group of renegade fighters to assist you in combat. -->
+  <AidRequest.description>Запросить группу отступников, чтобы помочь в бою.</AidRequest.description>
+  
+  <!-- EN: trade request -->
+  <TradeRequest.label>запрос торговли</TradeRequest.label>
+  <!-- EN: Request a trade offer from renegades. -->
+  <TradeRequest.description>Запросить торговлю с отступниками.</TradeRequest.description>
+  
+</LanguageData>

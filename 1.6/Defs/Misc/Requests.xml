@@ -5,16 +5,17 @@
     <defName>TradeRequest</defName>
     <requestClass>DMSRC.TradeRequest</requestClass>
     <label>trade request</label>
-    <description>TODO</description>
+    <description>Request a trade offer from renegades.</description>
     <hoursBeforeArrival>20~30</hoursBeforeArrival>
   </DMSRC.RenegadesRequestDef>
 
   <DMSRC.RenegadesRequestDef>
     <defName>AidRequest</defName>
     <requestClass>DMSRC.AidRequest</requestClass>
-    <label>aid request</label>
-    <description>TODO</description>
-    <hoursBeforeArrival>1~4</hoursBeforeArrival>
+    <label>military aid request</label>
+    <description>Request a group of renegade fighters to assist you in combat.</description>
+    <hoursBeforeArrival>1~3</hoursBeforeArrival>
+    <minGoodwill>50</minGoodwill>
   </DMSRC.RenegadesRequestDef>
   
 </Defs>

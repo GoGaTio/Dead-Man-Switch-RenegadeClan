@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Fortified blade -->
+  <DMSRC_Sword.label>Fortified blade</DMSRC_Sword.label>
+  <!-- EN: Heavy slashing sword made from uranium allow. -->
+  <DMSRC_Sword.description>Heavy slashing sword made from uranium allow.</DMSRC_Sword.description>
+  <!-- EN: handle -->
+  <DMSRC_Sword.tools.handle.label>handle</DMSRC_Sword.tools.handle.label>
+  <!-- EN: edge -->
+  <DMSRC_Sword.tools.edge.label>edge</DMSRC_Sword.tools.edge.label>
+  
+</LanguageData>

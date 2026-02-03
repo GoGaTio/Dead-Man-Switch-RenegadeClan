@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: bomb -->
+  <DMSRC_BombTimed.label>взрыв</DMSRC_BombTimed.label>
+  <!-- EN: {0} has died in an explosion. -->
+  <DMSRC_BombTimed.deathMessage>{PAWN_nameDef} {PAWN_gender ? убит : убита : убито} взрывом.</DMSRC_BombTimed.deathMessage>
+  
+  <!-- EN: firecracker -->
+  <DMSRC_Firecracker.label>шутиха</DMSRC_Firecracker.label>
+  <!-- EN: {0} has burned to death. -->
+  <DMSRC_Firecracker.deathMessage>{PAWN_nameDef} {PAWN_gender ? прожжен : прожжена : прожжено} до смерти.</DMSRC_Firecracker.deathMessage>
+  
+  <!-- EN: focused beam -->
+  <DMSRC_FocusedBeam.label>сфокусированный луч</DMSRC_FocusedBeam.label>
+  <!-- EN: {0} has been beamed to death. -->
+  <DMSRC_FocusedBeam.deathMessage>{PAWN_nameDef} {PAWN_gender ? облучен : облучена : облучено} до смерти.</DMSRC_FocusedBeam.deathMessage>
+  
+</LanguageData>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>questDescription->You have decrypted a transponder, revealing the location of a sealed security container with valuable loot.</li>
+  -->
+  <DMSRC_ContainerLoot.questDescriptionRules.rulesStrings>
+    <li>questDescription->You have decrypted a transponder, revealing the location of a sealed security container with valuable loot.</li>
+  </DMSRC_ContainerLoot.questDescriptionRules.rulesStrings>
+  <!-- EN:
+    <li>questName->[containerAdjective] [containerNoun]</li>
+    <li>containerAdjective->Valuable</li>
+    <li>containerAdjective->Important</li>
+    <li>containerAdjective->Forgotten</li>
+    <li>containerAdjective->Hidden</li>
+    <li>containerAdjective->Secret</li>
+    <li>containerAdjective->Prepared</li>
+    <li>containerAdjective->Sealed</li>
+    <li>containerNoun->crate</li>
+    <li>containerNoun->container</li>
+    <li>containerNoun->cargo</li>
+  -->
+  <DMSRC_ContainerLoot.questNameRules.rulesStrings>
+    <li>questName->[containerAdjective] [containerNoun]</li>
+    <li>containerAdjective->Valuable</li>
+    <li>containerAdjective->Important</li>
+    <li>containerAdjective->Forgotten</li>
+    <li>containerAdjective->Hidden</li>
+    <li>containerAdjective->Secret</li>
+    <li>containerAdjective->Prepared</li>
+    <li>containerAdjective->Sealed</li>
+    <li>containerNoun->crate</li>
+    <li>containerNoun->container</li>
+    <li>containerNoun->cargo</li>
+  </DMSRC_ContainerLoot.questNameRules.rulesStrings>
+  <!-- EN: [resolvedQuestName] -->
+  <DMSRC_ContainerLoot.root.nodes.Letter.label.slateRef>[resolvedQuestName]</DMSRC_ContainerLoot.root.nodes.Letter.label.slateRef>
+  <!-- EN: You have decrypted a transponder, revealing the location of a sealed security container with valuable loot. -->
+  <DMSRC_ContainerLoot.root.nodes.Letter.text.slateRef>You have decrypted a transponder, revealing the location of a sealed security container with valuable loot.</DMSRC_ContainerLoot.root.nodes.Letter.text.slateRef>
+  
+</LanguageData>

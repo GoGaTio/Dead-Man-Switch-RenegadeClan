@@ -3,8 +3,10 @@
 
   <PawnKindDef ParentName="MechanitorBase">
     <defName>DMSRC_DummyMechanitor</defName>
-    <apparelMoney>0~1000</apparelMoney>
+    <apparelMoney>0~0</apparelMoney>
     <apparelRequired Inherit="False" />
+    <apparelTags Inherit="False" />
+    <weaponTags Inherit="False" />
     <techHediffsTags Inherit="False" />
     <forcedTraits Inherit="False" />
     <defaultFactionType Inherit="False" />

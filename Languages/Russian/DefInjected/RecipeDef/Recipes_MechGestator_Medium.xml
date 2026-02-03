@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gestate Malice -->
+  <DMSRC_Make_Malice.label>Вырастить Злобу</DMSRC_Make_Malice.label>
+  <!-- EN: Gestate a Malice Automatroid. -->
+  <DMSRC_Make_Malice.description>Вырастить Злобу.</DMSRC_Make_Malice.description>
+  <!-- EN: Gestating mech. -->
+  <DMSRC_Make_Malice.jobString>Выращивает.</DMSRC_Make_Malice.jobString>
+  
+  <!-- EN: Gestate Saboteur -->
+  <DMSRC_Make_Saboteur.label>Вырастить Диверсанта</DMSRC_Make_Saboteur.label>
+  <!-- EN: Gestate a Saboteur Automatroid. -->
+  <DMSRC_Make_Saboteur.description>Вырастить Диверсанта.</DMSRC_Make_Saboteur.description>
+  <!-- EN: Gestating mech. -->
+  <DMSRC_Make_Saboteur.jobString>Выращивает.</DMSRC_Make_Saboteur.jobString>
+  
+  <!-- EN: Gestate a Stancher -->
+  <DMSRC_Make_Stancher.label>Вырастить Остановителя</DMSRC_Make_Stancher.label>
+  <!-- EN: Gestate a Stancher Automatroid. -->
+  <DMSRC_Make_Stancher.description>Вырастить Остановителя.</DMSRC_Make_Stancher.description>
+  <!-- EN: Gestating mech. -->
+  <DMSRC_Make_Stancher.jobString>Выращивает.</DMSRC_Make_Stancher.jobString>
+  
+</LanguageData>

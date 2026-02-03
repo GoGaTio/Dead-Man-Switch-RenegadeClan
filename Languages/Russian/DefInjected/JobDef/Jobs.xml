@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: taking control of TargetA. -->
+  <DMSRC_ControlMech.reportString>берет управление над TargetA.</DMSRC_ControlMech.reportString>
+  
+  <!-- EN: opening TargetA. -->
+  <DMSRC_OpenContainer.reportString>открывает TargetA.</DMSRC_OpenContainer.reportString>
+  
+  <!-- EN: planting TargetA. -->
+  <DMSRC_PlantBomb.reportString>устанавливает TargetA.</DMSRC_PlantBomb.reportString>
+  
+  <!-- EN: repairing TargetA. -->
+  <DMSRC_RepairMech.reportString>чинит TargetA.</DMSRC_RepairMech.reportString>
+  
+  <!-- EN: using TargetA. -->
+  <DMSRC_TalkToRenegades.reportString>использует TargetA.</DMSRC_TalkToRenegades.reportString>
+  
+  <!-- EN: moving. -->
+  <DSMRC_GotoSprint.reportString>идёт.</DSMRC_GotoSprint.reportString>
+  
+</LanguageData>

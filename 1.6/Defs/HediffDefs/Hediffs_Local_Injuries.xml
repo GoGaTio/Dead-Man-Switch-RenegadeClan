@@ -20,7 +20,7 @@
     <injuryProps>
       <painPerSeverity>0.0125</painPerSeverity>
       <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
-      <bleedRate>0.06</bleedRate>
+      <bleedRate>0.03</bleedRate>
       <canMerge>true</canMerge>
       <destroyedLabel>Burned off</destroyedLabel>
       <destroyedOutLabel>Burned out</destroyedOutLabel>

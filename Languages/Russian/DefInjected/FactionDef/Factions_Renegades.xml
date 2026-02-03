@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: renegade clan -->
+  <DMSRC_RenegadeClan.label>клан отступников</DMSRC_RenegadeClan.label>
+  <!-- EN: A network of separatists originated from group of high officers and scientists which stole large research ship containing tons of valuable equipment and technology. They're secretly sponsored by Empire, some Glitterworlds and planetary warlords, allowing them to fight Colonial fleets indirectly. Renegades lack menpower, but technologies, sabotage tactics and natives glowering towards Colonial Fleet allow them keep fighting for their ideas.\n\nThere're rumors inbetween fleet personnel and low-rank officers about strange nature of renegades leader "count" and his real goals. -->
+  <DMSRC_RenegadeClan.description>Сеть сепаратистов берущих своё начало от группы высших офицеров, дезертировавших из колониального флота, угнав передовой корабль-лабораторию, содержавший кучу ценнейшего оборудования и технологий. Секретно поддерживаемые Империей, некоторыми продвинутыми мирами и местными царьками, позволяя отступникам сражаться с Колониальным флотом. Отступники не обладают значительными людскими ресурсами, но технологии, техники диверсий и ненависть местного населения к Колониальному флоту дают им значительное преимущество.</DMSRC_RenegadeClan.description>
+  <!-- EN: Renegade clan -->
+  <DMSRC_RenegadeClan.fixedName>Клан отступников</DMSRC_RenegadeClan.fixedName>
+  <!-- EN: Where is the end of one there is a begining of another. Nothing can last forever. Do what you can do, hide awaiting, watch as the system collapses and you will be awarded for your patience. -->
+  <DMSRC_RenegadeClan.ideoDescription>Там, где конец одного, есть начало другого. Ничто не длится вечно. Делай что можешь, поджидай скрываясь, смотри как твой враг падёт и будешь ты награждён за своё терпение.</DMSRC_RenegadeClan.ideoDescription>
+  <!-- EN: Doctrine of the End -->
+  <DMSRC_RenegadeClan.ideoName>Доктрина Конца</DMSRC_RenegadeClan.ideoName>
+  <!-- EN: count -->
+  <DMSRC_RenegadeClan.leaderTitle>граф</DMSRC_RenegadeClan.leaderTitle>
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <DMSRC_RenegadeClan.messageDefendersAttacking>{0} из фракции {1} атакуют ваших {lookup: {2}; Case; 3}.</DMSRC_RenegadeClan.messageDefendersAttacking>
+  <!-- EN: renegade -->
+  <DMSRC_RenegadeClan.pawnSingular>отступник</DMSRC_RenegadeClan.pawnSingular>
+  <!-- EN: renegades -->
+  <DMSRC_RenegadeClan.pawnsPlural>отступники</DMSRC_RenegadeClan.pawnsPlural>
+  
+</LanguageData>

@@ -59,9 +59,12 @@
       <texPath>Things/Building/DMSRC_FacilityEntrance</texPath>
       <drawSize>(5,5)</drawSize>
     </graphicData>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
     <size>(3,3)</size>
     <thingClass>DMSRC.FacilityEntrance</thingClass>
-    <rotatable>true</rotatable>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
     <portal>
       <pocketMapGenerator>DMSRC_UndergroundFacility</pocketMapGenerator>
       <exitDef>DMSRC_SmallHole_Exit</exitDef>
@@ -77,25 +80,14 @@
     <label>ancient stockpile exit</label>
     <description>A ladder which links to the surface hatch above.</description>
     <size>(3,3)</size>
-    <drawerType>RealtimeOnly</drawerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <rotatable>false</rotatable>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Building/AncientHatchExit/AncientHatchExit</texPath>
-      <drawSize>(3,3)</drawSize>
+      <texPath>Things/Building/DMSRC_FacilityEntrance</texPath>
+      <drawSize>(5,5)</drawSize>
     </graphicData>
-    <comps>
-      <li Class="CompProperties_DrawAdditionalGraphics">
-        <graphics>
-          <li>
-            <graphicClass>Graphic_Single</graphicClass>
-            <texPath>Things/Building/AncientHatchExit/AncientHatchExit_Ladder</texPath>
-            <drawSize>(3,3)</drawSize>
-            <drawOffset>(0, 0.01, 0.7)</drawOffset>
-            <shaderType>Transparent</shaderType>
-          </li>
-        </graphics>
-      </li>
-    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">
@@ -105,12 +97,11 @@
     <thingClass>Building</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <texPath>Things/Building/Power/ChemfuelPoweredGenerator</texPath>
+      <texPath>Things/Building/DMSRC_CompactGenerator</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2,2)</drawSize>
+      <drawSize>(3,3)</drawSize>
       <shadowData>
-        <volume>(1.93,1,1.69)</volume>
-        <offset>(-0.03,0,-0.1)</offset>
+        <volume>(2,1,2)</volume>
       </shadowData>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
@@ -118,7 +109,7 @@
     <fillPercent>0.9</fillPercent>
     <pathCost>50</pathCost>
     <rotatable>false</rotatable>
-    <blockWind>true</blockWind>
+    <blockWind>false</blockWind>
     <statBases>
       <MaxHitPoints>300</MaxHitPoints>
       <WorkToBuild>2500</WorkToBuild>
@@ -138,19 +129,21 @@
     <minifiedDef>MinifiedThing</minifiedDef>
     <costList>
       <Steel>100</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
+      <Tungsteel>100</Tungsteel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentStamped>5</ComponentStamped>
     </costList>
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerPlant</compClass>
-        <basePowerConsumption>-1500</basePowerConsumption>
+        <basePowerConsumption>-2000</basePowerConsumption>
         <transmitsPower>true</transmitsPower>
         <soundAmbientProducingPower>ChemfuelFiredGenerator_Ambience</soundAmbientProducingPower>
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>3</fuelConsumptionRate>
-        <fuelCapacity>60.0</fuelCapacity>
+        <fuelConsumptionRate>4</fuelConsumptionRate>
+        <fuelCapacity>100</fuelCapacity>
         <fuelFilter>
           <thingDefs>
             <li>Chemfuel</li>
@@ -158,7 +151,7 @@
         </fuelFilter>
         <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
         <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-        <initialConfigurableTargetFuelLevel>60</initialConfigurableTargetFuelLevel>
+        <initialConfigurableTargetFuelLevel>100</initialConfigurableTargetFuelLevel>
         <canEjectFuel>true</canEjectFuel>
       </li>
       <li Class="CompProperties_Glower">
@@ -169,7 +162,6 @@
         <compClass>CompHeatPusherPowered</compClass>
         <heatPerSecond>1</heatPerSecond>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
       <li Class="CompProperties_Explosive">
         <explosiveRadius>0</explosiveRadius>
         <explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
@@ -282,10 +274,9 @@
       <li Class="CompProperties_Hackable">
         <defence>600</defence>
         <effectHacking>HackingTerminal</effectHacking>
-        <lockoutDurationHoursRange>2~4</lockoutDurationHoursRange>
-        <hackedInspectString>Opened.</hackedInspectString>
+        <hackedInspectString>Defused.</hackedInspectString>
         <showProgressAfterHackCompletion>false</showProgressAfterHackCompletion>
-        <hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
+        <hackedMessage>{HACKER_labelShort} has defused {SUBJECT_labelNoParenthesisDef}.</hackedMessage>
         <intellectualSkillPrerequisite>4</intellectualSkillPrerequisite>
       </li>
       <li Class="DMSRC.CompProperties_TimedBomb">
@@ -293,7 +284,6 @@
         <explosiveRadius>6.9</explosiveRadius>
         <explosiveDamageType>DMSRC_BombTimed</explosiveDamageType>
         <damageAmountBase>100</damageAmountBase>
-        <chanceNeverExplodeFromDamage>0.9</chanceNeverExplodeFromDamage>
         <offset>(-0.125,0,0.25)</offset>
         <emissionIntervalCurve>
           <points>

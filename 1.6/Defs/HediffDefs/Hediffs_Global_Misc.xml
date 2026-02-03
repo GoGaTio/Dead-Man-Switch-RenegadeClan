@@ -4,7 +4,7 @@
   <HediffDef>
     <defName>DMSRC_ProcessorHelmet</defName>
     <label>processor helmet</label>
-    <description>A crown-like headpiece with stubby spikes that poke the head uncomfortably. It is used to put the wearer in pain.</description>
+    <description>Connected processor helmet.</description>
     <hediffClass>DMSRC.Hediff_ProcessorHelmet</hediffClass>
     <stages>
       <li>
@@ -28,7 +28,7 @@
     <hediffClass>HediffWithComps</hediffClass>
     <defName>DMSRC_NeuroControl</defName>
     <label>neurocontrol</label>
-    <description>Invisible.</description>
+    <description>This mechanoid is in share control by neuroimplant.</description>
     <isBad>false</isBad>
     <comps>
       <li Class="DMSRC.HediffCompProperties_NeuroControl">
@@ -37,7 +37,26 @@
     </comps>
     <stages>
       <li>
-        
+        <statOffsets>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+        </statOffsets>
+        <statFactors>
+          <RangedCooldownFactor>0.75</RangedCooldownFactor>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.1</offset>
+          </li>
+        </capMods>
       </li>
     </stages>
   </HediffDef>

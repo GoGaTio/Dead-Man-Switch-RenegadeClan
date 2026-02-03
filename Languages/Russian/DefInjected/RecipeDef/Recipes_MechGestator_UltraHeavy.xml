@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gestate Malevolence -->
+  <DMSRC_Make_Malevolence.label>Вырастить Злорадство</DMSRC_Make_Malevolence.label>
+  <!-- EN: Gestate a Malevolence Automatroid. -->
+  <DMSRC_Make_Malevolence.description>Вырастить Злорадство.</DMSRC_Make_Malevolence.description>
+  <!-- EN: Gestating mech. -->
+  <DMSRC_Make_Malevolence.jobString>Выращивает.</DMSRC_Make_Malevolence.jobString>
+  
+</LanguageData>

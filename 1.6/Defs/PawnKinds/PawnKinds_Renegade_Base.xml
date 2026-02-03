@@ -92,6 +92,7 @@
     <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
     <techHediffsChance>0.04</techHediffsChance>
     <techHediffsMoney>2200~7000</techHediffsMoney>
+    <chemicalAddictionChance>0</chemicalAddictionChance>
     <backstoryCategories>
       <li>DMS_Officer</li>
       <li>Mili_Expert</li>

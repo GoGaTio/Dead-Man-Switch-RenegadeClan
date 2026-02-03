@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: armored head -->
+  <DMSRC_ArmoredHead.label>бронеголова</DMSRC_ArmoredHead.label>
+  
+  <!-- EN: armored leg -->
+  <DMSRC_ArmoredLeg.label>броненога</DMSRC_ArmoredLeg.label>
+  
+  <!-- EN: processor core -->
+  <DMSRC_ProcessorCore.label>обрабатывающее ядро</DMSRC_ProcessorCore.label>
+  
+  <!-- EN: turret -->
+  <DMSRC_Turret.label>турель</DMSRC_Turret.label>
+  
+</LanguageData>

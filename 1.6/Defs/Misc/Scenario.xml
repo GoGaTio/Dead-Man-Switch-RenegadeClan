@@ -3,7 +3,7 @@
 
   <ScenPartDef>
     <defName>DMSRC_PlayerArrivesNearPrefab</defName>
-    <label>shuttle crash</label>
+    <label>structure nearby</label>
     <category>Fixed</category>
     <scenPartClass>DMSRC.ScenPart_PlayerArrivesPrefab</scenPartClass>
   </ScenPartDef>
@@ -24,10 +24,10 @@
   <ScenarioDef ParentName="ScenarioBase">
     <defName>DMSRC_Scenario</defName>
     <label>Awaiting Renegades</label>
-    <description>A legendary pilot decides to retire and start a different story.</description>
+    <description>A group of renegades.</description>
     <scenario>
       <name>Awaiting Renegades</name>
-      <summary>A legendary pilot decides to retire and start a different story.</summary>
+      <summary>A group of renegades.</summary>
       <description>You have been awaiting for decades on this Rimworld till high command gave you an order to begin your activity since local renegades cell is already established.\n\nReinitiate systems of base, activate automatroids, contact renegades clan and begin fighting local Colonial Fleet. Take advantage of technology and you hidden position, use command automatroid to realize sabotage missions on fleet infrastructure.</description>
       <playerFaction>
         <def>PlayerFaction</def>
@@ -57,8 +57,18 @@
           <def>DMSRC_PlayerArrivesNearPrefab</def>
           <visible>false</visible>
           <prefabOptions>
-            <li>DMSRC_Scenario_1</li>
+            <li>DMSRC_ScenarioBunker</li>
           </prefabOptions>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_AssaultRifle</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_MiniMachineGun</thingDef>
+          <count>1</count>
         </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
@@ -83,11 +93,21 @@
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>MealSurvivalPack</thingDef>
-          <count>40</count>
+          <count>60</count>
         </li><li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>Chemfuel</thingDef>
+          <count>400</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
           <count>300</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>1000</count>
         </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
@@ -97,7 +117,7 @@
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>MedicineIndustrial</thingDef>
-          <count>10</count>
+          <count>20</count>
         </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
@@ -154,8 +174,7 @@
           <def>DMSRC_Renegades</def>
           <enemyWithFleet>true</enemyWithFleet>
           <relations>Ally</relations>
-          <opinion>0.5</opinion>
-          <will>0.2</will>
+          <goodwill>100</goodwill>
           <startContacted>true</startContacted>
         </li>
       </parts>

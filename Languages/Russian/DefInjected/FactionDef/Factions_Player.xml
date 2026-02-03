@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Renegade group -->
+  <DMSRC_PlayerRenegades.label>Группа отступников</DMSRC_PlayerRenegades.label>
+  <!-- EN: A group of recently aroused renegades. -->
+  <DMSRC_PlayerRenegades.description>Группа недавно проснувшихся отступников.</DMSRC_PlayerRenegades.description>
+  <!-- EN: leader -->
+  <DMSRC_PlayerRenegades.leaderTitle>лидер</DMSRC_PlayerRenegades.leaderTitle>
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <DMSRC_PlayerRenegades.messageDefendersAttacking>{0} из фракции {1} атакуют ваших {lookup: {2}; Case; 3}.</DMSRC_PlayerRenegades.messageDefendersAttacking>
+  <!-- EN: renegade -->
+  <DMSRC_PlayerRenegades.pawnSingular>отступник</DMSRC_PlayerRenegades.pawnSingular>
+  <!-- EN: renegades -->
+  <DMSRC_PlayerRenegades.pawnsPlural>отступники</DMSRC_PlayerRenegades.pawnsPlural>
+  
+</LanguageData>

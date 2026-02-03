@@ -3,8 +3,8 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>DMSRC_ContainerTransponder</defName>
-    <label>cargo transponder</label>
-    <description>A transponder that connects a , even over a great distance. Mechanitors are capable of controlling many mechanoids using a mix of psychic and electromagnetic signals.\n\nDecrypting the transponder will allow you to pinpoint the location of the last mechanitor who controlled the mechanoid.</description>
+    <label>container transponder</label>
+    <description>A transponder that designated location of security container even over a great distance.</description>
     <thingClass>ThingWithComps</thingClass>
     <graphicData>
       <texPath>Things/Resource/DMSRC_ContainerTransmitter</texPath>

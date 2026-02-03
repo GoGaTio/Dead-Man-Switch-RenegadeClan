@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_ScenarioBunker</defName>
+    <size>(25,25)</size>
+    <things>
+      <HiddenConduit>
+        <rects>
+          <li>(8,0,16,0)</li>
+          <li>(6,1,8,1)</li>
+          <li>(12,1,12,10)</li>
+          <li>(16,1,18,1)</li>
+          <li>(4,2,6,2)</li>
+          <li>(18,2,20,2)</li>
+          <li>(3,3,4,3)</li>
+          <li>(20,3,21,3)</li>
+          <li>(2,4,3,4)</li>
+          <li>(21,4,22,4)</li>
+          <li>(2,5,2,6)</li>
+          <li>(22,5,22,6)</li>
+          <li>(1,6,1,8)</li>
+          <li>(23,6,23,8)</li>
+          <li>(0,8,0,16)</li>
+          <li>(2,8,3,8)</li>
+          <li>(21,8,22,8)</li>
+          <li>(24,8,24,16)</li>
+          <li>(3,9,6,9)</li>
+          <li>(13,9,21,9)</li>
+          <li>(6,10,11,10)</li>
+          <li>(20,10,20,13)</li>
+          <li>(6,11,6,18)</li>
+          <li>(14,11,18,11)</li>
+          <li>(12,12,14,12)</li>
+          <li>(18,12,18,23)</li>
+          <li>(12,13,12,19)</li>
+          <li>(21,13,21,14)</li>
+          <li>(22,14,23,14)</li>
+          <li>(23,16,23,18)</li>
+          <li>(1,18,5,18)</li>
+          <li>(7,18,8,18)</li>
+          <li>(19,18,22,18)</li>
+          <li>(2,19,2,20)</li>
+          <li>(8,19,11,19)</li>
+          <li>(13,19,13,21)</li>
+          <li>(22,19,22,20)</li>
+          <li>(3,20,3,21)</li>
+          <li>(8,20,8,24)</li>
+          <li>(21,20,21,21)</li>
+          <li>(4,21,4,22)</li>
+          <li>(14,21,17,21)</li>
+          <li>(20,21,20,22)</li>
+          <li>(5,22,5,22)</li>
+          <li>(19,22,19,22)</li>
+          <li>(16,23,17,23)</li>
+          <li>(9,24,16,24)</li>
+        </rects>
+      </HiddenConduit>
+      <DMSRC_CompactGenerator>
+        <positions>
+          <li>(20, 0, 5)</li>
+          <li>(16, 0, 7)</li>
+        </positions>
+      </DMSRC_CompactGenerator>
+      <Battery>
+        <position>(21, 0, 7)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </Battery>
+      <Table1x2c>
+        <position>(8, 0, 15)</position>
+        <stuff>Steel</stuff>
+        <quality>Good</quality>
+      </Table1x2c>
+      <Table1x2c>
+        <position>(12, 0, 20)</position>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table1x2c>
+      <Table1x2c>
+        <position>(7, 0, 22)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table1x2c>
+      <TableMachining>
+        <position>(19, 0, 8)</position>
+      </TableMachining>
+      <NutrientPasteDispenser>
+        <position>(13, 0, 17)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </NutrientPasteDispenser>
+      <Door>
+        <rects>
+          <li>(12,5,12,5)</li>
+          <li>(20,11,20,11)</li>
+          <li>(6,14,6,14)</li>
+          <li>(12,14,12,14)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Door>
+      <Door>
+        <rects>
+          <li>(15,9,15,9)</li>
+          <li>(10,10,10,10)</li>
+          <li>(7,18,7,18)</li>
+          <li>(20,18,20,18)</li>
+          <li>(9,19,9,19)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Door>
+      <Door>
+        <position>(24, 0, 15)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Tungsteel</stuff>
+      </Door>
+      <ToolCabinet>
+        <position>(18, 0, 3)</position>
+      </ToolCabinet>
+      <Dresser>
+        <positions>
+          <li>(4, 0, 19)</li>
+          <li>(12, 0, 23)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Dresser>
+      <Stool>
+        <rects>
+          <li>(14,3,14,4)</li>
+          <li>(16,4,16,4)</li>
+          <li>(19,5,19,5)</li>
+          <li>(19,7,19,7)</li>
+          <li>(7,20,7,20)</li>
+          <li>(11,20,11,20)</li>
+        </rects>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Stool>
+      <Barricade>
+        <rects>
+          <li>(21,16,22,16)</li>
+          <li>(21,17,21,17)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Barricade>
+      <DMSRC_InactiveMech>
+        <rects>
+          <li>(10,2,10,2)</li>
+          <li>(8,3,8,3)</li>
+          <li>(5,5,5,5)</li>
+          <li>(8,5,8,6)</li>
+          <li>(4,6,4,6)</li>
+          <li>(6,7,6,7)</li>
+          <li>(10,7,10,7)</li>
+          <li>(8,8,8,8)</li>
+          <li>(5,13,5,13)</li>
+          <li>(4,15,4,15)</li>
+          <li>(5,17,5,17)</li>
+        </rects>
+      </DMSRC_InactiveMech>
+      <DMS_LabReactor>
+        <position>(17, 0, 3)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_LabReactor>
+      <DMS_Recharger>
+        <position>(19, 0, 20)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMS_Recharger>
+      <BiofuelRefinery>
+        <position>(14, 0, 7)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </BiofuelRefinery>
+      <PokerTable>
+        <position>(7, 0, 11)</position>
+        <stuff>Steel</stuff>
+        <quality>Good</quality>
+      </PokerTable>
+      <Bed>
+        <positions>
+          <li>(5, 0, 20)</li>
+          <li>(10, 0, 23)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Bed>
+      <WallLamp>
+        <position>(6, 0, 3)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(17,8,17,8)</li>
+          <li>(9,9,9,9)</li>
+        </rects>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(23,11,23,11)</li>
+          <li>(17,16,17,16)</li>
+          <li>(7,20,7,20)</li>
+          <li>(12,21,12,21)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(1,13,1,13)</li>
+          <li>(7,15,7,15)</li>
+          <li>(19,15,19,15)</li>
+        </rects>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <CommsConsole>
+        <position>(3, 0, 17)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </CommsConsole>
+      <Table2x2c>
+        <position>(1, 0, 9)</position>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table2x2c>
+      <DMS_MechGestatorSmall>
+        <position>(4, 0, 11)</position>
+      </DMS_MechGestatorSmall>
+      <Hopper>
+        <position>(13, 0, 15)</position>
+      </Hopper>
+      <Hopper>
+        <rects>
+          <li>(15,16,15,18)</li>
+        </rects>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </Hopper>
+      <ShelfSmall>
+        <rects>
+          <li>(10,1,10,1)</li>
+          <li>(15,3,15,3)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </ShelfSmall>
+      <ElectricTailoringBench>
+        <position>(19, 0, 4)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </ElectricTailoringBench>
+      <HiTechResearchBench>
+        <position>(2, 0, 13)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </HiTechResearchBench>
+      <DMS_LabFurnace>
+        <position>(13, 0, 3)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMS_LabFurnace>
+      <DMS_TableMachinePrinter>
+        <position>(14, 0, 2)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_TableMachinePrinter>
+      <OrbitalTradeBeacon>
+        <position>(7, 0, 5)</position>
+      </OrbitalTradeBeacon>
+      <PowerConduit>
+        <rects>
+          <li>(1,16,1,17)</li>
+          <li>(6,22,6,23)</li>
+          <li>(7,23,7,23)</li>
+        </rects>
+      </PowerConduit>
+      <CryptosleepCasket>
+        <position>(23, 0, 9)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </CryptosleepCasket>
+      <CryptosleepCasket>
+        <position>(22, 0, 13)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </CryptosleepCasket>
+      <HospitalBed>
+        <position>(23, 0, 11)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </HospitalBed>
+      <EndTable>
+        <rects>
+          <li>(4,20,4,20)</li>
+          <li>(9,23,9,23)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </EndTable>
+      <Wall>
+        <rects>
+          <li>(8,0,16,0)</li>
+          <li>(6,1,8,1)</li>
+          <li>(12,1,12,4)</li>
+          <li>(16,1,18,1)</li>
+          <li>(4,2,6,2)</li>
+          <li>(18,2,20,2)</li>
+          <li>(3,3,4,3)</li>
+          <li>(20,3,21,3)</li>
+          <li>(2,4,3,4)</li>
+          <li>(21,4,22,4)</li>
+          <li>(2,5,2,6)</li>
+          <li>(22,5,22,6)</li>
+          <li>(1,6,1,8)</li>
+          <li>(12,6,12,10)</li>
+          <li>(23,6,23,8)</li>
+          <li>(0,8,0,16)</li>
+          <li>(2,8,3,8)</li>
+          <li>(21,8,22,8)</li>
+          <li>(24,8,24,14)</li>
+          <li>(3,9,6,9)</li>
+          <li>(13,9,14,9)</li>
+          <li>(16,9,21,9)</li>
+          <li>(6,10,9,10)</li>
+          <li>(11,10,11,10)</li>
+          <li>(20,10,20,10)</li>
+          <li>(6,11,6,13)</li>
+          <li>(14,11,18,11)</li>
+          <li>(12,12,14,12)</li>
+          <li>(18,12,18,23)</li>
+          <li>(20,12,20,13)</li>
+          <li>(12,13,12,13)</li>
+          <li>(21,13,21,14)</li>
+          <li>(22,14,23,14)</li>
+          <li>(6,15,6,18)</li>
+          <li>(12,15,12,15)</li>
+          <li>(1,16,1,18)</li>
+          <li>(23,16,24,16)</li>
+          <li>(23,17,23,18)</li>
+          <li>(2,18,5,18)</li>
+          <li>(8,18,8,24)</li>
+          <li>(19,18,19,18)</li>
+          <li>(21,18,22,18)</li>
+          <li>(2,19,2,20)</li>
+          <li>(10,19,13,19)</li>
+          <li>(22,19,22,20)</li>
+          <li>(3,20,3,21)</li>
+          <li>(13,20,13,21)</li>
+          <li>(21,20,21,21)</li>
+          <li>(4,21,4,22)</li>
+          <li>(14,21,17,21)</li>
+          <li>(20,21,20,22)</li>
+          <li>(5,22,6,22)</li>
+          <li>(19,22,19,22)</li>
+          <li>(6,23,7,23)</li>
+          <li>(16,23,17,23)</li>
+          <li>(9,24,16,24)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Wall>
+      <TubeTelevision>
+        <position>(11, 0, 13)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </TubeTelevision>
+      <Shelf>
+        <positions>
+          <li>(9, 0, 2)</li>
+          <li>(5, 0, 4)</li>
+          <li>(4, 0, 5)</li>
+          <li>(3, 0, 6)</li>
+          <li>(4, 0, 8)</li>
+          <li>(7, 0, 9)</li>
+          <li>(15, 0, 13)</li>
+          <li>(19, 0, 17)</li>
+          <li>(14, 0, 20)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(11, 0, 1)</li>
+          <li>(11, 0, 3)</li>
+          <li>(9, 0, 4)</li>
+          <li>(9, 0, 6)</li>
+          <li>(11, 0, 6)</li>
+          <li>(11, 0, 8)</li>
+          <li>(17, 0, 13)</li>
+          <li>(17, 0, 15)</li>
+          <li>(17, 0, 17)</li>
+          <li>(17, 0, 19)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(7, 0, 2)</li>
+          <li>(6, 0, 3)</li>
+          <li>(16, 0, 12)</li>
+          <li>(13, 0, 13)</li>
+        </positions>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(7, 0, 6)</li>
+          <li>(3, 0, 7)</li>
+          <li>(6, 0, 8)</li>
+          <li>(9, 0, 9)</li>
+          <li>(15, 0, 15)</li>
+          <li>(16, 0, 20)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <DMS_TrashBin_Base>
+        <position>(21, 0, 19)</position>
+      </DMS_TrashBin_Base>
+      <DMS_MachineCabinet>
+        <position>(16, 0, 6)</position>
+      </DMS_MachineCabinet>
+      <DMSRC_Turret_Straj>
+        <position>(22, 0, 17)</position>
+      </DMSRC_Turret_Straj>
+      <Couch>
+        <positions>
+          <li>(9, 0, 11)</li>
+          <li>(9, 0, 15)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Good</quality>
+      </Couch>
+      <Couch>
+        <position>(8, 0, 13)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Good</quality>
+      </Couch>
+      <Couch>
+        <position>(7, 0, 16)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Good</quality>
+      </Couch>
+    </things>
+    <terrain>
+      <Concrete>
+        <rects>
+          <li>(8,0,16,9)</li>
+          <li>(6,1,7,10)</li>
+          <li>(17,1,18,9)</li>
+          <li>(4,2,5,18)</li>
+          <li>(19,2,20,9)</li>
+          <li>(3,3,3,18)</li>
+          <li>(21,3,21,9)</li>
+          <li>(2,4,2,20)</li>
+          <li>(22,4,22,8)</li>
+          <li>(1,6,1,18)</li>
+          <li>(23,6,23,8)</li>
+          <li>(0,8,0,16)</li>
+          <li>(24,8,24,14)</li>
+          <li>(8,10,12,10)</li>
+          <li>(20,10,20,10)</li>
+          <li>(6,11,6,18)</li>
+          <li>(14,11,18,15)</li>
+          <li>(12,12,13,15)</li>
+          <li>(20,12,20,13)</li>
+          <li>(21,13,21,14)</li>
+          <li>(22,14,23,14)</li>
+          <li>(15,16,18,21)</li>
+          <li>(23,16,24,16)</li>
+          <li>(23,17,23,18)</li>
+          <li>(8,18,8,24)</li>
+          <li>(19,18,22,20)</li>
+          <li>(9,19,14,19)</li>
+          <li>(3,20,3,21)</li>
+          <li>(13,20,14,21)</li>
+          <li>(4,21,4,22)</li>
+          <li>(19,21,21,21)</li>
+          <li>(5,22,6,22)</li>
+          <li>(18,22,20,22)</li>
+          <li>(6,23,7,23)</li>
+          <li>(16,23,18,23)</li>
+          <li>(9,24,16,24)</li>
+        </rects>
+      </Concrete>
+      <SterileTile>
+        <rects>
+          <li>(22,9,23,13)</li>
+          <li>(21,10,21,12)</li>
+          <li>(20,11,20,11)</li>
+        </rects>
+      </SterileTile>
+      <PavedTile>
+        <rects>
+          <li>(13,10,19,10)</li>
+          <li>(7,11,13,11)</li>
+          <li>(19,11,19,17)</li>
+          <li>(7,12,11,17)</li>
+          <li>(20,14,20,17)</li>
+          <li>(21,15,23,15)</li>
+          <li>(12,16,14,18)</li>
+          <li>(21,16,22,17)</li>
+          <li>(7,18,7,22)</li>
+          <li>(9,18,11,18)</li>
+          <li>(3,19,6,19)</li>
+          <li>(4,20,6,20)</li>
+          <li>(9,20,12,23)</li>
+          <li>(5,21,6,21)</li>
+          <li>(13,22,17,22)</li>
+          <li>(13,23,15,23)</li>
+        </rects>
+      </PavedTile>
+      <MetalTile>
+        <rects>
+          <li>(24,15,24,15)</li>
+        </rects>
+      </MetalTile>
+    </terrain>
+    <roofRects>
+      <li>(8,0,16,24)</li>
+      <li>(6,1,7,23)</li>
+      <li>(17,1,18,23)</li>
+      <li>(4,2,5,22)</li>
+      <li>(19,2,20,22)</li>
+      <li>(3,3,3,21)</li>
+      <li>(21,3,21,21)</li>
+      <li>(2,4,2,20)</li>
+      <li>(22,4,22,20)</li>
+      <li>(1,6,1,18)</li>
+      <li>(23,6,23,18)</li>
+      <li>(0,8,0,16)</li>
+      <li>(24,8,24,16)</li>
+    </roofRects>
+    <clearRects>
+      <li>(8,0,16,24)</li>
+      <li>(6,1,7,23)</li>
+      <li>(17,1,18,23)</li>
+      <li>(4,2,5,22)</li>
+      <li>(19,2,20,22)</li>
+      <li>(3,3,3,21)</li>
+      <li>(21,3,21,21)</li>
+      <li>(2,4,2,20)</li>
+      <li>(22,4,22,20)</li>
+      <li>(1,6,1,18)</li>
+      <li>(23,6,23,18)</li>
+      <li>(0,8,0,16)</li>
+      <li>(24,8,24,18)</li>
+      <li>(25,12,26,18)</li>
+      <li>(27,13,27,17)</li>
+    </clearRects>
+  </DMSRC.RPrefabDef>
+
+</Defs>

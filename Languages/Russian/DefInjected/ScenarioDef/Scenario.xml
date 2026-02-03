@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Awaiting Renegades -->
+  <DMSRC_Scenario.label>Awaiting Renegades</DMSRC_Scenario.label>
+  <!-- EN: A group of renegades. -->
+  <DMSRC_Scenario.description>A legendary pilot decides to retire and start a different story.</DMSRC_Scenario.description>
+  <!-- EN: You have been awaiting for decades on this Rimworld till high command gave you an order to begin your activity since local renegades cell is already established.\n\nReinitiate systems of base, activate automatroids, contact renegades clan and begin fighting local Colonial Fleet. Take advantage of technology and you hidden position, use command automatroid to realize sabotage missions on fleet infrastructure. -->
+  <DMSRC_Scenario.scenario.description>You have been awaiting for decades on this Rimworld till high command gave you an order to begin your activity since local renegades cell is already established.
+
+Reinitiate systems of base, activate automatroids, contact renegades clan and begin fighting local Colonial Fleet. Take advantage of technology and you hidden position, use command automatroid to realize sabotage missions on fleet infrastructure.</DMSRC_Scenario.scenario.description>
+  <!-- EN: Awaiting Renegades -->
+  <DMSRC_Scenario.scenario.name>Awaiting Renegades</DMSRC_Scenario.scenario.name>
+  <!-- EN: A group of renegades. -->
+  <DMSRC_Scenario.scenario.summary>A legendary pilot decides to retire and start a different story.</DMSRC_Scenario.scenario.summary>
+  
+</LanguageData>

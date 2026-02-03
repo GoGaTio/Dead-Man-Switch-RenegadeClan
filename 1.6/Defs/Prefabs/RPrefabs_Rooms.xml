@@ -1,0 +1,1015 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_1</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <WallLamp>
+        <position>(5, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(0, 0, 3)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(8, 0, 5)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <position>(3, 0, 8)</position>
+      </WallLamp>
+      <OrbitalTradeBeacon>
+        <position>(4, 0, 4)</position>
+      </OrbitalTradeBeacon>
+      <Shelf>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(6, 0, 0)</li>
+          <li>(1, 0, 5)</li>
+          <li>(7, 0, 5)</li>
+        </positions>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(5, 0, 1)</li>
+          <li>(0, 0, 2)</li>
+          <li>(0, 0, 6)</li>
+          <li>(5, 0, 7)</li>
+          <li>(0, 0, 8)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(8, 0, 0)</li>
+          <li>(3, 0, 1)</li>
+          <li>(8, 0, 2)</li>
+          <li>(8, 0, 6)</li>
+          <li>(3, 0, 7)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(1, 0, 3)</li>
+          <li>(7, 0, 3)</li>
+          <li>(2, 0, 8)</li>
+          <li>(6, 0, 8)</li>
+          <li>(8, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+    </things>
+    <terrain>
+      <Concrete>
+        <rects>
+          <li>(0,0,8,8)</li>
+        </rects>
+      </Concrete>
+    </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_2</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMS_Recharger>
+        <positions>
+          <li>(2, 0, 0)</li>
+          <li>(6, 0, 0)</li>
+        </positions>
+      </DMS_Recharger>
+      <DMS_Recharger>
+        <positions>
+          <li>(0, 0, 2)</li>
+          <li>(0, 0, 6)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMS_Recharger>
+      <DMS_Recharger>
+        <positions>
+          <li>(8, 0, 2)</li>
+          <li>(8, 0, 6)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMS_Recharger>
+      <DMS_Recharger>
+        <positions>
+          <li>(2, 0, 8)</li>
+          <li>(6, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Recharger>
+      <ShelfSmall>
+        <rects>
+          <li>(0,0,0,0)</li>
+          <li>(8,0,8,0)</li>
+          <li>(0,8,0,8)</li>
+          <li>(8,8,8,8)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </ShelfSmall>
+      <DMSRC_MediumHole>
+        <position>(4, 0, 4)</position>
+      </DMSRC_MediumHole>
+    </things>
+    <terrain>
+      <Concrete>
+        <rects>
+          <li>(0,0,8,8)</li>
+        </rects>
+      </Concrete>
+    </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_3</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <StandingLamp>
+          <position>(7, 0, 6)</position>
+        </StandingLamp>
+        <DMSRC_Crate>
+          <positions>
+            <li>(6, 0, 0)</li>
+            <li>(3, 0, 4)</li>
+            <li>(8, 0, 6)</li>
+          </positions>
+          <relativeRotation>Counterclockwise</relativeRotation>
+        </DMSRC_Crate>
+        <DMSRC_Crate>
+          <positions>
+            <li>(4, 0, 1)</li>
+            <li>(1, 0, 2)</li>
+            <li>(1, 0, 6)</li>
+            <li>(3, 0, 8)</li>
+          </positions>
+          <relativeRotation>Opposite</relativeRotation>
+        </DMSRC_Crate>
+        <DMSRC_PackCrate>
+          <positions>
+            <li>(0, 0, 0)</li>
+            <li>(7, 0, 0)</li>
+            <li>(3, 0, 2)</li>
+            <li>(6, 0, 2)</li>
+            <li>(1, 0, 4)</li>
+            <li>(5, 0, 5)</li>
+            <li>(2, 0, 6)</li>
+            <li>(0, 0, 7)</li>
+            <li>(6, 0, 7)</li>
+          </positions>
+        </DMSRC_PackCrate>
+      </things>
+      <terrain>
+        <Concrete>
+          <rects>
+            <li>(0,0,8,8)</li>
+          </rects>
+        </Concrete>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_4</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <HydroponicsBasin>
+          <positions>
+            <li>(1, 0, 0)</li>
+            <li>(6, 0, 0)</li>
+            <li>(1, 0, 1)</li>
+            <li>(6, 0, 1)</li>
+            <li>(1, 0, 2)</li>
+            <li>(6, 0, 2)</li>
+            <li>(1, 0, 3)</li>
+            <li>(6, 0, 3)</li>
+            <li>(1, 0, 5)</li>
+            <li>(6, 0, 5)</li>
+            <li>(1, 0, 6)</li>
+            <li>(6, 0, 6)</li>
+            <li>(1, 0, 7)</li>
+            <li>(6, 0, 7)</li>
+            <li>(1, 0, 8)</li>
+            <li>(6, 0, 8)</li>
+          </positions>
+          <relativeRotation>Clockwise</relativeRotation>
+        </HydroponicsBasin>
+        <SunLamp>
+          <position>(4, 0, 4)</position>
+        </SunLamp>
+      </things>
+      <terrain>
+        <Concrete>
+          <rects>
+            <li>(0,0,8,8)</li>
+          </rects>
+        </Concrete>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_5</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <StandingLamp>
+          <position>(4, 0, 4)</position>
+        </StandingLamp>
+        <DMSRC_SmallHole>
+          <positions>
+            <li>(2, 0, 2)</li>
+            <li>(6, 0, 2)</li>
+            <li>(2, 0, 6)</li>
+            <li>(6, 0, 6)</li>
+          </positions>
+        </DMSRC_SmallHole>
+      </things>
+      <terrain>
+        <Concrete>
+          <rects>
+            <li>(0,0,8,8)</li>
+          </rects>
+        </Concrete>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_6</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <StandingLamp>
+          <position>(4, 0, 4)</position>
+        </StandingLamp>
+        <DMS_BandNode>
+          <positions>
+            <li>(1, 0, 1)</li>
+            <li>(6, 0, 1)</li>
+            <li>(1, 0, 6)</li>
+            <li>(6, 0, 6)</li>
+          </positions>
+        </DMS_BandNode>
+      </things>
+      <terrain>
+        <MetalTile>
+          <rects>
+            <li>(0,0,3,3)</li>
+            <li>(5,0,8,3)</li>
+            <li>(0,5,3,8)</li>
+            <li>(5,5,8,8)</li>
+          </rects>
+        </MetalTile>
+        <Concrete>
+          <rects>
+            <li>(4,0,4,8)</li>
+            <li>(0,4,3,4)</li>
+            <li>(5,4,8,4)</li>
+          </rects>
+        </Concrete>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_7</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <FloodLight>
+          <position>(4, 0, 4)</position>
+        </FloodLight>
+        <HospitalBed>
+          <positions>
+            <li>(2, 0, 2)</li>
+            <li>(6, 0, 2)</li>
+          </positions>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </HospitalBed>
+        <HospitalBed>
+          <positions>
+            <li>(2, 0, 6)</li>
+            <li>(6, 0, 6)</li>
+          </positions>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </HospitalBed>
+        <EndTable>
+          <rects>
+            <li>(3,2,3,2)</li>
+            <li>(5,2,5,2)</li>
+          </rects>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </EndTable>
+        <EndTable>
+          <rects>
+            <li>(3,6,3,6)</li>
+            <li>(5,6,5,6)</li>
+          </rects>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </EndTable>
+      </things>
+      <terrain>
+        <PavedTile>
+          <rects>
+            <li>(0,0,8,0)</li>
+            <li>(0,1,0,8)</li>
+            <li>(8,1,8,8)</li>
+            <li>(1,8,7,8)</li>
+          </rects>
+        </PavedTile>
+        <SterileTile>
+          <rects>
+            <li>(1,1,7,7)</li>
+          </rects>
+        </SterileTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_8</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <Table1x2c>
+          <position>(2, 0, 1)</position>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Table1x2c>
+        <Table1x2c>
+          <position>(5, 0, 1)</position>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Table1x2c>
+        <BookcaseSmall>
+          <position>(3, 0, 2)</position>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Steel</stuff>
+        </BookcaseSmall>
+        <Autodoor>
+          <position>(1, 0, 3)</position>
+          <stuff>Tungsteel</stuff>
+        </Autodoor>
+        <DMS_LabReactor>
+          <position>(2, 0, 6)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+        </DMS_LabReactor>
+        <DiningChair>
+          <rects>
+            <li>(3,1,3,1)</li>
+            <li>(3,7,3,7)</li>
+          </rects>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </DiningChair>
+        <DiningChair>
+          <position>(4, 0, 5)</position>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </DiningChair>
+        <DiningChair>
+          <position>(8, 0, 6)</position>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </DiningChair>
+        <DMSRC_Drawer>
+          <position>(8, 0, 0)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+        </DMSRC_Drawer>
+        <DMSRC_Drawer>
+          <position>(0, 0, 2)</position>
+          <relativeRotation>Opposite</relativeRotation>
+        </DMSRC_Drawer>
+        <DMS_LabFurnace>
+          <position>(5, 0, 4)</position>
+          <relativeRotation>Opposite</relativeRotation>
+        </DMS_LabFurnace>
+        <DMS_LabFurnace>
+          <position>(7, 0, 7)</position>
+        </DMS_LabFurnace>
+        <Bookcase>
+          <position>(8, 0, 1)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+        </Bookcase>
+        <Wall>
+          <rects>
+            <li>(0,3,0,3)</li>
+            <li>(2,3,8,3)</li>
+          </rects>
+          <stuff>Tungsteel</stuff>
+        </Wall>
+        <DMS_MachineCabinet>
+          <position>(6, 0, 6)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+        </DMS_MachineCabinet>
+        <Couch>
+          <position>(6, 0, 2)</position>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Couch>
+      </things>
+      <terrain>
+        <PavedTile>
+          <rects>
+            <li>(0,0,8,3)</li>
+          </rects>
+        </PavedTile>
+        <SterileTile>
+          <rects>
+            <li>(0,4,8,8)</li>
+          </rects>
+        </SterileTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_9</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <StandingLamp>
+          <position>(5, 0, 2)</position>
+        </StandingLamp>
+        <DMS_Furnace>
+          <positions>
+            <li>(6, 0, 5)</li>
+            <li>(2, 0, 6)</li>
+          </positions>
+        </DMS_Furnace>
+        <FirefoamPopper>
+          <position>(3, 0, 3)</position>
+        </FirefoamPopper>
+        <Shelf>
+          <positions>
+            <li>(0, 0, 1)</li>
+            <li>(0, 0, 3)</li>
+          </positions>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+        </Shelf>
+        <Shelf>
+          <positions>
+            <li>(1, 0, 0)</li>
+            <li>(5, 0, 0)</li>
+            <li>(7, 0, 0)</li>
+          </positions>
+          <stuff>Steel</stuff>
+        </Shelf>
+        <Shelf>
+          <positions>
+            <li>(3, 0, 0)</li>
+            <li>(8, 0, 1)</li>
+          </positions>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+        </Shelf>
+        <Shelf>
+          <positions>
+            <li>(7, 0, 2)</li>
+            <li>(2, 0, 3)</li>
+            <li>(6, 0, 8)</li>
+            <li>(8, 0, 8)</li>
+          </positions>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Steel</stuff>
+        </Shelf>
+      </things>
+      <terrain>
+        <Concrete>
+          <rects>
+            <li>(0,0,8,2)</li>
+            <li>(0,3,3,3)</li>
+            <li>(5,8,8,8)</li>
+          </rects>
+        </Concrete>
+        <MetalTile>
+          <rects>
+            <li>(4,3,8,7)</li>
+            <li>(0,4,3,8)</li>
+            <li>(4,8,4,8)</li>
+          </rects>
+        </MetalTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_10</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <StandingLamp>
+          <position>(4, 0, 4)</position>
+        </StandingLamp>
+        <DMSRC_Crate>
+          <position>(1, 0, 0)</position>
+        </DMSRC_Crate>
+        <DMSRC_Crate>
+          <positions>
+            <li>(8, 0, 0)</li>
+            <li>(4, 0, 6)</li>
+            <li>(8, 0, 6)</li>
+          </positions>
+          <relativeRotation>Counterclockwise</relativeRotation>
+        </DMSRC_Crate>
+        <DMSRC_Crate>
+          <position>(8, 0, 8)</position>
+          <relativeRotation>Opposite</relativeRotation>
+        </DMSRC_Crate>
+        <DeepDrill>
+          <rects>
+            <li>(2,2,2,2)</li>
+            <li>(6,2,6,2)</li>
+            <li>(2,6,2,6)</li>
+            <li>(6,6,6,6)</li>
+          </rects>
+        </DeepDrill>
+      </things>
+      <terrain>
+        <Concrete>
+          <rects>
+            <li>(0,0,8,0)</li>
+            <li>(0,1,0,8)</li>
+            <li>(4,1,4,8)</li>
+            <li>(8,1,8,8)</li>
+            <li>(1,4,3,4)</li>
+            <li>(5,4,7,4)</li>
+            <li>(1,8,3,8)</li>
+            <li>(5,8,7,8)</li>
+          </rects>
+        </Concrete>
+        <MetalTile>
+          <rects>
+            <li>(1,1,3,3)</li>
+            <li>(5,1,7,3)</li>
+            <li>(1,5,3,7)</li>
+            <li>(5,5,7,7)</li>
+          </rects>
+        </MetalTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_11</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <Table1x2c>
+          <position>(2, 0, 4)</position>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Table1x2c>
+        <Table1x2c>
+          <position>(6, 0, 3)</position>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Table1x2c>
+        <Table1x2c>
+          <position>(2, 0, 5)</position>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Table1x2c>
+        <Table1x2c>
+          <position>(6, 0, 5)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Table1x2c>
+        <CommsConsole>
+          <positions>
+            <li>(1, 0, 8)</li>
+            <li>(7, 0, 8)</li>
+          </positions>
+          <relativeRotation>Opposite</relativeRotation>
+        </CommsConsole>
+        <StandingLamp>
+          <position>(6, 0, 2)</position>
+        </StandingLamp>
+        <Armchair>
+          <position>(3, 0, 4)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Armchair>
+        <Armchair>
+          <position>(5, 0, 4)</position>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Armchair>
+        <DMSRC_Drawer>
+          <position>(8, 0, 0)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+        </DMSRC_Drawer>
+        <Bookcase>
+          <position>(0, 0, 0)</position>
+          <stuff>Steel</stuff>
+        </Bookcase>
+        <Bookcase>
+          <position>(0, 0, 2)</position>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+        </Bookcase>
+        <Shelf>
+          <position>(5, 0, 0)</position>
+          <stuff>Steel</stuff>
+        </Shelf>
+      </things>
+      <terrain>
+        <PavedTile>
+          <rects>
+            <li>(0,0,8,8)</li>
+          </rects>
+        </PavedTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_12</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <CommsConsole>
+          <position>(1, 0, 8)</position>
+          <relativeRotation>Opposite</relativeRotation>
+        </CommsConsole>
+        <StandingLamp>
+          <position>(2, 0, 6)</position>
+        </StandingLamp>
+        <Table2x4c>
+          <position>(5, 0, 3)</position>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Table2x4c>
+        <DMSRC_Drawer>
+          <position>(0, 0, 0)</position>
+          <relativeRotation>Clockwise</relativeRotation>
+        </DMSRC_Drawer>
+        <Bookcase>
+          <positions>
+            <li>(0, 0, 2)</li>
+            <li>(0, 0, 6)</li>
+          </positions>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+        </Bookcase>
+        <Shelf>
+          <positions>
+            <li>(6, 0, 8)</li>
+            <li>(8, 0, 8)</li>
+          </positions>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Steel</stuff>
+        </Shelf>
+        <Couch>
+          <position>(5, 0, 1)</position>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Couch>
+        <Couch>
+          <positions>
+            <li>(4, 0, 3)</li>
+            <li>(4, 0, 5)</li>
+          </positions>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Couch>
+        <Couch>
+          <positions>
+            <li>(7, 0, 2)</li>
+            <li>(7, 0, 4)</li>
+          </positions>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Couch>
+        <Couch>
+          <position>(6, 0, 6)</position>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Couch>
+      </things>
+      <terrain>
+        <PavedTile>
+          <rects>
+            <li>(0,0,8,8)</li>
+          </rects>
+        </PavedTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_13</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <Armchair>
+          <position>(4, 0, 1)</position>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Armchair>
+        <Armchair>
+          <position>(4, 0, 7)</position>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Polyester</stuff>
+          <quality>Normal</quality>
+        </Armchair>
+        <FloodLight>
+          <position>(4, 0, 4)</position>
+        </FloodLight>
+        <DMS_TableMachinePrinter>
+          <position>(4, 0, 2)</position>
+        </DMS_TableMachinePrinter>
+        <DMS_TableMachinePrinter>
+          <position>(4, 0, 6)</position>
+          <relativeRotation>Opposite</relativeRotation>
+        </DMS_TableMachinePrinter>
+        <Wall>
+          <rects>
+            <li>(1,1,1,1)</li>
+            <li>(7,1,7,1)</li>
+            <li>(1,7,1,7)</li>
+            <li>(7,7,7,7)</li>
+          </rects>
+          <stuff>Tungsteel</stuff>
+        </Wall>
+        <DMS_MachineCabinet>
+          <positions>
+            <li>(2, 0, 4)</li>
+            <li>(5, 0, 4)</li>
+          </positions>
+        </DMS_MachineCabinet>
+      </things>
+      <terrain>
+        <Concrete>
+          <rects>
+            <li>(0,0,8,0)</li>
+            <li>(0,1,0,8)</li>
+            <li>(8,1,8,8)</li>
+            <li>(1,8,7,8)</li>
+          </rects>
+        </Concrete>
+        <MetalTile>
+          <rects>
+            <li>(1,1,7,7)</li>
+          </rects>
+        </MetalTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_14</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <StandingLamp>
+          <position>(4, 0, 4)</position>
+        </StandingLamp>
+        <DMS_Recharger>
+          <positions>
+            <li>(3, 0, 1)</li>
+            <li>(3, 0, 7)</li>
+          </positions>
+          <relativeRotation>Clockwise</relativeRotation>
+        </DMS_Recharger>
+        <DMS_Recharger>
+          <positions>
+            <li>(5, 0, 1)</li>
+            <li>(5, 0, 7)</li>
+          </positions>
+          <relativeRotation>Counterclockwise</relativeRotation>
+        </DMS_Recharger>
+        <DMS_MechGestatorSmall>
+          <positions>
+            <li>(1, 0, 1)</li>
+            <li>(7, 0, 1)</li>
+          </positions>
+        </DMS_MechGestatorSmall>
+        <DMS_MechGestatorSmall>
+          <positions>
+            <li>(1, 0, 7)</li>
+            <li>(7, 0, 7)</li>
+          </positions>
+          <relativeRotation>Opposite</relativeRotation>
+        </DMS_MechGestatorSmall>
+      </things>
+      <terrain>
+        <Concrete>
+          <rects>
+            <li>(0,0,8,8)</li>
+          </rects>
+        </Concrete>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_15</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <Dresser>
+          <position>(2, 0, 4)</position>
+          <relativeRotation>Opposite</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Dresser>
+        <Dresser>
+          <position>(6, 0, 4)</position>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Dresser>
+        <Bed>
+          <positions>
+            <li>(2, 0, 1)</li>
+            <li>(2, 0, 3)</li>
+            <li>(2, 0, 5)</li>
+            <li>(2, 0, 7)</li>
+          </positions>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Bed>
+        <Bed>
+          <positions>
+            <li>(6, 0, 1)</li>
+            <li>(6, 0, 3)</li>
+            <li>(6, 0, 5)</li>
+            <li>(6, 0, 7)</li>
+          </positions>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Bed>
+        <WallLamp>
+          <position>(2, 0, 4)</position>
+          <relativeRotation>Clockwise</relativeRotation>
+        </WallLamp>
+        <WallLamp>
+          <position>(6, 0, 4)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+        </WallLamp>
+        <EndTable>
+          <rects>
+            <li>(2,2,2,2)</li>
+            <li>(2,6,2,6)</li>
+          </rects>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </EndTable>
+        <EndTable>
+          <rects>
+            <li>(6,2,6,2)</li>
+            <li>(6,6,6,6)</li>
+          </rects>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </EndTable>
+        <Wall>
+          <rects>
+            <li>(3,1,5,7)</li>
+          </rects>
+          <stuff>Tungsteel</stuff>
+        </Wall>
+      </things>
+      <terrain>
+        <PavedTile>
+          <rects>
+            <li>(0,0,8,8)</li>
+          </rects>
+        </PavedTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_Room9x9_16</defName>
+    <tags>
+      <li>Room9x9</li>
+    </tags>
+    <size>(9,9)</size>
+      <things>
+        <StandingLamp>
+          <position>(4, 0, 4)</position>
+        </StandingLamp>
+        <Dresser>
+          <position>(4, 0, 1)</position>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Dresser>
+        <Dresser>
+          <position>(4, 0, 7)</position>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Dresser>
+        <Bed>
+          <positions>
+            <li>(0, 0, 0)</li>
+            <li>(0, 0, 2)</li>
+            <li>(0, 0, 6)</li>
+            <li>(0, 0, 8)</li>
+          </positions>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Bed>
+        <Bed>
+          <positions>
+            <li>(8, 0, 0)</li>
+            <li>(8, 0, 2)</li>
+            <li>(8, 0, 6)</li>
+            <li>(8, 0, 8)</li>
+          </positions>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </Bed>
+        <EndTable>
+          <rects>
+            <li>(0,1,0,1)</li>
+            <li>(0,3,0,3)</li>
+            <li>(0,5,0,5)</li>
+            <li>(0,7,0,7)</li>
+          </rects>
+          <relativeRotation>Clockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </EndTable>
+        <EndTable>
+          <rects>
+            <li>(8,1,8,1)</li>
+            <li>(8,3,8,3)</li>
+            <li>(8,5,8,5)</li>
+            <li>(8,7,8,7)</li>
+          </rects>
+          <relativeRotation>Counterclockwise</relativeRotation>
+          <stuff>Steel</stuff>
+          <quality>Normal</quality>
+        </EndTable>
+      </things>
+      <terrain>
+        <PavedTile>
+          <rects>
+            <li>(0,0,8,8)</li>
+          </rects>
+        </PavedTile>
+      </terrain>
+  </DMSRC.RPrefabDef>
+
+</Defs>

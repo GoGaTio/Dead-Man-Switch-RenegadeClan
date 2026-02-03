@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: HAP helmet -->
+  <DMSRC_Apparel_AssaultHelmet.label>HAP helmet</DMSRC_Apparel_AssaultHelmet.label>
+  <!-- EN: A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy. -->
+  <DMSRC_Apparel_AssaultHelmet.description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</DMSRC_Apparel_AssaultHelmet.description>
+  
+  <!-- EN: HAP processor helmet -->
+  <DMSRC_Apparel_ProcessorHelmet.label>HAP processor helmet</DMSRC_Apparel_ProcessorHelmet.label>
+  <!-- EN: An advanced helmet with built-in processor core, that allows to use more neuroimplants and control more mechs./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy. -->
+  <DMSRC_Apparel_ProcessorHelmet.description>An advanced helmet with built-in processor core, that allows to use more neuroimplants and control more mechs./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</DMSRC_Apparel_ProcessorHelmet.description>
+  
+  <!-- EN: HAPS helmet -->
+  <DMSRC_Apparel_ShieldHelmet.label>HAPS helmet</DMSRC_Apparel_ShieldHelmet.label>
+  <!-- EN: A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield bubble projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy. -->
+  <DMSRC_Apparel_ShieldHelmet.description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield bubble projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</DMSRC_Apparel_ShieldHelmet.description>
+  
+</LanguageData>

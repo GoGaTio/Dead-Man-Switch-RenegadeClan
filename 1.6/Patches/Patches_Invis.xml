@@ -15,7 +15,7 @@
             <detectedMessage>A jaeger has appeared!</detectedMessage>
             <baseDetectRange>10</baseDetectRange>
             <texPath>UI/Ability/Camouflage</texPath>
-            <commandKey>DMSRC_Saboteur</commandKey>
+            <commandKey>DMSRC_Camouflage</commandKey>
           </li>
         </comps>
       </value>
@@ -30,7 +30,7 @@
           <detectedMessage>A jaeger has appeared!</detectedMessage>
           <baseDetectRange>10</baseDetectRange>
           <texPath>UI/Ability/Camouflage</texPath>
-          <commandKey>DMSRC_Saboteur</commandKey>
+          <commandKey>DMSRC_Camouflage</commandKey>
         </li>
       </value>
     </match>
@@ -52,9 +52,9 @@
             <detectedLetterLabel>Noctula revealed</detectedLetterLabel>
             <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
             <detectedMessage>A noctula has appeared!</detectedMessage>
-            <baseDetectRange>10</baseDetectRange>
+            <baseDetectRange>4</baseDetectRange>
             <texPath>UI/Ability/Camouflage</texPath>
-            <commandKey>DMSRC_Saboteur</commandKey>
+            <commandKey>DMSRC_Camouflage</commandKey>
           </li>
         </comps>
       </value>
@@ -67,9 +67,9 @@
           <detectedLetterLabel>Noctula revealed</detectedLetterLabel>
           <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
           <detectedMessage>A noctula has appeared!</detectedMessage>
-          <baseDetectRange>10</baseDetectRange>
+          <baseDetectRange>4</baseDetectRange>
           <texPath>UI/Ability/Camouflage</texPath>
-          <commandKey>DMSRC_Saboteur</commandKey>
+          <commandKey>DMSRC_Camouflage</commandKey>
         </li>
       </value>
     </match>

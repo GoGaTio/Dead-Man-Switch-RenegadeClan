@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: structure nearby -->
+  <DMSRC_PlayerArrivesNearPrefab.label>прибытие рядом со структурой</DMSRC_PlayerArrivesNearPrefab.label>
+  
+  <!-- EN: renegades relation -->
+  <DMSRC_Renegades.label>отношения с отступниками</DMSRC_Renegades.label>
+  
+</LanguageData>

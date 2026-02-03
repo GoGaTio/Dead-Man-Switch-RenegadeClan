@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: neurocapacity -->
+  <DMSRC_Neurocapacity.label>нейровместимость</DMSRC_Neurocapacity.label>
+  <!-- EN: How much neural implants can be installed and connected to neural interface. -->
+  <DMSRC_Neurocapacity.description>Как много нейроимплантов может быть установлено и подсоединено.</DMSRC_Neurocapacity.description>
+  
+  <!-- EN: neurocontrol capacity -->
+  <DMSRC_NeuroControlPower.label>предел нейроконтроля</DMSRC_NeuroControlPower.label>
+  <!-- EN: How much neurocontrol links can be formed by this person. -->
+  <DMSRC_NeuroControlPower.description>Как много связей нейроконтроля может поддерживать этот человек.</DMSRC_NeuroControlPower.description>
+  
+  <!-- EN: neurocontrol range -->
+  <DMSRC_NeuroControlRange.label>радиус нейроконтроля</DMSRC_NeuroControlRange.label>
+  <!-- EN: How far away a mech can be during neurocontrol. -->
+  <DMSRC_NeuroControlRange.description>Как далеко может протягиваться связь нейроконтроля.</DMSRC_NeuroControlRange.description>
+  
+  <!-- EN: neurointercept range -->
+  <DMSRC_NeuroInterceptRange.label>радиус нейроперехвата</DMSRC_NeuroInterceptRange.label>
+  <!-- EN: How far away a mech can be during neurointercept. -->
+  <DMSRC_NeuroInterceptRange.description>на какой дистанции может осуществляться нейроперехват.</DMSRC_NeuroInterceptRange.description>
+  
+</LanguageData>

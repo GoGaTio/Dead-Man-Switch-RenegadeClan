@@ -25,6 +25,7 @@
     <combatPower>100</combatPower>
     <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
     <apparelMoney>3700~4000</apparelMoney>
+    <minApparelQuality>Excellent</minApparelQuality>
     <apparelRequired>
       <li>DMSRC_Apparel_AssaultArmor</li>
       <li>DMSRC_Apparel_AssaultHelmet</li>
@@ -36,9 +37,12 @@
         <alternateTagChoices>
           <li>
             <tag>DMSRC_ShieldHelmet</tag>
-            <chance>0.2</chance>
+            <chance>0.33</chance>
           </li>
         </alternateTagChoices>
+      </li>
+      <li>
+        <biocode>true</biocode>
       </li>
     </specificApparelRequirements>
     <skills>
@@ -125,6 +129,7 @@
     <defName>DMSRC_OfficerHigh_Player</defName>
     <defaultFactionType>DMSRC_PlayerRenegades</defaultFactionType>
     <apparelIgnorePollution>true</apparelIgnorePollution>
+    <gearHealthRange>1</gearHealthRange>
     <weaponTags Inherit="False" />
   </PawnKindDef>
 
@@ -179,6 +184,8 @@
   <PawnKindDef ParentName="DMSRC_ThinkerBase">
     <defName>DMSRC_Thinker_Player</defName>
     <defaultFactionType>DMSRC_PlayerRenegades</defaultFactionType>
+    <gearHealthRange>1</gearHealthRange>
+    <apparelIgnorePollution>true</apparelIgnorePollution>
     <weaponTags Inherit="False" />
   </PawnKindDef>
 

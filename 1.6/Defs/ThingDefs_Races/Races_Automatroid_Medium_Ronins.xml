@@ -30,7 +30,7 @@
         <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
         <detectedMessage>A saboteur has appeared!</detectedMessage>
         <texPath>UI/Ability/Camouflage</texPath>
-        <commandKey>DMSRC_Saboteur</commandKey>
+        <commandKey>DMSRC_Camouflage</commandKey>
       </li>
     </comps>
     <modExtensions>
@@ -124,11 +124,10 @@
         <range>6.9</range>
         <mote>DMSRC_Mote_BeamDefence</mote>
         <interceptSameFaction>false</interceptSameFaction>
-        <barColor>(0.7, 0.1, 0.7)</barColor>
-        <barColorAlt>(0.25, 0.05, 0.25)</barColorAlt>
-        <chargeRegenInterval>150</chargeRegenInterval>
-        <inactiveRegenOffset>90</inactiveRegenOffset>
-        <chargeLossPerIntercept>5</chargeLossPerIntercept>
+        <barColor>(107, 81, 128)</barColor>
+        <barColorAlt>(54, 40, 64)</barColorAlt>
+        <chargeRegenInterval>600</chargeRegenInterval>
+        <inactiveRegenOffset>100</inactiveRegenOffset>
         <delay>12</delay>
         <interceptSound>BeamGraser_Shooting_Resolve</interceptSound>
         <intercepts>

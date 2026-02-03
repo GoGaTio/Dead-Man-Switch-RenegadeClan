@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef Abstract="True" Name ="DMSRC_BaseAssaultHelmet" ParentName="ApparelBase">
+  <ThingDef Abstract="True" Name="DMSRC_BaseAssaultHelmet" ParentName="ApparelBase">
     <thingCategories>
       <li>Headgear</li>
     </thingCategories>
     <thingSetMakerTags>
       <li>DMSRC_AssaultEquipment</li>
     </thingSetMakerTags>
-<tradeTags><li>DMSRC_AssaultEquipment</li></tradeTags>
+    <tradeTags>
+      <li>DMSRC_AssaultEquipment</li>
+    </tradeTags>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
       <researchPrerequisites>
@@ -51,7 +53,6 @@
       <MaxHitPoints>250</MaxHitPoints>
       <Mass>3</Mass>
       <Flammability>0</Flammability>
-      <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
       <Insulation_Cold>10</Insulation_Cold>
@@ -108,7 +109,7 @@
 
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_AssaultHelmet</defName>
-    <label>heavy assault helmet</label>
+    <label>HAP helmet</label>
     <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>20</Tungsteel>
@@ -118,22 +119,22 @@
     </costList>
     <costStuffCount>60</costStuffCount>
     <graphicData>
-      <texPath>Things/Apparel/DMSRC_HeavyAssaultHelmet/DMSRC_HeavyAssaultHelmet_south</texPath>
+      <texPath>Things/Apparel/DMSRC_AssaultHelmet/Apparel_south</texPath>
     </graphicData>
     <generateCommonality>1</generateCommonality>
     <statBases>
       <WorkToMake>20000</WorkToMake>
-      <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>1.25</StuffEffectMultiplierArmor>
     </statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/DMSRC_HeavyAssaultHelmet/DMSRC_HeavyAssaultHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Apparel/DMSRC_AssaultHelmet/Apparel</wornGraphicPath>
     </apparel>
   </ThingDef>
 
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_ShieldHelmet</defName>
-    <label>shield assault helmet</label>
-    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
+    <label>HAPS helmet</label>
+    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield bubble projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>30</Tungsteel>
       <Plasfiber>20</Plasfiber>
@@ -144,9 +145,9 @@
     <costStuffCount>50</costStuffCount>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Apparel/DMSRC_ShieldAssaultHelmet/DMSRC_ShieldAssaultHelmet_south</texPath>
+      <texPath>Things/Apparel/DMSRC_ShieldHelmet/Apparel_south</texPath>
       <shaderType>CutoutComplex</shaderType>
-      <maskPath>Things/Apparel/DMSRC_ShieldAssaultHelmet/DMSRC_ShieldAssaultHelmet_southm</maskPath>
+      <maskPath>Things/Apparel/DMSRC_ShieldHelmet/Apparel_southm</maskPath>
     </graphicData>
     <generateCommonality>0.5</generateCommonality>
     <statBases>
@@ -158,8 +159,9 @@
       <EnergyShieldEnergyMax>1.1</EnergyShieldEnergyMax>
     </statBases>
     <apparel>
-      <wornGraphicPath>Things/Apparel/DMSRC_ShieldAssaultHelmet/DMSRC_ShieldAssaultHelmet</wornGraphicPath>
-      <useWornGraphicMask>true</useWornGraphicMask><tags>
+      <wornGraphicPath>Things/Apparel/DMSRC_ShieldHelmet/Apparel</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <tags>
         <li>DMSRC_ShieldHelmet</li>
       </tags>
     </apparel>
@@ -177,7 +179,7 @@
 
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_ProcessorHelmet</defName>
-    <label>processor helmet</label>
+    <label>HAP processor helmet</label>
     <description>An advanced helmet with built-in processor core, that allows to use more neuroimplants and control more mechs./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>30</Tungsteel>
@@ -194,17 +196,18 @@
       </researchPrerequisites>
     </recipeMaker>
     <graphicData>
-      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet_south</texPath>
+      <texPath>Things/Apparel/DMSRC_ProcessorHelmet/Apparel_south</texPath>
     </graphicData>
-    <generateCommonality>0.5</generateCommonality>
+    <generateCommonality>0.25</generateCommonality>
     <statBases>
       <WorkToMake>25000</WorkToMake>
       <Mass>3.5</Mass>
-      <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>1.25</StuffEffectMultiplierArmor>
     </statBases>
-    <thingSetMakerTags Inherit="False" /><tradeTags Inherit="False" />
+    <thingSetMakerTags Inherit="False" />
+    <tradeTags Inherit="False" />
     <apparel>
-      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/DMSRC_ProcessorHelmet</wornGraphicPath>
+      <wornGraphicPath>Things/Apparel/DMSRC_ProcessorHelmet/Apparel</wornGraphicPath>
       <tags>
         <li>DMSRC_Thinker</li>
       </tags>

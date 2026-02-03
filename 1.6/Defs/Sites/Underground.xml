@@ -15,17 +15,17 @@
       <li>ElevationFertility</li>
       <li>Underground_RocksFromGrid</li>
       <li>Terrain</li>
-      <li>RockChunks</li>
+      <li>DMSRC_UndergroundFacility</li>
       <li>Fog</li>
     </genSteps>
   </MapGeneratorDef>
 
   <SitePartDef>
     <defName>DMSRC_LogisticCenter</defName>
-    <label>container</label>
-    <description>A container with valuable items.</description>
+    <label>logistic center</label>
+    <description>A colonial fleet logistic center.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>World/DMSRC_ContainerSite</expandingIconTexture>
+    <expandingIconTexture>World/DMSRC_LogisticCenter</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
     <tags>
@@ -39,7 +39,7 @@
     <order>1460</order>
     <genStep Class="DMSRC.GenStep_RPrefab">
       <prefabs>
-        <li>DMSRC_BroadcastPoint_2</li>
+        <li>DMSRC_LogisticCenter</li>
       </prefabs>
     </genStep>
   </GenStepDef>

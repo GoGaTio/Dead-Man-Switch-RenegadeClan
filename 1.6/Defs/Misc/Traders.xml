@@ -6,7 +6,7 @@
     <hideThingsNotWillingToTrade>True</hideThingsNotWillingToTrade>
     <category>DMSRC_RenegadesMarket</category>
     <stockGenerators>
-      
+
       <!-- Resources -->
       <li Class="StockGenerator_SingleDef">
         <thingDef>ComponentIndustrial</thingDef>
@@ -19,7 +19,8 @@
       <li Class="StockGenerator_SingleDef">
         <thingDef>Steel</thingDef>
         <countRange>1500~1800</countRange>
-      </li><li Class="StockGenerator_SingleDef">
+      </li>
+      <li Class="StockGenerator_SingleDef">
         <thingDef>Plasteel</thingDef>
         <countRange>200~500</countRange>
       </li>
@@ -99,17 +100,8 @@
       </li>
 
       <!-- Weapons -->
-      <li Class="StockGenerator_MarketValue">
-        <weaponTag>CivilianGun</weaponTag>
-        <countRange>3~6</countRange>
-      </li>
-<li Class="StockGenerator_MarketValue">
-        <tradeTag>DMS_WeaponRanged</tradeTag>
-        <countRange>2~5</countRange>
-      </li>
-      <li Class="StockGenerator_MarketValue">
-        <weaponTag>DMS_MechWeaponMeduim</weaponTag>
-        <countRange>3~6</countRange>
+      <li Class="DMSRC.StockGenerator_ThingSetMaker">
+        <thingMakerDef>DMSRC_Debug</thingMakerDef>
       </li>
 
       <!-- Apparel -->
@@ -117,8 +109,9 @@
         <tradeTag>DMS_Clothing</tradeTag>
         <countRange>3~7</countRange>
       </li>
-      <li Class="StockGenerator_MarketValue">
+      <li Class="StockGenerator_Tag">
         <tradeTag>DMS_Armor</tradeTag>
+        <thingDefCountRange>2~3</thingDefCountRange>
         <countRange>3~4</countRange>
       </li>
       <li Class="StockGenerator_Tag">
@@ -126,10 +119,10 @@
         <thingDefCountRange>2~4</thingDefCountRange>
         <countRange>2~3</countRange>
       </li>
-<li Class="StockGenerator_Tag">
+      <li Class="StockGenerator_Tag">
         <tradeTag>DMSRC_AssaultEquipment</tradeTag>
         <thingDefCountRange>2~4</thingDefCountRange>
-        <countRange>2~4</countRange>
+        <countRange>3~5</countRange>
       </li>
 
       <!-- Implants -->
@@ -156,10 +149,6 @@
         <tradeTag>Artifact</tradeTag>
         <thingDefCountRange>1~4</thingDefCountRange>
         <countRange>-2~2</countRange>
-      </li>
-      <li Class="StockGenerator_Tag">
-        <tradeTag>DMSRC_DataCards</tradeTag>
-        <countRange>-5~2</countRange>
       </li>
       <li Class="StockGenerator_Tag">
         <tradeTag>ExoticMisc</tradeTag>

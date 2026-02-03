@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: This {LEADERKIND_label} was one of the special machines deployed all over this planet. Though it has been out of command for a considerable time due to the loss of their original commander. -->
+  <DMSRC_Focus.leaderDescription>This {LEADERKIND_label} was one of the special machines deployed all over this planet. Though it has been out of command for a considerable time due to the loss of their original commander.</DMSRC_Focus.leaderDescription>
+  
+  <!-- EN: This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral -->
+  <DMSRC_Malevolence.leaderDescription>This {LEADERKIND_label} was one of machines deployed as a vanguard for the Colonial Forces hundreds of years ago. It has been out of command due to the loss of its operator for an unknown amount of time and gone feral</DMSRC_Malevolence.leaderDescription>
+  
+</LanguageData>

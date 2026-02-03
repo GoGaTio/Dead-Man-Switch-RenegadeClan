@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingSetMakerDef>
+    <defName>DMSRC_Debug</defName>
+    <root Class="ThingSetMaker_Sum">
+      <options>
+
+        <li MayRequire="aoba.deadmanswitch.mobiledragoon">
+          <chance>0.5</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Trader</qualityGenerator>
+              <filter>
+                <categories>
+                  <li>DMS_Module</li>
+                </categories>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Weapons -->
+        <li>
+          <chance>1</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_Gun_Recoilless</li>
+                  <li>DMS_Gun_2A38M</li>
+                  <li>DMS_HeavyMachineGun</li>
+                  <li>DMS_Autocannon</li>
+                  <li>DMS_SniperCannon</li>
+                  <li>DMS_M214Gatlinggun</li>
+                  <li>DMS_Gun_MK44_Autocannon</li>
+                  <li>DMSRC_FSRMachineGun</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_Gsh30Gatlinggun</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_AerialAutocannon</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_KordMachineGun</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_VladimirovMachineGun</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~4</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <li>
+          <chance>1</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_AssaultPiercer</li>
+                  <li>DMS_PDW</li>
+                  <li>DMS_SurvivalRifle</li>
+                  <li>DMS_LightMachineGun</li>
+                  <li>DMS_AutomaticGrenadeLauncher</li>
+                  <li>DMS_SniperGrenadeLauncher</li>
+                  <li>DMS_MarksmanRifle</li>
+                  <li>DMS_BattleRifle</li>
+                  <li>DMS_SemiAutoRifle</li>
+                  <li>DMS_AssaultRifle</li>
+                  <li>DMS_AssaultShotgun</li>
+                  <li>DMSRC_FSRPistol</li>
+                  <li>DMSRC_Gun_Luch</li>
+                  <li>DMSRC_FSRAssaultRifle</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_ZlobinRifle</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_VykhlopRifle</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_KS23K</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_PKM</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_YekaterinRifle</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_AtlantGrenadeLauncher</li>
+                </thingDefs>
+              </filter>
+              <countRange>4~8</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+</Defs>

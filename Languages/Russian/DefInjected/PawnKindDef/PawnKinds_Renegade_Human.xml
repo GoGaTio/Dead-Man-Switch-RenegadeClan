@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: combat commander -->
+  <DMSRC_OfficerCombat.label>боевой командир</DMSRC_OfficerCombat.label>
+  
+  <!-- EN: officer -->
+  <DMSRC_OfficerHigh.label>офицер</DMSRC_OfficerHigh.label>
+  
+  <!-- EN: officer -->
+  <DMSRC_OfficerHigh_Player.label>офицер</DMSRC_OfficerHigh_Player.label>
+  
+  <!-- EN: renegade -->
+  <DMSRC_Renegade.label>отступник</DMSRC_Renegade.label>
+  
+  <!-- EN: renegade -->
+  <DMSRC_Renegade_Player.label>отступник</DMSRC_Renegade_Player.label>
+  
+  <!-- EN: stormtrooper -->
+  <DMSRC_Stormtrooper.label>штурмовик</DMSRC_Stormtrooper.label>
+  
+  <!-- EN: thinker -->
+  <DMSRC_Thinker.label>мыслитель</DMSRC_Thinker.label>
+  
+  <!-- EN: thinker -->
+  <DMSRC_Thinker_Player.label>мыслитель</DMSRC_Thinker_Player.label>
+  
+</LanguageData>

@@ -35,9 +35,18 @@
     <value>
       <li Class="DMSRC.CompProperties_CallRenegades">
         <useJob>DMSRC_TalkToRenegades</useJob>
-        <useLabel>Call Renegades Clan</useLabel>
         <floatMenuOptionPriority>InitiateSocial</floatMenuOptionPriority>
-        <floatMenuFactionIcon>DMSRC_RenegadeClan</floatMenuFactionIcon>
+      </li>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ScenarioDef[defName="DMS_Scenario" or defName="DMSMD_Scenario"]/scenario/parts</xpath>
+    <value>
+      <li Class="DMSRC.ScenPart_Renegades">
+        <def>DMSRC_Renegades</def>
+        <relations>Hostile</relations>
+        <goodwill>-200</goodwill>
       </li>
     </value>
   </Operation>

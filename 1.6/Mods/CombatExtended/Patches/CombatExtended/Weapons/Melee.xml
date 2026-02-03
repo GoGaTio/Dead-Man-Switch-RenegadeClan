@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Sword"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>handle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>4</power>
+          <cooldownTime>1.78</cooldownTime>
+          <chanceFactor>0.10</chanceFactor>
+          <armorPenetrationBlunt>2.0</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>edge</label>
+          <capacities>
+            <li>Cut</li>
+          </capacities>
+          <power>50</power>
+          <cooldownTime>1.64</cooldownTime>
+          <armorPenetrationBlunt>6.48</armorPenetrationBlunt>
+          <armorPenetrationSharp>14</armorPenetrationSharp>
+          <linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMSRC_Sword"]/weaponTags</xpath>
+    <value>
+      <li>CE_OneHandedWeapon</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMSRC_Sword"]/statBases</xpath>
+    <value>
+      <Bulk>8</Bulk>
+      <MeleeCounterParryBonus>0.53</MeleeCounterParryBonus>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMSRC_Sword"]</xpath>
+    <value>
+      <equippedStatOffsets>
+        <MeleeCritChance>0.28</MeleeCritChance>
+        <MeleeParryChance>0.35</MeleeParryChance>
+        <MeleeDodgeChance>0.39</MeleeDodgeChance>
+      </equippedStatOffsets>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Sword"]/statBases/Mass</xpath>
+    <value>
+      <Mass>7</Mass>
+    </value>
+  </Operation>
+
+</Patch>

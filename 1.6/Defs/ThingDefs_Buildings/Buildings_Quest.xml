@@ -319,20 +319,4 @@
     </graphicData>
   </ThingDef>
 
-  <ThingDef ParentName="DMSRC_ContainerBase">
-    <defName>DMSRC_SecurityContainer_Renegades</defName>
-    <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerRenegades</texPath>
-    </graphicData>
-    <comps>
-      <li Class="DMSRC.CompProperties_SecurityContainer">
-        <graphicData>
-          <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerOpen</texPath>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>(5, 5)</drawSize>
-        </graphicData>
-      </li>
-    </comps>
-  </ThingDef>
-
 </Defs>

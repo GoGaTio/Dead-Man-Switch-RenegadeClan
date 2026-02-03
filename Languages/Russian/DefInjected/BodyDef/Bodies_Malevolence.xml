@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: malevolence -->
+  <DMSRC_Malevolence.label>злорадство</DMSRC_Malevolence.label>
+  <!-- EN: left compact sensor -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_compact_sensor.customLabel>левый компактный датчик</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_compact_sensor.customLabel>
+  <!-- EN: right compact sensor -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.right_compact_sensor.customLabel>правый компактный датчик</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.right_compact_sensor.customLabel>
+  <!-- EN: back compact sensor -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.back_compact_sensor.customLabel>задний компактный датчик</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.back_compact_sensor.customLabel>
+  <!-- EN: right turret -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.right_turret.customLabel>правая турель</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.right_turret.customLabel>
+  <!-- EN: thermal imager -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.right_turret.parts.thermal_imager.customLabel>термальный визуализатор</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.right_turret.parts.thermal_imager.customLabel>
+  <!-- EN: phased array radar -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.right_turret.parts.phased_array_radar.customLabel>фазированный радар</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.right_turret.parts.phased_array_radar.customLabel>
+  <!-- EN: left turret -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.customLabel>левая турель</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.customLabel>
+  <!-- EN: guidance sensor -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.guidance_sensor.customLabel>датчик наведения</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.guidance_sensor.customLabel>
+  <!-- EN: horizontal rotor -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.customLabel>горизонтальный ротор</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.customLabel>
+  <!-- EN: vertical rotor -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.parts.vertical_rotor.customLabel>вертикальный ротор</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.parts.vertical_rotor.customLabel>
+  <!-- EN: ammo feeder -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.parts.vertical_rotor.parts.ammo_feeder.customLabel>автозарядчик</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.parts.vertical_rotor.parts.ammo_feeder.customLabel>
+  <!-- EN: trigger safety -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safety.customLabel>спусковой аппарат</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.parts.vertical_rotor.parts.trigger_safety.customLabel>
+  <!-- EN: mount lock -->
+  <DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.parts.vertical_rotor.parts.mount_lock.customLabel>орудийное крепление</DMSRC_Malevolence.corePart.parts.DMSRC_ArmoredHead.parts.left_turret.parts.horizontal_rotor.parts.vertical_rotor.parts.mount_lock.customLabel>
+  <!-- EN: front left leg -->
+  <DMSRC_Malevolence.corePart.parts.front_left_leg.customLabel>передняя левая нога</DMSRC_Malevolence.corePart.parts.front_left_leg.customLabel>
+  <!-- EN: leg armour plate -->
+  <DMSRC_Malevolence.corePart.parts.front_left_leg.parts.leg_armour_plate.customLabel>коленная бронеплита</DMSRC_Malevolence.corePart.parts.front_left_leg.parts.leg_armour_plate.customLabel>
+  <!-- EN: left foot -->
+  <DMSRC_Malevolence.corePart.parts.front_left_leg.parts.left_foot.customLabel>передняя левая стопа</DMSRC_Malevolence.corePart.parts.front_left_leg.parts.left_foot.customLabel>
+  <!-- EN: front right leg -->
+  <DMSRC_Malevolence.corePart.parts.front_right_leg.customLabel>передняя правая нога</DMSRC_Malevolence.corePart.parts.front_right_leg.customLabel>
+  <!-- EN: leg armour plate -->
+  <DMSRC_Malevolence.corePart.parts.front_right_leg.parts.leg_armour_plate.customLabel>коленная бронеплита</DMSRC_Malevolence.corePart.parts.front_right_leg.parts.leg_armour_plate.customLabel>
+  <!-- EN: right foot -->
+  <DMSRC_Malevolence.corePart.parts.front_right_leg.parts.right_foot.customLabel>передняя правая стопа</DMSRC_Malevolence.corePart.parts.front_right_leg.parts.right_foot.customLabel>
+  <!-- EN: rear left leg -->
+  <DMSRC_Malevolence.corePart.parts.rear_left_leg.customLabel>задняя левая нога</DMSRC_Malevolence.corePart.parts.rear_left_leg.customLabel>
+  <!-- EN: leg armour plate -->
+  <DMSRC_Malevolence.corePart.parts.rear_left_leg.parts.leg_armour_plate.customLabel>коленная бронеплита</DMSRC_Malevolence.corePart.parts.rear_left_leg.parts.leg_armour_plate.customLabel>
+  <!-- EN: left foot -->
+  <DMSRC_Malevolence.corePart.parts.rear_left_leg.parts.left_foot.customLabel>задняя левая стопа</DMSRC_Malevolence.corePart.parts.rear_left_leg.parts.left_foot.customLabel>
+  <!-- EN: rear right leg -->
+  <DMSRC_Malevolence.corePart.parts.rear_right_leg.customLabel>задняя правая нога</DMSRC_Malevolence.corePart.parts.rear_right_leg.customLabel>
+  <!-- EN: leg armour plate -->
+  <DMSRC_Malevolence.corePart.parts.rear_right_leg.parts.leg_armour_plate.customLabel>коленная бронеплита</DMSRC_Malevolence.corePart.parts.rear_right_leg.parts.leg_armour_plate.customLabel>
+  <!-- EN: right foot -->
+  <DMSRC_Malevolence.corePart.parts.rear_right_leg.parts.right_foot.customLabel>задняя правая стопа</DMSRC_Malevolence.corePart.parts.rear_right_leg.parts.right_foot.customLabel>
+  <!-- EN: waist armour plate -->
+  <DMSRC_Malevolence.corePart.parts.waist_armour_plate.customLabel>кормовая бронеплита</DMSRC_Malevolence.corePart.parts.waist_armour_plate.customLabel>
+  <!-- EN: chest armour plate -->
+  <DMSRC_Malevolence.corePart.parts.chest_armour_plate.customLabel>лобовая бронеплитаe</DMSRC_Malevolence.corePart.parts.chest_armour_plate.customLabel>
+  <!-- EN: main battery array -->
+  <DMSRC_Malevolence.corePart.parts.main_battery_array.customLabel>основной батарейный блок</DMSRC_Malevolence.corePart.parts.main_battery_array.customLabel>
+  <!-- EN: secondary battery array -->
+  <DMSRC_Malevolence.corePart.parts.secondary_battery_array.customLabel>запасной батарейный блок</DMSRC_Malevolence.corePart.parts.secondary_battery_array.customLabel>
+  
+</LanguageData>

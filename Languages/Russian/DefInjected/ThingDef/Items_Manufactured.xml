@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: gamma beam emissive platform -->
+  <DMSRC_ComponentGBEP.label>gamma beam emissive platform</DMSRC_ComponentGBEP.label>
+  <!-- EN: A device that produces a coherent gamma beam. Cannot be replicated on low-tech worlds as it requires Unocttrium for emitter element. -->
+  <DMSRC_ComponentGBEP.description>A device that produces a coherent gamma beam. Cannot be replicated on low-tech worlds as it requires Unocttrium for emitter element.</DMSRC_ComponentGBEP.description>
+  <!-- EN: Analyze the gamma beam emissive platform -->
+  <DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the gamma beam emissive platform</DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <!-- EN: Analyze... -->
+  <DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.activateLabelString>
+  <!-- EN: By studying the gamma beam emissive platform, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
+  <DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the gamma beam emissive platform, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+
+Your researchers can now use research benches to begin researching how to actually use the technology.</DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.completedLetter>
+  <!-- EN: Gamma beam emissive platform studied: {RESEARCH} unlocked -->
+  <DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Gamma beam emissive platform studied: {RESEARCH} unlocked</DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+  <!-- EN: Choose who should analyze this. -->
+  <DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this.</DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.guiLabelString>
+  <!-- EN: Can be analyzed by a colonist. -->
+  <DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.inspectString>
+  <!-- EN: Analyze the gamma beam emissive platform -->
+  <DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.jobString>Analyze the gamma beam emissive platform</DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.jobString>
+  
+  <!-- EN: processor core -->
+  <DMSRC_ProcessorCore.label>processor core</DMSRC_ProcessorCore.label>
+  <!-- EN: An array of advanced processors, designed to function as control block and AI core. -->
+  <DMSRC_ProcessorCore.description>An array of advanced processors, designed to function as control block and AI core.</DMSRC_ProcessorCore.description>
+  <!-- EN: Analyze the processor core -->
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateDescString>Analyze the processor core</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <!-- EN: Analyze... -->
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateLabelString>Analyze...</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateLabelString>
+  <!-- EN: By studying the processor core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetter>By studying the processor core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.
+
+Your researchers can now use research benches to begin researching how to actually use the technology.</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetter>
+  <!-- EN: Processor core studied: {RESEARCH} unlocked -->
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Processor core studied: {RESEARCH} unlocked</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+  <!-- EN: Choose who should analyze this -->
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.guiLabelString>Choose who should analyze this</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.guiLabelString>
+  <!-- EN: Can be analyzed by a colonist. -->
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.inspectString>Can be analyzed by a colonist.</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.inspectString>
+  <!-- EN: Analyze the processor core -->
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.jobString>Analyze the processor core</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.jobString>
+  
+</LanguageData>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: saboteur -->
+  <DMSRC_Mech_Saboteur.label>диверсант</DMSRC_Mech_Saboteur.label>
+  <!-- EN: Variant of the Ronin specialized in stealth operations and surprise attacks. The Saboteur has active camouflage device and improved manipulators that allows to open almost any door. -->
+  <DMSRC_Mech_Saboteur.description>Вариант ронина специализированный для скрытных проникновений, диверсий и засад. Диверсант имеет встроенную систему активной маскировки и специальные манипуляторы, позволяющие вскрывать даже закрытые двери.</DMSRC_Mech_Saboteur.description>
+  <!-- EN: An enemy automatroid has appeared out of thin air! -->
+  <DMSRC_Mech_Saboteur.comps.CompCamouflage.detectedLetterDesc>Вражеский автоматроид проявился на пустом месте!</DMSRC_Mech_Saboteur.comps.CompCamouflage.detectedLetterDesc>
+  <!-- EN: Saboteur revealed -->
+  <DMSRC_Mech_Saboteur.comps.CompCamouflage.detectedLetterLabel>Диверсант проявился</DMSRC_Mech_Saboteur.comps.CompCamouflage.detectedLetterLabel>
+  <!-- EN: A saboteur has appeared! -->
+  <DMSRC_Mech_Saboteur.comps.CompCamouflage.detectedMessage>Диверсант проявился!</DMSRC_Mech_Saboteur.comps.CompCamouflage.detectedMessage>
+  <!-- EN: head -->
+  <DMSRC_Mech_Saboteur.tools.head.label>голова</DMSRC_Mech_Saboteur.tools.head.label>
+  <!-- EN: left fist -->
+  <DMSRC_Mech_Saboteur.tools.left_fist.label>левый кулак</DMSRC_Mech_Saboteur.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMSRC_Mech_Saboteur.tools.right_fist.label>правый кулак</DMSRC_Mech_Saboteur.tools.right_fist.label>
+  
+  <!-- EN: stancher -->
+  <DMSRC_Mech_Stancher.label>остановитель</DMSRC_Mech_Stancher.label>
+  <!-- EN: Variant of the Ronin with improved armor and beam defence device which allows to intercept incoming bullets and other projectiles. -->
+  <DMSRC_Mech_Stancher.description>Вариант ронина с усиленной бронёй и системой лучевой защиты, позволяющий перехватывать приближающиеся пули и снаряды.</DMSRC_Mech_Stancher.description>
+  <!-- EN: head -->
+  <DMSRC_Mech_Stancher.tools.head.label>голова</DMSRC_Mech_Stancher.tools.head.label>
+  <!-- EN: left fist -->
+  <DMSRC_Mech_Stancher.tools.left_fist.label>левый кулак</DMSRC_Mech_Stancher.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMSRC_Mech_Stancher.tools.right_fist.label>правый кулак</DMSRC_Mech_Stancher.tools.right_fist.label>
+  
+</LanguageData>

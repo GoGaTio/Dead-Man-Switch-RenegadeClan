@@ -65,7 +65,7 @@
   <HediffDef>
     <defName>DMSRC_MalevolenceCommand</defName>
     <label>Tactical calibration</label>
-    <description>A large amount of fire control data is being shared with surrounding friendly forces through this unit which temporarily slows down its ability to respond to commands.</description>
+    <description>A large amount of fire control data is being shared with surrounding friendly forces through this unit.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
     <comps>
@@ -94,7 +94,7 @@
   <HediffDef>
     <defName>DMSRC_MalevolenceCommandReceived</defName>
     <label>Received tactical data</label>
-    <description>.</description>
+    <description>Received tactical data from command automatroid.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
     <comps>
@@ -118,53 +118,5 @@
       </li>
     </stages>
   </HediffDef>
-
-  <AbilityDef>
-    <defName>DMSRC_ResurrectMech</defName>
-    <label>resurrect automatroid</label>
-    <description>Resurrect a recently-killed mechanoid by externally supercharging its self-repair processes. The mechanoid will come back with some but not all of its wounds healed.</description>
-    <iconPath>UI/Abilities/MechResurrection</iconPath>
-    <cooldownTicksRange>180</cooldownTicksRange>
-    <warmupStartSound>MechResurrect_Warmup</warmupStartSound>
-    <hostile>false</hostile>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <drawAimPie>true</drawAimPie>
-      <range>9.9</range>
-      <warmupTime>4</warmupTime>
-      <soundCast>MechResurrect_Cast</soundCast>
-      <requireLineOfSight>false</requireLineOfSight>
-      <targetParams>
-        <canTargetPawns>false</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetCorpses>true</canTargetCorpses>
-        <canTargetAnimals>false</canTargetAnimals>
-        <canTargetHumans>false</canTargetHumans>
-        <canTargetMechs>true</canTargetMechs>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="CompProperties_ResurrectMech">
-        <maxCorpseAgeTicks>3600</maxCorpseAgeTicks>
-        <!-- 60 seconds -->
-        <costs>
-          <li>
-            <weightClass>Light</weightClass>
-            <cost>1</cost>
-          </li>
-          <li>
-            <weightClass>Medium</weightClass>
-            <cost>3</cost>
-          </li>
-          <li>
-            <weightClass>Heavy</weightClass>
-            <cost>5</cost>
-          </li>
-        </costs>
-        <appliedEffecterDef>MechResurrected</appliedEffecterDef>
-      </li>
-    </comps>
-  </AbilityDef>
-
+  
 </Defs>

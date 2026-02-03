@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <DMSRC_Mission_WaveDesc>Enemy reinforcements are moving towards this area.</DMSRC_Mission_WaveDesc>
+  <DMSRC_Mission_WaveLabel>Enemy reinforcements arrive in {0}</DMSRC_Mission_WaveLabel>
+  <DMSRC_Mission_DefendDesc>Defend from {0} enemy forces.</DMSRC_Mission_DefendDesc>
+  <DMSRC_Mission_DefendWaveLabel>Next wave in {0}</DMSRC_Mission_DefendWaveLabel>
+  <DMSRC_Mission_DefendLabel>Defend {0}</DMSRC_Mission_DefendLabel>
+  <DMSRC_Mission_Destroyed>{0} destroyed. {1} left.</DMSRC_Mission_Destroyed>
+  <DMSRC_Mission_Killed>{0} killed. {2} {1} left.</DMSRC_Mission_Killed>
+  <DMSRC_MessageLadarTriggered>Perimeter scanner found invisible object.</DMSRC_MessageLadarTriggered>
+  <DMSRC_LadarDetectedInvisible>Invisible object nearby.</DMSRC_LadarDetectedInvisible>
+  <DMSRC_DetonationCountdown>Will explode in {0}</DMSRC_DetonationCountdown>
+  <DMSRC_DetonationInstigator>Planted by {0}</DMSRC_DetonationInstigator>
+  <DMSRC_DecreaseTimer>Decrease timer({0} hour)</DMSRC_DecreaseTimer>
+  <DMSRC_IncreaseTimer>Increase timer({0} hour)</DMSRC_IncreaseTimer>
+  <DMSRC_FacilityDestroyed>Facility destroyed</DMSRC_FacilityDestroyed>
+  <DMSRC_DeactivatedLabel>Deactivated {0}</DMSRC_DeactivatedLabel>
+  <DMSRC_MessageCantInterceptMechhive>Cannot intercept mechhive signal</DMSRC_MessageCantInterceptMechhive>
+  <DMSRC_Currency>All available silver</DMSRC_Currency>
+  <DMSRC_RenegadesDialod_RequestsDisabled>Should be ally to make requests</DMSRC_RenegadesDialod_RequestsDisabled>
+  <DMSRC_RenegadesContactsLetter_Label>Contact with renegades</DMSRC_RenegadesContactsLetter_Label>
+  <DMSRC_RenegadesContactsLetter_Text>Renegades contacted you, offering an allience. They will give you access to trade requests and, in the future, military aid.\n\nIf you will accept this offer Colonial fleet would become permanent enemy.\n\nIf you will reject this offer renegades will not do anything, unless you'll become Colonial fleet ally.</DMSRC_RenegadesContactsLetter_Text>
+  <DMSRC_Controlled>{0}/{1}</DMSRC_Controlled>
+  <DMSRC_NeedMoreGoodwill>Not enough goodwill</DMSRC_NeedMoreGoodwill>
+  <DMSRC_ArrivalAfter_Single>Arrives in {0}</DMSRC_ArrivalAfter_Single>
+  <DMSRC_MilitaryAid>Military aid with power of {0} (cost {1} goodwill)</DMSRC_MilitaryAid>
+  <DMSRC_RenegadesTradeLetter_Label>Purchases arrived</DMSRC_RenegadesTradeLetter_Label>
+  <DMSRC_RenegadesTradeLetter_Text>Renegades delivered your request.</DMSRC_RenegadesTradeLetter_Text>
+  <DMSRC_NoThingsSelected>No things selected</DMSRC_NoThingsSelected>
+</LanguageData>

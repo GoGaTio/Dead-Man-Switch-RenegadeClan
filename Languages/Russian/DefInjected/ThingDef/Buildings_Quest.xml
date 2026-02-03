@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: inactive automatroid -->
+  <DMSRC_InactiveMech.label>inactive automatroid</DMSRC_InactiveMech.label>
+  <!-- EN: A chunk of a spacecraft. It seems to have been torn off either by uncontrolled re-entry forces or some kind of weapon.\n\nHaving landed not long ago, it still contains useful resources which you can acquire by deconstructing it. -->
+  <DMSRC_InactiveMech.description>A chunk of a spacecraft. It seems to have been torn off either by uncontrolled re-entry forces or some kind of weapon.
+
+Having landed not long ago, it still contains useful resources which you can acquire by deconstructing it.</DMSRC_InactiveMech.description>
+  <!-- EN: Deconstruct for valuable resources. -->
+  <DMSRC_InactiveMech.comps.CompInspectString.inspectString>Deconstruct for valuable resources.</DMSRC_InactiveMech.comps.CompInspectString.inspectString>
+  
+  <!-- EN: large broadcast antenna -->
+  <DMSRC_LargeBroadcastAntenna.label>large broadcast antenna</DMSRC_LargeBroadcastAntenna.label>
+  <!-- EN: Ultra-large broadcast antenna for planetary communication. Allows to control mechanoids over the world from well-defended command center. -->
+  <DMSRC_LargeBroadcastAntenna.description>Ultra-large broadcast antenna for planetary communication. Allows to control mechanoids over the world from well-defended command center.</DMSRC_LargeBroadcastAntenna.description>
+  
+  <!-- EN: power network node -->
+  <DMSRC_PowerTransmitter.label>power network node</DMSRC_PowerTransmitter.label>
+  <!-- EN: todo -->
+  <DMSRC_PowerTransmitter.description>todo</DMSRC_PowerTransmitter.description>
+  
+  <!-- EN: security container -->
+  <DMSRC_SecurityContainer_NaraBlue.label>security container</DMSRC_SecurityContainer_NaraBlue.label>
+  <!-- EN: A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted. -->
+  <DMSRC_SecurityContainer_NaraBlue.description>A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted.</DMSRC_SecurityContainer_NaraBlue.description>
+  <!-- EN: Opened. -->
+  <DMSRC_SecurityContainer_NaraBlue.comps.CompHackable.hackedInspectString>Opened.</DMSRC_SecurityContainer_NaraBlue.comps.CompHackable.hackedInspectString>
+  <!-- EN: {HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}. -->
+  <DMSRC_SecurityContainer_NaraBlue.comps.CompHackable.hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</DMSRC_SecurityContainer_NaraBlue.comps.CompHackable.hackedMessage>
+  <!-- EN: Hack to open. -->
+  <DMSRC_SecurityContainer_NaraBlue.comps.CompHackable.notHackedInspectString>Hack to open.</DMSRC_SecurityContainer_NaraBlue.comps.CompHackable.notHackedInspectString>
+  
+  <!-- EN: security container -->
+  <DMSRC_SecurityContainer_NaraGreen.label>security container</DMSRC_SecurityContainer_NaraGreen.label>
+  <!-- EN: A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted. -->
+  <DMSRC_SecurityContainer_NaraGreen.description>A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted.</DMSRC_SecurityContainer_NaraGreen.description>
+  <!-- EN: Opened. -->
+  <DMSRC_SecurityContainer_NaraGreen.comps.CompHackable.hackedInspectString>Opened.</DMSRC_SecurityContainer_NaraGreen.comps.CompHackable.hackedInspectString>
+  <!-- EN: {HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}. -->
+  <DMSRC_SecurityContainer_NaraGreen.comps.CompHackable.hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</DMSRC_SecurityContainer_NaraGreen.comps.CompHackable.hackedMessage>
+  <!-- EN: Hack to open. -->
+  <DMSRC_SecurityContainer_NaraGreen.comps.CompHackable.notHackedInspectString>Hack to open.</DMSRC_SecurityContainer_NaraGreen.comps.CompHackable.notHackedInspectString>
+  
+  <!-- EN: security container -->
+  <DMSRC_SecurityContainer_NaraRed.label>security container</DMSRC_SecurityContainer_NaraRed.label>
+  <!-- EN: A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted. -->
+  <DMSRC_SecurityContainer_NaraRed.description>A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted.</DMSRC_SecurityContainer_NaraRed.description>
+  <!-- EN: Opened. -->
+  <DMSRC_SecurityContainer_NaraRed.comps.CompHackable.hackedInspectString>Opened.</DMSRC_SecurityContainer_NaraRed.comps.CompHackable.hackedInspectString>
+  <!-- EN: {HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}. -->
+  <DMSRC_SecurityContainer_NaraRed.comps.CompHackable.hackedMessage>{HACKER_labelShort} has finished hacking {SUBJECT_labelNoParenthesisDef}.</DMSRC_SecurityContainer_NaraRed.comps.CompHackable.hackedMessage>
+  <!-- EN: Hack to open. -->
+  <DMSRC_SecurityContainer_NaraRed.comps.CompHackable.notHackedInspectString>Hack to open.</DMSRC_SecurityContainer_NaraRed.comps.CompHackable.notHackedInspectString>
+  
+  <!-- EN: warhead platform -->
+  <DMSRC_WarheadPlatform.label>warhead platform</DMSRC_WarheadPlatform.label>
+  <!-- EN: Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World. -->
+  <DMSRC_WarheadPlatform.description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</DMSRC_WarheadPlatform.description>
+  
+</LanguageData>

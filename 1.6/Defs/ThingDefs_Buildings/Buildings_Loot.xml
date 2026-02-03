@@ -61,6 +61,7 @@
         <loots>
           <li>DMSRC_PackLoots</li>
         </loots>
+        <chanceNotSpawn>0</chanceNotSpawn>
       </li>
     </modExtensions>
   </ThingDef>
@@ -95,6 +96,7 @@
         <loots>
           <li>DMSRC_Crate</li>
         </loots>
+        <chanceNotSpawn>0</chanceNotSpawn>
       </li>
     </modExtensions>
   </ThingDef>
@@ -133,18 +135,19 @@
         <loots>
           <li>DMSRC_PackLoots</li>
         </loots>
+        <chanceNotSpawn>0</chanceNotSpawn>
       </li>
     </modExtensions>
   </ThingDef>
 
-  <!--<ThingDef ParentName="DMSRC_BaseLootBox">
+  <ThingDef ParentName="DMSRC_BaseLootBox">
     <defName>DMSRC_Drawer</defName>
     <label>drawer</label>
     <description>A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations.</description>
     <rotatable>true</rotatable>
     <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_PackCrate</texPath>
-      <drawSize>(1,1)</drawSize>
+      <texPath>Things/Building/Containers/DMSRC_Drawer/DMSRC_Drawer</texPath>
+      <drawSize>(2,2)</drawSize>
       <graphicClass>Graphic_Multi</graphicClass>
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
@@ -154,32 +157,22 @@
     </costList>
     <size>(1,1)</size>
     <defaultPlacingRot>0</defaultPlacingRot>
-    <comps>
-      <li Class="Fortified.CompProperties_RandomColorOnSpawn">
-        <colorChance>1</colorChance>
-        <colorDefs>
-          <li>Structure_GreenFaded</li>
-          <li>Structure_OrangePastel</li>
-          <li>Structure_Red</li>
-          <li>Structure_White</li>
-        </colorDefs>
-      </li>
-    </comps>
     <modExtensions>
       <li Class="Fortified.ModExtension_Lootbox">
         <sound>CrateOpeningStarted</sound>
         <openedGraphicdata>
-          <texPath>Things/Building/Containers/DMSRC_PackCrate_Open</texPath>
-          <drawSize>(1,1)</drawSize>
+          <texPath>Things/Building/Containers/DMSRC_Drawer/DMSRC_DrawerOpen</texPath>
+          <drawSize>(2,2)</drawSize>
           <graphicClass>Graphic_Multi</graphicClass>
           <shaderType>CutoutComplex</shaderType>
         </openedGraphicdata>
         <countRange>1</countRange>
+        <chanceNotSpawn>0</chanceNotSpawn>
         <loots>
           <li>DMSRC_Drawer</li>
         </loots>
       </li>
     </modExtensions>
-  </ThingDef>-->
+  </ThingDef>
 
 </Defs>

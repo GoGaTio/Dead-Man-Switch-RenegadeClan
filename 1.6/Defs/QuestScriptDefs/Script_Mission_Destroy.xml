@@ -4,10 +4,8 @@
   <QuestScriptDef>
     <defName>DMSRC_DestroyBroadcastPoint</defName>
     <rootSelectionWeight>1.1</rootSelectionWeight>
-    <defaultChallengeRating>1</defaultChallengeRating>
-    <expireDaysRange>1~2</expireDaysRange>
+    <expireDaysRange>5~10</expireDaysRange>
     <everAcceptableInSpace>true</everAcceptableInSpace>
-    <isRootSpecial>true</isRootSpecial>
     <questNameRules>
       <rulesStrings>
         <li>questName->[destroy] [antenna]</li>
@@ -22,7 +20,7 @@
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->A nearby settlement, [faction_name], has a special trade request.</li>
+        <li>questDescription->Renegades found Colonial fleet broadcast tower nearby.\nIt creates control area, which allows to perform fleet operations, and therefore should be destroyed.</li>
       </rulesStrings>
     </questDescriptionRules>
     <root Class="DMSRC.QuestNode_Root_Site">
@@ -35,6 +33,43 @@
         <targetDef>DMSRC_LargeBroadcastAntenna</targetDef>
         <wavesCooldown>1000~2000</wavesCooldown>
         <initialWavesCooldown>5000~7500</initialWavesCooldown>
+        <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
+      </mission>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>DMSRC_DestroyLogisticCenter</defName>
+    <rootSelectionWeight>0.5</rootSelectionWeight>
+    <expireDaysRange>10~20</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[destroy] [logistic] [center]</li>
+        <li>destroy->Destroy</li>
+        <li>destroy->Sabotage Of</li>
+        <li>destroy->Attack On</li>
+        <li>center->Center</li>
+        <li>center->Facility</li>
+        <li>logistic->Logistic</li>
+        <li>logistic->Warehouse</li>
+        <li>logistic->Underground</li>
+        <li>logistic->Nuclear</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->Renegades found Colonial fleet logistic center nearby.\nIt contains warheads, which should be destroyed.\nThis mission will require timed bomb to perform detonation.\nYou will be able to loot facility after it would be cleared.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMSRC.QuestNode_Root_Site">
+      <giver>Renegades</giver>
+      <sitePart>DMSRC_LogisticCenter</sitePart>
+      <oppositeFactionForSite>true</oppositeFactionForSite>
+      <timeoutTicks>600000</timeoutTicks>
+      <mission>
+        <missionClass>DMSRC.QuestPart_Mission_DestroyFacility</missionClass>
+        <wavesCooldown>5000~7500</wavesCooldown>
+        <initialWavesCooldown>60000</initialWavesCooldown>
         <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
       </mission>
     </root>

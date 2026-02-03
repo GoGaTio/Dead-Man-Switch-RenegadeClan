@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  
+  <!-- ========== Tools ========== -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Prizm"]/tools</xpath>
+    <value>
+      <tools Inherit="False">
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>2.44</cooldownTime>
+          <armorPenetrationBlunt>3.5</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/tools</xpath>
+    <value>
+      <tools Inherit="False">
+        <li Class="CombatExtended.ToolCE">
+          <label>emitter</label>
+          <capacities>
+            <li>Blunt</li>
+            <li>Poke</li>
+          </capacities>
+          <power>10</power>
+          <armorPenetrationBlunt>2.5</armorPenetrationBlunt>
+          <cooldownTime>2</cooldownTime>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>2.44</cooldownTime>
+          <armorPenetrationBlunt>3.5</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza" or defName="DMSRC_Gun_LinzaMount"]/tools</xpath>
+    <value>
+      <tools Inherit="False">
+        <li Class="CombatExtended.ToolCE">
+          <label>emitter</label>
+          <capacities>
+            <li>Blunt</li>
+            <li>Poke</li>
+          </capacities>
+          <power>23</power>
+          <armorPenetrationBlunt>4.5</armorPenetrationBlunt>
+          <cooldownTime>2</cooldownTime>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+
+  <!-- ========== Luch ========== -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/statBases/RangedWeapon_Cooldown</xpath>
+    <value>
+      <RangedWeapon_Cooldown>0.56</RangedWeapon_Cooldown>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/warmupTime</xpath>
+    <value>
+      <warmupTime>1.3</warmupTime>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/range</xpath>
+    <value>
+      <range>80</range>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/comps/li[@Class="DMSRC.CompProperties_FocusedBeam"]/explosionDamage</xpath>
+    <value>
+      <explosionDamage>10</explosionDamage>
+    </value>
+  </Operation>
+
+  <!-- ========== Linza ========== -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza"]/verbs/li/range</xpath>
+    <value>
+      <range>140</range>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza"]/comps/li[@Class="DMSRC.CompProperties_FocusedBeam"]/explosionDamage</xpath>
+    <value>
+      <explosionDamage>16</explosionDamage>
+    </value>
+  </Operation>
+
+  <!-- ========== Linza mount ========== -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_LinzaMount"]/verbs/li/range</xpath>
+    <value>
+      <range>190</range>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_LinzaMount"]/comps/li[@Class="DMSRC.CompProperties_FocusedBeam"]/explosionDamage</xpath>
+    <value>
+      <explosionDamage>20</explosionDamage>
+    </value>
+  </Operation>
+
+</Patch>

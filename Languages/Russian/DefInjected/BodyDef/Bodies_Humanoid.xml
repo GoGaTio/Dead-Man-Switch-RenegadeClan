@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: sapiens -->
+  <DMSRC_Humanoid_Persona.label>разумный</DMSRC_Humanoid_Persona.label>
+  <!-- EN: infrared sensor -->
+  <DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.infrared_sensor.customLabel>инфракрасный датчик</DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.infrared_sensor.customLabel>
+  <!-- EN: left sight sensor -->
+  <DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.left_sight_sensor.customLabel>левый визуальный датчик</DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.left_sight_sensor.customLabel>
+  <!-- EN: right sight sensor -->
+  <DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.right_sight_sensor.customLabel>правый визуальный датчик</DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.right_sight_sensor.customLabel>
+  <!-- EN: left hearing sensor -->
+  <DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.left_hearing_sensor.customLabel>левый звуковой датчик</DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.left_hearing_sensor.customLabel>
+  <!-- EN: right hearing sensor -->
+  <DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.right_hearing_sensor.customLabel>правый звуковой датчик</DMSRC_Humanoid_Persona.corePart.parts.MechanicalNeck.parts.DMSRC_ArmoredHead.parts.right_hearing_sensor.customLabel>
+  <!-- EN: left shoulder -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.customLabel>левое плечо</DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.customLabel>
+  <!-- EN: left arm -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.customLabel>левая рука</DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.customLabel>
+  <!-- EN: left hand -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>левая кисть</DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.customLabel>
+  <!-- EN: left pinky -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_pinky.customLabel>левый мизинец</DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_pinky.customLabel>
+  <!-- EN: left middle finger -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_middle_finger.customLabel>левый средний палец</DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_middle_finger.customLabel>
+  <!-- EN: left index finger -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_index_finger.customLabel>левый указательный палец</DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_index_finger.customLabel>
+  <!-- EN: left thumb -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_thumb.customLabel>левый большой палец</DMSRC_Humanoid_Persona.corePart.parts.left_shoulder.parts.left_arm.parts.left_hand.parts.left_thumb.customLabel>
+  <!-- EN: right shoulder -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.customLabel>правое плечо</DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.customLabel>
+  <!-- EN: right arm -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.customLabel>правая рука</DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.customLabel>
+  <!-- EN: right hand -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.customLabel>правая кисть</DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.customLabel>
+  <!-- EN: right pinky -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_pinky.customLabel>правый мизинец</DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_pinky.customLabel>
+  <!-- EN: right middle finger -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_middle_finger.customLabel>правый средний палец</DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_middle_finger.customLabel>
+  <!-- EN: right index finger -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_index_finger.customLabel>правый указательный палец</DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_index_finger.customLabel>
+  <!-- EN: right thumb -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_thumb.customLabel>правый большой палец</DMSRC_Humanoid_Persona.corePart.parts.right_mechanical_shoulder.parts.right_arm.parts.right_hand.parts.right_thumb.customLabel>
+  <!-- EN: left leg -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_leg.customLabel>левая нога</DMSRC_Humanoid_Persona.corePart.parts.left_leg.customLabel>
+  <!-- EN: left foot -->
+  <DMSRC_Humanoid_Persona.corePart.parts.left_leg.parts.left_foot.customLabel>левая стопа</DMSRC_Humanoid_Persona.corePart.parts.left_leg.parts.left_foot.customLabel>
+  <!-- EN: right leg -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_leg.customLabel>правая нога</DMSRC_Humanoid_Persona.corePart.parts.right_leg.customLabel>
+  <!-- EN: right foot -->
+  <DMSRC_Humanoid_Persona.corePart.parts.right_leg.parts.right_foot.customLabel>правая стопа</DMSRC_Humanoid_Persona.corePart.parts.right_leg.parts.right_foot.customLabel>
+  <!-- EN: waist armour plate -->
+  <DMSRC_Humanoid_Persona.corePart.parts.waist_armour_plate.customLabel>поясная бронеплита</DMSRC_Humanoid_Persona.corePart.parts.waist_armour_plate.customLabel>
+  <!-- EN: chest armour plate -->
+  <DMSRC_Humanoid_Persona.corePart.parts.chest_armour_plate.customLabel>грудная бронеплита</DMSRC_Humanoid_Persona.corePart.parts.chest_armour_plate.customLabel>
+  <!-- EN: main battery -->
+  <DMSRC_Humanoid_Persona.corePart.parts.main_battery.customLabel>основная батарея</DMSRC_Humanoid_Persona.corePart.parts.main_battery.customLabel>
+  <!-- EN: secondary battery -->
+  <DMSRC_Humanoid_Persona.corePart.parts.secondary_battery.customLabel>запасная батарея</DMSRC_Humanoid_Persona.corePart.parts.secondary_battery.customLabel>
+  
+</LanguageData>

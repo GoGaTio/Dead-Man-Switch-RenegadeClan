@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: emergency battery -->
+  <DMSRC_EmergencyBattery.label>экстренная батарея</DMSRC_EmergencyBattery.label>
+  <!-- EN: Use the reserve battery to keep functioning a bit more. -->
+  <DMSRC_EmergencyBattery.description>Использовать резервную батарею чтобы восстановить нехваток энергии.</DMSRC_EmergencyBattery.description>
+  
+  <!-- EN: Tactical calibration -->
+  <DMSRC_MalevolenceCommand.label>Тактическое командование</DMSRC_MalevolenceCommand.label>
+  <!-- EN: Share fire control data with friendly forces within range to improve squad accuracy for short period. -->
+  <DMSRC_MalevolenceCommand.description>Передать тактическую координацию союзным механоидам поблтзости.</DMSRC_MalevolenceCommand.description>
+  
+</LanguageData>

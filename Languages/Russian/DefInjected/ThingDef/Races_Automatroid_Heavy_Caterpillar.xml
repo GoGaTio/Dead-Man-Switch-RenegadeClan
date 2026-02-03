@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: focus -->
+  <DMSRC_Mech_Focus.label>фокус</DMSRC_Mech_Focus.label>
+  <!-- EN: A mobile assault platform equipped with a powerful beam cannon, designed to easily cut through thick armor. -->
+  <DMSRC_Mech_Focus.description>Штурмовая гусеничная платформа с установленной лучевой пушкой особой мощности.</DMSRC_Mech_Focus.description>
+  <!-- EN: head -->
+  <DMSRC_Mech_Focus.tools.head.label>шасси</DMSRC_Mech_Focus.tools.head.label>
+  
+  <!-- EN: pavise -->
+  <DMSRC_Mech_Pavise.label>застава</DMSRC_Mech_Pavise.label>
+  <!-- EN: An unmanned all-terrain tracked beam defence support platform, armed with mounted submachine gun. -->
+  <DMSRC_Mech_Pavise.description>Автоматическая гусеничная платформа с системой лучевой защиты и установленным пулеметом.</DMSRC_Mech_Pavise.description>
+  <!-- EN: head -->
+  <DMSRC_Mech_Pavise.tools.head.label>шасси</DMSRC_Mech_Pavise.tools.head.label>
+  
+</LanguageData>

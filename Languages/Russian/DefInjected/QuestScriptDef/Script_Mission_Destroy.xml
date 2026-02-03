@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>questDescription->Renegades found Colonial fleet broadcast tower nearby.\nIt creates control area, which allows to perform fleet operations, and therefore should be destroyed.</li>
+  -->
+  <DMSRC_DestroyBroadcastPoint.questDescriptionRules.rulesStrings>
+    <li>questDescription->Renegades found Colonial fleet broadcast tower nearby.\nIt creates control area, which allows to perform fleet operations, and therefore should be destroyed.</li>
+  </DMSRC_DestroyBroadcastPoint.questDescriptionRules.rulesStrings>
+  <!-- EN:
+    <li>questName->[destroy] [antenna]</li>
+    <li>destroy->Destroy</li>
+    <li>destroy->Sabotage Of</li>
+    <li>destroy->Attack On</li>
+    <li>antenna->Signal Tower</li>
+    <li>antenna->Radar</li>
+    <li>antenna->Broadcaster</li>
+    <li>antenna->Antenna</li>
+  -->
+  <DMSRC_DestroyBroadcastPoint.questNameRules.rulesStrings>
+    <li>questName->[destroy] [antenna]</li>
+    <li>destroy->Destroy</li>
+    <li>destroy->Sabotage Of</li>
+    <li>destroy->Attack On</li>
+    <li>antenna->Signal Tower</li>
+    <li>antenna->Radar</li>
+    <li>antenna->Broadcaster</li>
+    <li>antenna->Antenna</li>
+  </DMSRC_DestroyBroadcastPoint.questNameRules.rulesStrings>
+  
+  <!-- EN:
+    <li>questDescription->Renegades found Colonial fleet logistic center nearby.\nIt contains warheads, which should be destroyed.\nThis mission will require timed bomb to perform detonation.\nYou will be able to loot facility after it would be cleared.</li>
+  -->
+  <DMSRC_DestroyLogisticCenter.questDescriptionRules.rulesStrings>
+    <li>questDescription->Renegades found Colonial fleet logistic center nearby.\nIt contains warheads, which should be destroyed.\nThis mission will require timed bomb to perform detonation.\nYou will be able to loot facility after it would be cleared.</li>
+  </DMSRC_DestroyLogisticCenter.questDescriptionRules.rulesStrings>
+  <!-- EN:
+    <li>questName->[destroy] [logistic] [center]</li>
+    <li>destroy->Destroy</li>
+    <li>destroy->Sabotage Of</li>
+    <li>destroy->Attack On</li>
+    <li>center->Center</li>
+    <li>center->Facility</li>
+    <li>logistic->Logistic</li>
+    <li>logistic->Warehouse</li>
+    <li>logistic->Underground</li>
+    <li>logistic->Nuclear</li>
+  -->
+  <DMSRC_DestroyLogisticCenter.questNameRules.rulesStrings>
+    <li>questName->[destroy] [logistic] [center]</li>
+    <li>destroy->Destroy</li>
+    <li>destroy->Sabotage Of</li>
+    <li>destroy->Attack On</li>
+    <li>center->Center</li>
+    <li>center->Facility</li>
+    <li>logistic->Logistic</li>
+    <li>logistic->Warehouse</li>
+    <li>logistic->Underground</li>
+    <li>logistic->Nuclear</li>
+  </DMSRC_DestroyLogisticCenter.questNameRules.rulesStrings>
+  
+</LanguageData>

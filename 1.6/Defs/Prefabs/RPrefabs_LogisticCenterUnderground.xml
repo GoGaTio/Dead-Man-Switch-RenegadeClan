@@ -1,0 +1,1033 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_LogisticCenterUnderground</defName>
+    <size>(101,101)</size>
+    <tags>
+      <li>DMSRC_LogisticCenterUnderground</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <positions>
+          <li>(35,0,35)</li>
+          <li>(35,0,45)</li>
+          <li>(45,0,35)</li>
+          <li>(45,0,45)</li>
+          <li>(35,0,55)</li>
+          <li>(35,0,65)</li>
+          <li>(45,0,55)</li>
+          <li>(45,0,65)</li>
+        </positions>
+        <tags>
+          <li>WarehouseStock</li>
+          <li>WarehouseStockWithContainer</li>
+          <li>WarehouseStockWithHole</li>
+        </tags>
+        <rotations>All</rotations>
+      </li>
+      <li>
+        <positions>
+          <li>(18,0,30)</li>
+          <li>(24,0,30)</li>
+          <li>(56,0,30)</li>
+          <li>(24,0,40)</li>
+          <li>(24,0,60)</li>
+          <li>(18,0,70)</li>
+          <li>(24,0,70)</li>
+          <li>(56,0,70)</li>
+          <li>(68,0,20)</li>
+          <li>(68,0,80)</li>
+        </positions>
+        <tag>Room5x5</tag>
+        <rotations>All</rotations>
+      </li>
+      <li>
+        <positions>
+          <li>(25,0,18)</li>
+          <li>(35,0,18)</li>
+          <li>(45,0,18)</li>
+          <li>(55,0,18)</li>
+          <li>(68,0,28)</li>
+          <li>(68,0,72)</li>
+          <li>(25,0,82)</li>
+          <li>(35,0,82)</li>
+          <li>(45,0,82)</li>
+          <li>(55,0,82)</li>
+        </positions>
+        <tag>Room9x9</tag>
+        <rotations>All</rotations>
+      </li>
+    </subPrefabs>
+    <things>
+      <HiddenConduit>
+        <rects>
+          <li>(30,28,30,29)</li>
+          <li>(40,28,40,29)</li>
+          <li>(50,28,50,29)</li>
+          <li>(28,30,29,30)</li>
+          <li>(51,30,52,30)</li>
+          <li>(28,40,29,40)</li>
+          <li>(51,40,52,40)</li>
+          <li>(28,50,29,50)</li>
+          <li>(51,50,52,50)</li>
+          <li>(28,60,29,60)</li>
+          <li>(51,60,52,60)</li>
+          <li>(28,70,29,70)</li>
+          <li>(51,70,52,70)</li>
+          <li>(30,71,30,72)</li>
+          <li>(40,71,40,72)</li>
+          <li>(50,71,50,72)</li>
+        </rects>
+      </HiddenConduit>
+      <PowerConduit>
+        <rects>
+          <li>(20,13,60,13)</li>
+          <li>(20,14,20,23)</li>
+          <li>(30,14,30,23)</li>
+          <li>(40,14,40,23)</li>
+          <li>(50,14,50,23)</li>
+          <li>(60,14,60,23)</li>
+          <li>(65,17,71,17)</li>
+          <li>(65,18,65,23)</li>
+          <li>(71,18,71,23)</li>
+          <li>(0,23,19,23)</li>
+          <li>(21,23,29,23)</li>
+          <li>(31,23,39,23)</li>
+          <li>(41,23,49,23)</li>
+          <li>(51,23,59,23)</li>
+          <li>(61,23,64,23)</li>
+          <li>(66,23,70,23)</li>
+          <li>(72,23,73,23)</li>
+          <li>(0,24,0,37)</li>
+          <li>(11,24,11,77)</li>
+          <li>(63,24,63,33)</li>
+          <li>(73,24,73,45)</li>
+          <li>(15,27,59,27)</li>
+          <li>(15,28,15,33)</li>
+          <li>(21,28,21,33)</li>
+          <li>(27,28,27,73)</li>
+          <li>(53,28,53,73)</li>
+          <li>(59,28,59,33)</li>
+          <li>(30,30,50,30)</li>
+          <li>(30,31,30,70)</li>
+          <li>(40,31,40,70)</li>
+          <li>(50,31,50,70)</li>
+          <li>(16,33,20,33)</li>
+          <li>(22,33,26,33)</li>
+          <li>(54,33,58,33)</li>
+          <li>(64,33,72,33)</li>
+          <li>(74,33,91,33)</li>
+          <li>(91,34,91,46)</li>
+          <li>(1,37,10,37)</li>
+          <li>(15,37,26,37)</li>
+          <li>(54,37,69,37)</li>
+          <li>(15,38,15,63)</li>
+          <li>(21,38,21,45)</li>
+          <li>(69,38,69,45)</li>
+          <li>(31,40,39,40)</li>
+          <li>(41,40,49,40)</li>
+          <li>(16,43,20,43)</li>
+          <li>(22,43,26,43)</li>
+          <li>(92,43,100,43)</li>
+          <li>(23,44,23,45)</li>
+          <li>(25,44,25,45)</li>
+          <li>(94,44,94,46)</li>
+          <li>(97,44,97,46)</li>
+          <li>(100,44,100,57)</li>
+          <li>(22,45,22,45)</li>
+          <li>(24,45,24,45)</li>
+          <li>(26,45,26,45)</li>
+          <li>(68,45,68,55)</li>
+          <li>(70,45,72,45)</li>
+          <li>(74,45,78,45)</li>
+          <li>(86,45,90,45)</li>
+          <li>(78,46,78,55)</li>
+          <li>(86,46,86,55)</li>
+          <li>(92,46,93,46)</li>
+          <li>(95,46,96,46)</li>
+          <li>(98,46,99,46)</li>
+          <li>(79,49,85,49)</li>
+          <li>(31,50,39,50)</li>
+          <li>(41,50,49,50)</li>
+          <li>(79,51,85,51)</li>
+          <li>(91,54,99,54)</li>
+          <li>(21,55,26,55)</li>
+          <li>(69,55,77,55)</li>
+          <li>(87,55,91,55)</li>
+          <li>(94,55,94,57)</li>
+          <li>(97,55,97,57)</li>
+          <li>(21,56,21,63)</li>
+          <li>(23,56,23,57)</li>
+          <li>(25,56,25,57)</li>
+          <li>(69,56,69,63)</li>
+          <li>(73,56,73,77)</li>
+          <li>(91,56,91,67)</li>
+          <li>(16,57,20,57)</li>
+          <li>(22,57,22,57)</li>
+          <li>(24,57,24,57)</li>
+          <li>(26,57,26,57)</li>
+          <li>(92,57,93,57)</li>
+          <li>(95,57,96,57)</li>
+          <li>(98,57,99,57)</li>
+          <li>(31,60,39,60)</li>
+          <li>(41,60,49,60)</li>
+          <li>(0,63,10,63)</li>
+          <li>(16,63,20,63)</li>
+          <li>(22,63,26,63)</li>
+          <li>(54,63,68,63)</li>
+          <li>(0,64,0,77)</li>
+          <li>(15,67,26,67)</li>
+          <li>(54,67,59,67)</li>
+          <li>(63,67,72,67)</li>
+          <li>(74,67,90,67)</li>
+          <li>(15,68,15,73)</li>
+          <li>(21,68,21,73)</li>
+          <li>(59,68,59,73)</li>
+          <li>(63,68,63,77)</li>
+          <li>(31,70,39,70)</li>
+          <li>(41,70,49,70)</li>
+          <li>(16,73,20,73)</li>
+          <li>(22,73,26,73)</li>
+          <li>(28,73,52,73)</li>
+          <li>(54,73,58,73)</li>
+          <li>(1,77,10,77)</li>
+          <li>(12,77,62,77)</li>
+          <li>(64,77,72,77)</li>
+          <li>(20,78,20,87)</li>
+          <li>(30,78,30,87)</li>
+          <li>(40,78,40,87)</li>
+          <li>(50,78,50,87)</li>
+          <li>(60,78,60,87)</li>
+          <li>(65,78,65,83)</li>
+          <li>(71,78,71,83)</li>
+          <li>(66,83,70,83)</li>
+          <li>(21,87,29,87)</li>
+          <li>(31,87,39,87)</li>
+          <li>(41,87,49,87)</li>
+          <li>(51,87,59,87)</li>
+        </rects>
+      </PowerConduit>
+      <DMSRC_PerimeterScanner>
+        <position>(16, 0, 50)</position>
+      </DMSRC_PerimeterScanner>
+      <Table1x2c>
+        <position>(8, 0, 24)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table1x2c>
+      <Table1x2c>
+        <position>(10, 0, 24)</position>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table1x2c>
+      <Table1x2c>
+        <positions>
+          <li>(10, 0, 35)</li>
+          <li>(1, 0, 67)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table1x2c>
+      <Table1x2c>
+        <position>(2, 0, 76)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table1x2c>
+      <BookcaseSmall>
+        <rects>
+          <li>(74,44,74,44)</li>
+          <li>(84,48,84,48)</li>
+          <li>(90,64,90,64)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </BookcaseSmall>
+      <BookcaseSmall>
+        <position>(10, 0, 75)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </BookcaseSmall>
+      <Table3x3c>
+        <positions>
+          <li>(82, 0, 45)</li>
+          <li>(82, 0, 55)</li>
+        </positions>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table3x3c>
+      <DMSRC_WarheadPlatform>
+        <positions>
+          <li>(92, 0, 44)</li>
+          <li>(95, 0, 44)</li>
+          <li>(98, 0, 44)</li>
+          <li>(92, 0, 55)</li>
+          <li>(95, 0, 55)</li>
+          <li>(98, 0, 55)</li>
+        </positions>
+      </DMSRC_WarheadPlatform>
+      <Armchair>
+        <position>(82, 0, 47)</position>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <Armchair>
+        <position>(82, 0, 53)</position>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Armchair>
+      <DMSRC_PowerTransmitter>
+        <rects>
+          <li>(22,44,22,44)</li>
+          <li>(24,44,24,44)</li>
+          <li>(26,44,26,44)</li>
+          <li>(79,50,79,50)</li>
+          <li>(81,50,81,50)</li>
+          <li>(83,50,83,50)</li>
+          <li>(85,50,85,50)</li>
+          <li>(22,56,22,56)</li>
+          <li>(24,56,24,56)</li>
+          <li>(26,56,26,56)</li>
+        </rects>
+      </DMSRC_PowerTransmitter>
+      <Door>
+        <rects>
+          <li>(25,23,25,23)</li>
+          <li>(35,23,35,23)</li>
+          <li>(45,23,45,23)</li>
+          <li>(55,23,55,23)</li>
+          <li>(68,23,68,23)</li>
+          <li>(18,33,18,33)</li>
+          <li>(24,33,24,33)</li>
+          <li>(68,33,68,33)</li>
+          <li>(24,37,24,37)</li>
+          <li>(24,63,24,63)</li>
+          <li>(18,67,18,67)</li>
+          <li>(24,67,24,67)</li>
+          <li>(68,67,68,67)</li>
+          <li>(25,77,25,77)</li>
+          <li>(35,77,35,77)</li>
+          <li>(45,77,45,77)</li>
+          <li>(55,77,55,77)</li>
+          <li>(68,77,68,77)</li>
+        </rects>
+        <stuff>Steel</stuff>
+      </Door>
+      <Door>
+        <rects>
+          <li>(11,28,11,28)</li>
+          <li>(59,30,59,30)</li>
+          <li>(11,32,11,32)</li>
+          <li>(11,68,11,68)</li>
+          <li>(59,70,59,70)</li>
+          <li>(11,72,11,72)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Door>
+      <Barricade>
+        <rects>
+          <li>(17,39,19,39)</li>
+          <li>(17,40,17,41)</li>
+          <li>(19,40,19,41)</li>
+          <li>(18,41,18,41)</li>
+          <li>(88,46,88,47)</li>
+          <li>(91,46,99,46)</li>
+          <li>(70,47,72,47)</li>
+          <li>(74,47,76,47)</li>
+          <li>(87,47,87,47)</li>
+          <li>(70,48,70,49)</li>
+          <li>(72,48,72,49)</li>
+          <li>(74,48,74,49)</li>
+          <li>(76,48,76,49)</li>
+          <li>(16,49,17,49)</li>
+          <li>(71,49,71,49)</li>
+          <li>(75,49,75,49)</li>
+          <li>(17,50,17,51)</li>
+          <li>(16,51,16,51)</li>
+          <li>(70,51,72,51)</li>
+          <li>(74,51,76,51)</li>
+          <li>(70,52,70,53)</li>
+          <li>(72,52,72,53)</li>
+          <li>(74,52,74,53)</li>
+          <li>(76,52,76,53)</li>
+          <li>(71,53,71,53)</li>
+          <li>(75,53,75,53)</li>
+          <li>(87,53,88,53)</li>
+          <li>(88,54,88,54)</li>
+          <li>(91,54,99,54)</li>
+          <li>(17,59,19,59)</li>
+          <li>(17,60,17,61)</li>
+          <li>(19,60,19,61)</li>
+          <li>(18,61,18,61)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Barricade>
+      <DMS_BandNode>
+        <positions>
+          <li>(82, 0, 34)</li>
+          <li>(89, 0, 65)</li>
+        </positions>
+      </DMS_BandNode>
+      <Autodoor>
+        <rects>
+          <li>(35,27,35,27)</li>
+          <li>(45,27,45,27)</li>
+          <li>(18,37,18,37)</li>
+          <li>(18,43,18,43)</li>
+          <li>(71,45,71,45)</li>
+          <li>(75,45,75,45)</li>
+          <li>(89,45,89,45)</li>
+          <li>(71,55,71,55)</li>
+          <li>(75,55,75,55)</li>
+          <li>(89,55,89,55)</li>
+          <li>(18,57,18,57)</li>
+          <li>(18,63,18,63)</li>
+          <li>(35,73,35,73)</li>
+          <li>(45,73,45,73)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Autodoor>
+      <Autodoor>
+        <rects>
+          <li>(27,35,27,35)</li>
+          <li>(53,35,53,35)</li>
+          <li>(27,65,27,65)</li>
+          <li>(53,65,53,65)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Tungsteel</stuff>
+      </Autodoor>
+      <DMS_Recharger>
+        <positions>
+          <li>(22, 0, 46)</li>
+          <li>(25, 0, 46)</li>
+        </positions>
+      </DMS_Recharger>
+      <DMS_Recharger>
+        <positions>
+          <li>(22, 0, 54)</li>
+          <li>(25, 0, 54)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMS_Recharger>
+      <DMSRC_SmallHole>
+        <positions>
+          <li>(91, 0, 50)</li>
+          <li>(96, 0, 50)</li>
+        </positions>
+      </DMSRC_SmallHole>
+      <WallLamp>
+        <rects>
+          <li>(13,24,13,24)</li>
+          <li>(40,24,40,24)</li>
+          <li>(61,24,61,24)</li>
+          <li>(30,31,30,31)</li>
+          <li>(40,31,40,31)</li>
+          <li>(50,31,50,31)</li>
+          <li>(82,34,82,34)</li>
+          <li>(30,41,30,41)</li>
+          <li>(40,41,40,41)</li>
+          <li>(50,41,50,41)</li>
+          <li>(91,46,91,46)</li>
+          <li>(30,51,30,51)</li>
+          <li>(40,51,40,51)</li>
+          <li>(50,51,50,51)</li>
+          <li>(82,52,82,52)</li>
+          <li>(30,61,30,61)</li>
+          <li>(40,61,40,61)</li>
+          <li>(50,61,50,61)</li>
+          <li>(61,64,61,64)</li>
+          <li>(27,74,27,74)</li>
+          <li>(53,74,53,74)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(27,26,27,26)</li>
+          <li>(53,26,53,26)</li>
+          <li>(61,36,61,36)</li>
+          <li>(30,39,30,39)</li>
+          <li>(40,39,40,39)</li>
+          <li>(50,39,50,39)</li>
+          <li>(82,48,82,48)</li>
+          <li>(30,49,30,49)</li>
+          <li>(40,49,40,49)</li>
+          <li>(50,49,50,49)</li>
+          <li>(91,54,91,54)</li>
+          <li>(30,59,30,59)</li>
+          <li>(40,59,40,59)</li>
+          <li>(50,59,50,59)</li>
+          <li>(82,66,82,66)</li>
+          <li>(30,69,30,69)</li>
+          <li>(40,69,40,69)</li>
+          <li>(50,69,50,69)</li>
+          <li>(13,76,13,76)</li>
+          <li>(40,76,40,76)</li>
+          <li>(61,76,61,76)</li>
+        </rects>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(1,30,1,30)</li>
+          <li>(31,30,31,30)</li>
+          <li>(41,30,41,30)</li>
+          <li>(12,35,12,35)</li>
+          <li>(74,39,74,39)</li>
+          <li>(16,40,16,40)</li>
+          <li>(31,40,31,40)</li>
+          <li>(41,40,41,40)</li>
+          <li>(12,50,12,50)</li>
+          <li>(16,50,16,50)</li>
+          <li>(31,50,31,50)</li>
+          <li>(41,50,41,50)</li>
+          <li>(69,50,69,50)</li>
+          <li>(16,60,16,60)</li>
+          <li>(31,60,31,60)</li>
+          <li>(41,60,41,60)</li>
+          <li>(74,61,74,61)</li>
+          <li>(12,65,12,65)</li>
+          <li>(1,70,1,70)</li>
+          <li>(31,70,31,70)</li>
+          <li>(41,70,41,70)</li>
+        </rects>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </WallLamp>
+      <WallLamp>
+        <rects>
+          <li>(10,30,10,30)</li>
+          <li>(39,30,39,30)</li>
+          <li>(49,30,49,30)</li>
+          <li>(72,35,72,35)</li>
+          <li>(90,39,90,39)</li>
+          <li>(20,40,20,40)</li>
+          <li>(39,40,39,40)</li>
+          <li>(49,40,49,40)</li>
+          <li>(26,50,26,50)</li>
+          <li>(39,50,39,50)</li>
+          <li>(49,50,49,50)</li>
+          <li>(77,50,77,50)</li>
+          <li>(20,60,20,60)</li>
+          <li>(39,60,39,60)</li>
+          <li>(49,60,49,60)</li>
+          <li>(90,61,90,61)</li>
+          <li>(72,65,72,65)</li>
+          <li>(10,70,10,70)</li>
+          <li>(39,70,39,70)</li>
+          <li>(49,70,49,70)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+      </WallLamp>
+      <Table2x4c>
+        <positions>
+          <li>(6, 0, 27)</li>
+          <li>(6, 0, 32)</li>
+          <li>(6, 0, 67)</li>
+          <li>(6, 0, 72)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table2x4c>
+      <Table2x4c>
+        <positions>
+          <li>(77, 0, 38)</li>
+          <li>(86, 0, 38)</li>
+          <li>(77, 0, 61)</li>
+          <li>(86, 0, 61)</li>
+        </positions>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </Table2x4c>
+      <DMS_Turret_Okhotnik>
+        <rects>
+          <li>(13,25,13,25)</li>
+          <li>(61,25,61,25)</li>
+          <li>(13,75,13,75)</li>
+          <li>(61,75,61,75)</li>
+        </rects>
+      </DMS_Turret_Okhotnik>
+      <DMSRC_Drawer>
+        <rects>
+          <li>(1,33,1,33)</li>
+          <li>(1,65,1,65)</li>
+          <li>(74,66,74,66)</li>
+        </rects>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Drawer>
+      <DMSRC_Drawer>
+        <rects>
+          <li>(88,34,88,34)</li>
+          <li>(80,52,80,52)</li>
+        </rects>
+      </DMSRC_Drawer>
+      <DMSRC_Drawer>
+        <position>(10, 0, 36)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Drawer>
+      <DMSRC_Drawer>
+        <rects>
+          <li>(85,48,85,48)</li>
+          <li>(8,76,8,76)</li>
+        </rects>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Drawer>
+      <Bookcase>
+        <positions>
+          <li>(1, 0, 35)</li>
+          <li>(74, 0, 36)</li>
+          <li>(79, 0, 53)</li>
+          <li>(74, 0, 65)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Bookcase>
+      <Bookcase>
+        <positions>
+          <li>(74, 0, 34)</li>
+          <li>(76, 0, 34)</li>
+        </positions>
+        <stuff>Steel</stuff>
+      </Bookcase>
+      <Bookcase>
+        <positions>
+          <li>(2, 0, 36)</li>
+          <li>(10, 0, 76)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Bookcase>
+      <EndTable>
+        <position>(10, 0, 70)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+        <quality>Normal</quality>
+      </EndTable>
+      <Wall>
+        <rects>
+          <li>(20,13,60,13)</li>
+          <li>(20,14,20,23)</li>
+          <li>(30,14,30,23)</li>
+          <li>(40,14,40,23)</li>
+          <li>(50,14,50,23)</li>
+          <li>(60,14,60,23)</li>
+          <li>(65,17,71,17)</li>
+          <li>(65,18,65,23)</li>
+          <li>(71,18,71,23)</li>
+          <li>(0,23,19,23)</li>
+          <li>(21,23,24,23)</li>
+          <li>(26,23,29,23)</li>
+          <li>(31,23,34,23)</li>
+          <li>(36,23,39,23)</li>
+          <li>(41,23,44,23)</li>
+          <li>(46,23,49,23)</li>
+          <li>(51,23,54,23)</li>
+          <li>(56,23,59,23)</li>
+          <li>(61,23,64,23)</li>
+          <li>(66,23,67,23)</li>
+          <li>(69,23,70,23)</li>
+          <li>(72,23,73,23)</li>
+          <li>(0,24,0,37)</li>
+          <li>(11,24,11,27)</li>
+          <li>(63,24,63,33)</li>
+          <li>(73,24,73,45)</li>
+          <li>(15,27,34,27)</li>
+          <li>(36,27,44,27)</li>
+          <li>(46,27,59,27)</li>
+          <li>(15,28,15,33)</li>
+          <li>(21,28,21,33)</li>
+          <li>(27,28,27,34)</li>
+          <li>(53,28,53,34)</li>
+          <li>(59,28,59,29)</li>
+          <li>(11,29,11,31)</li>
+          <li>(30,30,30,30)</li>
+          <li>(40,30,40,30)</li>
+          <li>(50,30,50,30)</li>
+          <li>(59,31,59,33)</li>
+          <li>(11,33,11,67)</li>
+          <li>(16,33,17,33)</li>
+          <li>(19,33,20,33)</li>
+          <li>(22,33,23,33)</li>
+          <li>(25,33,26,33)</li>
+          <li>(54,33,58,33)</li>
+          <li>(64,33,67,33)</li>
+          <li>(69,33,72,33)</li>
+          <li>(74,33,91,33)</li>
+          <li>(91,34,91,45)</li>
+          <li>(27,36,27,64)</li>
+          <li>(53,36,53,64)</li>
+          <li>(1,37,10,37)</li>
+          <li>(15,37,17,37)</li>
+          <li>(19,37,23,37)</li>
+          <li>(25,37,26,37)</li>
+          <li>(54,37,69,37)</li>
+          <li>(15,38,15,63)</li>
+          <li>(21,38,21,45)</li>
+          <li>(69,38,69,45)</li>
+          <li>(30,40,30,40)</li>
+          <li>(40,40,40,40)</li>
+          <li>(50,40,50,40)</li>
+          <li>(16,43,17,43)</li>
+          <li>(19,43,20,43)</li>
+          <li>(22,43,26,43)</li>
+          <li>(92,43,100,43)</li>
+          <li>(23,44,23,45)</li>
+          <li>(25,44,25,45)</li>
+          <li>(94,44,94,45)</li>
+          <li>(97,44,97,45)</li>
+          <li>(100,44,100,57)</li>
+          <li>(22,45,22,45)</li>
+          <li>(24,45,24,45)</li>
+          <li>(26,45,26,45)</li>
+          <li>(68,45,68,55)</li>
+          <li>(70,45,70,45)</li>
+          <li>(72,45,72,45)</li>
+          <li>(74,45,74,45)</li>
+          <li>(76,45,78,45)</li>
+          <li>(86,45,88,45)</li>
+          <li>(90,45,90,45)</li>
+          <li>(78,46,78,55)</li>
+          <li>(86,46,86,55)</li>
+          <li>(79,49,85,49)</li>
+          <li>(30,50,30,50)</li>
+          <li>(40,50,40,50)</li>
+          <li>(50,50,50,50)</li>
+          <li>(80,50,80,51)</li>
+          <li>(82,50,82,51)</li>
+          <li>(84,50,84,51)</li>
+          <li>(79,51,79,51)</li>
+          <li>(81,51,81,51)</li>
+          <li>(83,51,83,51)</li>
+          <li>(85,51,85,51)</li>
+          <li>(21,55,26,55)</li>
+          <li>(69,55,70,55)</li>
+          <li>(72,55,74,55)</li>
+          <li>(76,55,77,55)</li>
+          <li>(87,55,88,55)</li>
+          <li>(90,55,91,55)</li>
+          <li>(94,55,94,57)</li>
+          <li>(97,55,97,57)</li>
+          <li>(21,56,21,63)</li>
+          <li>(23,56,23,57)</li>
+          <li>(25,56,25,57)</li>
+          <li>(69,56,69,63)</li>
+          <li>(73,56,73,77)</li>
+          <li>(91,56,91,67)</li>
+          <li>(16,57,17,57)</li>
+          <li>(19,57,20,57)</li>
+          <li>(22,57,22,57)</li>
+          <li>(24,57,24,57)</li>
+          <li>(26,57,26,57)</li>
+          <li>(92,57,93,57)</li>
+          <li>(95,57,96,57)</li>
+          <li>(98,57,99,57)</li>
+          <li>(30,60,30,60)</li>
+          <li>(40,60,40,60)</li>
+          <li>(50,60,50,60)</li>
+          <li>(0,63,10,63)</li>
+          <li>(16,63,17,63)</li>
+          <li>(19,63,20,63)</li>
+          <li>(22,63,23,63)</li>
+          <li>(25,63,26,63)</li>
+          <li>(54,63,68,63)</li>
+          <li>(0,64,0,77)</li>
+          <li>(27,66,27,73)</li>
+          <li>(53,66,53,73)</li>
+          <li>(15,67,17,67)</li>
+          <li>(19,67,23,67)</li>
+          <li>(25,67,26,67)</li>
+          <li>(54,67,59,67)</li>
+          <li>(63,67,67,67)</li>
+          <li>(69,67,72,67)</li>
+          <li>(74,67,90,67)</li>
+          <li>(15,68,15,73)</li>
+          <li>(21,68,21,73)</li>
+          <li>(59,68,59,69)</li>
+          <li>(63,68,63,77)</li>
+          <li>(11,69,11,71)</li>
+          <li>(30,70,30,70)</li>
+          <li>(40,70,40,70)</li>
+          <li>(50,70,50,70)</li>
+          <li>(59,71,59,73)</li>
+          <li>(11,73,11,77)</li>
+          <li>(16,73,20,73)</li>
+          <li>(22,73,26,73)</li>
+          <li>(28,73,34,73)</li>
+          <li>(36,73,44,73)</li>
+          <li>(46,73,52,73)</li>
+          <li>(54,73,58,73)</li>
+          <li>(1,77,10,77)</li>
+          <li>(12,77,24,77)</li>
+          <li>(26,77,34,77)</li>
+          <li>(36,77,44,77)</li>
+          <li>(46,77,54,77)</li>
+          <li>(56,77,62,77)</li>
+          <li>(64,77,67,77)</li>
+          <li>(69,77,72,77)</li>
+          <li>(20,78,20,87)</li>
+          <li>(30,78,30,87)</li>
+          <li>(40,78,40,87)</li>
+          <li>(50,78,50,87)</li>
+          <li>(60,78,60,87)</li>
+          <li>(65,78,65,83)</li>
+          <li>(71,78,71,83)</li>
+          <li>(66,83,70,83)</li>
+          <li>(21,87,29,87)</li>
+          <li>(31,87,39,87)</li>
+          <li>(41,87,49,87)</li>
+          <li>(51,87,59,87)</li>
+        </rects>
+        <stuff>Tungsteel</stuff>
+      </Wall>
+      <FlatscreenTelevision>
+        <positions>
+          <li>(5, 0, 24)</li>
+          <li>(5, 0, 64)</li>
+        </positions>
+      </FlatscreenTelevision>
+      <FlatscreenTelevision>
+        <positions>
+          <li>(6, 0, 36)</li>
+          <li>(6, 0, 76)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </FlatscreenTelevision>
+      <DMSRC_SmallHole_Exit>
+        <position>(24, 0, 50)</position>
+      </DMSRC_SmallHole_Exit>
+      <Shelf>
+        <positions>
+          <li>(1, 0, 24)</li>
+          <li>(3, 0, 24)</li>
+          <li>(89, 0, 34)</li>
+          <li>(16, 0, 44)</li>
+          <li>(19, 0, 44)</li>
+          <li>(84, 0, 52)</li>
+          <li>(9, 0, 64)</li>
+        </positions>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(81, 0, 34)</li>
+          <li>(90, 0, 35)</li>
+          <li>(20, 0, 45)</li>
+          <li>(85, 0, 53)</li>
+          <li>(20, 0, 54)</li>
+          <li>(10, 0, 65)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(16, 0, 46)</li>
+          <li>(79, 0, 48)</li>
+          <li>(16, 0, 55)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <Shelf>
+        <positions>
+          <li>(17, 0, 56)</li>
+          <li>(20, 0, 56)</li>
+          <li>(81, 0, 66)</li>
+          <li>(83, 0, 66)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Steel</stuff>
+      </Shelf>
+      <DMSRC_Turret_Straj>
+        <rects>
+          <li>(13,35,13,35)</li>
+          <li>(61,35,61,35)</li>
+          <li>(18,40,18,40)</li>
+          <li>(87,46,87,46)</li>
+          <li>(71,48,71,48)</li>
+          <li>(75,48,75,48)</li>
+          <li>(71,52,71,52)</li>
+          <li>(75,52,75,52)</li>
+          <li>(87,54,87,54)</li>
+          <li>(18,60,18,60)</li>
+          <li>(13,65,13,65)</li>
+          <li>(61,65,61,65)</li>
+        </rects>
+      </DMSRC_Turret_Straj>
+      <Couch>
+        <positions>
+          <li>(4, 0, 26)</li>
+          <li>(6, 0, 26)</li>
+          <li>(4, 0, 31)</li>
+          <li>(6, 0, 31)</li>
+          <li>(77, 0, 36)</li>
+          <li>(86, 0, 36)</li>
+          <li>(77, 0, 59)</li>
+          <li>(86, 0, 59)</li>
+          <li>(4, 0, 66)</li>
+          <li>(6, 0, 66)</li>
+          <li>(4, 0, 71)</li>
+          <li>(6, 0, 71)</li>
+        </positions>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Couch>
+      <Couch>
+        <positions>
+          <li>(3, 0, 28)</li>
+          <li>(3, 0, 33)</li>
+          <li>(76, 0, 38)</li>
+          <li>(85, 0, 38)</li>
+          <li>(76, 0, 40)</li>
+          <li>(85, 0, 40)</li>
+          <li>(76, 0, 61)</li>
+          <li>(85, 0, 61)</li>
+          <li>(76, 0, 63)</li>
+          <li>(85, 0, 63)</li>
+          <li>(3, 0, 68)</li>
+          <li>(3, 0, 73)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Couch>
+      <Couch>
+        <positions>
+          <li>(8, 0, 27)</li>
+          <li>(8, 0, 32)</li>
+          <li>(79, 0, 37)</li>
+          <li>(88, 0, 37)</li>
+          <li>(79, 0, 39)</li>
+          <li>(88, 0, 39)</li>
+          <li>(79, 0, 60)</li>
+          <li>(88, 0, 60)</li>
+          <li>(79, 0, 62)</li>
+          <li>(88, 0, 62)</li>
+          <li>(8, 0, 67)</li>
+          <li>(8, 0, 72)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Couch>
+      <Couch>
+        <positions>
+          <li>(5, 0, 29)</li>
+          <li>(7, 0, 29)</li>
+          <li>(5, 0, 34)</li>
+          <li>(7, 0, 34)</li>
+          <li>(78, 0, 41)</li>
+          <li>(87, 0, 41)</li>
+          <li>(78, 0, 64)</li>
+          <li>(87, 0, 64)</li>
+          <li>(5, 0, 69)</li>
+          <li>(7, 0, 69)</li>
+          <li>(5, 0, 74)</li>
+          <li>(7, 0, 74)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+        <stuff>Polyester</stuff>
+        <quality>Normal</quality>
+      </Couch>
+    </things>
+    <terrain>
+      <PavedTile>
+        <rects>
+          <li>(20,13,60,23)</li>
+          <li>(65,17,71,33)</li>
+          <li>(0,23,11,37)</li>
+          <li>(63,23,64,33)</li>
+          <li>(72,23,73,33)</li>
+          <li>(15,27,27,33)</li>
+          <li>(53,27,59,33)</li>
+          <li>(74,33,91,42)</li>
+          <li>(73,34,73,77)</li>
+          <li>(15,37,27,47)</li>
+          <li>(74,43,90,44)</li>
+          <li>(68,45,72,55)</li>
+          <li>(74,45,85,67)</li>
+          <li>(15,48,21,63)</li>
+          <li>(27,48,27,63)</li>
+          <li>(22,53,26,63)</li>
+          <li>(86,56,90,67)</li>
+          <li>(91,58,91,67)</li>
+          <li>(0,63,11,77)</li>
+          <li>(15,67,27,73)</li>
+          <li>(53,67,59,73)</li>
+          <li>(63,67,72,77)</li>
+          <li>(20,77,60,87)</li>
+          <li>(65,78,71,83)</li>
+        </rects>
+      </PavedTile>
+      <Concrete>
+        <rects>
+          <li>(12,23,19,26)</li>
+          <li>(61,23,62,37)</li>
+          <li>(20,24,60,26)</li>
+          <li>(12,27,14,77)</li>
+          <li>(28,27,52,76)</li>
+          <li>(60,27,60,37)</li>
+          <li>(15,34,27,36)</li>
+          <li>(53,34,59,37)</li>
+          <li>(63,34,72,37)</li>
+          <li>(11,38,11,62)</li>
+          <li>(53,38,53,66)</li>
+          <li>(69,38,72,44)</li>
+          <li>(69,56,72,66)</li>
+          <li>(54,63,68,66)</li>
+          <li>(15,64,27,66)</li>
+          <li>(60,67,62,76)</li>
+          <li>(15,74,27,76)</li>
+          <li>(53,74,59,76)</li>
+          <li>(15,77,19,77)</li>
+          <li>(61,77,62,77)</li>
+        </rects>
+      </Concrete>
+      <MetalTile>
+        <rects>
+          <li>(91,43,100,57)</li>
+          <li>(86,45,90,55)</li>
+          <li>(22,48,26,52)</li>
+        </rects>
+      </MetalTile>
+    </terrain>
+    <clearRects>
+      <li>(20,13,60,37)</li>
+      <li>(65,17,71,37)</li>
+      <li>(0,23,19,37)</li>
+      <li>(61,23,64,37)</li>
+      <li>(72,23,73,77)</li>
+      <li>(74,33,91,67)</li>
+      <li>(11,38,53,77)</li>
+      <li>(69,38,71,83)</li>
+      <li>(92,43,100,57)</li>
+      <li>(68,45,68,55)</li>
+      <li>(0,63,10,77)</li>
+      <li>(54,63,68,77)</li>
+      <li>(20,78,60,87)</li>
+      <li>(65,78,68,83)</li>
+    </clearRects>
+    <roofRects>
+      <li>(20,13,60,37)</li>
+      <li>(65,17,71,37)</li>
+      <li>(0,23,19,37)</li>
+      <li>(61,23,64,37)</li>
+      <li>(72,23,73,77)</li>
+      <li>(74,33,91,67)</li>
+      <li>(11,38,53,77)</li>
+      <li>(69,38,71,83)</li>
+      <li>(92,43,100,57)</li>
+      <li>(68,45,68,55)</li>
+      <li>(0,63,10,77)</li>
+      <li>(54,63,68,77)</li>
+      <li>(20,78,60,87)</li>
+      <li>(65,78,68,83)</li>
+    </roofRects>
+  </DMSRC.RPrefabDef>
+
+</Defs>

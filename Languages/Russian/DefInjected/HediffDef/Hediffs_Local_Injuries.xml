@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: beam burn -->
+  <DMSRC_FocusedBeamBurn.label>лучевой ожог</DMSRC_FocusedBeamBurn.label>
+  <!-- EN: A beam burn. -->
+  <DMSRC_FocusedBeamBurn.description>Лучевой ожог.</DMSRC_FocusedBeamBurn.description>
+  <!-- EN: permanent beam injury -->
+  <DMSRC_FocusedBeamBurn.comps.HediffComp_GetsPermanent.instantlyPermanentLabel>необраимый лучевой ожог</DMSRC_FocusedBeamBurn.comps.HediffComp_GetsPermanent.instantlyPermanentLabel>
+  <!-- EN: old beam wound -->
+  <DMSRC_FocusedBeamBurn.comps.HediffComp_GetsPermanent.permanentLabel>старый лучевой ожог</DMSRC_FocusedBeamBurn.comps.HediffComp_GetsPermanent.permanentLabel>
+  <!-- EN: Burned off -->
+  <DMSRC_FocusedBeamBurn.injuryProps.destroyedLabel>Отожжено</DMSRC_FocusedBeamBurn.injuryProps.destroyedLabel>
+  <!-- EN: Burned out -->
+  <DMSRC_FocusedBeamBurn.injuryProps.destroyedOutLabel>Выжжено</DMSRC_FocusedBeamBurn.injuryProps.destroyedOutLabel>
+  <!-- EN: a beam burn -->
+  <DMSRC_FocusedBeamBurn.labelNoun>лучевой ожог</DMSRC_FocusedBeamBurn.labelNoun>
+  <!-- EN: {0} in the {1} -->
+  <DMSRC_FocusedBeamBurn.labelNounPretty>{0} в {1}</DMSRC_FocusedBeamBurn.labelNounPretty>
+  
+</LanguageData>

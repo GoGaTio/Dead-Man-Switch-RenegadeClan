@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Malice -->
+  <DMSRC_Mech_Malice.label>Злоба</DMSRC_Mech_Malice.label>
+  <!-- EN: Modified version of Arquebusier with advanced processor array that allows to control other mechs. -->
+  <DMSRC_Mech_Malice.description>Модифицированный аркебузер с продивнутым обрабатывающим процессором, позволяющим контролировать других механоидов.</DMSRC_Mech_Malice.description>
+  <!-- EN: head -->
+  <DMSRC_Mech_Malice.tools.head.label>голова</DMSRC_Mech_Malice.tools.head.label>
+  <!-- EN: left fist -->
+  <DMSRC_Mech_Malice.tools.left_fist.label>левый кулак</DMSRC_Mech_Malice.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <DMSRC_Mech_Malice.tools.right_fist.label>правый кулак</DMSRC_Mech_Malice.tools.right_fist.label>
+  
+</LanguageData>

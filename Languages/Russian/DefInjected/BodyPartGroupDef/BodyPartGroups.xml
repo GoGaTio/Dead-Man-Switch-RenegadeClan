@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: front left leg -->
+  <DMSRC_LeftArmoredLeg.label>передняя левая нога</DMSRC_LeftArmoredLeg.label>
+  <!-- EN: leg -->
+  <DMSRC_LeftArmoredLeg.labelShort>нога</DMSRC_LeftArmoredLeg.labelShort>
+  
+  <!-- EN: front right leg -->
+  <DMSRC_RightArmoredLeg.label>передняя правая нога</DMSRC_RightArmoredLeg.label>
+  <!-- EN: leg -->
+  <DMSRC_RightArmoredLeg.labelShort>нога</DMSRC_RightArmoredLeg.labelShort>
+  
+</LanguageData>

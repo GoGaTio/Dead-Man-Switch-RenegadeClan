@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Gestate Focus -->
+  <DMSRC_Make_Focus.label>Вырастить Фокуса</DMSRC_Make_Focus.label>
+  <!-- EN: Gestate a Focus automatroid. -->
+  <DMSRC_Make_Focus.description>Вырастить Фокуса.</DMSRC_Make_Focus.description>
+  <!-- EN: Gestating mech. -->
+  <DMSRC_Make_Focus.jobString>Выращивает.</DMSRC_Make_Focus.jobString>
+  
+  <!-- EN: Gestate Pavise -->
+  <DMSRC_Make_Pavise.label>Вырастить Заставу</DMSRC_Make_Pavise.label>
+  <!-- EN: Gestate a Pavise automatroid. -->
+  <DMSRC_Make_Pavise.description>Вырастить Заставу.</DMSRC_Make_Pavise.description>
+  <!-- EN: Gestating mech. -->
+  <DMSRC_Make_Pavise.jobString>Выращивает.</DMSRC_Make_Pavise.jobString>
+  
+</LanguageData>

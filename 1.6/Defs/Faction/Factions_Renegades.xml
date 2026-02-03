@@ -8,7 +8,7 @@
 
   <FactionDef ParentName="FactionBase">
     <defName>DMSRC_RenegadeClan</defName>
-    <label>renegades clan</label>
+    <label>renegade clan</label>
     <categoryTag>DMSRC_RenegadeClan</categoryTag>
     <description>A network of separatists originated from group of high officers and scientists which stole large research ship containing tons of valuable equipment and technology. They're secretly sponsored by Empire, some Glitterworlds and planetary warlords, allowing them to fight Colonial fleets indirectly. Renegades lack menpower, but technologies, sabotage tactics and natives glowering towards Colonial Fleet allow them keep fighting for their ideas.\n\nThere're rumors inbetween fleet personnel and low-rank officers about strange nature of renegades leader "count" and his real goals.</description>
     <pawnSingular>renegade</pawnSingular>
@@ -27,7 +27,7 @@
     <leaderForceGenerateNewPawn>false</leaderForceGenerateNewPawn>
     <basicMemberKind>DMSRC_Renegade</basicMemberKind>
     <factionIconPath>UI/Faction/DMSRC_RenegadeClanIcon</factionIconPath>
-    <fixedName>Renegades clan</fixedName>
+    <fixedName>Renegade clan</fixedName>
     <settlementNameMaker>DMS_VanguardBase</settlementNameMaker>
     <fixedIdeo>true</fixedIdeo>
     <ideoName>Doctrine of the End</ideoName>
@@ -149,7 +149,8 @@
           <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Explosive>
           <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.05</DMSRC_RenegadeDragoon_Beam>
-          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.2</NAT_RustedRenegade>
+          <DMSRC_Stormtrooper>0.25</DMSRC_Stormtrooper>
         </options>
       </li>
       <li>
@@ -157,8 +158,8 @@
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
         <options>
-          <DMSRC_OfficerCombat>0.5</DMSRC_OfficerCombat>
-          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
+          <DMSRC_Stormtrooper>0.5</DMSRC_Stormtrooper>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.15</NAT_RustedRenegade>
           <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
           <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
           <DMS_Mech_Dogge>5</DMS_Mech_Dogge>
@@ -185,7 +186,7 @@
           <DMSRC_Mech_Malevolence>1</DMSRC_Mech_Malevolence>
           <DMSRC_Mech_Focus>2</DMSRC_Mech_Focus>
           <DMSRC_Mech_Pavise>2.5</DMSRC_Mech_Pavise>
-          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.15</NAT_RustedRenegade>
           <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon_Explosive>
           <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Beam>
@@ -196,12 +197,12 @@
         <kindDef>Combat</kindDef>
         <commonality>10</commonality>
         <options>
-          <DMSRC_OfficerCombat>0.5</DMSRC_OfficerCombat>
+          <DMSRC_Stormtrooper>0.5</DMSRC_Stormtrooper>
           <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
           <DMS_Mech_Grenadier>6</DMS_Mech_Grenadier>
           <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
           <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
-          <DMS_Mech_Protector>5</DMS_Mech_Protector>
+          <DMS_Mech_Protector>4</DMS_Mech_Protector>
           <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
           <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon_Explosive>
@@ -218,7 +219,6 @@
           <DMSRC_Mech_Stancher>4.5</DMSRC_Mech_Stancher>
           <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
           <DMS_Mech_Protector>5</DMS_Mech_Protector>
-          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.5</NAT_RustedRenegade>
         </options>
       </li>
     </pawnGroupMakers>

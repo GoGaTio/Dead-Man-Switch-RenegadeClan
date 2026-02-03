@@ -4,7 +4,7 @@
   <SitePartDef>
     <defName>DMSRC_AntennaPoint</defName>
     <label>broadcast antenna</label>
-    <description>A container with valuable items.</description>
+    <description>A colonial fleet broadcast antenna.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/DMSRC_BroadcastAntenna</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>

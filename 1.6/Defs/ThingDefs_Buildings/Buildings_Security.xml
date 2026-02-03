@@ -166,10 +166,11 @@
         <range>14.9</range>
         <mote>DMSRC_Mote_BeamDefence</mote>
         <interceptSameFaction>false</interceptSameFaction>
-        <barColor>(0.5, 0.1, 0.5)</barColor>
-        <barColorAlt>(0.25, 0.05, 0.25)</barColorAlt>
-        <chargeRegenInterval>120</chargeRegenInterval>
-        <inactiveRegenOffset>80</inactiveRegenOffset>
+        <barColor>(107, 81, 128)</barColor>
+        <barColorAlt>(54, 40, 64)</barColorAlt>
+        <chargeRegenInterval>600</chargeRegenInterval>
+        <inactiveRegenOffset>100</inactiveRegenOffset>
+        <maxCharge>30</maxCharge>
         <interceptSound>BeamGraser_Shooting_Resolve</interceptSound>
         <offset>(0, 0, 1)</offset>
         <intercepts>

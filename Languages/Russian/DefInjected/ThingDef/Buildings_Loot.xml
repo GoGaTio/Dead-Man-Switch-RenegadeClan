@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: cargo container -->
+  <DMSRC_Cargo.label>cargo container</DMSRC_Cargo.label>
+  <!-- EN: A standard issue container containing military supplies. -->
+  <DMSRC_Cargo.description>A standard issue container containing military supplies.</DMSRC_Cargo.description>
+  
+  <!-- EN: military crate -->
+  <DMSRC_Crate.label>military crate</DMSRC_Crate.label>
+  <!-- EN: A standard issue equipment crate containing military supplies. -->
+  <DMSRC_Crate.description>A standard issue equipment crate containing military supplies.</DMSRC_Crate.description>
+  
+  <!-- EN: drawer -->
+  <DMSRC_Drawer.label>drawer</DMSRC_Drawer.label>
+  <!-- EN: A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations. -->
+  <DMSRC_Drawer.description>A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations.</DMSRC_Drawer.description>
+  
+  <!-- EN: military parcel -->
+  <DMSRC_PackCrate.label>military parcel</DMSRC_PackCrate.label>
+  <!-- EN: A standard issue parcel containing supplies for military logistics. -->
+  <DMSRC_PackCrate.description>A standard issue parcel containing supplies for military logistics.</DMSRC_PackCrate.description>
+  
+</LanguageData>
