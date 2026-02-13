@@ -27,7 +27,7 @@
       <li Class="Fortified.CompProperties_VehicleWeapon">
         <defaultWeapon>DMSRC_Gun_LinzaMount</defaultWeapon>
         <turretRotationFollowPawn>true</turretRotationFollowPawn>
-        <rotationSmoothTime>0.2</rotationSmoothTime>
+        <rotationSmoothTime>0.02</rotationSmoothTime>
         <drawData>
           <defaultData>
             <offset>(0,0,0)</offset>

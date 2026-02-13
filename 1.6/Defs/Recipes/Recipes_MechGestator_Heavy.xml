@@ -47,7 +47,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>8</count>
+        <count>10</count>
       </li>
       <li>
         <filter>
@@ -55,7 +55,7 @@
             <li>ComponentIndustrial</li>
           </thingDefs>
         </filter>
-        <count>12</count>
+        <count>20</count>
       </li>
       <li>
         <filter>
@@ -63,7 +63,7 @@
             <li>ComponentSpacer</li>
           </thingDefs>
         </filter>
-        <count>3</count>
+        <count>5</count>
       </li>
       <li>
         <filter>

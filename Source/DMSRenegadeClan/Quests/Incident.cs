@@ -192,7 +192,7 @@ namespace DMSRC
 			Map map = pawn.Map;
 			if (Rand.Bool)
 			{
-				if (map.listerBuildings.allBuildingsColonist.Where((x) => x.def.Minifiable && x.MarketValue > 1000).TryRandomElementByWeight((y)=> y.MarketValue, out var b) && b.OccupiedRect().ExpandedBy(1).EdgeCells.TryRandomElement((c)=> c.GetAffordances(map).Contains(TerrainAffordanceDefOf.Light) && c.Standable(map),out var result))
+				if (map.listerBuildings.allBuildingsColonist.Where((x) => !x.def.Minifiable && x.MarketValue > 1000).TryRandomElementByWeight((y)=> y.MarketValue, out var b) && b.OccupiedRect().ExpandedBy(1).EdgeCells.TryRandomElement((c)=> c.GetAffordances(map).Contains(TerrainAffordanceDefOf.Light) && c.Standable(map),out var result))
 				{
 					return result;
 				}

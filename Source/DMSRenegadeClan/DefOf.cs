@@ -19,6 +19,8 @@ namespace DMSRC
 
         public static HediffDef DMSRC_NeuroControl;
 
+        public static HediffDef DMSRC_ArtificalPregnancy;
+
 		public static JobDef DMSRC_ControlMech;
 
         public static JobDef DMSRC_RepairMech;
@@ -39,6 +41,10 @@ namespace DMSRC
 
 		public static ThingDef DMSRC_TimedBomb;
 
+        public static ThingDef DMSRC_WetwareProducer;
+
+		public static EffecterDef DMSRC_WetwareProducer_Bubbles;
+
 		public static StatDef DMSRC_Neurocapacity;
 
         public static StatDef DMSRC_NeuroControlPower;
@@ -50,5 +56,9 @@ namespace DMSRC
         public static PawnGroupKindDef DMSRC_MilitaryAid;
 
         public static DutyDef DMSRC_Sabotage;
+
+        public static RulePackDef DMSRC_Combat_CumulativeEffect;
+
+        public static HistoryEventDef DMSRC_UsedForbiddenTech;
 	}
 }

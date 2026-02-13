@@ -54,23 +54,29 @@ using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
 using static DMSRC.GenStep_RPrefab;
+using static HarmonyLib.Code;
 
 namespace DMSRC
 {
-    public static class OverseerMechUtility
-    {
-        public static CompOverseerMech GetOverseerMech(Pawn dummy)
-        {
-            if(dummy == null || dummy.kindDef != RCDefOf.DMSRC_DummyMechanitor || dummy.mechanitor == null || dummy.health?.hediffSet == null)
-            {
-                return null;
-            }
-            return dummy.health.hediffSet.GetFirstHediff<Hediff_DummyPawn>()?.overseer.Comp;
-        }
+	public static class OverseerMechUtility
+	{
+		public static CompOverseerMech GetOverseerMechComp(this Pawn dummy)
+		{
+			return GetOverseerMech(dummy)?.Comp;
+		}
+
+		public static OverseerMech GetOverseerMech(this Pawn dummy)
+		{
+			if (dummy == null || dummy.kindDef != RCDefOf.DMSRC_DummyMechanitor || dummy.mechanitor == null || dummy.health?.hediffSet == null)
+			{
+				return null;
+			}
+			return dummy.health.hediffSet.GetFirstHediff<Hediff_DummyPawn>()?.overseer;
+		}
 	}
 
 	public static class RCToolsUtility
-    {
+	{
 		[DebugAction("DMSRC", "Trackers report", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
 		private static void TrackersReport(Pawn p)
 		{
@@ -206,12 +212,12 @@ namespace DMSRC
 		{
 			List<DebugActionNode> nodes = new List<DebugActionNode>();
 			List<string> tags = new List<string>();
-			foreach(ThingDef t in DefDatabase<ThingDef>.AllDefs)
+			foreach (ThingDef t in DefDatabase<ThingDef>.AllDefs)
 			{
-				if(t.tradeTags.NullOrEmpty()) continue;
-				foreach(string s in t.tradeTags)
+				if (t.tradeTags.NullOrEmpty()) continue;
+				foreach (string s in t.tradeTags)
 				{
-					if(tags.Contains(s)) continue;
+					if (tags.Contains(s)) continue;
 					tags.Add(s);
 				}
 			}
@@ -337,6 +343,55 @@ namespace DMSRC
 			}
 		}
 
+		[DebugAction("DMSRC", "Get market value", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		public static void GetMarketValue()
+		{
+			IntVec3 cell = UI.MouseCell();
+			int count = cell.GetThingList(Find.CurrentMap).Count;
+			foreach (Thing t in cell.GetThingList(Find.CurrentMap).ToList())
+			{
+				float num = t.MarketValue;
+				if (num > 0)
+				{
+					MoteMaker.ThrowText(cell.ToVector3(), Find.CurrentMap, t.LabelCap + ": " + num.ToStringMoney(), Color.white);
+				}
+			}
+		}
+
+		[DebugAction("DMSRC", "Get region type", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		public static void GetRegionType()
+		{
+			IntVec3 intVec = UI.MouseCell();
+			Map map = Find.CurrentMap;
+			if (intVec.InBounds(map))
+			{
+				Region r = map.regionGrid.GetRegionAt_NoRebuild_InvalidAllowed(intVec);
+				string s = "null";
+				if (r != null)
+				{
+					s = r.type.ToString();
+				}
+				MoteMaker.ThrowText(intVec.ToVector3(), map, s, Color.white);
+			}
+		}
+
+		[DebugAction("DMSRC", "Get region count", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		public static void GetRegionCount()
+		{
+			IntVec3 intVec = UI.MouseCell();
+			Map map = Find.CurrentMap;
+			if (intVec.InBounds(map))
+			{
+				Room r = intVec.GetRoom(map);
+				string s = "null";
+				if (r != null)
+				{
+					s = r.RegionCount.ToString();
+				}
+				MoteMaker.ThrowText(intVec.ToVector3(), map, s, Color.white);
+			}
+		}
+
 		[DebugAction("DMSRC", "Contact renegades", false, false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
 		public static void Contact()
 		{
@@ -354,37 +409,156 @@ namespace DMSRC
 			}
 		}
 
-		
+		[DebugAction("Pawns", "10 damage until dead or downed", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap, hideInSubMenu = true)]
+		private static void Do10DamageUntilDeadOrDowned()
+		{
+			foreach (Thing item in Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).ToList())
+			{
+				for (int i = 0; i < 1000; i++)
+				{
+					DamageInfo dinfo = new DamageInfo(DamageDefOf.Bullet, 10f);
+					dinfo.SetIgnoreInstantKillProtection(ignore: true);
+					item.TakeDamage(dinfo);
+					Pawn pawn = item as Pawn;
+					if (!item.Destroyed && (pawn == null || !pawn.DeadOrDowned))
+					{
+						continue;
+					}
+					string text = "Took " + (i + 1) + " hits";
+					if (pawn != null)
+					{
+						if (pawn.health.ShouldBeDeadFromLethalDamageThreshold())
+						{
+							text = text + " (reached lethal damage threshold of " + pawn.health.LethalDamageThreshold.ToString("0.#") + ")";
+						}
+						else if (PawnCapacityUtility.CalculatePartEfficiency(pawn.health.hediffSet, pawn.RaceProps.body.corePart) <= 0.0001f)
+						{
+							text += " (core part hp reached 0)";
+						}
+						else if (!pawn.Dead && pawn.health.ShouldBeDowned())
+						{
+							text = text + " (downed)";
+						}
+						else
+						{
+							PawnCapacityDef pawnCapacityDef = pawn.health.ShouldBeDeadFromRequiredCapacity();
+							if (pawnCapacityDef != null)
+							{
+								text = text + " (incapable of " + pawnCapacityDef.defName + ")";
+							}
+						}
+					}
+					Log.Message(text + ".");
+					break;
+				}
+			}
+		}
+
+		[DebugAction("Autotests", null, false, false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		public static void GeneratePawnsOfAllKinds()
+		{
+			LongEventHandler.QueueLongEvent(delegate
+			{
+				Map map = Find.CurrentMap;
+				Thing.allowDestroyNonDestroyable = true;
+				try
+				{
+					foreach (IntVec3 c in CellRect.WholeMap(map).Cells)
+					{
+						foreach (Thing t in (c).GetThingList(map).ToList())
+						{
+							t.Destroy();
+						}
+						map.terrainGrid.SetTerrain(c, TerrainDefOf.Concrete);
+					}
+				}
+				catch (Exception ex)
+				{
+					Log.Error("Exception while clearing area: " + ex);
+				}
+				int workingX = 2;
+				int workingZ = 2;
+				Pawn pawn = null;
+				foreach (PawnKindDef allDef in DefDatabase<PawnKindDef>.AllDefs)
+				{
+					if(allDef is CreepJoinerFormKindDef)
+					{
+						continue;
+					}
+					IntVec3 intVec = new IntVec3(workingX, 0, workingZ);
+					workingX += 2;
+					if (map.Size.x <= workingX + 1)
+					{
+						workingX = 2;
+						workingZ += 2;
+						if (map.Size.z <= workingZ + 1)
+						{
+							break;
+						}
+					}
+					try
+					{
+						Faction faction = FactionUtility.DefaultFactionFrom(allDef.defaultFactionDef);
+						pawn = PawnGenerator.GeneratePawn(allDef, faction);
+						GenSpawn.Spawn(pawn, intVec, map);
+					}
+					catch (Exception ex)
+					{
+						Log.Error("Exception while generating pawn of " + allDef.defName + " kind : " + ex);
+						pawn?.Destroy();
+						continue;
+					}
+					if(pawn != null)
+					{
+						
+						if(pawn.Name != null && pawn.Name.IsValid)
+						{
+							if(pawn.Name is NameSingle)
+							{
+								pawn.Name = new NameSingle(allDef.defName);
+							}
+							else if (pawn.Name is NameTriple)
+							{
+								pawn.Name = new NameTriple(allDef.defName, allDef.defName, allDef.defName);
+							}
+						}
+					}
+				}
+
+			}, "DMSRC_RecalculatingTiles", doAsynchronously: false, null);
+
+		}
+
 	}
 
 	public static class RPrefabUtility
 	{
-        private static List<RPrefabDef> defs;
+		private static List<RPrefabDef> defs;
 
 		public static List<RPrefabDef> Defs
-        {
-            get
-            {
-                if(defs == null)
-                {
-                    defs = DefDatabase<RPrefabDef>.AllDefsListForReading;
-                }
-                return defs;
-            }
-        }
+		{
+			get
+			{
+				if (defs == null)
+				{
+					defs = DefDatabase<RPrefabDef>.AllDefsListForReading;
+				}
+				return defs;
+			}
+		}
 
-        public static RPrefabDef GetByTag(string tag)
-        {
-            if(Defs.TryRandomElement((x) => x.tags.Contains(tag), out var result))
-            {
-                return result;
-            }
-            return null;
-        }
+		public static RPrefabDef GetByTag(string tag)
+		{
+			if (Defs.TryRandomElement((x) => x.tags.Contains(tag), out var result))
+			{
+				return result;
+			}
+			return null;
+		}
 
 		public static bool TryGetByTag(string tag, out RPrefabDef result)
 		{
-            result = null;
+			result = null;
 			if (Defs.TryRandomElement((x) => x.tags.Contains(tag), out result))
 			{
 				return true;
@@ -393,7 +567,7 @@ namespace DMSRC
 		}
 
 		public static CellRect Clear(this CellRect rect, Map map)
-        {
+		{
 			Thing.allowDestroyNonDestroyable = true;
 			try
 			{
@@ -409,7 +583,7 @@ namespace DMSRC
 			{
 				Log.Error("Exception while clearing area: " + ex);
 			}
-            return rect;
+			return rect;
 		}
 	}
 }

@@ -103,6 +103,16 @@
 				</value>
 			</li>
 
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[@Name="DMSRC_BasePersonaAutomatroid"]/damageMultipliers</xpath>
+        <value>
+          <li>
+            <damageDef>Flame_Secondary</damageDef>
+            <multiplier>0</multiplier>
+          </li>
+        </value>
+      </li>
+
 			<li Class="PatchOperationAddModExtension">
 				<xpath>Defs/ThingDef[@Name="DMSRC_BasePersonaHumanoid"]</xpath>
 				<value>

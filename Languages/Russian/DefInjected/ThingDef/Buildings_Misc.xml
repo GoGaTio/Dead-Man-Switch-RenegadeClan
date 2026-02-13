@@ -1,50 +1,55 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
+
+  <!-- EN: MoAP synthesizer -->
+  <DMSRC_WetwareProducer.label>МИБ синтезатор</DMSRC_WetwareProducer.label>
+  <!-- EN: A vat filled with special fluid which can transfer sunstances from storage to creature inside. Mechanisms of the vat will initiate artificial pregnancy and gestate mecha-organical component.\n\nVat must be fed with a constant supply of nutrition to provide the feedstock for gestation.\n\nGestation takes 9 days with normal fertility female, but may last up to 18 days if creature is too old or has fertility-affecting health conditions.\n\nThis tech is considered as forbidden by colonial fleet. -->
+    <DMSRC_WetwareProducer.description>Чан заполненный специальной жидкостью, которая транспортирует вещества к существу внутри. Механизмы внутри инициируют искусственную беременность и выращивают внутри существа мхано-органический компонент.\n\nТребует постоянной подачи питательных веществ, чтобы обеспечить рост компонента.\n\nБеременность занимает 9 дней при нормальной фертильности существа и до 18 при пониженной.\n\nЭта технология считается запрещенной колониальным флотом.</DMSRC_WetwareProducer.description>
   
   <!-- EN: facility dormer -->
-  <DMSRC_BigHole.label>facility dormer</DMSRC_BigHole.label>
+  <DMSRC_BigHole.label>структурный колодец</DMSRC_BigHole.label>
   <!-- EN: A structure flooring with a opened hole, commonly found in underground facilities. -->
-  <DMSRC_BigHole.description>A structure flooring with a opened hole, commonly found in underground facilities.</DMSRC_BigHole.description>
+  <DMSRC_BigHole.description>Структурное отверстие ведущее куда-то вглубь комплекса.</DMSRC_BigHole.description>
   
   <!-- EN: compact generator -->
-  <DMSRC_CompactGenerator.label>compact generator</DMSRC_CompactGenerator.label>
+  <DMSRC_CompactGenerator.label>компактный генератор</DMSRC_CompactGenerator.label>
   <!-- EN: Produces power by consuming chemfuel. Must be periodically refueled by hand. -->
-  <DMSRC_CompactGenerator.description>Produces power by consuming chemfuel. Must be periodically refueled by hand.</DMSRC_CompactGenerator.description>
+  <DMSRC_CompactGenerator.description>Проризводит энергию из химтоплива.</DMSRC_CompactGenerator.description>
   
   <!-- EN: decoy dish -->
-  <DMSRC_DecoyDish.label>decoy dish</DMSRC_DecoyDish.label>
+  <DMSRC_DecoyDish.label>приманочная тарелка</DMSRC_DecoyDish.label>
   <!-- EN: A modified radio dish which is rigged to send a high power burst transmission. Once activated it puts out a powerful decoy signal which will attract a feral group of automatroid forces to attack your colony. If you can defeat them, you can collect the advanced technology from their corpses. The signal pulse burns out the transmitter, so this building can only be used once. -->
-  <DMSRC_DecoyDish.description>A modified radio dish which is rigged to send a high power burst transmission. Once activated it puts out a powerful decoy signal which will attract a feral group of automatroid forces to attack your colony. If you can defeat them, you can collect the advanced technology from their corpses. The signal pulse burns out the transmitter, so this building can only be used once.</DMSRC_DecoyDish.description>
+  <DMSRC_DecoyDish.description>Модифицированная радио-тарелка подстроенная, чтобы отправлять мощный всплеск сигналов. При активации отправляет сигнал-приманку, который привлечет группу диких автоматроидов. Если вы победите их, то сможете собрать продлвинутую технологию.</DMSRC_DecoyDish.description>
   <!-- EN: Attract focus threat -->
-  <DMSRC_DecoyDish.comps.CompUsable.useLabel>Attract focus threat</DMSRC_DecoyDish.comps.CompUsable.useLabel>
+  <DMSRC_DecoyDish.comps.CompUsable.useLabel>Привлечь фокуса</DMSRC_DecoyDish.comps.CompUsable.useLabel>
+  
+  <!-- EN: facility elevator platform -->
+  <DMSRC_FacilityEntrance.label>лифтовая платформа</DMSRC_FacilityEntrance.label>
+  <!-- EN: An elevator platform which links to the facility below -->
+  <DMSRC_FacilityEntrance.description>Лифтовая платформа, ведущая вглубь комплекса.</DMSRC_FacilityEntrance.description>
   
   <!-- EN: facility dormer -->
-  <DMSRC_FacilityEntrance.label>facility dormer</DMSRC_FacilityEntrance.label>
+  <DMSRC_MediumHole.label>структурный колодец</DMSRC_MediumHole.label>
   <!-- EN: A structure flooring with a opened hole, commonly found in underground facilities. -->
-  <DMSRC_FacilityEntrance.description>A structure flooring with a opened hole, commonly found in underground facilities.</DMSRC_FacilityEntrance.description>
+  <DMSRC_MediumHole.description>Структурное отверстие ведущее куда-то вглубь комплекса.</DMSRC_MediumHole.description>
   
   <!-- EN: facility dormer -->
-  <DMSRC_MediumHole.label>facility dormer</DMSRC_MediumHole.label>
+  <DMSRC_SmallHole.label>структурный колодец</DMSRC_SmallHole.label>
   <!-- EN: A structure flooring with a opened hole, commonly found in underground facilities. -->
-  <DMSRC_MediumHole.description>A structure flooring with a opened hole, commonly found in underground facilities.</DMSRC_MediumHole.description>
+  <DMSRC_SmallHole.description>Структурное отверстие ведущее куда-то вглубь комплекса.</DMSRC_SmallHole.description>
   
-  <!-- EN: facility dormer -->
-  <DMSRC_SmallHole.label>facility dormer</DMSRC_SmallHole.label>
-  <!-- EN: A structure flooring with a opened hole, commonly found in underground facilities. -->
-  <DMSRC_SmallHole.description>A structure flooring with a opened hole, commonly found in underground facilities.</DMSRC_SmallHole.description>
-  
-  <!-- EN: ancient stockpile exit -->
-  <DMSRC_SmallHole_Exit.label>ancient stockpile exit</DMSRC_SmallHole_Exit.label>
-  <!-- EN: A ladder which links to the surface hatch above. -->
-  <DMSRC_SmallHole_Exit.description>A ladder which links to the surface hatch above.</DMSRC_SmallHole_Exit.description>
+  <!-- EN: facility elevator platform -->
+  <DMSRC_SmallHole_Exit.label>лифтовая платформа</DMSRC_SmallHole_Exit.label>
+  <!-- EN: An elevator platform which links to the surface above. -->
+  <DMSRC_SmallHole_Exit.description>Лифтовая платформа, ведущая на поверхность.</DMSRC_SmallHole_Exit.description>
   
   <!-- EN: timed bomb -->
-  <DMSRC_TimedBombActive.label>timed bomb</DMSRC_TimedBombActive.label>
-  <!-- EN: A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted. -->
-  <DMSRC_TimedBombActive.description>A hermetically-sealed armored container for preserving valuable items. Special security system will destroy any contents if container is destroyed or deconstucted.</DMSRC_TimedBombActive.description>
+  <DMSRC_TimedBombActive.label>бомба замедленного действия</DMSRC_TimedBombActive.label>
+  <!-- EN: An explosive device with adjustable timer. Causes destruction of anything in a small area if damaged or timer runs out.\n\nCan be defused to stop timer and prevent detonation. -->
+  <DMSRC_TimedBombActive.description>Взрывное устройство с настраиваемым таймером. Создает мощнейший взрыв в небольшой области вокруг себя, если повреждена или таймер дошел до нуля.\n\nМожет быть обезврежена, чтобы остановить таймер и предотвратить взрыв.</DMSRC_TimedBombActive.description>
   <!-- EN: Defused. -->
-  <DMSRC_TimedBombActive.comps.CompHackable.hackedInspectString>Defused.</DMSRC_TimedBombActive.comps.CompHackable.hackedInspectString>
+  <DMSRC_TimedBombActive.comps.CompHackable.hackedInspectString>Обезврежена.</DMSRC_TimedBombActive.comps.CompHackable.hackedInspectString>
   <!-- EN: {HACKER_labelShort} has defused {SUBJECT_labelNoParenthesisDef}. -->
-  <DMSRC_TimedBombActive.comps.CompHackable.hackedMessage>{HACKER_labelShort} has defused {SUBJECT_labelNoParenthesisDef}.</DMSRC_TimedBombActive.comps.CompHackable.hackedMessage>
+  <DMSRC_TimedBombActive.comps.CompHackable.hackedMessage>{HACKER_labelShort} {HACKER_gender ? обезвредил : обезвредила} {SUBJECT_labelNoParenthesisDef}.</DMSRC_TimedBombActive.comps.CompHackable.hackedMessage>
   
 </LanguageData>

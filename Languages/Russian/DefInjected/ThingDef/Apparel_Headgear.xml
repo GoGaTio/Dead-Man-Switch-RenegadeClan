@@ -2,18 +2,18 @@
 <LanguageData>
   
   <!-- EN: HAP helmet -->
-  <DMSRC_Apparel_AssaultHelmet.label>HAP helmet</DMSRC_Apparel_AssaultHelmet.label>
+  <DMSRC_Apparel_AssaultHelmet.label>HAP шлем</DMSRC_Apparel_AssaultHelmet.label>
   <!-- EN: A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy. -->
-  <DMSRC_Apparel_AssaultHelmet.description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</DMSRC_Apparel_AssaultHelmet.description>
+  <DMSRC_Apparel_AssaultHelmet.description>Продинутый штурмовой шлем призванный защитить носителя от пуль и осколков./n/nТакже дает защиту от токсичной среды и устойчивость к вакууму, вместе с увеличенной точностью стрельбы.</DMSRC_Apparel_AssaultHelmet.description>
   
   <!-- EN: HAP processor helmet -->
-  <DMSRC_Apparel_ProcessorHelmet.label>HAP processor helmet</DMSRC_Apparel_ProcessorHelmet.label>
+  <DMSRC_Apparel_ProcessorHelmet.label>обрабатывающий HAP шлем</DMSRC_Apparel_ProcessorHelmet.label>
   <!-- EN: An advanced helmet with built-in processor core, that allows to use more neuroimplants and control more mechs./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy. -->
-  <DMSRC_Apparel_ProcessorHelmet.description>An advanced helmet with built-in processor core, that allows to use more neuroimplants and control more mechs./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</DMSRC_Apparel_ProcessorHelmet.description>
+  <DMSRC_Apparel_ProcessorHelmet.description>Продвинутый шлем со встроенным ядром-обработчиком, которое позволяет использовать больше нейроимплантов и контролировать больше механоидов./n/nТакже дает защиту от токсичной среды и устойчивость к вакууму, вместе с увеличенной точностью стрельбы.</DMSRC_Apparel_ProcessorHelmet.description>
   
   <!-- EN: HAPS helmet -->
-  <DMSRC_Apparel_ShieldHelmet.label>HAPS helmet</DMSRC_Apparel_ShieldHelmet.label>
+  <DMSRC_Apparel_ShieldHelmet.label>HAPS шлем</DMSRC_Apparel_ShieldHelmet.label>
   <!-- EN: A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield bubble projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy. -->
-  <DMSRC_Apparel_ShieldHelmet.description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield bubble projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</DMSRC_Apparel_ShieldHelmet.description>
+  <DMSRC_Apparel_ShieldHelmet.description>Продинутый штурмовой шлем призванный защитить носителя от пуль и осколков. Встроенный проектор щита прикрывает носителя от входящих снарядов./n/nТакже дает защиту от токсичной среды и устойчивость к вакууму, вместе с увеличенной точностью стрельбы.</DMSRC_Apparel_ShieldHelmet.description>
   
 </LanguageData>

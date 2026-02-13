@@ -131,6 +131,7 @@
         <li>(500, 270)</li>
         <li>(1000, 500)</li>
         <li>(3000, 9999)</li>
+        <li>(4000, 99999)</li>
       </points>
     </maxPawnCostPerTotalPointsCurve>
     <pawnGroupMakers>
@@ -146,9 +147,9 @@
           <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
           <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
           <DMSRC_Mech_Stancher>6</DMSRC_Mech_Stancher>
-          <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon>
-          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Explosive>
-          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.05</DMSRC_RenegadeDragoon_Beam>
+          <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Beam>
           <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.2</NAT_RustedRenegade>
           <DMSRC_Stormtrooper>0.25</DMSRC_Stormtrooper>
         </options>
@@ -172,24 +173,19 @@
         </options>
       </li>
       <li>
-        <!-- Normal fights -->
+        <!-- Heavy -->
         <kindDef>Combat</kindDef>
-        <commonality>10</commonality>
+        <commonality>20</commonality>
         <options>
-          <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
-          <DMS_Mech_Dogge>2</DMS_Mech_Dogge>
-          <DMS_Mech_Sniper>1</DMS_Mech_Sniper>
-          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
-          <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
-          <DMSRC_Mech_Stancher>1.5</DMSRC_Mech_Stancher>
-          <DMS_Mech_Caretta>1</DMS_Mech_Caretta>
-          <DMSRC_Mech_Malevolence>1</DMSRC_Mech_Malevolence>
-          <DMSRC_Mech_Focus>2</DMSRC_Mech_Focus>
+          <DMS_Mech_Iguana>4</DMS_Mech_Iguana>
+          <DMS_Mech_Caretta>1.5</DMS_Mech_Caretta>
+          <DMSRC_Mech_Malevolence>0.5</DMSRC_Mech_Malevolence>
+          <DMSRC_Mech_Focus>1</DMSRC_Mech_Focus>
           <DMSRC_Mech_Pavise>2.5</DMSRC_Mech_Pavise>
-          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.15</NAT_RustedRenegade>
-          <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon>
-          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon_Explosive>
-          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Beam>
+          <DMS_Mech_Killdozer>2.5</DMS_Mech_Killdozer>
+          <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.6</DMSRC_RenegadeDragoon>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.4</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon_Beam>
         </options>
       </li>
       <li>
@@ -205,8 +201,8 @@
           <DMS_Mech_Protector>4</DMS_Mech_Protector>
           <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
           <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
-          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.15</DMSRC_RenegadeDragoon_Explosive>
-          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Beam>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Beam>
         </options>
       </li>
       <li>

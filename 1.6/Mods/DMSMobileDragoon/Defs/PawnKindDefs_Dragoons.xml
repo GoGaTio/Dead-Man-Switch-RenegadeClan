@@ -30,7 +30,7 @@
   <PawnKindDef ParentName="DMSRC_DragoonBase">
     <defName>DMSRC_RenegadeDragoon</defName>
     <label>Subjugator alpha</label>
-    <combatPower>150</combatPower>
+    <combatPower>230</combatPower>
     <weaponTags>
       <li>DMS_Dragoon_SG</li>
       <li>DMS_MechWeaponHeavy</li>
@@ -82,7 +82,7 @@
   <PawnKindDef ParentName="DMSRC_DragoonBase">
     <defName>DMSRC_RenegadeDragoon_Explosive</defName>
     <label>Subjugator beta</label>
-    <combatPower>175</combatPower>
+    <combatPower>270</combatPower>
     <weaponTags>
       <li>DMS_MechWeaponHeavy</li>
       <li>DMS_DragoonGun</li>
@@ -134,7 +134,7 @@
   <PawnKindDef ParentName="DMSRC_DragoonBase">
     <defName>DMSRC_RenegadeDragoon_Beam</defName>
     <label>Subjugator gamma</label>
-    <combatPower>225</combatPower>
+    <combatPower>340</combatPower>
     <weaponMoney>6000~10000</weaponMoney>
     <weaponTags>
       <li>DMSRC_HeavyBeamCannon</li>

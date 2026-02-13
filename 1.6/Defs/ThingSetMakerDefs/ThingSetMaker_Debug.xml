@@ -79,6 +79,20 @@
             </fixedParams>
           </thingSetMaker>
         </li>
+
+        <!--<li>
+          <chance>0.85</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingSetMakerTagsToAllow>
+                  <li>Techprint</li>
+                </thingSetMakerTagsToAllow>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>-->
       </options>
     </root>
   </ThingSetMakerDef>

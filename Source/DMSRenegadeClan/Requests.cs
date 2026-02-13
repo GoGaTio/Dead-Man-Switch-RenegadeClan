@@ -113,7 +113,7 @@ namespace DMSRC
 			get
 			{
 				var maps = Maps;
-				return Maps.First((m)=>m.Tile == tile);
+				return Maps.FirstOrDefault((m)=>m.Tile == tile);
 			}
 		}
 
@@ -143,6 +143,10 @@ namespace DMSRC
 				ticksBeforeArrival--;
 				if (ticksBeforeArrival < 0)
 				{
+					if(Map == null)
+					{
+						tile = Find.AnyPlayerHomeMap?.Tile ?? Maps.RandomElement().Tile;
+					}
 					Arrive();
 					arrived = true;
 				}
@@ -252,6 +256,157 @@ namespace DMSRC
 		}
 	}
 
+	/*public class WasteDumpRequest : RenegadesRequest
+	{
+		public int count;
+
+		public WasteDumpRequest()
+		{
+
+		}
+
+		public override void DrawTab(Rect rect, ref Vector2 scrollPosition, float viewHeight, GameComponent_Renegades renegades)
+		{
+			Widgets.BeginGroup(rect);
+			if (tradeRows == null)
+			{
+				tradeRows = new List<TradeRow>();
+				foreach (Thing t in renegades.things)
+				{
+					tradeRows.Add(new TradeRow(t, t.stackCount));
+				}
+				tradeRows.Sort((TradeRow ltr, TradeRow rtr) => Comparer(ltr, rtr));
+			}
+			Rect first = new Rect(0, 0, rect.width, 30f);
+			Widgets.DrawLightHighlight(first);
+			float width = rect.width;
+			float height = 30f;
+			Text.Anchor = TextAnchor.MiddleLeft;
+			Text.Font = GameFont.Small;
+			Rect rectBP = new Rect(width - height, 0, height, height);
+			Rect rectNum = new Rect(rectBP.x - (height * 2), 0, height * 2, height);
+			Rect rectBM = new Rect(rectNum.x - height, 0, height, height);
+			Rect rectPrice = new Rect(rectBM.x - (height * 2), 0, (height * 2), height);
+			Rect rectCount = new Rect(rectPrice.x - (height * 2), 0, (height * 2), height);
+			Rect rectInfo = new Rect(0, 0, height, height);
+			Rect rectIcon = new Rect(24f, 0, height, height);
+			Rect rectLabel = new Rect(height * 2, 0, rectCount.x - (height * 2), height);
+			Widgets.InfoCardButton(3f, 3f, ThingDefOf.Silver, null);
+			Widgets.Label(rectLabel, ThingDefOf.Silver.LabelCap);
+			Widgets.Label(rectPrice, CalculateSilver().ToStringMoney());
+			if (Mouse.IsOver(first))
+			{
+				Widgets.DrawHighlight(first);
+				TooltipHandler.TipRegion(first, ThingDefOf.Silver.LabelCap.Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + ThingDefOf.Silver.description);
+			}
+			try
+			{
+				Widgets.ThingIcon(rectIcon, ThingDefOf.Silver);
+			}
+			catch (Exception ex)
+			{
+				Log.Error("Exception drawing thing icon for " + ThingDefOf.Silver.defName + ": " + ex.ToString());
+			}
+			Rect outRect = new Rect(0, 30f, rect.width, Mathf.FloorToInt((rect.height - 42f) / 30f) * 30f);
+			Rect viewRect = new Rect(0, 30f, outRect.width - 16f, (tradeRows.Count) * 30f);
+			bool drawHighlight = false;
+			float num = 30f;
+			//Widgets.DrawLineHorizontal(0f, 32f, viewRect.width);
+			Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
+			foreach (TradeRow tradeRow in tradeRows)
+			{
+				Rect rowRect = new Rect(0f, num, viewRect.width, 30f);
+				tradeRow.DrawTradeableRow(rowRect, drawHighlight, out var changed);
+				if (changed)
+				{
+					calculated = false;
+				}
+				num += 30f;
+				drawHighlight = !drawHighlight;
+			}
+			Widgets.EndScrollView();
+			Widgets.EndGroup();
+		}
+
+		public override void Arrive()
+		{
+			base.Arrive();
+			List<Thing> things = TradeUtility.AllLaunchableThingsForTrade(Map).ToList();
+			while (count > 0)
+			{
+
+			}
+			Find.LetterStack.ReceiveLetter("DMSRC_RenegadesTradeLetter_Label".Translate(), "DMSRC_RenegadesTradeLetter_Text".Translate(), LetterDefOf.PositiveEvent, things);
+			Complete();
+		}
+
+		public override AcceptanceReport TrySave(GameComponent_Renegades renegades)
+		{
+			if (!tradeRows.Any((t)=>t.countSelected > 0))
+			{
+				return "DMSRC_NoThingsSelected".Translate();
+			}
+			Map map = Map;
+			float num = 0f;
+			things = new List<Thing>();
+			foreach (TradeRow row in tradeRows.ToList())
+			{
+				if (row.countSelected > 0)
+				{
+					num += row.thing.MarketValue * row.countSelected;
+				}
+			}
+			int silver = Mathf.RoundToInt(num);
+			if(!TradeUtility.ColonyHasEnoughSilver(map, silver))
+			{
+				return "NeedSilverLaunchable".Translate(silver.ToString());
+			}
+			foreach (TradeRow row in tradeRows.ToList())
+			{
+				if (row.countSelected > 0)
+				{
+					if (row.countSelected >= row.count)
+					{
+						renegades.things.Remove(row.thing);
+						things.Add(row.thing);
+					}
+					else things.Add(row.thing.SplitOff(row.countSelected));
+					Thing last = things.Last();
+				}
+			}
+			TradeUtility.LaunchSilver(map, silver);
+			tradeRows.Clear();
+			tradeRows = null;
+			if(renegades.hoursTillRefresh < 0)
+			{
+				renegades.hoursTillRefresh = new IntRange(240, 480).RandomInRange;
+			}
+			return base.TrySave(renegades);
+		}
+
+		private bool calculated = false;
+
+		private float silverTemp;
+
+		public float CalculateSilver()
+		{
+			if (!calculated)
+			{
+				silverTemp = 0f;
+				foreach (TradeRow row in tradeRows)
+				{
+					if (row.countSelected > 0)
+					{
+						silverTemp += row.thing.MarketValue * row.countSelected;
+					}
+				}
+				calculated = true;
+				silverTemp = Mathf.RoundToInt(silverTemp);
+			}
+			return silverTemp;
+		}
+	}*/
+
 	public class TradeRequest : RenegadesRequest
 	{
 		public List<TradeRow> tradeRows = null;
@@ -301,7 +456,7 @@ namespace DMSRC
 				Widgets.Label(rectPrice, thing.MarketValue.ToStringMoney());
 				int c = countSelected;
 				Widgets.TextFieldNumeric(rectNum, ref countSelected, ref editBuffer, 0, count);
-				if(countSelected != c)
+				if (countSelected != c)
 				{
 					changed = true;
 				}
@@ -419,7 +574,7 @@ namespace DMSRC
 			}
 			return ltr.thing.LabelNoCount.CompareTo(rtr.thing.LabelNoCount);
 		}
-		
+
 		public override void ExposeData()
 		{
 			base.ExposeData();
@@ -429,7 +584,7 @@ namespace DMSRC
 		public override void Arrive()
 		{
 			base.Arrive();
-			foreach(Thing t in things.ToList())
+			foreach (Thing t in things.ToList())
 			{
 				TradeUtility.SpawnDropPod(DropCellFinder.TradeDropSpot(Map), Map, t);
 			}
@@ -439,13 +594,25 @@ namespace DMSRC
 
 		public override AcceptanceReport TrySave(GameComponent_Renegades renegades)
 		{
-			if (!tradeRows.Any((t)=>t.countSelected > 0))
+			if (!tradeRows.Any((t) => t.countSelected > 0))
 			{
 				return "DMSRC_NoThingsSelected".Translate();
 			}
 			Map map = Map;
 			float num = 0f;
 			things = new List<Thing>();
+			foreach (TradeRow row in tradeRows.ToList())
+			{
+				if (row.countSelected > 0)
+				{
+					num += row.thing.MarketValue * row.countSelected;
+				}
+			}
+			int silver = Mathf.RoundToInt(num);
+			if (!TradeUtility.ColonyHasEnoughSilver(map, silver))
+			{
+				return "NeedSilverLaunchable".Translate(silver.ToString());
+			}
 			foreach (TradeRow row in tradeRows.ToList())
 			{
 				if (row.countSelected > 0)
@@ -457,21 +624,11 @@ namespace DMSRC
 					}
 					else things.Add(row.thing.SplitOff(row.countSelected));
 					Thing last = things.Last();
-					num += last.MarketValue * last.stackCount;
 				}
-			}
-			int silver = Mathf.RoundToInt(num);
-			if(!TradeUtility.ColonyHasEnoughSilver(map, silver))
-			{
-				return "NeedSilverLaunchable".Translate(silver.ToString());
 			}
 			TradeUtility.LaunchSilver(map, silver);
 			tradeRows.Clear();
 			tradeRows = null;
-			if(renegades.hoursTillRefresh < 0)
-			{
-				renegades.hoursTillRefresh = new IntRange(240, 480).RandomInRange;
-			}
 			return base.TrySave(renegades);
 		}
 

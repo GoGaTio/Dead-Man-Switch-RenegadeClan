@@ -2,40 +2,40 @@
 <LanguageData>
   
   <!-- EN: beam defence -->
-  <DMSRC_BeamDefence.label>beam defence</DMSRC_BeamDefence.label>
+  <DMSRC_BeamDefence.label>лучевая защита</DMSRC_BeamDefence.label>
   <!-- EN: A stationary beam emitter. Intercepts bullets and other projectiles, but requires a lot of power. -->
-  <DMSRC_BeamDefence.description>A stationary beam emitter. Intercepts bullets and other projectiles, but requires a lot of power.</DMSRC_BeamDefence.description>
+  <DMSRC_BeamDefence.description>Стационарный лучевой перехватчик. Уничтожает приближающиеся снаряды, но потребляет значительное количество энергии.</DMSRC_BeamDefence.description>
   
   <!-- EN: straj -->
-  <DMSRC_Gun_Straj.label>straj</DMSRC_Gun_Straj.label>
+  <DMSRC_Gun_Straj.label>страж</DMSRC_Gun_Straj.label>
   <!-- EN: An automatic defence shotgun. -->
-  <DMSRC_Gun_Straj.description>An automatic defence shotgun.</DMSRC_Gun_Straj.description>
+  <DMSRC_Gun_Straj.description>Автоматический защитный дробовик.</DMSRC_Gun_Straj.description>
   <!-- EN: straj -->
-  <DMSRC_Gun_Straj.verbs.Verb_Shoot.label>straj</DMSRC_Gun_Straj.verbs.Verb_Shoot.label>
+  <DMSRC_Gun_Straj.verbs.Verb_Shoot.label>страж</DMSRC_Gun_Straj.verbs.Verb_Shoot.label>
   
   <!-- EN: perimeter scanner -->
-  <DMSRC_PerimeterScanner.label>perimeter scanner</DMSRC_PerimeterScanner.label>
+  <DMSRC_PerimeterScanner.label>сканнер периметра</DMSRC_PerimeterScanner.label>
   <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
-  <DMSRC_PerimeterScanner.description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</DMSRC_PerimeterScanner.description>
+  <DMSRC_PerimeterScanner.description>Сканнер способный обнаруживать невидимые объекты. Поднимает тревогу, если рядом есть что-то невидимое.</DMSRC_PerimeterScanner.description>
   
   <!-- EN: perimeter scanner -->
-  <DMSRC_PerimeterScannerTemp.label>perimeter scanner</DMSRC_PerimeterScannerTemp.label>
+  <DMSRC_PerimeterScannerTemp.label>сканнер периметра</DMSRC_PerimeterScannerTemp.label>
   <!-- EN: A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius. -->
-  <DMSRC_PerimeterScannerTemp.description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</DMSRC_PerimeterScannerTemp.description>
+  <DMSRC_PerimeterScannerTemp.description>Сканнер способный обнаруживать невидимые объекты. Поднимает тревогу, если рядом есть что-то невидимое.</DMSRC_PerimeterScannerTemp.description>
   <!-- EN: Battery power -->
-  <DMSRC_PerimeterScannerTemp.comps.CompMechPowerCell.labelOverride>Battery power</DMSRC_PerimeterScannerTemp.comps.CompMechPowerCell.labelOverride>
+  <DMSRC_PerimeterScannerTemp.comps.CompMechPowerCell.labelOverride>Энергоячейка</DMSRC_PerimeterScannerTemp.comps.CompMechPowerCell.labelOverride>
   <!-- EN: This perimeter scanner has a limited battery life. Once it runs out, it will stop working entirely. -->
-  <DMSRC_PerimeterScannerTemp.comps.CompMechPowerCell.tooltipOverride>This perimeter scanner has a limited battery life. Once it runs out, it will stop working entirely.</DMSRC_PerimeterScannerTemp.comps.CompMechPowerCell.tooltipOverride>
+  <DMSRC_PerimeterScannerTemp.comps.CompMechPowerCell.tooltipOverride>Сканнер периметра обладает ограниченным зарядом энергоячейки. Когда он закончится, сканнер перестанет работать.</DMSRC_PerimeterScannerTemp.comps.CompMechPowerCell.tooltipOverride>
   
   <!-- EN: Straj -->
-  <DMSRC_Turret_Straj.label>Straj</DMSRC_Turret_Straj.label>
+  <DMSRC_Turret_Straj.label>страж</DMSRC_Turret_Straj.label>
   <!-- EN: An ancient design of a remote controlled close-combat turret used for indoors defence. -->
-  <DMSRC_Turret_Straj.description>An ancient design of a remote controlled close-combat turret used for indoors defence.</DMSRC_Turret_Straj.description>
+  <DMSRC_Turret_Straj.description>Автономная оборонная турель с автоматическим дробовиком, используемая в узких пространствах.</DMSRC_Turret_Straj.description>
   <!-- EN: Barrel durability -->
-  <DMSRC_Turret_Straj.comps.CompRefuelable.fuelGizmoLabel>Barrel durability</DMSRC_Turret_Straj.comps.CompRefuelable.fuelGizmoLabel>
+  <DMSRC_Turret_Straj.comps.CompRefuelable.fuelGizmoLabel>Прочность ствола</DMSRC_Turret_Straj.comps.CompRefuelable.fuelGizmoLabel>
   <!-- EN: Shots until barrel change -->
-  <DMSRC_Turret_Straj.comps.CompRefuelable.fuelLabel>Shots until barrel change</DMSRC_Turret_Straj.comps.CompRefuelable.fuelLabel>
+  <DMSRC_Turret_Straj.comps.CompRefuelable.fuelLabel>Выстрелы до замены ствола</DMSRC_Turret_Straj.comps.CompRefuelable.fuelLabel>
   <!-- EN: Cannot shoot: Needs new reinforced barrel. -->
-  <DMSRC_Turret_Straj.comps.CompRefuelable.outOfFuelMessage>Cannot shoot: Needs new reinforced barrel.</DMSRC_Turret_Straj.comps.CompRefuelable.outOfFuelMessage>
+  <DMSRC_Turret_Straj.comps.CompRefuelable.outOfFuelMessage>Не мсожет стрелять: Необходима замена ствола.</DMSRC_Turret_Straj.comps.CompRefuelable.outOfFuelMessage>
   
 </LanguageData>

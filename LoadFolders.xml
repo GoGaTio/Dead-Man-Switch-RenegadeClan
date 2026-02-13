@@ -5,6 +5,7 @@
 		<li>/</li>
 		<li>1.6</li>
 
+    <li IfModActive="Ludeon.RimWorld.Royalty">1.6/Mods/Royalty</li>
 		<li IfModActive="aoba.deadmanswitch.mobiledragoon">1.6/Mods/DMSMobileDragoon</li>
 		<li IfModActive="ceteam.combatextended,CETeam.CombatExtended_steam">1.6/Mods/CombatExtended</li>
 		

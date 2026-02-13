@@ -114,9 +114,13 @@ namespace DMSRC
 		public override void PreRemoved()
 		{
 			base.PreRemoved();
-			if(wornApparel.TryGetComp<CompProcessorHelmet>(out var comp))
+			if(wornApparel != null && wornApparel.TryGetComp<CompProcessorHelmet>(out var comp))
 			{
 				Hediff_Neurointerface hediff = pawn.health.hediffSet.GetFirstHediff<Hediff_Neurointerface>();
+				if(hediff == null)
+				{
+					return;
+				}
 				int count = hediff.UsedCapacity - (hediff.Capacity - Mathf.RoundToInt(CurStage.statOffsets.GetStatOffsetFromList(RCDefOf.DMSRC_Neurocapacity)));
 				if(count > 0)
 				{

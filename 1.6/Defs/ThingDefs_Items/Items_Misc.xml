@@ -94,7 +94,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>DMSRC_TimedBomb</defName>
     <label>timed bomb</label>
-    <description>An explosive device with adjustable timer. Causes destruction of anything in a small area if damaged or timer runs out.\n\nCan be hacked to prevent detonation.</description>
+    <description>An explosive device with adjustable timer. Causes destruction of anything in a small area if damaged or timer runs out.\n\nCan be defused to stop timer and prevent detonation.</description>
     <graphicData>
       <texPath>Things/Building/DMSRC_TimedBomb</texPath>
       <graphicClass>Graphic_Single</graphicClass>

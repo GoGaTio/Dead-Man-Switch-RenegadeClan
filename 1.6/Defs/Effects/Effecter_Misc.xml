@@ -2,6 +2,24 @@
 <Defs>
 
   <EffecterDef>
+    <defName>DMSRC_WetwareProducer_Bubbles</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <positionDimensions>(0.6, 0, 0.4)</positionDimensions>
+        <positionOffset>(0, 0, -0.2)</positionOffset>
+        <ticksBetweenMotes>15</ticksBetweenMotes>
+        <fleckDef>Fleck_VatBubble</fleckDef>
+        <burstCount>1~2</burstCount>
+        <speed>0.5</speed>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
     <defName>DMSRC_PerimeterScannerAlert</defName>
     <children>
       <li>

@@ -5,7 +5,7 @@
     <li>questDescription->A nearby located broadcast node of [faction_name] is under renegades attack. They need reinforcements as fast as possible and will </li>
   -->
   <DMSRC_DefendBroadcastPoint.questDescriptionRules.rulesStrings>
-    <li>questDescription->A nearby located broadcast node of [faction_name] is under renegades attack. They need reinforcements as fast as possible and will </li>
+    <li>questDescription->Широкопередающая вышка фракции [faction_name] находится под атакой отступников.</li>
   </DMSRC_DefendBroadcastPoint.questDescriptionRules.rulesStrings>
   <!-- EN:
     <li>questName->[antenna] [need]</li>
@@ -19,13 +19,13 @@
   -->
   <DMSRC_DefendBroadcastPoint.questNameRules.rulesStrings>
     <li>questName->[antenna] [need]</li>
-    <li>need->In Danger</li>
-    <li>need->Under Attack</li>
-    <li>need->Needs Defence</li>
-    <li>antenna->Signal Tower</li>
-    <li>antenna->Radar</li>
-    <li>antenna->Broadcaster</li>
-    <li>antenna->Antenna</li>
+    <li>need->В Опасности</li>
+    <li>need->Под Атакой</li>
+    <li>need->Нуждается В Защите</li>
+    <li>antenna->Сигнальная Вышка</li>
+    <li>antenna->Радар</li>
+    <li>antenna->Передатчик</li>
+    <li>antenna->Антенна</li>
   </DMSRC_DefendBroadcastPoint.questNameRules.rulesStrings>
   
 </LanguageData>

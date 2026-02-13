@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <ThingDef ParentName="MechanitorImplantBase">
+    <defName>DMSRC_Mechlink_Buffed</defName>
+    <label>LX3 cluster transceiver</label>
+    <description>A modified cluster transceiver with increased bandwidth and control capabilities. Allows direct control of mechanoids. It has no N.A.C.S. compared to other cluster transceivers.\n\nDue to processing precision issues, these imitation mechlink devices from rim worlds often have installation side effects.</description>
+    <thingClass>Mechlink</thingClass>
+    <descriptionHyperlinks>
+      <HediffDef>MechlinkImplant</HediffDef>
+    </descriptionHyperlinks>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <Mass>1</Mass>
+      <MarketValue>3000</MarketValue>
+			<WorkToMake>60000</WorkToMake>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_Mechlink_Buffed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>InstallMechlink</useJob>
+        <useLabel>Install {0_label} to become mechanitor</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>MechlinkImplant</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMSRC_MechlinkBuff</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMS_MechlinkKillSwitch</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <hediffDef>DMS_MechlinkRejection</hediffDef>
+        <bodyPart>Brain</bodyPart>
+        <requiresPsychicallySensitive>true</requiresPsychicallySensitive>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechlinkInstalled</soundOnUsed>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DMSRC_MechlinkBuff</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Mechlink modification</label>
+    <description>.</description>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MechBandwidth>6</MechBandwidth>
+          <MechControlGroups>1</MechControlGroups>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

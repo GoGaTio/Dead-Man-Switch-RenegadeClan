@@ -181,9 +181,19 @@ namespace DMSRC
 			s += "DMSRC_DetonationCountdown".Translate(timerTicks.ToStringTicksToPeriod());
 			if(parent.Faction != null && !parent.Faction.IsPlayer)
 			{
-				s += "DMSRC_DetonationInstigator".Translate(parent.Faction.Name.Colorize(parent.Faction.PlayerRelationKind.GetColor()));
+				s += "\n" + "DMSRC_DetonationInstigator".Translate(parent.Faction.Name.Colorize(parent.Faction.PlayerRelationKind.GetColor()));
 			}
 			return s;
+		}
+
+		public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
+		{
+			if(dinfo.IntendedTarget != parent)
+			{
+				absorbed = true;
+				return;
+			}
+			base.PostPreApplyDamage(ref dinfo, out absorbed);
 		}
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()

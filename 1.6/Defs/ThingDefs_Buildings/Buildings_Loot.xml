@@ -143,7 +143,7 @@
   <ThingDef ParentName="DMSRC_BaseLootBox">
     <defName>DMSRC_Drawer</defName>
     <label>drawer</label>
-    <description>A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations.</description>
+    <description>A standard drawer which usually contains some valueable small items.</description>
     <rotatable>true</rotatable>
     <graphicData>
       <texPath>Things/Building/Containers/DMSRC_Drawer/DMSRC_Drawer</texPath>

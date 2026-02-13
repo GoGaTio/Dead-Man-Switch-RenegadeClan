@@ -197,7 +197,7 @@ namespace DMSRC
 				{
 					renegades.PlayerRelation = FactionRelationKind.Hostile;
 				}));
-				list.Add(new FloatMenuOption("Reset stock", delegate
+				list.Add(new FloatMenuOption("Reset stock(hours till refresh: " + renegades.hoursTillRefresh + ")", delegate
 				{
 					renegades.GenerateThings();
 				}));

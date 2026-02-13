@@ -2,35 +2,18 @@
 <Defs>
 
   <ThingDef ParentName="BaseBullet">
-    <defName>DMSRC_Bullet_SmallBeam</defName>
-    <label>gamma beam</label>
-    <thingClass>Beam</thingClass>
+    <defName>DMSRC_Proj_CumulativeShell</defName>
+    <label>cumulative shell</label>
     <graphicData>
       <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
     <projectile>
-      <damageDef>DMSRC_FocusedBeam</damageDef>
-      <damageAmountBase>5</damageAmountBase>
-      <beamMoteDef>DMSRC_Mote_BeamUnmaintained</beamMoteDef>
-      <beamStartOffset>0.75</beamStartOffset>
-      <armorPenetrationBase>1</armorPenetrationBase>
-    </projectile>
-  </ThingDef>
-
-  <ThingDef ParentName="BaseBullet">
-    <defName>DMSRC_Bullet_MediumBeam</defName>
-    <label>gamma beam</label>
-    <thingClass>Beam</thingClass>
-    <graphicData>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <projectile>
-      <damageDef>DMSRC_FocusedBeam</damageDef>
+      <speed>40</speed>
+      <damageDef>DMSRC_BombCumulative</damageDef>
       <damageAmountBase>10</damageAmountBase>
-      <beamMoteDef>DMSRC_Mote_BeamUnmaintained</beamMoteDef>
-      <beamStartOffset>0.75</beamStartOffset>
+      <explosionRadius>1.6</explosionRadius>
       <armorPenetrationBase>1</armorPenetrationBase>
     </projectile>
   </ThingDef>

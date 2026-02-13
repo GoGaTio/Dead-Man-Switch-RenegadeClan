@@ -178,7 +178,7 @@
     </tools>
     <comps>
       <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>3</explosionDamage>
+        <explosionDamage>5</explosionDamage>
         <explosionRange>1.1</explosionRange>
         <beamMoteDef>DMSRC_Mote_Beam</beamMoteDef>
         <damageDef>DMSRC_FocusedBeam</damageDef>
@@ -386,5 +386,85 @@
     </comps>
   </ThingDef>
 
+  <ThingDef ParentName="DMS_AutomatroidTurretGun">
+    <defName>DMSRC_Gun_ExperimentalBeamCannon</defName>
+    <label>GL-31X</label>
+    <description>A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. This one was made to interface directly with a mobile or stationary platform and draw from its power source.\n\nOrganic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough.</description>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_BeamGun_LinzaMount</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>20</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>0.95</AccuracyMedium>
+      <AccuracyLong>0.9</AccuracyLong>
+      <RangedWeapon_Cooldown>1.10</RangedWeapon_Cooldown>
+      <MarketValue>2000</MarketValue>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>DMSRC.Verb_FocusedBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>2.3</warmupTime>
+        <showBurstShotStats>false</showBurstShotStats>
+        <range>999</range>
+        <minRange>2.4</minRange>
+        <beamFullWidthRange>7.9</beamFullWidthRange>
+        <burstShotCount>90</burstShotCount>
+        <beamWidth>15</beamWidth>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.5</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools Inherit="False">
+      <li>
+        <label>emitter</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="DMSRC.CompProperties_FocusedBeam">
+        <explosionDamage>50</explosionDamage>
+        <explosionRange>3.7</explosionRange>
+        <beamMoteDef>DMSRC_Mote_BeamUltraLarge</beamMoteDef>
+        <damageDef>DMSRC_FocusedBeam</damageDef>
+      </li>
+    </comps>
+  </ThingDef>
 
 </Defs>

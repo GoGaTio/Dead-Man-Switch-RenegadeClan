@@ -2,40 +2,36 @@
 <LanguageData>
   
   <!-- EN: FSR Assault rifle -->
-  <DMSRC_FSRAssaultRifle.label>FSR Assault rifle</DMSRC_FSRAssaultRifle.label>
+  <DMSRC_FSRAssaultRifle.label>FSR Автомат</DMSRC_FSRAssaultRifle.label>
   <!-- EN: An assault rifle designed to be used by mech soldiers. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
-  <DMSRC_FSRAssaultRifle.description>An assault rifle designed to be used by mech soldiers. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.
-
-This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMSRC_FSRAssaultRifle.description>
+  <DMSRC_FSRAssaultRifle.description>Автомат, разработанный для использования механоидами. Усиленный ствол и сложный затворно-зажигательный механизм позволяют использовать FSR аммуницию.\n\nЭто оружие не приспособлено для использования простыми людьми, поэтому требует специального снаряжения.</DMSRC_FSRAssaultRifle.description>
   <!-- EN: stock -->
-  <DMSRC_FSRAssaultRifle.tools.stock.label>stock</DMSRC_FSRAssaultRifle.tools.stock.label>
+  <DMSRC_FSRAssaultRifle.tools.stock.label>приклад</DMSRC_FSRAssaultRifle.tools.stock.label>
   <!-- EN: barrel -->
-  <DMSRC_FSRAssaultRifle.tools.barrel.label>barrel</DMSRC_FSRAssaultRifle.tools.barrel.label>
+  <DMSRC_FSRAssaultRifle.tools.barrel.label>ствол</DMSRC_FSRAssaultRifle.tools.barrel.label>
   <!-- EN: FSR Assault rifle -->
-  <DMSRC_FSRAssaultRifle.verbs.Verb_Shoot.label>FSR Assault rifle</DMSRC_FSRAssaultRifle.verbs.Verb_Shoot.label>
+  <DMSRC_FSRAssaultRifle.verbs.Verb_Shoot.label>FSR Автомат</DMSRC_FSRAssaultRifle.verbs.Verb_Shoot.label>
   
   <!-- EN: FSR Heavy repeater -->
-  <DMSRC_FSRMachineGun.label>FSR Heavy repeater</DMSRC_FSRMachineGun.label>
+  <DMSRC_FSRMachineGun.label>FSR Пулемёт</DMSRC_FSRMachineGun.label>
   <!-- EN: A heavy machine gun with helical magazine designed for use as automatroids weapon. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.\n\nThis weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations. -->
-  <DMSRC_FSRMachineGun.description>A heavy machine gun with helical magazine designed for use as automatroids weapon. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.
-
-This weapon is specially designed for automatroid use, normal humans will struggle to use it without external equipment or augmentations.</DMSRC_FSRMachineGun.description>
+  <DMSRC_FSRMachineGun.description>Тяжелый пулемёт со шнековым магазином, разработанный для использования механоидами. Усиленный ствол и сложный затворно-зажигательный механизм позволяют использовать FSR аммуницию.\n\nЭто оружие не приспособлено для использования простыми людьми, поэтому требует специального снаряжения.</DMSRC_FSRMachineGun.description>
   <!-- EN: stock -->
-  <DMSRC_FSRMachineGun.tools.stock.label>stock</DMSRC_FSRMachineGun.tools.stock.label>
+  <DMSRC_FSRMachineGun.tools.stock.label>приклад</DMSRC_FSRMachineGun.tools.stock.label>
   <!-- EN: barrel -->
-  <DMSRC_FSRMachineGun.tools.barrel.label>barrel</DMSRC_FSRMachineGun.tools.barrel.label>
+  <DMSRC_FSRMachineGun.tools.barrel.label>ствол</DMSRC_FSRMachineGun.tools.barrel.label>
   <!-- EN: FSR Heavy repeater -->
-  <DMSRC_FSRMachineGun.verbs.Verb_Shoot.label>FSR Heavy repeater</DMSRC_FSRMachineGun.verbs.Verb_Shoot.label>
+  <DMSRC_FSRMachineGun.verbs.Verb_Shoot.label>FSR Пулемёт</DMSRC_FSRMachineGun.verbs.Verb_Shoot.label>
   
   <!-- EN: FSR Light carabine -->
-  <DMSRC_FSRPistol.label>FSR Light carabine</DMSRC_FSRPistol.label>
+  <DMSRC_FSRPistol.label>FSR Лёгкий карабин</DMSRC_FSRPistol.label>
   <!-- EN: A stub-barreled mech carabine. Reinforced barrel and complex breech-mechanism allows to use FSR ammo. -->
-  <DMSRC_FSRPistol.description>A stub-barreled mech carabine. Reinforced barrel and complex breech-mechanism allows to use FSR ammo.</DMSRC_FSRPistol.description>
+  <DMSRC_FSRPistol.description>Короткоствольный карабин, разработанный для использования механоидами. Усиленный ствол и сложный затворно-зажигательный механизм позволяют использовать FSR аммуницию.</DMSRC_FSRPistol.description>
   <!-- EN: grip -->
-  <DMSRC_FSRPistol.tools.grip.label>grip</DMSRC_FSRPistol.tools.grip.label>
+  <DMSRC_FSRPistol.tools.grip.label>рукоятка</DMSRC_FSRPistol.tools.grip.label>
   <!-- EN: barrel -->
-  <DMSRC_FSRPistol.tools.barrel.label>barrel</DMSRC_FSRPistol.tools.barrel.label>
+  <DMSRC_FSRPistol.tools.barrel.label>ствол</DMSRC_FSRPistol.tools.barrel.label>
   <!-- EN: FSR Light carabine -->
-  <DMSRC_FSRPistol.verbs.Verb_Shoot.label>FSR Light carabine</DMSRC_FSRPistol.verbs.Verb_Shoot.label>
+  <DMSRC_FSRPistol.verbs.Verb_Shoot.label>FSR Лёгкий карабин</DMSRC_FSRPistol.verbs.Verb_Shoot.label>
   
 </LanguageData>

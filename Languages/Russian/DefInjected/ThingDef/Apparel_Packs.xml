@@ -2,15 +2,15 @@
 <LanguageData>
   
   <!-- EN: scanner pack -->
-  <DMSRC_Apparel_PackScanner.label>scanner pack</DMSRC_Apparel_PackScanner.label>
+  <DMSRC_Apparel_PackScanner.label>ранец со сканнером</DMSRC_Apparel_PackScanner.label>
   <!-- EN: A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours. -->
-  <DMSRC_Apparel_PackScanner.description>A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours.</DMSRC_Apparel_PackScanner.description>
+  <DMSRC_Apparel_PackScanner.description>Носимый ранец, который позволяет разместить сканнер периметра. Содержит пусковое устройство, позволяющее запустить сканнер на некоторое расстояние.</DMSRC_Apparel_PackScanner.description>
   <!-- EN: charge -->
-  <DMSRC_Apparel_PackScanner.comps.CompApparelVerbOwner_Charged.chargeNoun>charge</DMSRC_Apparel_PackScanner.comps.CompApparelVerbOwner_Charged.chargeNoun>
+  <DMSRC_Apparel_PackScanner.comps.CompApparelVerbOwner_Charged.chargeNoun>сканнер</DMSRC_Apparel_PackScanner.comps.CompApparelVerbOwner_Charged.chargeNoun>
   <!-- EN: deploy scanner -->
-  <DMSRC_Apparel_PackScanner.verbs.deploy_scanner.label>deploy scanner</DMSRC_Apparel_PackScanner.verbs.deploy_scanner.label>
+  <DMSRC_Apparel_PackScanner.verbs.deploy_scanner.label>разместить сканнер</DMSRC_Apparel_PackScanner.verbs.deploy_scanner.label>
   
   <!-- EN: scanner pack capsule -->
-  <DMSRC_Grenade_ScannerPack.label>scanner pack capsule</DMSRC_Grenade_ScannerPack.label>
+  <DMSRC_Grenade_ScannerPack.label>сканнер</DMSRC_Grenade_ScannerPack.label>
   
 </LanguageData>

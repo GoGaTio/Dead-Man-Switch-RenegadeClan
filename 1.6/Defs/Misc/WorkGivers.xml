@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkGiverDef>
+    <defName>DMSRC_HaulToWetwareProducer</defName>
+    <label>carry to artificial pregnancy synthesizer</label>
+    <giverClass>DMSRC.WorkGiver_HaulToWetwareProducer</giverClass>
+    <workType>Hauling</workType>
+    <verb>fill</verb>
+    <gerund>filling</gerund>
+    <directOrderable>true</directOrderable>
+    <priorityInType>109</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+</Defs>

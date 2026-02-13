@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_WetwareProducer</defName>
+    <label>MoAP synthesizer</label>
+    <description>A vat filled with special fluid which can transfer sunstances from storage to creature inside. Mechanisms of the vat will initiate artificial pregnancy and gestate mecha-organical component.\n\nVat must be fed with a constant supply of nutrition to provide the feedstock for gestation.\n\nGestation takes 9 days with normal fertility female, but may last up to 18 days if creature is too old or has fertility-affecting health conditions.\n\nThis tech is considered as forbidden by colonial fleet.</description>
+    <thingClass>DMSRC.Building_WetwareProducer</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <uiIconPath>Things/Building/DMSRC_WetwareProducer_Icon</uiIconPath>
+    <uiIconScale>1.45</uiIconScale>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_WetwareProducer_Base</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(3, 0.3, 3)</volume>
+      </shadowData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <size>(3,3)</size>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>20000</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Tungsteel>100</Tungsteel>
+      <Artifuscle>100</Artifuscle>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentStamped>5</ComponentStamped>
+      <Neurocomputer>1</Neurocomputer>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <blockWind>false</blockWind>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <designationCategory>DMS_Category</designationCategory>
+    <uiOrder>3200</uiOrder>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <inspectorTabs>
+      <li>ITab_BiosculpterNutritionStorage</li>
+    </inspectorTabs>
+    <researchPrerequisites>
+      <li>DMS_Hybrid</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>DMSRC.PlaceWorker_WetwareProducer</li>
+    </placeWorkers>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <haulToContainerDuration>120</haulToContainerDuration>
+      <workTableRoomRole>Laboratory</workTableRoomRole>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+          <specialFiltersToDisallow>
+            <li>AllowPlantFood</li>
+          </specialFiltersToDisallow>
+          <disallowedThingDefs>
+            <li>HemogenPack</li>
+          </disallowedThingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+          <disallowedCategories>
+            <li>EggsFertilized</li>
+            <li>FoodMeals</li>
+          </disallowedCategories>
+          <disallowedThingDefs>
+            <li>InsectJelly</li>
+            <li>Chocolate</li>
+            <li>Pemmican</li>
+          </disallowedThingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+        <idlePowerDraw>50</idlePowerDraw>
+      </li>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>2.22222</fuelConsumptionRate>
+        <fuelCapacity>100</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </fuelFilter>
+        <externalTicking>true</externalTicking>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>100</initialConfigurableTargetFuelLevel>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+    </comps>
+    <modExtensions>
+      <li Class="DMSRC.ProducerExtension">
+        <options>
+          <Neurocomputer>1</Neurocomputer>
+          <Artifuscle>60</Artifuscle>
+          <DMS_SyntheticArm>1</DMS_SyntheticArm>
+          <DMS_SyntheticLeg>1</DMS_SyntheticLeg>
+        </options>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_CompactGenerator</defName>
+    <label>compact generator</label>
+    <description>Produces power by consuming chemfuel. Must be periodically refueled by hand.</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_CompactGenerator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(2,1,2)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.9</fillPercent>
+    <pathCost>50</pathCost>
+    <rotatable>false</rotatable>
+    <blockWind>false</blockWind>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>50</Mass>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(2,2)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <costList>
+      <Steel>100</Steel>
+      <Tungsteel>100</Tungsteel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentStamped>5</ComponentStamped>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-2000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <soundAmbientProducingPower>ChemfuelFiredGenerator_Ambience</soundAmbientProducingPower>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>4</fuelConsumptionRate>
+        <fuelCapacity>100</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>100</initialConfigurableTargetFuelLevel>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(80,112,180,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>1</heatPerSecond>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>0</explosiveRadius>
+        <explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+        <preExplosionSpawnChance>1</preExplosionSpawnChance>
+        <wickTicks>70~150</wickTicks>
+      </li>
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <constructEffect>ConstructMetal</constructEffect>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+</Defs>

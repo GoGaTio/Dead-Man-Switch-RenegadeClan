@@ -2,29 +2,26 @@
 <LanguageData>
   
   <!-- EN: ancient broadcaster -->
-  <DMSRC_AncientBroadcaster.label>ancient broadcaster</DMSRC_AncientBroadcaster.label>
+  <DMSRC_AncientBroadcaster.label>древний передатчик</DMSRC_AncientBroadcaster.label>
   <!-- EN: A high-power communication relay to be used in the colony for emergency reinforcements. The identification code of this rescue protocol has long been abandoned, so only those mechanized units that are feral will take the bait. -->
-  <DMSRC_AncientBroadcaster.description>A high-power communication relay to be used in the colony for emergency reinforcements. The identification code of this rescue protocol has long been abandoned, so only those mechanized units that are feral will take the bait.</DMSRC_AncientBroadcaster.description>
+  <DMSRC_AncientBroadcaster.description>Прибор неизвестного назначения. При активации взывает к забытому командному автоматроиду.</DMSRC_AncientBroadcaster.description>
   <!-- EN: Attract malevolence threat -->
-  <DMSRC_AncientBroadcaster.comps.CompUsable.useLabel>Attract malevolence threat</DMSRC_AncientBroadcaster.comps.CompUsable.useLabel>
+  <DMSRC_AncientBroadcaster.comps.CompUsable.useLabel>Привлечь Злорадство</DMSRC_AncientBroadcaster.comps.CompUsable.useLabel>
   
   <!-- EN: container transponder -->
-  <DMSRC_ContainerTransponder.label>cargo transponder</DMSRC_ContainerTransponder.label>
+  <DMSRC_ContainerTransponder.label>ответчик контейнера</DMSRC_ContainerTransponder.label>
   <!-- EN: A transponder that designated location of security container even over a great distance. -->
-  <DMSRC_ContainerTransponder.description>A transponder that designated location of security container even over a great distance.</DMSRC_ContainerTransponder.description>
+  <DMSRC_ContainerTransponder.description>Ответчик, указывающий на локацию защищённого контейнера.</DMSRC_ContainerTransponder.description>
   <!-- EN: Decrypt transponder -->
-  <DMSRC_ContainerTransponder.comps.CompUseableDatacore.useLabel>Decrypt transponder</DMSRC_ContainerTransponder.comps.CompUseableDatacore.useLabel>
+  <DMSRC_ContainerTransponder.comps.CompUseableDatacore.useLabel>Расшифровать ответчик</DMSRC_ContainerTransponder.comps.CompUseableDatacore.useLabel>
   <!-- EN: Can be decrypted at a research bench.\nSelect a colonist and right-click this to decrypt it. -->
-  <DMSRC_ContainerTransponder.comps.CompInspectString.inspectString>Can be decrypted at a research bench.
-Select a colonist and right-click this to decrypt it.</DMSRC_ContainerTransponder.comps.CompInspectString.inspectString>
+  <DMSRC_ContainerTransponder.comps.CompInspectString.inspectString>Может быть расшифрован на столе для исследований.</DMSRC_ContainerTransponder.comps.CompInspectString.inspectString>
   
   <!-- EN: timed bomb -->
-  <DMSRC_TimedBomb.label>timed bomb</DMSRC_TimedBomb.label>
-  <!-- EN: An explosive device with adjustable timer. Causes destruction of anything in a small area if damaged or timer runs out.\n\nCan be hacked to prevent detonation. -->
-  <DMSRC_TimedBomb.description>An explosive device with adjustable timer. Causes destruction of anything in a small area if damaged or timer runs out.
-
-Can be hacked to prevent detonation.</DMSRC_TimedBomb.description>
+  <DMSRC_TimedBomb.label>бомба замедленного действия</DMSRC_TimedBomb.label>
+  <!-- EN: An explosive device with adjustable timer. Causes destruction of anything in a small area if damaged or timer runs out.\n\nCan be defused to stop timer and prevent detonation. -->
+  <DMSRC_TimedBomb.description>Взрывное устройство с настраиваемым таймером. Создает мощнейший взрыв в небольшой области вокруг себя, если повреждена или таймер дошел до нуля.\n\nМожет быть обезврежена, чтобы остановить таймер и предотвратить взрыв.</DMSRC_TimedBomb.description>
   <!-- EN: Plant {0_label} -->
-  <DMSRC_TimedBomb.comps.CompUsableAllowTargetMechs.useLabel>Plant {0_label}</DMSRC_TimedBomb.comps.CompUsableAllowTargetMechs.useLabel>
+  <DMSRC_TimedBomb.comps.CompUsableAllowTargetMechs.useLabel>Установить бомбу замедленного действия</DMSRC_TimedBomb.comps.CompUsableAllowTargetMechs.useLabel>
   
 </LanguageData>

@@ -201,7 +201,16 @@ namespace DMSRC
 
 		protected override bool TestRunInt(Slate slate)
 		{
-			if (!Find.Storyteller.difficulty.allowViolentQuests || (giver == GiverType.Renegades && !GameComponent_Renegades.Find.contacted))
+			GameComponent_Renegades comp = GameComponent_Renegades.Find;
+			if (!Find.Storyteller.difficulty.allowViolentQuests || (giver == GiverType.Renegades && !comp.contacted))
+			{
+				return false;
+			}
+			if(giver == GiverType.Renegades && comp.RenegadesFaction.HostileTo(Faction.OfPlayer))
+			{
+				return false;
+			}
+			else if (giver == GiverType.ColonialFleet && comp.DMSFaction.HostileTo(Faction.OfPlayer))
 			{
 				return false;
 			}

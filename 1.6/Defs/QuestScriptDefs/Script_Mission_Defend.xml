@@ -33,7 +33,7 @@
       <mission>
         <missionClass>DMSRC.QuestPart_Mission_Defend</missionClass>
         <targetDef>DMSRC_LargeBroadcastAntenna</targetDef>
-        <wavesCooldown>1000~2000</wavesCooldown>
+        <wavesCooldown>5000</wavesCooldown>
         <wavesFromOppositeFaction>true</wavesFromOppositeFaction>
       </mission>
     </root>

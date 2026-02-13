@@ -5,7 +5,6 @@
     <xpath>Defs/Fortified.HeavyEquippableDef[defName="AverageHumanCanUse" or defName="LightAutomatroid" or defName="StandardAutomatroid" or defName="BulkyAutomatroid"]/EquippableWithApparel</xpath>
     <value>
       <li>DMSRC_Apparel_AssaultArmor</li>
-      <li>DMSRC_Apparel_JumperArmor</li>
     </value>
   </Operation>
 

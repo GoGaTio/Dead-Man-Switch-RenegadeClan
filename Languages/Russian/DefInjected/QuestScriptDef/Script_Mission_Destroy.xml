@@ -5,7 +5,7 @@
     <li>questDescription->Renegades found Colonial fleet broadcast tower nearby.\nIt creates control area, which allows to perform fleet operations, and therefore should be destroyed.</li>
   -->
   <DMSRC_DestroyBroadcastPoint.questDescriptionRules.rulesStrings>
-    <li>questDescription->Renegades found Colonial fleet broadcast tower nearby.\nIt creates control area, which allows to perform fleet operations, and therefore should be destroyed.</li>
+    <li>questDescription->Отступники обнаружили Широкопередающую антенну колониального флота поблизости.\nОна создаёт глобальную зону контроля, позволяющую колониальному флоту производить свои механизированные операции, и поэтому должна быть уничтожена.</li>
   </DMSRC_DestroyBroadcastPoint.questDescriptionRules.rulesStrings>
   <!-- EN:
     <li>questName->[destroy] [antenna]</li>
@@ -19,20 +19,20 @@
   -->
   <DMSRC_DestroyBroadcastPoint.questNameRules.rulesStrings>
     <li>questName->[destroy] [antenna]</li>
-    <li>destroy->Destroy</li>
-    <li>destroy->Sabotage Of</li>
-    <li>destroy->Attack On</li>
-    <li>antenna->Signal Tower</li>
-    <li>antenna->Radar</li>
-    <li>antenna->Broadcaster</li>
-    <li>antenna->Antenna</li>
+    <li>destroy->Уничтожение</li>
+    <li>destroy->Диверсия</li>
+    <li>destroy->Атака</li>
+    <li>antenna->Сигнальной Вышки</li>
+    <li>antenna->Радара</li>
+    <li>antenna->Передатчика</li>
+    <li>antenna->Антены</li>
   </DMSRC_DestroyBroadcastPoint.questNameRules.rulesStrings>
   
   <!-- EN:
     <li>questDescription->Renegades found Colonial fleet logistic center nearby.\nIt contains warheads, which should be destroyed.\nThis mission will require timed bomb to perform detonation.\nYou will be able to loot facility after it would be cleared.</li>
   -->
   <DMSRC_DestroyLogisticCenter.questDescriptionRules.rulesStrings>
-    <li>questDescription->Renegades found Colonial fleet logistic center nearby.\nIt contains warheads, which should be destroyed.\nThis mission will require timed bomb to perform detonation.\nYou will be able to loot facility after it would be cleared.</li>
+    <li>questDescription->Отступники обнаружили логистический центр колониального флота поблизости.\nОна содержит боеголовки, которые должны быть уничтожены.\nЭта миссия потребует бомбы с таймером, чтобы осуществить подрыв боеголовок.\nВы сможете забрать себе все ценные вещи после зачистки комплекса.</li>
   </DMSRC_DestroyLogisticCenter.questDescriptionRules.rulesStrings>
   <!-- EN:
     <li>questName->[destroy] [logistic] [center]</li>
@@ -47,16 +47,15 @@
     <li>logistic->Nuclear</li>
   -->
   <DMSRC_DestroyLogisticCenter.questNameRules.rulesStrings>
-    <li>questName->[destroy] [logistic] [center]</li>
-    <li>destroy->Destroy</li>
-    <li>destroy->Sabotage Of</li>
-    <li>destroy->Attack On</li>
-    <li>center->Center</li>
-    <li>center->Facility</li>
-    <li>logistic->Logistic</li>
-    <li>logistic->Warehouse</li>
-    <li>logistic->Underground</li>
-    <li>logistic->Nuclear</li>
+<li>questName->[destroy] [center] [logistic]</li>
+    <li>destroy->Уничтожение</li>
+    <li>destroy->Диверсия</li>
+    <li>destroy->Атака</li>
+    <li>center->Центра</li>
+    <li>center->Базы</li>
+    <li>logistic->Логистики</li>
+    <li>logistic->Хранения</li>
+    <li>logistic->Складирования</li>
   </DMSRC_DestroyLogisticCenter.questNameRules.rulesStrings>
   
 </LanguageData>

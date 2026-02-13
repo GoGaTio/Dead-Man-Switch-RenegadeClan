@@ -9,7 +9,7 @@
   <!-- EN: beam focusing -->
   <DMSRC_BeamFocusing.label>фокусировка лучей</DMSRC_BeamFocusing.label>
   <!-- EN: Produce beam weaponry and defence equipment using Unocttrium emitter elements. -->
-  <DMSRC_BeamFocusing.description>Производите лучевое оружие и защитные устройства используя Уносктриумовые излучательные элементы.</DMSRC_BeamFocusing.description>
+  <DMSRC_BeamFocusing.description>Производите лучевое оружие и защитные устройства используя Унокттриумовые излучательные элементы.</DMSRC_BeamFocusing.description>
   
   <!-- EN: FSR munition -->
   <DMSRC_FSRMunitions.label>FSR аммуниция</DMSRC_FSRMunitions.label>
@@ -52,7 +52,7 @@
   </DMSRC_Overseer.generalRules.rulesStrings>
   
   <!-- EN: Wide broadcast -->
-  <DMSRC_WideBroadcast.label>Широкая передача</DMSRC_WideBroadcast.label>
+  <DMSRC_WideBroadcast.label>Широковолновая передача</DMSRC_WideBroadcast.label>
   <!-- EN: Build broadcast antennas to control mechs over large distances. -->
   <DMSRC_WideBroadcast.description>Постройте антенны широкой передачи, для контроля механоидов на больших расстояниях.</DMSRC_WideBroadcast.description>
   

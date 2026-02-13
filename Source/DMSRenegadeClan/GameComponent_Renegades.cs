@@ -176,6 +176,7 @@ namespace DMSRC
 					if(ofRenegades == null)
 					{
 						FactionGenerator.CreateFactionAndAddToManager(RCDefOf.DMSRC_RenegadeClan);
+						ofRenegades = Verse.Find.FactionManager.FirstFactionOfDef(RCDefOf.DMSRC_RenegadeClan);
 						if (ModsConfig.IdeologyActive && ofRenegades?.ideos?.PrimaryIdeo != null)
 						{
 							if (ofRenegades.ideos.PrimaryIdeo.PreferredXenotypes.NullOrEmpty())
@@ -213,6 +214,24 @@ namespace DMSRC
 			
 		}
 
+		public void ForbiddenTechMessage()
+		{
+			if (DMSFaction?.defeated != false || DMSFaction.HostileTo(Faction.OfPlayerSilentFail))
+			{
+				return;
+			}
+			Messages.Message("DMSRC_ForbiddenTech".Translate(), MessageTypeDefOf.NegativeEvent);
+		}
+
+		public void UsedForbiddenTech()
+		{
+			if (DMSFaction?.defeated != false || DMSFaction.HostileTo(Faction.OfPlayerSilentFail))
+			{
+				return;
+			}
+			Faction.OfPlayerSilentFail?.TryAffectGoodwillWith(DMSFaction, -50, canSendMessage: true, canSendHostilityLetter: true, RCDefOf.DMSRC_UsedForbiddenTech);
+		}
+
 		public override void GameComponentTick()
 		{
 			if(Verse.Find.TickManager.TicksGame % 2500 != 0)
@@ -234,13 +253,11 @@ namespace DMSRC
 					PlayerRelation = FactionRelationKind.Hostile;
 					playerGoodwill = -200;
 				}
-				if(hoursTillRefresh > 0)
+				hoursTillRefresh--;
+				if (hoursTillRefresh < 0)
 				{
-					hoursTillRefresh--;
-					if(hoursTillRefresh <= 0)
-					{
-						GenerateThings();
-					}
+					hoursTillRefresh = new IntRange(240, 480).RandomInRange;
+					GenerateThings();
 				}
 			}
 			for(int i = 0; i < requests.Count; i++)

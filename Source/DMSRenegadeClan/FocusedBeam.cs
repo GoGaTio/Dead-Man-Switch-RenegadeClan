@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
-using System.Reflection.Emit;
+using Fortified;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.IO;
@@ -12,7 +7,22 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using RimWorld.SketchGen;
 using RimWorld.Utility;
-using HarmonyLib;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Text;
+using System.Threading.Tasks;
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Jobs;
+using UnityEngine;
+using UnityEngine.Jobs;
+using UnityEngine.Profiling;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -21,16 +31,8 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
-using UnityEngine;
-using System.Diagnostics;
-using Unity.Burst;
-using Unity.Collections;
-using Unity.Jobs;
-using UnityEngine.Jobs;
-using UnityEngine.Profiling;
-using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
-using Fortified;
+using static RimWorld.PsychicRitualRoleDef;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DMSRC
 {
@@ -221,6 +223,8 @@ namespace DMSRC
 			mote = MoteMaker.MakeInteractionOverlay(Comp.Props.beamMoteDef, caster, new TargetInfo(base.InterpolatedPosition.ToIntVec3(), caster.Map));
 		}
 
+		private static readonly FieldInfo equipmentOffsetData = AccessTools.Field(AccessTools.TypeByName("Exosuit.ApparelRenderOffsets"), "equipmentOffsetData");
+
 		private ShootLine resultingLine;
 		public override void BurstingTick()
 		{
@@ -236,8 +240,7 @@ namespace DMSRC
 			Vector3 vector2 = InterpolatedPosition - root.ToVector3Shifted();
 			float num = vector2.MagnitudeHorizontal();
 			Vector3 normalized = vector2.Yto0().normalized;
-			IntVec3 intVec2 = GenSight.LastPointOnLineOfSight(resultingLine.Source, intVec, (IntVec3 c) => root.DistanceTo(c) <= verbProps.minRange || (c.InBounds(caster.Map) && c.WalkableByAny(caster.Map) && !c.Impassable(caster.Map) && c.CanBeSeenOverFast(caster.Map)), skipFirstCell: true);
-			if (intVec2.IsValid)
+			if (TryGetHitCell(intVec, out var intVec2))
 			{
 				num -= (intVec - intVec2).LengthHorizontal;
 				vector = root.ToVector3Shifted() + normalized * num;
@@ -247,10 +250,29 @@ namespace DMSRC
 			Vector3 offsetB = normalized * verbProps.beamStartOffset;
 			if (CasterIsPawn)
 			{
-				if(VehicleWeapon != null && EquipmentSource == CasterPawn.equipment.Primary)
+				if(EquipmentSource == CasterPawn.equipment.Primary)
 				{
-					offsetA = VehicleWeapon.Props.drawData.OffsetForRot(CasterPawn.Rotation);
-					//offsetB = Vector3Utility.FromAngleFlat(VehicleWeapon.TargetAngle).normalized;
+					if (VehicleWeapon != null)
+					{
+						offsetA = VehicleWeapon.Props.drawData.OffsetForRot(CasterPawn.Rotation);
+						//offsetB = Vector3Utility.FromAngleFlat(VehicleWeapon.TargetAngle).normalized;
+					}
+					else if (CasterPawn.apparel != null)
+					{
+						Apparel core = CasterPawn.apparel.WornApparel.FirstOrDefault((a)=>a.def.thingClass == AccessTools.TypeByName("Exosuit.Exosuit_Core"));
+						if(core != null)
+						{
+							DefModExtension ext = core.def.modExtensions.FirstOrDefault((x) => x.GetType().Name == "ApparelRenderOffsets");
+							if (ext != null)
+							{
+								DrawData data = equipmentOffsetData.GetValue(ext) as DrawData;
+								if(data != null)
+								{
+									offsetA = data.OffsetForRot(CasterPawn.Rotation);
+								}
+							}
+						}
+					}
 				}
 				else
 				{
@@ -281,6 +303,8 @@ namespace DMSRC
 					explosionRange = 0.1f;
 					damage *= 2;
 				}
+				float damageMultiplier = EquipmentSource?.GetStatValue(StatDefOf.RangedWeapon_DamageMultiplier) ?? 1f;
+				damage = Mathf.RoundToInt((float)damage * damageMultiplier);
 				GenExplosion.DoExplosion(cell, Caster.MapHeld, explosionRange, Comp.Props.damageDef, Caster, damage, Comp.Props.damageDef.defaultArmorPenetration, damageFalloff: true, screenShakeFactor: 0f, weapon: this.EquipmentSource?.def, ignoredThings: new List<Thing>() { Caster }, doSoundEffects: false, intendedTarget: thingTarget);
 			}
 		}

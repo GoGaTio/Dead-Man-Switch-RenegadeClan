@@ -158,11 +158,15 @@ namespace DMSRC
         public bool MechanitorActive => dummyPawn != null && Parent.IsColonyMech;
 
         public OverseerMech Parent => parent as OverseerMech;
+
         public int CurrentBandwidth
         {
             get
             {
-                return Props.bandwidth;
+                int num = Props.bandwidth;
+                num += (int)dummyPawn.GetStatValue(StatDefOf.MechBandwidth);
+                num -= 6;
+				return num;
             }
         }
 
@@ -213,7 +217,8 @@ namespace DMSRC
         {
             if (dummyPawn is null)
             {
-                dummyPawn = PawnGenerator.GeneratePawn(RCDefOf.DMSRC_DummyMechanitor, Faction.OfAncients);
+                PawnGenerationRequest req = new PawnGenerationRequest(RCDefOf.DMSRC_DummyMechanitor, Faction.OfAncients, forcedXenotype: XenotypeDefOf.Baseliner, forceGenerateNewPawn: true);
+                dummyPawn = PawnGenerator.GeneratePawn(req);
                 dummyPawn.SetFactionDirect(parent.Faction);
                 dummyPawn.Name = new NameSingle(parent.LabelCap);
                 for (int num = dummyPawn.health.hediffSet.hediffs.Count - 1; num >= 0; num--)

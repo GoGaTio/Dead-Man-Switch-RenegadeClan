@@ -7,8 +7,8 @@
   <DMSRC_Mission_DefendLabel>Defend {0}</DMSRC_Mission_DefendLabel>
   <DMSRC_Mission_Destroyed>{0} destroyed. {1} left.</DMSRC_Mission_Destroyed>
   <DMSRC_Mission_Killed>{0} killed. {2} {1} left.</DMSRC_Mission_Killed>
-  <DMSRC_MessageLadarTriggered>Perimeter scanner found invisible object.</DMSRC_MessageLadarTriggered>
-  <DMSRC_LadarDetectedInvisible>Invisible object nearby.</DMSRC_LadarDetectedInvisible>
+  <DMSRC_MessageLadarTriggered>A perimeter scanner has detected an invisible creature.</DMSRC_MessageLadarTriggered>
+  <DMSRC_LadarDetectedInvisible>Invisible object nearby</DMSRC_LadarDetectedInvisible>
   <DMSRC_DetonationCountdown>Will explode in {0}</DMSRC_DetonationCountdown>
   <DMSRC_DetonationInstigator>Planted by {0}</DMSRC_DetonationInstigator>
   <DMSRC_DecreaseTimer>Decrease timer({0} hour)</DMSRC_DecreaseTimer>
@@ -27,4 +27,22 @@
   <DMSRC_RenegadesTradeLetter_Label>Purchases arrived</DMSRC_RenegadesTradeLetter_Label>
   <DMSRC_RenegadesTradeLetter_Text>Renegades delivered your request.</DMSRC_RenegadesTradeLetter_Text>
   <DMSRC_NoThingsSelected>No things selected</DMSRC_NoThingsSelected>
+
+  <DMSRC_BeamDefenceLabel>Beam defence</DMSRC_BeamDefenceLabel>
+  <DMSRC_BeamDefenceDesc>How much projectiles can be intercepted.\n\nInterception is not guaranteed.</DMSRC_BeamDefenceDesc>
+  
+  <DMSRC_ProducerResultDesc>A resource which will be produced by artificial pregnancy.\n\nCurrent: {0}</DMSRC_ProducerResultDesc>
+  <DMSRC_InsertPersonProducerDesc>Insert a person into the {0}.</DMSRC_InsertPersonProducerDesc>
+  <DMSRC_NotAFemale>{PAWN} is not a female</DMSRC_NotAFemale>
+  <DMSRC_MessagePregnancyDisabled>{PAWN_labelShort}'s artificial pregnancy stopped, since {BUILDING_labelShort} is not working.</DMSRC_MessagePregnancyDisabled>
+  <DMSRC_MessagePregnancyReenabled>{PAWN_labelShort}'s artificial pregnancy continues, since {BUILDING_labelShort} is working again.</DMSRC_MessagePregnancyReenabled>
+  <DMSRC_WetwareProducedLabel>{0} produced</DMSRC_WetwareProducedLabel>
+  <DMSRC_WetwareProducedDesc>{1_labelShort}'s artificial pregnancy ended, producing {0}.</DMSRC_WetwareProducedDesc>
+  
+  <DMSRC_ForbiddenTech>This technology is forbidden by Colonial fleet, usage of it will make them hostile.</DMSRC_ForbiddenTech>
+
+  <DMSRC_RecalculatingTiles>Recalculating tiles</DMSRC_RecalculatingTiles>
+  <DMSRC_ErrorWhileRecalculatingTilesTitle>Error while recalculating tiles</DMSRC_ErrorWhileRecalculatingTilesTitle>
+  <DMSRC_ErrorWhileRecalculatingTiles>Broadcast towers will not work. Report this issue to developer</DMSRC_ErrorWhileRecalculatingTiles>
+  
 </LanguageData>

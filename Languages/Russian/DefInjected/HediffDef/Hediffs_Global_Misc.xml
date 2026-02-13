@@ -34,11 +34,24 @@
   <DMSRC_BeamIllness.stages.serious.label>серьёзная</DMSRC_BeamIllness.stages.serious.label>
   <!-- EN: extreme -->
   <DMSRC_BeamIllness.stages.extreme.label>экстремальная</DMSRC_BeamIllness.stages.extreme.label>
+
+  <!-- EN: artifical pregnancy -->
+  <DMSRC_ArtificalPregnancy.label>искусственная беременность</DMSRC_ArtificalPregnancy.label>
+  <!-- EN: A mecha-organic component growing inside a woman. Artificial pregnancy cannot proceed outside special vats. -->
+  <DMSRC_ArtificalPregnancy.description>Внутри этой женщины растёт механо-органический компонент. Этот процесс не может протекать вне специальных сосудов.</DMSRC_ArtificalPregnancy.description>
+  <!-- EN: artifical pregnancy -->
+  <DMSRC_ArtificalPregnancy.labelNoun>искусственная беременность</DMSRC_ArtificalPregnancy.labelNoun>
+  <!-- EN: minor -->
+  <DMSRC_ArtificalPregnancy.stages.first_trimester.label>первый триместр</DMSRC_ArtificalPregnancy.stages.first_trimester.label>
+  <!-- EN: moderate -->
+    <DMSRC_ArtificalPregnancy.stages.second_trimester.label>второй триместр</DMSRC_ArtificalPregnancy.stages.second_trimester.label>
+  <!-- EN: serious -->
+  <DMSRC_ArtificalPregnancy.stages.third_trimester.label>третий триместр</DMSRC_ArtificalPregnancy.stages.third_trimester.label>
   
   <!-- EN: neurocontrol -->
   <DMSRC_NeuroControl.label>нейроконтроль</DMSRC_NeuroControl.label>
   <!-- EN: This mechanoid is in share control by neuroimplant. -->
-  <DMSRC_NeuroControl.description>This mechanoid is in share control by neuroimplant.</DMSRC_NeuroControl.description>
+  <DMSRC_NeuroControl.description>Этот механоид частично контролируется нейроимплантом.</DMSRC_NeuroControl.description>
   
   <!-- EN: processor helmet -->
   <DMSRC_ProcessorHelmet.label>обрабатывающий шлем</DMSRC_ProcessorHelmet.label>

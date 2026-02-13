@@ -72,9 +72,12 @@ namespace DMSRC
     {
         public new CompProperties_PerimeterScanner Props => (CompProperties_PerimeterScanner)props;
 
+		private static float lastNotified = -99999f;
+
 		private bool triggered;
 
 		private Effecter detectionEffecter;
+
 
 		private CompPowerTrader powerTraderComp;
 
@@ -136,7 +139,15 @@ namespace DMSRC
 				UpdateLit(parent.Map);
 				if (triggered)
 				{
-					Messages.Message("DMSRC_MessageLadarTriggered".Translate(), parent, MessageTypeDefOf.ThreatSmall, historical: false);
+					if (RealTime.LastRealTime > lastNotified + 60f)
+					{
+						Find.LetterStack.ReceiveLetter("DMSRC_LadarDetectedInvisible".Translate(), "DMSRC_MessageLadarTriggered".Translate(), LetterDefOf.ThreatBig, parent, null, null, null, null, 6);
+					}
+					else
+					{
+						Messages.Message("DMSRC_MessageLadarTriggered".Translate(), parent, MessageTypeDefOf.ThreatSmall, historical: false);
+					}
+					lastNotified = RealTime.LastRealTime;
 				}
 			}
 			TickDetectionEffect();

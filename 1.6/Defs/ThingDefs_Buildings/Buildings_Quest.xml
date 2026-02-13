@@ -4,7 +4,7 @@
   <ThingDef>
     <defName>DMSRC_InactiveMech</defName>
     <label>inactive automatroid</label>
-    <description>A chunk of a spacecraft. It seems to have been torn off either by uncontrolled re-entry forces or some kind of weapon.\n\nHaving landed not long ago, it still contains useful resources which you can acquire by deconstructing it.</description>
+    <description>Inactive automatroid.</description>
     <category>Building</category>
     <thingClass>DMSRC.InactiveMech</thingClass>
     <altitudeLayer>Pawn</altitudeLayer>
@@ -30,17 +30,12 @@
     <filthLeaving>Filth_RubbleBuilding</filthLeaving>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <drawerType>RealtimeOnly</drawerType>
-    <comps>
-      <li Class="CompProperties_InspectString">
-        <inspectString>Deconstruct for valuable resources.</inspectString>
-      </li>
-    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_WarheadPlatform</defName>
     <label>warhead platform</label>
-    <description>Ultra-large computing core for large-scale command of mechs, It is a technology introduced by the colonial fleet while passing through a Glittering World.</description>
+    <description>Special platform, designed to contain high-power warhead.</description>
     <graphicData>
       <texPath>Things/Building/DMSRC_WarheadPlatform_Empty</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -91,7 +86,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_PowerTransmitter</defName>
     <label>power network node</label>
-    <description>todo</description>
+    <description>Node of underground power network.</description>
     <graphicData>
       <texPath>Things/Building/DMSRC_PowerTransmitter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -199,11 +194,6 @@
         <li>DMSRC_Quest</li>
       </buildingTags>
     </building>
-    <researchPrerequisites MayRequire="Ludeon.RimWorld.Royalty">
-      <li>DMSRC_WideBroadcast</li>
-    </researchPrerequisites>
-    <designationCategory MayRequire="Ludeon.RimWorld.Royalty">DMS_Category</designationCategory>
-    <uiOrder MayRequire="Ludeon.RimWorld.Royalty">4900</uiOrder>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
       <li>PlaceWorker_InvalidOverSubstructure</li>
@@ -218,7 +208,8 @@
       </li>
       <!--CompProperties_BroadcastAntenna should go after CompProperties_Power-->
       <li Class="DMSRC.CompProperties_BroadcastAntenna">
-        <worldRange>10</worldRange>
+        <worldRange>25</worldRange>
+        <worldRangeOtherLayer>15</worldRangeOtherLayer>
       </li>
     </comps>
   </ThingDef>

@@ -338,4 +338,31 @@
     </stages>
   </HediffDef>
 
+  <HediffDef>
+    <defName>DMSRC_ArtificalPregnancy</defName>
+    <label>artifical pregnancy</label>
+    <labelNoun>artifical pregnancy</labelNoun>
+    <description>A mecha-organic component growing inside a woman. Artificial pregnancy cannot proceed outside special vats.</description>
+    <hediffClass>DMSRC.Hediff_WetwarePregnancy</hediffClass>
+    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+    <isBad>false</isBad>
+    <preventsPregnancy>true</preventsPregnancy>
+    <stages>
+      <li>
+        <label>first trimester</label>
+        <hungerRateFactorOffset>1</hungerRateFactorOffset>
+      </li>
+      <li>
+        <label>second trimester</label>
+        <minSeverity>0.333</minSeverity>
+        <hungerRateFactorOffset>3</hungerRateFactorOffset>
+      </li>
+      <li>
+        <label>third trimester</label>
+        <minSeverity>0.666</minSeverity>
+        <hungerRateFactorOffset>5</hungerRateFactorOffset>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>

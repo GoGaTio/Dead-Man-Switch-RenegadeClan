@@ -2,19 +2,19 @@
 <LanguageData>
   
   <!-- EN: HAP armor -->
-  <DMSRC_Apparel_AssaultArmor.label>HAP armor</DMSRC_Apparel_AssaultArmor.label>
+  <DMSRC_Apparel_AssaultArmor.label>HAP броня</DMSRC_Apparel_AssaultArmor.label>
   <!-- EN: A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance. -->
-  <DMSRC_Apparel_AssaultArmor.description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance.</DMSRC_Apparel_AssaultArmor.description>
+  <DMSRC_Apparel_AssaultArmor.description>Продинутая штурмовая броня призванная защитить носителя от пуль и осколков./n/nДает некоторую устойчивость к вакууму.</DMSRC_Apparel_AssaultArmor.description>
   
   <!-- EN: HAPJ armor -->
-  <DMSRC_Apparel_JumperArmor.label>HAPJ armor</DMSRC_Apparel_JumperArmor.label>
-  <!-- EN: A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance. -->
-  <DMSRC_Apparel_JumperArmor.description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance.</DMSRC_Apparel_JumperArmor.description>
+  <DMSRC_Apparel_JumperArmor.label>HAPJ броня</DMSRC_Apparel_JumperArmor.label>
+  <!-- EN: A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations. Has built-in jump launcher./n/nAlso provides vacuum exposure resistance. -->
+  <DMSRC_Apparel_JumperArmor.description>Продинутая штурмовая броня призванная защитить носителя от пуль и осколков. Имеет встроенный прыжковый ранец./n/nДает некоторую устойчивость к вакууму.</DMSRC_Apparel_JumperArmor.description>
   <!-- EN: jump -->
-  <DMSRC_Apparel_JumperArmor.comps.CompApparelReloadable.chargeNoun>jump</DMSRC_Apparel_JumperArmor.comps.CompApparelReloadable.chargeNoun>
+  <DMSRC_Apparel_JumperArmor.comps.CompApparelReloadable.chargeNoun>прыжок</DMSRC_Apparel_JumperArmor.comps.CompApparelReloadable.chargeNoun>
   <!-- EN: on cooldown -->
-  <DMSRC_Apparel_JumperArmor.comps.CompApparelReloadable.cooldownGerund>on cooldown</DMSRC_Apparel_JumperArmor.comps.CompApparelReloadable.cooldownGerund>
+  <DMSRC_Apparel_JumperArmor.comps.CompApparelReloadable.cooldownGerund>перезарядка</DMSRC_Apparel_JumperArmor.comps.CompApparelReloadable.cooldownGerund>
   <!-- EN: jump -->
-  <DMSRC_Apparel_JumperArmor.verbs.jump.label>jump</DMSRC_Apparel_JumperArmor.verbs.jump.label>
+  <DMSRC_Apparel_JumperArmor.verbs.jump.label>прыжок</DMSRC_Apparel_JumperArmor.verbs.jump.label>
   
 </LanguageData>

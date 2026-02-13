@@ -61,7 +61,9 @@ namespace DMSRC
 {
 	public class CompProperties_BroadcastAntenna : CompProperties
 	{
-		public int worldRange;
+		public float worldRange;
+
+		public float worldRangeOtherLayer;
 
 		public CompProperties_BroadcastAntenna()
 		{
@@ -136,18 +138,43 @@ namespace DMSRC
 
 		public void RecalculateTiles()
 		{
-			PlanetTile tile = parent.Tile;
-			affectedTiles.Add(tile);
-			WorldGrid grid = Find.WorldGrid;
-			float distance = (float)Props.worldRange;
-			float distanceApprox = distance * 1.5f;
-			foreach (Tile t in tile.Layer.Tiles)
+			LongEventHandler.QueueLongEvent(delegate
 			{
-				if (!affectedTiles.Contains(t.tile) && t.PrimaryBiome?.impassable == false && Find.WorldGrid.ApproxDistanceInTiles(tile, t.tile) <= distanceApprox && Find.WorldGrid.TraversalDistanceBetween(tile, t.tile, passImpassable: true, int.MaxValue, canTraverseLayers: true) <= distance)
+				try
 				{
-					affectedTiles.Add(t.tile);
+					PlanetTile rootTile = parent.Tile;
+					affectedTiles.Add(rootTile);
+					WorldGrid grid = Find.WorldGrid;
+					foreach (PlanetLayer l in grid.PlanetLayers.Values)
+					{
+						float distance;
+						PlanetTile tile = rootTile;
+						if (l == rootTile.Layer)
+						{
+							distance = Props.worldRange;
+						}
+						else
+						{
+							distance = Props.worldRangeOtherLayer;
+							tile = l.GetClosestTile_NewTemp(rootTile);
+						}
+						distance /= l.Def.rangeDistanceFactor;
+						float distanceApprox = distance * 1.5f;
+						foreach (Tile t in l.Tiles)
+						{
+							if (!affectedTiles.Contains(t.tile) && t.PrimaryBiome?.impassable == false && Find.WorldGrid.ApproxDistanceInTiles(tile, t.tile) <= distanceApprox && Find.WorldGrid.TraversalDistanceBetween(tile, t.tile, passImpassable: true, int.MaxValue, canTraverseLayers: true) <= distance)
+							{
+								affectedTiles.Add(t.tile);
+							}
+						}
+					}
 				}
-			}
+				catch(Exception ex)
+				{
+					DelayedErrorWindowRequest.Add("DMSRC_ErrorWhileRecalculatingTiles".Translate() + ": " + ex, "DMSRC_ErrorWhileRecalculatingTilesTitle".Translate());
+				}
+				
+			}, "DMSRC_RecalculatingTiles", doAsynchronously: false, null);
 		}
 	}
 }

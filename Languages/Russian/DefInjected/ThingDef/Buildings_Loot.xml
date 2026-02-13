@@ -2,23 +2,23 @@
 <LanguageData>
   
   <!-- EN: cargo container -->
-  <DMSRC_Cargo.label>cargo container</DMSRC_Cargo.label>
+  <DMSRC_Cargo.label>грузовой контейнер</DMSRC_Cargo.label>
   <!-- EN: A standard issue container containing military supplies. -->
-  <DMSRC_Cargo.description>A standard issue container containing military supplies.</DMSRC_Cargo.description>
+  <DMSRC_Cargo.description>Стандартный контейнер для воинского снаряжения.</DMSRC_Cargo.description>
   
   <!-- EN: military crate -->
-  <DMSRC_Crate.label>military crate</DMSRC_Crate.label>
+  <DMSRC_Crate.label>ящик</DMSRC_Crate.label>
   <!-- EN: A standard issue equipment crate containing military supplies. -->
-  <DMSRC_Crate.description>A standard issue equipment crate containing military supplies.</DMSRC_Crate.description>
+  <DMSRC_Crate.description>Стандартный ящик для воинского снаряжения.</DMSRC_Crate.description>
   
   <!-- EN: drawer -->
-  <DMSRC_Drawer.label>drawer</DMSRC_Drawer.label>
-  <!-- EN: A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations. -->
-  <DMSRC_Drawer.description>A standard issue parcel containing supplies for military logistics. These parcel seemed to have been produced recently and sent to various locations.</DMSRC_Drawer.description>
+  <DMSRC_Drawer.label>тумбочка</DMSRC_Drawer.label>
+  <!-- EN: A standard drawer which usually contains some valueable small items. -->
+  <DMSRC_Drawer.description>Стандартная тумбочка с выдвижными ящиками.</DMSRC_Drawer.description>
   
   <!-- EN: military parcel -->
-  <DMSRC_PackCrate.label>military parcel</DMSRC_PackCrate.label>
+  <DMSRC_PackCrate.label>палета</DMSRC_PackCrate.label>
   <!-- EN: A standard issue parcel containing supplies for military logistics. -->
-  <DMSRC_PackCrate.description>A standard issue parcel containing supplies for military logistics.</DMSRC_PackCrate.description>
+  <DMSRC_PackCrate.description>Стандартная палета содержащая припасы.</DMSRC_PackCrate.description>
   
 </LanguageData>

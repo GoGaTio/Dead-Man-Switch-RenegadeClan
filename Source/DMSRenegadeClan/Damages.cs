@@ -37,7 +37,7 @@ namespace DMSRC
 	{
 		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
 		{
-			if (explosion.intendedTarget != t && t.Faction != null && t.Faction == explosion.instigator?.Faction)
+			if (explosion.intendedTarget != t && t.Faction != null && !t.Faction.HostileTo(explosion.instigator?.Faction))
 			{
 				return;
 			}
@@ -58,6 +58,10 @@ namespace DMSRC
 				{
 					Find.TickManager.slower.SignalForceNormalSpeedShort();
 				}
+			}
+			else if (victim.def.CountAsResource)
+			{
+				dinfo.SetAmount(dinfo.Amount * 0.1f);
 			}
 			Map map = victim.Map;
 			DamageResult damageResult = base.Apply(dinfo, victim);
@@ -89,7 +93,7 @@ namespace DMSRC
 		}
 	}
 
-	public class DamageWorker_IgnoreWalls : DamageWorker_AddInjury
+	public class DamageWorker_TimedBomb : DamageWorker_AddInjury
 	{
 		private static List<IntVec3> openCells = new List<IntVec3>();
 
@@ -146,13 +150,19 @@ namespace DMSRC
 			}*/
 			return openCells.Concat(adjWallCells);
 		}
+
+		public override void ExplosionAffectCell(Explosion explosion, IntVec3 c, List<Thing> damagedThings, List<Thing> ignoredThings, bool canThrowMotes)
+		{
+			explosion.Map.roofGrid.SetRoof(c, null);
+			base.ExplosionAffectCell(explosion, c, damagedThings, ignoredThings, canThrowMotes);
+		}
 	}
 
 	public class DamageWorker_Firecracker : DamageWorker_AddInjury
 	{
 		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
 		{
-			if(explosion.intendedTarget != t && t.Faction != null && t.Faction == explosion.instigator?.Faction)
+			if(explosion.intendedTarget != t && t.Faction != null && !t.Faction.HostileTo(explosion.instigator?.Faction))
 			{
 				return;
 			}
@@ -161,9 +171,16 @@ namespace DMSRC
 		public override DamageResult Apply(DamageInfo dinfo, Thing victim)
 		{
 			Pawn pawn = victim as Pawn;
-			if (pawn != null && pawn.Faction == Faction.OfPlayer)
+			if (pawn != null)
 			{
-				Find.TickManager.slower.SignalForceNormalSpeedShort();
+				if (pawn.Faction == Faction.OfPlayer)
+				{
+					Find.TickManager.slower.SignalForceNormalSpeedShort();
+				}
+			}
+			else if (victim.def.CountAsResource)
+			{
+				dinfo.SetAmount(dinfo.Amount * 0.1f);
 			}
 			Map map = victim.Map;
 			DamageResult damageResult = base.Apply(dinfo, victim);
@@ -185,6 +202,288 @@ namespace DMSRC
 			{
 				FireUtility.TryStartFireIn(c, explosion.Map, Rand.Range(0.2f, 0.6f), explosion.instigator);
 			}
+		}
+	}
+
+	public class DamageWorker_CumulativeBurst : DamageWorker_AddInjury
+	{
+		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
+		{
+			base.ExplosionDamageThing(explosion, t, damagedThings, ignoredThings, cell);
+			if (t.Destroyed)
+			{
+				return;
+			}
+			if(t is Pawn pawn)
+			{
+				if(pawn.RaceProps.IsMechanoid || pawn.RaceProps.IsDrone)
+				{
+					CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile, true);
+				}
+				else if(pawn.apparel != null)
+				{
+					Apparel core = pawn.apparel.WornApparel.FirstOrDefault((a) => a.def.thingClass == AccessTools.TypeByName("Exosuit.Exosuit_Core"));
+					if(core != null)
+					{
+						CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile);
+					}
+				}
+			}
+		}
+
+		public void CumulativeEffect(Pawn pawn, Thing initiator, ThingDef weaponDef, ThingDef projectileDef, bool onlyInternal = false)
+		{
+			List<BodyPartRecord> list = new List<BodyPartRecord>();
+			List<Hediff> hediffs = new List<Hediff>();
+			BattleLogEntry_CumulativeEffect battleLogEntry = null;
+			if (pawn != null)
+			{
+				battleLogEntry = new BattleLogEntry_CumulativeEffect(initiator, pawn, weaponDef, projectileDef, def);
+				Find.BattleLog.Add(battleLogEntry);
+			}
+			for(int i = 0; i < 3; i++)
+			{
+				BodyPartRecord part = pawn.health.hediffSet.GetRandomNotMissingPart(def, BodyPartHeight.Undefined, onlyInternal ? BodyPartDepth.Inside : BodyPartDepth.Undefined);
+				if (list.Contains(part))
+				{
+					continue;
+				}
+				if(part != null)
+				{
+					Hediff hediff = ApplyDamageToPart(pawn, 10f * pawn.BodySize, initiator, part, weaponDef);
+					if(hediff == null)
+					{
+						continue;
+					}
+					hediffs.Add(hediff);
+					list.Add(part);
+				}
+			}
+			if (pawn != null)
+			{
+				List<bool> recipientPartsDestroyed = null;
+				if (!list.NullOrEmpty())
+				{
+					recipientPartsDestroyed = list.Select((BodyPartRecord part) => pawn.health.hediffSet.GetPartHealth(part) <= 0f).ToList();
+				}
+				battleLogEntry.FillTargets(list, recipientPartsDestroyed, false);
+			}
+			if (hediffs != null)
+			{
+				for (int num = 0; num < hediffs.Count; num++)
+				{
+					hediffs[num].combatLogEntry = new Verse.WeakReference<LogEntry>(battleLogEntry);
+					hediffs[num].combatLogText = battleLogEntry.ToGameStringFromPOV(null);
+				}
+			}
+		}
+
+		protected Hediff ApplyDamageToPart(Pawn pawn, float amount, Thing initiator, BodyPartRecord part, ThingDef weaponDef)
+		{
+			Pawn pawn2 = initiator as Pawn;
+			HediffDef hediffDefFromDamage = HealthUtility.GetHediffDefFromDamage(DamageDefOf.Burn, pawn, part);
+			Hediff_Injury hediff_Injury = (Hediff_Injury)HediffMaker.MakeHediff(hediffDefFromDamage, pawn);
+			hediff_Injury.Part = part;
+			hediff_Injury.sourceDef = weaponDef;
+			hediff_Injury.sourceLabel = weaponDef?.label ?? "";
+			hediff_Injury.Severity = amount;
+			hediff_Injury.TryGetComp<HediffComp_GetsPermanent>()?.PreFinalizeInjury();
+			pawn.health.AddHediff(hediff_Injury, null, new DamageInfo(DamageDefOf.Burn, 30f, 999f));
+			return hediff_Injury;
+		}
+	}
+
+	public class BattleLogEntry_CumulativeEffect : LogEntry_DamageResult
+	{
+		private Pawn initiatorPawn;
+
+		private ThingDef initiatorThing;
+
+		private Pawn recipientPawn;
+
+		private ThingDef weaponDef;
+
+		private ThingDef projectileDef;
+
+		private DamageDef damageDef;
+
+		private string InitiatorName
+		{
+			get
+			{
+				if (initiatorPawn != null)
+				{
+					return initiatorPawn.LabelShort;
+				}
+				if (initiatorThing != null)
+				{
+					return initiatorThing.defName;
+				}
+				return "null";
+			}
+		}
+
+		private string RecipientName
+		{
+			get
+			{
+				if (recipientPawn != null)
+				{
+					return recipientPawn.LabelShort;
+				}
+				return "null";
+			}
+		}
+
+		public BattleLogEntry_CumulativeEffect()
+		{
+		}
+
+		public BattleLogEntry_CumulativeEffect(Thing initiator, Pawn recipient, ThingDef weaponDef, ThingDef projectileDef, DamageDef damageDef)
+		{
+			if (initiator is Pawn)
+			{
+				initiatorPawn = initiator as Pawn;
+			}
+			else if (initiator != null)
+			{
+				initiatorThing = initiator.def;
+			}
+			recipientPawn = recipient as Pawn;
+			this.weaponDef = weaponDef;
+			this.projectileDef = projectileDef;
+			this.damageDef = damageDef;
+		}
+
+		public override bool Concerns(Thing t)
+		{
+			if (t != initiatorPawn)
+			{
+				return t == recipientPawn;
+			}
+			return true;
+		}
+
+		public override IEnumerable<Thing> GetConcerns()
+		{
+			if (initiatorPawn != null)
+			{
+				yield return initiatorPawn;
+			}
+			if (recipientPawn != null)
+			{
+				yield return recipientPawn;
+			}
+		}
+
+		public override bool CanBeClickedFromPOV(Thing pov)
+		{
+			if (pov != initiatorPawn || recipientPawn == null || !CameraJumper.CanJump(recipientPawn))
+			{
+				if (pov == recipientPawn)
+				{
+					return CameraJumper.CanJump(initiatorPawn);
+				}
+				return false;
+			}
+			return true;
+		}
+
+		public override void ClickedFromPOV(Thing pov)
+		{
+			if (recipientPawn == null)
+			{
+				return;
+			}
+			if (pov == initiatorPawn)
+			{
+				CameraJumper.TryJumpAndSelect(recipientPawn);
+				return;
+			}
+			if (pov == recipientPawn)
+			{
+				CameraJumper.TryJumpAndSelect(initiatorPawn);
+				return;
+			}
+			throw new NotImplementedException();
+		}
+
+		public override Texture2D IconFromPOV(Thing pov)
+		{
+			if (damagedParts.NullOrEmpty())
+			{
+				return null;
+			}
+			if (pov == null || pov == recipientPawn)
+			{
+				return LogEntry.Blood;
+			}
+			if (pov == initiatorPawn)
+			{
+				return LogEntry.BloodTarget;
+			}
+			return null;
+		}
+
+		protected override BodyDef DamagedBody()
+		{
+			if (recipientPawn == null)
+			{
+				return null;
+			}
+			return recipientPawn.RaceProps.body;
+		}
+
+		protected override GrammarRequest GenerateGrammarRequest()
+		{
+			GrammarRequest result = base.GenerateGrammarRequest();
+			result.Includes.Add(RCDefOf.DMSRC_Combat_CumulativeEffect);
+			if (initiatorPawn != null)
+			{
+				result.Rules.AddRange(GrammarUtility.RulesForPawn("INITIATOR", initiatorPawn, result.Constants));
+			}
+			else if (initiatorThing != null)
+			{
+				result.Rules.AddRange(GrammarUtility.RulesForDef("INITIATOR", initiatorThing));
+			}
+			else
+			{
+				result.Constants["INITIATOR_missing"] = "True";
+			}
+			if (recipientPawn != null)
+			{
+				result.Rules.AddRange(GrammarUtility.RulesForPawn("RECIPIENT", recipientPawn, result.Constants));
+			}
+			else
+			{
+				result.Constants["RECIPIENT_missing"] = "True";
+			}
+			result.Rules.AddRange(PlayLogEntryUtility.RulesForOptionalWeapon("WEAPON", weaponDef, projectileDef));
+			if (projectileDef != null)
+			{
+				result.Rules.AddRange(GrammarUtility.RulesForDef("PROJECTILE", projectileDef));
+			}
+			if (damageDef != null && damageDef.combatLogRules != null)
+			{
+				result.Includes.Add(damageDef.combatLogRules);
+			}
+			return result;
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_References.Look(ref initiatorPawn, "initiatorPawn", saveDestroyedThings: true);
+			Scribe_Defs.Look(ref initiatorThing, "initiatorThing");
+			Scribe_References.Look(ref recipientPawn, "recipientPawn", saveDestroyedThings: true);
+			Scribe_Defs.Look(ref weaponDef, "weaponDef");
+			Scribe_Defs.Look(ref projectileDef, "projectileDef");
+			Scribe_Defs.Look(ref damageDef, "damageDef");
+		}
+
+		public override string ToString()
+		{
+			return "DMSRC.BattleLogEntry_CumulativeEffect: " + InitiatorName + "->" + RecipientName;
 		}
 	}
 }

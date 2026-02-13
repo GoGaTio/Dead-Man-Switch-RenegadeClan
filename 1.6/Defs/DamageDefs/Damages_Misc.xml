@@ -56,13 +56,18 @@
 
   <DamageDef ParentName="Bomb">
     <defName>DMSRC_BombTimed</defName>
-    <workerClass>DMSRC.DamageWorker_IgnoreWalls</workerClass>
+    <workerClass>DMSRC.DamageWorker_TimedBomb</workerClass>
     <defaultDamage>50</defaultDamage>
     <defaultStoppingPower>10.0</defaultStoppingPower>
     <defaultArmorPenetration>1.30</defaultArmorPenetration>
     <buildingDamageFactor>10</buildingDamageFactor>
     <buildingDamageFactorImpassable>40</buildingDamageFactorImpassable>
     <buildingDamageFactorPassable>20</buildingDamageFactorPassable>
+  </DamageDef>
+
+  <DamageDef ParentName="Bomb">
+    <defName>DMSRC_BombCumulative</defName>
+    <workerClass>DMSRC.DamageWorker_CumulativeBurst</workerClass>
   </DamageDef>
 
 </Defs>

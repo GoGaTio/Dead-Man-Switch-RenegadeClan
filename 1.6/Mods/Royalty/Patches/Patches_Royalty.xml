@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/Fortified.HeavyEquippableDef[defName="AverageHumanCanUse" or defName="LightAutomatroid" or defName="StandardAutomatroid" or defName="BulkyAutomatroid"]/EquippableWithApparel</xpath>
+    <value>
+      <li>DMSRC_Apparel_JumperArmor</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMSRC_LargeBroadcastAntenna"]</xpath>
+    <value>
+      <researchPrerequisites>
+        <li>DMSRC_WideBroadcast</li>
+      </researchPrerequisites>
+      <designationCategory>DMS_Category</designationCategory>
+      <uiOrder>4900</uiOrder>
+    </value>
+  </Operation>
+
+</Patch>

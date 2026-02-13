@@ -24,4 +24,41 @@
       </rulesRaw>
     </rulePack>
   </RulePackDef>
+
+  <RulePackDef>
+    <defName>DMSRC_Combat_CumulativeEffect</defName>
+    <include>
+      <li>Combat_RangedBase</li>
+      <li>Combat_MeleeDamageIncludes</li>
+      <li>Combat_WoundIncludes</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>prefix->A cumulative [blast] [fromof] [INITIATOR_definite]'s [projectile]</li>
+        <li>prefix->A cumulative [blast] [fromof] [INITIATOR_definite]'s [WEAPON_label]</li>
+        <li>prefix->[INITIATOR_definite]'s cumulative [blast]</li>
+        <li>prefix->[INITIATOR_definite]'s [projectile] cumulative [blast]</li>
+        <li>prefix->[INITIATOR_definite]'s [WEAPON_label] cumulative [blast]</li>
+
+        <li>r_logentry->[prefix] [injured] [RECIPIENT_definite].</li>
+
+        <li>r_logentry->[prefix] [destroyed_past] [RECIPIENT_definite]'s [destroyed_targets].</li>
+        <li>r_logentry->[prefix] [destroyed_past] [RECIPIENT_definite]'s [destroyed_targets] and [damaged_past] [RECIPIENT_possessive] [damaged_targets].</li>
+        <li>r_logentry(recipient_part_destroyed_count==0)->[prefix] [damaged_past] [RECIPIENT_definite]'s [damaged_targets].</li>
+
+        <!-- final fallbacks -->
+        <li>r_logentry(p=0.001)->[RECIPIENT_definite] was stroke by cumulative [blast].</li>
+        <li>r_logentry(p=0.001)->[RECIPIENT_definite] was hit by cumulative [blast].</li>
+
+        <li>blast->burst</li>
+        <li>blast->blast</li>
+        <li>blast->stream</li>
+        <li>blast->discharge</li>
+
+        <li>fromof->from</li>
+        <li>fromof->of</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
 </Defs>

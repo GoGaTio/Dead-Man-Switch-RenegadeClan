@@ -341,7 +341,7 @@ namespace DMSRC
 		{
 			if (Find.Selector.SingleSelectedThing == parent && (parent.Faction == Faction.OfPlayer || DebugSettings.ShowDevGizmos))
 			{
-				yield return new BeamDefenceGizmo(this, "Beam defence", "n", Props.barColor, Props.barColorAlt);
+				yield return new BeamDefenceGizmo(this, "DMSRC_BeamDefenceLabel".Translate(), "DMSRC_BeamDefenceDesc".Translate(), Props.barColor, Props.barColorAlt);
 			}
 		}
 

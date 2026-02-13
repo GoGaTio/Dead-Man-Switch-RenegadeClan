@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <DMSRC_Mission_WaveDesc>Вражеские подкрепления выдвигаются в эту область.</DMSRC_Mission_WaveDesc>
+  <DMSRC_Mission_WaveLabel>Вражеские подкрепления прибывают через {0}</DMSRC_Mission_WaveLabel>
+  <DMSRC_Mission_DefendDesc>Защищайте {0} ото вражеского нападения.</DMSRC_Mission_DefendDesc>
+  <DMSRC_Mission_DefendWaveLabel>Следующая волна через {0}</DMSRC_Mission_DefendWaveLabel>
+  <DMSRC_Mission_DefendLabel>Защищайте {0}</DMSRC_Mission_DefendLabel>
+  <DMSRC_Mission_Destroyed>{0} уничтожено. {1} осталось.</DMSRC_Mission_Destroyed>
+  <DMSRC_Mission_Killed>{0} убит. {2} {1} осталось.</DMSRC_Mission_Killed>
+  <DMSRC_MessageLadarTriggered>Сканнер периметра обнаружил невидимый объект поблизости.</DMSRC_MessageLadarTriggered>
+  <DMSRC_LadarDetectedInvisible>Невидимый объект поблизости</DMSRC_LadarDetectedInvisible>
+  <DMSRC_DetonationCountdown>Взорвётся через {0}</DMSRC_DetonationCountdown>
+  <DMSRC_DetonationInstigator>Установлена фракцией: {0}</DMSRC_DetonationInstigator>
+  <DMSRC_DecreaseTimer>Уменьшить таймер({0} hour)</DMSRC_DecreaseTimer>
+  <DMSRC_IncreaseTimer>Увеличить таймер({0} hour)</DMSRC_IncreaseTimer>
+  <DMSRC_FacilityDestroyed>Комплекс уничтожен</DMSRC_FacilityDestroyed>
+  <DMSRC_DeactivatedLabel>Деактивированный {0}</DMSRC_DeactivatedLabel>
+  <DMSRC_MessageCantInterceptMechhive>Невозможно перехватить сигнал мехулья</DMSRC_MessageCantInterceptMechhive>
+  <DMSRC_Currency>Всё доступное серебро</DMSRC_Currency>
+  <DMSRC_RenegadesDialod_RequestsDisabled>Необходимо быть союзником, чтобы запрашить помощь</DMSRC_RenegadesDialod_RequestsDisabled>
+  <DMSRC_RenegadesContactsLetter_Label>Контакт с отступником</DMSRC_RenegadesContactsLetter_Label>
+  <DMSRC_RenegadesContactsLetter_Text>Renegades contacted you, offering an allience. They will give you access to trade requests and, in the future, military aid.\n\nIf you will accept this offer Colonial fleet would become permanent enemy.\n\nIf you will reject this offer renegades will not do anything, unless you'll become Colonial fleet ally.</DMSRC_RenegadesContactsLetter_Text>
+  <DMSRC_Controlled>{0}/{1}</DMSRC_Controlled>
+  <DMSRC_NeedMoreGoodwill>Недостаточно репутации</DMSRC_NeedMoreGoodwill>
+  <DMSRC_ArrivalAfter_Single>Прибывает через {0}</DMSRC_ArrivalAfter_Single>
+  <DMSRC_MilitaryAid>Военная поддержка с силой {0} очков (стоит {1} репутации)</DMSRC_MilitaryAid>
+  <DMSRC_RenegadesTradeLetter_Label>Покупки прибыли</DMSRC_RenegadesTradeLetter_Label>
+  <DMSRC_RenegadesTradeLetter_Text>Отступники доставили ваш запрос.</DMSRC_RenegadesTradeLetter_Text>
+  <DMSRC_NoThingsSelected>Не выбрано предметов</DMSRC_NoThingsSelected>
+
+  <DMSRC_BeamDefenceLabel>Лучевая защита</DMSRC_BeamDefenceLabel>
+  <DMSRC_BeamDefenceDesc>Как много снарядов может быть перехвачено.\n\nПерехват не гарантирован.</DMSRC_BeamDefenceDesc>
+  
+  <DMSRC_ProducerResultDesc>Ресурсы, которые будут произведены в результате искусственной беременности.\n\nТекущий результат: {0}</DMSRC_ProducerResultDesc>
+  <DMSRC_InsertPersonProducerDesc>Поместить кого-то в {0}.</DMSRC_InsertPersonProducerDesc>
+  <DMSRC_NotAFemale>{PAWN} не женщина</DMSRC_NotAFemale>
+  <DMSRC_MessagePregnancyDisabled>Искусственная беременность {PAWN_labelShort} остановилась, поскольку {BUILDING_labelShort} не работает.</DMSRC_MessagePregnancyDisabled>
+  <DMSRC_MessagePregnancyReenabled>Искусственная беременность {PAWN_labelShort} продолжилась, поскольку {BUILDING_labelShort} возобновил работу.</DMSRC_MessagePregnancyReenabled>
+  <DMSRC_WetwareProducedLabel>Произедено: {0}</DMSRC_WetwareProducedLabel>
+  <DMSRC_WetwareProducedDesc>Искусственная беременность {1_labelShort} закончилась, произведя {0}.</DMSRC_WetwareProducedDesc>
+  
+  <DMSRC_ForbiddenTech>Эта технология считается запрещенной колониальным флотом, её использование приведёт к снижению репутации.</DMSRC_ForbiddenTech>
+
+  <DMSRC_RecalculatingTiles>Перерасчёт тайлов</DMSRC_RecalculatingTiles>
+  <DMSRC_ErrorWhileRecalculatingTilesTitle>Ошибка при перерасчёте тайлов</DMSRC_ErrorWhileRecalculatingTilesTitle>
+  <DMSRC_ErrorWhileRecalculatingTiles>Широковолновые вышки не будут работать. Перезагрузить сохранение или игру, если проблема осталась, сообщите эту ошибку разработчику</DMSRC_ErrorWhileRecalculatingTiles>
+  
+</LanguageData>

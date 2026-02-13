@@ -53,6 +53,9 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
+using static HarmonyLib.Code;
+using static RimWorld.MechClusterSketch;
+using static System.Net.WebRequestMethods;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 namespace DMSRC
@@ -106,11 +109,16 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(Pawn pawn, ref GlobalTargetInfo __result)
         {
-            if (__result.Pawn == null) return;
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(__result.Pawn);
-            if (comp != null)
+			if (pawn is OverseerMech)
+			{
+                __result = pawn;
+                return;
+			}
+			if (__result.Pawn == null) return;
+            OverseerMech mech = OverseerMechUtility.GetOverseerMech(__result.Pawn);
+            if (mech != null)
             {
-                __result = comp.Parent;
+                __result = mech;
             }
         }
     }
@@ -121,13 +129,18 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(Pawn pawn, ref Pawn __result)
         {
-            if (__result == null) return;
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(__result);
-            if (comp != null)
-            {
-                __result = comp.Parent;
-            }
-        }
+			if (pawn is OverseerMech)
+			{
+				__result = pawn;
+				return;
+			}
+			if (__result == null) return;
+			OverseerMech mech = OverseerMechUtility.GetOverseerMech(__result);
+			if (mech != null)
+			{
+				__result = mech;
+			}
+		}
     }
 
     [HarmonyPatch(typeof(JobGiver_AIFollowOverseer), "GetFollowee")]
@@ -137,12 +150,12 @@ namespace DMSRC
         public static void Postfix(Pawn pawn, ref Pawn __result)
         {
             if (__result == null) return;
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(__result);
-            if (comp != null)
-            {
-                __result = comp.Parent;
-            }
-        }
+			OverseerMech mech = OverseerMechUtility.GetOverseerMech(__result);
+			if (mech != null)
+			{
+				__result = mech;
+			}
+		}
     }
 
     [HarmonyPatch(typeof(MapPawns), nameof(MapPawns.AnyPawnBlockingMapRemoval), MethodType.Getter)]
@@ -163,7 +176,8 @@ namespace DMSRC
         }
     }
 
-    [HarmonyPatch(typeof(CaravanExitMapUtility), nameof(CaravanExitMapUtility.ExitMapAndJoinOrCreateCaravan))]
+
+	[HarmonyPatch(typeof(CaravanExitMapUtility), nameof(CaravanExitMapUtility.ExitMapAndJoinOrCreateCaravan))]
     public static class Patch_ExitMapAndJoinOrCreateCaravan
     {
         [HarmonyPrefix]
@@ -374,7 +388,7 @@ namespace DMSRC
         [HarmonyPriority(501)]
         public static bool Interval(Pawn ___pawn)
         {
-            return ___pawn != null && ___pawn.GetComp<CompOverseerMech>() == null;
+            return ___pawn != null && !(___pawn is OverseerMech);
         }
     }
 
@@ -418,8 +432,8 @@ namespace DMSRC
             {
                 return;
             }
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(overseer);
-            if (comp == null)
+            OverseerMech mech = OverseerMechUtility.GetOverseerMech(overseer);
+            if (mech == null)
             {
                 return;
             }
@@ -441,7 +455,7 @@ namespace DMSRC
 				}
 				if (pawn.GetMechWorkMode() == MechWorkModeDefOf.Escort)
 				{
-					if (caravan.PawnsListForReading.Contains(comp.Parent))
+					if (caravan.PawnsListForReading.Contains(mech))
 					{
 						__result = caravan;
 					}
@@ -494,7 +508,7 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(ref OverseerSubjectState __result, CompOverseerSubject __instance)
         {
-            if (__instance.parent.HasComp<CompOverseerMech>())
+            if (__result != OverseerSubjectState.Overseen && __instance.parent is OverseerMech)
             {
                 __result = OverseerSubjectState.Overseen;
             }
@@ -519,7 +533,7 @@ namespace DMSRC
     {
         public static void Postfix(ref int __result, Pawn_MechanitorTracker __instance)
         {
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(__instance.Pawn);
+            CompOverseerMech comp = OverseerMechUtility.GetOverseerMechComp(__instance.Pawn);
             if (comp == null)
             {
                 return;
@@ -535,7 +549,7 @@ namespace DMSRC
         }
     }
 
-    [HarmonyPatch(typeof(MechanitorUtility), nameof(MechanitorUtility.InMechanitorCommandRange))]
+	[HarmonyPatch(typeof(MechanitorUtility), nameof(MechanitorUtility.InMechanitorCommandRange))]
     public static class MechanitorUtility_InMechanitorCommandRange
     {
         public static void Postfix(Pawn mech, LocalTargetInfo target, ref bool __result)
@@ -549,7 +563,7 @@ namespace DMSRC
                 __result = true;
                 return;
             }
-            if (mech.HasComp<CompOverseerMech>())
+            if (mech is OverseerMech)
             {
                 __result = true;
                 return;
@@ -559,35 +573,53 @@ namespace DMSRC
             {
                 return;
             }
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(overseer);
-            if (overseer != null && comp != null && comp.parent.MapHeld == mech.Map && comp.parent.PositionHeld.DistanceTo(target.Cell) <= comp.Props.commandRange)
+            OverseerMech overlord = OverseerMechUtility.GetOverseerMech(overseer);
+            if (overlord != null && overlord.MapHeld == mech.Map && overlord.PositionHeld.DistanceTo(target.Cell) <= overlord.Comp.Props.commandRange)
             {
                 __result = true;
             }
         }
     }
 
-	[HarmonyPatch(typeof(MapParent), nameof(MapParent.DrawExtraSelectionOverlays))]
+	[HarmonyPatch(typeof(WorldSelectionDrawer), nameof(WorldSelectionDrawer.DrawSelectionOverlays))]
 	public static class MapParent_CompBroadcastAntenna
 	{
-		public static void Postfix(MapParent __instance)
+		public static void Postfix()
 		{
-			if (__instance.HasMap)
+			if (Find.WorldSelector.AnyObjectOrTileSelected && CompBroadcastAntenna.broadcastAntennas?.Any() == true)
 			{
-				int num = 0;
-                Map map = __instance.Map;
-				foreach (var comp in CompBroadcastAntenna.broadcastAntennas)
+                PlanetLayer layer = Find.WorldSelector.SelectedLayer;
+				Dictionary<PlanetTile, float> roots = new Dictionary<PlanetTile, float>();
+				foreach (var comp in CompBroadcastAntenna.broadcastAntennas.ToList())
                 {
-                    if(comp.parent.Map == map)
+                    if(comp.parent.Map == null || comp.parent.Map.Parent == null)
                     {
-						num = Mathf.Max(num, comp.Props.worldRange);
+						CompBroadcastAntenna.broadcastAntennas.Remove(comp);
+                        continue;
+					}
+                    if (roots.ContainsKey(comp.parent.Tile))
+                    {
+                        roots[comp.parent.Tile] = Mathf.Max(roots[comp.parent.Tile], Range(comp, layer));
+					}
+                    else
+                    {
+                        roots[comp.parent.Tile] = Range(comp, layer);
 					}
                 }
-				if (num > 0)
-				{
-					GenDraw.DrawWorldRadiusRing(__instance.Tile, num, CompBroadcastAntenna.RadiusMat);
+                foreach(var item in roots)
+                {
+					GenDraw.DrawWorldRadiusRing(item.Key.Layer == layer ? item.Key : layer.GetClosestTile_NewTemp(item.Key), Mathf.RoundToInt(item.Value), CompBroadcastAntenna.RadiusMat);
 				}
 			}
+		}
+
+        private static float Range(CompBroadcastAntenna comp, PlanetLayer layer)
+        {
+            if (comp.parent.Tile.Layer == layer)
+            {
+                return comp.Props.worldRange / layer.Def.rangeDistanceFactor;
+			}
+			return comp.Props.worldRangeOtherLayer / layer.Def.rangeDistanceFactor;
 		}
 	}
 
@@ -600,35 +632,35 @@ namespace DMSRC
             {
                 if (gizmo is Command_Action command && command.defaultLabel == "CommandSelectOverseer".Translate())
                 {
-                    if (mech.HasComp<CompOverseerMech>())
+                    if (mech is OverseerMech)
                     {
                         continue;
                     }
                     var overseer = mech.GetOverseer();
                     if (overseer != null)
                     {
-                        CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(overseer);
-                        if (comp != null)
+                        OverseerMech overlord = OverseerMechUtility.GetOverseerMech(overseer);
+                        if (overlord != null)
                         { 
                             command.defaultDesc = "CommandSelectOverseerDesc".Translate();
-                            command.icon = comp.SelectIcon;
+                            command.icon = overlord.Comp.SelectIcon;
                             command.action = delegate
                             {
                                 Find.Selector.ClearSelection();
-                                Find.Selector.Select(comp.parent);
+                                Find.Selector.Select(overlord);
                             };
-                            command.Disabled = !comp.parent.Spawned;
+                            command.Disabled = !overlord.Spawned;
                             command.onHover = delegate
                             {
                                 if (overseer != null)
                                 {
-                                    if (comp.parent.Spawned)
+                                    if (overlord.Spawned)
                                     {
-										GenDraw.DrawArrowPointingAt(comp.parent.TrueCenter());
+										GenDraw.DrawArrowPointingAt(overlord.TrueCenter());
 									}
-                                    else if (comp.parent.SpawnedOrAnyParentSpawned)
+                                    else if (overlord.SpawnedOrAnyParentSpawned)
                                     {
-										GenDraw.DrawArrowPointingAt(comp.parent.PositionHeld.ToVector3());
+										GenDraw.DrawArrowPointingAt(overlord.PositionHeld.ToVector3());
 									}
                                 }
                             };
@@ -645,8 +677,8 @@ namespace DMSRC
     {
         public static void Postfix(ref AcceptanceReport __result, Pawn_MechanitorTracker __instance)
         {
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(__instance.Pawn);
-            if (comp != null && comp.parent.Spawned)
+            OverseerMech mech = OverseerMechUtility.GetOverseerMech(__instance.Pawn);
+            if (mech != null && mech.Spawned)
             {
                 __result = true;
             }
@@ -659,7 +691,7 @@ namespace DMSRC
         public static void Postfix(Pawn pawn, Pawn mech, ref AcceptanceReport __result)
         {
             if (!__result.Accepted) return;
-            if (mech.HasComp<CompOverseerMech>()) __result = false;
+            if (mech is OverseerMech) __result = false;
         }
     }
 
@@ -668,10 +700,10 @@ namespace DMSRC
     {
         public static void Postfix(Pawn __instance, ref string __result)
         {
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(__instance);
-            if (comp != null)
+            OverseerMech mech = OverseerMechUtility.GetOverseerMech(__instance);
+            if (mech != null)
             {
-                __result = comp.Parent.KindLabel;
+                __result = mech.KindLabel;
             }
         }
     }
@@ -691,6 +723,53 @@ namespace DMSRC
             return true;
         }
     }
+
+	[HarmonyPatch(typeof(PawnColumnWorker_AllowedArea), nameof(PawnColumnWorker_AllowedArea.DoCell))]
+	public static class PawnColumnWorker_AllowedArea_DoCell
+	{
+		[HarmonyPrefix]
+		public static bool Prefix(Rect rect, Pawn pawn, PawnTable table)
+		{
+			if (pawn is OverseerMech mech)
+			{
+				if (pawn.playerSettings.SupportsAllowedAreas)
+				{
+					AreaAllowedGUI.DoAllowedAreaSelectors(rect, pawn);
+				}
+				else if (AnimalPenUtility.NeedsToBeManagedByRope(pawn))
+				{
+					AnimalPenGUI.DoAllowedAreaMessage(rect, pawn);
+				}
+				else if (pawn.RaceProps.Dryad)
+				{
+					Text.Anchor = TextAnchor.MiddleCenter;
+					Text.Font = GameFont.Tiny;
+					GUI.color = Color.gray;
+					Widgets.Label(rect, "CannotAssignAllowedAreaToDryad".Translate());
+					GUI.color = Color.white;
+					Text.Font = GameFont.Small;
+					Text.Anchor = TextAnchor.UpperLeft;
+				}
+				return false;
+			}
+			return true;
+		}
+	}
+
+	[HarmonyPatch(typeof(Frame), "GetIdeoForStyle")]
+	public static class Frame_GetIdeoForStyle
+	{
+		[HarmonyPrefix]
+		public static bool Prefix(Pawn worker, ref Ideo __result)
+		{
+			if (worker is OverseerMech mech)
+			{
+                __result = worker.Faction?.ideos?.PrimaryIdeo;
+				return false;
+			}
+			return true;
+		}
+	}
 
 	[HarmonyPatch(typeof(JobGiver_GetEnergy), nameof(JobGiver_GetEnergy.GetMaxRechargeLimit))]
 	public static class JobGiver_GetEnergy_Max
@@ -715,10 +794,10 @@ namespace DMSRC
 		{
 			if (target.Thing is Pawn pawn)
 			{
-				CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(pawn);
-				if (comp != null)
+				OverseerMech mech = OverseerMechUtility.GetOverseerMech(pawn);
+				if (mech != null)
 				{
-					target = comp.parent;
+					target = mech;
 				}
 			}
 		}
@@ -729,8 +808,8 @@ namespace DMSRC
     {
         public static void Postfix(ref string __result, Pawn pawn)
         {
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(pawn);
-            if (comp != null)
+            OverseerMech mech = OverseerMechUtility.GetOverseerMech(pawn);
+            if (mech != null)
             {
                 __result = "";
             }
@@ -742,21 +821,18 @@ namespace DMSRC
     {
         public static bool Prefix(Pawn overseer, Rect rect)
         {
-            CompOverseerMech comp = OverseerMechUtility.GetOverseerMech(overseer);
-            if (comp == null)
+            OverseerMech mech = OverseerMechUtility.GetOverseerMech(overseer);
+            if (mech == null)
             {
                 return true;
             }
-
-            GUI.DrawTexture(rect, comp.parent.def.uiIcon);
+            GUI.DrawTexture(rect, mech.def.uiIcon);
             if (!Mouse.IsOver(rect))
             {
                 return false;
             }
-
             Widgets.DrawHighlight(rect);
             TooltipHandler.TipRegion(rect, "MechOverseer".Translate(overseer));
-
             return false;
         }
     }
@@ -767,7 +843,7 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(ref AcceptanceReport __result, Pawn mech)
         {
-            if (mech.HasComp<CompOverseerMech>())
+            if (mech is OverseerMech)
             {
                 __result = true;
             }
@@ -779,7 +855,7 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(ref bool __result, Pawn_DraftController __instance)
         {
-            if (__instance.pawn.HasComp<CompOverseerMech>())
+            if (__instance.pawn is OverseerMech)
             {
                 __result = true;
             }

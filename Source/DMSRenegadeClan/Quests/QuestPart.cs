@@ -264,6 +264,16 @@ namespace DMSRC
 			Scribe_Values.Look(ref wavesDefeated, "wavesDefeated");
 			Scribe_Values.Look(ref ticksTillNextWave, "ticksTillNextWave", defaultValue: -1);
 		}
+
+		public override void DoDebugWindowContents(Rect innerRect, ref float curY)
+		{
+			Rect rect = new Rect(innerRect.x, curY, 500f, 25f);
+			if (Widgets.ButtonText(rect, "Update timer (" + ticksTillNextWave + ")"))
+			{
+				ticksTillNextWave = (mission.initialWavesCooldown ?? mission.wavesCooldown).RandomInRange;
+			}
+			curY += rect.height + 4f;
+		}
 	}
 
 	public class QuestPart_Mission_Defend : QuestPart_MissionWithWaves

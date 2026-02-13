@@ -241,7 +241,7 @@
       <li Class="DMSRC.CompProperties_PerimeterScanner">
         <glowRadius>4.9</glowRadius>
         <glowColor>(200, 0, 0, 0)</glowColor>
-        <range>7</range>
+        <range>11</range>
         <effecter>DMSRC_PerimeterScannerAlert</effecter>
       </li>
       <li Class="CompProperties_Flickable"/>
@@ -294,11 +294,11 @@
       <li Class="DMSRC.CompProperties_PerimeterScanner">
         <glowRadius>4.9</glowRadius>
         <glowColor>(200, 0, 0, 0)</glowColor>
-        <range>7</range>
+        <range>11</range>
         <effecter>DMSRC_PerimeterScannerAlert</effecter>
       </li>
       <li Class="CompProperties_MechPowerCell">
-        <totalPowerTicks>25000</totalPowerTicks>
+        <totalPowerTicks>60000</totalPowerTicks>
         <killWhenDepleted>true</killWhenDepleted>
         <labelOverride>Battery power</labelOverride>
         <tooltipOverride>This perimeter scanner has a limited battery life. Once it runs out, it will stop working entirely.</tooltipOverride>

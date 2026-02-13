@@ -90,8 +90,10 @@
     <Compile Include="ThingComps\CompWarheadPlatform.cs" />
     <Compile Include="ThingComps\CompProcessorHelmet.cs" />
     <Compile Include="ThingComps\CompPerimeterScanner.cs" />
+    <Compile Include="Things\Building_WetwareProducer.cs" />
     <Compile Include="Things\FacilityEntrance.cs" />
     <Compile Include="Things\InactiveMech.cs" />
+    <Compile Include="Work.cs" />
     <Compile Include="WorldObjects.cs" />
     <Compile Include="Misc.cs" />
     <Compile Include="ThingComps\CompUseEffect_CallRenegades.cs" />

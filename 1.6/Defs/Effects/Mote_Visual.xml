@@ -45,6 +45,13 @@
     </graphicData>
   </ThingDef>
 
+  <ThingDef ParentName="DMSRCBeamMote">
+    <defName>DMSRC_Mote_BeamUltraLarge</defName>
+    <graphicData>
+      <drawSize>(15, 1)</drawSize>
+    </graphicData>
+  </ThingDef>
+
   <ThingDef ParentName="MoteBase">
     <defName>DMSRC_Mote_BeamDefence</defName>
     <thingClass>MoteDualAttached</thingClass>

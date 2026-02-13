@@ -50,7 +50,7 @@
     </stuffCategories>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
-      <Mass>3</Mass>
+      <Mass>14</Mass>
       <Flammability>0</Flammability>
       <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
@@ -146,7 +146,7 @@
   <ThingDef MayRequire="Ludeon.RimWorld.Royalty" ParentName="DMSRC_BaseAssaultArmor">
     <defName>DMSRC_Apparel_JumperArmor</defName>
     <label>HAPJ armor</label>
-    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance.</description>
+    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations. Has built-in jump launcher./n/nAlso provides vacuum exposure resistance.</description>
     <costList>
       <Tungsteel>50</Tungsteel>
       <Plasfiber>60</Plasfiber>
@@ -159,6 +159,11 @@
     <equippedStatOffsets>
       <MoveSpeed>-0.4</MoveSpeed>
     </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>JumpPack</li>
+      </researchPrerequisites>
+    </recipeMaker>
     <graphicData>
       <texPath>Things/Apparel/DMSRC_JumperArmor/Apparel_Male_south</texPath>
     </graphicData>
