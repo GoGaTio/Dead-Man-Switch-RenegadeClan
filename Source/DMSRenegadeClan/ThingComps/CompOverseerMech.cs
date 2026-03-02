@@ -157,7 +157,7 @@ namespace DMSRC
         public int hackCooldownTicks;
         public bool MechanitorActive => dummyPawn != null && Parent.IsColonyMech;
 
-        public OverseerMech Parent => parent as OverseerMech;
+        public Pawn Parent => parent as Pawn;
 
         public int CurrentBandwidth
         {
@@ -232,7 +232,7 @@ namespace DMSRC
                 }
             }
             Hediff_DummyPawn hediff = (Hediff_DummyPawn)dummyPawn.health.GetOrAddHediff(RCDefOf.DMSRC_DummyPawn);
-            hediff.overseer = Parent;
+            hediff.overseer = Parent as IOverseer;
             hediff.Severity = Mathf.Max(Props.controlGroups - 2, 0.5f);
 			PawnComponentsUtility.AddComponentsForSpawn(dummyPawn);
             PawnComponentsUtility.AddAndRemoveDynamicComponents(dummyPawn);

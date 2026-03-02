@@ -68,8 +68,6 @@ namespace DMSRC
 	}
 	public class CompCallRenegades : ThingComp
 	{
-		public CompPowerTrader powerTraderComp;
-
 		private Texture2D icon;
 
 		private Texture2D Icon
@@ -88,12 +86,11 @@ namespace DMSRC
 		public override void PostSpawnSetup(bool respawningAfterLoad)
 		{
 			base.PostSpawnSetup(respawningAfterLoad);
-			powerTraderComp = parent.GetComp<CompPowerTrader>();
 		}
 
 		public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn myPawn)
 		{
-			if (Props.useJob == null || powerTraderComp?.PowerOn == false || parent.Map?.Tile.Valid != true || parent.Map.IsPocketMap)
+			if (Props.useJob == null)
 			{
 				yield break;
 			}
@@ -104,7 +101,7 @@ namespace DMSRC
 			}
 			string text = "CallOnRadio".Translate(renegades.RenegadesFaction.Name ?? renegades.RenegadesFaction.def.label);
 			text = text + " (" + renegades.PlayerRelation.GetLabelCap() + ", " + renegades.playerGoodwill.ToStringWithSign() + ")";
-			FloatMenuOption floatMenuOption = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, delegate
+			FloatMenuOption floatMenuOption = new FloatMenuOption(text, delegate
 			{
 				foreach (CompUseEffect comp in parent.GetComps<CompUseEffect>())
 				{
@@ -116,8 +113,8 @@ namespace DMSRC
 				Job job = JobMaker.MakeJob(Props.useJob, parent);
 				job.count = 1;
 				myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-			}, priority: Props.floatMenuOptionPriority, iconTex: Icon, iconColor: renegades.RenegadesFaction.Color), myPawn, parent);
-			yield return floatMenuOption;
+			}, priority: Props.floatMenuOptionPriority, iconTex: Icon, iconColor: renegades.RenegadesFaction.Color);
+			yield return FloatMenuUtility.DecoratePrioritizedTask(floatMenuOption, myPawn, parent);
 		}
 	}
 }

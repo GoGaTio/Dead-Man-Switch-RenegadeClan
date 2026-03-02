@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
-using System.Reflection.Emit;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.IO;
@@ -12,7 +6,23 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using RimWorld.SketchGen;
 using RimWorld.Utility;
-using HarmonyLib;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Text;
+using System.Threading.Tasks;
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Jobs;
+using UnityEngine;
+using UnityEngine.Jobs;
+using UnityEngine.Profiling;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -21,15 +31,6 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
-using UnityEngine;
-using System.Diagnostics;
-using Unity.Burst;
-using Unity.Collections;
-using Unity.Jobs;
-using UnityEngine.Jobs;
-using UnityEngine.Profiling;
-using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
 
 namespace DMSRC
 {
@@ -214,15 +215,45 @@ namespace DMSRC
 			{
 				return;
 			}
-			if(t is Pawn pawn)
+			if (vehicleType.IsAssignableFrom(t.def.thingClass))
 			{
-				if(pawn.RaceProps.IsMechanoid || pawn.RaceProps.IsDrone)
+				Log.Message("1");
+				IEnumerable handlers = occupiedHandlersMethod.Invoke(t, Array.Empty<object>()) as IEnumerable;
+				List<IThingHolder> list = new List<IThingHolder>();
+				if (handlers != null)
+				{
+					foreach (var handler in handlers)
+					{
+						if (handler != null && handler is IThingHolder holder && !(bool)exposedField.GetValue(roleField.GetValue(handler)))
+						{
+							list.Add(holder);
+						}
+					}
+					Log.Message("2");
+					foreach (IThingHolder holder in list)
+					{
+						Log.Message("3");
+						foreach (Thing item in holder.GetDirectlyHeldThings().ToList())
+						{
+							Log.Message("5");
+							if (item is Pawn p)
+							{
+								Log.Message("6");
+								CumulativeEffect(p, explosion.instigator, explosion.weapon, explosion.projectile, true);
+							}
+						}
+					}
+				}
+			}
+			else if (t is Pawn pawn)
+			{
+				if (pawn.RaceProps.IsMechanoid || pawn.RaceProps.IsDrone)
 				{
 					CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile, true);
 				}
 				else if(pawn.apparel != null)
 				{
-					Apparel core = pawn.apparel.WornApparel.FirstOrDefault((a) => a.def.thingClass == AccessTools.TypeByName("Exosuit.Exosuit_Core"));
+					Apparel core = pawn.apparel.WornApparel.FirstOrDefault((a) => exosuitType.IsAssignableFrom(a.def.thingClass));
 					if(core != null)
 					{
 						CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile);
@@ -231,16 +262,34 @@ namespace DMSRC
 			}
 		}
 
+		public static Type vehicleType = AccessTools.TypeByName("Vehicles.VehiclePawn");
+
+		public static Type exosuitType = AccessTools.TypeByName("Exosuit.Exosuit_Core");
+
+		public static Type roleType = AccessTools.TypeByName("Vehicles.VehicleRole");
+
+		public static Type roleHandlerType = AccessTools.TypeByName("Vehicles.VehicleRoleHandler");
+
+		public static MethodInfo occupiedHandlersMethod = AccessTools.Method(vehicleType, "get_OccupiedHandlers", null, null);
+
+		public static FieldInfo roleField = AccessTools.Field(roleHandlerType, "role");
+
+		public static FieldInfo exposedField = AccessTools.Field(roleType, "exposed");
+
+		public DamageInfo workingDamage;
+
 		public void CumulativeEffect(Pawn pawn, Thing initiator, ThingDef weaponDef, ThingDef projectileDef, bool onlyInternal = false)
 		{
 			List<BodyPartRecord> list = new List<BodyPartRecord>();
 			List<Hediff> hediffs = new List<Hediff>();
 			BattleLogEntry_CumulativeEffect battleLogEntry = null;
+			workingDamage = new DamageInfo(DamageDefOf.Burn, 30f, 999f, instigator: initiator, weapon: weaponDef);
 			if (pawn != null)
 			{
 				battleLogEntry = new BattleLogEntry_CumulativeEffect(initiator, pawn, weaponDef, projectileDef, def);
 				Find.BattleLog.Add(battleLogEntry);
 			}
+			float damageAmount = 0;
 			for(int i = 0; i < 3; i++)
 			{
 				BodyPartRecord part = pawn.health.hediffSet.GetRandomNotMissingPart(def, BodyPartHeight.Undefined, onlyInternal ? BodyPartDepth.Inside : BodyPartDepth.Undefined);
@@ -251,14 +300,16 @@ namespace DMSRC
 				if(part != null)
 				{
 					Hediff hediff = ApplyDamageToPart(pawn, 10f * pawn.BodySize, initiator, part, weaponDef);
-					if(hediff == null)
+					if (hediff == null)
 					{
 						continue;
 					}
+					damageAmount += hediff.Severity;
 					hediffs.Add(hediff);
 					list.Add(part);
 				}
 			}
+			pawn.PostApplyDamage(workingDamage, damageAmount);
 			if (pawn != null)
 			{
 				List<bool> recipientPartsDestroyed = null;
@@ -276,19 +327,21 @@ namespace DMSRC
 					hediffs[num].combatLogText = battleLogEntry.ToGameStringFromPOV(null);
 				}
 			}
+			
 		}
 
 		protected Hediff ApplyDamageToPart(Pawn pawn, float amount, Thing initiator, BodyPartRecord part, ThingDef weaponDef)
 		{
 			Pawn pawn2 = initiator as Pawn;
 			HediffDef hediffDefFromDamage = HealthUtility.GetHediffDefFromDamage(DamageDefOf.Burn, pawn, part);
-			Hediff_Injury hediff_Injury = (Hediff_Injury)HediffMaker.MakeHediff(hediffDefFromDamage, pawn);
+			Hediff_Injury hediff_Injury = (Hediff_Injury)HediffMaker.MakeHediff(hediffDefFromDamage, pawn, part);
 			hediff_Injury.Part = part;
 			hediff_Injury.sourceDef = weaponDef;
 			hediff_Injury.sourceLabel = weaponDef?.label ?? "";
 			hediff_Injury.Severity = amount;
 			hediff_Injury.TryGetComp<HediffComp_GetsPermanent>()?.PreFinalizeInjury();
-			pawn.health.AddHediff(hediff_Injury, null, new DamageInfo(DamageDefOf.Burn, 30f, 999f));
+			workingDamage.SetHitPart(part);
+			pawn.health.AddHediff(hediff_Injury, null, workingDamage);
 			return hediff_Injury;
 		}
 	}

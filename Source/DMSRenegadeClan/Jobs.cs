@@ -56,6 +56,40 @@ using Verse.Steam;
 
 namespace DMSRC
 {
+
+	public class JobDriver_CarryToBuildingDrafted : JobDriver
+	{
+		private const TargetIndex BuildingInd = TargetIndex.A;
+
+		private const TargetIndex TakeeInd = TargetIndex.B;
+
+		private Pawn Takee => (Pawn)job.GetTarget(TargetIndex.B).Thing;
+
+		private Building_Enterable Building => (Building_Enterable)job.GetTarget(TargetIndex.A).Thing;
+
+		public override bool TryMakePreToilReservations(bool errorOnFailed)
+		{
+			return true;
+		}
+
+		protected override IEnumerable<Toil> MakeNewToils()
+		{
+			this.FailOnDestroyedOrNull(TargetIndex.B);
+			this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
+			this.FailOn(() => Takee != null && !Building.CanAcceptPawn(Takee));
+			yield return Toils_General.Do(delegate
+			{
+				Building.SelectedPawn = Takee;
+			});
+			yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
+			yield return Toils_General.WaitWith(TargetIndex.A, 60, useProgressBar: true);
+			yield return Toils_General.Do(delegate
+			{
+				Building.TryAcceptPawn(Takee);
+			});
+		}
+	}
+
 	public class JobDriver_PlantBomb : JobDriver
 	{
 		private IntVec3 Cell => job.GetTarget(TargetIndex.A).Cell;
@@ -173,15 +207,15 @@ namespace DMSRC
 	{
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			if (!(pawn is OverseerMech mech) || !mech.Comp.Props.canRepair)
+			if (!(pawn is IOverseer mech) || !mech.Comp.Props.canRepair)
 			{
 				return null;
 			}
-            if (MechRepairUtility.CanRepair(mech) && mech.GetComp<CompMechRepairable>()?.autoRepair == true)
+            if (MechRepairUtility.CanRepair(pawn) && pawn.GetComp<CompMechRepairable>()?.autoRepair == true)
             {
-				return JobMaker.MakeJob(RCDefOf.DMSRC_RepairMech, mech);
+				return JobMaker.MakeJob(RCDefOf.DMSRC_RepairMech, pawn);
             }
-			Thing thing = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction), PathEndMode.ClosestTouch, TraverseParms.For(pawn), 9999f, (Thing x) => CanRepair(mech, x));
+			Thing thing = GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, pawn.Map.mapPawns.SpawnedPawnsInFaction(pawn.Faction), PathEndMode.ClosestTouch, TraverseParms.For(pawn), 9999f, (Thing x) => CanRepair(pawn, x));
 			if(thing == null)
             {
 				return null;
@@ -241,7 +275,7 @@ namespace DMSRC
 
 		protected Pawn Mech => (Pawn)job.GetTarget(TargetIndex.A).Thing;
 
-		private OverseerMech Overseer => pawn as OverseerMech;
+		private IOverseer Overseer => pawn as IOverseer;
 
 		protected int TicksPerHeal => Mathf.RoundToInt(Overseer.Comp.Props.ticksPerHeal);
 
@@ -309,7 +343,7 @@ namespace DMSRC
 
 		private Pawn Mech => (Pawn)job.GetTarget(TargetIndex.A).Thing;
 
-		private OverseerMech Overseer => pawn as OverseerMech;
+		private IOverseer Overseer => pawn as IOverseer;
 
 		private int MechControlTime => Mathf.RoundToInt(Mech.GetStatValue(StatDefOf.ControlTakingTime) * 120f);
 
@@ -371,7 +405,6 @@ namespace DMSRC
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			this.FailOnDestroyedNullOrForbidden(TargetIndex.A);
-			this.FailOn(() => Target.GetComp<CompCallRenegades>()?.powerTraderComp?.PowerOn == false);
 			yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
 			Toil toil = ToilMaker.MakeToil("MakeNewToils");
 			toil.initAction = delegate

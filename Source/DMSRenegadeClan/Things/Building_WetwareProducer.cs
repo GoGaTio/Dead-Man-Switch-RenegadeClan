@@ -55,6 +55,7 @@ using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
+using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.Scripting.GarbageCollector;
 
 namespace DMSRC
@@ -721,6 +722,27 @@ namespace DMSRC
 			else if (!acceptanceReport.Reason.NullOrEmpty())
 			{
 				yield return new FloatMenuOption("CannotEnterBuilding".Translate(this) + ": " + acceptanceReport.Reason.CapitalizeFirst(), null);
+			}
+			Pawn carriedPawn = selPawn.carryTracker?.CarriedThing as Pawn;
+			if(carriedPawn == null)
+			{
+				yield break;
+			}
+			AcceptanceReport acceptanceReport2 = CanAcceptPawn(carriedPawn);
+			if (acceptanceReport2.Accepted)
+			{
+				yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("CarryToSpecificThing".Translate(this), delegate
+				{
+					SelectPawn(carriedPawn);
+					Job job = JobMaker.MakeJob(RCDefOf.DMSRC_CarryToBuildingDrafted, this, carriedPawn);
+					job.count = 1;
+					job.playerForced = true;
+					selPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+				}), selPawn, this);
+			}
+			else if (!acceptanceReport2.Reason.NullOrEmpty())
+			{
+				yield return new FloatMenuOption("CannotCarry".Translate(carriedPawn) + ": " + acceptanceReport2.Reason.CapitalizeFirst(), null);
 			}
 		}
 

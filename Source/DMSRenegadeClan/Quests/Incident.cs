@@ -92,11 +92,11 @@ namespace DMSRC
 		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
 			GameComponent_Renegades comp = GameComponent_Renegades.Find;
+			Map map = (Map)parms.target;
 			if (comp == null || comp.PlayerRelation != FactionRelationKind.Hostile || comp.RenegadesFaction == null)
 			{
 				return false;
 			}
-			Map map = (Map)parms.target;
 			parms.faction = comp.RenegadesFaction;
 			int count = Mathf.Max(3, Mathf.RoundToInt(SaboteursCountFactorByPointsCurve.Evaluate(parms.points) * SaboteursCountByColonistsCurve.Evaluate(map.mapPawns.FreeColonistsSpawnedOrInPlayerEjectablePodsCount)));
 			List<Pawn> list = GenerateSaboteurs(parms, count).ToList();
@@ -145,6 +145,15 @@ namespace DMSRC
 			{
 				ownedPawn.mindState.duty = new PawnDuty(RCDefOf.DMSRC_Sabotage);
 				ownedPawn.mindState.forcedGotoPosition = JobGiver_TryPlantBomb.GetPlantPosition(ownedPawn);
+				if(!ownedPawn.mindState.forcedGotoPosition.IsValid || !ownedPawn.CanReach(ownedPawn.mindState.forcedGotoPosition, PathEndMode.OnCell, Danger.Deadly))
+				{
+					ownedPawn.mindState.forcedGotoPosition = JobGiver_TryPlantBomb.GetPlantPosition(ownedPawn);
+					if (!ownedPawn.mindState.forcedGotoPosition.IsValid || !ownedPawn.CanReach(ownedPawn.mindState.forcedGotoPosition, PathEndMode.OnCell, Danger.Deadly))
+					{
+						ownedPawn.mindState.duty = new PawnDuty(DutyDefOf.ExitMapBest);
+						ownedPawn.mindState.forcedGotoPosition = IntVec3.Invalid;
+					}
+				}
 			}
 		}
 	}
@@ -197,7 +206,7 @@ namespace DMSRC
 					return result;
 				}
 			}
-			Room room = map.regionGrid.AllRooms?.RandomElementByWeight((r) => r.GetStat(RoomStatDefOf.Wealth));
+			Room room = map.regionGrid.AllRooms?.RandomElementByWeight((r) => r.GetStat(RoomStatDefOf.Wealth) * r.CellCount);
 			if (room == null)
 			{
 				return IntVec3.Invalid;

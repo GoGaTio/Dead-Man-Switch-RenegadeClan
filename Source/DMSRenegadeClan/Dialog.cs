@@ -216,11 +216,12 @@ namespace DMSRC
 
 		public void DoRightRect(Rect rect)
 		{
-			if (renegades.PlayerRelation != FactionRelationKind.Ally)
+			bool flag = map?.Tile.Valid != true || map.IsPocketMap;
+			if (renegades.PlayerRelation != FactionRelationKind.Ally || flag)
 			{
 				Text.Anchor = TextAnchor.MiddleCenter;
 				GUI.color = Color.gray;
-				Widgets.Label(rect, "DMSRC_RenegadesDialod_RequestsDisabled".Translate());
+				Widgets.Label(rect, flag ? "DMSRC_RenegadesDialod_NeedNotPocketMap".Translate() : "DMSRC_RenegadesDialod_RequestsDisabled".Translate());
 				return;
 			}
 			Widgets.BeginGroup(rect);
@@ -274,7 +275,6 @@ namespace DMSRC
 			else
 			{
 				request.DrawTab(new Rect(0f, 58f, rect.width, rect.height - 58f), ref scrollPosition, viewHeight, renegades);
-				
 				if (Widgets.ButtonText(new Rect(rect.width - 303f, 5f, 96f, 48f), request.Map.Parent.LabelCap))
 				{
 					List<FloatMenuOption> list = new List<FloatMenuOption>();
@@ -298,6 +298,9 @@ namespace DMSRC
 						renegades.requests.Add(request);
 						request.Saved();
 						request = null;
+						silver = (from t in TradeUtility.AllLaunchableThingsForTrade(map)
+								  where t.def == ThingDefOf.Silver
+								  select t).Sum((Thing t) => t.stackCount);
 					}
 					else
 					{

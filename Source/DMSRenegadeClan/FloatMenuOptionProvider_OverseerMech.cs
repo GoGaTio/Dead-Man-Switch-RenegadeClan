@@ -25,7 +25,7 @@ namespace DMSRC
 
 		protected override bool AppliesInt(FloatMenuContext context)
 		{
-			return context.FirstSelectedPawn is OverseerMech;
+			return context.FirstSelectedPawn is IOverseer;
 		}
 
 		public override IEnumerable<FloatMenuOption> GetOptions(FloatMenuContext context)
@@ -35,7 +35,7 @@ namespace DMSRC
 
 		public override IEnumerable<FloatMenuOption> GetOptionsFor(Pawn clickedPawn, FloatMenuContext context)
 		{
-			if (context.FirstSelectedPawn is OverseerMech mech)
+			if (context.FirstSelectedPawn is IOverseer overseer && overseer is Pawn mech)
 			{
 				if (!clickedPawn.IsColonyMech)
 				{
@@ -43,15 +43,15 @@ namespace DMSRC
 				}
 				if(clickedPawn != mech)
 				{
-					if (clickedPawn.GetOverseer() != mech.Comp.dummyPawn)
+					if (clickedPawn.GetOverseer() != overseer.Comp.dummyPawn)
 					{
-						if (!mech.Comp.Props.instantControl && !mech.CanReach(clickedPawn, PathEndMode.Touch, Danger.Deadly))
+						if (!overseer.Comp.Props.instantControl && !mech.CanReach(clickedPawn, PathEndMode.Touch, Danger.Deadly))
 						{
 							yield return new FloatMenuOption("CannotControlMech".Translate(clickedPawn.LabelShort) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
 						}
-						else if (!MechanitorUtility.CanControlMech(mech.Comp.dummyPawn, clickedPawn))
+						else if (!MechanitorUtility.CanControlMech(overseer.Comp.dummyPawn, clickedPawn))
 						{
-							AcceptanceReport acceptanceReport = MechanitorUtility.CanControlMech(mech.Comp.dummyPawn, clickedPawn);
+							AcceptanceReport acceptanceReport = MechanitorUtility.CanControlMech(overseer.Comp.dummyPawn, clickedPawn);
 							if (!acceptanceReport.Reason.NullOrEmpty())
 							{
 								yield return new FloatMenuOption("CannotControlMech".Translate(clickedPawn.LabelShort) + ": " + acceptanceReport.Reason, null);
@@ -61,9 +61,9 @@ namespace DMSRC
 						{
 							yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("ControlMech".Translate(clickedPawn.LabelShort), delegate
 							{
-								if (mech.Comp.Props.instantControl)
+								if (overseer.Comp.Props.instantControl)
 								{
-									mech.Comp.Connect(clickedPawn, mech.Comp.dummyPawn);
+									overseer.Comp.Connect(clickedPawn, overseer.Comp.dummyPawn);
 									SoundDefOf.ControlMech_Complete.PlayOneShot(clickedPawn);
 								}
 								else
@@ -94,7 +94,7 @@ namespace DMSRC
 						}
 					}
 				}
-				if (!MechRepairUtility.CanRepair(clickedPawn) || !mech.Comp.Props.canRepair)
+				if (!MechRepairUtility.CanRepair(clickedPawn) || !overseer.Comp.Props.canRepair)
 				{
 					yield break;
 				}

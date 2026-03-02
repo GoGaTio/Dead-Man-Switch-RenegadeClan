@@ -28,6 +28,7 @@
       <sitePart>DMSRC_AntennaPoint</sitePart>
       <oppositeFactionForSite>true</oppositeFactionForSite>
       <timeoutTicks>120000</timeoutTicks>
+      <rewardValue>2</rewardValue>
       <mission>
         <missionClass>DMSRC.QuestPart_Mission_Destroy</missionClass>
         <targetDef>DMSRC_LargeBroadcastAntenna</targetDef>
@@ -66,6 +67,7 @@
       <sitePart>DMSRC_LogisticCenter</sitePart>
       <oppositeFactionForSite>true</oppositeFactionForSite>
       <timeoutTicks>600000</timeoutTicks>
+      <rewardValue>5</rewardValue>
       <mission>
         <missionClass>DMSRC.QuestPart_Mission_DestroyFacility</missionClass>
         <wavesCooldown>5000~7500</wavesCooldown>

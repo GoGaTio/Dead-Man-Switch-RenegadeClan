@@ -18,10 +18,11 @@
   <DMSRC_MessageCantInterceptMechhive>Cannot intercept mechhive signal</DMSRC_MessageCantInterceptMechhive>
   <DMSRC_Currency>All available silver</DMSRC_Currency>
   <DMSRC_RenegadesDialod_RequestsDisabled>Should be ally to make requests</DMSRC_RenegadesDialod_RequestsDisabled>
+  <DMSRC_RenegadesDialod_NeedNotPocketMap>Shouldn't be underground</DMSRC_RenegadesDialod_NeedNotPocketMap>
   <DMSRC_RenegadesContactsLetter_Label>Contact with renegades</DMSRC_RenegadesContactsLetter_Label>
   <DMSRC_RenegadesContactsLetter_Text>Renegades contacted you, offering an allience. They will give you access to trade requests and, in the future, military aid.\n\nIf you will accept this offer Colonial fleet would become permanent enemy.\n\nIf you will reject this offer renegades will not do anything, unless you'll become Colonial fleet ally.</DMSRC_RenegadesContactsLetter_Text>
   <DMSRC_Controlled>{0}/{1}</DMSRC_Controlled>
-  <DMSRC_NeedMoreGoodwill>Not enough goodwill</DMSRC_NeedMoreGoodwill>
+  <DMSRC_NeedMoreGoodwill>Not enough goodwill(Require at least {0})</DMSRC_NeedMoreGoodwill>
   <DMSRC_ArrivalAfter_Single>Arrives in {0}</DMSRC_ArrivalAfter_Single>
   <DMSRC_MilitaryAid>Military aid with power of {0} (cost {1} goodwill)</DMSRC_MilitaryAid>
   <DMSRC_RenegadesTradeLetter_Label>Purchases arrived</DMSRC_RenegadesTradeLetter_Label>
@@ -44,5 +45,12 @@
   <DMSRC_RecalculatingTiles>Recalculating tiles</DMSRC_RecalculatingTiles>
   <DMSRC_ErrorWhileRecalculatingTilesTitle>Error while recalculating tiles</DMSRC_ErrorWhileRecalculatingTilesTitle>
   <DMSRC_ErrorWhileRecalculatingTiles>Broadcast towers will not work. Report this issue to developer</DMSRC_ErrorWhileRecalculatingTiles>
-  
+
+  <DMSRC_Bandwidth>{0} bandwidth (will cost {1} silver every 15 days)</DMSRC_Bandwidth>
+  <DMSRC_AutoRepay>Auto renewal</DMSRC_AutoRepay>
+  <DMSRC_BandwidthRequestExpired>Bandwidth request ended</DMSRC_BandwidthRequestExpired>
+  <DMSRC_Adjust>Adjust</DMSRC_Adjust>
+  <DMSRC_AlreadyHasHediff>This pawn already has connection.</DMSRC_AlreadyHasHediff>
+  <DMSRC_NoPawnSelected>No pawn selected.</DMSRC_NoPawnSelected>
+
 </LanguageData>

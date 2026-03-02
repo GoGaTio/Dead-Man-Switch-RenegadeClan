@@ -78,7 +78,7 @@
   <ResearchProjectDef ParentName="DMS_BaseTech">
     <defName>DMSRC_NeuroChips</defName>
     <label>neurochips</label>
-    <description>Produce neuroimplants comatoble with neurointerface.</description>
+    <description>Produce neuroimplants comatible with neurointerface.</description>
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>

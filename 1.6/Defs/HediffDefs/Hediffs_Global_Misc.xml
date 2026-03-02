@@ -25,6 +25,22 @@
   </HediffDef>
 
   <HediffDef>
+    <defName>DMSRC_BandwidthRequest</defName>
+    <label>bandwidth request</label>
+    <description>Connected processor helmet.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+        <statOffsets>
+          <MechBandwidth>1</MechBandwidth>
+        </statOffsets>
+        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+      </li>
+    </stages>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef>
     <hediffClass>HediffWithComps</hediffClass>
     <defName>DMSRC_NeuroControl</defName>
     <label>neurocontrol</label>
@@ -351,16 +367,31 @@
       <li>
         <label>first trimester</label>
         <hungerRateFactorOffset>1</hungerRateFactorOffset>
+        <disablesNeeds>
+          <li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
+          <li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
+          <li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
+        </disablesNeeds>
       </li>
       <li>
         <label>second trimester</label>
         <minSeverity>0.333</minSeverity>
         <hungerRateFactorOffset>3</hungerRateFactorOffset>
+        <disablesNeeds>
+          <li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
+          <li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
+          <li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
+        </disablesNeeds>
       </li>
       <li>
         <label>third trimester</label>
         <minSeverity>0.666</minSeverity>
         <hungerRateFactorOffset>5</hungerRateFactorOffset>
+        <disablesNeeds>
+          <li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
+          <li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
+          <li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
+        </disablesNeeds>
       </li>
     </stages>
   </HediffDef>

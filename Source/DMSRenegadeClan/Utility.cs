@@ -65,13 +65,33 @@ namespace DMSRC
 			return GetOverseerMech(dummy)?.Comp;
 		}
 
-		public static OverseerMech GetOverseerMech(this Pawn dummy)
+		public static IOverseer GetOverseerMech(this Pawn dummy)
 		{
 			if (dummy == null || dummy.kindDef != RCDefOf.DMSRC_DummyMechanitor || dummy.mechanitor == null || dummy.health?.hediffSet == null)
 			{
 				return null;
 			}
 			return dummy.health.hediffSet.GetFirstHediff<Hediff_DummyPawn>()?.overseer;
+		}
+
+		public static Pawn GetOverseerPawn(this Pawn dummy)
+		{
+			if (dummy == null || dummy.kindDef != RCDefOf.DMSRC_DummyMechanitor || dummy.mechanitor == null || dummy.health?.hediffSet == null)
+			{
+				return null;
+			}
+			return dummy.health.hediffSet.GetFirstHediff<Hediff_DummyPawn>()?.overseer as Pawn;
+		}
+
+		public static Pawn GetOverseerPawn(this Pawn dummy, out IOverseer overseer)
+		{
+			overseer = null;
+			if (dummy == null || dummy.kindDef != RCDefOf.DMSRC_DummyMechanitor || dummy.mechanitor == null || dummy.health?.hediffSet == null)
+			{
+				return null;
+			}
+			overseer = dummy.health.hediffSet.GetFirstHediff<Hediff_DummyPawn>()?.overseer;
+			return overseer as Pawn;
 		}
 	}
 

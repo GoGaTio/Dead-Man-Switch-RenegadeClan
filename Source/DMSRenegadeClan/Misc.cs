@@ -54,6 +54,7 @@ using static UnityEngine.Scripting.GarbageCollector;
 
 namespace DMSRC
 {
+
 	public class ScenPart_Renegades : ScenPart
 	{
 		public bool startContacted = false;
@@ -180,7 +181,7 @@ namespace DMSRC
 					things.Remove(t);
 				}
 			}
-			OverseerMech overseer = mechs.FirstOrDefault((x)=>x is OverseerMech) as OverseerMech;
+			IOverseer overseer = mechs.FirstOrDefault((x)=>x is IOverseer) as IOverseer;
 			overseer.Comp.UpdateDummy();
 			if (overseer != null)
 			{

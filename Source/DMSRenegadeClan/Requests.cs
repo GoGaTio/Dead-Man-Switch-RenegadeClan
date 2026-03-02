@@ -48,6 +48,7 @@ using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using Verse;
 using Verse.AI;
+using Verse.Noise;
 using Verse.Sound;
 using static DMSRC.TradeRequest;
 using static HarmonyLib.Code;
@@ -90,6 +91,8 @@ namespace DMSRC
 		public bool arrived = false;
 
 		protected List<Map> mapsTmp = new List<Map>();
+
+		protected virtual float Height => 50f;
 
 		public List<Map> Maps
 		{
@@ -182,16 +185,18 @@ namespace DMSRC
 			return true;
 		}
 
+		public virtual string Label => def.LabelCap + " (" + (arrived ? "" : GenDate.DateFullStringAt(ticksRequested, Find.WorldGrid.LongLatOf(tile))) + ")";
+
 		public virtual Rect DoInterface(float x, float y, float width, ref float f)
 		{
-			Rect rect = new Rect(x, y, width, 100f);
+			Rect rect = new Rect(x, y, width, Height);
 			Color color = Color.white;
 			Widgets.DrawAltRect(rect);
 			Text.Font = GameFont.Small;
 			Text.Anchor = TextAnchor.MiddleCenter;
 			Widgets.BeginGroup(rect);
 			Rect rect1 = new Rect(0, 0, width - 25f, 25f);
-			Widgets.Label(rect1, GenDate.DateFullStringAt(ticksRequested, Find.WorldGrid.LongLatOf(tile)));
+			Widgets.Label(rect1, Label);
 			Widgets.InfoCardButton(new Rect(width - 25f, 0, 25f, 25f), def);
 			f = 25f;
 			if (!arrived && CanArrive())
@@ -253,6 +258,204 @@ namespace DMSRC
 		{
 			base.ExposeData();
 			Scribe_Values.Look(ref points, "points");
+		}
+	}
+
+	public class BandwidthRequest : RenegadesRequest
+	{
+		public Pawn mechanitor;
+
+		public int hoursPayed = 0;
+
+		public int bandwidth = 1;
+
+		public bool autoPay = true;
+
+		public int Cost => bandwidth * 125;
+
+		public bool currentlyAdjusting;
+
+		public int bandwidthAdjusted;
+
+		public override bool CanArrive()
+		{
+			return false;
+		}
+
+		public override string Label => def.LabelCap + " (" + mechanitor.LabelShortCap + ", " + "Bandwidth".Translate() + ": " + bandwidth + ")";
+
+		protected override float Height => currentlyAdjusting ? 125f : 75f;
+
+		public override Rect DoInterface(float x, float y, float width, ref float f)
+		{
+			Rect rect = base.DoInterface(x, y, width, ref f);
+			Widgets.CheckboxLabeled(new Rect(x + 20, y + f, 192f, 25f), "DMSRC_AutoRepay".Translate(), ref autoPay);
+			if (Widgets.ButtonText(new Rect(x + rect.width - 101, y + f, 96f, 25f), "Delete".Translate()))
+			{
+				Find.WindowStack.Add(new Dialog_Confirm("Delete".Translate(), delegate
+				{
+					Complete();
+				}));
+			}
+			f += 25f;
+			if (Widgets.ButtonText(new Rect(x + 20, y + f, 96f, 25f), Map?.Parent?.LabelCap ?? "None".Translate()))
+			{
+				List<FloatMenuOption> list = new List<FloatMenuOption>();
+				foreach (Map map in Maps)
+				{
+					list.Add(new FloatMenuOption(map.Parent.LabelCap, delegate
+					{
+						tile = map.Tile;
+					}));
+				}
+				Find.WindowStack.Add(new FloatMenu(list));
+			}
+			if (Widgets.ButtonText(new Rect(x + rect.width - 101, y + f, 96f, 25f), "DMSRC_Adjust".Translate()))
+			{
+				currentlyAdjusting = true;
+				bandwidthAdjusted = bandwidth;
+			}
+			f += 25f;
+			if (currentlyAdjusting)
+			{
+				Widgets.Label(new Rect(x + 20, y + f, 250f, 25f), "Bandwidth".Translate() + ": " + bandwidthAdjusted + ", " + "Cost".Translate() + ": " + (bandwidthAdjusted > bandwidth ? (125 * (bandwidthAdjusted - bandwidth)) : 0).ToString());
+				bandwidthAdjusted = Mathf.RoundToInt(Widgets.HorizontalSlider(new Rect(x + 200f, y + f, rect.width - 220f, 25f), bandwidthAdjusted, 1, 30, roundTo: 1));
+				f += 25f;
+				if (Widgets.ButtonText(new Rect(x + rect.width - 101, y + f, 96f, 25f), "Save".Translate().CapitalizeFirst()))
+				{
+					if (bandwidthAdjusted <= bandwidth || TradeUtility.ColonyHasEnoughSilver(Map, 125 * (bandwidthAdjusted - bandwidth)))
+					{
+						bandwidth = bandwidthAdjusted;
+						currentlyAdjusting = false;
+						Hediff hediff = mechanitor.health.GetOrAddHediff(RCDefOf.DMSRC_BandwidthRequest);
+						hediff.Severity = bandwidth;
+					}
+					else
+					{
+						Messages.Message("NeedSilverLaunchable".Translate((125 * (bandwidthAdjusted - bandwidth)).ToString()), MessageTypeDefOf.RejectInput);
+					}
+				}
+			}
+			return rect;
+		}
+
+		public override void DrawTab(Rect rect, ref Vector2 scrollPosition, float viewHeight, GameComponent_Renegades renegades)
+		{
+			Widgets.BeginGroup(rect);
+			float width = rect.width;
+			Text.Anchor = TextAnchor.MiddleLeft;
+			Text.Font = GameFont.Small;
+			Rect rectLabel = new Rect(20, 0, rect.width - 40, 30);
+			Rect rectSelector = new Rect(20, 35, 150, 30);
+			Rect rectSlider = new Rect(170, 45, rect.width - 180, 30);
+			Widgets.Label(rectLabel, "DMSRC_Bandwidth".Translate(bandwidth, Cost));
+			bandwidth = Mathf.RoundToInt(Widgets.HorizontalSlider(rectSlider, bandwidth, 1, 30, roundTo: 1));
+			if (Widgets.ButtonText(rectSelector, mechanitor == null ? "None".Translate().ToString() : mechanitor.LabelCapNoCount))
+			{
+				List<FloatMenuOption> list = new List<FloatMenuOption>();
+				foreach (Pawn pawn in Map.mapPawns.FreeColonistsSpawned)
+				{
+					Pawn p = pawn;
+					if (MechanitorUtility.IsMechanitor(p))
+					{
+						list.Add(new FloatMenuOption(p.LabelCapNoCount, delegate
+						{
+							mechanitor = p;
+						}));
+					}
+				}
+				if (!list.Any())
+				{
+					list.Add(new FloatMenuOption("NoViablePawns".Translate(), null));
+				}
+				Find.WindowStack.Add(new FloatMenu(list));
+			}
+			Text.Anchor = TextAnchor.MiddleCenter;
+			Widgets.EndGroup();
+		}
+
+		public override AcceptanceReport TrySave(GameComponent_Renegades renegades)
+		{
+			if(mechanitor == null)
+			{
+				return "DMSRC_NoPawnSelected".Translate();
+			}
+			if(mechanitor.health.hediffSet.GetFirstHediffOfDef(RCDefOf.DMSRC_BandwidthRequest) != null)
+			{
+				return "DMSRC_AlreadyHasHediff".Translate();
+			}
+			if (!TradeUtility.ColonyHasEnoughSilver(Map, Cost))
+			{
+				return "NeedSilverLaunchable".Translate(Cost.ToString());
+			}
+			TradeUtility.LaunchSilver(Map, Cost);
+			hoursPayed = 360;
+			arrived = true;
+			Hediff hediff = mechanitor.health.GetOrAddHediff(RCDefOf.DMSRC_BandwidthRequest);
+			hediff.Severity = bandwidth;
+			return base.TrySave(renegades);
+		}
+
+		public override void Complete()
+		{
+			base.Complete();
+			if(mechanitor != null && mechanitor.health != null)
+			{
+				Hediff h = mechanitor.health.hediffSet.GetFirstHediffOfDef(RCDefOf.DMSRC_BandwidthRequest);
+				if (h != null)
+				{
+					mechanitor.health.RemoveHediff(h);
+				}
+			}
+		}
+
+		public override void Tick()
+		{
+			hoursPayed--;
+			if(mechanitor == null || mechanitor.Dead || mechanitor.Faction?.IsPlayer != true)
+			{
+				Complete();
+				return;
+			}
+			if(hoursPayed == 0)
+			{
+				if (autoPay)
+				{
+					if (!TradeUtility.ColonyHasEnoughSilver(Map, Cost))
+					{
+						Messages.Message("DMSRC_BandwidthRequestExpired".Translate() + ": " + "NeedSilverLaunchable".Translate(Cost.ToString()), MessageTypeDefOf.ThreatSmall);
+					}
+					else
+					{
+						TradeUtility.LaunchSilver(Map, Cost);
+						hoursPayed += 360;
+					}
+				}
+				else
+				{
+					Messages.Message("DMSRC_BandwidthRequestExpired".Translate(), MessageTypeDefOf.ThreatSmall);
+				}
+			}
+			if (hoursPayed < 0)
+			{
+				if (autoPay && TradeUtility.ColonyHasEnoughSilver(Map, Cost))
+				{
+					TradeUtility.LaunchSilver(Map, Cost);
+					hoursPayed += 360;
+				}
+				if (hoursPayed < -24)
+				{
+					GameComponent_Renegades.Find.OffsetGoodwill(-10);
+					Complete();
+					return;
+				}
+			}
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_References.Look(ref mechanitor, "mechanitor", false);
 		}
 	}
 
@@ -627,6 +830,17 @@ namespace DMSRC
 				}
 			}
 			TradeUtility.LaunchSilver(map, silver);
+			if(silver > 1000)
+			{
+				if(silver > 10000)
+				{
+					renegades.OffsetGoodwill(Mathf.RoundToInt((float)silver / 800f));
+				}
+				else
+				{
+					renegades.OffsetGoodwill(Mathf.RoundToInt((float)silver / 600f));
+				}
+			}
 			tradeRows.Clear();
 			tradeRows = null;
 			return base.TrySave(renegades);

@@ -19,6 +19,9 @@
     <thingCategories>
       <li>DMSRC_BodyPartsNeural</li>
     </thingCategories>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Beauty>0</Beauty>

@@ -21,6 +21,8 @@ namespace DMSRC
 
         public static HediffDef DMSRC_ArtificalPregnancy;
 
+        public static HediffDef DMSRC_BandwidthRequest;
+
 		public static JobDef DMSRC_ControlMech;
 
         public static JobDef DMSRC_RepairMech;
@@ -30,6 +32,8 @@ namespace DMSRC
 		public static JobDef DMSRC_PlantBomb;
 
         public static JobDef DSMRC_GotoSprint;
+
+        public static JobDef DMSRC_CarryToBuildingDrafted;
 
 		public static FactionDef DMSRC_RenegadeClan;
 

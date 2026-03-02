@@ -57,16 +57,18 @@ using static HarmonyLib.Code;
 using static RimWorld.MechClusterSketch;
 using static System.Net.WebRequestMethods;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
+using Fortified;
 
 namespace DMSRC
 {
-    [HarmonyPatch(typeof(FloatMenuOptionProvider_DraftedMove), nameof(FloatMenuOptionProvider_DraftedMove.PawnGotoAction))]
+
+	[HarmonyPatch(typeof(FloatMenuOptionProvider_DraftedMove), nameof(FloatMenuOptionProvider_DraftedMove.PawnGotoAction))]
     public static class Patch_PawnGotoAction
     {
         [HarmonyPrefix]
         public static bool Prefix(IntVec3 clickCell, Pawn pawn, IntVec3 gotoLoc)
         {
-            if (pawn is OverseerMech && pawn.IsColonyMech)
+            if (pawn is IOverseer && pawn.IsColonyMech)
             {
                 bool flag;
                 if (pawn.Position == gotoLoc || (pawn.CurJobDef == JobDefOf.Goto && pawn.CurJob.targetA.Cell == gotoLoc))
@@ -109,13 +111,13 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(Pawn pawn, ref GlobalTargetInfo __result)
         {
-			if (pawn is OverseerMech)
+			if (pawn is IOverseer)
 			{
                 __result = pawn;
                 return;
 			}
 			if (__result.Pawn == null) return;
-            OverseerMech mech = OverseerMechUtility.GetOverseerMech(__result.Pawn);
+            Pawn mech = OverseerMechUtility.GetOverseerPawn(__result.Pawn);
             if (mech != null)
             {
                 __result = mech;
@@ -129,13 +131,13 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(Pawn pawn, ref Pawn __result)
         {
-			if (pawn is OverseerMech)
+			if (pawn is IOverseer)
 			{
 				__result = pawn;
 				return;
 			}
 			if (__result == null) return;
-			OverseerMech mech = OverseerMechUtility.GetOverseerMech(__result);
+			Pawn mech = OverseerMechUtility.GetOverseerPawn(__result);
 			if (mech != null)
 			{
 				__result = mech;
@@ -150,7 +152,7 @@ namespace DMSRC
         public static void Postfix(Pawn pawn, ref Pawn __result)
         {
             if (__result == null) return;
-			OverseerMech mech = OverseerMechUtility.GetOverseerMech(__result);
+			Pawn mech = OverseerMechUtility.GetOverseerPawn(__result);
 			if (mech != null)
 			{
 				__result = mech;
@@ -167,7 +169,7 @@ namespace DMSRC
             if (__result) return;
             foreach (Pawn item in __instance.AllPawns)
             {
-                if (item is OverseerMech)
+                if (item is IOverseer)
                 {
                     __result = true;
                     return;
@@ -184,7 +186,7 @@ namespace DMSRC
         [HarmonyPriority(501)]
         public static bool Prefix(Pawn pawn, Rot4 exitDir)
         {
-            if (pawn is OverseerMech && pawn.IsColonyMech)
+            if (pawn is IOverseer && pawn.IsColonyMech)
             {
                 Caravan caravan = CaravanExitMapUtility.FindCaravanToJoinFor(pawn);
                 if (caravan != null)
@@ -242,7 +244,7 @@ namespace DMSRC
             {
                 return;
             }
-            if (pawn is OverseerMech && pawn.IsColonyMech)
+            if (pawn is IOverseer && pawn.IsColonyMech)
             {
                 __result = true;
             }
@@ -260,7 +262,7 @@ namespace DMSRC
         {
             foreach (TransferableOneWay transferable in ___transferables)
             {
-                if (transferable.HasAnyThing && transferable.AnyThing is OverseerMech)
+                if (transferable.HasAnyThing && transferable.AnyThing is IOverseer)
                 {
                     __result = false;
                     return false;
@@ -288,7 +290,7 @@ namespace DMSRC
             {
                 return;
             }
-            if (allowColonists && p is OverseerMech && p.IsColonyMech)
+            if (allowColonists && p is IOverseer && p.IsColonyMech)
             {
                 __result = true;
             }
@@ -307,7 +309,7 @@ namespace DMSRC
         {
             if (!__result)
             {
-                __result = x is OverseerMech;
+                __result = x is IOverseer;
 			}
         }
     }
@@ -323,7 +325,7 @@ namespace DMSRC
             }
 			for (int i = 0; i < lord.ownedPawns.Count; i++)
 			{
-				if (lord.ownedPawns[i] is OverseerMech pawn && pawn.mindState.lastJobTag != JobTag.WaitingForOthersToFinishGatheringItems)
+				if (lord.ownedPawns[i] is IOverseer && lord.ownedPawns[i].mindState.lastJobTag != JobTag.WaitingForOthersToFinishGatheringItems)
 				{
 					__result = false;
                     return;
@@ -352,7 +354,7 @@ namespace DMSRC
             for (int i = 0; i < __instance.lord.ownedPawns.Count; i++)
             {
                 Pawn pawn = __instance.lord.ownedPawns[i];
-                if (pawn is OverseerMech)
+                if (pawn is IOverseer)
                 {
                     pawn.mindState.duty = new PawnDuty(DutyDefOf.PrepareCaravan_GatherItems, (IntVec3)meetingPoint.GetValue(__instance));
                 }
@@ -373,7 +375,7 @@ namespace DMSRC
             for (int i = 0; i < __instance.lord.ownedPawns.Count; i++)
             {
                 Pawn pawn = __instance.lord.ownedPawns[i];
-                if (pawn is OverseerMech)
+                if (pawn is IOverseer)
                 {
                     pawn.mindState.duty = new PawnDuty(DutyDefOf.PrepareCaravan_GatherDownedPawns, (IntVec3)meetingPoint.GetValue(__instance), (IntVec3)exitSpot.GetValue(__instance));
                 }
@@ -388,7 +390,7 @@ namespace DMSRC
         [HarmonyPriority(501)]
         public static bool Interval(Pawn ___pawn)
         {
-            return ___pawn != null && !(___pawn is OverseerMech);
+            return ___pawn != null && !(___pawn is IOverseer);
         }
     }
 
@@ -406,7 +408,7 @@ namespace DMSRC
             {
                 return;
             }
-            if (pawn is OverseerMech && pawn.Faction == caravanFaction && pawn.HostFaction == null)
+            if (pawn is IOverseer && pawn.Faction == caravanFaction && pawn.HostFaction == null)
             {
                 __result = true;
             }
@@ -432,7 +434,7 @@ namespace DMSRC
             {
                 return;
             }
-            OverseerMech mech = OverseerMechUtility.GetOverseerMech(overseer);
+			Pawn mech = OverseerMechUtility.GetOverseerPawn(overseer);
             if (mech == null)
             {
                 return;
@@ -470,7 +472,7 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(Pawn pawn, ref bool __result, ThinkNode_ConditionalWorkMode __instance)
         {
-            if (pawn is OverseerMech mech && mech.Comp.WorkMode == __instance.workMode)
+            if (pawn is IOverseer mech && mech.Comp.WorkMode == __instance.workMode)
             {
                 __result = true;
             }
@@ -483,7 +485,7 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(Map map, bool requiresNoEnemies, ref Command __result)
         {
-            if (__result.disabledReason == "CommandSettleFailNoColonists".Translate() && map.mapPawns.SpawnedColonyMechs.Any((Pawn x) => x is OverseerMech && !x.Downed))
+            if (__result.disabledReason == "CommandSettleFailNoColonists".Translate() && map.mapPawns.SpawnedColonyMechs.Any((Pawn x) => x is IOverseer && !x.Downed))
             {
                 if (requiresNoEnemies)
                 {
@@ -508,7 +510,7 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(ref OverseerSubjectState __result, CompOverseerSubject __instance)
         {
-            if (__result != OverseerSubjectState.Overseen && __instance.parent is OverseerMech)
+            if (__result != OverseerSubjectState.Overseen && __instance.parent is IOverseer)
             {
                 __result = OverseerSubjectState.Overseen;
             }
@@ -521,9 +523,9 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(Pawn __instance)
         {
-            if(__instance is OverseerMech mech && mech.Name?.IsValid == true && mech.Comp?.dummyPawn != null)
+            if(__instance is IOverseer mech)
             {
-                mech.Comp.dummyPawn.Name = mech.Name;
+                mech.Notify_NameChanged();
             }
         }
     }
@@ -563,7 +565,7 @@ namespace DMSRC
                 __result = true;
                 return;
             }
-            if (mech is OverseerMech)
+            if (mech is IOverseer)
             {
                 __result = true;
                 return;
@@ -573,8 +575,8 @@ namespace DMSRC
             {
                 return;
             }
-            OverseerMech overlord = OverseerMechUtility.GetOverseerMech(overseer);
-            if (overlord != null && overlord.MapHeld == mech.Map && overlord.PositionHeld.DistanceTo(target.Cell) <= overlord.Comp.Props.commandRange)
+			Pawn overlord = overseer.GetOverseerPawn(out var overseerInt);
+            if (overlord != null && overlord.MapHeld == mech.Map && overlord.PositionHeld.DistanceTo(target.Cell) <= overseerInt.Comp.Props.commandRange)
             {
                 __result = true;
             }
@@ -586,7 +588,7 @@ namespace DMSRC
 	{
 		public static void Postfix()
 		{
-			if (Find.WorldSelector.AnyObjectOrTileSelected && CompBroadcastAntenna.broadcastAntennas?.Any() == true)
+			if (Find.WorldSelector.AnyObjectOrTileSelected && CompBroadcastAntenna.broadcastAntennas != null && CompBroadcastAntenna.broadcastAntennas.Count > 0)
 			{
                 PlanetLayer layer = Find.WorldSelector.SelectedLayer;
 				Dictionary<PlanetTile, float> roots = new Dictionary<PlanetTile, float>();
@@ -632,18 +634,18 @@ namespace DMSRC
             {
                 if (gizmo is Command_Action command && command.defaultLabel == "CommandSelectOverseer".Translate())
                 {
-                    if (mech is OverseerMech)
+                    if (mech is IOverseer)
                     {
                         continue;
                     }
                     var overseer = mech.GetOverseer();
                     if (overseer != null)
                     {
-                        OverseerMech overlord = OverseerMechUtility.GetOverseerMech(overseer);
+						Pawn overlord = overseer.GetOverseerPawn(out var overseerInt);
                         if (overlord != null)
                         { 
                             command.defaultDesc = "CommandSelectOverseerDesc".Translate();
-                            command.icon = overlord.Comp.SelectIcon;
+                            command.icon = overseerInt.Comp.SelectIcon;
                             command.action = delegate
                             {
                                 Find.Selector.ClearSelection();
@@ -677,7 +679,7 @@ namespace DMSRC
     {
         public static void Postfix(ref AcceptanceReport __result, Pawn_MechanitorTracker __instance)
         {
-            OverseerMech mech = OverseerMechUtility.GetOverseerMech(__instance.Pawn);
+			Pawn mech = OverseerMechUtility.GetOverseerPawn(__instance.Pawn);
             if (mech != null && mech.Spawned)
             {
                 __result = true;
@@ -691,7 +693,7 @@ namespace DMSRC
         public static void Postfix(Pawn pawn, Pawn mech, ref AcceptanceReport __result)
         {
             if (!__result.Accepted) return;
-            if (mech is OverseerMech) __result = false;
+            if (mech is IOverseer) __result = false;
         }
     }
 
@@ -700,7 +702,7 @@ namespace DMSRC
     {
         public static void Postfix(Pawn __instance, ref string __result)
         {
-            OverseerMech mech = OverseerMechUtility.GetOverseerMech(__instance);
+			Pawn mech = OverseerMechUtility.GetOverseerPawn(__instance);
             if (mech != null)
             {
                 __result = mech.KindLabel;
@@ -714,7 +716,7 @@ namespace DMSRC
 		[HarmonyPrefix]
 		public static bool Prefix(Pawn pawn, ref int __result)
         {
-            if(pawn is OverseerMech mech)
+            if(pawn is IOverseer mech)
             {
 				int num = pawn.RaceProps.maxMechEnergy;
 				__result = Mathf.RoundToInt((float)num * mech.MinCharge);
@@ -730,7 +732,7 @@ namespace DMSRC
 		[HarmonyPrefix]
 		public static bool Prefix(Rect rect, Pawn pawn, PawnTable table)
 		{
-			if (pawn is OverseerMech mech)
+			if (pawn is IOverseer mech)
 			{
 				if (pawn.playerSettings.SupportsAllowedAreas)
 				{
@@ -762,7 +764,7 @@ namespace DMSRC
 		[HarmonyPrefix]
 		public static bool Prefix(Pawn worker, ref Ideo __result)
 		{
-			if (worker is OverseerMech mech)
+			if (worker is IOverseer)
 			{
                 __result = worker.Faction?.ideos?.PrimaryIdeo;
 				return false;
@@ -777,7 +779,7 @@ namespace DMSRC
 		[HarmonyPrefix]
 		public static bool Prefix(Pawn pawn, ref float __result)
 		{
-			if (pawn is OverseerMech mech)
+			if (pawn is IOverseer mech)
 			{
 				int num = pawn.RaceProps.maxMechEnergy;
 				__result = Mathf.RoundToInt((float)num * mech.MaxCharge);
@@ -794,7 +796,7 @@ namespace DMSRC
 		{
 			if (target.Thing is Pawn pawn)
 			{
-				OverseerMech mech = OverseerMechUtility.GetOverseerMech(pawn);
+				Pawn mech = OverseerMechUtility.GetOverseerPawn(pawn);
 				if (mech != null)
 				{
 					target = mech;
@@ -808,7 +810,7 @@ namespace DMSRC
     {
         public static void Postfix(ref string __result, Pawn pawn)
         {
-            OverseerMech mech = OverseerMechUtility.GetOverseerMech(pawn);
+			Pawn mech = OverseerMechUtility.GetOverseerPawn(pawn);
             if (mech != null)
             {
                 __result = "";
@@ -821,7 +823,7 @@ namespace DMSRC
     {
         public static bool Prefix(Pawn overseer, Rect rect)
         {
-            OverseerMech mech = OverseerMechUtility.GetOverseerMech(overseer);
+            Pawn mech = OverseerMechUtility.GetOverseerPawn(overseer);
             if (mech == null)
             {
                 return true;
@@ -843,7 +845,7 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(ref AcceptanceReport __result, Pawn mech)
         {
-            if (mech is OverseerMech)
+            if (mech is IOverseer)
             {
                 __result = true;
             }
@@ -855,7 +857,7 @@ namespace DMSRC
         [HarmonyPostfix]
         public static void Postfix(ref bool __result, Pawn_DraftController __instance)
         {
-            if (__instance.pawn is OverseerMech)
+            if (__instance.pawn is IOverseer)
             {
                 __result = true;
             }

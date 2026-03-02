@@ -39,6 +39,9 @@
         <inspectString>Can be decrypted at a research bench.\nSelect a colonist and right-click this to decrypt it.</inspectString>
       </li>
     </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
   </ThingDef>
 
   <ThingDef ParentName="ResourceBase">
@@ -59,7 +62,7 @@
       <Mass>1.7</Mass>
       <DeteriorationRate>0</DeteriorationRate>
       <Flammability>0</Flammability>
-      <MarketValue>2300</MarketValue>
+      <MarketValue>1800</MarketValue>
     </statBases>
     <thingCategories>
       <li>ItemsMisc</li>

@@ -40,5 +40,15 @@
     <driverClass>DMSRC.JobDriver_TalkToRenegades</driverClass>
     <reportString>using TargetA.</reportString>
   </JobDef>
+
+  <JobDef>
+    <defName>DMSRC_CarryToBuildingDrafted</defName>
+    <driverClass>DMSRC.JobDriver_CarryToBuildingDrafted</driverClass>
+    <reportString>carrying TargetB to TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    <casualInterruptible>false</casualInterruptible>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+    <carryThingAfterJob>true</carryThingAfterJob>
+  </JobDef>
   
 </Defs>

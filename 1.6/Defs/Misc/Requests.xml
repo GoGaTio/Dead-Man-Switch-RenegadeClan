@@ -10,6 +10,14 @@
   </DMSRC.RenegadesRequestDef>
 
   <DMSRC.RenegadesRequestDef>
+    <defName>BandwidthRequest</defName>
+    <requestClass>DMSRC.BandwidthRequest</requestClass>
+    <label>bandwidth request</label>
+    <description>Request bandwidth for your mechanitor. It will require 125 silver per bandwidth point every 15 days.</description>
+    <minGoodwill>30</minGoodwill>
+  </DMSRC.RenegadesRequestDef>
+
+  <DMSRC.RenegadesRequestDef>
     <defName>AidRequest</defName>
     <requestClass>DMSRC.AidRequest</requestClass>
     <label>military aid request</label>

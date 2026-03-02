@@ -5,6 +5,11 @@
   <AidRequest.label>запрос военной помощи</AidRequest.label>
   <!-- EN: Request a group of renegade fighters to assist you in combat. -->
   <AidRequest.description>Запросить группу отступников, чтобы помочь в бою.</AidRequest.description>
+
+  <!-- EN: bandwidth request -->
+  <BandwidthRequest.label>запрос пропускной</BandwidthRequest.label>
+  <!-- EN: Request bandwidth for your mechanitor. It will require 125 silver per bandwidth point every 15 days. -->
+  <BandwidthRequest.description>Запросить временную пропускную способность для вашего механитора. Требует оплаты каждые 15 дней для продолжения по 125 серебра за каждую единицу связи.</BandwidthRequest.description>
   
   <!-- EN: trade request -->
   <TradeRequest.label>запрос торговли</TradeRequest.label>

@@ -152,6 +152,10 @@ namespace DMSRC
 			else if (goodwillPrev > -50 && playerGoodwill <= -50)
 			{
 				PlayerRelation = FactionRelationKind.Hostile;
+				for (int i = 0; i < requests.Count; i++)
+				{
+					requests[0].Complete();
+				}
 			}
 		}
 
@@ -238,20 +242,29 @@ namespace DMSRC
 			{
 				return;
 			}
-			if(playerRelation != FactionRelationKind.Hostile)
+			FactionRelationKind kind = Faction.OfPlayerSilentFail.RelationKindWith(DMSFaction);
+			if (kind != FactionRelationKind.Ally && !contacted)
 			{
-				if (!contacted)
+				hoursTillContact--;
+				if(kind == FactionRelationKind.Hostile)
 				{
-					hoursTillContact--;
-					if (hoursTillContact <= 0)
-					{
-						ContactPlayer();
-					}
+					hoursTillContact -= 5;
 				}
-				if (Faction.OfPlayerSilentFail?.RelationKindWith(DMSFaction) == FactionRelationKind.Ally)
+				if (hoursTillContact <= 0)
+				{
+					ContactPlayer();
+				}
+			}
+			if (playerRelation != FactionRelationKind.Hostile)
+			{
+				if (kind == FactionRelationKind.Ally)
 				{
 					PlayerRelation = FactionRelationKind.Hostile;
 					playerGoodwill = -200;
+					for (int i = 0; i < requests.Count; i++)
+					{
+						requests[0].Complete();
+					}
 				}
 				hoursTillRefresh--;
 				if (hoursTillRefresh < 0)
@@ -259,10 +272,10 @@ namespace DMSRC
 					hoursTillRefresh = new IntRange(240, 480).RandomInRange;
 					GenerateThings();
 				}
-			}
-			for(int i = 0; i < requests.Count; i++)
-			{
-				requests[i].Tick();
+				foreach(RenegadesRequest req in requests.ToList())
+				{
+					req.Tick();
+				}
 			}
 		}
 

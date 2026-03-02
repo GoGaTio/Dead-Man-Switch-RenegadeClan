@@ -59,10 +59,22 @@ namespace DMSRC
 {
     public class Hediff_DummyPawn : Hediff
     {
-        public OverseerMech overseer;
+        public IOverseer overseer;
     }
-    public class OverseerMech : WeaponUsableMech
-    {
+	
+	public interface IOverseer
+	{
+		CompOverseerMech Comp {  get; }
+
+		float MinCharge { get; }
+
+		float MaxCharge { get; }
+
+        void Notify_NameChanged();
+	}
+
+    public class OverseerMech : WeaponUsableMech, IOverseer
+	{
 		private CompOverseerMech comp;
 
         public CompOverseerMech Comp
@@ -89,6 +101,7 @@ namespace DMSRC
 				Comp?.UpdateDummy();
 			}
 		}
+
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             if (mode != DestroyMode.WillReplace)
@@ -98,77 +111,59 @@ namespace DMSRC
             base.DeSpawn(mode);
         }
 
-        public override IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq)
+        public virtual void Notify_NameChanged()
         {
-			foreach(FloatMenuOption item in base.GetExtraFloatMenuOptionsFor(sq))
-            {
-				yield return item;
-            }
-			List<Thing> thingList = sq.GetThingList(Map);
-			foreach (Thing thing in thingList)
+			if (Name?.IsValid == true && Comp?.dummyPawn != null)
 			{
-				Pawn mech;
-				if ((mech = thing as Pawn) == null || mech == this || !mech.IsColonyMech)
-				{
-					continue;
-				}
-				if (mech.GetOverseer() != Comp.dummyPawn)
-				{
-					if (!this.CanReach(mech, PathEndMode.Touch, Danger.Deadly))
-					{
-						yield return new FloatMenuOption("CannotControlMech".Translate(mech.LabelShort) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
-					}
-					else if (!MechanitorUtility.CanControlMech(Comp.dummyPawn, mech))
-					{
-						AcceptanceReport acceptanceReport = MechanitorUtility.CanControlMech(Comp.dummyPawn, mech);
-						if (!acceptanceReport.Reason.NullOrEmpty())
-						{
-							yield return new FloatMenuOption("CannotControlMech".Translate(mech.LabelShort) + ": " + acceptanceReport.Reason, null);
-						}
-					}
-					else
-					{
-						yield return RimWorld.FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("ControlMech".Translate(mech.LabelShort), delegate
-						{
-							Job job = JobMaker.MakeJob(RCDefOf.DMSRC_ControlMech, thing);
-							jobs.TryTakeOrderedJob(job, JobTag.Misc);
-						}), this, new LocalTargetInfo(thing));
-					}
-					yield return new FloatMenuOption("CannotDisassembleMech".Translate(mech.LabelCap) + ": " + "MustBeOverseer".Translate().CapitalizeFirst(), null);
-				}
-				else
-				{
-					yield return RimWorld.FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("DisconnectMech".Translate(mech.LabelShort), delegate
-					{
-						MechanitorUtility.ForceDisconnectMechFromOverseer(mech);
-					}, MenuOptionPriority.Low, null, null, 0f, null, null, playSelectionSound: true, -10), this, new LocalTargetInfo(thing));
-					if (!mech.IsFighting())
-					{
-						yield return (RimWorld.FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("DisassembleMech".Translate(mech.LabelCap), delegate
-						{
-							Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ConfirmDisassemblingMech".Translate(mech.LabelCap) + ":\n" + (from x in MechanitorUtility.IngredientsFromDisassembly(mech.def)
-																																					 select x.Summary).ToLineList("  - "), delegate
-																																					 {
-																																						 this.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.DisassembleMech, thing), JobTag.Misc);
-																																					 }, destructive: true));
-						}, MenuOptionPriority.Low, null, null, 0f, null, null, playSelectionSound: true, -20), this, new LocalTargetInfo(thing)));
-					}
-				}
-				if (!Comp.Props.canRepair || !MechRepairUtility.CanRepair(mech))
-				{
-					continue;
-				}
-				if (!this.CanReach(mech, PathEndMode.Touch, Danger.Deadly))
-				{
-					yield return new FloatMenuOption("CannotRepairMech".Translate(mech.LabelShort) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
-					continue;
-				}
-				yield return (RimWorld.FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("RepairThing".Translate(mech.LabelShort), delegate
-				{
-					Job job2 = JobMaker.MakeJob(JobDefOf.RepairMech, mech);
-					jobs.TryTakeOrderedJob(job2, JobTag.Misc);
-				}), this, new LocalTargetInfo(thing)));
+				Comp.dummyPawn.Name = Name;
 			}
 		}
     }
+
+	public class HumanlikeOverseerMech : HumanlikeMech, IOverseer
+	{
+		private CompOverseerMech comp;
+
+		public CompOverseerMech Comp
+		{
+			get
+			{
+				if (comp == null)
+				{
+					comp = GetComp<CompOverseerMech>();
+				}
+				return comp;
+			}
+		}
+
+		public float MinCharge => 0.05f;
+
+		public float MaxCharge => 1f;
+
+		public override void SetFaction(Faction newFaction, Pawn recruiter = null)
+		{
+			base.SetFaction(newFaction, recruiter);
+			if (newFaction != null && newFaction.IsPlayer)
+			{
+				Comp?.UpdateDummy();
+			}
+		}
+
+		public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+		{
+			if (mode != DestroyMode.WillReplace)
+			{
+				Comp.dummyPawn?.mechanitor?.UndraftAllMechs();
+			}
+			base.DeSpawn(mode);
+		}
+
+		public virtual void Notify_NameChanged()
+		{
+			if (Name?.IsValid == true && Comp?.dummyPawn != null)
+			{
+				Comp.dummyPawn.Name = Name;
+			}
+		}
+	}
 }

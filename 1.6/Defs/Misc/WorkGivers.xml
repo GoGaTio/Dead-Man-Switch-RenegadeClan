@@ -6,8 +6,8 @@
     <label>carry to artificial pregnancy synthesizer</label>
     <giverClass>DMSRC.WorkGiver_HaulToWetwareProducer</giverClass>
     <workType>Hauling</workType>
-    <verb>fill</verb>
-    <gerund>filling</gerund>
+    <verb>haul</verb>
+    <gerund>hauling</gerund>
     <directOrderable>true</directOrderable>
     <priorityInType>109</priorityInType>
     <requiredCapacities>

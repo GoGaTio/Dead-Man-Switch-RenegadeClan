@@ -32,7 +32,7 @@
       <useGraphicClass>True</useGraphicClass>
       <shadowSize>0</shadowSize>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>12</damageAmountBase>
+      <damageAmountBase>14</damageAmountBase>
       <speed>61</speed>
       <explosionRadius>1.9</explosionRadius>
       <flyOverhead>false</flyOverhead>

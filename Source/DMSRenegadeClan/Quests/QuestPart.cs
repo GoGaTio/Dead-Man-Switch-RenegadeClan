@@ -177,7 +177,7 @@ namespace DMSRC
 				comp.PlayerRelation = FactionRelationKind.Hostile;
 				comp.playerGoodwill = -200;
 			}
-			else if(!comp.DMSFaction.HostileTo(Faction.OfPlayerSilentFail))
+			else if(WavesFaction == comp.DMSFaction && !comp.DMSFaction.HostileTo(Faction.OfPlayerSilentFail))
 			{
 				comp.DMSFaction.SetRelation(new FactionRelation(Faction.OfPlayerSilentFail, FactionRelationKind.Hostile) { baseGoodwill = -200});
 				comp.enemyWithFleet = true;
@@ -289,6 +289,8 @@ namespace DMSRC
 		public override string AlertLabel => wavesSent == wavesDefeated ? "DMSRC_Mission_DefendWaveLabel".Translate(ticksTillNextWave.ToStringTicksToPeriod()).Resolve() : "DMSRC_Mission_DefendLabel".Translate(mission.targetDef.label).Resolve();
 
 		private string Tag => "Quest" + quest.id + ".DMSRCMission." + mission.targetDef.defName;
+
+		public override Faction WavesFaction => GameComponent_Renegades.Find.RenegadesFaction;
 
 		protected override void Enable(SignalArgs receivedArgs)
 		{

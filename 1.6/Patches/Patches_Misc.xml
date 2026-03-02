@@ -44,6 +44,30 @@
   </Operation>
 
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraderKindDef[defName="DMS_Base_Army_Standard" or defName="DMS_Caravan_TraderGeneral"]/stockGenerators</xpath>
+    <value>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMSRC_ComponentGBEP</thingDef>
+        <countRange>-3~1</countRange>
+        <!--20%-->
+        <price>Expensive</price>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMSRC_ProcessorCore</thingDef>
+        <countRange>-18~1</countRange>
+        <!--5%-->
+        <price>Expensive</price>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMSRC_Neurointerface</thingDef>
+        <countRange>-8~1</countRange>
+        <!--10%-->
+        <price>Expensive</price>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[thingClass="Building_CommsConsole"]/comps</xpath>
     <value>
       <li Class="DMSRC.CompProperties_CallRenegades">
@@ -52,7 +76,7 @@
       </li>
     </value>
   </Operation>
-  
+
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ScenarioDef[defName="DMS_Scenario" or defName="DMSMD_Scenario"]/scenario/parts</xpath>
     <value>
