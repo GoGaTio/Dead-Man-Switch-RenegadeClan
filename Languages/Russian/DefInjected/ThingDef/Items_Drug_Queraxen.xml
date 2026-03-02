@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: queraxen -->
+  <DMSRC_Queraxen.label>квераксен</DMSRC_Queraxen.label>
+  <!-- EN: A synthetic stimulant. Queraxen enhances sleep, stimulates immunity, increases bandwidth and focus, allowing faster work. -->
+  <DMSRC_Queraxen.description>Синтетический стимулятор, влияющий на мозг, улучшая сон, пропускную способность и внимание, что позволяет быстрее выполнять любую работу.</DMSRC_Queraxen.description>
+  <!-- EN: Take {0} -->
+  <DMSRC_Queraxen.ingestible.ingestCommandString>Принять {lookup: {0}; Case; 3}</DMSRC_Queraxen.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <DMSRC_Queraxen.ingestible.ingestReportString>Принимает {lookup: {0}; Case; 3}</DMSRC_Queraxen.ingestible.ingestReportString>
+  
+</LanguageData>

@@ -33,7 +33,7 @@
         <missionClass>DMSRC.QuestPart_Mission_Destroy</missionClass>
         <targetDef>DMSRC_LargeBroadcastAntenna</targetDef>
         <wavesCooldown>5000</wavesCooldown>
-        <initialWavesCooldown>5000</initialWavesCooldown>
+        <initialWavesCooldown>7000</initialWavesCooldown>
         <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
       </mission>
     </root>
@@ -70,8 +70,8 @@
       <rewardValue>5</rewardValue>
       <mission>
         <missionClass>DMSRC.QuestPart_Mission_DestroyFacility</missionClass>
-        <wavesCooldown>5000~7500</wavesCooldown>
-        <initialWavesCooldown>60000</initialWavesCooldown>
+        <wavesCooldown>10000~15000</wavesCooldown>
+        <initialWavesCooldown>120000</initialWavesCooldown>
         <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
       </mission>
     </root>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="DrugPillBase">
+    <defName>DMSRC_Queraxen</defName>
+    <label>queraxen</label>
+    <description>A synthetic stimulant. Queraxen enhances sleep, stimulates immunity, increases bandwidth and focus, allowing faster work.</description>
+    <descriptionHyperlinks>
+      <HediffDef>DMSRC_QueraxenHigh</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Drug/DMSRC_Queraxen</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>20</MarketValue>
+      <Mass>0.005</Mass>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DMSRC_QueraxenHigh</hediffDef>
+          <severity>0.6</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker Inherit="False" IsNull="True"/>
+    <tradeTags Inherit="False"/>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>210</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.001</largeOverdoseChance>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DMSRC_QueraxenHigh</defName>
+    <label>queraxen effect</label>
+    <labelNoun>a queraxen effect</labelNoun>
+    <description>Queraxen in the bloodstream. It enhances sleep, stimulates immunity, increases bandwidth and focus, allowing faster work.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0.75,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.2</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+          <MechBandwidth>3</MechBandwidth>
+          <ImmunityGainSpeed>0.15</ImmunityGainSpeed>
+          <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+          <RestRateMultiplier>0.15</RestRateMultiplier>
+        </statOffsets>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>ChemicalDamageModerate</hediff>
+            <mtbDays>120</mtbDays>
+            <partsToAffect>
+              <li>Stomach</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

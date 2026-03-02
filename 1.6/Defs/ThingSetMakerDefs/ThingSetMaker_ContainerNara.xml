@@ -372,7 +372,19 @@
             </fixedParams>
           </thingSetMaker>
         </li>
-
+        <li>
+          <chance>0.03</chance>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMSRC_ProcessorCore</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
         <li>
           <chance>0.15</chance>
           <thingSetMaker Class="ThingSetMaker_StackCount">
@@ -402,13 +414,14 @@
           </thingSetMaker>
         </li>
         <li>
-          <chance>0.1</chance>
+          <chance>0.15</chance>
           <thingSetMaker Class="ThingSetMaker_Count">
             <fixedParams>
               <filter>
                 <thingDefs>
                   <li>DMS_EncryptedTransmitter</li>
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMSAC_RecoverTransmitter</li>
+                  <li>DMSRC_AncientBroadcaster</li>
                 </thingDefs>
               </filter>
               <countRange>1~2</countRange>

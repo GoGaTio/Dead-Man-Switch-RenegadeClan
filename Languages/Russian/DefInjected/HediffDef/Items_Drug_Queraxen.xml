@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: queraxen effect -->
+  <DMSRC_QueraxenHigh.label>под действием квераксена</DMSRC_QueraxenHigh.label>
+  <!-- EN: Queraxen in the bloodstream. It enhances sleep, stimulates immunity, increases bandwidth and focus, allowing faster work. -->
+  <DMSRC_QueraxenHigh.description>Квераксен, попав в кровь, стимулирует мозг, улучшая сон, пропускную способность и внимание, что позволяет быстрее выполнять любую работу.</DMSRC_QueraxenHigh.description>
+  <!-- EN: a queraxen effect -->
+  <DMSRC_QueraxenHigh.labelNoun>действие квераксена</DMSRC_QueraxenHigh.labelNoun>
+  
+</LanguageData>
