@@ -100,7 +100,7 @@ namespace DMSRC
 			{
 				if (mapsTmp.NullOrEmpty())
 				{
-					mapsTmp = Find.Maps;
+					mapsTmp = Find.Maps.ToList();
 					mapsTmp.RemoveWhere((m) => m.IsPocketMap || m.generatorDef.isUnderground);
 				}
 				return mapsTmp;

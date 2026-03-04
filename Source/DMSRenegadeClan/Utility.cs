@@ -297,6 +297,12 @@ namespace DMSRC
 			return nodes;
 		}
 
+		[DebugAction("DMSRC", "Set anomaly playstyle", false, false, false, true, false, 0, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+		public static void SetAnomalyPlaystyle()
+		{
+			Find.WindowStack.Add(new Dialog_AnomalySettings(Find.Storyteller.difficulty));
+		}
+
 		private static Rot4 Rotation = Rot4.North;
 
 		[DebugAction("DMSRC", "Rotate RPrefab", false, false, false, false, false, 0, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]

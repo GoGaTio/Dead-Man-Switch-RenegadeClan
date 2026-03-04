@@ -36,7 +36,7 @@
     </recipeMaker>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1, 1)</drawSize>
+      <drawSize>(1.5, 1.5)</drawSize>
     </graphicData>
     <equippedStatOffsets>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.15</SlaveSuppressionOffset>
