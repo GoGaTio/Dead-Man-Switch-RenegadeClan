@@ -1,3 +1,22 @@
+using DelaunatorSharp;
+using DMS;
+using Fortified;
+using Gilzoide.ManagedJobs;
+using HarmonyLib;
+using Ionic.Crc;
+using Ionic.Zlib;
+using JetBrains.Annotations;
+using KTrie;
+using LudeonTK;
+using NVorbis.NAudioSupport;
+using RimWorld;
+using RimWorld.BaseGen;
+using RimWorld.IO;
+using RimWorld.Planet;
+using RimWorld.QuestGen;
+using RimWorld.SketchGen;
+using RimWorld.Utility;
+using RuntimeAudioClipLoader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,22 +38,6 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
-using DelaunatorSharp;
-using Gilzoide.ManagedJobs;
-using Ionic.Crc;
-using Ionic.Zlib;
-using JetBrains.Annotations;
-using KTrie;
-using LudeonTK;
-using NVorbis.NAudioSupport;
-using RimWorld;
-using RimWorld.BaseGen;
-using RimWorld.IO;
-using RimWorld.Planet;
-using RimWorld.QuestGen;
-using RimWorld.SketchGen;
-using RimWorld.Utility;
-using RuntimeAudioClipLoader;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -51,9 +54,7 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
-using HarmonyLib;
-using DMS;
-using Fortified;
+using static UnityEngine.GraphicsBuffer;
 
 namespace DMSRC
 {
@@ -149,13 +150,18 @@ namespace DMSRC
         }
         public CompProperties_CompOverseerMech Props => (CompProperties_CompOverseerMech)props;
         private MechWorkModeDef workMode;
-        protected Effecter connectMechEffecter;
+		public float minCharge = 0.05f;
+		public float maxCharge = 1f;
+		protected Effecter connectMechEffecter;
         protected Effecter connectProgressBarEffecter;
         public int connectTick = -1;
         public LocalTargetInfo curTarget = LocalTargetInfo.Invalid;
         public Pawn dummyPawn;
         public int hackCooldownTicks;
-        public bool MechanitorActive => dummyPawn != null && Parent.IsColonyMech;
+
+        
+
+		public bool MechanitorActive => dummyPawn != null && Parent.IsColonyMech;
 
         public Pawn Parent => parent as Pawn;
 
@@ -258,7 +264,18 @@ namespace DMSRC
             base.Notify_Killed(prevMap, dinfo);
         }
 
-        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		public void SetWorkMode(MechWorkModeDef workMode)
+		{
+			PawnComponentsUtility.AddAndRemoveDynamicComponents(Parent, actAsIfSpawned: true);
+			if (workMode != MechWorkModeDefOf.Recharge && Parent.CurJobDef == JobDefOf.MechCharge && Parent.IsCharging())
+			{
+				Parent.jobs.EndCurrentJob(JobCondition.InterruptForced);
+			}
+			Parent.TryGetComp<CompCanBeDormant>()?.WakeUp();
+			Parent.jobs?.CheckForJobOverride();
+		}
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (var g in base.CompGetGizmosExtra())
             {
@@ -281,9 +298,10 @@ namespace DMSRC
                 }
                 yield return m;
             }
-            Command_Action command_Action = new Command_Action();
+			yield return new OverseerMechGizmo(this);
+			/*Command_Action command_Action = new Command_Action();
             command_Action.defaultLabel = "CurrentMechWorkMode".Translate() + ": " + WorkMode.LabelCap;
-            command_Action.defaultDesc = "CurrentMechWorkMode".Translate() + ": " + WorkMode.LabelCap + "\n\n" + WorkMode.description + "\n\n" + "ClickToChangeWorkMode".Translate();
+            command_Action.defaultDesc = ;
             command_Action.icon = WorkMode.uiIcon;
             command_Action.action = delegate
             {
@@ -309,7 +327,7 @@ namespace DMSRC
                     Find.WindowStack.Add(new FloatMenu(list));
                 }
             };
-            yield return command_Action;
+            yield return command_Action;*/
         }
 
         public override void CompTick()
@@ -360,6 +378,9 @@ namespace DMSRC
         {
             base.PostExposeData();
             Scribe_Deep.Look(ref dummyPawn, "DMSRC_dummyPawn");
-        }
+			Scribe_Defs.Look(ref workMode, "workMode");
+			Scribe_Values.Look(ref minCharge, "minCharge", defaultValue: 0.05f);
+			Scribe_Values.Look(ref maxCharge, "maxCharge", defaultValue: 1f);
+		}
     }
 }

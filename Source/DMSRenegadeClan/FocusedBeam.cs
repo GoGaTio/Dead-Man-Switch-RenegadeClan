@@ -46,6 +46,8 @@ namespace DMSRC
 
 		public ThingDef beamMoteDef;
 
+		public Color secondaryHighliteColor = new Color(0.56f, 0.44f, 0.65f);
+
 		public CompProperties_FocusedBeam()
 		{
 			compClass = typeof(CompFocusedBeam);
@@ -69,8 +71,6 @@ namespace DMSRC
 		private HashSet<IntVec3> tmpHighlightCells = new HashSet<IntVec3>();
 
 		private HashSet<IntVec3> tmpSecondaryHighlightCells = new HashSet<IntVec3>();
-
-		public static Color secondaryHighliteColor = new Color(0.56f, 0.44f, 0.65f);
 
 		public static MethodInfo calculatePath = AccessTools.Method(typeof(Verb_ShootBeam), "CalculatePath", new Type[4] { typeof(Vector3), typeof(List<Vector3>) , typeof(HashSet<IntVec3>), typeof(bool) }, (Type[])null);
 
@@ -130,7 +130,17 @@ namespace DMSRC
 			GenDraw.DrawTargetHighlight(target);
 			DrawHighlightFieldRadiusAroundTarget(target);
 			CellRect map = CellRect.WholeMap(Caster.Map);
-			calculatePath.Invoke(this, new object[4] { target.CenterVector3, tmpPath, tmpPathCells, false });
+			if (BurstShotCount > 1)
+			{
+				calculatePath.Invoke(this, new object[4] { target.CenterVector3, tmpPath, tmpPathCells, false });
+			}
+			else
+			{
+				tmpPath.Clear();
+				tmpPathCells.Clear();
+				tmpPath.Add(target.CenterVector3);
+				tmpPathCells.Add(target.Cell);
+			}
 			foreach (IntVec3 tmpPathCell in tmpPathCells)
 			{
 				if (!TryGetHitCell(tmpPathCell, out var hitCell))
@@ -152,7 +162,7 @@ namespace DMSRC
 			}
 			if (tmpSecondaryHighlightCells.Any())
 			{
-				GenDraw.DrawFieldEdges(tmpSecondaryHighlightCells.ToList(), secondaryHighliteColor);
+				GenDraw.DrawFieldEdges(tmpSecondaryHighlightCells.ToList(), Comp.Props.secondaryHighliteColor);
 			}
 		}
 
@@ -202,7 +212,15 @@ namespace DMSRC
 				base.EquipmentSource.GetComp<CompChangeableProjectile>()?.Notify_ProjectileLaunched();
 				base.EquipmentSource.GetComp<CompApparelReloadable>()?.UsedOnce();
 			}
-			IntVec3 intVec = InterpolatedPosition.Yto0().ToIntVec3();
+			IntVec3 intVec;
+			if (BurstShotCount > 1)
+			{
+				intVec = InterpolatedPosition.Yto0().ToIntVec3();
+			}
+			else
+			{
+				intVec = currentTarget.Cell;
+			}
 			if (TryGetHitCell(intVec, out var hitCell))
 			{
 				HitCell(hitCell);
@@ -220,7 +238,16 @@ namespace DMSRC
 				currentTarget = thingTarget.PositionHeld;
 				currentDestination = LocalTargetInfo.Invalid;
 			}
-			mote = MoteMaker.MakeInteractionOverlay(Comp.Props.beamMoteDef, caster, new TargetInfo(base.InterpolatedPosition.ToIntVec3(), caster.Map));
+			IntVec3 intVec;
+			if (BurstShotCount > 1)
+			{
+				intVec = InterpolatedPosition.Yto0().ToIntVec3();
+			}
+			else
+			{
+				intVec = currentTarget.Cell;
+			}
+			mote = MoteMaker.MakeInteractionOverlay(Comp.Props.beamMoteDef, caster, new TargetInfo(intVec, caster.Map));
 		}
 
 		private static readonly FieldInfo equipmentOffsetData = AccessTools.Field(AccessTools.TypeByName("Exosuit.ApparelRenderOffsets"), "equipmentOffsetData");
@@ -235,9 +262,18 @@ namespace DMSRC
 			}
 			base.BurstingTick();
 			TryFindShootLineFromTo(root, currentTarget, out resultingLine);
-			Vector3 vector = InterpolatedPosition;
+			Vector3 pos;
+			if (BurstShotCount > 1)
+			{
+				pos = InterpolatedPosition;
+			}
+			else
+			{
+				pos = currentTarget.CenterVector3;
+			}
+			Vector3 vector = pos;
 			IntVec3 intVec = vector.ToIntVec3();
-			Vector3 vector2 = InterpolatedPosition - root.ToVector3Shifted();
+			Vector3 vector2 = pos - root.ToVector3Shifted();
 			float num = vector2.MagnitudeHorizontal();
 			Vector3 normalized = vector2.Yto0().normalized;
 			if (TryGetHitCell(intVec, out var intVec2))
@@ -298,11 +334,6 @@ namespace DMSRC
 			{
 				float explosionRange = Comp.Props.explosionRange;
 				int damage = Comp.Props.explosionDamage;
-				if (cell.DistanceTo(caster.Position) < explosionRange)
-				{
-					explosionRange = 0.1f;
-					damage *= 2;
-				}
 				float damageMultiplier = EquipmentSource?.GetStatValue(StatDefOf.RangedWeapon_DamageMultiplier) ?? 1f;
 				damage = Mathf.RoundToInt((float)damage * damageMultiplier);
 				GenExplosion.DoExplosion(cell, Caster.MapHeld, explosionRange, Comp.Props.damageDef, Caster, damage, Comp.Props.damageDef.defaultArmorPenetration, damageFalloff: true, screenShakeFactor: 0f, weapon: this.EquipmentSource?.def, ignoredThings: new List<Thing>() { Caster }, doSoundEffects: false, intendedTarget: thingTarget);

@@ -89,9 +89,9 @@ namespace DMSRC
             }
         }
 
-		public float MinCharge => 0.05f;
+		public float MinCharge => Comp.minCharge;
 
-		public float MaxCharge => 1f;
+		public float MaxCharge => Comp.maxCharge;
 
         public override void SetFaction(Faction newFaction, Pawn recruiter = null)
         {
@@ -136,9 +136,9 @@ namespace DMSRC
 			}
 		}
 
-		public float MinCharge => 0.05f;
+		public float MinCharge => Comp.minCharge;
 
-		public float MaxCharge => 1f;
+		public float MaxCharge => Comp.maxCharge;
 
 		public override void SetFaction(Faction newFaction, Pawn recruiter = null)
 		{

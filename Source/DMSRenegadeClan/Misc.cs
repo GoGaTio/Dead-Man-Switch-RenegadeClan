@@ -50,6 +50,7 @@ using Verse.Grammar;
 using Verse.Sound;
 using static HarmonyLib.Code;
 using static RimWorld.MechClusterSketch;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 using static UnityEngine.Scripting.GarbageCollector;
 
 namespace DMSRC
@@ -723,6 +724,104 @@ namespace DMSRC
 				yield return Option_Reject;
 				yield return Option_Postpone;
 			}
+		}
+	}
+
+	public class OverseerMechGizmo : Gizmo
+	{
+		public const int InRectPadding = 6;
+
+		private const float Width = 130f;
+
+		private const int IconButtonSize = 26;
+
+		private const float BaseSelectedTexJump = 20f;
+
+		private const float BaseSelectedTextScale = 0.8f;
+
+		private static readonly CachedTexture PowerIcon = new CachedTexture("UI/Icons/MechRechargeSettings");
+
+		private static readonly Color UncontrolledMechBackgroundColor = new Color32(byte.MaxValue, 25, 25, 55);
+
+		private CompOverseerMech comp;
+
+		public override IEnumerable<FloatMenuOption> RightClickFloatMenuOptions => GetWorkModeOptions(comp);
+
+		public override bool Visible
+		{
+			get
+			{
+				return Find.Selector.SelectedPawns.Count == 1;
+			}
+		}
+
+		public override float Order
+		{
+			get
+			{
+				return -90f;
+			}
+		}
+
+		public OverseerMechGizmo(CompOverseerMech comp)
+		{
+			this.comp = comp;
+			Order = -90f;
+		}
+
+		public static IEnumerable<FloatMenuOption> GetWorkModeOptions(CompOverseerMech comp)
+		{
+			foreach (MechWorkModeDef wm in DefDatabase<MechWorkModeDef>.AllDefsListForReading.OrderBy((MechWorkModeDef d) => d.uiOrder))
+			{
+				FloatMenuOption floatMenuOption = new FloatMenuOption(wm.LabelCap, delegate
+				{
+					comp.SetWorkMode(wm);
+				}, wm.uiIcon, Color.white);
+				floatMenuOption.tooltip = new TipSignal(wm.description, wm.index ^ 0xDFE8661);
+				yield return floatMenuOption;
+			}
+		}
+
+		public override bool GroupsWith(Gizmo other)
+		{
+			return false;
+		}
+
+		public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
+		{
+			Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
+			Rect inRect = rect.ContractedBy(6f);
+			Widgets.DrawWindowBackground(rect);
+			Rect rect1 = new Rect(inRect.x, inRect.y, 26f, 26f);
+			Widgets.DrawTextureFitted(rect1, PowerIcon.Texture, 1f);
+			if (!disabled && Mouse.IsOver(rect1))
+			{
+				Widgets.DrawHighlight(rect1);
+				if (Widgets.ButtonInvisible(rect1))
+				{
+					Find.WindowStack.Add(new Dialog_OverseerRechargeSettings(comp));
+				}
+			}
+			Rect rect2 = new Rect(inRect.x, inRect.yMax - 26f, 26f, 26f);
+			Widgets.DrawTextureFitted(rect2, comp.WorkMode.uiIcon, 1f);
+			if (!disabled && Mouse.IsOver(rect2))
+			{
+				Widgets.DrawHighlight(rect2);
+				if (Widgets.ButtonInvisible(rect2))
+				{
+					Find.WindowStack.Add(new FloatMenu(GetWorkModeOptions(comp).ToList()));
+				}
+				if(Find.WindowStack.FloatMenu == null)
+				{
+					TooltipHandler.TipRegion(rect2, new TipSignal(("CurrentMechWorkMode".Translate() + ": " + comp.WorkMode.LabelCap).Colorize(ColoredText.TipSectionTitleColor) + "\n" + comp.WorkMode.description + "\n\n" + "ClickToChangeWorkMode".Translate()));
+				}
+			}
+			return new GizmoResult(GizmoState.Clear);
+		}
+
+		public override float GetWidth(float maxWidth)
+		{
+			return 38f;
 		}
 	}
 }

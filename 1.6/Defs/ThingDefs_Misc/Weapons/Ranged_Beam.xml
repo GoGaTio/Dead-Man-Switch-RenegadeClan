@@ -387,7 +387,7 @@
       <li Class="DMSRC.CompProperties_FocusedBeam">
         <explosionDamage>50</explosionDamage>
         <explosionRange>3.7</explosionRange>
-        <beamMoteDef>DMSRC_Mote_BeamUltraLarge</beamMoteDef>
+        <beamMoteDef>DMSRC_Mote_BeamUnmaintained</beamMoteDef>
         <damageDef>DMSRC_FocusedBeam</damageDef>
       </li>
     </comps>

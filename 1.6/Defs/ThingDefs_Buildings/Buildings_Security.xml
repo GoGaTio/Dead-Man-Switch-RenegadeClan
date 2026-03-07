@@ -13,7 +13,7 @@
       <drawOffset>(0,0,0)</drawOffset>
     </graphicData>
     <size>(1,1)</size>
-    <rotatable>false</rotatable>
+    <rotatable>true</rotatable>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <fillPercent>0.6</fillPercent>
     <statBases>
@@ -58,6 +58,10 @@
       <turretBurstCooldownTime>1</turretBurstCooldownTime>
     </building>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
     <costList>
       <Steel>150</Steel>
       <Tungsteel>120</Tungsteel>

@@ -32,7 +32,7 @@
   <ThingDef ParentName="DMSRCBeamMote">
     <defName>DMSRC_Mote_BeamUnmaintained</defName>
     <mote>
-      <solidTime>0.1</solidTime>
+      <solidTime>0.2</solidTime>
       <needsMaintenance>false</needsMaintenance>
       <fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
