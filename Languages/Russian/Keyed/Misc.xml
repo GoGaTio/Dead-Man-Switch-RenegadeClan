@@ -19,8 +19,8 @@
   <DMSRC_Currency>Всё доступное серебро</DMSRC_Currency>
   <DMSRC_RenegadesDialod_RequestsDisabled>Необходимо быть союзником, чтобы запрашить помощь</DMSRC_RenegadesDialod_RequestsDisabled>
   <DMSRC_RenegadesDialod_NeedNotPocketMap>Необходимо быть на поверхности</DMSRC_RenegadesDialod_NeedNotPocketMap>
-  <DMSRC_RenegadesContactsLetter_Label>Контакт с отступником</DMSRC_RenegadesContactsLetter_Label>
-  <DMSRC_RenegadesContactsLetter_Text>Renegades contacted you, offering an allience. They will give you access to trade requests and, in the future, military aid.\n\nIf you will accept this offer Colonial fleet would become permanent enemy.\n\nIf you will reject this offer renegades will not do anything, unless you'll become Colonial fleet ally.</DMSRC_RenegadesContactsLetter_Text>
+  <DMSRC_RenegadesContactsLetter_Label>Контакт с отступниками</DMSRC_RenegadesContactsLetter_Label>
+  <DMSRC_RenegadesContactsLetter_Text>Отступники связались с вами, предлагая союз. Они предоставят вам доступ к торговле, и запросу военной помощи в будущем.\n\nЕсли вы примите это предложение, то Колониальный флот станет враждебен к вам.\n\nЕсли вы откажетесь от предложения отступники не станут вашими врагами до тех пор пока вы не союзник Колониального флота.</DMSRC_RenegadesContactsLetter_Text>
   <DMSRC_Controlled>{0}/{1}</DMSRC_Controlled>
   <DMSRC_NeedMoreGoodwill>Недостаточно репутации(Нужно минимум {0})</DMSRC_NeedMoreGoodwill>
   <DMSRC_ArrivalAfter_Single>Прибывает через {0}</DMSRC_ArrivalAfter_Single>

@@ -63,7 +63,7 @@
 			<speed>70</speed>
 			<shadowSize>0</shadowSize>
 			<landedEffecter>DMSRC_SparkImpact</landedEffecter>
-			<armorPenetrationSharp>17</armorPenetrationSharp>
+			<armorPenetrationSharp>19</armorPenetrationSharp>
 			<armorPenetrationBlunt>25.6</armorPenetrationBlunt>
 			<suppressionFactor>3.0</suppressionFactor>
 			<dangerFactor>2.0</dangerFactor>

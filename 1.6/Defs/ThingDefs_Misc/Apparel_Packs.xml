@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="ApparelNoQualityBase">
+  <ThingDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" ParentName="ApparelNoQualityBase">
     <defName>DMSRC_Apparel_PackScanner</defName>
     <label>scanner pack</label>
     <description>A wearable pack that allows the user to deploy a battery-powered perimeter scanner. The pack contains a propulsion device, letting the user launch the scanner a short distance. The scanner battery lasts for several hours.</description>
@@ -142,7 +142,7 @@
     <allowedArchonexusCount>1</allowedArchonexusCount>
   </ThingDef>
 
-  <ThingDef ParentName="BaseGrenadeProjectile">
+  <ThingDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" ParentName="BaseGrenadeProjectile">
     <defName>DMSRC_Grenade_ScannerPack</defName>
     <label>scanner pack capsule</label>
     <thingClass>Projectile_SpawnsThing</thingClass>

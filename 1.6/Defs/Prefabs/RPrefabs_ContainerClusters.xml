@@ -352,9 +352,9 @@
     </tags>
     <size>(9,9)</size>
     <things>
-      <DMSRC_BigHole>
+      <DMS_Hole_7x7Empty>
         <position>(4, 0, 4)</position>
-      </DMSRC_BigHole>
+      </DMS_Hole_7x7Empty>
       <DMSRC_Crate>
         <position>(5, 0, 0)</position>
         <relativeRotation>Opposite</relativeRotation>
@@ -393,9 +393,9 @@
           <li>(0, 0, 7)</li>
         </positions>
       </DMSRC_PackCrate>
-      <DMSRC_SmallHole>
+      <DMS_Hole_3x3Empty>
         <position>(4, 0, 4)</position>
-      </DMSRC_SmallHole>
+      </DMS_Hole_3x3Empty>
     </things>
   </DMSRC.RPrefabDef>
 

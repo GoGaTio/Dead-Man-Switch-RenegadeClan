@@ -8,7 +8,7 @@
       <xpath>/Defs/ThingDef[defName = "DMS_Mech_Jaeger"]</xpath>
       <value>
         <comps>
-          <li Class="Fortified.CompProperties_Camouflage">
+          <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
             <ticksUntilRecover>1200</ticksUntilRecover>
             <detectedLetterLabel>Jaeger revealed</detectedLetterLabel>
             <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
@@ -23,7 +23,7 @@
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ThingDef[defName = "DMS_Mech_Jaeger"]/comps</xpath>
       <value>
-        <li Class="Fortified.CompProperties_Camouflage">
+        <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
           <ticksUntilRecover>1200</ticksUntilRecover>
           <detectedLetterLabel>Jaeger revealed</detectedLetterLabel>
           <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
@@ -47,7 +47,7 @@
       <xpath>/Defs/ThingDef[defName = "DMS_Mech_Noctula"]</xpath>
       <value>
         <comps>
-          <li Class="Fortified.CompProperties_Camouflage">
+          <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
             <ticksUntilRecover>1200</ticksUntilRecover>
             <detectedLetterLabel>Noctula revealed</detectedLetterLabel>
             <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
@@ -62,7 +62,7 @@
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ThingDef[defName = "DMS_Mech_Noctula"]/comps</xpath>
       <value>
-        <li Class="Fortified.CompProperties_Camouflage">
+        <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
           <ticksUntilRecover>1200</ticksUntilRecover>
           <detectedLetterLabel>Noctula revealed</detectedLetterLabel>
           <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>

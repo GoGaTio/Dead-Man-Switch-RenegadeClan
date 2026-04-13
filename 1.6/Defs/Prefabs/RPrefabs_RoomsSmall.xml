@@ -503,9 +503,9 @@
         <position>(4, 0, 4)</position>
         <relativeRotation>Opposite</relativeRotation>
       </DMSRC_Crate>
-      <DMSRC_SmallHole>
+      <DMS_Hole_3x3Empty>
         <position>(2, 0, 2)</position>
-      </DMSRC_SmallHole>
+      </DMS_Hole_3x3Empty>
       <WallLamp>
         <position>(4, 0, 4)</position>
       </WallLamp>

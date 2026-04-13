@@ -126,7 +126,7 @@ namespace DMSRC
 				IReadOnlyList<Pawn> allPawnsSpawned = parent.Map.mapPawns.AllPawnsSpawned;
 				for (int i = 0; i < allPawnsSpawned.Count; i++)
 				{
-					if (rect.Contains(allPawnsSpawned[i].Position) && allPawnsSpawned[i].IsPsychologicallyInvisible() && allPawnsSpawned[i].HostileTo(Faction.OfPlayerSilentFail))
+					if (rect.Contains(allPawnsSpawned[i].Position) && allPawnsSpawned[i].IsPsychologicallyInvisible() && (allPawnsSpawned[i].HostileTo(parent.Faction) || allPawnsSpawned[i].GetLord()?.LordJob is LordJob_Sabotage))
 					{
 						flag = true;
 						break;

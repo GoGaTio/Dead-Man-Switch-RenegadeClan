@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Ability.cs" />
     <Compile Include="Damages.cs" />
+    <Compile Include="ScenParts.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FloatMenuOptionProvider_OverseerMech.cs" />
     <Compile Include="Firecracker.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="MapGen\Prefab.cs" />
     <Compile Include="MapGen\GenStep_Mission.cs" />
     <Compile Include="Enhancer.cs" />
+    <Compile Include="Hediffs.cs" />
     <Compile Include="Quests\Incident.cs" />
     <Compile Include="Quests\QuestPart.cs" />
     <Compile Include="Requests.cs" />

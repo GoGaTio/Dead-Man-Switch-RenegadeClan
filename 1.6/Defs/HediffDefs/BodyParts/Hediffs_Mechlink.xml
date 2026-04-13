@@ -63,9 +63,10 @@
     <defName>DMSRC_MechlinkBuff</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Mechlink modification</label>
-    <description>.</description>
+    <description>LX3 transceiver modification.</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <isBad>false</isBad>
+    <duplicationAllowed>false</duplicationAllowed>
     <comps>
       <li Class="HediffCompProperties_DisappearsOnDeath"/>
     </comps>

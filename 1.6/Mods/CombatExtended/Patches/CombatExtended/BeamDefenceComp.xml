@@ -41,4 +41,11 @@
     </value>
   </Operation>
 
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_BeamDefence" or defName="DMSRC_Mech_Pavise" or defName="DMSRC_Mech_Stancher"]/comps/li[@Class="DMSRC.CompProperties_BeamDefence"]/chargeRegenInterval</xpath>
+    <value>
+      <chargeRegenInterval>300</chargeRegenInterval>
+    </value>
+  </Operation>
+
 </Patch>

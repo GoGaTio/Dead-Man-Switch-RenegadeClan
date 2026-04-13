@@ -131,6 +131,7 @@
     <apparelIgnorePollution>true</apparelIgnorePollution>
     <gearHealthRange>1</gearHealthRange>
     <weaponTags Inherit="False" />
+    <skills Inherit="False" />
   </PawnKindDef>
 
   <PawnKindDef Name="DMSRC_ThinkerBase" ParentName="DMSRC_OfficerBase">
@@ -187,6 +188,7 @@
     <gearHealthRange>1</gearHealthRange>
     <apparelIgnorePollution>true</apparelIgnorePollution>
     <weaponTags Inherit="False" />
+    <skills Inherit="False" />
   </PawnKindDef>
 
 </Defs>

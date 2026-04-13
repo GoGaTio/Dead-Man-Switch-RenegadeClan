@@ -25,6 +25,7 @@ using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -191,13 +192,14 @@ namespace DMSRC
 			CompUseEffectTargetablePlant comp = Item.TryGetComp<CompUseEffectTargetablePlant>();
 			if(comp != null)
 			{
-				Thing t = GenSpawn.Spawn(ThingMaker.MakeThing(comp.Props.plantDef), cellInt, pawn.MapHeld, WipeMode.Vanish);
+				Thing t = ThingMaker.MakeThing(comp.Props.plantDef);
 				if (t.def.CanHaveFaction)
 				{
 					t.SetFaction(pawn.Faction);
 				}
-				int ticks = pawn.Faction == Faction.OfPlayerSilentFail ? Mathf.RoundToInt(comp.hoursCooldownSelected * 2500) : comp.Props.timerRange.RandomInRange * 2500;
+				int ticks = pawn.Faction == Faction.OfPlayerSilentFail ? Mathf.RoundToInt(comp.hoursCooldownSelected * 2500) : Mathf.RoundToInt(comp.Props.timerRange.Average * 2500);
 				t.TryGetComp<CompTimedBomb>().timerTicks = ticks;
+				GenPlace.TryPlaceThing(t, cellInt, pawn.MapHeld, ThingPlaceMode.Near);
 			}
 			Item.SplitOff(1).Destroy();
 		}
@@ -227,6 +229,10 @@ namespace DMSRC
 		{
 			Pawn target = (Pawn)thing;
 			if (!target.RaceProps.IsMechanoid)
+			{
+				return false;
+			}
+			if (target.Drafted)
 			{
 				return false;
 			}

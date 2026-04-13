@@ -98,19 +98,22 @@ namespace DMSRC
 				return false;
 			}
 			parms.faction = comp.RenegadesFaction;
-			int count = Mathf.Max(3, Mathf.RoundToInt(SaboteursCountFactorByPointsCurve.Evaluate(parms.points) * SaboteursCountByColonistsCurve.Evaluate(map.mapPawns.FreeColonistsSpawnedOrInPlayerEjectablePodsCount)));
-			List<Pawn> list = GenerateSaboteurs(parms, count).ToList();
-			LordMaker.MakeNewLord(parms.faction, new LordJob_Sabotage(), map, list);
+			int count = Mathf.RoundToInt(SaboteursCountFactorByPointsCurve.Evaluate(parms.points) * SaboteursCountByColonistsCurve.Evaluate(map.mapPawns.FreeColonistsSpawnedOrInPlayerEjectablePodsCount));
+			List<Pawn> list = GenerateSaboteurs(map, comp.RenegadesFaction, count).ToList();
+			LordMaker.MakeNewLord(comp.RenegadesFaction, new LordJob_Sabotage(), map, list);
 			return true;
 		}
 
-		private IEnumerable<Pawn> GenerateSaboteurs(IncidentParms parms, int count)
+		private IEnumerable<Pawn> GenerateSaboteurs(Map map, Faction faction, int count)
 		{
-			Map map = (Map)parms.target;
-			PawnGenerationRequest request = new PawnGenerationRequest(RCDefOf.DMSRC_Mech_Saboteur, parms.faction);
+			PawnGenerationRequest request = new PawnGenerationRequest(RCDefOf.DMSRC_Mech_Saboteur, faction);
 			for (int i = 0; i < count; i++)
 			{
 				Pawn pawn = PawnGenerator.GeneratePawn(request);
+				if(pawn.Faction?.def != RCDefOf.DMSRC_RenegadeClan)
+				{
+					pawn.SetFaction(faction);
+				}
 				if (pawn.inventory != null)
 				{
 					pawn.inventory.TryAddAndUnforbid(ThingMaker.MakeThing(RCDefOf.DMSRC_TimedBomb));

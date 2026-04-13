@@ -44,8 +44,15 @@ namespace DMSRC
 			}
 			base.ExplosionDamageThing(explosion, t, damagedThings, ignoredThings, cell);
 		}
+
 		public override DamageResult Apply(DamageInfo dinfo, Thing victim)
 		{
+			DamageResult damageResult;
+			if (dinfo.IntendedTarget != victim && victim.Faction != null && !victim.Faction.HostileTo(dinfo.Instigator?.Faction))
+			{
+				damageResult = new DamageResult();
+				return damageResult;
+			}
 			Pawn pawn = victim as Pawn;
 			if (pawn != null)
 			{
@@ -65,7 +72,7 @@ namespace DMSRC
 				dinfo.SetAmount(dinfo.Amount * 0.1f);
 			}
 			Map map = victim.Map;
-			DamageResult damageResult = base.Apply(dinfo, victim);
+			damageResult = base.Apply(dinfo, victim);
 			if (map == null)
 			{
 				return damageResult;

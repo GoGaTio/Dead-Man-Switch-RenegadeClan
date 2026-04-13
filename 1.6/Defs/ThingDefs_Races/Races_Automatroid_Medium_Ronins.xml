@@ -23,7 +23,7 @@
       <baseHealthScale>1.32</baseHealthScale>
       <mechWeightClass>Medium</mechWeightClass>
     </race>
-    <comps>
+    <comps MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly">
       <li Class="Fortified.CompProperties_Camouflage">
         <ticksUntilRecover>1200</ticksUntilRecover><!-- 15 seconds -->
         <detectedLetterLabel>Saboteur revealed</detectedLetterLabel>
@@ -89,14 +89,6 @@
     <weaponTags>
       <li>A_Cut_Melee</li>
     </weaponTags>
-    <startingHediffs>
-      <li>
-        <def>FFF_Camouflage</def>
-      </li>
-    </startingHediffs>
-    <!--<abilities>
-      <li>DMSRC_PlantBomb</li>
-    </abilities>-->
   </PawnKindDef>
 
   <ThingDef ParentName="BaseAutomatroidHumanRace">

@@ -50,7 +50,13 @@
         <beamWidth>3</beamWidth>
         <showBurstShotStats>false</showBurstShotStats>
         <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+
         <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>
+        <beamMoteDef>DMSRC_Mote_Beam</beamMoteDef>
+        <beamTotalDamage>5</beamTotalDamage>
+        <sprayWidth>1.1</sprayWidth>
+        <secondaryHighlightColor>(0.56, 0.44, 0.65)</secondaryHighlightColor>
+
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
         <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
@@ -102,14 +108,6 @@
       <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <comps>
-      <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>5</explosionDamage>
-        <explosionRange>1.1</explosionRange>
-        <beamMoteDef>DMSRC_Mote_Beam</beamMoteDef>
-        <damageDef>DMSRC_FocusedBeam</damageDef>
-      </li>
-    </comps>
     <modExtensions>
       <li Class="Fortified.HeavyEquippableExtension">
         <EquippableDef>LightAutomatroid</EquippableDef>
@@ -177,7 +175,13 @@
         <burstShotCount>30</burstShotCount>
         <beamWidth>5</beamWidth>
         <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+
         <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>
+        <beamMoteDef>DMSRC_Mote_BeamLarge</beamMoteDef>
+        <beamTotalDamage>12</beamTotalDamage>
+        <sprayWidth>1.9</sprayWidth>
+        <secondaryHighlightColor>(0.56, 0.44, 0.65)</secondaryHighlightColor>
+
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
         <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
@@ -215,14 +219,6 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <comps>
-      <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>12</explosionDamage>
-        <explosionRange>1.9</explosionRange>
-        <beamMoteDef>DMSRC_Mote_BeamLarge</beamMoteDef>
-        <damageDef>DMSRC_FocusedBeam</damageDef>
-      </li>
-    </comps>
     <modExtensions>
       <li Class="Fortified.HeavyEquippableExtension">
         <EquippableDef>UltraHeavyAutomatroid</EquippableDef>
@@ -264,7 +260,13 @@
         <burstShotCount>30</burstShotCount>
         <beamWidth>5</beamWidth>
         <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+
         <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>
+        <beamMoteDef>DMSRC_Mote_BeamLarge</beamMoteDef>
+        <beamTotalDamage>14</beamTotalDamage>
+        <sprayWidth>1.9</sprayWidth>
+        <secondaryHighlightColor>(0.56, 0.44, 0.65)</secondaryHighlightColor>
+
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
         <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
@@ -302,17 +304,9 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <comps>
-      <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>14</explosionDamage>
-        <explosionRange>1.9</explosionRange>
-        <beamMoteDef>DMSRC_Mote_BeamLarge</beamMoteDef>
-        <damageDef>DMSRC_FocusedBeam</damageDef>
-      </li>
-    </comps>
   </ThingDef>
 
-  <ThingDef ParentName="DMS_AutomatroidTurretGun">
+  <!--<ThingDef ParentName="DMS_AutomatroidTurretGun">
     <defName>DMSRC_Gun_ExperimentalBeamCannon</defName>
     <label>GL-31X</label>
     <description>A high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. This one was made to interface directly with a mobile or stationary platform and draw from its power source.\n\nOrganic creatures which are damaged by beam may develop beam illness, that leads to chronic diseases and death if dose is high enough.</description>
@@ -345,7 +339,13 @@
         <burstShotCount>90</burstShotCount>
         <beamWidth>15</beamWidth>
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        
         <beamDamageDef>DMSRC_FocusedBeam</beamDamageDef>
+        <beamMoteDef>DMSRC_Mote_BeamUnmaintained</beamMoteDef>
+        <beamTotalDamage></beamTotalDamage>
+        <sprayWidth>3.7</sprayWidth>
+        <secondaryHighlightColor>(0.56f, 0.44f, 0.65f)</secondaryHighlightColor>
+        
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
         <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
@@ -359,6 +359,8 @@
         <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
         <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
         <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        
+        
         <beamStartOffset>0.5</beamStartOffset>
         <beamLineFleckChanceCurve>
           <points>
@@ -383,14 +385,6 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
-    <comps>
-      <li Class="DMSRC.CompProperties_FocusedBeam">
-        <explosionDamage>50</explosionDamage>
-        <explosionRange>3.7</explosionRange>
-        <beamMoteDef>DMSRC_Mote_BeamUnmaintained</beamMoteDef>
-        <damageDef>DMSRC_FocusedBeam</damageDef>
-      </li>
-    </comps>
-  </ThingDef>
+  </ThingDef>-->
 
 </Defs>

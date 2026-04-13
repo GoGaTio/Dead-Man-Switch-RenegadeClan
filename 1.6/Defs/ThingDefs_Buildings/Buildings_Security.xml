@@ -196,7 +196,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" ParentName="BuildingBase">
     <defName>DMSRC_PerimeterScanner</defName>
     <label>perimeter scanner</label>
     <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</description>
@@ -257,7 +257,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" ParentName="BuildingBase">
     <defName>DMSRC_PerimeterScannerTemp</defName>
     <label>perimeter scanner</label>
     <description>A scanner capable of detecting invisible creatures. The device raises an alarm when it detects the presence of psychically invisible objects within its radius.</description>

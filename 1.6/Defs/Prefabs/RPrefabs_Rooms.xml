@@ -124,9 +124,9 @@
         <relativeRotation>Opposite</relativeRotation>
         <stuff>Steel</stuff>
       </ShelfSmall>
-      <DMSRC_MediumHole>
+      <DMS_Hole_5x5Empty>
         <position>(4, 0, 4)</position>
-      </DMSRC_MediumHole>
+      </DMS_Hole_5x5Empty>
     </things>
     <terrain>
       <Concrete>
@@ -238,14 +238,14 @@
         <StandingLamp>
           <position>(4, 0, 4)</position>
         </StandingLamp>
-        <DMSRC_SmallHole>
+        <DMS_Hole_3x3Empty>
           <positions>
             <li>(2, 0, 2)</li>
             <li>(6, 0, 2)</li>
             <li>(2, 0, 6)</li>
             <li>(6, 0, 6)</li>
           </positions>
-        </DMSRC_SmallHole>
+        </DMS_Hole_3x3Empty>
       </things>
       <terrain>
         <Concrete>

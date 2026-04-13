@@ -39,7 +39,6 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegad
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\1.6\Source\DMSRenegadeClanCE\DMSRenegadeClanCE\obj\Debug\DMSRenegadeClanCE.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\1.6\Source\DMSRenegadeClanCE\DMSRenegadeClanCE\obj\Debug\DMSRenegadeClanCE.pdb
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\1.6\Mods\CombatExtended\Assemblies\DMSRenegadeClanCE.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\1.6\Mods\CombatExtended\Assemblies\DMSRenegadeClanCE.pdb
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\Mods\CombatExtended\Assemblies\DMSRenegadeClanCE.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\Mods\CombatExtended\Assemblies\DMSRenegadeClanCE.pdb
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\1.6\Source\DMSRenegadeClanCE\obj\Debug\DMSRenegadeClanCE.csproj.AssemblyReference.cache
@@ -49,4 +48,3 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegad
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\Source\DMSRenegadeClanCE\obj\Debug\DMSRenegadeClanCE.csproj.AssemblyReference.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\Source\DMSRenegadeClanCE\obj\Debug\DMSRenegadeClanCE.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\Source\DMSRenegadeClanCE\obj\Debug\DMSRenegadeClanCE.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\DeadManSwitchRenegadeClan\Source\DMSRenegadeClanCE\obj\Debug\DMSRenegadeClanCE.pdb

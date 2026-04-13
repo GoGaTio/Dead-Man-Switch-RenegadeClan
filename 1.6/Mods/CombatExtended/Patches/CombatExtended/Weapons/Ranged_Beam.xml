@@ -80,9 +80,9 @@
   </Operation>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/comps/li[@Class="DMSRC.CompProperties_FocusedBeam"]/explosionDamage</xpath>
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/beamTotalDamage</xpath>
     <value>
-      <explosionDamage>10</explosionDamage>
+      <beamTotalDamage>10</beamTotalDamage>
     </value>
   </Operation>
 
@@ -103,9 +103,9 @@
   </Operation>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza"]/comps/li[@Class="DMSRC.CompProperties_FocusedBeam"]/explosionDamage</xpath>
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza"]/verbs/li/beamTotalDamage</xpath>
     <value>
-      <explosionDamage>25</explosionDamage>
+      <beamTotalDamage>10</beamTotalDamage>
     </value>
   </Operation>
 
@@ -126,9 +126,9 @@
   </Operation>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DMSRC_Gun_LinzaMount"]/comps/li[@Class="DMSRC.CompProperties_FocusedBeam"]/explosionDamage</xpath>
+    <xpath>Defs/ThingDef[defName="DMSRC_Gun_LinzaMount"]/verbs/li/beamTotalDamage</xpath>
     <value>
-      <explosionDamage>30</explosionDamage>
+      <beamTotalDamage>10</beamTotalDamage>
     </value>
   </Operation>
 

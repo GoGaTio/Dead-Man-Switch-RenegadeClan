@@ -208,7 +208,7 @@
           <li>(51,87,59,87)</li>
         </rects>
       </PowerConduit>
-      <DMSRC_PerimeterScanner>
+      <DMSRC_PerimeterScanner MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly">
         <position>(16, 0, 50)</position>
       </DMSRC_PerimeterScanner>
       <Table1x2c>
@@ -415,12 +415,12 @@
         </positions>
         <relativeRotation>Opposite</relativeRotation>
       </DMS_Recharger>
-      <DMSRC_SmallHole>
+      <DMS_Hole_3x3Empty>
         <positions>
           <li>(91, 0, 50)</li>
           <li>(96, 0, 50)</li>
         </positions>
-      </DMSRC_SmallHole>
+      </DMS_Hole_3x3Empty>
       <WallLamp>
         <rects>
           <li>(13,24,13,24)</li>

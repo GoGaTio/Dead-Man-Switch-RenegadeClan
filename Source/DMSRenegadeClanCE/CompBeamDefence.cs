@@ -69,7 +69,7 @@ namespace DMSRC.CE
 			{
 				return false;
 			}
-			if (!Props.interceptSameFaction && !parent.Faction?.HostileTo(proj.launcher?.Faction) != true)
+			if (!Props.interceptSameFaction && parent.Faction?.HostileTo(proj.launcher?.Faction) != true)
 			{
 				return false;
 			}

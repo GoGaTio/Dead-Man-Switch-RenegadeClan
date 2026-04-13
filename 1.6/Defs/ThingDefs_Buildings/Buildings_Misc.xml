@@ -1,59 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="BuildingBase" Name="DMSRC_Hole">
-    <defName>DMSRC_MediumHole</defName>
-    <label>facility dormer</label>
-    <description>A structure flooring with a opened hole, commonly found in underground facilities.</description>
-    <graphicData>
-      <texPath>Things/Building/DMSRC_Hole5x5</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(7,7)</drawSize>
-      <drawOffset>(0,0,0)</drawOffset>
-    </graphicData>
-    <thingClass>Building</thingClass>
-    <category>Building</category>
-    <fillPercent>0</fillPercent>
-    <rotatable>false</rotatable>
-    <passability>Impassable</passability>
-    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
-    <size>(5,5)</size>
-    <useHitPoints>false</useHitPoints>
-    <selectable>true</selectable>
-    <holdsRoof>true</holdsRoof>
-    <building>
-      <claimable>false</claimable>
-      <repairable>false</repairable>
-      <neverBuildable>true</neverBuildable>
-      <isTargetable>false</isTargetable>
-      <ai_neverTrashThis>true</ai_neverTrashThis>
-      <deconstructible>false</deconstructible>
-      <alwaysDeconstructible>false</alwaysDeconstructible>
-    </building>
-    <statBases>
-      <Flammability>0</Flammability>
-    </statBases>
-  </ThingDef>
-
-  <ThingDef ParentName="DMSRC_Hole">
-    <defName>DMSRC_BigHole</defName>
-    <graphicData>
-      <texPath>Things/Building/DMSRC_Hole7x7</texPath>
-      <drawSize>(9,9)</drawSize>
-    </graphicData>
-    <size>(7,7)</size>
-  </ThingDef>
-
-  <ThingDef ParentName="DMSRC_Hole">
-    <defName>DMSRC_SmallHole</defName>
-    <graphicData>
-      <texPath>Things/Building/DMSRC_Hole3x3</texPath>
-      <drawSize>(5,5)</drawSize>
-    </graphicData>
-    <size>(3,3)</size>
-  </ThingDef>
-
-  <ThingDef ParentName="DMSRC_Hole">
+  <ThingDef ParentName="DMS_HoleBase">
     <defName>DMSRC_FacilityEntrance</defName>
     <label>facility elevator platform</label>
     <description>An elevator platform which links to the facility below.</description>
@@ -203,7 +151,7 @@
             <li>10000, 600</li>
           </points>
         </emissionIntervalCurve>
-        <defenceFactorRange>5~10</defenceFactorRange>
+        <defenceFactorRange>5</defenceFactorRange>
         <fleck>DMSRC_TimedBombFlash</fleck>
         <soundOnEmission>DMSRC_Beep</soundOnEmission>
       </li>

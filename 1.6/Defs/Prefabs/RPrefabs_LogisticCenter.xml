@@ -205,7 +205,7 @@
         <relativeRotation>Clockwise</relativeRotation>
         <stuff>Steel</stuff>
       </Door>
-      <DMSRC_BigHole>
+      <DMS_Hole_7x7Empty>
         <positions>
           <li>(37, 0, 27)</li>
           <li>(47, 0, 27)</li>
@@ -216,7 +216,7 @@
           <li>(37, 0, 57)</li>
           <li>(47, 0, 57)</li>
         </positions>
-      </DMSRC_BigHole>
+      </DMS_Hole_7x7Empty>
       <Fence>
         <rects>
           <li>(18,0,66,0)</li>

@@ -266,6 +266,7 @@ namespace DMSRC
 
 		public void SetWorkMode(MechWorkModeDef workMode)
 		{
+            this.workMode = workMode;
 			PawnComponentsUtility.AddAndRemoveDynamicComponents(Parent, actAsIfSpawned: true);
 			if (workMode != MechWorkModeDefOf.Recharge && Parent.CurJobDef == JobDefOf.MechCharge && Parent.IsCharging())
 			{
