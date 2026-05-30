@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: used forbidden tech -->
+  <DMSRC_UsedForbiddenTech.label>использована запретная технология</DMSRC_UsedForbiddenTech.label>
+
+  <!-- EN: allied with renegades -->
+  <DMSRC_AllyWithRenegades.label>заключён союз с отступниками</DMSRC_AllyWithRenegades.label>
+
+</LanguageData>

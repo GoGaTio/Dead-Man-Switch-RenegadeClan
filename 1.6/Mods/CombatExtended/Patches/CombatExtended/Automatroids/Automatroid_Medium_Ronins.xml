@@ -38,7 +38,7 @@
 
       <!-- ====== 浪人型 ======-->
       <li Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DMS_Mech_Ronin"]/statBases/MeleeDodgeChance</xpath>
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]/statBases/MeleeDodgeChance</xpath>
         <value>
           <CarryWeight>50</CarryWeight>
           <CarryBulk>20</CarryBulk>
@@ -54,19 +54,11 @@
       </li>
 
       <li Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DMS_Mech_Ronin"]/statBases/MeleeHitChance</xpath>
+        <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]/statBases/MeleeHitChance</xpath>
         <value>
           <MeleeHitChance>0.13</MeleeHitChance>
         </value>
       </li>
-
-      <li Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DMS_Mech_Ronin"]/statBases/AimingDelayFactor</xpath>
-        <value>
-          <AimingDelayFactor>0.85</AimingDelayFactor>
-        </value>
-      </li>
-
 
       <li Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName="DMSRC_Mech_Stancher"]/statBases/ArmorRating_Blunt</xpath>
@@ -269,14 +261,14 @@
       <li Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/statBases/ArmorRating_Blunt</xpath>
         <value>
-          <ArmorRating_Blunt>25</ArmorRating_Blunt>
+          <ArmorRating_Blunt>18</ArmorRating_Blunt>
         </value>
       </li>
 
       <li Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/statBases/ArmorRating_Sharp</xpath>
         <value>
-          <ArmorRating_Sharp>14</ArmorRating_Sharp>
+          <ArmorRating_Sharp>8</ArmorRating_Sharp>
         </value>
       </li>
 
@@ -301,7 +293,7 @@
         <xpath>Defs/ThingDef[defName="DMSRC_Mech_Saboteur"]/comps</xpath>
         <value>
           <li Class="CombatExtended.CompProperties_ArmorDurability">
-            <Durability>1250</Durability>
+            <Durability>1000</Durability>
             <Regenerates>true</Regenerates>
             <RegenInterval>750</RegenInterval>
             <RegenValue>5</RegenValue>

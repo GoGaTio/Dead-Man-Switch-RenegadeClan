@@ -243,17 +243,24 @@ namespace DMSRC
 				return;
 			}
 			FactionRelationKind kind = Faction.OfPlayerSilentFail.RelationKindWith(DMSFaction);
-			if (kind != FactionRelationKind.Ally && !contacted)
+			if (kind != FactionRelationKind.Ally)
 			{
-				hoursTillContact--;
-				if(kind == FactionRelationKind.Hostile)
+				if (!contacted)
 				{
-					hoursTillContact -= 5;
+					hoursTillContact--;
+					if (kind == FactionRelationKind.Hostile)
+					{
+						hoursTillContact -= 5;
+					}
+					if (hoursTillContact <= 0)
+					{
+						ContactPlayer();
+					}
 				}
-				if (hoursTillContact <= 0)
-				{
-					ContactPlayer();
-				}
+			}
+			else if(playerRelation == FactionRelationKind.Ally)
+			{
+				Faction.OfPlayerSilentFail?.TryAffectGoodwillWith(DMSFaction, -200, canSendMessage: false, canSendHostilityLetter: false, RCDefOf.DMSRC_AllyWithRenegades);
 			}
 			if (playerRelation != FactionRelationKind.Hostile)
 			{
@@ -272,7 +279,7 @@ namespace DMSRC
 					hoursTillRefresh = new IntRange(240, 480).RandomInRange;
 					GenerateThings();
 				}
-				foreach(RenegadesRequest req in requests.ToList())
+				foreach (RenegadesRequest req in requests.ToList())
 				{
 					req.Tick();
 				}

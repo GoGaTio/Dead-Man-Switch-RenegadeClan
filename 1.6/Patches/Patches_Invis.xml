@@ -7,17 +7,7 @@
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ThingDef[defName = "DMS_Mech_Jaeger"]</xpath>
       <value>
-        <comps>
-          <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
-            <ticksUntilRecover>1200</ticksUntilRecover>
-            <detectedLetterLabel>Jaeger revealed</detectedLetterLabel>
-            <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
-            <detectedMessage>A jaeger has appeared!</detectedMessage>
-            <baseDetectRange>10</baseDetectRange>
-            <texPath>UI/Ability/Camouflage</texPath>
-            <commandKey>DMSRC_Camouflage</commandKey>
-          </li>
-        </comps>
+        
       </value>
     </nomatch>
     <match Class="PatchOperationAdd">
@@ -46,17 +36,7 @@
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ThingDef[defName = "DMS_Mech_Noctula"]</xpath>
       <value>
-        <comps>
-          <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
-            <ticksUntilRecover>1200</ticksUntilRecover>
-            <detectedLetterLabel>Noctula revealed</detectedLetterLabel>
-            <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
-            <detectedMessage>A noctula has appeared!</detectedMessage>
-            <baseDetectRange>4</baseDetectRange>
-            <texPath>UI/Ability/Camouflage</texPath>
-            <commandKey>DMSRC_Camouflage</commandKey>
-          </li>
-        </comps>
+        
       </value>
     </nomatch>
     <match Class="PatchOperationAdd">

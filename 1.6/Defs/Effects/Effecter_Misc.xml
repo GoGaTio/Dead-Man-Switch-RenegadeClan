@@ -20,27 +20,6 @@
   </EffecterDef>
 
   <EffecterDef>
-    <defName>DMSRC_PerimeterScannerAlert</defName>
-    <children>
-      <li>
-        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
-        <fleckDef>DMSRC_PerimeterScannerFlare</fleckDef>
-        <ticksBetweenMotes>60</ticksBetweenMotes>
-        <spawnLocType>OnSource</spawnLocType>
-        <positionOffset>(0, 0, 0.125)</positionOffset>
-      </li>
-      <li>
-        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
-        <fleckDef>DMSRC_PerimeterScannerGem</fleckDef>
-        <ticksBetweenMotes>120</ticksBetweenMotes>
-        <spawnLocType>OnSource</spawnLocType>
-        <rotation>0</rotation>
-        <positionOffset>(0, 0, 0)</positionOffset>
-      </li>
-    </children>
-  </EffecterDef>
-
-  <EffecterDef>
     <defName>DMSRC_FocusedBeam_End</defName>
     <children>
       <li>

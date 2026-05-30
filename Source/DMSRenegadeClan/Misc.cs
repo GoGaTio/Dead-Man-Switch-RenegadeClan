@@ -93,9 +93,10 @@ namespace DMSRC
 			}
 			Faction fleet = comp.DMSFaction;
 			Faction player = Faction.OfPlayerSilentFail;
-			if (enemyWithFleet)
+			if (enemyWithFleet && fleet != null)
 			{
 				fleet.SetRelation(new FactionRelation(player, FactionRelationKind.Hostile) { baseGoodwill = -200});
+				Faction.OfPlayerSilentFail?.TryAffectGoodwillWith(fleet, -200, canSendMessage: false, canSendHostilityLetter: false, RCDefOf.DMSRC_AllyWithRenegades);
 				comp.enemyWithFleet = true;
 			}
 			comp.PlayerRelation = relations;
@@ -479,10 +480,11 @@ namespace DMSRC
 				DiaOption optionAccept = new DiaOption("Accept".Translate().CapitalizeFirst());
 				optionAccept.action = delegate
 				{
+					comp.DMSFaction.SetRelation(new FactionRelation(Faction.OfPlayerSilentFail, comp.DMSFaction.PlayerRelationKind) { baseGoodwill = -200 });
+					Faction.OfPlayerSilentFail?.TryAffectGoodwillWith(comp.DMSFaction, -200, canSendMessage: true, canSendHostilityLetter: true, RCDefOf.DMSRC_AllyWithRenegades);
 					comp.PlayerRelation = FactionRelationKind.Ally;
 					comp.ChangeGoodwill(15);
 					comp.enemyWithFleet = true;
-					comp.DMSFaction.SetRelation(new FactionRelation(Faction.OfPlayerSilentFail, FactionRelationKind.Hostile) { baseGoodwill = -200 });
 					Find.LetterStack.RemoveLetter(this);
 				};
 				optionAccept.resolveTree = true;

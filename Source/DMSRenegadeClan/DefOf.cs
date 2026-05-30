@@ -64,5 +64,7 @@ namespace DMSRC
         public static RulePackDef DMSRC_Combat_CumulativeEffect;
 
         public static HistoryEventDef DMSRC_UsedForbiddenTech;
+
+		public static HistoryEventDef DMSRC_AllyWithRenegades;
 	}
 }

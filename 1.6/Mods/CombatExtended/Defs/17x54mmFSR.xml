@@ -59,11 +59,11 @@
 		<thingClass>DMSRC.CE.Firecracker</thingClass>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>15</damageAmountBase>
+			<damageAmountBase>17</damageAmountBase>
 			<speed>70</speed>
 			<shadowSize>0</shadowSize>
 			<landedEffecter>DMSRC_SparkImpact</landedEffecter>
-			<armorPenetrationSharp>19</armorPenetrationSharp>
+			<armorPenetrationSharp>27</armorPenetrationSharp>
 			<armorPenetrationBlunt>25.6</armorPenetrationBlunt>
 			<suppressionFactor>3.0</suppressionFactor>
 			<dangerFactor>2.0</dangerFactor>

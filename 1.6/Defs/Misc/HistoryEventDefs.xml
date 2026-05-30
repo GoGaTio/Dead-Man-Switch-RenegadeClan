@@ -6,4 +6,9 @@
     <label>used forbidden tech</label>
   </HistoryEventDef>
 
+  <HistoryEventDef>
+    <defName>DMSRC_AllyWithRenegades</defName>
+    <label>allied with renegades</label>
+  </HistoryEventDef>
+
 </Defs>

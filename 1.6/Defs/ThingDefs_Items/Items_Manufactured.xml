@@ -18,13 +18,13 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>1</stackLimit>
     <healthAffectsPrice>false</healthAffectsPrice>
+    <useHitPoints>false</useHitPoints>
     <statBases>
       <RoyalFavorValue>3</RoyalFavorValue>
       <MaxHitPoints>15</MaxHitPoints>
       <MarketValue>5100</MarketValue>
       <Mass>7</Mass>
       <Flammability>0</Flammability>
-      <DeteriorationRate>5</DeteriorationRate>
     </statBases>
     <intricate>true</intricate>
     <isTechHediff>true</isTechHediff>
@@ -81,13 +81,13 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>25</stackLimit>
     <healthAffectsPrice>false</healthAffectsPrice>
+    <useHitPoints>false</useHitPoints>
     <statBases>
       <RoyalFavorValue>1</RoyalFavorValue>
       <MaxHitPoints>150</MaxHitPoints>
       <MarketValue>950</MarketValue>
       <Mass>0.01</Mass>
       <Flammability>0</Flammability>
-      <DeteriorationRate>20</DeteriorationRate>
     </statBases>
     <intricate>true</intricate>
     <isTechHediff>true</isTechHediff>

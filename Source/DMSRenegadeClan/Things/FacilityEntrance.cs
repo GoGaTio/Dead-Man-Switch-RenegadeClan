@@ -79,6 +79,7 @@ namespace DMSRC
 				{
 					lord = LordMaker.MakeNewLord(pawn.Faction, new LordJob_AssaultColony(pawn.Faction, false, false, false, true, false, false, true), PocketMap);
 				}
+				Find.TickManager.Pause();
 				lord.AddPawn(pawn);
 			}
 		}
