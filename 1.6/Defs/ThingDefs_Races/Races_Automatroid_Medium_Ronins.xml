@@ -23,14 +23,14 @@
       <baseHealthScale>1.32</baseHealthScale>
       <mechWeightClass>Medium</mechWeightClass>
     </race>
-    <comps MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly">
-      <li Class="Fortified.CompProperties_Camouflage">
+    <comps>
+      <li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly" Class="Fortified.CompProperties_Camouflage">
         <ticksUntilRecover>1200</ticksUntilRecover><!-- 15 seconds -->
         <detectedLetterLabel>Saboteur revealed</detectedLetterLabel>
         <detectedLetterDesc>An enemy automatroid has appeared out of thin air!</detectedLetterDesc>
         <detectedMessage>A saboteur has appeared!</detectedMessage>
         <texPath>UI/Ability/Camouflage</texPath>
-        <commandKey>DMSRC_Camouflage</commandKey>
+        <commandKey>FFF_Camouflage</commandKey>
       </li>
     </comps>
     <modExtensions>

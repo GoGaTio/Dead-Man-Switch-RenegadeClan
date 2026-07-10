@@ -208,9 +208,9 @@
           <li>(51,87,59,87)</li>
         </rects>
       </PowerConduit>
-      <DMSRC_PerimeterScanner MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly">
+      <DMS_PerimeterScanner MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly">
         <position>(16, 0, 50)</position>
-      </DMSRC_PerimeterScanner>
+      </DMS_PerimeterScanner>
       <Table1x2c>
         <position>(8, 0, 24)</position>
         <relativeRotation>Clockwise</relativeRotation>

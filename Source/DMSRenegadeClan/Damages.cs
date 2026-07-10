@@ -222,7 +222,22 @@ namespace DMSRC
 			{
 				return;
 			}
-			if (vehicleType.IsAssignableFrom(t.def.thingClass))
+			if (t is Pawn pawn)
+			{
+				if (pawn.RaceProps.IsMechanoid || pawn.RaceProps.IsDrone)
+				{
+					CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile, true);
+				}
+				else if (pawn.apparel != null)
+				{
+					Apparel core = pawn.apparel.WornApparel.FirstOrDefault((a) => exosuitType.IsAssignableFrom(a.def.thingClass));
+					if (core != null)
+					{
+						CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile);
+					}
+				}
+			}
+			else if (vehicleType.IsAssignableFrom(t.def.thingClass))
 			{
 				Log.Message("1");
 				IEnumerable handlers = occupiedHandlersMethod.Invoke(t, Array.Empty<object>()) as IEnumerable;
@@ -246,24 +261,9 @@ namespace DMSRC
 							if (item is Pawn p)
 							{
 								Log.Message("6");
-								CumulativeEffect(p, explosion.instigator, explosion.weapon, explosion.projectile, true);
+								CumulativeEffect(p, explosion.instigator, explosion.weapon, explosion.projectile, false);
 							}
 						}
-					}
-				}
-			}
-			else if (t is Pawn pawn)
-			{
-				if (pawn.RaceProps.IsMechanoid || pawn.RaceProps.IsDrone)
-				{
-					CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile, true);
-				}
-				else if(pawn.apparel != null)
-				{
-					Apparel core = pawn.apparel.WornApparel.FirstOrDefault((a) => exosuitType.IsAssignableFrom(a.def.thingClass));
-					if(core != null)
-					{
-						CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile);
 					}
 				}
 			}
