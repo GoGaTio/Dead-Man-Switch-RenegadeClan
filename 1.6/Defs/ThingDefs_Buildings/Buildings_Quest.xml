@@ -194,6 +194,11 @@
         <li>DMSRC_Quest</li>
       </buildingTags>
     </building>
+    <researchPrerequisites>
+      <li>DMSRC_WideBroadcast</li>
+    </researchPrerequisites>
+    <designationCategory>DMS_Category</designationCategory>
+    <uiOrder>4900</uiOrder>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
       <li>PlaceWorker_InvalidOverSubstructure</li>

@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Ability.cs" />
     <Compile Include="Damages.cs" />
+    <Compile Include="MapGen\Structures.cs" />
     <Compile Include="ScenParts.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FloatMenuOptionProvider_OverseerMech.cs" />

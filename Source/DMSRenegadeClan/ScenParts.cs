@@ -8,153 +8,194 @@ using Verse.AI;
 
 namespace DMSRC
 {
-	/*public class ScenPart_PlayerPawnsArriveMethod : ScenPart
+
+	public class ScenPart_PlayerArrivesPrefab : ScenPart
 	{
-		private PawnKindDef animalKind;
+		public List<RPrefabDef> prefabOptions = new List<RPrefabDef>();
 
 		public override void ExposeData()
 		{
 			base.ExposeData();
-			Scribe_Defs.Look(ref animalKind, "animalKind");
-		}
-
-		public override void DoEditInterface(Listing_ScenEdit listing)
-		{
-			if (!Widgets.ButtonText(listing.GetScenPartRect(this, ScenPart.RowHeight), method.ToStringHuman()))
-			{
-				return;
-			}
-			List<FloatMenuOption> list = new List<FloatMenuOption>();
-			foreach (PlayerPawnsArriveMethod value in Enum.GetValues(typeof(PlayerPawnsArriveMethod)))
-			{
-				if (value != PlayerPawnsArriveMethod.Gravship || ModsConfig.OdysseyActive)
-				{
-					PlayerPawnsArriveMethod localM = value;
-					list.Add(new FloatMenuOption(localM.ToStringHuman(), delegate
-					{
-						method = localM;
-					}));
-				}
-			}
-			Find.WindowStack.Add(new FloatMenu(list));
-		}
-
-		public override string Summary(Scenario scen)
-		{
-			return null;
-		}
-
-		public override void Randomize()
-		{
+			Scribe_Collections.Look(ref prefabOptions, "prefabOptions", LookMode.Def);
 		}
 
 		public override void GenerateIntoMap(Map map)
 		{
-			if (Find.GameInitData == null)
+			if (Find.GameInitData == null || prefabOptions.NullOrEmpty())
 			{
 				return;
 			}
-			List<Thing> list = new List<Thing>();
+			RPrefabDef prefab = prefabOptions.RandomElement();
+			List<Thing> things = new List<Thing>();
+			List<Pawn> pawns = new List<Pawn>();
+			List<Pawn> mechs = new List<Pawn>();
 			foreach (ScenPart allPart in Find.Scenario.AllParts)
 			{
-				list.AddRange(allPart.PlayerStartingThings());
+				things.AddRange(allPart.PlayerStartingThings());
 			}
-			foreach (Pawn startingAndOptionalPawn in Find.GameInitData.startingAndOptionalPawns)
+			foreach (Pawn startingPawn in Find.GameInitData.startingAndOptionalPawns)
 			{
-				foreach (ThingDefCount item in Find.GameInitData.startingPossessions[startingAndOptionalPawn])
+				pawns.Add(startingPawn);
+				foreach (ThingDefCount item in Find.GameInitData.startingPossessions[startingPawn])
 				{
-					list.Add(StartingPawnUtility.GenerateStartingPossession(item));
+					startingPawn.inventory.GetDirectlyHeldThings().TryAdd(StartingPawnUtility.GenerateStartingPossession(item));
 				}
 			}
-			if (method == PlayerPawnsArriveMethod.Gravship && ModsConfig.OdysseyActive)
+			foreach (Thing t in things.ToList())
 			{
-				DoGravship(map, list);
-			}
-			else
-			{
-				DoDropPods(map, list);
-			}
-		}
-
-		private void DoGravship(Map map, List<Thing> startingItems)
-		{
-			Sketch sketch = RimWorld.SketchGen.SketchGen.Generate(parms: new SketchResolveParams
-			{
-				sketch = new Sketch()
-			}, root: SketchResolverDefOf.Gravship);
-			sketch.Rotate(Rot4.Random);
-			HashSet<IntVec3> hashSet = sketch.OccupiedRect.Cells.Select((IntVec3 c) => c - sketch.OccupiedCenter).ToHashSet();
-			List<CellRect> orGenerateVar = MapGenerator.GetOrGenerateVar<List<CellRect>>("UsedRects");
-			map.regionAndRoomUpdater.Enabled = true;
-			IntVec3 playerStartSpot = MapGenerator.PlayerStartSpot;
-			if (!MapGenerator.PlayerStartSpotValid)
-			{
-				GenStep_ReserveGravshipArea.SetStartSpot(map, hashSet, orGenerateVar);
-				playerStartSpot = MapGenerator.PlayerStartSpot;
-			}
-			GravshipPlacementUtility.ClearAreaForGravship(map, playerStartSpot, hashSet);
-			List<Thing> list = new List<Thing>();
-			sketch.Spawn(map, playerStartSpot, Faction.OfPlayer, Sketch.SpawnPosType.OccupiedCenter, Sketch.SpawnMode.Normal, wipeIfCollides: true, forceTerrainAffordance: true, clearEdificeWhereFloor: true, list, dormant: false, buildRoofsInstantly: true);
-			IntVec3 offset = playerStartSpot - sketch.OccupiedCenter;
-			CellRect cellRect = sketch.OccupiedRect.MovedBy(offset);
-			orGenerateVar.Add(cellRect);
-			foreach (Pawn startingAndOptionalPawn in Find.GameInitData.startingAndOptionalPawns)
-			{
-				if (!cellRect.TryRandomElement((IntVec3 c) => c.Standable(map) && (c.GetTerrain(map)?.IsSubstructure ?? false), out var result))
+				if (t is Pawn p)
 				{
-					Log.Error("Could not find a valid spawn location for pawn " + startingAndOptionalPawn.Name);
-				}
-				else
-				{
-					GenPlace.TryPlaceThing(startingAndOptionalPawn, result, map, ThingPlaceMode.Near);
-				}
-			}
-			foreach (Thing startingItem in startingItems)
-			{
-				if (startingItem.def.CanHaveFaction)
-				{
-					startingItem.SetFactionDirect(Faction.OfPlayer);
-				}
-				int num = startingItem.stackCount;
-				int num2 = 99;
-				while (num > 0 && num2-- > 0)
-				{
-					if (list.Where((Thing t) => t.def == ThingDefOf.Shelf || t.def == ThingDefOf.ShelfSmall).TryRandomElement(out var result2))
+					if (p.RaceProps.IsMechanoid)
 					{
-						IntVec3 randomCell = result2.OccupiedRect().RandomCell;
-						Thing thing = startingItem.SplitOff(Math.Min(startingItem.def.stackLimit, num));
-						num -= thing.stackCount;
-						GenPlace.TryPlaceThing(thing, randomCell, map, ThingPlaceMode.Near);
+						mechs.Add(p);
+						p.equipment.DestroyAllEquipment();
+						p.apparel.DestroyAll();
+						p.inventory.DestroyAll();
+					}
+					else
+					{
+						pawns.Add(p);
+					}
+					things.Remove(t);
+				}
+			}
+			IOverseer overseer = mechs.FirstOrDefault((x) => x is IOverseer) as IOverseer;
+			overseer.Comp.UpdateDummy();
+			if (overseer != null)
+			{
+				foreach (Pawn p in mechs)
+				{
+					if (p != overseer)
+					{
+						overseer.Comp.Connect(p, overseer.Comp.dummyPawn);
 					}
 				}
 			}
-			foreach (Thing item in list)
+			IntVec3 spot = MapGenerator.PlayerStartSpot;
+			List<Thing> generated = new List<Thing>();
+			Rot4 rot = Rot4.Random;
+			IntVec3 root = PrefabUtility.GetRoot(prefab, spot, rot);
+			Thing.allowDestroyNonDestroyable = true;
+			prefab.Generate(spot, rot, map, Faction.OfPlayerSilentFail, ref generated);
+			List<IntVec3> itemCells = new List<IntVec3>();
+			List<IntVec3> spawnCells = new List<IntVec3>();
+			List<Thing> beacons = new List<Thing>();
+			beacons.AddRange(generated.Where((x) => x is Building_OrbitalTradeBeacon));
+			foreach (Thing t in generated.ToList().InRandomOrder())
 			{
-				if (item.def == ThingDefOf.Door)
+				CellRect cellRect = new CellRect(t.Position.x - t.RotatedSize.x / 2 - 4, t.Position.z - t.RotatedSize.z / 2 - 4, t.RotatedSize.x + 8, t.RotatedSize.z + 8);
+				cellRect.ClipInsideMap(t.Map);
+				foreach (IntVec3 item in cellRect)
 				{
-					MapGenerator.rootsToUnfog.AddRange(GenAdj.CellsAdjacentCardinal(item));
+					t.Map.areaManager.Home[item] = true;
 				}
-				if (item.TryGetComp(out CompRefuelable comp))
+				if (t is Building_CryptosleepCasket)
 				{
-					comp.Refuel(comp.Props.fuelCapacity);
+					spawnCells.Add(t.InteractionCell);
 				}
-				if (item is Building_GravEngine building_GravEngine)
+				if (t.TryGetComp<CompRefuelable>(out var comp))
 				{
-					building_GravEngine.silentlyActivate = true;
+					if (comp.Props.fuelIsMortarBarrel)
+					{
+						comp.Refuel(comp.Props.fuelCapacity - comp.Fuel);
+					}
+					else
+					{
+						comp.ConsumeFuel(comp.Fuel);
+					}
+				}
+				else if (t is InactiveMech m)
+				{
+					if (!mechs.NullOrEmpty())
+					{
+						Pawn mech = mechs.RandomElement();
+						mech.Rotation = Rot4.Random;
+						m.innerContainer.Clear();
+						m.innerContainer.TryAddOrTransfer(mech);
+						mechs.Remove(mech);
+					}
+					else
+					{
+						m.Destroy();
+					}
+				}
+				else if (t.def.building.maxItemsInCell > 1 && !t.def.preventDroppingThingsOn && beacons.Any((b) => b.Position.InHorDistOf(t.Position, 7.9f)))
+				{
+					itemCells.AddRange(t.OccupiedRect().Cells);
 				}
 			}
-			foreach (IntVec3 item2 in cellRect)
+			foreach (Thing thing in things)
 			{
-				if (item2.GetTerrain(map) == TerrainDefOf.Substructure)
-				{
-					map.areaManager.Home[item2] = true;
-				}
+				GenPlace.TryPlaceThing(thing, itemCells.RandomElement(), map, ThingPlaceMode.Near);
 			}
+			if (!mechs.NullOrEmpty())
+			{
+				pawns.AddRange(mechs);
+			}
+			foreach (Pawn p in pawns)
+			{
+				IntVec3 c = spawnCells.RandomElement();
+				GenSpawn.Spawn(p, c, map);
+				spawnCells.Remove(c);
+			}
+			map.powerNetManager.UpdatePowerNetsAndConnections_First();
+			GenStep_RPrefab.UpdateDesiredPowerOutputForAllGenerators(map);
+		}
+	}
+
+	public class ScenPart_Renegades : ScenPart
+	{
+		public bool startContacted = false;
+
+		public int goodwill = 0;
+
+		public FactionRelationKind relations = FactionRelationKind.Neutral;
+
+		public bool enemyWithFleet;
+
+		public IntRange contactInDaysRange = IntRange.Invalid;
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Values.Look(ref startContacted, "startContacted");
+			Scribe_Values.Look(ref goodwill, "goodwill");
+			Scribe_Values.Look(ref relations, "relations");
+			Scribe_Values.Look(ref enemyWithFleet, "enemyWithFleet", defaultValue: false);
+			Scribe_Values.Look(ref contactInDaysRange, "contactInDaysRange", defaultValue: IntRange.Invalid);
 		}
 
-		public override int GetHashCode()
+		public override void PostWorldGenerate()
 		{
-			return base.GetHashCode() ^ ((animalKind != null) ? animalKind.GetHashCode() : 0);
+			base.PostWorldGenerate();
+			Apply();
 		}
-	}*/
+
+		public void Apply()
+		{
+			GameComponent_Renegades comp = GameComponent_Renegades.Find;
+			if (comp == null)
+			{
+				return;
+			}
+			Faction fleet = comp.DMSFaction;
+			Faction player = Faction.OfPlayerSilentFail;
+			if (enemyWithFleet && fleet != null)
+			{
+				fleet.SetRelation(new FactionRelation(player, FactionRelationKind.Hostile) { baseGoodwill = -200 });
+				Faction.OfPlayerSilentFail?.TryAffectGoodwillWith(fleet, -200, canSendMessage: false, canSendHostilityLetter: false, RCDefOf.DMSRC_AllyWithRenegades);
+				comp.enemyWithFleet = true;
+			}
+			comp.PlayerRelation = relations;
+			comp.playerGoodwill = goodwill;
+			if (startContacted)
+			{
+				comp.contacted = true;
+			}
+			else if (contactInDaysRange != IntRange.Invalid)
+			{
+				comp.hoursTillContact = contactInDaysRange.RandomInRange * 24;
+			}
+		}
+	}
 }

@@ -99,13 +99,22 @@ namespace DMSRC
 		[HarmonyPrefix]
 		public static bool Prefix(Faction other, Faction __instance, ref FactionRelation __result)
 		{
+			if(__instance?.def == null)
+			{
+				return true;
+			}
+			GameComponent_Renegades comp = GameComponent_Renegades.Find;
+			if (comp == null)
+			{
+				return true;
+			}
 			if (__instance.def == RCDefOf.DMSRC_RenegadeClan && other.IsPlayer)
 			{
-				__result = GameComponent_Renegades.Find.RelationWithPlayer(other);
+				__result = comp.RelationWithPlayer(other);
 			}
 			else if (__instance.IsPlayer && other.def == RCDefOf.DMSRC_RenegadeClan)
 			{
-				__result = GameComponent_Renegades.Find.RelationWithPlayer(other);
+				__result = comp.RelationWithPlayer(other);
 			}
 			else
 			{

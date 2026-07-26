@@ -202,6 +202,10 @@ namespace DMSRC
 		protected override bool TestRunInt(Slate slate)
 		{
 			GameComponent_Renegades comp = GameComponent_Renegades.Find;
+			if (comp.RenegadesFaction == null || comp.DMSFaction == null)
+			{
+				return false;
+			}
 			if (!Find.Storyteller.difficulty.allowViolentQuests || (giver == GiverType.Renegades && !comp.contacted))
 			{
 				return false;

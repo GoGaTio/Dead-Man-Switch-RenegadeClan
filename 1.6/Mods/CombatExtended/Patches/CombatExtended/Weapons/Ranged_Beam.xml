@@ -59,30 +59,16 @@
   <!-- ========== Luch ========== -->
 
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/statBases/RangedWeapon_Cooldown</xpath>
-    <value>
-      <RangedWeapon_Cooldown>0.56</RangedWeapon_Cooldown>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/warmupTime</xpath>
-    <value>
-      <warmupTime>1.3</warmupTime>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/range</xpath>
     <value>
-      <range>80</range>
+      <range>59.9</range>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/beamTotalDamage</xpath>
     <value>
-      <beamTotalDamage>10</beamTotalDamage>
+      <beamTotalDamage>7</beamTotalDamage>
     </value>
   </Operation>
 
@@ -91,21 +77,14 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza"]/verbs/li/range</xpath>
     <value>
-      <range>140</range>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza"]/verbs/li/beamWidth</xpath>
-    <value>
-      <beamWidth>4</beamWidth>
+      <range>74.9</range>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza"]/verbs/li/beamTotalDamage</xpath>
     <value>
-      <beamTotalDamage>10</beamTotalDamage>
+      <beamTotalDamage>14</beamTotalDamage>
     </value>
   </Operation>
 
@@ -114,21 +93,14 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DMSRC_Gun_LinzaMount"]/verbs/li/range</xpath>
     <value>
-      <range>190</range>
-    </value>
-  </Operation>
-  
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DMSRC_Gun_Linza"]/verbs/li/beamWidth</xpath>
-    <value>
-      <beamWidth>4</beamWidth>
+      <range>79.9</range>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DMSRC_Gun_LinzaMount"]/verbs/li/beamTotalDamage</xpath>
     <value>
-      <beamTotalDamage>10</beamTotalDamage>
+      <beamTotalDamage>16</beamTotalDamage>
     </value>
   </Operation>
 

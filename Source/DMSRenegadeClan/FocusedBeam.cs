@@ -399,8 +399,12 @@ namespace DMSRC
 			dinfo.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
 			if (thing is Pawn)
 			{
-				log = new BattleLogEntry_RangedImpact(caster, thing, currentTarget.Thing, base.EquipmentSource.def, null, null);
+				log = new BattleLogEntry_RangedImpact(caster, thing, thingTarget ?? currentTarget.Thing, base.EquipmentSource.def, null, null);
 				Find.BattleLog.Add(log);
+			}
+			if (thingTarget != null || currentTarget.HasThing)
+			{
+				dinfo.intendedTargetInt = thingTarget ?? currentTarget.Thing;
 			}
 			DamageResult damageResult = thing.TakeDamage(dinfo);
 			damageResult.AssociateWithLog(log);

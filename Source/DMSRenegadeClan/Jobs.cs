@@ -316,7 +316,7 @@ namespace DMSRC
 				if (ticksToNextRepair <= 0)
 				{
 					Mech.needs.energy.CurLevel -= Mech.GetStatValue(StatDefOf.MechEnergyLossPerHP) * (float)delta;
-					MechRepairUtility.RepairTick(Mech, delta);
+					MechRepairUtility.RepairTick(Mech);
 					ticksToNextRepair = TicksPerHeal;
 				}
 				if(!selfRepair)
