@@ -58,6 +58,7 @@ using static DMSRC.TradeRequest;
 using static RimWorld.FleshTypeDef;
 using static RimWorld.PsychicRitualRoleDef;
 using static System.Collections.Specialized.BitVector32;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Net.WebRequestMethods;
 
 namespace DMSRC
@@ -75,6 +76,12 @@ namespace DMSRC
 
 	public class GameComponent_Renegades : GameComponent
 	{
+		private readonly IntRange TicksContactInteral = new IntRange(100, 200);
+
+		private readonly IntRange TicksContactInteralHostile = new IntRange(600, 1200);
+
+		private readonly IntRange TicksContactInteralInintial = new IntRange(400, 800);
+
 		public List<RenegadesRequest> requests = new List<RenegadesRequest>();
 
 		public bool active = true;
@@ -87,13 +94,20 @@ namespace DMSRC
 
 		public FactionRelationKind PlayerRelation
 		{
-			get { return playerRelation; }
+			get
+			{
+				return playerRelation;
+			}
 			set
 			{
 				if(playerRelation != value)
 				{
-					FactionRelationKind prev = playerRelation; 
+					FactionRelationKind prev = playerRelation;
 					playerRelation = value;
+					if(playerRelation == FactionRelationKind.Hostile)
+					{
+						requests.Clear();
+					}
 					ColoredText.ClearCache();
 					Faction.OfPlayerSilentFail?.Notify_RelationKindChanged(RenegadesFaction, prev, false, null, GlobalTargetInfo.Invalid, out var _);
 				}
@@ -106,11 +120,11 @@ namespace DMSRC
 
 		public List<Thing> things = new List<Thing>();
 
-		public bool contacted = false;
+		public bool contact = false;
 
-		public int hoursTillContact = -1;
+		public int ticksTillContact = -1;
 
-		public int hoursTillRefresh = -1;
+		public int ticksTillRefresh = -1;
 
 		public bool enemyWithFleet = false;
 
@@ -122,41 +136,76 @@ namespace DMSRC
 			Scribe_Values.Look(ref playerGoodwill, "playerGoodwill", 0);
 			Scribe_Values.Look(ref active, "active", true);
 			Scribe_Values.Look(ref lastID, "lastID", -1);
-			Scribe_Values.Look(ref contacted, "contacted", true);
-			Scribe_Values.Look(ref hoursTillContact, "hoursTillContact", -1);
-			Scribe_Values.Look(ref hoursTillRefresh, "hoursTillRefresh", -1);
+			Scribe_Values.Look(ref contact, "contact", true);
+			Scribe_Values.Look(ref ticksTillContact, "ticksTillContact", -1);
+			Scribe_Values.Look(ref ticksTillRefresh, "ticksTillRefresh", -1);
 			Scribe_Values.Look(ref enemyWithFleet, "enemyWithFleet", false);
 			Scribe_Collections.Look(ref things, "things", LookMode.Deep);
 			ofRenegades = null;
 			ofDMS = null;
+			if(Scribe.mode == LoadSaveMode.PostLoadInit && !things.NullOrEmpty())
+			{
+				things.RemoveAll(x => x == null || x.def == null);
+			}
 		}
 
-
-		public void OffsetGoodwill(int offset)
+		public void OffsetGoodwill(int offset, bool notifyPlayer = false)
 		{
-			ChangeGoodwill(playerGoodwill + offset);
+			ChangeGoodwill(playerGoodwill + offset, notifyPlayer);
 		}
 
-		public void ChangeGoodwill(int newValue)
+		public void ChangeGoodwill(int newValue, bool notifyPlayer = false)
 		{
 			int goodwillPrev = playerGoodwill;
 			playerGoodwill = newValue;
 			if (goodwillPrev < 50 && playerGoodwill >= 50)
 			{
+				bool flag = notifyPlayer && PlayerRelation != FactionRelationKind.Ally;
 				PlayerRelation = FactionRelationKind.Ally;
+				if (flag)
+				{
+					Verse.Find.LetterStack.ReceiveLetter("LetterLabelRelationsChange_Ally".Translate(RenegadesFaction.Name), RelationChangeLetter(FactionRelationKind.Ally), LetterDefOf.PositiveEvent, null, RenegadesFaction);
+				}
 			}
 			else if (goodwillPrev > 0 && playerGoodwill <= 0)
 			{
+				bool flag = notifyPlayer && PlayerRelation != FactionRelationKind.Neutral;
 				PlayerRelation = FactionRelationKind.Neutral;
+				if (flag)
+				{
+					Verse.Find.LetterStack.ReceiveLetter("LetterLabelRelationsChange_NeutralFromAlly".Translate(RenegadesFaction.Name), RelationChangeLetter(FactionRelationKind.Neutral), LetterDefOf.NegativeEvent, null, RenegadesFaction);
+				}
 			}
 			else if (goodwillPrev > -50 && playerGoodwill <= -50)
 			{
+				bool flag = notifyPlayer && PlayerRelation != FactionRelationKind.Hostile;
 				PlayerRelation = FactionRelationKind.Hostile;
-				for (int i = 0; i < requests.Count; i++)
+				if (flag)
 				{
-					requests[0].Complete();
+					Verse.Find.LetterStack.ReceiveLetter("LetterLabelRelationsChange_Hostile".Translate(RenegadesFaction.Name), RelationChangeLetter(FactionRelationKind.Hostile), LetterDefOf.NegativeEvent, null, RenegadesFaction);
 				}
 			}
+
+		}
+		public TaggedString RelationChangeLetter(FactionRelationKind newKind)
+		{
+			TaggedString text = "";
+			switch (newKind)
+			{
+				case FactionRelationKind.Hostile:
+					text += "LetterRelationsChange_Hostile".Translate(RenegadesFaction.NameColored);
+					text += "\n\n" + "LetterRelationsChange_HostileGoodwillDescription_NoGifting".Translate(playerGoodwill.ToStringWithSign(), (-50).ToStringWithSign(), 0.ToStringWithSign());
+					break;
+				case FactionRelationKind.Ally:
+					text += "LetterRelationsChange_Ally".Translate(RenegadesFaction.NameColored);
+					text += "\n\n" + "LetterRelationsChange_AllyGoodwillDescription".Translate(playerGoodwill.ToStringWithSign(), 50.ToStringWithSign(), 0.ToStringWithSign());
+					break;
+				case FactionRelationKind.Neutral:
+					text += "LetterRelationsChange_NeutralFromAlly".Translate(RenegadesFaction.NameColored);
+					text += "\n\n" + "LetterRelationsChange_NeutralFromAllyGoodwillDescription".Translate(RenegadesFaction.NameColored, playerGoodwill.ToStringWithSign(), 0.ToStringWithSign(), (-50).ToStringWithSign(), 50.ToStringWithSign());
+					break;
+			}
+			return text;
 		}
 
 		public RenegadesRequest MakeRequest(RenegadesRequestDef def)
@@ -210,7 +259,7 @@ namespace DMSRC
 
 		public FactionRelation RelationWithPlayer(Faction faction = null)
 		{
-			return new FactionRelation(faction, playerRelation) { baseGoodwill = playerGoodwill };
+			return new FactionRelation(faction, PlayerRelation) { baseGoodwill = playerGoodwill };
 		}
 
 		public GameComponent_Renegades(Game game)
@@ -238,53 +287,61 @@ namespace DMSRC
 
 		public override void GameComponentTick()
 		{
-			if(Verse.Find.TickManager.TicksGame % 2500 != 0)
+			if (Verse.Find.TickManager.TicksGame % 6000 != 0)
 			{
 				return;
 			}
-			if(DMSFaction != null)
+			FactionRelationKind kind = DMSFaction?.RelationKindWith(Faction.OfPlayerSilentFail) ?? FactionRelationKind.Neutral;
+			if (kind == FactionRelationKind.Ally)
 			{
-				FactionRelationKind kind = Faction.OfPlayerSilentFail.RelationKindWith(DMSFaction);
-				if (kind != FactionRelationKind.Ally)
+				if(playerRelation != FactionRelationKind.Hostile)
 				{
-					if (!contacted)
-					{
-						hoursTillContact--;
-						if (kind == FactionRelationKind.Hostile)
-						{
-							hoursTillContact -= 5;
-						}
-						if (hoursTillContact <= 0)
-						{
-							ContactPlayer();
-						}
-					}
+					PlayerRelation = FactionRelationKind.Hostile;
+					playerGoodwill = -200;
+					contact = false;
+					ticksTillContact = TicksContactInteralHostile.RandomInRange;
 				}
-				else if (playerRelation == FactionRelationKind.Ally)
+				return;
+			}
+			if (contact)
+			{
+				ticksTillRefresh--;
+				if (ticksTillRefresh < 0)
 				{
-					Faction.OfPlayerSilentFail?.TryAffectGoodwillWith(DMSFaction, -200, canSendMessage: false, canSendHostilityLetter: false, RCDefOf.DMSRC_AllyWithRenegades);
+					ticksTillRefresh = TicksContactInteral.RandomInRange;
+					GenerateThings();
 				}
-				if (playerRelation != FactionRelationKind.Hostile)
+				foreach (RenegadesRequest req in requests.ToList())
+				{
+					req.Tick();
+				}
+				if (PlayerRelation == FactionRelationKind.Ally)
+				{
+					DMSFaction?.TryAffectGoodwillWith(Faction.OfPlayerSilentFail, -200, canSendMessage: false, canSendHostilityLetter: false, RCDefOf.DMSRC_AllyWithRenegades);
+				}
+			}
+			else
+			{
+				ticksTillContact--;
+				if (kind == FactionRelationKind.Hostile)
+				{
+					ticksTillContact -= 2;
+				}
+				if (ticksTillContact <= 0)
 				{
 					if (kind == FactionRelationKind.Ally)
 					{
-						PlayerRelation = FactionRelationKind.Hostile;
-						playerGoodwill = -200;
-						for (int i = 0; i < requests.Count; i++)
-						{
-							requests[0].Complete();
-						}
+						contact = false;
+						ticksTillContact = TicksContactInteralHostile.RandomInRange;
+						return;
 					}
-					hoursTillRefresh--;
-					if (hoursTillRefresh < 0)
+					if (!ResearchProjectDefOf.MicroelectronicsBasics.IsFinished)
 					{
-						hoursTillRefresh = new IntRange(240, 480).RandomInRange;
-						GenerateThings();
+						contact = false;
+						ticksTillContact = TicksContactInteral.RandomInRange;
+						return;
 					}
-					foreach (RenegadesRequest req in requests.ToList())
-					{
-						req.Tick();
-					}
+					ContactPlayer();
 				}
 			}
 		}
@@ -292,9 +349,9 @@ namespace DMSRC
 		public override void StartedNewGame()
 		{
 			base.StartedNewGame();
-			if (hoursTillContact == -1 && !contacted)
+			if (ticksTillContact < 0 && !contact)
 			{
-				hoursTillContact = new IntRange(20, 40).RandomInRange * 24;
+				ticksTillContact = TicksContactInteralInintial.RandomInRange;
 			}
 			if (ModsConfig.IdeologyActive && RenegadesFaction?.ideos?.PrimaryIdeo != null)
 			{
@@ -319,7 +376,7 @@ namespace DMSRC
 			Faction faction = RenegadesFaction;
 			if (faction == null)
 			{
-				Log.Message("DMSRC Renegades clan is null");
+				Log.Warning("DMSRC Renegades clan faction was null on startup, that is unacceptable!!! Fixing...");
 			}
 			else if (DMSFaction != null && Faction.OfPlayerSilentFail?.RelationKindWith(DMSFaction) == FactionRelationKind.Ally)
 			{
@@ -330,6 +387,11 @@ namespace DMSRC
 
 		public void ContactPlayer()
 		{
+			if(PlayerRelation == FactionRelationKind.Ally)
+			{
+				contact = true;
+				return;
+			}
 			Map map = Verse.Find.CurrentMap;
 			if(map == null || !map.IsPlayerHome)
 			{
@@ -338,14 +400,14 @@ namespace DMSRC
 			ChoiceLetter choiceLetter = (ChoiceLetter)LetterMaker.MakeLetter("DMSRC_RenegadesContactsLetter_Label".Translate(), "DMSRC_RenegadesContactsLetter_Text".Translate(), RCDefOf.DMSRC_ContactEvent);
 			choiceLetter.StartTimeout(180000);
 			Verse.Find.LetterStack.ReceiveLetter(choiceLetter);
-			contacted = true;
+			contact = true;
 		}
 
 		public float RaidCommonality(float points)
         {
-			if(playerRelation == FactionRelationKind.Hostile)
+			if(PlayerRelation == FactionRelationKind.Hostile)
 			{
-				return 1f;
+				return 0.5f;
 			}
 			return 0f;
         }
@@ -358,17 +420,58 @@ namespace DMSRC
 			{
 				def = DefDatabase<TraderKindDef>.AllDefs.FirstOrDefault((TraderKindDef x) => x.category == "DMSRC_RenegadesMarket");
 			}
-			foreach (Thing t in things)
+			if (def == null)
 			{
-				t.Destroy();
+				string s = "DMSRC Cannot find trader def for renegade marker. Defs available:";
+				foreach(TraderKindDef x in DefDatabase<TraderKindDef>.AllDefs)
+				{
+					s += "\n" + x.defName + " - " + x.category;
+				}
+				Log.Error(s);
+				return;
 			}
-			things.Clear();
+			if (things.NullOrEmpty())
+			{
+				things = new List<Thing>();
+			}
+			else
+			{
+				foreach (Thing t in things.ToList())
+				{
+					t?.Destroy();//For some reason things could be null after loading game
+				}
+				things.Clear();
+			}
 			ThingSetMakerParams parms = default(ThingSetMakerParams);
 			parms.traderDef = def;
 			parms.makingFaction = RenegadesFaction;
+			if (ThingSetMakerDefOf.TraderStock == null)
+			{
+				Log.Error("DMSRC Cannot generate market stock: ThingSetMakerDefOf.TraderStock is null for some reason.");
+				return;
+			}
+			if (ThingSetMakerDefOf.TraderStock.root == null)
+			{
+				Log.Error("DMSRC Cannot generate market stock: ThingSetMakerDefOf.TraderStock.root is null for some reason.");
+				return;
+			}
 			List<Thing> list = ThingSetMakerDefOf.TraderStock.root.Generate(parms);
+			if (list == null)
+			{
+				Log.Error("DMSRC Cannot generate market stock: ThinkSetMaker returned null.");
+				return;
+			}
+			if (list.NullOrEmpty())
+			{
+				Log.Error("DMSRC Cannot generate market stock: ThinkSetMaker returned empty list.");
+				return;
+			}
 			foreach (Thing item in list.ToList())
 			{
+				if(item == null || item.stackCount < 1)
+				{
+					continue;
+				}
 				if (item.def.stackLimit <= 1)
 				{
 					things.Add(item);

@@ -12,7 +12,9 @@
     <category>ThreatBig</category>
     <pointsScaleable>true</pointsScaleable>
     <canOccurOnAllPlanetLayers>true</canOccurOnAllPlanetLayers>
+    <minThreatPoints>1000</minThreatPoints>
     <hidden>true</hidden>
+    <earliestDay>60</earliestDay>
   </IncidentDef>
 
 </Defs>

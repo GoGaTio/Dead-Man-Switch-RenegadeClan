@@ -1,4 +1,5 @@
 using DelaunatorSharp;
+using DRC;
 using Gilzoide.ManagedJobs;
 using HarmonyLib;
 using Ionic.Crc;
@@ -76,8 +77,27 @@ namespace DMSRC
 			new CurvePoint(10f, 5f)
 		};
 
+		private static readonly SimpleCurve SaboteursFactorFromPointsForCECurve = new SimpleCurve
+		{
+			new CurvePoint(1000f, 0.5f),
+			new CurvePoint(4000f, 0.6f),
+			new CurvePoint(8000f, 0.8f),
+			new CurvePoint(10000f, 1f)
+		};
+
+		private static readonly SimpleCurve SaboteursFactorFromCountForCECurve = new SimpleCurve
+		{
+			new CurvePoint(1f, 1f),
+			new CurvePoint(4f, 0.7f),
+			new CurvePoint(10f, 1f)
+		};
+
 		protected override bool CanFireNowSub(IncidentParms parms)
 		{
+			if (!LoadedModManager.GetMod<RenegadeClanMod>().settings.allowSabotage)
+			{
+				return false;
+			}
 			if (base.CanFireNowSub(parms))
 			{
 				return GameComponent_Renegades.Find.PlayerRelation == FactionRelationKind.Hostile && (parms.target as Map).regionGrid.AllRooms?.Count > 2;
@@ -98,8 +118,13 @@ namespace DMSRC
 				return false;
 			}
 			parms.faction = comp.RenegadesFaction;
-			int count = Mathf.RoundToInt(SaboteursCountFactorByPointsCurve.Evaluate(parms.points) * SaboteursCountByColonistsCurve.Evaluate(map.mapPawns.FreeColonistsSpawnedOrInPlayerEjectablePodsCount));
-			List<Pawn> list = GenerateSaboteurs(map, comp.RenegadesFaction, count).ToList();
+			float count = SaboteursCountFactorByPointsCurve.Evaluate(parms.points) * SaboteursCountByColonistsCurve.Evaluate(map.mapPawns.FreeColonistsSpawnedOrInPlayerEjectablePodsCount);
+			if (DMSRenegadeClan.CEIsActive)
+			{
+				count *= SaboteursFactorFromCountForCECurve.Evaluate(count);
+				count *= SaboteursFactorFromPointsForCECurve.Evaluate(parms.points);
+			}
+			List<Pawn> list = GenerateSaboteurs(map, comp.RenegadesFaction, Mathf.Max(1, Mathf.RoundToInt(count))).ToList();
 			LordMaker.MakeNewLord(comp.RenegadesFaction, new LordJob_Sabotage(), map, list);
 			return true;
 		}

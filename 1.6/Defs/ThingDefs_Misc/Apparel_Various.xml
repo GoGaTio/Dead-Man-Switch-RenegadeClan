@@ -30,6 +30,7 @@
         <disallowedThingDefs>
           <li>Silver</li>
           <li>Gold</li>
+          <li>DMS_Ceramics</li>
         </disallowedThingDefs>
       </defaultIngredientFilter>
       <displayPriority>205</displayPriority>
@@ -118,7 +119,7 @@
   <ThingDef ParentName="DMSRC_BaseAssaultArmor">
     <defName>DMSRC_Apparel_AssaultArmor</defName>
     <label>HAP armor</label>
-    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides vacuum exposure resistance.</description>
+    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations.\n\nAlso provides vacuum exposure resistance.</description>
     <costList>
       <Tungsteel>40</Tungsteel>
       <Plasfiber>60</Plasfiber>
@@ -146,7 +147,7 @@
   <ThingDef MayRequire="Ludeon.RimWorld.Royalty" ParentName="DMSRC_BaseAssaultArmor">
     <defName>DMSRC_Apparel_JumperArmor</defName>
     <label>HAPJ armor</label>
-    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations. Has built-in jump launcher./n/nAlso provides vacuum exposure resistance.</description>
+    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations. Has built-in jump launcher.\n\nAlso provides vacuum exposure resistance.</description>
     <costList>
       <Tungsteel>50</Tungsteel>
       <Plasfiber>60</Plasfiber>

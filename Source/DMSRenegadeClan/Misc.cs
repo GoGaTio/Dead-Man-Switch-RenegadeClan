@@ -55,6 +55,27 @@ using static UnityEngine.Scripting.GarbageCollector;
 
 namespace DMSRC
 {
+	public class Recipe_InstallNeurointerface : Recipe_InstallImplant
+	{
+		public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+		{
+			if (!ingredients.NullOrEmpty())
+			{
+				foreach (Thing item in ingredients)
+				{
+					if(item.TryGetComp<CompAnalyzable>(out CompAnalyzable comp))
+					{
+						if(Find.AnalysisManager.TryGetAnalysisProgress(comp.AnalysisID, out var details) && !details.Satisfied)
+						{
+							Find.AnalysisManager.TryIncrementAnalysisProgress(comp.AnalysisID, out var _);
+						}
+					}
+				}
+			}
+			base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
+		}
+	}
+
 	public class GoodwillSituationWorker_Renegades : GoodwillSituationWorker
 	{
 		public override int GetNaturalGoodwillOffset(Faction other)
@@ -157,7 +178,7 @@ namespace DMSRC
 				return;
 			}
 			Log.Message("test");
-			GameComponent_Renegades.Find.OffsetGoodwill(change);
+			GameComponent_Renegades.Find.OffsetGoodwill(change, true);
 		}
 
 		public override void ExposeData()

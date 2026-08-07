@@ -58,10 +58,15 @@ namespace DMSRC
 	public class DMSRenegadeClan : Mod
 	{
 		public static Harmony harmonyInstance;
+
+		public static bool CEIsActive = false;
 		public DMSRenegadeClan(ModContentPack content)
 			: base(content)
 		{
-			harmonyInstance = new Harmony("DMSRenegadeClan_Patch");
+			if(harmonyInstance == null)
+			{
+				harmonyInstance = new Harmony("DMSRenegadeClan_Patch");
+			}
 			harmonyInstance.PatchAllUncategorized();
 		}
 	}

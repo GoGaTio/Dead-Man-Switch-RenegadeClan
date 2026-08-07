@@ -68,7 +68,7 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DMSRC_Gun_Luch"]/verbs/li/beamTotalDamage</xpath>
     <value>
-      <beamTotalDamage>7</beamTotalDamage>
+      <beamTotalDamage>10</beamTotalDamage>
     </value>
   </Operation>
 

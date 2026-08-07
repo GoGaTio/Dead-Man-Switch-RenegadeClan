@@ -25,7 +25,7 @@
     <label>logistic center</label>
     <description>A colonial fleet logistic center.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>World/DMSRC_LogisticCenter</expandingIconTexture>
+    <expandingIconTexture>World/DMSRC_UndergroundWarehouse</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
     <tags>

@@ -74,6 +74,8 @@ namespace DMSRC
 
 		public int timeoutTicks = 60000;
 
+		public ThingDef rewardDefForInfo = null;
+
 		public enum GiverType
 		{
 			Undefined,
@@ -186,6 +188,11 @@ namespace DMSRC
 							choice.questParts.Add(item);
 						}
 					}
+					if (rewardDefForInfo != null)
+					{
+						Reward reward = new Reward_DefinedThingDef(rewardDefForInfo);
+						choice.rewards.Insert(0, reward);
+					}
 				}
 			}
 			quest.End(QuestEndOutcome.Success, 0, null, inSignalSuccess, QuestPart.SignalListenMode.OngoingOnly, sendStandardLetter: true);
@@ -206,7 +213,7 @@ namespace DMSRC
 			{
 				return false;
 			}
-			if (!Find.Storyteller.difficulty.allowViolentQuests || (giver == GiverType.Renegades && !comp.contacted))
+			if (!Find.Storyteller.difficulty.allowViolentQuests || (giver == GiverType.Renegades && !comp.contact))
 			{
 				return false;
 			}

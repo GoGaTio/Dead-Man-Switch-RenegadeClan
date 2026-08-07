@@ -20,12 +20,12 @@
   <DMSRC_RenegadesDialod_RequestsDisabled>Should be ally to make requests</DMSRC_RenegadesDialod_RequestsDisabled>
   <DMSRC_RenegadesDialod_NeedNotPocketMap>Shouldn't be underground</DMSRC_RenegadesDialod_NeedNotPocketMap>
   <DMSRC_RenegadesContactsLetter_Label>Contact with renegades</DMSRC_RenegadesContactsLetter_Label>
-  <DMSRC_RenegadesContactsLetter_Text>Renegades contacted you, offering an allience. They will give you access to trade requests and, in the future, military aid.\n\nIf you will accept this offer Colonial fleet would become permanent enemy.\n\nIf you will reject this offer renegades will not do anything, unless you'll become Colonial fleet ally.</DMSRC_RenegadesContactsLetter_Text>
+  <DMSRC_RenegadesContactsLetter_Text>Renegades have contacted you, offering an allience. They will give you access to trade requests and, in the future, military aid.\n\nIf you will accept this offer Colonial fleet would become permanent enemy.\n\nIf you will reject this offer renegades will not do anything, unless you'll become Colonial fleet ally.</DMSRC_RenegadesContactsLetter_Text>
   <DMSRC_Controlled>{0}/{1}</DMSRC_Controlled>
   <DMSRC_NeedMoreGoodwill>Not enough goodwill(Require at least {0})</DMSRC_NeedMoreGoodwill>
-  <DMSRC_ArrivalAfter_Single>Arrives in {0}</DMSRC_ArrivalAfter_Single>
+  <DMSRC_EstimatedArrivalTime>Estimated arrival time: {0}</DMSRC_EstimatedArrivalTime>
   <DMSRC_MilitaryAid>Military aid with power of {0} (cost {1} goodwill)</DMSRC_MilitaryAid>
-  <DMSRC_RenegadesTradeLetter_Label>Purchases arrived</DMSRC_RenegadesTradeLetter_Label>
+  <DMSRC_RenegadesTradeLetter_Label>Request arrived</DMSRC_RenegadesTradeLetter_Label>
   <DMSRC_RenegadesTradeLetter_Text>Renegades delivered your request.</DMSRC_RenegadesTradeLetter_Text>
   <DMSRC_NoThingsSelected>No things selected</DMSRC_NoThingsSelected>
 

@@ -108,9 +108,11 @@ namespace DMSRC
 
 		public override void ReceiveCompSignal(string signal)
 		{
-			if (!defused && signal == "Hacked")
+			if (signal == "Hacked")
 			{
 				defused = true;
+				GenSpawn.Spawn(RCDefOf.DMSRC_TimedBomb, parent.Position, parent.Map);
+				parent.Destroy();
 			}
 		}
 

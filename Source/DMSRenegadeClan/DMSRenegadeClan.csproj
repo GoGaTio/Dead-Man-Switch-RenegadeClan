@@ -72,11 +72,11 @@
   <ItemGroup>
     <Compile Include="Ability.cs" />
     <Compile Include="Damages.cs" />
-    <Compile Include="MapGen\Structures.cs" />
+    <Compile Include="Mod.cs" />
     <Compile Include="ScenParts.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FloatMenuOptionProvider_OverseerMech.cs" />
-    <Compile Include="Firecracker.cs" />
+    <Compile Include="Things\Firecracker.cs" />
     <Compile Include="GameComponent_Renegades.cs" />
     <Compile Include="Harmony\Renegades.cs" />
     <Compile Include="Jobs.cs" />
@@ -87,14 +87,16 @@
     <Compile Include="Quests\Incident.cs" />
     <Compile Include="Quests\QuestPart.cs" />
     <Compile Include="Requests.cs" />
+    <Compile Include="ThingComps\CompEMPCascade.cs" />
     <Compile Include="ThingComps\CompBroadcastAntenna.cs" />
     <Compile Include="ThingComps\CompUseEffectTargetablePlant.cs" />
     <Compile Include="ThingComps\CompTimedBomb.cs" />
     <Compile Include="ThingComps\CompWarheadPlatform.cs" />
     <Compile Include="ThingComps\CompProcessorHelmet.cs" />
-    <Compile Include="ThingComps\CompPerimeterScanner.cs" />
+    <Compile Include="ThingComps\CompDestroyFacility.cs" />
     <Compile Include="Things\Building_WetwareProducer.cs" />
     <Compile Include="Things\FacilityEntrance.cs" />
+    <Compile Include="Things\FacilityDestroyer.cs" />
     <Compile Include="Things\InactiveMech.cs" />
     <Compile Include="Work.cs" />
     <Compile Include="WorldObjects.cs" />

@@ -21,14 +21,11 @@
     </match>
   </Operation>
 
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ResearchProjectDef[defName="WG_HeavyExoskeleton" or defName="DMS_MobileDragoon" or defName="DMS_MobileDragoonAdvanced" or defName="DMS_MobileDragoonElite" or defName="DMS_MobileDragoonModule" or defName="DMS_ExperimentalGear"]/heldByFactionCategoryTags</xpath>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/ResearchProjectDef[defName="WG_HeavyExoskeleton" or defName="DMS_MobileDragoon" or defName="DMS_MobileDragoonAdvanced" or defName="DMS_MobileDragoonElite" or defName="DMS_MobileDragoonModule" or defName="DMS_ExperimentalGear"]/heldByFactionCategoryTags</xpath>
-      <value>
-        <li>DMSRC_RenegadeClan</li>
-      </value>
-    </match>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ResearchProjectDef[heldByFactionCategoryTags/li[text() = "DMS"]]/heldByFactionCategoryTags</xpath>
+    <value>
+      <li>DMSRC_RenegadeClan</li>
+    </value>
   </Operation>
 
   <Operation Class="PatchOperationAdd">

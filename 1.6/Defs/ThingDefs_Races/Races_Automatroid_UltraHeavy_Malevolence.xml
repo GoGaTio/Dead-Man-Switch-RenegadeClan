@@ -37,18 +37,17 @@
       <li Class="Fortified.CompProperties_VehicleWeapon">
         <drawData>
           <dataEast>
-            <offset>(1,0,0)</offset>
+            <offset>(0.5,0,-0.5)</offset>
           </dataEast>
           <dataWest>
-            <offset>(-1,0,0)</offset>
+            <offset>(-0.5,0,-0.3)</offset>
             <layer>-20</layer>
           </dataWest>
           <dataSouth>
-            <offset>(-0.4,0,0)</offset>
+            <offset>(-1,0,-0.3)</offset>
           </dataSouth>
           <dataNorth>
-            <offset>(0.4,0,0)</offset>
-            <layer>-20</layer>
+            <offset>(0.7,0,-0.3)</offset>
           </dataNorth>
         </drawData>
         <turretRotationFollowPawn>true</turretRotationFollowPawn>
@@ -231,7 +230,9 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponTags/>
+    <weaponTags>
+      <li>DMS_MechWeaponHeavy</li>
+    </weaponTags>
     <controlGroupPortraitZoom>0.6</controlGroupPortraitZoom>
     <weaponMoney>9999~9999</weaponMoney>
     <abilities>

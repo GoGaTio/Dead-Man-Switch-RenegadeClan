@@ -95,7 +95,7 @@ namespace DMSRC
 				yield break;
 			}
 			GameComponent_Renegades renegades = GameComponent_Renegades.Find;
-			if(renegades == null || !renegades.contacted || renegades.RenegadesFaction == null)
+			if(renegades == null || !renegades.contact || renegades.RenegadesFaction == null)
 			{
 				yield break;
 			}

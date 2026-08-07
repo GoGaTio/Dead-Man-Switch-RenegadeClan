@@ -4,7 +4,7 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>DMSRC_ProcessorCore</defName>
-    <label>processor core</label>
+    <label>Overlord-class processor</label>
     <description>An array of advanced processors, designed to function as control block and AI core.</description>
     <possessionCount>0</possessionCount>
     <graphicData>
@@ -37,8 +37,8 @@
 
         <analysisDurationHours>0.5</analysisDurationHours>
         <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
-        <completedLetterLabel>Processor core studied: {RESEARCH} unlocked</completedLetterLabel>
-        <completedLetter>By studying the processor core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterLabel>Overlord-class processor studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the Overlord-class processor, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
         <completedLetterDef>PositiveEvent</completedLetterDef>
 
         <!-- Interactable -->
@@ -46,8 +46,8 @@
         <activateTexPath>UI/Icons/Study</activateTexPath>
 
         <activateLabelString>Analyze...</activateLabelString>
-        <activateDescString>Analyze the processor core</activateDescString>
-        <jobString>Analyze the processor core</jobString>
+        <activateDescString>Analyze the Overlord-class processor</activateDescString>
+        <jobString>Analyze the Overlord-class processor</jobString>
         <guiLabelString>Choose who should analyze this</guiLabelString>
         <inspectString>Can be analyzed by a colonist.</inspectString>
 
@@ -73,6 +73,10 @@
     <label>gamma beam emissive platform</label>
     <description>A device that produces a coherent gamma beam. Cannot be replicated on low-tech worlds as it requires Unocttrium for emitter element.</description>
     <possessionCount>0</possessionCount>
+    <descriptionHyperlinks>
+      <ResearchProjectDef>DMSRC_BeamFocusing</ResearchProjectDef>
+      <ThingDef>DMSRC_DecoyDish</ThingDef>
+    </descriptionHyperlinks>
     <graphicData>
       <texPath>Things/Resource/DMSRC_ComponentGBEP</texPath>
       <graphicClass>Graphic_Single</graphicClass>

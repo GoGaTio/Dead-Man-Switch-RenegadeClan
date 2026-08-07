@@ -110,7 +110,7 @@
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_AssaultHelmet</defName>
     <label>HAP helmet</label>
-    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
+    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations.\n\nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>20</Tungsteel>
       <Plasfiber>20</Plasfiber>
@@ -134,7 +134,7 @@
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_ShieldHelmet</defName>
     <label>HAPS helmet</label>
-    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield bubble projector covers wearer from incoming projectiles./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
+    <description>A heavy helmet designed to protect wearer from bullets and shrapnel during direct assault operations. Built-in shield bubble projector covers wearer from incoming projectiles.\n\nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>30</Tungsteel>
       <Plasfiber>20</Plasfiber>
@@ -180,7 +180,7 @@
   <ThingDef ParentName="DMSRC_BaseAssaultHelmet">
     <defName>DMSRC_Apparel_ProcessorHelmet</defName>
     <label>HAP processor helmet</label>
-    <description>An advanced helmet with built-in processor core, that allows to use more neuroimplants and control more mechs./n/nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
+    <description>An advanced helmet with built-in processor core, that allows to use more neuroimplants and control more mechs.\n\nAlso provides toxic gas and vacuum exposure resistances, along with increased shooting accuracy.</description>
     <costList>
       <Tungsteel>30</Tungsteel>
       <Plasfiber>25</Plasfiber>

@@ -16,6 +16,7 @@
     <tickerType>Never</tickerType>
     <alwaysHaulable>true</alwaysHaulable>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <isTechHediff>true</isTechHediff>
     <thingCategories>
       <li>DMSRC_BodyPartsNeural</li>
     </thingCategories>
@@ -74,6 +75,7 @@
     <label>neurointerface</label>
     <description>A neural implant which allows to install neural subimplants.\n\nEach subimplant requires 1 neurocapacity that can be increased by other neuroimplants or special apparel.</description>
     <hediffClass>DMSRC.Hediff_Neurointerface</hediffClass>
+    <spawnThingOnRemoved>DMSRC_Neurointerface</spawnThingOnRemoved>
     <isBad>false</isBad>
     <duplicationAllowed>false</duplicationAllowed>
     <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
@@ -96,6 +98,7 @@
     <defName>DMSRC_InstallNeurointerface</defName>
     <label>install neurointerface</label>
     <description>Install a neurointerface.</description>
+    <workerClass>DMSRC.Recipe_InstallNeurointerface</workerClass>
     <descriptionHyperlinks>
       <ThingDef>DMSRC_Neurointerface</ThingDef>
       <HediffDef>DMSRC_Neurointerface</HediffDef>
@@ -119,7 +122,7 @@
         <li>MedicineHerbal</li>
       </disallowedThingDefs>
     </fixedIngredientFilter>
-    <deathOnFailedSurgeryChance>0.95</deathOnFailedSurgeryChance>
+    <deathOnFailedSurgeryChance>0.25</deathOnFailedSurgeryChance>
     <skillRequirements>
       <Medicine>10</Medicine>
     </skillRequirements>

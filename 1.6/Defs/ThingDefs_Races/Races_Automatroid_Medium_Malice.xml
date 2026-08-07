@@ -88,6 +88,13 @@
           <li>Simple_LongRange</li>
           <li>A_SC_LongRifle</li>
           <li>A_SR_GrenadeLauncher</li>
+          <li>DMS_PKM</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_AssaultRifle</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_Sniper</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_DMR</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_Pistol</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_LMG</li>
+          <li>DMS_ZlobinRifle</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>

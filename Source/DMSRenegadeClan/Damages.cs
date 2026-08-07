@@ -11,6 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
@@ -105,12 +106,9 @@ namespace DMSRC
 	{
 		private static List<IntVec3> openCells = new List<IntVec3>();
 
-		private static List<IntVec3> adjWallCells = new List<IntVec3>();
-
 		public override IEnumerable<IntVec3> ExplosionCellsToHit(IntVec3 center, Map map, float radius, IntVec3? needLOSToCell1 = null, IntVec3? needLOSToCell2 = null, FloatRange? affectedAngle = null)
 		{
 			openCells.Clear();
-			adjWallCells.Clear();
 			float num = affectedAngle?.min ?? 0f;
 			float num2 = affectedAngle?.max ?? 0f;
 			int num3 = GenRadial.NumCellsInRadius(radius);
@@ -156,7 +154,7 @@ namespace DMSRC
 					}
 				}
 			}*/
-			return openCells.Concat(adjWallCells);
+			return openCells;
 		}
 
 		public override void ExplosionAffectCell(Explosion explosion, IntVec3 c, List<Thing> damagedThings, List<Thing> ignoredThings, bool canThrowMotes)
@@ -168,16 +166,12 @@ namespace DMSRC
 
 	public class DamageWorker_Firecracker : DamageWorker_AddInjury
 	{
-		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
-		{
-			if(explosion.intendedTarget != t && t.Faction != null && !t.Faction.HostileTo(explosion.instigator?.Faction))
-			{
-				return;
-			}
-			base.ExplosionDamageThing(explosion, t, damagedThings, ignoredThings, cell);
-		}
 		public override DamageResult Apply(DamageInfo dinfo, Thing victim)
 		{
+			if(dinfo.IntendedTarget != victim && dinfo.Instigator?.HostileTo(victim) == false)
+			{
+				return new DamageResult();
+			}
 			Pawn pawn = victim as Pawn;
 			if (pawn != null)
 			{

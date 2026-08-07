@@ -55,7 +55,7 @@
     </Properties>
     <AmmoUser>
       <magazineSize>6</magazineSize>
-      <reloadTime>1.7</reloadTime>
+      <reloadTime>1.2</reloadTime>
       <ammoSet>DMSRC_AmmoSet_17x54mmFSR</ammoSet>
     </AmmoUser>
     <FireModes>
@@ -84,22 +84,21 @@
       <defaultProjectile>DMSRC_Bullet_17x54mmFSR</defaultProjectile>
       <warmupTime>1.1</warmupTime>
       <range>55</range>
-      <burstShotCount>5</burstShotCount>
+      <burstShotCount>3</burstShotCount>
       <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
       <soundCast>DMSRC_Shot_FSR</soundCast>
       <soundCastTail>GunTail_Medium</soundCastTail>
       <muzzleFlashScale>9</muzzleFlashScale>
-      <recoilAmount>1.77</recoilAmount>
+      <recoilAmount>1.47</recoilAmount>
     </Properties>
     <AmmoUser>
-      <magazineSize>15</magazineSize>
+      <magazineSize>21</magazineSize>
       <reloadTime>3.2</reloadTime>
       <ammoSet>DMSRC_AmmoSet_17x54mmFSR</ammoSet>
     </AmmoUser>
     <FireModes>
       <aiUseBurstMode>TRUE</aiUseBurstMode>
       <aiAimMode>AimedShot</aiAimMode>
-      <aimedBurstShotCount>3</aimedBurstShotCount>
     </FireModes>
     <weaponTags>
       <li>CE_AI_AR</li>

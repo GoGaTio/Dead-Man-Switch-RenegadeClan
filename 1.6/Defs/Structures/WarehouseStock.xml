@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_1</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(6, 0, 0)</li>
+          <li>(6, 0, 6)</li>
+          <li>(7, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>1</rot>
+        <posList>
+          <li>(0, 0, 2)</li>
+          <li>(8, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(6, 0, 2)</li>
+          <li>(2, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Cargo</def>
+        <pos>(3, 0, 2)</pos>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_2</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(4, 0, 3)</li>
+          <li>(7, 0, 6)</li>
+          <li>(6, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(3, 0, 1)</li>
+          <li>(1, 0, 2)</li>
+          <li>(0, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Cargo</def>
+        <pos>(2, 0, 5)</pos>
+        <rot>1</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_3</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(2, 0, 1)</li>
+          <li>(8, 0, 6)</li>
+          <li>(6, 0, 8)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(1, 0, 2)</li>
+          <li>(5, 0, 6)</li>
+          <li>(7, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Cargo</def>
+        <posList>
+          <li>(6, 0, 3)</li>
+          <li>(2, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>3</rot>
+        <posList>
+          <li>(1, 0, 4)</li>
+          <li>(1, 0, 6)</li>
+          <li>(5, 0, 4)</li>
+        </posList>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_4</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(4, 0, 0)</li>
+          <li>(7, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(7, 0, 0)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(1, 0, 2)</li>
+          <li>(4, 0, 3)</li>
+          <li>(2, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(6, 0, 7)</pos>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_5</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(0, 0, 0)</li>
+          <li>(1, 0, 5)</li>
+          <li>(3, 0, 6)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(4, 0, 1)</li>
+          <li>(7, 0, 1)</li>
+          <li>(5, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Cargo</def>
+        <pos>(6, 0, 2)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(5, 0, 8)</pos>
+        <rot>1</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_6</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMSRC_Crate</def>
+        <pos>(8, 0, 0)</pos>
+        <size>(1, 2)</size>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(3, 0, 2)</li>
+          <li>(4, 0, 5)</li>
+          <li>(0, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>3</rot>
+        <posList>
+          <li>(8, 0, 2)</li>
+          <li>(2, 0, 3)</li>
+          <li>(3, 0, 4)</li>
+        </posList>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_7</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(2, 0, 0)</li>
+          <li>(6, 0, 2)</li>
+          <li>(5, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(0, 0, 1)</li>
+          <li>(0, 0, 3)</li>
+          <li>(6, 0, 3)</li>
+          <li>(5, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Cargo</def>
+        <pos>(3, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(0, 0, 5)</pos>
+        <rot>3</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_8</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMSRC_Crate</def>
+        <pos>(6, 0, 5)</pos>
+        <size>(1, 2)</size>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(5, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(6, 0, 1)</li>
+          <li>(1, 0, 4)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Cargo</def>
+        <pos>(3, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(7, 0, 4)</pos>
+        <rot>3</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_9</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(5, 0, 1)</li>
+          <li>(2, 0, 6)</li>
+          <li>(6, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(1, 0, 3)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Cargo</def>
+        <pos>(2, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_PackCrate</def>
+        <pos>(6, 0, 3)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(1, 0, 4)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Cargo</def>
+        <pos>(6, 0, 6)</pos>
+        <rot>1</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_10</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMSRC_Crate</def>
+        <pos>(8, 0, 7)</pos>
+        <size>(1, 2)</size>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(6, 0, 0)</li>
+          <li>(1, 0, 1)</li>
+          <li>(1, 0, 6)</li>
+          <li>(7, 0, 2)</li>
+          <li>(2, 0, 4)</li>
+          <li>(5, 0, 6)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(6, 0, 2)</li>
+          <li>(1, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(1, 0, 4)</pos>
+        <rot>1</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(7, 0, 5)</pos>
+        <rot>3</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_11</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(5, 0, 0)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Hole_7x7Empty</def>
+        <pos>(4, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(0, 0, 6)</pos>
+        <rot>3</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_12</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(6, 0, 0)</li>
+          <li>(4, 0, 2)</li>
+          <li>(7, 0, 8)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(7, 0, 0)</li>
+          <li>(7, 0, 3)</li>
+          <li>(1, 0, 1)</li>
+          <li>(0, 0, 7)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMS_Hole_3x3Empty</def>
+        <pos>(4, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(8, 0, 7)</pos>
+        <rot>3</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_13</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(8, 0, 0)</pos>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(1, 0, 1)</li>
+          <li>(0, 0, 5)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(8, 0, 1)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RandomSubStructure">
+        <tag>DMSRC_ContainerNara</tag>
+        <pos>(5, 0, 4)</pos>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_14</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(1, 0, 0)</li>
+          <li>(2, 0, 1)</li>
+          <li>(5, 0, 2)</li>
+          <li>(6, 0, 3)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(2, 0, 4)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RandomSubStructure">
+        <tag>DMSRC_ContainerNara</tag>
+        <pos>(6, 0, 6)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_PackCrate</def>
+        <pos>(1, 0, 6)</pos>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_15</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_PackCrate</def>
+        <posList>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>3</rot>
+        <posList>
+          <li>(6, 0, 0)</li>
+          <li>(7, 0, 1)</li>
+        </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RandomSubStructure">
+        <tag>DMSRC_ContainerNara</tag>
+        <pos>(4, 0, 4)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingScatter">
+        <def>DMSRC_Crate</def>
+        <rot>2</rot>
+        <posList>
+          <li>(3, 0, 7)</li>
+          <li>(4, 0, 8)</li>
+        </posList>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+
+  <Fortified.Structures.FFF_StructureDef>
+    <defName>DMSRC_WarehouseStock_16</defName>
+    <tags>
+      <li>DMSRC_WarehouseStock</li>
+    </tags>
+    <size>(9, 9)</size>
+    <disableSuggestedRoof>True</disableSuggestedRoof>
+    <elements>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>DMSRC_Crate</def>
+        <pos>(1, 0, 6)</pos>
+        <size>(1, 2)</size>
+        <rot>2</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RandomSubStructure">
+        <tag>DMSRC_ContainerNara</tag>
+        <pos>(2, 0, 2)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_RandomSubStructure">
+        <tag>DMSRC_ContainerNara</tag>
+        <pos>(5, 0, 7)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Cargo</def>
+        <pos>(6, 0, 2)</pos>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(5, 0, 2)</pos>
+        <rot>3</rot>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>DMSRC_Crate</def>
+        <pos>(2, 0, 5)</pos>
+        <rot>2</rot>
+      </li>
+    </elements>
+  </Fortified.Structures.FFF_StructureDef>
+</Defs>
+

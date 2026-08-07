@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>DMSRC_FacilityDestroyer</defName>
+    <thingClass>DMSRC.FacilityDestroyer</thingClass>
+    <receivesSignals>true</receivesSignals>
+  </ThingDef>
+
+  <!--<ThingDef ParentName="DMS_BaseRollingDoor">
+    <defName>DMSRC_RollingDoor_Access</defName>
+    <label>Access door</label>
+    <thingClass>Fortified.Building_RollingDoor_Access</thingClass>
+    <graphicData>
+      <drawSize>(3,1)</drawSize>
+      <texPath>Things/Building/Door/RollingDoor</texPath>
+    </graphicData>
+    <size>(3,1)</size>
+    <uiOrder>3</uiOrder>
+    <comps>
+      <li Class="Fortified.CompProperties_AccessKeyActivatable">
+        <accessKeyDef>DMS_AccessKey_Nara</accessKeyDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseRollingDoor">
+    <defName>DMSRC_RollingDoor_AccessLink</defName>
+    <label>Access link door</label>
+    <thingClass>Fortified.Building_RollingDoor_AccessLink</thingClass>
+    <graphicData>
+      <drawSize>(3,1)</drawSize>
+      <texPath>Things/Building/Door/RollingDoor</texPath>
+    </graphicData>
+    <size>(3,1)</size>
+    <uiOrder>3</uiOrder>
+  </ThingDef>-->
+
+</Defs>

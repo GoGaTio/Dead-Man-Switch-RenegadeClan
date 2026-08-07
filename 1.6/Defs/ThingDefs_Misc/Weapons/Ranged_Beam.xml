@@ -18,6 +18,7 @@
       <AccuracyLong>0.1</AccuracyLong>
       <RangedWeapon_Cooldown>1.70</RangedWeapon_Cooldown>
       <WorkToMake>57000</WorkToMake>
+      <MarketValue>2000</MarketValue>
     </statBases>
     <soundInteract>Interact_Rifle</soundInteract>
     <recipeMaker>
@@ -246,7 +247,7 @@
       <AccuracyMedium>0.95</AccuracyMedium>
       <AccuracyLong>0.9</AccuracyLong>
       <RangedWeapon_Cooldown>1.10</RangedWeapon_Cooldown>
-      <MarketValue>2000</MarketValue>
+      <MarketValue>5000</MarketValue>
     </statBases>
     <verbs>
       <li>

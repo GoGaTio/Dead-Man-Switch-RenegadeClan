@@ -531,6 +531,118 @@ namespace DMSRC
 		}
 	}
 
+	public class QuestPart_Mission_DestroyShield : QuestPart_MissionWithWaves
+	{
+		public List<Thing> targets;
+
+		public int ticksTillBombardment = -1;
+
+		public bool targetsDestroyed = false;
+
+		public IntVec3 bombardmentCell;
+
+		private string Tag => "Quest" + quest.id + ".DMSRCMission." + mission.targetDef.defName;
+
+		public override AlertReport AlertReport
+		{
+			get
+			{
+				AlertReport report = base.AlertReport;
+				report.culpritsThings = targets;
+				return report;
+			}
+		}
+
+		protected override void Enable(SignalArgs receivedArgs)
+		{
+			base.Enable(receivedArgs);
+			targets = site.Map.listerThings.ThingsOfDef(mission.targetDef);
+			bombardmentCell = IntVec3.Zero;
+			foreach (Thing thing in targets.ToList())
+			{
+				if (thing.questTags == null)
+				{
+					thing.questTags = new List<string>();
+				}
+				thing.questTags.Add(Tag);
+				bombardmentCell += thing.Position;
+			}
+			bombardmentCell /= targets.Count;
+			bombardmentCell.y = 0;
+		}
+
+		public override IEnumerable<GlobalTargetInfo> QuestLookTargets
+		{
+			get
+			{
+				foreach (GlobalTargetInfo questLookTarget in base.QuestLookTargets)
+				{
+					yield return questLookTarget;
+				}
+				if (targets.NullOrEmpty())
+				{
+					yield break;
+				}
+				for (int i = 0; i < targets.Count; i++)
+				{
+					yield return targets[i];
+				}
+			}
+		}
+
+		public override void Notify_QuestSignalReceived(Signal signal)
+		{
+			base.Notify_QuestSignalReceived(signal);
+			if (signal.tag == Tag + ".Destroyed")
+			{
+				Thing t = signal.args.GetArg("SUBJECT").arg as Thing;
+				if (t != null)
+				{
+					targets.Remove(t);
+				}
+				if (targets.NullOrEmpty())
+				{
+					targetsDestroyed = true;
+					ticksTillBombardment = 5000;
+				}
+				else
+				{
+					Messages.Message("DMSRC_Mission_Destroyed".Translate(mission.targetDef.LabelCap, targets.Count), MessageTypeDefOf.ThreatBig);
+				}
+			}
+		}
+
+		public override void QuestPartTick()
+		{
+			base.QuestPartTick();
+			if (targetsDestroyed)
+			{
+				ticksTillBombardment--;
+				if (ticksTillBombardment <= 0)
+				{
+					Bombardment obj = (Bombardment)GenSpawn.Spawn(ThingDefOf.Bombardment, bombardmentCell, site.Map);
+					obj.duration = 20000;
+					obj.impactAreaRadius = 60f;
+					obj.bombIntervalTicks = 20;
+					obj.warmupTicks = 300;
+					obj.explosionCount = 1000;
+					obj.explosionRadiusRange = new FloatRange(19.9f);
+					SoundDefOf.OrbitalStrike_Ordered.PlayOneShotOnCamera();
+					Complete();
+				}
+			}
+		}
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Values.Look(ref bombardmentCell, "bombardmentCell");
+			Scribe_Values.Look(ref targetsDestroyed, "targetsDestroyed");
+			Scribe_Values.Look(ref ticksTillBombardment, "ticksTillBombardment");
+			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
+		}
+	}
+
 	public class QuestPart_Mission_DestroyFacility : QuestPart_MissionWithWaves
 	{
 		private FacilityEntrance target;

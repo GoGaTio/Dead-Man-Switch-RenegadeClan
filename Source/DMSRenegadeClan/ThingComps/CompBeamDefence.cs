@@ -105,9 +105,11 @@ namespace DMSRC
 
 		public int inactiveRegenOffset = 0;
 
-		public Color barColor;
+		public Color barColor = new Color(0.42f, 0.32f, 0.51f);
 
-		public Color barColorAlt;
+		public Color barColorAlt = new Color(0.21f, 0.16f, 0.25f);
+
+		public Color radiusRingColor = new Color(0.56f, 0.44f, 0.65f);
 
 		public SoundDef interceptSound;
 
@@ -231,7 +233,7 @@ namespace DMSRC
 			{
 				return;
 			}
-			GenDraw.DrawRadiusRing(parent.Position, Props.range);
+			GenDraw.DrawRadiusRing(parent.Position, Props.range, Props.radiusRingColor);
 		}
 
 		public override void CompTick()

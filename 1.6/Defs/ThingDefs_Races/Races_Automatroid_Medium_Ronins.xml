@@ -49,6 +49,9 @@
           <li>Minigun</li>
           <li>V_Gatling556mm</li>
           <li>A_AP</li>
+          <li>AM</li>
+          <li>AMGuns</li>
+          <li>AMHP</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -96,7 +99,7 @@
     <label>stancher</label>
     <description>Variant of the Ronin with improved armor and beam defence device which allows to intercept incoming bullets and other projectiles.</description>
     <statBases>
-      <MoveSpeed>5</MoveSpeed>
+      <MoveSpeed>4.5</MoveSpeed>
       <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
       <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
       <ArmorRating_Heat>1.5</ArmorRating_Heat>
@@ -116,8 +119,6 @@
         <range>6.9</range>
         <mote>DMSRC_Mote_BeamDefence</mote>
         <interceptSameFaction>false</interceptSameFaction>
-        <barColor>(107, 81, 128)</barColor>
-        <barColorAlt>(54, 40, 64)</barColorAlt>
         <chargeRegenInterval>600</chargeRegenInterval>
         <inactiveRegenOffset>100</inactiveRegenOffset>
         <delay>12</delay>
@@ -168,6 +169,17 @@
           <li>V_Gatling556mm</li>
           <li>UltratechMelee</li>
           <li>A_AP</li>
+          <li>AM</li>
+          <li>AMGuns</li>
+          <li>AMHP</li>
+          <li>PCA_SpacerMelee</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_SimpleGun"</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_SemiAutoRifle</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_Shotgun</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_SMG</li>
+          <li MayRequire="issaczhuang.pla.armory">PLA_Pistol</li>
+          <li>DMS_PKM</li>
+          <li>DMS_ZlobinRifle</li>
         </UsableWeaponTags>
         <EnableTechLevelFilter>true</EnableTechLevelFilter>
         <UsableTechLevels>
@@ -181,13 +193,12 @@
     </modExtensions>
   </ThingDef>
 
-  <PawnKindDef ParentName="BaseAutomatroidKind">
+  <PawnKindDef ParentName="BaseAutomatroidKind" Name="DMSRC_BaseStancherKind">
     <defName>DMSRC_Mech_Stancher</defName>
     <label>stancher</label>
     <race>DMSRC_Mech_Stancher</race>
     <isFighter>true</isFighter>
     <combatPower>270</combatPower>
-    <immuneToTraps>true</immuneToTraps>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -211,6 +222,38 @@
       <li>A_PDW</li>
       <li>A_AP</li>
       <li>DMSRC_BeamGraserGun</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_BaseStancherKind">
+    <defName>DMSRC_Mech_Stancher_Pirate</defName>
+    <label>Vyshibala</label>
+    <combatPower>280</combatPower>
+    <canBeSapper>false</canBeSapper>
+    <aiAvoidCover>true</aiAvoidCover>
+    <lifeStages Inherit="False">
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/DMSRC_StancherPirate</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/DMSRC_StancherPirate</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.3</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags Inherit="False">
+      <li>ShortShots</li>
+      <li>DMS_MechWeaponShotgun</li>
+      <li>AssaultRifle</li>
+      <li>Minigun</li>
     </weaponTags>
   </PawnKindDef>
 

@@ -4,7 +4,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>DMSRC_WetwareProducer</defName>
     <label>MoAP synthesizer</label>
-    <description>A vat filled with special fluid which can transfer sunstances from storage to creature inside. Mechanisms of the vat will initiate artificial pregnancy and gestate mecha-organical component.\n\nVat must be fed with a constant supply of nutrition to provide the feedstock for gestation.\n\nGestation takes 9 days with normal fertility female, but may last up to 18 days if creature is too old or has fertility-affecting health conditions.\n\nThis tech is considered as forbidden by colonial fleet.</description>
+    <description>A vat filled with special fluid which can transfer substances from storage to creature inside. Mechanisms of the vat will initiate artificial pregnancy and gestate mecha-organical component.\n\nVat must be fed with a constant supply of nutrition to provide the feedstock for gestation.\n\nGestation takes 9 days with normal fertility female, but may last up to 18 days if creature is too old or has fertility-affecting health conditions.\n\nThis tech is considered forbidden by colonial fleet.</description>
     <thingClass>DMSRC.Building_WetwareProducer</thingClass>
     <containedPawnsSelectable>true</containedPawnsSelectable>
     <uiIconPath>Things/Building/DMSRC_WetwareProducer_Icon</uiIconPath>

@@ -43,7 +43,7 @@
     <armorCategory>Heat</armorCategory>
     <minDamageToFragment>15</minDamageToFragment>
     <defaultDamage>5</defaultDamage>
-    <defaultArmorPenetration>0.2</defaultArmorPenetration>
+    <defaultArmorPenetration>0.75</defaultArmorPenetration>
     <explosionHeatEnergyPerCell>10</explosionHeatEnergyPerCell>
     <explosionCellFleck>BlastFlame</explosionCellFleck>
     <explosionColorCenter>(1, 0.7, 0.7, 0.05)</explosionColorCenter>

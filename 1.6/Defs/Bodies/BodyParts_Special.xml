@@ -3,7 +3,7 @@
 
   <BodyPartDef>
     <defName>DMSRC_ProcessorCore</defName>
-    <label>processor core</label>
+    <label>processor</label>
     <hitPoints>50</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>

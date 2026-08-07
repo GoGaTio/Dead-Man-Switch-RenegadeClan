@@ -357,7 +357,7 @@ namespace DMSRC
 					FleckMaker.ThrowExplosionCell(cell, caster.Map, verbProps.beamDamageDef.explosionCellFleck, verbProps.beamDamageDef.explosionColorEdge);
 				}
 				ApplyDamage(VerbUtility.ThingsToHit(cell, caster.Map, CanHit).RandomElementWithFallback(), damageFactor);
-				if (verbProps.beamSetsGroundOnFire && Rand.Chance(verbProps.beamChanceToStartFire))
+				if (Rand.Chance(verbProps.beamChanceToStartFire))
 				{
 					FireUtility.TryStartFireIn(cell, caster.Map, 1f, caster);
 				}
@@ -389,12 +389,12 @@ namespace DMSRC
 			{
 				float num = verbProps.beamTotalDamage;
 				num *= damageFactor;
-				dinfo = new DamageInfo(verbProps.beamDamageDef, num, verbProps.beamDamageDef.defaultArmorPenetration, angleFlat, caster, null, base.EquipmentSource.def, DamageInfo.SourceCategory.ThingOrUnknown, currentTarget.Thing);
+				dinfo = new DamageInfo(verbProps.beamDamageDef, num, 99f, angleFlat, caster, null, base.EquipmentSource.def, DamageInfo.SourceCategory.ThingOrUnknown, currentTarget.Thing);
 			}
 			else
 			{
 				float amount = (float)verbProps.beamDamageDef.defaultDamage * damageFactor;
-				dinfo = new DamageInfo(verbProps.beamDamageDef, amount, verbProps.beamDamageDef.defaultArmorPenetration, angleFlat, caster, null, base.EquipmentSource.def, DamageInfo.SourceCategory.ThingOrUnknown, currentTarget.Thing);
+				dinfo = new DamageInfo(verbProps.beamDamageDef, amount, 99f, angleFlat, caster, null, base.EquipmentSource.def, DamageInfo.SourceCategory.ThingOrUnknown, currentTarget.Thing);
 			}
 			dinfo.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
 			if (thing is Pawn)
@@ -408,14 +408,6 @@ namespace DMSRC
 			}
 			DamageResult damageResult = thing.TakeDamage(dinfo);
 			damageResult.AssociateWithLog(log);
-			if (thing.CanEverAttachFire())
-			{
-				float chance = ((verbProps.flammabilityAttachFireChanceCurve == null) ? verbProps.beamChanceToAttachFire : verbProps.flammabilityAttachFireChanceCurve.Evaluate(thing.GetStatValue(StatDefOf.Flammability)));
-				if (Rand.Chance(chance))
-				{
-					thing.TryAttachFire(verbProps.beamFireSizeRange.RandomInRange, caster);
-				}
-			}
 		}
 
 		public override bool TryStartCastOn(LocalTargetInfo castTarg, LocalTargetInfo destTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true, bool preventFriendlyFire = false, bool nonInterruptingSelfCast = false)

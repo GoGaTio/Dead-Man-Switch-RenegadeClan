@@ -4,9 +4,24 @@
   <DMSRC.RenegadesRequestDef>
     <defName>TradeRequest</defName>
     <requestClass>DMSRC.TradeRequest</requestClass>
-    <label>trade request</label>
-    <description>Request a trade offer from renegades.</description>
-    <hoursBeforeArrival>20~30</hoursBeforeArrival>
+    <label>buying request</label>
+    <description>Request a buying offer from renegades.</description>
+    <daysBeforeArrival>1~2</daysBeforeArrival>
+  </DMSRC.RenegadesRequestDef>
+
+  <DMSRC.RenegadesRequestDef>
+    <defName>SellRequest</defName>
+    <requestClass>DMSRC.SellRequest</requestClass>
+    <label>selling request</label>
+    <description>Request a selling offer from renegades.</description>
+    <daysBeforeArrival>0.5~1</daysBeforeArrival>
+    <allowedDefs>
+      <li>Artifuscle</li>
+      <li>ComponentStamped</li>
+    </allowedDefs>
+    <allowedTradeTags>
+      <li>ExoticMisc</li>
+    </allowedTradeTags>
   </DMSRC.RenegadesRequestDef>
 
   <DMSRC.RenegadesRequestDef>
@@ -22,7 +37,6 @@
     <requestClass>DMSRC.AidRequest</requestClass>
     <label>military aid request</label>
     <description>Request a group of renegade fighters to assist you in combat.</description>
-    <hoursBeforeArrival>1~3</hoursBeforeArrival>
     <minGoodwill>50</minGoodwill>
   </DMSRC.RenegadesRequestDef>
   

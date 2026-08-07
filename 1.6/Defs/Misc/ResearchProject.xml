@@ -13,6 +13,12 @@
     </prerequisites>
     <researchViewX>3.00</researchViewX>
     <researchViewY>5.00</researchViewY>
+    <!--<heldByFactionCategoryTags>
+      <li>DMS</li>
+    </heldByFactionCategoryTags>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>1</techprintCommonality>
+    <techprintMarketValue>2000</techprintMarketValue>-->
   </ResearchProjectDef>
 
   <ResearchProjectDef ParentName="DMS_BaseTech">
@@ -120,7 +126,6 @@
     <techprintMarketValue>1500</techprintMarketValue>
     <heldByFactionCategoryTags>
       <li>DMS</li>
-      <li>DMSRC_RenegadeClan</li>
     </heldByFactionCategoryTags>
   </ResearchProjectDef>
 

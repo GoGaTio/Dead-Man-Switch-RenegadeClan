@@ -47,6 +47,8 @@ namespace DMSRC
 
         public static ThingDef DMSRC_WetwareProducer;
 
+        public static ThingDef DMSRC_FacilityDestroyer;
+
 		public static EffecterDef DMSRC_WetwareProducer_Bubbles;
 
 		public static StatDef DMSRC_Neurocapacity;

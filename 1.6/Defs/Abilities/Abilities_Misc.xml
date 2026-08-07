@@ -35,30 +35,41 @@
     </comps>
   </AbilityDef>
 
-  <AbilityDef ParentName="DMS_AddHediffSelfBase">
+  <AbilityDef>
     <defName>DMSRC_MalevolenceCommand</defName>
     <label>Tactical calibration</label>
     <description>Share fire control data with friendly forces within range to improve squad accuracy for short period.</description>
-    <iconPath>UI/Ability/RangeFinder</iconPath>
+    <iconPath>UI/Abilities/DMSRC_Command_Malevolence</iconPath>
     <cooldownTicksRange>120000</cooldownTicksRange>
     <groupDef IsNull="True"/>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hostile>false</hostile>
     <comps>
       <li Class="CompProperties_AbilityGiveHediff">
         <compClass>CompAbilityEffect_GiveHediff</compClass>
         <hediffDef>DMSRC_MalevolenceCommand</hediffDef>
-        <onlyBrain>true</onlyBrain>
         <onlyApplyToSelf>true</onlyApplyToSelf>
         <replaceExisting>true</replaceExisting>
       </li>
     </comps>
     <statBases>
       <Ability_EffectRadius>14.9</Ability_EffectRadius>
-      <Ability_Duration>100</Ability_Duration>
+      <Ability_Duration>500</Ability_Duration>
     </statBases>
     <verbProperties>
-      <range>14.9</range>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
       <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
-      <warmupTime>0</warmupTime>
+      <range>14.9</range>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
     </verbProperties>
   </AbilityDef>
 
@@ -67,7 +78,7 @@
     <label>Tactical calibration</label>
     <description>A large amount of fire control data is being shared with surrounding friendly forces through this unit.</description>
     <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+    <defaultLabelColor>(1, 0.15, 0.15)</defaultLabelColor>
     <comps>
       <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
@@ -96,7 +107,7 @@
     <label>Received tactical data</label>
     <description>Received tactical data from command automatroid.</description>
     <hediffClass>HediffWithComps</hediffClass>
-    <defaultLabelColor>(0.52, 1, 0.95)</defaultLabelColor>
+    <defaultLabelColor>(1, 0.15, 0.15)</defaultLabelColor>
     <comps>
       <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>false</showRemainingTime>

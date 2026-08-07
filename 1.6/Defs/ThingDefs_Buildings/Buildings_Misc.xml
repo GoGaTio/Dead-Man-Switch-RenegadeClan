@@ -1,13 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_LiftShaft_LogisticHub</defName>
+    <label>lift shaft</label>
+    <description>A large elevator shaft leads to the underground area, large enough to transport vehicles, but apparently there is no way to activate it.</description>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Fortified.FacilityEntrance</thingClass>
+    <tickerType>Normal</tickerType>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LiftShaft</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <offset>(1.5,0,0)</offset>
+        <volume>(0.65,0.5,0.65)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(5,5)</size>
+    <building>
+      <isTargetable>false</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <portal>
+      <pocketMapGenerator>DMSRC_UndergroundFacility</pocketMapGenerator>
+      <exitDef>DMSRC_LiftShaft_Bottom</exitDef>
+      <pocketMapSize>150</pocketMapSize>
+    </portal>
+    <inspectorTabs>
+      <li>ITab_ContentsMapPortal</li>
+    </inspectorTabs>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="PocketMapExit">
+    <defName>DMSRC_LiftShaft_Bottom</defName>
+    <label>lift shaft</label>
+    <description>A large elevator shaft leads to the underground area, large enough to transport vehicles, but apparently there is no way to activate it.</description>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Fortified.FacilityExit</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LiftShaft_Bottom</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <offset>(1.5,0,0)</offset>
+        <volume>(0.65,0.5,0.65)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(5,5)</size>
+    <building>
+      <isTargetable>false</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <pathCost>120</pathCost>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_LargeLiftShaft_Warehouse</defName>
+    <label>lift shaft</label>
+    <description>A large elevator shaft leads to the underground area, large enough to transport vehicles, but apparently there is no way to activate it.</description>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Fortified.FacilityEntrance</thingClass>
+    <tickerType>Normal</tickerType>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LiftShaft_Large</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(12,12)</drawSize>
+      <shadowData>
+        <offset>(1.5,0,0)</offset>
+        <volume>(0.65,0.5,0.65)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(9,9)</size>
+    <building>
+      <isTargetable>false</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <portal>
+      <pocketMapGenerator>DMSRC_UndergroundFacility</pocketMapGenerator>
+      <exitDef>DMSRC_LiftShaft_Large_Bottom</exitDef>
+      <pocketMapSize>150</pocketMapSize>
+    </portal>
+    <inspectorTabs>
+      <li>ITab_ContentsMapPortal</li>
+    </inspectorTabs>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="PocketMapExit">
+    <defName>DMSRC_LiftShaft_Large_Bottom</defName>
+    <label>lift shaft</label>
+    <description>A large elevator shaft leads to the underground area, large enough to transport vehicles, but apparently there is no way to activate it.</description>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Fortified.FacilityExit</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LiftShaft_Large_Bottom</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(12,12)</drawSize>
+      <shadowData>
+        <offset>(1.5,0,0)</offset>
+        <volume>(0.65,0.5,0.65)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(9,9)</size>
+    <building>
+      <isTargetable>false</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+    </building>
+    <pathCost>120</pathCost>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <passability>Impassable</passability>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
   <ThingDef ParentName="DMS_HoleBase">
     <defName>DMSRC_FacilityEntrance</defName>
     <label>facility elevator platform</label>
     <description>An elevator platform which links to the facility below.</description>
     <graphicData>
-      <texPath>Things/Building/DMSRC_FacilityEntrance</texPath>
-      <drawSize>(5,5)</drawSize>
+      <texPath>Things/Building/DMSRC_LiftShaft</texPath>
+      <drawSize>(4,4)</drawSize>
     </graphicData>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -35,8 +187,8 @@
     <rotatable>false</rotatable>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Building/DMSRC_FacilityEntrance</texPath>
-      <drawSize>(5,5)</drawSize>
+      <texPath>Things/Building/DMSRC_LiftShaft_Bottom</texPath>
+      <drawSize>(4,4)</drawSize>
     </graphicData>
   </ThingDef>
 
@@ -53,6 +205,9 @@
         <offset>(0.15, 0, 0)</offset>
       </shadowData>
     </graphicData>
+    <descriptionHyperlinks>
+      <ThingDef>DMSRC_ComponentGBEP</ThingDef>
+    </descriptionHyperlinks>
     <uiIconScale>0.5</uiIconScale>
     <size>(1,1)</size>
     <costList>

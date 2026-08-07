@@ -190,11 +190,11 @@ namespace DMSRC
 			comp.playerGoodwill = goodwill;
 			if (startContacted)
 			{
-				comp.contacted = true;
+				comp.contact = true;
 			}
 			else if (contactInDaysRange != IntRange.Invalid)
 			{
-				comp.hoursTillContact = contactInDaysRange.RandomInRange * 24;
+				comp.ticksTillContact = contactInDaysRange.RandomInRange * 24;
 			}
 		}
 	}

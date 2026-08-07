@@ -259,7 +259,7 @@ namespace DMSRC
 				{
 					renegades.PlayerRelation = FactionRelationKind.Hostile;
 				}));
-				list.Add(new FloatMenuOption("Reset stock(hours till refresh: " + renegades.hoursTillRefresh + ")", delegate
+				list.Add(new FloatMenuOption("Reset stock(ticks(1/10 hours) till refresh: " + renegades.ticksTillRefresh + ")", delegate
 				{
 					renegades.GenerateThings();
 				}));
@@ -279,7 +279,7 @@ namespace DMSRC
 		public void DoRightRect(Rect rect)
 		{
 			bool flag = map?.Tile.Valid != true || map.IsPocketMap;
-			if (renegades.PlayerRelation != FactionRelationKind.Ally || flag)
+			if (flag || renegades.PlayerRelation == FactionRelationKind.Hostile)
 			{
 				Text.Anchor = TextAnchor.MiddleCenter;
 				GUI.color = Color.gray;
@@ -308,6 +308,7 @@ namespace DMSRC
 								{
 									request.tile = map.Tile;
 								}
+								request.Notify_MapChanged();
 								request.Maps = null;
 							};
 						}
@@ -342,9 +343,11 @@ namespace DMSRC
 					List<FloatMenuOption> list = new List<FloatMenuOption>();
 					foreach (Map map in request.Maps)
 					{
-						list.Add(new FloatMenuOption(map.Parent.LabelCap, delegate
+						Map localMap = map;
+						list.Add(new FloatMenuOption(localMap.Parent.LabelCap, delegate
 						{
-							request.tile = map.Tile;
+							request.tile = localMap.Tile;
+							request.Notify_MapChanged();
 							silver = (from t in TradeUtility.AllLaunchableThingsForTrade(request.Map)
 									  where t.def == ThingDefOf.Silver
 									  select t).Sum((Thing t) => t.stackCount);

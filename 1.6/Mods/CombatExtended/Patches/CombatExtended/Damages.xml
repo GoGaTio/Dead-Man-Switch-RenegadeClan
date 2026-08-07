@@ -23,9 +23,16 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/DamageDef[defName="DMSRC_Firecracker"]/defaultArmorPenetration</xpath>
 		<value>
-			<defaultArmorPenetration>0.4</defaultArmorPenetration>
+			<defaultArmorPenetration>0.6</defaultArmorPenetration>
 		</value>
 	</Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/DamageDef[defName="DMSRC_Firecracker"]/defaultDamage</xpath>
+    <value>
+      <defaultDamage>7</defaultDamage>
+    </value>
+  </Operation>
 
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/DamageDef[defName="DMSRC_BombTimed"]/defaultDamage</xpath>
