@@ -70,4 +70,19 @@ namespace DMSRC
 			harmonyInstance.PatchAllUncategorized();
 		}
 	}
+
+	[HarmonyPatch(typeof(BackCompatibility), nameof(BackCompatibility.BackCompatibleDefName))]
+	public class Patch_BackCompatibility
+	{
+		[HarmonyPrefix]
+		public static bool Prefix(Type defType, string defName, ref string __result)
+		{
+			if (defType == typeof(ThingDef) && defName == "DMSRC_Gun_Luch")
+			{
+				__result = "DMSRC_Gun_Pramen";
+				return false;
+			}
+			return true;
+		}
+	}
 }

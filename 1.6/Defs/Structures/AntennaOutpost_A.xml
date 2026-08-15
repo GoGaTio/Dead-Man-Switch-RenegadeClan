@@ -61,26 +61,19 @@
         <size>(9, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
-        <def>Barricade</def>
-        <pos>(0, 0, 4)</pos>
-        <size>(3, 1)</size>
-        <stuff>Steel</stuff>
+        <def>HiddenConduit</def>
+        <pos>(26, 0, 6)</pos>
+        <size>(1, 5)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>HiddenConduit</def>
-        <pos>(28, 0, 4)</pos>
-        <size>(1, 4)</size>
+        <pos>(28, 0, 6)</pos>
+        <size>(1, 2)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Wall</def>
         <pos>(28, 0, 4)</pos>
         <size>(1, 4)</size>
-        <stuff>Steel</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
-        <def>Barricade</def>
-        <pos>(26, 0, 5)</pos>
-        <size>(2, 1)</size>
         <stuff>Steel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
@@ -92,16 +85,11 @@
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>HiddenConduit</def>
         <pos>(18, 0, 5)</pos>
-        <size>(9, 1)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
-        <def>HiddenConduit</def>
-        <pos>(18, 0, 13)</pos>
-        <size>(9, 1)</size>
+        <size>(11, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Barricade</def>
-        <pos>(0, 0, 6)</pos>
+        <pos>(26, 0, 5)</pos>
         <size>(2, 1)</size>
         <stuff>Steel</stuff>
       </li>
@@ -139,11 +127,6 @@
         <def>HiddenConduit</def>
         <pos>(2, 0, 6)</pos>
         <size>(17, 1)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
-        <def>HiddenConduit</def>
-        <pos>(26, 0, 6)</pos>
-        <size>(1, 5)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Sandbags</def>
@@ -260,6 +243,11 @@
         <def>HiddenConduit</def>
         <pos>(2, 0, 13)</pos>
         <size>(15, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+        <def>HiddenConduit</def>
+        <pos>(18, 0, 13)</pos>
+        <size>(9, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingRect">
         <def>Sandbags</def>
@@ -450,8 +438,10 @@
           <li>(20, 0, 2)</li>
           <li>(20, 0, 4)</li>
           <li>(20, 0, 15)</li>
-          <li>(28, 0, 10)</li>
+          <li>(26, 0, 4)</li>
           <li>(26, 0, 12)</li>
+          <li>(28, 0, 4)</li>
+          <li>(28, 0, 10)</li>
           <li>(9, 0, 17)</li>
           <li>(30, 0, 10)</li>
           <li>(6, 0, 14)</li>
@@ -463,13 +453,11 @@
         <stuff>Steel</stuff>
         <posList>
           <li>(26, 0, 4)</li>
-          <li>(0, 0, 5)</li>
-          <li>(2, 0, 5)</li>
           <li>(7, 0, 19)</li>
         </posList>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>DMSRC_Turret_Straj</def>
+        <def>DMS_Turret_Okhotnik</def>
         <pos>(27, 0, 4)</pos>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingScatter">
@@ -489,8 +477,9 @@
         </posList>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>DMS_Turret_Okhotnik</def>
+        <def>Turret_MiniTurret</def>
         <pos>(1, 0, 5)</pos>
+        <stuff>Tungsteel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_ThingScatter">
         <def>DMS_RollingDoor_Quadruple</def>
@@ -498,6 +487,12 @@
           <li>(5, 0, 6)</li>
           <li>(12, 0, 6)</li>
         </posList>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_Thing">
+        <def>Shelf</def>
+        <pos>(3, 0, 8)</pos>
+        <rot>1</rot>
+        <stuff>Steel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>DMSRC_Crate</def>
@@ -564,9 +559,10 @@
         <stuff>Steel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>DMSRC_Drawer</def>
-        <pos>(19, 0, 15)</pos>
-        <rot>3</rot>
+        <def>Shelf</def>
+        <pos>(10, 0, 15)</pos>
+        <rot>2</rot>
+        <stuff>Steel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>DMS_BandNode</def>
@@ -647,23 +643,13 @@
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>AncientConcrete</def>
-        <pos>(4, 0, 5)</pos>
-        <size>(4, 1)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>AncientConcrete</def>
         <pos>(11, 0, 2)</pos>
         <size>(4, 2)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>AncientConcrete</def>
-        <pos>(11, 0, 5)</pos>
-        <size>(4, 1)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>AncientConcrete</def>
-        <pos>(18, 0, 2)</pos>
-        <size>(2, 1)</size>
+        <pos>(17, 0, 2)</pos>
+        <size>(3, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>Concrete</def>
@@ -681,18 +667,18 @@
         <size>(3, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(16, 0, 3)</pos>
+        <size>(4, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>Concrete</def>
         <pos>(20, 0, 3)</pos>
         <size>(9, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>Concrete</def>
+        <def>AncientConcrete</def>
         <pos>(0, 0, 4)</pos>
-        <size>(3, 2)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>Concrete</def>
-        <pos>(26, 0, 4)</pos>
         <size>(3, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
@@ -703,42 +689,27 @@
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>AncientConcrete</def>
         <pos>(12, 0, 4)</pos>
+        <size>(14, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(26, 0, 4)</pos>
         <size>(3, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>AncientConcrete</def>
-        <pos>(17, 0, 4)</pos>
-        <size>(9, 1)</size>
+        <pos>(0, 0, 5)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(11, 0, 5)</pos>
+        <size>(7, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>Concrete</def>
         <pos>(18, 0, 5)</pos>
         <size>(11, 1)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>AncientConcrete</def>
-        <pos>(16, 0, 5)</pos>
-        <size>(2, 1)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>Concrete</def>
-        <pos>(0, 0, 6)</pos>
-        <size>(17, 1)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>Concrete</def>
-        <pos>(18, 0, 6)</pos>
-        <size>(1, 6)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>Concrete</def>
-        <pos>(26, 0, 6)</pos>
-        <size>(1, 7)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>Concrete</def>
-        <pos>(28, 0, 6)</pos>
-        <size>(1, 2)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>AncientConcrete</def>
@@ -756,6 +727,26 @@
         <size>(1, 2)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(2, 0, 6)</pos>
+        <size>(15, 6)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(18, 0, 6)</pos>
+        <size>(1, 6)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(26, 0, 6)</pos>
+        <size>(1, 7)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>Concrete</def>
+        <pos>(28, 0, 6)</pos>
+        <size>(1, 2)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>MetalTile</def>
         <pos>(19, 0, 6)</pos>
         <size>(7, 1)</size>
@@ -764,11 +755,6 @@
         <def>MetalTile</def>
         <pos>(19, 0, 12)</pos>
         <size>(7, 1)</size>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
-        <def>Concrete</def>
-        <pos>(2, 0, 7)</pos>
-        <size>(15, 5)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>MetalTile</def>
@@ -796,6 +782,11 @@
         <size>(17, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(27, 0, 12)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>Concrete</def>
         <pos>(2, 0, 13)</pos>
         <size>(25, 1)</size>
@@ -808,12 +799,37 @@
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>AncientConcrete</def>
         <pos>(21, 0, 14)</pos>
-        <size>(3, 1)</size>
+        <size>(7, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(21, 0, 15)</pos>
+        <size>(6, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(21, 0, 16)</pos>
+        <size>(5, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>Concrete</def>
         <pos>(4, 0, 17)</pos>
         <size>(17, 2)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(21, 0, 17)</pos>
+        <size>(8, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(21, 0, 18)</pos>
+        <size>(3, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(25, 0, 18)</pos>
+        <size>(2, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>Concrete</def>
@@ -826,6 +842,11 @@
         <size>(9, 2)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_TerrainRect">
+        <def>AncientConcrete</def>
+        <pos>(23, 0, 19)</pos>
+        <size>(2, 1)</size>
+      </li>
+      <li Class="Fortified.Structures.FFF_Element_TerrainRect">
         <def>Concrete</def>
         <pos>(12, 0, 21)</pos>
         <size>(8, 1)</size>
@@ -835,12 +856,15 @@
         <posList>
           <li>(12, 0, 0)</li>
           <li>(14, 0, 0)</li>
-          <li>(16, 0, 3)</li>
-          <li>(19, 0, 3)</li>
+          <li>(16, 0, 1)</li>
+          <li>(1, 0, 3)</li>
+          <li>(1, 0, 6)</li>
           <li>(7, 0, 4)</li>
-          <li>(28, 0, 12)</li>
-          <li>(21, 0, 15)</li>
-          <li>(24, 0, 15)</li>
+          <li>(27, 0, 13)</li>
+          <li>(27, 0, 16)</li>
+          <li>(0, 0, 7)</li>
+          <li>(29, 0, 13)</li>
+          <li>(21, 0, 19)</li>
         </posList>
       </li>
       <li Class="Fortified.Structures.FFF_Element_RoofRect">
@@ -912,7 +936,8 @@
         <factionDef>DMS_Army</factionDef>
         <sendSignalRadius>-1</sendSignalRadius>
         <pos>(18, 0, 9)</pos>
-        <pointsRange>1300~1700</pointsRange>
+        <pointsRange>900~900</pointsRange>
+        <lordTag>DMSRC_Attack</lordTag>
         <options>
           <DMS_Soldier>5</DMS_Soldier>
           <DMS_Mech_Soldat>30</DMS_Mech_Soldat>

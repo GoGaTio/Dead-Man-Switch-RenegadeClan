@@ -96,7 +96,7 @@ namespace DMSRC
 
 		public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
 		{
-			if (destroyedThroughDetonation || (dinfo.HasValue && dinfo.Value.Def?.isExplosive == true))
+			if (destroyedThroughDetonation || dinfo.HasValue)
 			{
 				DetonateWarhead(prevMap);
 			}

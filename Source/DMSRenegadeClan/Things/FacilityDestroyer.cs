@@ -59,17 +59,40 @@ namespace DMSRC
 	{
 		public int ticksLeft = 0;
 
+		private static readonly SimpleCurve TicksToShakeMTBTicksCurve = new SimpleCurve
+		{
+			new CurvePoint(2500f, 45f),
+			new CurvePoint(300f, 30f),
+			new CurvePoint(60f, 5f)
+		};
+
 		protected override void Tick()
 		{
 			base.Tick();
 			ticksLeft--;
-			if(ticksLeft < 0)
+			Map map = Map;
+			if (ticksLeft < 0)
 			{
-				Map map = Map;
 				if (map.IsPocketMap && map.PocketMapParent.sourceMap?.spawnedThings.FirstOrDefault(t => t is FacilityEntrance) is FacilityEntrance entrance)
 				{
 					entrance.DestroyMap();
 				}
+				else
+				{
+					try
+					{
+						Thing.allowDestroyNonDestroyable = true;
+						Destroy();
+					}
+					finally
+					{
+						Thing.allowDestroyNonDestroyable = false;
+					}
+				}
+			}
+			else if(Find.CurrentMap == map && Rand.MTBEventOccurs(TicksToShakeMTBTicksCurve.Evaluate(ticksLeft), 1f, 1f))
+			{
+				Find.CameraDriver.shaker.DoShake(0.2f);
 			}
 		}
 

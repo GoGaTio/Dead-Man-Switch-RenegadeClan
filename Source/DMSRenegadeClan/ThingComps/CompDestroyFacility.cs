@@ -62,6 +62,8 @@ namespace DMSRC
 
         public int ticksToDestroy = 1;
 
+        public ThingDef wreck;
+
         public CompProperties_DestroyFacility()
         {
             compClass = typeof(CompDestroyFacility);
@@ -77,12 +79,17 @@ namespace DMSRC
 			base.Notify_Killed(prevMap, dinfo);
             if(prevMap != null && parent.Position.IsValid)
             {
-                if (Props.onlyWhenAllDestroyed)
+				if (Props.wreck != null)
+				{
+					GenSpawn.Spawn(Props.wreck, parent.Position, prevMap);
+					prevMap.roofCollapseBuffer.Clear();
+				}
+				if (Props.onlyWhenAllDestroyed)
                 {
 					List<Thing> list = prevMap.listerThings.AllThings;
 					for (int i = 0; i < list.Count; i++)
 					{
-                        if(list[i] is ThingWithComps twc && twc.def == parent.def && !twc.Destroyed && twc.HasComp<CompDestroyFacility>())
+                        if(list[i] is ThingWithComps twc && twc != parent && twc.def == parent.def && !twc.Destroyed && twc.HasComp<CompDestroyFacility>())
                         {
                             return;
                         }

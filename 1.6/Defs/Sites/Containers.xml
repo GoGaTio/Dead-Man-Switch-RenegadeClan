@@ -5,7 +5,7 @@
     <defName>DMSRC_ContainerNara</defName>
     <label>container</label>
     <description>A container with valuable items.</description>
-    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <siteTexture>World/Sites/DMSRC_ContainerSite</siteTexture>
     <expandingIconTexture>World/DMSRC_ContainerSite</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>

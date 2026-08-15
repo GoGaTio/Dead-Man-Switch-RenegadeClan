@@ -177,14 +177,14 @@ namespace DMSRC
 			{
 				return;
 			}
-			Log.Message("test");
+			//Log.Message("test");
 			GameComponent_Renegades.Find.OffsetGoodwill(change, true);
 		}
 
 		public override void ExposeData()
 		{
 			base.ExposeData();
-			//Scribe_Values.Look(ref inSignal, "inSignal");
+			Scribe_Values.Look(ref inSignal, "inSignal");
 			Scribe_Values.Look(ref change, "change", 0);
 		}
 	}

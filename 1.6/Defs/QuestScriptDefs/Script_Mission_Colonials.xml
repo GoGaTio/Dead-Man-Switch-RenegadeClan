@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>DMSRC_DefendBroadcastPoint</defName>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <expireDaysRange>0.2~0.5</expireDaysRange>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <isRootSpecial>true</isRootSpecial>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[antenna] [need]</li>
+        <li>need->In Danger</li>
+        <li>need->Under Attack</li>
+        <li>need->Needs Defence</li>
+        <li>antenna->Signal Tower</li>
+        <li>antenna->Radar</li>
+        <li>antenna->Broadcaster</li>
+        <li>antenna->Antenna</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A nearby located broadcast node of [faction_name] is under renegades attack. They need reinforcements as fast as possible and will </li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMSRC.QuestNode_Root_Site">
+      <giver>ColonialFleet</giver>
+      <sitePart>DMSRC_AntennaPoint</sitePart>
+      <oppositeFactionForSite>false</oppositeFactionForSite>
+      <timeoutTicks>30000</timeoutTicks>
+      <mission>
+        <missionClass>DMSRC.QuestPart_Mission_Defend</missionClass>
+        <targetDef>DMSRC_LargeBroadcastAntenna</targetDef>
+        <wavesCooldown>5000</wavesCooldown>
+        <wavesFromOppositeFaction>true</wavesFromOppositeFaction>
+      </mission>
+    </root>
+  </QuestScriptDef>
+</Defs>

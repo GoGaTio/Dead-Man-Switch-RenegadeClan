@@ -603,7 +603,7 @@ namespace DMSRC
 				if (targets.NullOrEmpty())
 				{
 					targetsDestroyed = true;
-					ticksTillBombardment = 5000;
+					ticksTillBombardment = 60;
 				}
 				else
 				{
@@ -624,9 +624,9 @@ namespace DMSRC
 					obj.duration = 20000;
 					obj.impactAreaRadius = 60f;
 					obj.bombIntervalTicks = 20;
-					obj.warmupTicks = 300;
+					obj.warmupTicks = 10;
 					obj.explosionCount = 1000;
-					obj.explosionRadiusRange = new FloatRange(19.9f);
+					obj.explosionRadiusRange = new FloatRange(9.9f);
 					SoundDefOf.OrbitalStrike_Ordered.PlayOneShotOnCamera();
 					Complete();
 				}

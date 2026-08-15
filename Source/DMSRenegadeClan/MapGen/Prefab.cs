@@ -108,6 +108,10 @@ namespace DMSRC
 								t.Destroy();
 							}
 						}
+						if(map.terrainGrid.TempTerrainAt(c) != null)
+						{
+							map.terrainGrid.RemoveTempTerrain(c);
+						}
 					}
 				}
 			}
@@ -126,10 +130,6 @@ namespace DMSRC
 				if (t.TryGetComp<CompRefuelable>(out var comp))
 				{
 					comp.Refuel(comp.Props.fuelCapacity - comp.Fuel);
-				}
-				if(t is FacilityEntrance entrance)
-				{
-					entrance.rPrefabTag = this.facilityTag;
 				}
 			}
 			things.AddRange(generated);

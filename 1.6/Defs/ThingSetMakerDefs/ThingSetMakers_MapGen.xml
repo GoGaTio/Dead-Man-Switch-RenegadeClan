@@ -14,7 +14,7 @@
                   <li>DMS_Mods</li>
                 </categories>
               </filter>
-              <countRange>2~3</countRange>
+              <countRange>1~2</countRange>
             </fixedParams>
           </thingSetMaker>
         </li>
@@ -27,7 +27,7 @@
                   <li>DMS_Module</li>
                 </categories>
               </filter>
-              <countRange>2</countRange>
+              <countRange>1</countRange>
             </fixedParams>
           </thingSetMaker>
         </li>
@@ -64,7 +64,7 @@
                   <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_YekaterinRifle</li>
                 </thingDefs>
               </filter>
-              <countRange>3</countRange>
+              <countRange>1</countRange>
             </fixedParams>
           </thingSetMaker>
         </li>
@@ -78,7 +78,7 @@
                   <li>DMS_DeposableRocketLauncher</li>
                 </thingDefs>
               </filter>
-              <countRange>2</countRange>
+              <countRange>1</countRange>
             </fixedParams>
           </thingSetMaker>
         </li>
@@ -94,7 +94,7 @@
                   <li>Shell_Incendiary</li>
                 </thingDefs>
               </filter>
-              <countRange>9</countRange>
+              <countRange>3~5</countRange>
             </fixedParams>
           </thingSetMaker>
         </li>
@@ -148,6 +148,22 @@
                 </thingDefs>
               </filter>
               <countRange>40</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>2</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Shell_HighExplosive</li>
+                  <li>Shell_EMP</li>
+                  <li>Shell_Smoke</li>
+                  <li>Shell_Incendiary</li>
+                </thingDefs>
+              </filter>
+              <countRange>5~10</countRange>
             </fixedParams>
           </thingSetMaker>
         </li>

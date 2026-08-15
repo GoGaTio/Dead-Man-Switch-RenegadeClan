@@ -48,7 +48,7 @@
       </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
-        <basePowerConsumption>500</basePowerConsumption>
+        <basePowerConsumption>200</basePowerConsumption>
       </li>
     </comps>
     <building>
@@ -107,6 +107,65 @@
         </targetParams>
       </li>
     </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_BaseCannonBuilding">
+    <defName>DMSRC_Turret_Pramen</defName>
+    <label>Pramen</label>
+    <description>An ancient design of a remote controlled turret mounted with high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. Ironic.</description>
+    <techLevel>Spacer</techLevel>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Things/Turrets/DMS_Weapon_Base</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>2.25</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <fillPercent>0.7</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>15000</WorkToBuild>
+      <Beauty>-2</Beauty>
+      <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>600</basePowerConsumption>
+      </li>
+    </comps>
+    <building>
+      <turretGunDef>DMSRC_Gun_PramenMount</turretGunDef>
+      <turretTopDrawSize>1</turretTopDrawSize>
+      <turretBurstWarmupTime>2</turretBurstWarmupTime>
+      <turretBurstCooldownTime>1.5</turretBurstCooldownTime>
+    </building>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <researchPrerequisites Inherit="False">
+      <li>DMS_EquipmentElite</li>
+      <li>DMSRC_BeamFocusing</li>
+    </researchPrerequisites>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <costList>
+      <Steel>100</Steel>
+      <Tungsteel>150</Tungsteel>
+      <ComponentStamped>2</ComponentStamped>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <DMSRC_Gun_Pramen>1</DMSRC_Gun_Pramen>
+    </costList>
+    <uiIconPath>Things/Building/DMSRC_Pramen_Icon</uiIconPath>
+    <uiIconScale>1.2</uiIconScale>
+    <placeWorkers Inherit="False">
+      <li>PlaceWorker_TurretTop</li>
+      <li>DMSRC.PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
   </ThingDef>
 
   <ThingDef ParentName="BuildingBase">

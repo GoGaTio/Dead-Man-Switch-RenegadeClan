@@ -286,7 +286,7 @@ namespace DMSRC
 	{
 		public Pawn mechanitor;
 
-		public int hoursPayed = 0;
+		public int ticksPayed = 0;
 
 		public int bandwidth = 1;
 
@@ -310,6 +310,8 @@ namespace DMSRC
 		public override Rect DoInterface(float x, float y, float width, ref float f)
 		{
 			Rect rect = base.DoInterface(x, y, width, ref f);
+			Widgets.Label(new Rect(x + 20, y + f, width, 25f), "TimeLeft".Translate().CapitalizeFirst() + ": " + (ticksPayed * 6000).ToStringTicksToPeriod().Colorize(ColoredText.DateTimeColor));
+			f += 25f;
 			Widgets.CheckboxLabeled(new Rect(x + 20, y + f, 192f, 25f), "DMSRC_AutoRepay".Translate(), ref autoPay);
 			if (Widgets.ButtonText(new Rect(x + rect.width - 101, y + f, 96f, 25f), "Delete".Translate()))
 			{
@@ -410,7 +412,7 @@ namespace DMSRC
 				return "NeedSilverLaunchable".Translate(Cost.ToString());
 			}
 			TradeUtility.LaunchSilver(Map, Cost);
-			hoursPayed = 360;
+			ticksPayed = 150;
 			arrived = true;
 			Hediff hediff = mechanitor.health.GetOrAddHediff(RCDefOf.DMSRC_BandwidthRequest);
 			hediff.Severity = bandwidth;
@@ -432,13 +434,13 @@ namespace DMSRC
 
 		public override void Tick()
 		{
-			hoursPayed--;
+			ticksPayed--;
 			if(mechanitor == null || mechanitor.Dead || mechanitor.Faction?.IsPlayer != true)
 			{
 				Complete();
 				return;
 			}
-			if(hoursPayed == 0)
+			if(ticksPayed == 0)
 			{
 				if (autoPay)
 				{
@@ -449,7 +451,7 @@ namespace DMSRC
 					else
 					{
 						TradeUtility.LaunchSilver(Map, Cost);
-						hoursPayed += 360;
+						ticksPayed += 150;
 					}
 				}
 				else
@@ -457,14 +459,14 @@ namespace DMSRC
 					Messages.Message("DMSRC_BandwidthRequestExpired".Translate(), MessageTypeDefOf.ThreatSmall);
 				}
 			}
-			if (hoursPayed < 0)
+			if (ticksPayed < 0)
 			{
 				if (autoPay && TradeUtility.ColonyHasEnoughSilver(Map, Cost))
 				{
 					TradeUtility.LaunchSilver(Map, Cost);
-					hoursPayed += 360;
+					ticksPayed += 150;
 				}
-				if (hoursPayed < -24)
+				if (ticksPayed < -10)
 				{
 					GameComponent_Renegades.Find.OffsetGoodwill(-5, true);
 					Complete();
@@ -476,6 +478,7 @@ namespace DMSRC
 		public override void ExposeData()
 		{
 			base.ExposeData();
+			Scribe_Values.Look(ref ticksPayed, "ticksPayed");
 			Scribe_References.Look(ref mechanitor, "mechanitor", false);
 		}
 	}

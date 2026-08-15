@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MapGeneratorDef>
+    <defName>DMSRC_LogisticHub</defName>
+    <label>logistic hub</label>
+    <isUnderground>true</isUnderground>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>Underground</biome>
+      <temperature>15</temperature>
+      <canBeCleaned>true</canBeCleaned>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>DMSRC_LogisticHub_Underground</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <SitePartDef>
+    <defName>DMSRC_LogisticHub</defName>
+    <label>logistic hub</label>
+    <description>A colonial fleet logistic hub.</description>
+    <siteTexture>World/Sites/DMSRC_MediumSite</siteTexture>
+    <expandingIconTexture>World/DMSRC_LogisticHub</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <tags>
+      <li>DMSRC_LogisticHub</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMSRC_LogisticHub</defName>
+    <linkWithSite>DMSRC_LogisticHub</linkWithSite>
+    <order>1460</order>
+    <genStep Class="DMSRC.GenStep_MissionStructure">
+      <structureDefs>
+        <li>DMSRC_LogisticHub_A</li>
+        <li>DMSRC_LogisticHub_B</li>
+      </structureDefs>
+      <forcedFaction>DMS_Army</forcedFaction>
+      <allowedRotation>All</allowedRotation>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>DMSRC_LogisticHub_Underground</defName>
+    <order>551</order>
+    <genStep Class="Fortified.Structures.GenStep_FFFStructureDef">
+      <structureDefs>
+        <li>DMSRC_LogisticHub_Underground_A</li>
+        <li>DMSRC_LogisticHub_Underground_B</li>
+      </structureDefs>
+      <forcedFaction>DMS_Army</forcedFaction>
+      <allowedRotation>All</allowedRotation>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

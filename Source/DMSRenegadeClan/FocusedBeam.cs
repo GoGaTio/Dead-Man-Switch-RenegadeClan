@@ -436,7 +436,7 @@ namespace DMSRC
 				vector = root.ToVector3Shifted() + normalized * num;
 				intVec = vector.ToIntVec3();
 			}
-			Vector3 offsetA = OffsetByRot(CasterPawn.Rotation);
+			Vector3 offsetA = OffsetByRot(Caster.Rotation);
 			Vector3 offsetB = normalized * verbProps.beamStartOffset;
 			Vector3 vector3 = vector - intVec.ToVector3Shifted();
 			if (mote != null)

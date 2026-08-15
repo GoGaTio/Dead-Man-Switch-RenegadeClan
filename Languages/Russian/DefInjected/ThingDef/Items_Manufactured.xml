@@ -21,22 +21,22 @@
   <DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.jobString>Изучить эмиссионную платформу</DMSRC_ComponentGBEP.comps.CompAnalyzableUnlockResearch.jobString>
   
   <!-- EN: processor core -->
-  <DMSRC_ProcessorCore.label>обрабатывающее ядро</DMSRC_ProcessorCore.label>
+  <DMSRC_ProcessorCore.label>процессор Оверлорд класса</DMSRC_ProcessorCore.label>
   <!-- EN: An array of advanced processors, designed to function as control block and AI core. -->
   <DMSRC_ProcessorCore.description>Блок продвинутых процессоров, работающих как ядро ИИ и командное устройство.</DMSRC_ProcessorCore.description>
   <!-- EN: Analyze the processor core -->
-  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateDescString>Изучить обрабатывающее ядро</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateDescString>
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateDescString>Изучить процессор Оверлорд класса</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateDescString>
   <!-- EN: Analyze... -->
   <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateLabelString>Изучить...</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.activateLabelString>
   <!-- EN: By studying the processor core, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology. -->
-  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив обрабатывающее ядро, {PAWN_labelShort} получает данные, необходимые для изучения {RESEARCH}.</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetter>
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив процессор Оверлорд класса, {PAWN_labelShort} получает данные, необходимые для изучения {RESEARCH}.</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetter>
   <!-- EN: Processor core studied: {RESEARCH} unlocked -->
-  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Обрабатывающее ядро изучено: {RESEARCH} разблокирован</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Процессор Оверлорд класса изучено: {RESEARCH} разблокирован</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
   <!-- EN: Choose who should analyze this -->
   <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите, кто должен изучить это</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.guiLabelString>
   <!-- EN: Can be analyzed by a colonist. -->
   <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.inspectString>Может быть изучено.</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.inspectString>
   <!-- EN: Analyze the processor core -->
-  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.jobString>Изучить обрабатывающее ядро</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.jobString>
+  <DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.jobString>Изучить процессор Оверлорд класса</DMSRC_ProcessorCore.comps.CompAnalyzableUnlockResearch.jobString>
   
 </LanguageData>

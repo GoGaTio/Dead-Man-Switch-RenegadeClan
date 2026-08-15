@@ -1,4 +1,5 @@
 using DelaunatorSharp;
+using Fortified.Structures;
 using Gilzoide.ManagedJobs;
 using HarmonyLib;
 using Ionic.Crc;
@@ -56,6 +57,65 @@ using static HarmonyLib.Code;
 
 namespace DMSRC
 {
+	public class GenStep_MissionStructure : GenStep
+	{
+		public GenStep_MissionStructure() { }
+
+		public override int SeedPart => 394857328;
+
+		public List<FFF_StructureDef> structureDefs;
+
+		public FactionDef forcedFaction;
+
+		public RotEnum allowedRotation = RotEnum.All;
+
+		public override void Generate(Map map, GenStepParams parms)
+		{
+			if (structureDefs.NullOrEmpty()) return;
+			Faction faction = null;
+			if (forcedFaction != null)
+			{
+				faction = Find.FactionManager.FirstFactionOfDef(forcedFaction);
+			}
+			if (faction == null)
+			{
+				faction = map.ParentFaction ?? parms.sitePart?.site?.Faction;
+			}
+			FFF_StructureDef def = structureDefs.RandomElement();
+			Rot4 rot = allowedRotation.Random();
+			IntVec2 size = def.GetSize(rot);
+			int contracted = Mathf.FloorToInt((float)(Mathf.Min(map.Size.x, map.Size.z) - Mathf.Max(size.x, size.z)) / 2f);
+			if (CellRect.WholeMap(map).ContractedBy(contracted).TryFindRandomInnerRect(size, out var rect))
+			{
+				Thing.allowDestroyNonDestroyable = true;
+				try
+				{
+					foreach (IntVec3 c in rect)
+					{
+						map.roofGrid.SetRoof(c, null);
+						foreach (Thing t in c.GetThingList(map).ToList())
+						{
+							if (t is Plant || t.def.building?.isNaturalRock == true)
+							{
+								continue;
+							}
+							t.Destroy();
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					Log.Error("Exception while clearing area: " + ex);
+				}
+				finally
+				{
+					Thing.allowDestroyNonDestroyable = false;
+				}
+				FFF_StructureUtility.Generate(def, rect.CenterCell, map, faction, rot, reconnectPower: true);
+			}
+		}
+	}
+
 	public class GenStep_RPrefab : GenStep
 	{
 		public List<RPrefabDef> prefabs;

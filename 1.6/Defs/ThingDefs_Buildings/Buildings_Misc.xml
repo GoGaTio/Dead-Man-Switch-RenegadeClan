@@ -8,11 +8,11 @@
     <rotatable>false</rotatable>
     <defaultPlacingRot>North</defaultPlacingRot>
     <noRightClickDraftAttack>true</noRightClickDraftAttack>
-    <thingClass>Fortified.FacilityEntrance</thingClass>
+    <thingClass>DMSRC.FacilityEntrance</thingClass>
     <tickerType>Normal</tickerType>
     <category>Building</category>
     <graphicData>
-      <texPath>Things/Building/DMSRC_LiftShaft</texPath>
+      <texPath>Things/Building/DMS_LiftShaft</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(6,6)</drawSize>
       <shadowData>
@@ -29,7 +29,7 @@
       <neverBuildable>true</neverBuildable>
     </building>
     <portal>
-      <pocketMapGenerator>DMSRC_UndergroundFacility</pocketMapGenerator>
+      <pocketMapGenerator>DMSRC_LogisticHub</pocketMapGenerator>
       <exitDef>DMSRC_LiftShaft_Bottom</exitDef>
       <pocketMapSize>150</pocketMapSize>
     </portal>
@@ -53,7 +53,7 @@
     <thingClass>Fortified.FacilityExit</thingClass>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Building/DMSRC_LiftShaft_Bottom</texPath>
+      <texPath>Things/Building/DMS_LiftShaft_Bottom</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(6,6)</drawSize>
       <shadowData>
@@ -84,11 +84,11 @@
     <rotatable>false</rotatable>
     <defaultPlacingRot>North</defaultPlacingRot>
     <noRightClickDraftAttack>true</noRightClickDraftAttack>
-    <thingClass>Fortified.FacilityEntrance</thingClass>
+    <thingClass>DMSRC.FacilityEntrance</thingClass>
     <tickerType>Normal</tickerType>
     <category>Building</category>
     <graphicData>
-      <texPath>Things/Building/DMSRC_LiftShaft_Large</texPath>
+      <texPath>Things/Building/DMS_LiftShaft_Large</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(12,12)</drawSize>
       <shadowData>
@@ -105,7 +105,7 @@
       <neverBuildable>true</neverBuildable>
     </building>
     <portal>
-      <pocketMapGenerator>DMSRC_UndergroundFacility</pocketMapGenerator>
+      <pocketMapGenerator>DMSRC_UndergroundWarehouse</pocketMapGenerator>
       <exitDef>DMSRC_LiftShaft_Large_Bottom</exitDef>
       <pocketMapSize>150</pocketMapSize>
     </portal>
@@ -129,7 +129,7 @@
     <thingClass>Fortified.FacilityExit</thingClass>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Building/DMSRC_LiftShaft_Large_Bottom</texPath>
+      <texPath>Things/Building/DMS_LiftShaft_Large_Bottom</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(12,12)</drawSize>
       <shadowData>
@@ -158,7 +158,7 @@
     <label>facility elevator platform</label>
     <description>An elevator platform which links to the facility below.</description>
     <graphicData>
-      <texPath>Things/Building/DMSRC_LiftShaft</texPath>
+      <texPath>Things/Building/DMS_LiftShaft</texPath>
       <drawSize>(4,4)</drawSize>
     </graphicData>
     <passability>PassThroughOnly</passability>
@@ -168,7 +168,7 @@
     <rotatable>false</rotatable>
     <tickerType>Normal</tickerType>
     <portal>
-      <pocketMapGenerator>DMSRC_UndergroundFacility</pocketMapGenerator>
+      <pocketMapGenerator>DMSRC_LogisticHub</pocketMapGenerator>
       <exitDef>DMSRC_SmallHole_Exit</exitDef>
       <pocketMapSize>200</pocketMapSize>
     </portal>
@@ -187,7 +187,7 @@
     <rotatable>false</rotatable>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Building/DMSRC_LiftShaft_Bottom</texPath>
+      <texPath>Things/Building/DMS_LiftShaft_Bottom</texPath>
       <drawSize>(4,4)</drawSize>
     </graphicData>
   </ThingDef>

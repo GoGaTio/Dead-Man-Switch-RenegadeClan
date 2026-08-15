@@ -66,6 +66,7 @@ namespace DMSRC
 			compClass = typeof(CompCallRenegades);
 		}
 	}
+
 	public class CompCallRenegades : ThingComp
 	{
 		private Texture2D icon;
@@ -81,6 +82,7 @@ namespace DMSRC
 				return icon;
 			}
 		}
+
 		public CompProperties_CallRenegades Props => (CompProperties_CallRenegades)props;
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)

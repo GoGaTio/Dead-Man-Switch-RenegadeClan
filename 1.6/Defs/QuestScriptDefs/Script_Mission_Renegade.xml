@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>DMSRC_DestroyBroadcastPoint</defName>
+    <rootSelectionWeight>1.1</rootSelectionWeight>
+    <expireDaysRange>5~10</expireDaysRange>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <rootMinPoints>1000</rootMinPoints>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[destroy] [antenna]</li>
+        <li>antenna->Broadcast Tower</li>
+        <li>antenna->Broadcast Antenna</li>
+        <li>antenna->The Antenna</li>
+      </rulesStrings>
+      <include>
+        <li>DMSRC_QuestTextCommon</li>
+      </include>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[renegadesInfoSource] (*Threat)Colonial fleet(/Threat) broadcast antenna nearby. It creates control area, which allows to perform fleet operations, and therefore should be destroyed.\n\nBroadcast antenna is guarded by group of Colonial fleet (*Threat)automatroids(/Threat) and (*Threat)turrets(/Threat).</li>
+      </rulesStrings>
+      <include>
+        <li>DMSRC_QuestTextCommon</li>
+      </include>
+    </questDescriptionRules>
+    <root Class="DMSRC.QuestNode_Root_Site">
+      <giver>Renegades</giver>
+      <sitePart>DMSRC_AntennaPoint</sitePart>
+      <oppositeFactionForSite>true</oppositeFactionForSite>
+      <timeoutTicks>300000</timeoutTicks>
+      <repValue>10</repValue>
+      <rewardValueFactor>0.9</rewardValueFactor>
+      <mission>
+        <missionClass>DMSRC.QuestPart_Mission_Destroy</missionClass>
+        <targetDef>DMSRC_LargeBroadcastAntenna</targetDef>
+        <wavesCooldown>60000</wavesCooldown>
+        <initialWavesCooldown>60000</initialWavesCooldown>
+        <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
+      </mission>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>DMSRC_DestroyLogisticHub</defName>
+    <rootSelectionWeight>0.8</rootSelectionWeight>
+    <expireDaysRange>10~20</expireDaysRange>
+    <rootMinPoints>2500</rootMinPoints>
+    <defaultChallengeRating>2</defaultChallengeRating>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[destroy] Logistic Hub</li>
+      </rulesStrings>
+      <include>
+        <li>DMSRC_QuestTextCommon</li>
+      </include>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[renegadesInfoSource] (*Threat)Colonial fleet(/Threat) logistic hub nearby. You should destroy structural columns in it's underground part to collapse the facility.\n\nLogistic hub is guarded by group of Colonial fleet (*Threat)automatroids(/Threat) and (*Threat)turrets(/Threat).[timedBombsAdvice]</li>
+      </rulesStrings>
+      <include>
+        <li>DMSRC_QuestTextCommon</li>
+      </include>
+    </questDescriptionRules>
+    <root Class="DMSRC.QuestNode_Root_Site">
+      <giver>Renegades</giver>
+      <sitePart>DMSRC_LogisticHub</sitePart>
+      <timedBombsCountAdvice>2</timedBombsCountAdvice>
+      <oppositeFactionForSite>true</oppositeFactionForSite>
+      <timeoutTicks>600000</timeoutTicks>
+      <repValue>25</repValue>
+      <rewardValueFactor>1.15</rewardValueFactor>
+      <mission>
+        <missionClass>DMSRC.QuestPart_Mission_DestroyFacility</missionClass>
+        <wavesCooldown>120000</wavesCooldown>
+        <initialWavesCooldown>120000</initialWavesCooldown>
+        <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
+      </mission>
+    </root>
+  </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>DMSRC_DestroyFrontlineBase</defName>
+    <rootSelectionWeight>1.1</rootSelectionWeight>
+    <expireDaysRange>5~10</expireDaysRange>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <rootMinPoints>5000</rootMinPoints>
+    <defaultChallengeRating>3</defaultChallengeRating>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[destroy] Frontline Base</li>
+      </rulesStrings>
+      <include>
+        <li>DMSRC_QuestTextCommon</li>
+      </include>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[renegadesInfoSource] (*Threat)Colonial fleet(/Threat) frontline base. It is covered by super shield, you should destroy shield generator and wait till renegades will destroy base by orbital strike.\n\nFrontline base is guarded by multiple groups of Colonial fleet (*Threat)automatroids(/Threat) with (*Threat)turrets(/Threat) and beam defence devices.[timedBombsAdvice]</li>
+      </rulesStrings>
+      <include>
+        <li>DMSRC_QuestTextCommon</li>
+      </include>
+    </questDescriptionRules>
+    <root Class="DMSRC.QuestNode_Root_Site">
+      <giver>Renegades</giver>
+      <sitePart>DMSRC_FrontlineBase</sitePart>
+      <timedBombsCountAdvice>1</timedBombsCountAdvice>
+      <oppositeFactionForSite>true</oppositeFactionForSite>
+      <timeoutTicks>300000</timeoutTicks>
+      <repValue>40</repValue>
+      <rewardValueFactor>2</rewardValueFactor>
+      <mission>
+        <missionClass>DMSRC.QuestPart_Mission_DestroyShield</missionClass>
+        <targetDef>DMSRC_LargeShieldGenerator</targetDef>
+        <wavesCooldown>180000</wavesCooldown>
+        <initialWavesCooldown>180000</initialWavesCooldown>
+        <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
+      </mission>
+    </root>
+  </QuestScriptDef>
+
+  <!--<QuestScriptDef>
+    <defName>DMSRC_DestroyLogisticCenter</defName>
+    <rootSelectionWeight>0.5</rootSelectionWeight>
+    <expireDaysRange>10~20</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[destroy] [logistic] [center]</li>
+        <li>destroy->Destroy</li>
+        <li>destroy->Sabotage Of</li>
+        <li>destroy->Attack On</li>
+        <li>center->Center</li>
+        <li>center->Facility</li>
+        <li>logistic->Logistic</li>
+        <li>logistic->Warehouse</li>
+        <li>logistic->Underground</li>
+        <li>logistic->Nuclear</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->Renegades found Colonial fleet logistic center nearby.\nIt contains warheads, which should be destroyed.\nThis mission will require timed bomb to perform detonation.\nYou will be able to loot facility after it would be cleared.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="DMSRC.QuestNode_Root_Site">
+      <giver>Renegades</giver>
+      <sitePart>DMSRC_LogisticCenter</sitePart>
+      <oppositeFactionForSite>true</oppositeFactionForSite>
+      <timeoutTicks>600000</timeoutTicks>
+      <rewardValue>5</rewardValue>
+      <mission>
+        <missionClass>DMSRC.QuestPart_Mission_DestroyFacility</missionClass>
+        <wavesCooldown>10000~15000</wavesCooldown>
+        <initialWavesCooldown>120000</initialWavesCooldown>
+        <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
+      </mission>
+    </root>
+  </QuestScriptDef>-->
+</Defs>

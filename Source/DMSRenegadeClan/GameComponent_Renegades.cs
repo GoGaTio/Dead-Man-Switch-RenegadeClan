@@ -158,7 +158,7 @@ namespace DMSRC
 		{
 			int goodwillPrev = playerGoodwill;
 			playerGoodwill = newValue;
-			if (goodwillPrev < 50 && playerGoodwill >= 50)
+			if (goodwillPrev < 75 && playerGoodwill >= 75)
 			{
 				bool flag = notifyPlayer && PlayerRelation != FactionRelationKind.Ally;
 				PlayerRelation = FactionRelationKind.Ally;
@@ -176,7 +176,7 @@ namespace DMSRC
 					Verse.Find.LetterStack.ReceiveLetter("LetterLabelRelationsChange_NeutralFromAlly".Translate(RenegadesFaction.Name), RelationChangeLetter(FactionRelationKind.Neutral), LetterDefOf.NegativeEvent, null, RenegadesFaction);
 				}
 			}
-			else if (goodwillPrev > -50 && playerGoodwill <= -50)
+			else if (goodwillPrev > -75 && playerGoodwill <= -75)
 			{
 				bool flag = notifyPlayer && PlayerRelation != FactionRelationKind.Hostile;
 				PlayerRelation = FactionRelationKind.Hostile;
@@ -194,15 +194,15 @@ namespace DMSRC
 			{
 				case FactionRelationKind.Hostile:
 					text += "LetterRelationsChange_Hostile".Translate(RenegadesFaction.NameColored);
-					text += "\n\n" + "LetterRelationsChange_HostileGoodwillDescription_NoGifting".Translate(playerGoodwill.ToStringWithSign(), (-50).ToStringWithSign(), 0.ToStringWithSign());
+					text += "\n\n" + "LetterRelationsChange_HostileGoodwillDescription_NoGifting".Translate(playerGoodwill.ToStringWithSign(), (-75).ToStringWithSign(), 0.ToStringWithSign());
 					break;
 				case FactionRelationKind.Ally:
 					text += "LetterRelationsChange_Ally".Translate(RenegadesFaction.NameColored);
-					text += "\n\n" + "LetterRelationsChange_AllyGoodwillDescription".Translate(playerGoodwill.ToStringWithSign(), 50.ToStringWithSign(), 0.ToStringWithSign());
+					text += "\n\n" + "LetterRelationsChange_AllyGoodwillDescription".Translate(playerGoodwill.ToStringWithSign(), 75.ToStringWithSign(), 0.ToStringWithSign());
 					break;
 				case FactionRelationKind.Neutral:
 					text += "LetterRelationsChange_NeutralFromAlly".Translate(RenegadesFaction.NameColored);
-					text += "\n\n" + "LetterRelationsChange_NeutralFromAllyGoodwillDescription".Translate(RenegadesFaction.NameColored, playerGoodwill.ToStringWithSign(), 0.ToStringWithSign(), (-50).ToStringWithSign(), 50.ToStringWithSign());
+					text += "\n\n" + "LetterRelationsChange_NeutralFromAllyGoodwillDescription".Translate(RenegadesFaction.NameColored, playerGoodwill.ToStringWithSign(), 0.ToStringWithSign(), (-75).ToStringWithSign(), 75.ToStringWithSign());
 					break;
 			}
 			return text;

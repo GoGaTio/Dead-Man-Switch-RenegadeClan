@@ -54,14 +54,12 @@
       <recoilAmount>1.22</recoilAmount>
     </Properties>
     <AmmoUser>
-      <magazineSize>6</magazineSize>
+      <magazineSize>9</magazineSize>
       <reloadTime>1.2</reloadTime>
       <ammoSet>DMSRC_AmmoSet_17x54mmFSR</ammoSet>
     </AmmoUser>
     <FireModes>
-      <aiUseBurstMode>TRUE</aiUseBurstMode>
       <aiAimMode>AimedShot</aiAimMode>
-      <aimedBurstShotCount>1</aimedBurstShotCount>
     </FireModes>
     <weaponTags>
       <li>CE_AI_AR</li>
@@ -97,7 +95,6 @@
       <ammoSet>DMSRC_AmmoSet_17x54mmFSR</ammoSet>
     </AmmoUser>
     <FireModes>
-      <aiUseBurstMode>TRUE</aiUseBurstMode>
       <aiAimMode>AimedShot</aiAimMode>
     </FireModes>
     <weaponTags>

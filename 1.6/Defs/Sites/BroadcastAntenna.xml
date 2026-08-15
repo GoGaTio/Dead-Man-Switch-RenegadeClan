@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>DMSRC_AntennaPoint</defName>
+    <label>broadcast antenna</label>
+    <description>A colonial fleet broadcast antenna.</description>
+    <siteTexture>World/Sites/DMSRC_SmallSite</siteTexture>
+    <expandingIconTexture>World/DMSRC_BroadcastAntenna</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <tags>
+      <li>DMSRC_AntennaPoint</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMSRC_AntennaPoint</defName>
+    <linkWithSite>DMSRC_AntennaPoint</linkWithSite>
+    <order>1460</order>
+    <genStep Class="DMSRC.GenStep_MissionStructure">
+      <structureDefs>
+        <li>DMSRC_AntennaOutpost_A</li>
+        <li>DMSRC_AntennaOutpost_B</li>
+        <li>DMSRC_AntennaOutpost_C</li>
+      </structureDefs>
+      <forcedFaction>DMS_Army</forcedFaction>
+      <allowedRotation>All</allowedRotation>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

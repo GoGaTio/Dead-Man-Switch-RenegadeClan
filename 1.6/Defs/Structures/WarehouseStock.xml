@@ -397,7 +397,7 @@
     </elements>
   </Fortified.Structures.FFF_StructureDef>
 
-  <Fortified.Structures.FFF_StructureDef>
+  <!--<Fortified.Structures.FFF_StructureDef>
     <defName>DMSRC_WarehouseStock_11</defName>
     <tags>
       <li>DMSRC_WarehouseStock</li>
@@ -601,6 +601,6 @@
         <rot>2</rot>
       </li>
     </elements>
-  </Fortified.Structures.FFF_StructureDef>
+  </Fortified.Structures.FFF_StructureDef>-->
 </Defs>
 

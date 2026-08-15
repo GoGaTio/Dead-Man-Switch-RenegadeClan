@@ -7,7 +7,7 @@
     <ProjectGuid>{4E5419A8-F8E7-4EBF-9C51-5D77422E5C11}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DRC</RootNamespace>
+    <RootNamespace>DMSRC</RootNamespace>
     <AssemblyName>DMSRenegadeClan</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -5,6 +5,9 @@
     <defName>DMSRC_FacilityDestroyer</defName>
     <thingClass>DMSRC.FacilityDestroyer</thingClass>
     <receivesSignals>true</receivesSignals>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <destroyable>false</destroyable>
   </ThingDef>
 
   <!--<ThingDef ParentName="DMS_BaseRollingDoor">

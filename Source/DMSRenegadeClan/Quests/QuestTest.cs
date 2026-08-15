@@ -86,7 +86,11 @@ namespace DMSRC
 
 		public GiverType giver = GiverType.Undefined;
 
-		public int rewardValue = 1;
+		public int repValue = 10;
+
+		public float rewardValueFactor = 1f;
+
+		public int timedBombsCountAdvice = 0;
 
 		public float minPoints = 400f;
 
@@ -117,7 +121,7 @@ namespace DMSRC
 				points = minPoints;
 			}
 			bool fromRenegades = (giver == GiverType.Renegades) || (giver == GiverType.Any && Rand.Bool);
-			int rep = rewardValue * 10;
+			int rep = repValue;
 			GameComponent_Renegades comp = GameComponent_Renegades.Find;
 			Map map = Find.Maps.Where((Map m) => m.IsPlayerHome).RandomElement();
 			slate.Set("map", map);
@@ -125,6 +129,11 @@ namespace DMSRC
 			slate.Set("faction", faction);
 			slate.Set("askerIsNull", true);
 			slate.Set<Pawn>("asker", null);
+			if(timedBombsCountAdvice < 0)
+			{
+				timedBombsCountAdvice = 0;
+			}
+			slate.Set("timedBombsCountAdvice", timedBombsCountAdvice);
 			Site site = null;
 			if (TileFinder.TryFindNewSiteTile(out var tile, 0, validator: (x) => x.Tile.hilliness == Hilliness.Flat && x.Tile.Landmark == null, allowedLandmarks: new List<LandmarkDef>(), canBeSpace: false))
 			{
@@ -155,20 +164,36 @@ namespace DMSRC
 			questPart_Mission.mission = mission;
 			RewardsGeneratorParams parms = new RewardsGeneratorParams
 			{
-				rewardValue = rewardValueCurve.Evaluate(points),
+				rewardValue = rewardValueCurve.Evaluate(points) * rewardValueFactor,
 				thingRewardItemsOnly = true
 			};
 			quest.GiveRewards(parms, inSignalSuccess, null, null, null, null, null, null, null, false);
 			if (quest.PartsListForReading.FirstOrDefault((QuestPart x) => x is QuestPart_Choice) is QuestPart_Choice questPart_Choice)
 			{
-				foreach (var choice in questPart_Choice.choices)
+				Slate.VarRestoreInfo restoreInfo = slate.GetRestoreInfo("inSignal");
+				slate.Set("inSignal", inSignalSuccess);
+				try
 				{
-					if (choice.rewards.FirstOrDefault((y) => y is Reward_Goodwill) is Reward_Goodwill reward_Goodwill)
+					foreach (var choice in questPart_Choice.choices)
 					{
-						if (fromRenegades)
+						if (choice.rewards.FirstOrDefault((y) => y is Reward_Goodwill) is Reward_Goodwill reward_Goodwill)
 						{
-							choice.rewards.Remove(reward_Goodwill);
-							Reward reward = new Reward_RenegadesGoodwill() { amount = rep };
+							if (fromRenegades)
+							{
+								choice.rewards.Remove(reward_Goodwill);
+								Reward reward = new Reward_RenegadesGoodwill() { amount = rep };
+								choice.rewards.Insert(0, reward);
+								foreach (QuestPart item in reward.GenerateQuestParts(-1, parms, null, null, null, null))
+								{
+									quest.AddPart(item);
+									choice.questParts.Add(item);
+								}
+							}
+							else reward_Goodwill.amount += rep;
+						}
+						else
+						{
+							Reward reward = fromRenegades ? (Reward)(new Reward_RenegadesGoodwill() { amount = rep }) : (Reward)(new Reward_Goodwill() { amount = rep, faction = comp.DMSFaction });
 							choice.rewards.Insert(0, reward);
 							foreach (QuestPart item in reward.GenerateQuestParts(-1, parms, null, null, null, null))
 							{
@@ -176,23 +201,16 @@ namespace DMSRC
 								choice.questParts.Add(item);
 							}
 						}
-						else reward_Goodwill.amount += rep;
-					}
-					else
-					{
-						Reward reward = fromRenegades ? (Reward)(new Reward_RenegadesGoodwill() { amount = rep }) : (Reward)(new Reward_Goodwill() { amount = rep, faction = comp.DMSFaction });
-						choice.rewards.Insert(0, reward);
-						foreach (QuestPart item in reward.GenerateQuestParts(-1, parms, null, null, null, null))
+						if (rewardDefForInfo != null)
 						{
-							quest.AddPart(item);
-							choice.questParts.Add(item);
+							Reward reward = new Reward_DefinedThingDef(rewardDefForInfo);
+							choice.rewards.Insert(0, reward);
 						}
 					}
-					if (rewardDefForInfo != null)
-					{
-						Reward reward = new Reward_DefinedThingDef(rewardDefForInfo);
-						choice.rewards.Insert(0, reward);
-					}
+				}
+				finally
+				{
+					slate.Restore(restoreInfo);
 				}
 			}
 			quest.End(QuestEndOutcome.Success, 0, null, inSignalSuccess, QuestPart.SignalListenMode.OngoingOnly, sendStandardLetter: true);
@@ -213,11 +231,11 @@ namespace DMSRC
 			{
 				return false;
 			}
-			if (!Find.Storyteller.difficulty.allowViolentQuests || (giver == GiverType.Renegades && !comp.contact))
+			if (!Find.Storyteller.difficulty.allowViolentQuests)
 			{
 				return false;
 			}
-			if(giver == GiverType.Renegades && comp.RenegadesFaction.HostileTo(Faction.OfPlayer))
+			if(giver == GiverType.Renegades && (!comp.contact || comp.RenegadesFaction.HostileTo(Faction.OfPlayer)))
 			{
 				return false;
 			}
@@ -226,10 +244,6 @@ namespace DMSRC
 				return false;
 			}
 			QuestGenUtility.TestRunAdjustPointsForDistantFight(slate);
-			if (slate.Get("points", 0f) < 40f)
-			{
-				return false;
-			}
 			foreach (Map map in Find.Maps)
 			{
 				if (map.IsPlayerHome)

@@ -239,7 +239,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(10,10)</drawSize>
       <shadowData>
-        <volume>(5.03,1.0,4.25)</volume>
+        <volume>(5,1.0,5)</volume>
         <offset>(0,0,-0.25)</offset>
       </shadowData>
       <damageData>
@@ -255,6 +255,7 @@
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
+    <holdsRoof>true</holdsRoof>
     <castEdgeShadows>true</castEdgeShadows>
     <canOverlapZones>false</canOverlapZones>
     <fillPercent>1</fillPercent>
@@ -324,6 +325,7 @@
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
+    <holdsRoof>true</holdsRoof>
     <canOverlapZones>false</canOverlapZones>
     <fillPercent>0.5</fillPercent>
     <rotatable>false</rotatable>
@@ -361,19 +363,19 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>DMSRC_HoleReactor</defName>
-    <label>Sulenko-Hrebetov reactor</label>
-    <description>Full-scale Sulenko-Hrebetov chemical reactor.\n\nThis reactor uses advanced triple stage technology, but requires special fuel cells to function.</description>
+  <ThingDef ParentName="BuildingBase" Name="DSMRC_StructuralColumn">
+    <defName>DSMRC_StructuralColumn</defName>
+    <label>structural frame column</label>
+    <description>Structural column which supports facility frame.</description>
     <thingClass>Building</thingClass>
     <graphicData>
-      <texPath>Things/Building/DMSRC_Hole_7x7Generator</texPath>
+      <texPath>Things/Building/DMSRC_Hole_7x7Column</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(9,9)</drawSize>
     </graphicData>
     <size>(7,7)</size>
     <tickerType>Normal</tickerType>
-    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawerType>RealtimeOnly</drawerType>
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
     <blockWind>true</blockWind>
@@ -382,6 +384,7 @@
     <rotatable>false</rotatable>
     <receivesSignals>true</receivesSignals>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <holdsRoof>true</holdsRoof>
     <statBases>
       <MaxHitPoints>10000</MaxHitPoints>
       <Flammability>0</Flammability>
@@ -402,11 +405,41 @@
       <li>PlaceWorker_InvalidOverSubstructure</li>
     </placeWorkers>
     <comps>
-      <li Class="CompProperties_AmbientSound">
-        <sound>GeothermalPlant_Ambience</sound>
+      <li Class="CompProperties_DrawAdditionalGraphics">
+        <graphics>
+          <li>
+            <texPath>Things/Building/DMSRC_Hole_7x7Column_Top</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(9,9)</drawSize>
+            <drawOffset>(0, 0.3, 4)</drawOffset>
+            <shaderType>Transparent</shaderType>
+          </li>
+        </graphics>
       </li>
-      <li Class="DMSRC.CompProperties_DestroyFacility"/>
+      <li Class="DMSRC.CompProperties_DestroyFacility">
+        <onlyWhenAllDestroyed>true</onlyWhenAllDestroyed>
+        <ticksToDestroy>300</ticksToDestroy>
+        <wreck>DSMRC_StructuralColumn_Destroyed</wreck>
+      </li>
     </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DSMRC_StructuralColumn">
+    <defName>DSMRC_StructuralColumn_Destroyed</defName>
+    <label>destroyed structural frame column</label>
+    <description>Destroyed structural column. It no longer supports facility frame.</description>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_Hole_7x7Column_Destroyed</texPath>
+    </graphicData>
+    <size>(7,7)</size>
+    <tickerType>Never</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <blockWind>false</blockWind>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <destroyable>false</destroyable>
+    <comps Inherit="False"/>
   </ThingDef>
 
 </Defs>

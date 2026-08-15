@@ -57,7 +57,7 @@
           <graphicClass>Graphic_Random</graphicClass>
           <shaderType>CutoutComplex</shaderType>
         </openedGraphicdata>
-        <countRange>2~4</countRange>
+        <countRange>2~3</countRange>
         <loots>
           <li>DMSRC_PackLoots</li>
         </loots>
@@ -93,6 +93,7 @@
           <graphicClass>Graphic_Random</graphicClass>
           <shaderType>Cutout</shaderType>
         </openedGraphicdata>
+        <countRange>1</countRange>
         <loots>
           <li>DMSRC_Crate</li>
         </loots>
@@ -132,6 +133,7 @@
             <volume>(2,0.25,2)</volume>
           </shadowData>
         </openedGraphicdata>
+        <countRange>1</countRange>
         <loots>
           <li>DMSRC_PackLoots</li>
         </loots>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>DMSRC_QuestTextCommon</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>renegadesInfoSource->Renegades agent discovered</li>
+        <li>renegadesInfoSource->Renegades' radio eavesdropping designated</li>
+        <li>renegadesInfoSource->Renegades airdrone found</li>
+        <li>renegadesInfoSource->Renegades recieved info about</li>
+        
+        <li>colonialsInfoSource-></li>
+        <li>colonialsInfoSource-></li>
+        <li>colonialsInfoSource-></li>
+        <li>colonialsInfoSource-></li>
+
+        <li>destroy->Destroy</li>
+        <li>destroy->Sabotage Of</li>
+        <li>destroy->Attack On</li>
+
+        <li>timedBombsAdvice(timedBombsCountAdvice==0)-></li>
+        <li>timedBombsAdvice(timedBombsCountAdvice==1)->\n\nThis mission will require (*ColonistCount)timed bomb(/ColonistCount) to destroy target.</li>
+        <li>timedBombsAdvice(timedBombsCountAdvice>1)->\n\nThis mission will require (*ColonistCount)1 timed bomb(/ColonistCount) to destroy last target, but you would like to have [timedBombsCountAdvice] to destroy all targets fast.</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
