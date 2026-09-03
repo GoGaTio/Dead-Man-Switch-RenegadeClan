@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_AutomatroidGun">
+    <defName>DMSRC_Gun_DevilRapier</defName>
+    <label>Devil's Rapier</label>
+    <description>A Stugna anti-tank missile system mounted on a remote aiming platform.</description>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_DevilRapier</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <statBases>
+      <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <recipeMaker Inherit="False" IsNull="True"/>
+    <weaponTags Inherit="False">
+      <li>DMSRC_AntiTank</li>
+    </weaponTags>
+    <generateCommonality>0.0005</generateCommonality>
+    <costList>
+      <Tungsteel>60</Tungsteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Proj_DevilRapier</defaultProjectile>
+        <minRange>2.9</minRange>
+        <range>39.9</range>
+        <warmupTime>3.5</warmupTime>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>DMS_AC_Shot_GuidedMissile</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>25</muzzleFlashScale>
+        <targetable>true</targetable>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <ai_IsWeapon>true</ai_IsWeapon>
+        <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
+        <soundAiming>DMS_Ability_LockOn</soundAiming>
+        <aimingLineMote>DMSRC_Missile_Aim</aimingLineMote>
+        <aimingLineMoteFixedLength>15.9</aimingLineMoteFixedLength>
+        <aimingTargetMote>DMSRC_Missile_Target</aimingTargetMote>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetBuildings>true</canTargetBuildings>
+          <canTargetPawns>true</canTargetPawns>
+          <neverTargetIncapacitated>true</neverTargetIncapacitated>
+        </targetParams>
+        <requireLineOfSight>true</requireLineOfSight>
+        <beamTargetsGround>true</beamTargetsGround>
+        <forcedMissRadius>0.1</forcedMissRadius>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>AverageHumanCanUse</EquippableDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMSRC_Proj_DevilRapier</defName>
+    <label>cumulative shell</label>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_DevilRapier_Proj</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>90</speed>
+      <damageDef>DMSRC_BombCumulative</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <explosionRadius>1.1</explosionRadius>
+      <armorPenetrationBase>1</armorPenetrationBase>
+    </projectile>
+    <comps>
+      <li Class="Fortified.CompProperties_AfterBurner">
+        <lifeTime>60</lifeTime>
+        <ExhaustFleck>DMS_Fleck_RocketFlame</ExhaustFleck>
+        <ExhaustCurve>
+          <points>
+            <li>(0,5)</li>
+            <li>(0.15,3)</li>
+            <li>(0.5,2)</li>
+          </points>
+        </ExhaustCurve>
+        <SmokeFleck>DMS_Fleck_RocketSmokeTrail</SmokeFleck>
+        <SmokeCurve>
+          <points>
+            <li>(0,3)</li>
+            <li>(0.5,1)</li>
+            <li>(0.9,1)</li>
+            <li>(1,0.5)</li>
+          </points>
+        </SmokeCurve>
+      </li>
+      <li Class="CompProperties_ProjectileEffecter">
+        <effecterDef>DMS_LaunchDust_Recoilless</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

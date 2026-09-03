@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef ParentName="BuildingBase" Name="DMSRC_BaseLiftShaft">
     <defName>DMSRC_LiftShaft_LogisticHub</defName>
     <label>lift shaft</label>
     <description>A large elevator shaft leads to the underground area, large enough to transport vehicles, but apparently there is no way to activate it.</description>
@@ -41,6 +41,14 @@
     <useHitPoints>false</useHitPoints>
     <passability>Impassable</passability>
     <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_BaseLiftShaft">
+    <defName>DMSRC_LiftShaft_WetwareLab</defName>
+    <portal>
+      <pocketMapGenerator>DMSRC_LogisticHub</pocketMapGenerator>
+      <pocketMapSize>100</pocketMapSize>
+    </portal>
   </ThingDef>
 
   <ThingDef ParentName="PocketMapExit">

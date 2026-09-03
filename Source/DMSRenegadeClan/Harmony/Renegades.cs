@@ -281,4 +281,46 @@ namespace DMSRC
 			}
 		}
 	}*/
+
+	[HarmonyPatch(typeof(WorldSelectionDrawer), nameof(WorldSelectionDrawer.DrawSelectionOverlays))]
+	public static class MapParent_CompBroadcastAntenna
+	{
+		public static void Postfix()
+		{
+			if (Find.WorldSelector.AnyObjectOrTileSelected && CompBroadcastAntenna.broadcastAntennas != null && CompBroadcastAntenna.broadcastAntennas.Count > 0)
+			{
+				PlanetLayer layer = Find.WorldSelector.SelectedLayer;
+				Dictionary<PlanetTile, float> roots = new Dictionary<PlanetTile, float>();
+				foreach (var comp in CompBroadcastAntenna.broadcastAntennas.ToList())
+				{
+					if (comp.parent.Map == null || comp.parent.Map.Parent == null)
+					{
+						CompBroadcastAntenna.broadcastAntennas.Remove(comp);
+						continue;
+					}
+					if (roots.ContainsKey(comp.parent.Tile))
+					{
+						roots[comp.parent.Tile] = Mathf.Max(roots[comp.parent.Tile], Range(comp, layer));
+					}
+					else
+					{
+						roots[comp.parent.Tile] = Range(comp, layer);
+					}
+				}
+				foreach (var item in roots)
+				{
+					GenDraw.DrawWorldRadiusRing(item.Key.Layer == layer ? item.Key : layer.GetClosestTile_NewTemp(item.Key), Mathf.RoundToInt(item.Value), CompBroadcastAntenna.RadiusMat);
+				}
+			}
+		}
+
+		private static float Range(CompBroadcastAntenna comp, PlanetLayer layer)
+		{
+			if (comp.parent.Tile.Layer == layer)
+			{
+				return comp.Props.worldRange / layer.Def.rangeDistanceFactor;
+			}
+			return comp.Props.worldRangeOtherLayer / layer.Def.rangeDistanceFactor;
+		}
+	}
 }

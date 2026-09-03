@@ -305,7 +305,6 @@
     </statBases>
     <recipeMaker>
       <researchPrerequisites Inherit="False">
-        <li>DMS_Synthroid</li>
         <li>DMS_EquipmentHeavy</li>
         <li>DMSRC_BeamFocusing</li>
       </researchPrerequisites>

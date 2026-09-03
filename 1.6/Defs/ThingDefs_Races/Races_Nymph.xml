@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RulePackDef>
+    <defName>DMSRC_DeformedNymph</defName>
+    <rulePack>
+      <rulesFiles>
+        <li>r_name->Names/DMSRC_Nymph</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+    
+  <ThingDef ParentName="BaseAutomatroidHumanRace">
+    <defName>DMSRC_DeformedNymph</defName>
+    <label>deformed nymph</label>
+    <description>A bionic synth for home service. It has no outstanding performance but looks no different from humans. \n\nAlthough the appearance and technology used are roughly the same, this replica model is not as agile as the prototype that was discontinued by Nara Industries, but its completely customized OS allows it to use any ergonomically designed tool included firearms.\n\nCompared to the MG-1 "Lady" used for military purposes and the MG-3EXO "Big Sister" used for war shows, the initial design and cost considerations of the MG-2C "Maiden" were entirely for the civilian market. The original intention is to reduce expensive production costs through large-scale application of artificial muscles through private sales. But it is obvious that the design that is too close to human appearance and complex emotional expression has become a moral issue. Due to the situation on earth at that time and the increasingly intensifying conflicts, Nara Industries discontinued the subsequent models.</description>
+    <thingClass>Fortified.HumanlikeMech</thingClass>
+    <uiIconPath>Things/Automatroid/AMO/DMSRC_DeformedNymph_Icon</uiIconPath>
+    <statBases>
+      <FoodPoisonChance>0</FoodPoisonChance>
+      <MarketValue>1000</MarketValue>
+      <MoveSpeed>5.5</MoveSpeed>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <EMPResistance>3</EMPResistance>
+      <BandwidthCost>6</BandwidthCost>
+      <ControlTakingTime>30</ControlTakingTime>
+    </statBases>
+    <inspectorTabs Inherit="False">
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+    <tools Inherit="false">
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>teeth</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>0.5</cooldownTime>
+        <armorPenetration>1</armorPenetration>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>5</chanceFactor>
+        <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+        <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <specialShadowData Inherit="False">
+        <volume>(0.3, 0.8, 0.4)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+      <mechWeightClass>Medium</mechWeightClass>
+      <renderTree>HumanlikeMech</renderTree>
+      <thinkTreeMain>DMS_HumanlikeMech</thinkTreeMain>
+      <makesFootprints>true</makesFootprints>
+      <body>DMS_Synthroid</body>
+      <nameGenerator>DMSRC_DeformedNymph</nameGenerator>
+      <mechFixedSkillLevel>10</mechFixedSkillLevel>
+      <mechEnabledWorkTypes>
+        <li>Cleaning</li>
+        <li>Firefighter</li>
+        <li>Cooking</li>
+        <li>Tailoring</li>
+        <li>Doctor</li>
+        <li>Handling</li>
+        <li MayRequire="gondragon.mechanoidwaiter">Gastronomy_Waiting</li>
+        <li MayRequire="orion.hospitality">Diplomat</li>
+        <li MayRequire="frozensnowfox.complexjobs">FSFRearming</li>
+        <li MayRequire="frozensnowfox.complexjobs">FSFCremating</li>
+        <li MayRequire="frozensnowfox.complexjobs">FSFDeliver</li>
+      </mechEnabledWorkTypes>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Legionary_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Legionary_Death</soundDeath>
+          <soundCall>Pawn_Mech_Legionary_Call</soundCall>
+        </li>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>Pawn_Mech_Legionary_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Legionary_Death</soundDeath>
+          <soundCall>Pawn_Mech_Legionary_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <comps Inherit="False">
+      <li Class="CompProperties_CanBeDormant">
+        <compClass>CompMechanoid</compClass>
+      </li>
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <wakeUpCheckRadius>30</wakeUpCheckRadius>
+        <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+      </li>
+      <li Class="CompProperties_OverseerSubject">
+        <needsOverseerEffect>MechUncontrolled</needsOverseerEffect>
+        <delayUntilFeralCheck>60000</delayUntilFeralCheck>
+        <feralMtbDays>10</feralMtbDays>
+        <feralCascadeRadialDistance>25</feralCascadeRadialDistance>
+      </li>
+      <li Class="Fortified.CompProperties_DeadManSwitch">
+        <minDelayUntilDMS>12000</minDelayUntilDMS>
+        <wakingChance>0.01</wakingChance>
+        <nameRule>DMSRC_DeformedNymph</nameRule>
+        <attackRule>DMS_Outgoing_Attack</attackRule>
+        <lootRule>DMS_Outgoing_Loot</lootRule>
+        <lootSetMaker>DMS_OutgoingLoots</lootSetMaker>
+      </li>
+      <li Class="Fortified.CompPropertiesInteracte">
+        <interacteChance>0.01</interacteChance>
+        <interacte>Chitchat</interacte>
+      </li>
+      <li Class="Fortified.CompProperties_MechApparel">
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.TurretMannableExtension"/>
+      <li Class="Fortified.HumanlikeMechExtension">
+        <bodyTypeOverride>Female</bodyTypeOverride>
+        <headTypeOverride>Female_AverageNormal</headTypeOverride>
+        <headGraphic>
+          <texPath>Things/Automatroid/AMO/DMSRC_DeformedNymph_Head</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </headGraphic>
+        <canChangeHairStyle>true</canChangeHairStyle>
+        <headGraphicHaired>
+          <texPath>Things/Automatroid/AMO/DMSRC_DeformedNymph_Head</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+        </headGraphicHaired>
+        <headOffset>(0,0,-0.05)</headOffset>
+      </li>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>false</EnableWeaponFilter>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Industrial</li>
+          <li>Spacer</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef Name="DMSRC_DeformedNymphKind" ParentName="BaseAutomatroidKind">
+    <defName>DMSRC_DeformedNymph</defName>
+    <label>deformed nymph</label>
+    <race>DMSRC_DeformedNymph</race>
+    <combatPower>100</combatPower>
+    <overrideDebugActionCategory>Other</overrideDebugActionCategory>
+    <canStrip>true</canStrip>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/AMO/DMSRC_DeformedNymph</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/AMO/DMSRC_DeformedNymph</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
+    <weaponTags>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_DeformedNymphKind">
+    <defName>DMSRC_DeformedNymph_Scientist</defName>
+    <combatPower>100</combatPower>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>A_SR_LongRifle</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_DeformedNymphKind">
+    <defName>DMSRC_DeformedNymph_Soldier</defName>
+    <combatPower>125</combatPower>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>A_SR_LongRifle</li>
+    </weaponTags>
+    <apparelMoney>800~1500</apparelMoney>
+    <apparelTags>
+      <li>IndustrialMilitaryBasic</li>
+      <li>DMS_Tactical</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+  </PawnKindDef>
+  
+</Defs>

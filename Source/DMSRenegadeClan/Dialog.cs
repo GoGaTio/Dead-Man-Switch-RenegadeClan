@@ -287,95 +287,102 @@ namespace DMSRC
 				return;
 			}
 			Widgets.BeginGroup(rect);
-			if(request == null)
+			try
 			{
-				if (Widgets.ButtonText(new Rect(rect.width - 101f, 5f, 96f, 48f), "Add".Translate().CapitalizeFirst()))
+				if (request == null)
 				{
-					List<FloatMenuOption> list = new List<FloatMenuOption>();
-					foreach(RenegadesRequestDef def in DefDatabase<RenegadesRequestDef>.AllDefs)
+					if (Widgets.ButtonText(new Rect(rect.width - 101f, 5f, 96f, 48f), "Add".Translate().CapitalizeFirst()))
 					{
-						FloatMenuOption option = new FloatMenuOption(def.label, null, extraPartWidth: 29f, extraPartOnGUI: (Rect r) => Widgets.InfoCardButton(r.x + 5f, r.y + (r.height - 24f) / 2f, def));
-						if (def.Available(renegades, out var reason))
+						List<FloatMenuOption> list = new List<FloatMenuOption>();
+						foreach (RenegadesRequestDef def in DefDatabase<RenegadesRequestDef>.AllDefs)
 						{
-							option.action = delegate
+							FloatMenuOption option = new FloatMenuOption(def.label, null, extraPartWidth: 29f, extraPartOnGUI: (Rect r) => Widgets.InfoCardButton(r.x + 5f, r.y + (r.height - 24f) / 2f, def));
+							if (def.Available(renegades, out var reason))
 							{
-								request = renegades.MakeRequest(def);
-								if (map.IsPocketMap || map.generatorDef.isUnderground)
+								option.action = delegate
 								{
-									request.tile = Find.RandomPlayerHomeMap.Tile;
-								}
-								else
-								{
-									request.tile = map.Tile;
-								}
+									request = renegades.MakeRequest(def);
+									if (map.IsPocketMap || map.generatorDef.isUnderground)
+									{
+										request.tile = Find.RandomPlayerHomeMap.Tile;
+									}
+									else
+									{
+										request.tile = map.Tile;
+									}
+									request.Notify_MapChanged();
+									request.Maps = null;
+								};
+							}
+							else
+							{
+								option.Label += " (" + reason + ")";
+							}
+							list.Add(option);
+						}
+						Find.WindowStack.Add(new FloatMenu(list));
+					}
+					Rect outRect = new Rect(0f, 58f, rect.width, rect.height - 58f);
+					Rect viewRect = new Rect(0f, 58f, outRect.width - 16f, renegades.requests.Count * 106);
+					Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
+					float num = 58f;
+					if (!renegades.requests.NullOrEmpty())
+					{
+						foreach (RenegadesRequest r in renegades.requests.ToList())
+						{
+							float f = 0;
+							Rect rect1 = r.DoInterface(10f, num, viewRect.width, ref f);
+							num += rect1.height + 6f;
+						}
+					}
+					Widgets.EndScrollView();
+				}
+				else
+				{
+					request.DrawTab(new Rect(0f, 58f, rect.width, rect.height - 58f), ref scrollPosition, viewHeight, renegades);
+					if (Widgets.ButtonText(new Rect(rect.width - 303f, 5f, 96f, 48f), request.Map.Parent.LabelCap))
+					{
+						List<FloatMenuOption> list = new List<FloatMenuOption>();
+						foreach (Map map in request.Maps)
+						{
+							Map localMap = map;
+							list.Add(new FloatMenuOption(localMap.Parent.LabelCap, delegate
+							{
+								request.tile = localMap.Tile;
 								request.Notify_MapChanged();
-								request.Maps = null;
-							};
+								silver = (from t in TradeUtility.AllLaunchableThingsForTrade(request.Map)
+										  where t.def == ThingDefOf.Silver
+										  select t).Sum((Thing t) => t.stackCount);
+							}));
+						}
+						Find.WindowStack.Add(new FloatMenu(list));
+					}
+					if (Widgets.ButtonText(new Rect(rect.width - 202f, 5f, 96f, 48f), "Save".Translate().CapitalizeFirst()))
+					{
+						AcceptanceReport report = request.TrySave(renegades);
+						if (report.Accepted)
+						{
+							renegades.requests.Add(request);
+							request.Saved();
+							request = null;
+							silver = (from t in TradeUtility.AllLaunchableThingsForTrade(map)
+									  where t.def == ThingDefOf.Silver
+									  select t).Sum((Thing t) => t.stackCount);
 						}
 						else
 						{
-							option.Label += " (" + reason + ")";
+							Messages.Message(report.Reason, MessageTypeDefOf.RejectInput, false);
 						}
-						list.Add(option);
 					}
-					Find.WindowStack.Add(new FloatMenu(list));
-				}
-				Rect outRect = new Rect(0f, 58f, rect.width, rect.height - 58f);
-				Rect viewRect = new Rect(0f, 58f, outRect.width - 16f, renegades.requests.Count * 106);
-				Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
-				float num = 58f;
-				if (!renegades.requests.NullOrEmpty())
-				{
-					foreach (RenegadesRequest r in renegades.requests.ToList())
+					if (Widgets.ButtonText(new Rect(rect.width - 101f, 5f, 96f, 48f), "Cancel".Translate().CapitalizeFirst()))
 					{
-						float f = 0;
-						Rect rect1 = r.DoInterface(10f, num, viewRect.width, ref f);
-						num += rect1.height + 6f;
-					}
-				}
-				Widgets.EndScrollView();
-			}
-			else
-			{
-				request.DrawTab(new Rect(0f, 58f, rect.width, rect.height - 58f), ref scrollPosition, viewHeight, renegades);
-				if (Widgets.ButtonText(new Rect(rect.width - 303f, 5f, 96f, 48f), request.Map.Parent.LabelCap))
-				{
-					List<FloatMenuOption> list = new List<FloatMenuOption>();
-					foreach (Map map in request.Maps)
-					{
-						Map localMap = map;
-						list.Add(new FloatMenuOption(localMap.Parent.LabelCap, delegate
-						{
-							request.tile = localMap.Tile;
-							request.Notify_MapChanged();
-							silver = (from t in TradeUtility.AllLaunchableThingsForTrade(request.Map)
-									  where t.def == ThingDefOf.Silver
-									  select t).Sum((Thing t) => t.stackCount);
-						}));
-					}
-					Find.WindowStack.Add(new FloatMenu(list));
-				}
-				if (Widgets.ButtonText(new Rect(rect.width - 202f, 5f, 96f, 48f), "Save".Translate().CapitalizeFirst()))
-				{
-					AcceptanceReport report = request.TrySave(renegades);
-					if (report.Accepted)
-					{
-						renegades.requests.Add(request);
-						request.Saved();
 						request = null;
-						silver = (from t in TradeUtility.AllLaunchableThingsForTrade(map)
-								  where t.def == ThingDefOf.Silver
-								  select t).Sum((Thing t) => t.stackCount);
-					}
-					else
-					{
-						Messages.Message(report.Reason, MessageTypeDefOf.RejectInput, false);
 					}
 				}
-				if (Widgets.ButtonText(new Rect(rect.width - 101f, 5f, 96f, 48f), "Cancel".Translate().CapitalizeFirst()))
-				{
-					request = null;
-				}
+			}
+			catch(Exception ex)
+			{
+				Log.Error("Error while drawing requests tab (current request: " + request + "), report this to Mod Author: " + ex);
 			}
 			Widgets.EndGroup();
 		}

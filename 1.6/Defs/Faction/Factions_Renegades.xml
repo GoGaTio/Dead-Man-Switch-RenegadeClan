@@ -140,12 +140,13 @@
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
         <options>
-          <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
+          <DMSRC_Mech_Malice>1</DMSRC_Mech_Malice>
           <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
           <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
           <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
           <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
           <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Soldat_R>10</DMSRC_Mech_Soldat_R>
           <DMSRC_Mech_Stancher>6</DMSRC_Mech_Stancher>
           <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Explosive>
@@ -161,14 +162,16 @@
         <options>
           <DMSRC_Stormtrooper>0.5</DMSRC_Stormtrooper>
           <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.15</NAT_RustedRenegade>
-          <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
+          <DMSRC_Mech_Malice>1</DMSRC_Mech_Malice>
           <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
-          <DMS_Mech_Dogge>5</DMS_Mech_Dogge>
+          <DMSRC_Mech_Soldat_R>8</DMSRC_Mech_Soldat_R>
+          <DMS_Mech_Dogge>3</DMS_Mech_Dogge>
           <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
           <DMSRC_Mech_Stancher>3</DMSRC_Mech_Stancher>
           <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
           <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
           <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+          <DMSRC_Mech_Focus>0.5</DMSRC_Mech_Focus>
           <DMSRC_Mech_Pavise>0.5</DMSRC_Mech_Pavise>
         </options>
       </li>
@@ -201,6 +204,7 @@
           <DMS_Mech_Protector>4</DMS_Mech_Protector>
           <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
           <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+          <DMSRC_Mech_Soldat_R>10</DMSRC_Mech_Soldat_R>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon_Explosive>
           <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Beam>
         </options>

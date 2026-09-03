@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_AutomatroidGun">
+    <defName>DMSRC_VizotejaRifle</defName>
+    <label>Vizoteja rifle</label>
+    <description>A stockless assault rifle manufactured by renegades.</description>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>DMSRC_RenegadeRifle</li>
+      <li>DMS_MechWeaponLight</li>
+    </weaponTags>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_Rifle</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <generateCommonality>0.01</generateCommonality>
+    <statBases>
+      <Mass>3.2</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>1.85</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker Inherit="False" IsNull="True"/>
+    <costList>
+      <Tungsteel>60</Tungsteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_VizotejaRifle</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>24.9</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <soundCast>DMS_KnuckledusterRevolver_Shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>AverageHumanCanUse</EquippableDef>
+      </li>
+    </modExtensions>
+    <tools Inherit="False">
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMSRC_Bullet_VizotejaRifle</defName>
+    <label>bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>13</damageAmountBase>
+      <speed>60</speed>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+
+</Defs>

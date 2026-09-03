@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>DMSRC_RenegadeOutpost</defName>
+    <label>renegade outpost</label>
+    <description>A colonial fleet frontline base.</description>
+    <siteTexture>World/Sites/DMSRC_SmallSite</siteTexture>
+    <expandingIconTexture>World/DMSRC_RenegadeOutpost</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <tags>
+      <li>DMSRC_RenegadeOutpost</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMSRC_RenegadeOutpost</defName>
+    <linkWithSite>DMSRC_RenegadeOutpost</linkWithSite>
+    <order>1460</order>
+    <genStep Class="DMSRC.GenStep_MissionStructure">
+      <structureDefs>
+        <li>DMSRC_RenegadeOutpost_A</li>
+        <li>DMSRC_RenegadeOutpost_B</li>
+      </structureDefs>
+      <forcedFaction>DMSRC_RenegadeClan</forcedFaction>
+      <allowedRotation>All</allowedRotation>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

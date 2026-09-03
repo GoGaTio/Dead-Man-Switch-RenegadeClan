@@ -166,12 +166,13 @@
       </tags>
     </apparel>
     <comps>
-      <li Class="CompProperties_Shield">
-        <startingTicksToReset>2500</startingTicksToReset>
+      <li Class="DMSRC.CompProperties_ShieldHelmet">
+        <arrarelTag MayRequire="Aoba.Exosuit.Framework">WGApparelHead</arrarelTag>
+        <startingTicksToReset>5000</startingTicksToReset>
         <minDrawSize>2</minDrawSize>
         <maxDrawSize>2.5</maxDrawSize>
         <energyLossPerDamage>0.01</energyLossPerDamage>
-        <energyOnReset>1</energyOnReset>
+        <energyOnReset>0</energyOnReset>
         <blocksRangedWeapons>false</blocksRangedWeapons>
       </li>
     </comps>

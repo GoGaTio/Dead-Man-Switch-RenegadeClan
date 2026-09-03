@@ -37,4 +37,47 @@
       </mission>
     </root>
   </QuestScriptDef>
+
+  <QuestScriptDef>
+    <defName>DMSRC_KillRenegadeOfficer</defName>
+    <rootSelectionWeight>0.7</rootSelectionWeight>
+    <expireDaysRange>5~10</expireDaysRange>
+    <everAcceptableInSpace>true</everAcceptableInSpace>
+    <rootMinPoints>1000</rootMinPoints>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[destroy] [antenna]</li>
+        <li>antenna->Broadcast Tower</li>
+        <li>antenna->Broadcast Antenna</li>
+        <li>antenna->The Antenna</li>
+      </rulesStrings>
+      <include>
+        <li>DMSRC_QuestTextCommon</li>
+      </include>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[renegadesInfoSource] (*Threat)Colonial fleet(/Threat) broadcast antenna nearby. It creates control area, which allows to perform fleet operations, and therefore should be destroyed.\n\nBroadcast antenna is guarded by group of Colonial fleet (*Threat)automatroids(/Threat) and (*Threat)turrets(/Threat).</li>
+      </rulesStrings>
+      <include>
+        <li>DMSRC_QuestTextCommon</li>
+      </include>
+    </questDescriptionRules>
+    <root Class="DMSRC.QuestNode_Root_Site">
+      <giver>ColonialFleet</giver>
+      <sitePart>DMSRC_RenegadeOutpost</sitePart>
+      <oppositeFactionForSite>true</oppositeFactionForSite>
+      <timeoutTicks>300000</timeoutTicks>
+      <repValue>10</repValue>
+      <rewardValueFactor>1.1</rewardValueFactor>
+      <mission>
+        <missionClass>DMSRC.QuestPart_Mission_Kill</missionClass>
+        <targetKind>DMSRC_OfficerHigh</targetKind>
+        <wavesCooldown>60000</wavesCooldown>
+        <initialWavesCooldown>60000</initialWavesCooldown>
+        <wavesFromOppositeFaction>false</wavesFromOppositeFaction>
+      </mission>
+    </root>
+  </QuestScriptDef>
 </Defs>

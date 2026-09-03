@@ -387,7 +387,7 @@ namespace DMSRC
 		protected override void Enable(SignalArgs receivedArgs)
 		{
 			base.Enable(receivedArgs);
-			targets = site.Map.mapPawns.PawnsInFaction(site.Faction);
+			targets = site.Map.mapPawns.PawnsInFaction(site.Faction).Where(x => x.kindDef == mission.targetKind).ToList();
 		}
 
 		public override IEnumerable<GlobalTargetInfo> QuestLookTargets

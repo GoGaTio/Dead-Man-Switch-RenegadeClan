@@ -2,8 +2,7 @@
 <Defs>
 
   <PawnKindDef Name="DMSRC_BaseAutomatroidRenegade" ParentName="BaseAutomatroidKind" Abstract="True">
-    <defaultFactionType>Mechanoid</defaultFactionType>
-    <!--defaultFactionType>DMSRC_RenegadeClan</defaultFactionType-->
+    <defaultFactionType>DMSRC_RenegadeClan</defaultFactionType>
     <allowInMechClusters>false</allowInMechClusters>
     <isFighter>true</isFighter>
     <destroyGearOnDrop>false</destroyGearOnDrop>
@@ -13,11 +12,10 @@
     <minGenerationAge>0</minGenerationAge>
     <maxGenerationAge>50</maxGenerationAge>
     <forceNormalGearQuality>true</forceNormalGearQuality>
-    <weaponMoney>1300~4000</weaponMoney>
+    <weaponMoney>9999~9999</weaponMoney>
     <combatPower>100</combatPower>
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>3000~4000</techHediffsMoney>
-    <overrideDebugActionCategory>RenegadeClan</overrideDebugActionCategory>
   </PawnKindDef>
 
   <PawnKindDef Name="DMSRC_RenegadeBase" Abstract="True">

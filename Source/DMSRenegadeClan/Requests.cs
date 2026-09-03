@@ -488,6 +488,8 @@ namespace DMSRC
 
 		public class TradeRow
 		{
+			public TradeRowsRequest parent;
+
 			public int count;
 
 			public Thing thing;
@@ -528,7 +530,7 @@ namespace DMSRC
 				Widgets.InfoCardButton(3f, 3f, thing);
 				Widgets.Label(rectLabel, thing.LabelCapNoCount);
 				Widgets.Label(rectCount, count.ToString());
-				Widgets.Label(rectPrice, thing.MarketValue.ToStringMoney());
+				Widgets.Label(rectPrice, (thing.MarketValue * parent.SilverFactor).ToStringMoney());
 				int c = countSelected;
 				if (countSelected == 0)
 				{
@@ -569,6 +571,8 @@ namespace DMSRC
 				Widgets.EndGroup();
 			}
 		}
+
+		public virtual float SilverFactor => 1f;
 
 		public TradeRowsRequest()
 		{
@@ -686,7 +690,7 @@ namespace DMSRC
 				{
 					if (row.countSelected > 0)
 					{
-						silverTemp += row.thing.MarketValue * row.countSelected;
+						silverTemp += row.thing.MarketValue * SilverFactor * row.countSelected;
 					}
 				}
 				calculated = true;
@@ -709,7 +713,11 @@ namespace DMSRC
 			tradeRows = new List<TradeRow>();
 			foreach (Thing t in renegades.things)
 			{
-				tradeRows.Add(new TradeRow(t, t.stackCount));
+				if(t == null || t is Pawn)
+				{
+					continue;
+				}
+				tradeRows.Add(new TradeRow(t, t.stackCount) { parent = this });
 			}
 		}
 
@@ -787,18 +795,26 @@ namespace DMSRC
 			tradeRows = null;
 		}
 
+		public override float SilverFactor => 0.9f;
+
 		public override void GenerateRows(GameComponent_Renegades renegades)
 		{
 			tradeRows = new List<TradeRow>();
 			foreach (Thing item in TradeUtility.AllLaunchableThingsForTrade(base.Map))
 			{
-				Log.Message(item);
+				if (item == null || item is Pawn)
+				{
+					continue;
+				}
+				if (item.def.category != ThingCategory.Item)
+				{
+					continue;
+				}
 				if (!def.allowedDefs.Contains(item.def) && (item.def.tradeTags.NullOrEmpty() || !item.def.tradeTags.Any(x => def.allowedTradeTags.Contains(x)) || item.MarketValue < 100f))
 				{
 					continue;
 				}
-				Log.Message("Added");
-				tradeRows.Add(new TradeRow(item, item.stackCount));
+				tradeRows.Add(new TradeRow(item, item.stackCount) { parent = this });
 			}
 		}
 

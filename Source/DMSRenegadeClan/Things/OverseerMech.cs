@@ -73,7 +73,12 @@ namespace DMSRC
         void Notify_NameChanged();
 	}
 
-    public class OverseerMech : WeaponUsableMech, IOverseer
+	public interface ICaravanOwner
+	{
+		bool CanCaravan {  get; }
+	}
+
+	public class OverseerMech : WeaponUsableMech, IOverseer, ICaravanOwner
 	{
 		private CompOverseerMech comp;
 
@@ -88,6 +93,8 @@ namespace DMSRC
                 return comp;
             }
         }
+
+		public bool CanCaravan => true;
 
 		public float MinCharge => Comp.minCharge;
 
@@ -120,7 +127,7 @@ namespace DMSRC
 		}
     }
 
-	public class HumanlikeOverseerMech : HumanlikeMech, IOverseer
+	public class HumanlikeOverseerMech : HumanlikeMech, IOverseer, ICaravanOwner
 	{
 		private CompOverseerMech comp;
 
@@ -135,6 +142,8 @@ namespace DMSRC
 				return comp;
 			}
 		}
+
+		public bool CanCaravan => true;
 
 		public float MinCharge => Comp.minCharge;
 

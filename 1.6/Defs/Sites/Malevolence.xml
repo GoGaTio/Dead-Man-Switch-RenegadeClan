@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>DMSRC_Malevolence</defName>
+    <label>malevolence</label>
+    <description>A container with valuable items.</description>
+    <siteTexture>World/Sites/DMSRC_BossHuntSite</siteTexture>
+    <expandingIconTexture>World/DMSRC_Malevolence</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <tags>
+      <li>DMSRC_Malevolence</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMSRC_Malevolence</defName>
+    <linkWithSite>DMSRC_Malevolence</linkWithSite>
+    <order>1460</order>
+    <genStep Class="DMSRC.GenStep_BossHunt">
+      <bossKind>DMSRC_Mech_Malevolence</bossKind>
+      <pointsOffset>1000</pointsOffset>
+      <escorts>
+        <DMSRC_Mech_Soldat_R>15</DMSRC_Mech_Soldat_R>
+        <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
+        <DMS_Mech_Ronin>4</DMS_Mech_Ronin>
+        <DMS_Mech_Protector>2</DMS_Mech_Protector>
+        <DMS_Mech_Iguana>4</DMS_Mech_Iguana>
+        <DMSRC_Mech_Pavise>1</DMSRC_Mech_Pavise>
+        <DMSRC_Mech_Focus>1</DMSRC_Mech_Focus>
+        <DMS_Mech_Tarbosaurus>1</DMS_Mech_Tarbosaurus>
+      </escorts>
+      <bossApparel>
+        <li>Apparel_HeavyShield</li>
+      </bossApparel>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

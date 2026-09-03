@@ -8,6 +8,9 @@
       <def>DMS_HeavyChassis</def>
       <height>Middle</height>
       <depth>Outside</depth>
+      <groups>
+        <li>Torso</li>
+      </groups>
       <parts>
         <li>
           <def>DMSRC_ArmoredHead</def>

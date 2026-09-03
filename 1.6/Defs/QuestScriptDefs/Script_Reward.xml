@@ -48,7 +48,7 @@
 
         <li Class="QuestNode_GetDefaultSitePartsParams">
           <tile>$siteTile</tile>
-          <faction>$faction</faction>
+          <faction>DMS_Legacy</faction>
           <sitePartDefs>$sitePartDefs</sitePartDefs>
           <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
         </li>
@@ -61,7 +61,7 @@
         <li Class="QuestNode_SubScript">
           <def>Util_GenerateSite</def>
           <parms>
-            <siteFaction>$faction</siteFaction>
+            <siteFaction>DMS_Legacy</siteFaction>
           </parms>
         </li>
 

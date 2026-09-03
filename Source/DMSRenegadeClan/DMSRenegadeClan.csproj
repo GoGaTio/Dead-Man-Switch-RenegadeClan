@@ -72,10 +72,14 @@
   <ItemGroup>
     <Compile Include="Ability.cs" />
     <Compile Include="Damages.cs" />
+    <Compile Include="Harmony\Caravaning.cs" />
+    <Compile Include="MapGen\GenStep_BossHunt.cs" />
     <Compile Include="Mod.cs" />
+    <Compile Include="Quests\QuestNode_DefinedThingDefs.cs" />
     <Compile Include="ScenParts.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="FloatMenuOptionProvider_OverseerMech.cs" />
+    <Compile Include="Things\Building_BeamTurret.cs" />
     <Compile Include="Things\Firecracker.cs" />
     <Compile Include="GameComponent_Renegades.cs" />
     <Compile Include="Harmony\Renegades.cs" />

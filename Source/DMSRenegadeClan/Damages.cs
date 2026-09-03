@@ -168,7 +168,7 @@ namespace DMSRC
 	{
 		public override DamageResult Apply(DamageInfo dinfo, Thing victim)
 		{
-			if(dinfo.IntendedTarget != victim && dinfo.Instigator?.HostileTo(victim) == false)
+			if(dinfo.IntendedTarget != victim && dinfo.Instigator?.Faction != null && dinfo.Instigator.HostileTo(victim) == false)
 			{
 				return new DamageResult();
 			}
@@ -220,18 +220,18 @@ namespace DMSRC
 			{
 				if (pawn.RaceProps.IsMechanoid || pawn.RaceProps.IsDrone)
 				{
-					CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile, true);
+					CumulativeEffect(pawn, explosion.damAmount * 3f, explosion.instigator, explosion.weapon, explosion.projectile, true);
 				}
-				else if (pawn.apparel != null)
+				else if (pawn.apparel != null && exosuitType != null)
 				{
 					Apparel core = pawn.apparel.WornApparel.FirstOrDefault((a) => exosuitType.IsAssignableFrom(a.def.thingClass));
 					if (core != null)
 					{
-						CumulativeEffect(pawn, explosion.instigator, explosion.weapon, explosion.projectile);
+						CumulativeEffect(pawn, explosion.damAmount, explosion.instigator, explosion.weapon, explosion.projectile);
 					}
 				}
 			}
-			else if (vehicleType.IsAssignableFrom(t.def.thingClass))
+			else if (vehicleType != null && vehicleType.IsAssignableFrom(t.def.thingClass) && occupiedHandlersMethod != null)
 			{
 				Log.Message("1");
 				IEnumerable handlers = occupiedHandlersMethod.Invoke(t, Array.Empty<object>()) as IEnumerable;
@@ -255,7 +255,7 @@ namespace DMSRC
 							if (item is Pawn p)
 							{
 								Log.Message("6");
-								CumulativeEffect(p, explosion.instigator, explosion.weapon, explosion.projectile, false);
+								CumulativeEffect(p, explosion.damAmount, explosion.instigator, explosion.weapon, explosion.projectile);
 							}
 						}
 					}
@@ -279,12 +279,12 @@ namespace DMSRC
 
 		public DamageInfo workingDamage;
 
-		public void CumulativeEffect(Pawn pawn, Thing initiator, ThingDef weaponDef, ThingDef projectileDef, bool onlyInternal = false)
+		public void CumulativeEffect(Pawn pawn, float damage, Thing initiator, ThingDef weaponDef, ThingDef projectileDef, bool onlyInternal = false)
 		{
 			List<BodyPartRecord> list = new List<BodyPartRecord>();
 			List<Hediff> hediffs = new List<Hediff>();
 			BattleLogEntry_CumulativeEffect battleLogEntry = null;
-			workingDamage = new DamageInfo(DamageDefOf.Burn, 30f, 999f, instigator: initiator, weapon: weaponDef);
+			workingDamage = new DamageInfo(DamageDefOf.Burn, damage * 3f, 999f, instigator: initiator, weapon: weaponDef, checkForJobOverride: false);
 			if (pawn != null)
 			{
 				battleLogEntry = new BattleLogEntry_CumulativeEffect(initiator, pawn, weaponDef, projectileDef, def);
@@ -300,7 +300,7 @@ namespace DMSRC
 				}
 				if(part != null)
 				{
-					Hediff hediff = ApplyDamageToPart(pawn, 10f * pawn.BodySize, initiator, part, weaponDef);
+					Hediff hediff = ApplyDamageToPart(pawn, damage * pawn.BodySize, initiator, part, weaponDef);
 					if (hediff == null)
 					{
 						continue;
@@ -333,6 +333,7 @@ namespace DMSRC
 
 		protected Hediff ApplyDamageToPart(Pawn pawn, float amount, Thing initiator, BodyPartRecord part, ThingDef weaponDef)
 		{
+			Log.Message(amount + "/" + part.def.GetMaxHealth(pawn));
 			Pawn pawn2 = initiator as Pawn;
 			HediffDef hediffDefFromDamage = HealthUtility.GetHediffDefFromDamage(DamageDefOf.Burn, pawn, part);
 			Hediff_Injury hediff_Injury = (Hediff_Injury)HediffMaker.MakeHediff(hediffDefFromDamage, pawn, part);

@@ -39,7 +39,7 @@
     <xpath>Defs/ThingDef[defName="DMSRC_Apparel_ShieldHelmet"]/statBases/StuffEffectMultiplierArmor</xpath>
     <value>
       <StuffEffectMultiplierArmor>9</StuffEffectMultiplierArmor>
-      <ArmorRating_Blunt>9</ArmorRating_Blunt>
+      <ArmorRating_Blunt>8</ArmorRating_Blunt>
     </value>
   </Operation>
 
@@ -86,7 +86,7 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DMSRC_Apparel_ShieldHelmet"]/statBases/EnergyShieldRechargeRate</xpath>
     <value>
-      <EnergyShieldRechargeRate>0.5</EnergyShieldRechargeRate>
+      <EnergyShieldRechargeRate>0.35</EnergyShieldRechargeRate>
     </value>
   </Operation>
 

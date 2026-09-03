@@ -315,7 +315,7 @@ namespace DMSRC
 				{
 					req.Tick();
 				}
-				if (PlayerRelation == FactionRelationKind.Ally)
+				if (kind != FactionRelationKind.Hostile && PlayerRelation == FactionRelationKind.Ally)
 				{
 					DMSFaction?.TryAffectGoodwillWith(Faction.OfPlayerSilentFail, -200, canSendMessage: false, canSendHostilityLetter: false, RCDefOf.DMSRC_AllyWithRenegades);
 				}
@@ -468,7 +468,7 @@ namespace DMSRC
 			}
 			foreach (Thing item in list.ToList())
 			{
-				if(item == null || item.stackCount < 1)
+				if(item == null || item.stackCount < 1 || item is Pawn)
 				{
 					continue;
 				}

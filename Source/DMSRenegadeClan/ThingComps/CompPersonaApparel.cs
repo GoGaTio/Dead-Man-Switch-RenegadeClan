@@ -1,3 +1,21 @@
+using DelaunatorSharp;
+using Fortified;
+using Gilzoide.ManagedJobs;
+using HarmonyLib;
+using Ionic.Crc;
+using Ionic.Zlib;
+using JetBrains.Annotations;
+using KTrie;
+using LudeonTK;
+using NVorbis.NAudioSupport;
+using RimWorld;
+using RimWorld.BaseGen;
+using RimWorld.IO;
+using RimWorld.Planet;
+using RimWorld.QuestGen;
+using RimWorld.SketchGen;
+using RimWorld.Utility;
+using RuntimeAudioClipLoader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,22 +37,6 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
-using DelaunatorSharp;
-using Gilzoide.ManagedJobs;
-using Ionic.Crc;
-using Ionic.Zlib;
-using JetBrains.Annotations;
-using KTrie;
-using LudeonTK;
-using NVorbis.NAudioSupport;
-using RimWorld;
-using RimWorld.BaseGen;
-using RimWorld.IO;
-using RimWorld.Planet;
-using RimWorld.QuestGen;
-using RimWorld.SketchGen;
-using RimWorld.Utility;
-using RuntimeAudioClipLoader;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -51,42 +53,68 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
-using Fortified;
 
 namespace DMSRC
 {
-	public class CompProperties_NeuroApparel : CompProperties
+	public class CompProperties_ShieldHelmet : CompProperties_Shield
 	{
-		public HediffDef hediff;
+		public PawnRenderNodeTagDef arrarelTag;
 
-		public BodyPartDef part;
-
-		public CompProperties_NeuroApparel()
+		public CompProperties_ShieldHelmet()
 		{
-			compClass = typeof(CompNeuroApparel);
+			compClass = typeof(CompShieldHelmet);
 		}
 	}
-	public class CompNeuroApparel : ThingComp
+	public class CompShieldHelmet : CompShield
 	{
-		private CompProperties_NeuroApparel Props => (CompProperties_NeuroApparel)props;
+		public bool disabledByOtherApparel = false;
 
-		private Faction faction;
+		public bool check = true;
 
-		public override void Notify_Equipped(Pawn pawn)
+		public new CompProperties_ShieldHelmet Props => (CompProperties_ShieldHelmet)props;
+
+		public override void CompTick()
 		{
-			if (pawn.health.hediffSet.GetFirstHediffOfDef(Props.hediff) == null)
+			base.CompTick();
+			if (check && parent.IsHashIntervalTick(300))
 			{
-				HediffComp_RemoveIfApparelDropped hediffComp_RemoveIfApparelDropped = pawn.health.AddHediff(Props.hediff, pawn.health.hediffSet.GetNotMissingParts().FirstOrFallback((BodyPartRecord p) => p.def == Props.part)).TryGetComp<HediffComp_RemoveIfApparelDropped>();
-				if (hediffComp_RemoveIfApparelDropped != null)
+				if (disabledByOtherApparel)
 				{
-					hediffComp_RemoveIfApparelDropped.wornApparel = (Apparel)parent;
+					if (PawnOwner.apparel.WornApparel.FirstOrDefault(x => x.def.apparel.parentTagDef == Props.arrarelTag) == null)
+					{
+						disabledByOtherApparel = false;
+					}
+				}
+				else if (PawnOwner.apparel.WornApparel.FirstOrDefault(x => x.def.apparel.parentTagDef == Props.arrarelTag) != null)
+				{
+					disabledByOtherApparel = true;
 				}
 			}
 		}
 
-		public virtual void ExposeData()
+		public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
 		{
-			Scribe_References.Look(ref faction, "faction");
+			absorbed = false;
+			if (disabledByOtherApparel) return;
+			base.PostPreApplyDamage(ref dinfo, out absorbed);
+		}
+
+		public override void CompDrawWornExtras()
+		{
+			if (disabledByOtherApparel) return;
+			base.CompDrawWornExtras();
+		}
+
+		public override void PostDraw()
+		{
+			if (disabledByOtherApparel) return;
+			base.PostDraw();
+		}
+
+		public override void Initialize(CompProperties props)
+		{
+			base.Initialize(props);
+			check = ((CompProperties_ShieldHelmet)props)?.arrarelTag != null;
 		}
 	}
 }

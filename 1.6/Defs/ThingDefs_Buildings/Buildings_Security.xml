@@ -62,6 +62,12 @@
       <li>BuildingsSecurity</li>
     </thingCategories>
     <minifiedDef>MinifiedThing</minifiedDef>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <Steel>50</Steel>
+      <Tungsteel>30</Tungsteel>
+    </killedLeavings>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <costList>
       <Steel>150</Steel>
       <Tungsteel>120</Tungsteel>
@@ -114,7 +120,7 @@
     <label>Pramen</label>
     <description>An ancient design of a remote controlled turret mounted with high-energy gamma ray laser which fires a sweeping beam that pierces thick armor and burns targets. Ironic.</description>
     <techLevel>Spacer</techLevel>
-    <thingClass>Building_TurretGun</thingClass>
+    <thingClass>DMSRC.Building_BeamTurret</thingClass>
     <graphicData>
       <texPath>Things/Turrets/DMS_Weapon_Base</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -153,6 +159,12 @@
       <li>DMSRC_BeamFocusing</li>
     </researchPrerequisites>
     <minifiedDef>MinifiedThing</minifiedDef>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <Steel>70</Steel>
+      <Tungsteel>40</Tungsteel>
+    </killedLeavings>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <costList>
       <Steel>100</Steel>
       <Tungsteel>150</Tungsteel>
@@ -213,6 +225,7 @@
     <killedLeavings>
       <ChunkSlagSteel>1</ChunkSlagSteel>
     </killedLeavings>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
     <tickerType>Normal</tickerType>
     <filthLeaving>Filth_MachineBits</filthLeaving>
     <researchPrerequisites>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnRenderTreeDef>
+    <defName>DMS_AMO_Beast</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <useRottenColor>false</useRottenColor>
+          <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+          <children>
+            <li Class="PawnRenderNodeProperties_Spastic">
+              <debugLabel>TentacleA</debugLabel>
+              <texPath>Things/AMO/Beast/Tentacle_A</texPath>
+              <rotateFacing>false</rotateFacing>
+              <drawSize>1.5</drawSize>
+              <overrideMeshSize>1</overrideMeshSize>
+              <useRottenColor>false</useRottenColor>
+              <rotationRange>-25~25</rotationRange>
+              <durationTicksRange>10~35</durationTicksRange>
+              <nextSpasmTicksRange>0~20</nextSpasmTicksRange>
+              <visibleFacing>
+                <li>East</li>
+                <li>West</li>
+                <li>South</li>
+              </visibleFacing>
+              <drawData>
+                <defaultData>
+                  <layer>7</layer>
+                </defaultData>
+                <dataEast>
+                  <offset>(0.48, 0, -0.04)</offset>
+                </dataEast>
+                <dataWest>
+                  <offset>(-0.48, 0, -0.04)</offset>
+                  <flip>true</flip>
+                </dataWest>
+                <dataSouth>
+                  <offset>(-0.281, 0, -0.195)</offset>
+                  <rotationOffset>45</rotationOffset>
+                </dataSouth>
+              </drawData>
+            </li>
+
+            <li Class="PawnRenderNodeProperties_Spastic">
+              <debugLabel>TentacleB</debugLabel>
+              <texPath>Things/AMO/Beast/Tentacle_B</texPath>
+              <rotateFacing>false</rotateFacing>
+              <drawSize>1.5</drawSize>
+              <overrideMeshSize>1</overrideMeshSize>
+              <useRottenColor>false</useRottenColor>
+              <rotationRange>-25~25</rotationRange>
+              <durationTicksRange>10~35</durationTicksRange>
+              <nextSpasmTicksRange>0~20</nextSpasmTicksRange>
+              <visibleFacing>
+                <li>East</li>
+                <li>West</li>
+                <li>South</li>
+              </visibleFacing>
+              <drawData>
+                <defaultData>
+                  <layer>7</layer>
+                </defaultData>
+                <dataEast>
+                  <offset>(0.188, 0, -0.172)</offset>
+                </dataEast>
+                <dataWest>
+                  <offset>(-0.188, 0, -0.172)</offset>
+                  <flip>true</flip>
+                </dataWest>
+                <dataSouth>
+                  <offset>(-0.469, 0, -0.164)</offset>
+                  <rotationOffset>45</rotationOffset>
+                </dataSouth>
+              </drawData>
+            </li>
+
+            <li Class="PawnRenderNodeProperties_Spastic">
+              <debugLabel>TentacleC</debugLabel>
+              <texPath>Things/AMO/Beast/Tentacle_A</texPath>
+              <rotateFacing>false</rotateFacing>
+              <drawSize>1.5</drawSize>
+              <overrideMeshSize>1</overrideMeshSize>
+              <useRottenColor>false</useRottenColor>
+              <rotationRange>-25~25</rotationRange>
+              <durationTicksRange>10~35</durationTicksRange>
+              <nextSpasmTicksRange>0~20</nextSpasmTicksRange>
+              <visibleFacing>
+                <li>South</li>
+              </visibleFacing>
+              <drawData>
+                <defaultData>
+                  <layer>7</layer>
+                </defaultData>
+                <dataSouth>
+                  <offset>(0.281, 0, -0.195)</offset>
+                  <rotationOffset>45</rotationOffset>
+                  <flip>true</flip>
+                </dataSouth>
+              </drawData>
+            </li>
+
+            <li Class="PawnRenderNodeProperties_Spastic">
+              <debugLabel>TentacleD</debugLabel>
+              <texPath>Things/AMO/Beast/Tentacle_B</texPath>
+              <rotateFacing>false</rotateFacing>
+              <drawSize>1.5</drawSize>
+              <overrideMeshSize>1</overrideMeshSize>
+              <useRottenColor>false</useRottenColor>
+              <rotationRange>-25~25</rotationRange>
+              <durationTicksRange>10~35</durationTicksRange>
+              <nextSpasmTicksRange>0~20</nextSpasmTicksRange>
+              <visibleFacing>
+                <li>South</li>
+              </visibleFacing>
+              <drawData>
+                <defaultData>
+                  <layer>7</layer>
+                </defaultData>
+                <dataSouth>
+                  <offset>(0.469, 0, -0.164)</offset>
+                  <rotationOffset>45</rotationOffset>
+                  <flip>true</flip>
+                </dataSouth>
+              </drawData>
+            </li>
+
+            <li>
+              <debugLabel>Wounds</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>10</baseLayer>
+            </li>
+            <li>
+              <debugLabel>Firefoam</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>20</baseLayer>
+            </li>
+          </children>
+        </li>
+        <li Class="PawnRenderNodeProperties_Carried">
+          <debugLabel>Carried thing</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

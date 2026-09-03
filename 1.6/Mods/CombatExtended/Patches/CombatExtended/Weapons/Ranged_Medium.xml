@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DMSRC_VizotejaRifle"]/tools</xpath>
+    <value>
+      <tools Inherit="False">
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>7</power>
+          <cooldownTime>1.8</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetrationBlunt>0.755</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+  
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>DMSRC_VizotejaRifle</defName>
+    <statBases>
+      <Mass>8</Mass>
+      <Bulk>7.3</Bulk>
+      <SwayFactor>1.3</SwayFactor>
+      <ShotSpread>0.05</ShotSpread>
+      <SightsEfficiency>1</SightsEfficiency>
+      <RangedWeapon_Cooldown>0.75</RangedWeapon_Cooldown>
+    </statBases>
+    <Properties>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_792x57mmMauser_Incendiary</defaultProjectile>
+      <warmupTime>0.9</warmupTime>
+      <range>55</range>
+      <burstShotCount>10</burstShotCount>
+      <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+      <soundCast>DMS_KnuckledusterRevolver_Shot</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+      <recoilAmount>0.78</recoilAmount>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>40</magazineSize>
+      <reloadTime>4</reloadTime>
+      <ammoSet>AmmoSet_792x57mmMauser</ammoSet>
+    </AmmoUser>
+    <FireModes>
+      <aiUseBurstMode>FALSE</aiUseBurstMode>
+      <aiAimMode>AimedShot</aiAimMode>
+      <aimedBurstShotCount>5</aimedBurstShotCount>
+    </FireModes>
+  </Operation>
+
+
+</Patch>

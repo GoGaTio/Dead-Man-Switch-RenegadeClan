@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMSRC_Bullet_FSR</defName>
+    <label>FSR</label>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Mote/DMSRC_Spark</texPath>
+      <drawSize>(.4, .4)</drawSize>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <thingClass>DMSRC.Firecracker</thingClass>
+    <projectile>
+      <useGraphicClass>True</useGraphicClass>
+      <shadowSize>0</shadowSize>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>14</damageAmountBase>
+      <speed>61</speed>
+      <explosionRadius>1.9</explosionRadius>
+      <flyOverhead>false</flyOverhead>
+      <screenShakeFactor>-1</screenShakeFactor>
+      <filth>Filth_Ash</filth>
+      <filthCount>1</filthCount>
+      <armorPenetrationBase>0.31</armorPenetrationBase>
+      <landedEffecter>DMSRC_SparkImpact</landedEffecter>
+      <doExplosionVFX>false</doExplosionVFX>
+    </projectile>
+  </ThingDef>
+
   <ThingDef ParentName="DMS_AutomatroidGun">
     <defName>DMSRC_FSRPistol</defName>
     <label>FSR Light carabine</label>
