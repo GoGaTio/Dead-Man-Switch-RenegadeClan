@@ -9,22 +9,45 @@
       </rulesFiles>
     </rulePack>
   </RulePackDef>
+
+  <HediffDef>
+    <defName>DMSRC_Nymph</defName>
+    <label>System Maintenance</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>This mech has entered self-maintenance mode and is repairing itself using electroactive memory metal. All sensors are temporarily disabled to during this process which will last at least a day.</description>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="Fortified.HediffCompProperties_MechHeal">
+        <healAmount>1</healAmount>
+        <healIntervalTicksStanding>600</healIntervalTicksStanding>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+        <disablesNeeds>
+          <li>MechEnergy</li>
+        </disablesNeeds>
+      </li>
+    </stages>
+  </HediffDef>
     
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMSRC_DeformedNymph</defName>
     <label>deformed nymph</label>
-    <description>A bionic synth for home service. It has no outstanding performance but looks no different from humans. \n\nAlthough the appearance and technology used are roughly the same, this replica model is not as agile as the prototype that was discontinued by Nara Industries, but its completely customized OS allows it to use any ergonomically designed tool included firearms.\n\nCompared to the MG-1 "Lady" used for military purposes and the MG-3EXO "Big Sister" used for war shows, the initial design and cost considerations of the MG-2C "Maiden" were entirely for the civilian market. The original intention is to reduce expensive production costs through large-scale application of artificial muscles through private sales. But it is obvious that the design that is too close to human appearance and complex emotional expression has become a moral issue. Due to the situation on earth at that time and the increasingly intensifying conflicts, Nara Industries discontinued the subsequent models.</description>
-    <thingClass>Fortified.HumanlikeMech</thingClass>
+    <description>An artificial semi-organic life form created by restored █████████ technology. This creature is not fully gestated, it's internal parts are sticking out in some places, it's skin and hair are morbid grey, sometimes it will malfunction.\n\nCOLONIAL FLEET NOTE: This is not actual █████, it is unauthorized military organism, it MUST be destroyed and it remains MUST be annihilated. Do not let it close at any cost.</description>
+    <thingClass>DMSRC.DeformedNymph</thingClass>
     <uiIconPath>Things/Automatroid/AMO/DMSRC_DeformedNymph_Icon</uiIconPath>
     <statBases>
       <FoodPoisonChance>0</FoodPoisonChance>
-      <MarketValue>1000</MarketValue>
+      <MarketValue>3000</MarketValue>
       <MoveSpeed>5.5</MoveSpeed>
       <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
       <EMPResistance>3</EMPResistance>
-      <BandwidthCost>6</BandwidthCost>
-      <ControlTakingTime>30</ControlTakingTime>
+      <BandwidthCost>0</BandwidthCost>
+      <ControlTakingTime>0</ControlTakingTime>
+      <IncomingDamageFactor>0.5</IncomingDamageFactor>
     </statBases>
     <inspectorTabs Inherit="False">
       <li>ITab_Pawn_Health</li>
@@ -98,7 +121,7 @@
         <volume>(0.3, 0.8, 0.4)</volume>
         <offset>(0,0,-0.3)</offset>
       </specialShadowData>
-      <mechWeightClass>Medium</mechWeightClass>
+      <mechWeightClass IsNull="True"/>
       <renderTree>HumanlikeMech</renderTree>
       <thinkTreeMain>DMS_HumanlikeMech</thinkTreeMain>
       <makesFootprints>true</makesFootprints>
@@ -145,22 +168,8 @@
         <wakeUpSound>MechanoidsWakeUp</wakeUpSound>
       </li>
       <li Class="CompProperties_OverseerSubject">
-        <needsOverseerEffect>MechUncontrolled</needsOverseerEffect>
-        <delayUntilFeralCheck>60000</delayUntilFeralCheck>
-        <feralMtbDays>10</feralMtbDays>
-        <feralCascadeRadialDistance>25</feralCascadeRadialDistance>
-      </li>
-      <li Class="Fortified.CompProperties_DeadManSwitch">
-        <minDelayUntilDMS>12000</minDelayUntilDMS>
-        <wakingChance>0.01</wakingChance>
-        <nameRule>DMSRC_DeformedNymph</nameRule>
-        <attackRule>DMS_Outgoing_Attack</attackRule>
-        <lootRule>DMS_Outgoing_Loot</lootRule>
-        <lootSetMaker>DMS_OutgoingLoots</lootSetMaker>
-      </li>
-      <li Class="Fortified.CompPropertiesInteracte">
-        <interacteChance>0.01</interacteChance>
-        <interacte>Chitchat</interacte>
+        <delayUntilFeralCheck>9999999</delayUntilFeralCheck>
+        <feralMtbDays>9999999</feralMtbDays>
       </li>
       <li Class="Fortified.CompProperties_MechApparel">
       </li>
@@ -185,11 +194,7 @@
       </li>
       <li Class="Fortified.MechWeaponExtension">
         <EnableWeaponFilter>false</EnableWeaponFilter>
-        <EnableTechLevelFilter>true</EnableTechLevelFilter>
-        <UsableTechLevels>
-          <li>Industrial</li>
-          <li>Spacer</li>
-        </UsableTechLevels>
+        <EnableTechLevelFilter>false</EnableTechLevelFilter>
       </li>
     </modExtensions>
   </ThingDef>
@@ -198,9 +203,20 @@
     <defName>DMSRC_DeformedNymph</defName>
     <label>deformed nymph</label>
     <race>DMSRC_DeformedNymph</race>
+    <defaultFactionType>DMSRC_RenegadeClan</defaultFactionType>
     <combatPower>100</combatPower>
     <overrideDebugActionCategory>Other</overrideDebugActionCategory>
     <canStrip>true</canStrip>
+    <isBoss>true</isBoss>
+    <immuneToTraps>true</immuneToTraps>
+    <immuneToGameConditionEffects>true</immuneToGameConditionEffects>
+    <canArriveManhunter>false</canArriveManhunter>
+    <allowInMechClusters>false</allowInMechClusters>
+    <startingHediffs>
+      <li>
+        <def>DMSRC_Nymph</def>
+      </li>
+    </startingHediffs>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -221,15 +237,6 @@
     <techHediffsMoney>9999~9999</techHediffsMoney>
     <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
     <weaponTags>
-    </weaponTags>
-  </PawnKindDef>
-
-  <PawnKindDef ParentName="DMSRC_DeformedNymphKind">
-    <defName>DMSRC_DeformedNymph_Scientist</defName>
-    <combatPower>100</combatPower>
-    <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags>
-      <li>A_SR_LongRifle</li>
     </weaponTags>
   </PawnKindDef>
 

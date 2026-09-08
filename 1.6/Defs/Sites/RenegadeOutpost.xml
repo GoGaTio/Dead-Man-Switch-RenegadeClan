@@ -6,7 +6,7 @@
     <label>renegade outpost</label>
     <description>A colonial fleet frontline base.</description>
     <siteTexture>World/Sites/DMSRC_SmallSite</siteTexture>
-    <expandingIconTexture>World/DMSRC_RenegadeOutpost</expandingIconTexture>
+    <expandingIconTexture>World/DMSRC_Outpost</expandingIconTexture>
     <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
     <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
     <considerEnteringAsAttack>false</considerEnteringAsAttack>

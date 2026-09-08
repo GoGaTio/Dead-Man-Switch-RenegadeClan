@@ -85,6 +85,20 @@ namespace DMSRC
         {
             compClass = typeof(CompTimedBomb);
 		}
+
+		public override void ResolveReferences(ThingDef parentDef)
+		{
+			base.ResolveReferences(parentDef);
+			List<CompProperties> props = RCDefOf.DMSRC_Mech_Saboteur.race.comps;
+			for (int i = props.Count - 1; i >= 0; i--)
+			{
+				string name = props[i].GetType().FullName.ToLower();
+				if (name.Contains("combatai"))
+				{
+					RCDefOf.DMSRC_Mech_Saboteur.race.comps.RemoveAt(i);
+				}
+			}
+		}
     }
 
     public class CompTimedBomb : ThingComp

@@ -70,7 +70,7 @@
     <statBases>
       <Mass>0.1</Mass>
       <Flammability>0</Flammability>
-      <MarketValue>200</MarketValue>
+      <MarketValue>2000</MarketValue>
     </statBases>
     <comps>
       <li Class="CompProperties_Usable">

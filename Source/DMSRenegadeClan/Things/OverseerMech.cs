@@ -94,7 +94,7 @@ namespace DMSRC
             }
         }
 
-		public bool CanCaravan => true;
+		public new bool CanCaravan => true;
 
 		public float MinCharge => Comp.minCharge;
 
@@ -143,7 +143,7 @@ namespace DMSRC
 			}
 		}
 
-		public bool CanCaravan => true;
+		public new bool CanCaravan => true;
 
 		public float MinCharge => Comp.minCharge;
 

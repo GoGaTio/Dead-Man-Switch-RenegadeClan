@@ -221,6 +221,9 @@ namespace DMSRC
 			Job job2 = JobMaker.MakeJob(RCDefOf.DMSRC_PlantBomb, forcedGotoPosition, bomb);
 			job2.count = 1;
 			job2.locomotionUrgency = LocomotionUrgency.Sprint;
+			job2.ignoreForbidden = true;
+			job2.playerForced = true;
+			job2.reactingToMeleeThreat = false;
 			return job2;
 		}
 
@@ -262,6 +265,9 @@ namespace DMSRC
 			}
 			Job job = JobMaker.MakeJob(RCDefOf.DSMRC_GotoSprint, forcedGotoPosition);
 			job.locomotionUrgency = LocomotionUrgency.Sprint;
+			job.ignoreForbidden = true;
+			job.playerForced = true;
+			job.reactingToMeleeThreat = false;
 			return job;
 		}
 	}

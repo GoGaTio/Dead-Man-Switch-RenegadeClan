@@ -24,6 +24,7 @@
     <driverClass>DMSRC.JobDriver_PlantBomb</driverClass>
     <reportString>planting TargetA.</reportString>
     <casualInterruptible>false</casualInterruptible>
+    <neverFleeFromEnemies>true</neverFleeFromEnemies>
   </JobDef>
 
   <JobDef>
