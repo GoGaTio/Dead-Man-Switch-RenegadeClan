@@ -16,14 +16,14 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/DamageDef[defName="DMSRC_FocusedBeam"]/defaultArmorPenetration</xpath>
     <value>
-      <defaultArmorPenetration>0.75</defaultArmorPenetration>
+      <defaultArmorPenetration>1</defaultArmorPenetration>
     </value>
   </Operation>
 
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/DamageDef[defName="DMSRC_Firecracker"]/defaultArmorPenetration</xpath>
 		<value>
-			<defaultArmorPenetration>7</defaultArmorPenetration>
+			<defaultArmorPenetration>0.75</defaultArmorPenetration>
 		</value>
 	</Operation>
 

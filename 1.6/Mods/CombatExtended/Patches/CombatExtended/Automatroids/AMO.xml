@@ -4,7 +4,7 @@
 	<Operation Class="PatchOperationSequence">
 		<operations>
 			<li Class="PatchOperationAddModExtension">
-				<xpath>Defs/PawnKindDef[defName="DMSRC_DeformedNymph"]</xpath>
+				<xpath>Defs/PawnKindDef[defName="DMSRC_AMO_DeformedNymph" or defName="DMSRC_AMO_Warden"]</xpath>
 				<value>
 					<li Class="CombatExtended.LoadoutPropertiesExtension">
 						<primaryMagazineCount>
@@ -16,7 +16,7 @@
 			</li>
 			
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]/tools</xpath>
+				<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph"]/tools</xpath>
 				<value>
 					<tools>
 						<li Class="CombatExtended.ToolCE">
@@ -74,7 +74,7 @@
 			</li>
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]/statBases</xpath>
+				<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph"]/statBases</xpath>
 				<value>
 					<CarryWeight>40</CarryWeight>
 					<CarryBulk>40</CarryBulk>
@@ -89,7 +89,7 @@
 			</li>
 			
 			<li Class="PatchOperationAddModExtension">
-				<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]</xpath>
+				<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph"]</xpath>
 				<value>
 					<li Class="CombatExtended.RacePropertiesExtensionCE">
 						<bodyShape>Humanoid</bodyShape>
@@ -99,30 +99,128 @@
 			</li>
 			
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]/statBases/ArmorRating_Blunt</xpath>
+				<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
 					<ArmorRating_Blunt>8</ArmorRating_Blunt>
 				</value>
 			</li>
 
 			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]/statBases/ArmorRating_Sharp</xpath>
+				<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
 					<ArmorRating_Sharp>6</ArmorRating_Sharp>
 				</value>
 			</li>
 
       <li Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]/inspectorTabs/li[.="ITab_Pawn_Gear"]</xpath>
+        <xpath>Defs/ThingDef[defName="DMSRC_AMO_Warden"]/tools</xpath>
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              <label>left fist</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>20</power>
+              <surpriseAttack>
+                <extraMeleeDamages>
+                  <li>
+                    <def>Stun</def>
+                    <amount>5</amount>
+                  </li>
+                </extraMeleeDamages>
+              </surpriseAttack>
+              <cooldownTime>1.01</cooldownTime>
+              <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+              <armorPenetrationBlunt>4</armorPenetrationBlunt>
+              <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>right fist</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>20</power>
+              <surpriseAttack>
+                <extraMeleeDamages>
+                  <li>
+                    <def>Stun</def>
+                    <amount>5</amount>
+                  </li>
+                </extraMeleeDamages>
+              </surpriseAttack>
+              <cooldownTime>1.01</cooldownTime>
+              <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+              <armorPenetrationBlunt>4</armorPenetrationBlunt>
+              <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>teeth</label>
+              <capacities>
+                <li>Bite</li>
+              </capacities>
+              <power>20</power>
+              <cooldownTime>0.5</cooldownTime>
+              <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+              <armorPenetrationBlunt>35</armorPenetrationBlunt>
+              <armorPenetrationSharp>15</armorPenetrationSharp>
+              <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+              <chanceFactor>0.2</chanceFactor>
+            </li>
+          </tools>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DMSRC_AMO_Warden"]/statBases</xpath>
+        <value>
+          <CarryWeight>70</CarryWeight>
+          <CarryBulk>60</CarryBulk>
+          <AimingAccuracy>1.35</AimingAccuracy>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+          <MeleeDodgeChance>0.5</MeleeDodgeChance>
+          <MeleeCritChance>0.3</MeleeCritChance>
+          <MeleeParryChance>0.2</MeleeParryChance>
+          <MaxHitPoints>250</MaxHitPoints>
+          <NightVisionEfficiency>1</NightVisionEfficiency>
+        </value>
+      </li>
+
+      <li Class="PatchOperationAddModExtension">
+        <xpath>Defs/ThingDef[defName="DMSRC_AMO_Warden"]</xpath>
+        <value>
+          <li Class="CombatExtended.RacePropertiesExtensionCE">
+            <bodyShape>Humanoid</bodyShape>
+            <vertScale>1.15</vertScale>
+          </li>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_AMO_Warden"]/statBases/ArmorRating_Blunt</xpath>
+        <value>
+          <ArmorRating_Blunt>12</ArmorRating_Blunt>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_AMO_Warden"]/statBases/ArmorRating_Sharp</xpath>
+        <value>
+          <ArmorRating_Sharp>8</ArmorRating_Sharp>
+        </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph" or defName="DMSRC_AMO_Warden"]/inspectorTabs/li[.="ITab_Pawn_Gear"]</xpath>
         <value>
           <li>CombatExtended.ITab_Inventory</li>
         </value>
       </li>
 
 			<li Class="PatchOperationConditional">
-				<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]/comps</xpath>
+				<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph" or defName="DMSRC_AMO_Warden"]/comps</xpath>
 				<nomatch Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]</xpath>
+					<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph" or defName="DMSRC_AMO_Warden"]</xpath>
 					<value>
 						<comps />
 					</value>
@@ -130,7 +228,7 @@
 			</li>
 
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]/comps</xpath>
+				<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph" or defName="DMSRC_AMO_Warden"]/comps</xpath>
 				<value>
           <li Class="CombatExtended.CompProperties_Inventory" />
           <li Class="CombatExtended.CompProperties_TacticalManager" />
@@ -164,7 +262,7 @@
 			</li>
 
 			<li Class="PatchOperationAddModExtension">
-				<xpath>Defs/ThingDef[defName="DMSRC_DeformedNymph"]</xpath>
+				<xpath>Defs/ThingDef[defName="DMSRC_AMO_DeformedNymph" or defName="DMSRC_AMO_Warden"]</xpath>
 				<value>
 					<li Class="CombatExtended.PartialArmorExt">
 						<stats>

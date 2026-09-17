@@ -81,6 +81,7 @@
     <Compile Include="Dialog.cs" />
     <Compile Include="FloatMenuOptionProvider_OverseerMech.cs" />
     <Compile Include="Things\Building_BeamTurret.cs" />
+    <Compile Include="Things\Building_LabGlass.cs" />
     <Compile Include="Things\DeformedNymph.cs" />
     <Compile Include="Things\Firecracker.cs" />
     <Compile Include="GameComponent_Renegades.cs" />

@@ -1,3 +1,21 @@
+using CombatExtended;
+using DelaunatorSharp;
+using Gilzoide.ManagedJobs;
+using HarmonyLib;
+using Ionic.Crc;
+using Ionic.Zlib;
+using JetBrains.Annotations;
+using KTrie;
+using LudeonTK;
+using NVorbis.NAudioSupport;
+using RimWorld;
+using RimWorld.BaseGen;
+using RimWorld.IO;
+using RimWorld.Planet;
+using RimWorld.QuestGen;
+using RimWorld.SketchGen;
+using RimWorld.Utility;
+using RuntimeAudioClipLoader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,22 +37,6 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
-using DelaunatorSharp;
-using Gilzoide.ManagedJobs;
-using Ionic.Crc;
-using Ionic.Zlib;
-using JetBrains.Annotations;
-using KTrie;
-using LudeonTK;
-using NVorbis.NAudioSupport;
-using RimWorld;
-using RimWorld.BaseGen;
-using RimWorld.IO;
-using RimWorld.Planet;
-using RimWorld.QuestGen;
-using RimWorld.SketchGen;
-using RimWorld.Utility;
-using RuntimeAudioClipLoader;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -51,24 +53,26 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
-using HarmonyLib;
-using CombatExtended;
+using static HarmonyLib.Code;
 
 namespace DMSRC.CE
 {
 	[StaticConstructorOnStartup]
-	public static class FirecrackerPatch
+	public static class DMSRCCEPatch
 	{
-		static FirecrackerPatch()
+		static DMSRCCEPatch()
 		{
 			if (DMSRenegadeClan.harmonyInstance == null)
 			{
 				DMSRenegadeClan.harmonyInstance = new Harmony("DMSRenegadeClan_Patch");
 			}
 			DMSRenegadeClan.CEIsActive = true;
-			MethodInfo method = typeof(AmmoThing).Method("TryLaunchCookOffProjectile");
-			MethodInfo prefix = typeof(FirecrackerPatch).GetMethod("TryLaunchCookOffProjectile");
-			DMSRenegadeClan.harmonyInstance.Patch(method, new HarmonyMethod(prefix));
+			MethodInfo method1 = typeof(AmmoThing).Method("TryLaunchCookOffProjectile");
+			MethodInfo prefix1 = typeof(DMSRCCEPatch).GetMethod(nameof(DMSRCCEPatch.TryLaunchCookOffProjectile));
+			DMSRenegadeClan.harmonyInstance.Patch(method1, new HarmonyMethod(prefix1));
+			MethodInfo method2 = typeof(AmmoUtility).Method(nameof(AmmoUtility.GetProjectileReadout));
+			MethodInfo postfix2 = typeof(DMSRCCEPatch).GetMethod(nameof(DMSRCCEPatch.GetProjectileReadout));
+			DMSRenegadeClan.harmonyInstance.Patch(method2, null, new HarmonyMethod(postfix2));
 		}
 
 		public static bool TryLaunchCookOffProjectile(ref bool __result, AmmoThing __instance)
@@ -136,6 +140,17 @@ namespace DMSRC.CE
 				return false;
 			}
 			return true;
+		}
+
+		public static void GetProjectileReadout(ref string __result, ThingDef projectileDef, Thing weapon)
+		{
+			if (projectileDef?.thingClass == typeof(DMSRC.CE.Firecracker))
+			{
+				__result += "   " + "CE_DescSecondaryExplosion".Translate() + ":";
+				__result += "\n" + "   " + "   " + "CE_DescDamage".Translate() + ": " + RCDefOf.DMSRC_Firecracker.defaultDamage + " (" + RCDefOf.DMSRC_Firecracker.LabelCap + ")";
+				__result += "\n" + "   " + "   " + "CE_DescAmbientPenetration".Translate() + ": " + (RCDefOf.DMSRC_Firecracker.defaultArmorPenetration).ToStringByStyle(ToStringStyle.PercentZero);
+				__result += "\n" + "   " + "   " + "CE_DescExplosionRadius".Translate() + ": 3x3";
+			}
 		}
 	}
 }

@@ -11,6 +11,10 @@ namespace DMSRC
 
 		public static PawnKindDef DMSRC_Mech_Saboteur;
 
+		public static PawnKindDef DMSRC_AMO_DeformedNymph;
+
+		public static PawnKindDef DMSRC_AMO_Warden;
+
 		public static HediffDef DMSRC_DummyPawn;
 
         public static DamageDef DMSRC_Firecracker;
@@ -65,7 +69,7 @@ namespace DMSRC
 
         public static RulePackDef DMSRC_Combat_CumulativeEffect;
 
-        public static RulePackDef DMSRC_DeformedNymph;
+        public static RulePackDef DMSRC_DeformedNymphName;
 
 		public static HistoryEventDef DMSRC_UsedForbiddenTech;
 

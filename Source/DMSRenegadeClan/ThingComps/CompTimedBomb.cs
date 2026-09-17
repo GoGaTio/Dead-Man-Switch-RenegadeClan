@@ -98,6 +98,8 @@ namespace DMSRC
 					RCDefOf.DMSRC_Mech_Saboteur.race.comps.RemoveAt(i);
 				}
 			}
+			/*Fortified.HumanlikeMechExtension ext = RCDefOf.DMSRC_AMO_Warden.race.GetModExtension<Fortified.HumanlikeMechExtension>();
+			ext.headOffset = new Vector3(ext.bodyTypeOverride.headOffset.x, 0, -ext.bodyTypeOverride.headOffset.y);*/
 		}
     }
 

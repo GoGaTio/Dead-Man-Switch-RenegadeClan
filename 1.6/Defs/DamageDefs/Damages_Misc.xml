@@ -32,7 +32,7 @@
 
   <DamageDef>
     <defName>DMSRC_Firecracker</defName>
-    <label>firecracker</label>
+    <label>sparks</label>
     <workerClass>DMSRC.DamageWorker_Firecracker</workerClass>
     <hasForcefulImpact>false</hasForcefulImpact>
     <makesBlood>false</makesBlood>

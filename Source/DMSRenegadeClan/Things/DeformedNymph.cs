@@ -32,7 +32,7 @@ namespace DMSRC
 			}
 			story.HairColor = new Color(0.65f, 0.65f, 0.65f, 1f);
 			story.hairDef = GetHair();
-			Name = new NameSingle(NameGenerator.GenerateName(RCDefOf.DMSRC_DeformedNymph));
+			Name = new NameSingle(NameGenerator.GenerateName(RCDefOf.DMSRC_DeformedNymphName));
 		}
 
 		public HairDef GetHair()

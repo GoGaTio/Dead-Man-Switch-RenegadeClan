@@ -7,5 +7,23 @@
       <li>DMSRC_Apparel_JumperArmor</li>
     </value>
   </Operation>
-
+  
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/RoyalTitleDef[defName="DMS_Lieutenant"]/rewards</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/RoyalTitleDef[defName="DMS_Lieutenant"]/rewards</xpath>
+      <value>
+        <DMSRC_Neurointerface>1</DMSRC_Neurointerface>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/RoyalTitleDef[defName="DMS_Lieutenant"]</xpath>
+      <value>
+        <rewards>
+          <DMSRC_Neurointerface>1</DMSRC_Neurointerface>
+        </rewards>
+      </value>
+    </nomatch>
+  </Operation>
+  
 </Patch>

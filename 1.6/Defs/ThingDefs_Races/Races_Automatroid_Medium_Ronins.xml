@@ -219,6 +219,7 @@
     </lifeStages>
     <weaponTags>
       <li>A_SG_LongRifle</li>
+      <li>A_AR_LongRifle</li>
       <li>A_PDW</li>
       <li>A_AP</li>
       <li>DMSRC_BeamGraserGun</li>

@@ -152,6 +152,7 @@
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Explosive>
           <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Beam>
           <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.2</NAT_RustedRenegade>
+          <DMSRC_AMO_Warden>0.5</DMSRC_AMO_Warden>
           <DMSRC_Stormtrooper>0.25</DMSRC_Stormtrooper>
         </options>
       </li>
@@ -165,6 +166,7 @@
           <DMSRC_Mech_Malice>1</DMSRC_Mech_Malice>
           <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
           <DMSRC_Mech_Soldat_R>8</DMSRC_Mech_Soldat_R>
+          <DMSRC_AMO_Warden>1</DMSRC_AMO_Warden>
           <DMS_Mech_Dogge>3</DMS_Mech_Dogge>
           <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
           <DMSRC_Mech_Stancher>3</DMSRC_Mech_Stancher>
@@ -205,6 +207,7 @@
           <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
           <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
           <DMSRC_Mech_Soldat_R>10</DMSRC_Mech_Soldat_R>
+          <DMSRC_AMO_Warden>0.5</DMSRC_AMO_Warden>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon_Explosive>
           <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Beam>
         </options>

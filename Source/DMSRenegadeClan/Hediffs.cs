@@ -24,6 +24,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -50,11 +51,102 @@ using Verse.Grammar;
 using Verse.Sound;
 using static HarmonyLib.Code;
 using static RimWorld.MechClusterSketch;
+using static System.Net.Mime.MediaTypeNames;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 using static UnityEngine.Scripting.GarbageCollector;
 
 namespace DMSRC
 {
+	/*public abstract class PawnRenderNodeWorker_Overlay : PawnRenderNodeWorker
+	{
+		protected abstract PawnOverlayDrawer OverlayDrawer(Pawn pawn);
+
+		public override bool ShouldListOnGraph(PawnRenderNode node, PawnDrawParms parms)
+		{
+			return false;
+		}
+
+		public override void AppendDrawRequests(PawnRenderNode node, PawnDrawParms parms, List<PawnGraphicDrawRequest> requests)
+		{
+			Mesh mesh = node.GetMesh(parms);
+			if (mesh != null)
+			{
+				requests.Add(new PawnGraphicDrawRequest(node, mesh));
+			}
+		}
+
+		public override bool CanDrawNow(PawnRenderNode node, PawnDrawParms parms)
+		{
+			return base.CanDrawNow(node, parms);
+		}
+
+		public override Vector3 OffsetFor(PawnRenderNode node, PawnDrawParms parms, out Vector3 pivot)
+		{
+			return base.OffsetFor(node, parms, out pivot);
+		}
+
+		public override void PostDraw(PawnRenderNode node, PawnDrawParms parms, Mesh mesh, Matrix4x4 matrix)
+		{
+			OverlayDrawer(parms.pawn)?.RenderPawnOverlay(matrix, mesh, node.Props.overlayLayer, parms, node.Props.overlayOverApparel);
+		}
+	}
+
+	public class Hediff_Needle : HediffWithComps
+	{
+		public void GetAnchor(Hediff injury, Rot4 pawnRot, Mesh bodyMesh)
+		{
+			if (pawn.story?.bodyType?.woundAnchors != null)
+			{
+				List<BodyTypeDef.WoundAnchor> tmpAnchors = PawnDrawUtility.FindAnchors(pawn, injury.Part).ToList();
+				if (tmpAnchors.Count > 0)
+				{
+					for (int num = tmpAnchors.Count - 1; num >= 0; num--)
+					{
+						if (tmpAnchors[num].layer != layer || !PawnDrawUtility.AnchorUsable(pawn, tmpAnchors[num], pawnRot))
+						{
+							tmpAnchors.RemoveAt(num);
+						}
+					}
+					if (tmpAnchors.Count == 0)
+					{
+						continue;
+					}
+					BodyTypeDef.WoundAnchor woundAnchor = tmpAnchors.RandomElement();
+					PawnDrawUtility.CalcAnchorData(pawn, woundAnchor, pawnRot, out anchorOffset, out range);
+					range = hediff.def.woundAnchorRange ?? range;
+					text = woundAnchor.tag;
+				}
+				tmpAnchors.Clear();
+			}
+			else
+			{
+				GetDefaultAnchor(bodyMesh, out anchorOffset, out range);
+			}
+			FleshTypeDef.ResolvedWound resolvedWound = pawn.RaceProps.FleshType.ChooseWoundOverlay(injury);
+			Vector3 vector = resolvedWound.wound.drawOffsetSouth;
+			if (pawnRot.IsHorizontal)
+			{
+				vector = resolvedWound.wound.drawOffsetEastWest.ScaledBy((pawnRot == Rot4.East) ? Vector3.one : VecOneFlipped);
+			}
+			Vector3 vector2 = bodyMesh.bounds.center + vector;
+			bool flip;
+			Material material = resolvedWound.GetMaterial(pawnRot, out flip);
+			if (resolvedWound.wound.flipOnWoundAnchorTag != null && resolvedWound.wound.flipOnWoundAnchorTag == text && resolvedWound.wound.flipOnRotation == pawnRot)
+			{
+				flip = !flip;
+			}
+			if (!pawn.def.race.Humanlike)
+			{
+				Vector3 vector3 = Rand.InsideUnitCircleVec3 * (Mathf.Min(bodyMesh.bounds.extents.x, bodyMesh.bounds.extents.z) / 2f);
+				if (flip)
+				{
+					vector3.x *= -1f;
+				}
+				vector2 += vector3;
+			}
+		}
+	}*/
+
 	public class HediffCompProperties_NeuroControl : HediffCompProperties
 	{
 		public ThingDef customMote;

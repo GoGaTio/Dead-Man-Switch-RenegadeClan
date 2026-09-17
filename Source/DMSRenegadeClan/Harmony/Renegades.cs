@@ -93,6 +93,19 @@ namespace DMSRC
 		}
 	}
 
+	[HarmonyPatch(typeof(Fortified.PawnRenderNodeWorker_Head), nameof(Fortified.PawnRenderNodeWorker_Head.OffsetFor))]
+	public class Patch_Head
+	{
+		[HarmonyPostfix]
+		public static void Postfix(PawnRenderNode node, PawnDrawParms parms, ref Vector3 __result)
+		{
+			if(parms.pawn.kindDef == RCDefOf.DMSRC_AMO_Warden)
+			{
+				__result -= parms.pawn.Drawer.renderer.BaseHeadOffsetAt(parms.facing);
+			}
+		}
+	}
+
 	[HarmonyPatch(typeof(Faction), nameof(Faction.RelationWith))]
 	public class Patch_RelationWith
 	{

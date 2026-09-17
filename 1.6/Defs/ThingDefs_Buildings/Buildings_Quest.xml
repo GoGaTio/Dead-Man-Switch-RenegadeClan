@@ -442,4 +442,57 @@
     <comps Inherit="False"/>
   </ThingDef>
 
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_LabGestator</defName>
+    <label>AMO gestator</label>
+    <description>A vat filled with special fluid which can transfer substances from storage to creature inside. Mechanisms of the vat will initiate artificial pregnancy and gestate mecha-organical component.\n\nVat must be fed with a constant supply of nutrition to provide the feedstock for gestation.\n\nGestation takes 9 days with normal fertility female, but may last up to 18 days if creature is too old or has fertility-affecting health conditions.\n\nThis tech is considered forbidden by colonial fleet.</description>
+    <thingClass>DMSRC.Building_LabGlass</thingClass>
+    <containedPawnsSelectable>false</containedPawnsSelectable>
+    <uiIconPath>Things/Building/DMSRC_WetwareProducer_Icon</uiIconPath>
+    <uiIconScale>1.45</uiIconScale>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LabGestator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Mass>50</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <Tungsteel>30</Tungsteel>
+      <Artifuscle>10</Artifuscle>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ComponentStamped>1</ComponentStamped>
+    </killedLeavings>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <blockWind>false</blockWind>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <rotatable>false</rotatable>
+    <receivesSignals>true</receivesSignals>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>true</ai_chillDestination>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+  </ThingDef>
+
 </Defs>
