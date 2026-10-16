@@ -71,8 +71,7 @@ namespace DMSRC
 					return;
 				}
 			}
-			Lord lord = LordMaker.MakeNewLord(faction, new LordJob_BossgroupAssaultColony(faction, center, Gen.YieldSingle(boss)), map, pawns);
-			lord.AddPawn(boss);
+			Lord lord = LordMaker.MakeNewLord(faction, new LordJob_BossgroupAssaultColony(faction, center, Gen.YieldSingle(boss)), map, Gen.YieldSingle(boss).Concat(pawns));
 			GenSpawn.Spawn(boss, center, map);
 			foreach (Pawn p in pawns)
 			{

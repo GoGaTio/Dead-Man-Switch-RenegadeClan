@@ -61,7 +61,20 @@ using Fortified;
 
 namespace DMSRC
 {
-    [HarmonyPatch(typeof(JobGiver_WanderOverseer), "Target")]
+	[HarmonyPatch(typeof(MechanitorUtility), nameof(MechanitorUtility.InMechanitorCommandRange))]
+	public static class MechanitorUtility_InMechanitorCommandRange
+	{
+		public static void Postfix(Pawn mech, LocalTargetInfo target, ref bool __result)
+		{
+			if (!__result && CompBroadcastAntenna.Affects(mech.Map))
+			{
+				__result = true;
+				return;
+			}
+		}
+	}
+
+	/*[HarmonyPatch(typeof(JobGiver_WanderOverseer), "Target")]
     public static class Patch_JobGiver_WanderOverseer
     {
         [HarmonyPostfix]
@@ -259,37 +272,7 @@ namespace DMSRC
         }
     }
 
-	[HarmonyPatch(typeof(MechanitorUtility), nameof(MechanitorUtility.InMechanitorCommandRange))]
-    public static class MechanitorUtility_InMechanitorCommandRange
-    {
-        public static void Postfix(Pawn mech, LocalTargetInfo target, ref bool __result)
-        {
-            if (__result)
-            {
-                return;
-            }
-            if (CompBroadcastAntenna.Affects(mech.Map))
-            {
-                __result = true;
-                return;
-            }
-            if (mech is IOverseer)
-            {
-                __result = true;
-                return;
-            }
-            Pawn overseer = mech.GetOverseer();
-            if(overseer == null)
-            {
-                return;
-            }
-			Pawn overlord = overseer.GetOverseerPawn(out var overseerInt);
-            if (overlord != null && overlord.MapHeld == mech.Map && overlord.PositionHeld.DistanceTo(target.Cell) <= overseerInt.Comp.Props.commandRange)
-            {
-                __result = true;
-            }
-        }
-    }
+	
 
 	[HarmonyPatch(typeof(MechanitorUtility), nameof(MechanitorUtility.GetMechGizmos))]
     public static class MechanitorUtility_GetMechGizmos
@@ -529,6 +512,6 @@ namespace DMSRC
             }
         }
     }
-
+    */
 }
 

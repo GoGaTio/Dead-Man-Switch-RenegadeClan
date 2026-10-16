@@ -207,7 +207,7 @@
     <maxGenerationAge>20</maxGenerationAge>
     <defaultFactionType>DMSRC_RenegadeClan</defaultFactionType>
     <combatPower>100</combatPower>
-    <overrideDebugActionCategory>Other</overrideDebugActionCategory>
+    <overrideDebugActionCategory>AMO</overrideDebugActionCategory>
     <canStrip>true</canStrip>
     <isBoss>true</isBoss>
     <immuneToTraps>true</immuneToTraps>
@@ -245,7 +245,7 @@
   <ThingDef ParentName="BaseAutomatroidHumanRace">
     <defName>DMSRC_AMO_Warden</defName>
     <label>warden</label>
-    <description>An artificial semi-organic life form created by restored █████████ technology. This creature is not fully gestated, it's internal parts are sticking out in some places, it's skin and hair are morbid grey, sometimes it will malfunction.\n\nCOLONIAL FLEET NOTE: This is not actual █████, it is unauthorized military organism, it MUST be destroyed and it remains MUST be annihilated. Do not let it close at any cost.</description>
+    <description>An artificial semi-organic life form created by restored █████████ technology. Wardens were created by renegades to guard high priority targets and participate in assaults. They can easily traverse water and use specialized weapons.</description>
     <thingClass>Fortified.ArtificialOrganismHumanlike</thingClass>
     <uiIconPath>Things/Automatroid/AMO/DMSRC_Warden_Icon</uiIconPath>
     <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
@@ -332,6 +332,7 @@
         <volume>(0.3, 0.8, 0.4)</volume>
         <offset>(0,0,-0.3)</offset>
       </specialShadowData>
+      <waterCellCost>1</waterCellCost>
       <mechWeightClass IsNull="True"/>
       <renderTree>HumanlikeMech</renderTree>
       <thinkTreeMain>DMS_HumanlikeMech</thinkTreeMain>
@@ -408,7 +409,7 @@
     <maxGenerationAge>30</maxGenerationAge>
     <defaultFactionType>DMSRC_RenegadeClan</defaultFactionType>
     <combatPower>300</combatPower>
-    <overrideDebugActionCategory>Other</overrideDebugActionCategory>
+    <overrideDebugActionCategory>AMO</overrideDebugActionCategory>
     <canStrip>true</canStrip>
     <isBoss>true</isBoss>
     <immuneToTraps>true</immuneToTraps>
@@ -461,6 +462,7 @@
       <li>DMSRC_RenegadeRifle</li>
       <li>DMSRC_AntiTank</li>
       <li>DMSRC_BeamGraserGun</li>
+      <li>DMSRC_NeedleRifle</li>
     </weaponTags>
   </PawnKindDef>
   

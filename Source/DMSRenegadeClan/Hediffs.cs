@@ -57,95 +57,73 @@ using static UnityEngine.Scripting.GarbageCollector;
 
 namespace DMSRC
 {
-	/*public abstract class PawnRenderNodeWorker_Overlay : PawnRenderNodeWorker
-	{
-		protected abstract PawnOverlayDrawer OverlayDrawer(Pawn pawn);
-
-		public override bool ShouldListOnGraph(PawnRenderNode node, PawnDrawParms parms)
-		{
-			return false;
-		}
-
-		public override void AppendDrawRequests(PawnRenderNode node, PawnDrawParms parms, List<PawnGraphicDrawRequest> requests)
-		{
-			Mesh mesh = node.GetMesh(parms);
-			if (mesh != null)
-			{
-				requests.Add(new PawnGraphicDrawRequest(node, mesh));
-			}
-		}
-
-		public override bool CanDrawNow(PawnRenderNode node, PawnDrawParms parms)
-		{
-			return base.CanDrawNow(node, parms);
-		}
-
-		public override Vector3 OffsetFor(PawnRenderNode node, PawnDrawParms parms, out Vector3 pivot)
-		{
-			return base.OffsetFor(node, parms, out pivot);
-		}
-
-		public override void PostDraw(PawnRenderNode node, PawnDrawParms parms, Mesh mesh, Matrix4x4 matrix)
-		{
-			OverlayDrawer(parms.pawn)?.RenderPawnOverlay(matrix, mesh, node.Props.overlayLayer, parms, node.Props.overlayOverApparel);
-		}
-	}
-
 	public class Hediff_Needle : HediffWithComps
 	{
-		public void GetAnchor(Hediff injury, Rot4 pawnRot, Mesh bodyMesh)
+		public static readonly SimpleCurve MoveSpeedFactorCurve = new SimpleCurve
 		{
-			if (pawn.story?.bodyType?.woundAnchors != null)
+			new CurvePoint(0.5f, 0.5f),
+			new CurvePoint(1f, 0.9f),
+			new CurvePoint(1.5f, 0.95f),
+			new CurvePoint(4f, 0.99f)
+		};
+
+		private HediffStage curStage;
+
+		public override HediffStage CurStage
+		{
+			get
 			{
-				List<BodyTypeDef.WoundAnchor> tmpAnchors = PawnDrawUtility.FindAnchors(pawn, injury.Part).ToList();
-				if (tmpAnchors.Count > 0)
+				if (curStage == null)
 				{
-					for (int num = tmpAnchors.Count - 1; num >= 0; num--)
-					{
-						if (tmpAnchors[num].layer != layer || !PawnDrawUtility.AnchorUsable(pawn, tmpAnchors[num], pawnRot))
-						{
-							tmpAnchors.RemoveAt(num);
-						}
-					}
-					if (tmpAnchors.Count == 0)
-					{
-						continue;
-					}
-					BodyTypeDef.WoundAnchor woundAnchor = tmpAnchors.RandomElement();
-					PawnDrawUtility.CalcAnchorData(pawn, woundAnchor, pawnRot, out anchorOffset, out range);
-					range = hediff.def.woundAnchorRange ?? range;
-					text = woundAnchor.tag;
+					float size = pawn.BodySize;
+					StatModifier statModifier = new StatModifier();
+					statModifier.stat = StatDefOf.MoveSpeed;
+					statModifier.value = Mathf.Pow(MoveSpeedFactorCurve.Evaluate(size), Severity);
+					curStage = new HediffStage();
+					curStage.statFactors = new List<StatModifier> { statModifier };
+					curStage.partEfficiencyOffset = -(0.45f / size) * Severity;
+					curStage.painOffset = (0.15f / size) * Severity;
 				}
-				tmpAnchors.Clear();
-			}
-			else
-			{
-				GetDefaultAnchor(bodyMesh, out anchorOffset, out range);
-			}
-			FleshTypeDef.ResolvedWound resolvedWound = pawn.RaceProps.FleshType.ChooseWoundOverlay(injury);
-			Vector3 vector = resolvedWound.wound.drawOffsetSouth;
-			if (pawnRot.IsHorizontal)
-			{
-				vector = resolvedWound.wound.drawOffsetEastWest.ScaledBy((pawnRot == Rot4.East) ? Vector3.one : VecOneFlipped);
-			}
-			Vector3 vector2 = bodyMesh.bounds.center + vector;
-			bool flip;
-			Material material = resolvedWound.GetMaterial(pawnRot, out flip);
-			if (resolvedWound.wound.flipOnWoundAnchorTag != null && resolvedWound.wound.flipOnWoundAnchorTag == text && resolvedWound.wound.flipOnRotation == pawnRot)
-			{
-				flip = !flip;
-			}
-			if (!pawn.def.race.Humanlike)
-			{
-				Vector3 vector3 = Rand.InsideUnitCircleVec3 * (Mathf.Min(bodyMesh.bounds.extents.x, bodyMesh.bounds.extents.z) / 2f);
-				if (flip)
-				{
-					vector3.x *= -1f;
-				}
-				vector2 += vector3;
+				return curStage;
 			}
 		}
-	}*/
+
+		public override string Label => Severity > 1.5f ? base.Label + " x" + Severity.ToStringByStyle(ToStringStyle.Integer) : base.Label;
+
+		public override float Severity 
+		{
+			get => base.Severity;
+			set
+			{
+				if(base.Severity != value)
+				{
+					curStage = null;
+					base.Severity = value;
+				}
+			}
+		}
+
+		/*public override IEnumerable<Gizmo> GetGizmos()
+		{
+			foreach (Gizmo gizmo in base.GetGizmos())
+			{
+				yield return gizmo;
+			}
+			if (!pawn.Dead)
+			{
+				yield break;
+			}
+			Command_Action command = new Command_Action();
+			command.defaultLabel = "CommandSelfResurrect".Translate();
+			command.defaultDesc = "CommandSelfResurrectDesc".Translate();
+			command.icon = Icon.Texture;
+			command.action = delegate
+			{
+				
+			};
+			yield return command;
+		}*/
+	}
 
 	public class HediffCompProperties_NeuroControl : HediffCompProperties
 	{

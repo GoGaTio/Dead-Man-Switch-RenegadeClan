@@ -328,7 +328,7 @@ namespace DMSRC
 		}
 	}
 
-	public class OverseerMechGizmo : Gizmo
+	/*public class OverseerMechGizmo : Gizmo
 	{
 		public const int InRectPadding = 6;
 
@@ -425,5 +425,5 @@ namespace DMSRC
 		{
 			return 38f;
 		}
-	}
+	}*/
 }

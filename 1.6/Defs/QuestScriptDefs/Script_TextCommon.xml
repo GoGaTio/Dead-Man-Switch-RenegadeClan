@@ -9,15 +9,18 @@
         <li>renegadesInfoSource->Renegades' radio eavesdropping designated</li>
         <li>renegadesInfoSource->Renegades airdrone found</li>
         <li>renegadesInfoSource->Renegades recieved info about</li>
-        
-        <li>colonialsInfoSource-></li>
-        <li>colonialsInfoSource-></li>
-        <li>colonialsInfoSource-></li>
-        <li>colonialsInfoSource-></li>
+
+        <li>colonialsInfoSource->Colonial fleet agent reported</li>
+        <li>colonialsInfoSource->Colonial fleet spy plane found</li>
+        <li>colonialsInfoSource->Colonial fleet intelligence service designated</li>
 
         <li>destroy->Destroy</li>
         <li>destroy->Sabotage Of</li>
         <li>destroy->Attack On</li>
+
+        <li>kill->Kill</li>
+        <li>kill->Assassinate</li>
+        <li>kill->Murder</li>
 
         <li>timedBombsAdvice(timedBombsCountAdvice==0)-></li>
         <li>timedBombsAdvice(timedBombsCountAdvice==1)->\n\nThis mission will require (*ColonistCount)timed bomb(/ColonistCount) to destroy target.</li>

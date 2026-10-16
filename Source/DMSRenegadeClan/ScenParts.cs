@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using Verse.AI;
+using Fortified;
 
 namespace DMSRC
 {
@@ -67,7 +68,7 @@ namespace DMSRC
 				{
 					if (p != overseer)
 					{
-						overseer.Comp.Connect(p, overseer.Comp.dummyPawn);
+						overseer.Comp.Connect(p);
 					}
 				}
 			}
@@ -201,7 +202,7 @@ namespace DMSRC
 				{
 					if (p != overseer)
 					{
-						overseer.Comp.Connect(p, overseer.Comp.dummyPawn);
+						overseer.Comp.Connect(p);
 					}
 				}
 			}

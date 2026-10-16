@@ -76,11 +76,11 @@ namespace DMSRC
 
 	public class GameComponent_Renegades : GameComponent
 	{
-		private readonly IntRange TicksContactInteral = new IntRange(100, 200);
+		private readonly IntRange TicksContactInterval = new IntRange(100, 200);
 
-		private readonly IntRange TicksContactInteralHostile = new IntRange(600, 1200);
+		private readonly IntRange TicksContactIntervalHostile = new IntRange(600, 1200);
 
-		private readonly IntRange TicksContactInteralInintial = new IntRange(400, 800);
+		private readonly IntRange TicksContactIntervalInintial = new IntRange(400, 800);
 
 		public List<RenegadesRequest> requests = new List<RenegadesRequest>();
 
@@ -294,12 +294,12 @@ namespace DMSRC
 			FactionRelationKind kind = DMSFaction?.RelationKindWith(Faction.OfPlayerSilentFail) ?? FactionRelationKind.Neutral;
 			if (kind == FactionRelationKind.Ally)
 			{
-				if(playerRelation != FactionRelationKind.Hostile)
+				if(contact || playerRelation != FactionRelationKind.Hostile)
 				{
 					PlayerRelation = FactionRelationKind.Hostile;
 					playerGoodwill = -200;
 					contact = false;
-					ticksTillContact = TicksContactInteralHostile.RandomInRange;
+					ticksTillContact = TicksContactIntervalHostile.RandomInRange;
 				}
 				return;
 			}
@@ -308,7 +308,7 @@ namespace DMSRC
 				ticksTillRefresh--;
 				if (ticksTillRefresh < 0)
 				{
-					ticksTillRefresh = TicksContactInteral.RandomInRange;
+					ticksTillRefresh = TicksContactInterval.RandomInRange;
 					GenerateThings();
 				}
 				foreach (RenegadesRequest req in requests.ToList())
@@ -332,13 +332,13 @@ namespace DMSRC
 					if (kind == FactionRelationKind.Ally)
 					{
 						contact = false;
-						ticksTillContact = TicksContactInteralHostile.RandomInRange;
+						ticksTillContact = TicksContactIntervalHostile.RandomInRange;
 						return;
 					}
 					if (!ResearchProjectDefOf.MicroelectronicsBasics.IsFinished)
 					{
 						contact = false;
-						ticksTillContact = TicksContactInteral.RandomInRange;
+						ticksTillContact = TicksContactInterval.RandomInRange;
 						return;
 					}
 					ContactPlayer();
@@ -351,7 +351,7 @@ namespace DMSRC
 			base.StartedNewGame();
 			if (ticksTillContact < 0 && !contact)
 			{
-				ticksTillContact = TicksContactInteralInintial.RandomInRange;
+				ticksTillContact = TicksContactIntervalInintial.RandomInRange;
 			}
 			if (ModsConfig.IdeologyActive && RenegadesFaction?.ideos?.PrimaryIdeo != null)
 			{

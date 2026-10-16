@@ -47,10 +47,7 @@
     <defaultChallengeRating>1</defaultChallengeRating>
     <questNameRules>
       <rulesStrings>
-        <li>questName->[destroy] [antenna]</li>
-        <li>antenna->Broadcast Tower</li>
-        <li>antenna->Broadcast Antenna</li>
-        <li>antenna->The Antenna</li>
+        <li>questName->[kill] The Officer</li>
       </rulesStrings>
       <include>
         <li>DMSRC_QuestTextCommon</li>
@@ -58,7 +55,7 @@
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->[renegadesInfoSource] (*Threat)Colonial fleet(/Threat) broadcast antenna nearby. It creates control area, which allows to perform fleet operations, and therefore should be destroyed.\n\nBroadcast antenna is guarded by group of Colonial fleet (*Threat)automatroids(/Threat) and (*Threat)turrets(/Threat).</li>
+        <li>questDescription->[colonialsInfoSource] (*Threat)Renegades(/Threat) officer hiding spot nearby.\n\nIt is guarded by group of Renegades (*Threat)automatroids(/Threat) and (*Threat)turrets(/Threat).</li>
       </rulesStrings>
       <include>
         <li>DMSRC_QuestTextCommon</li>

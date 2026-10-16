@@ -58,7 +58,7 @@ using static HarmonyLib.Code;
 
 namespace DMSRC
 {
-	public static class OverseerMechUtility
+	/*public static class OverseerMechUtility
 	{
 		public static CompOverseerMech GetOverseerMechComp(this Pawn dummy)
 		{
@@ -93,7 +93,7 @@ namespace DMSRC
 			overseer = dummy.health.hediffSet.GetFirstHediff<Hediff_DummyPawn>()?.overseer;
 			return overseer as Pawn;
 		}
-	}
+	}*/
 
 	public static class RCToolsUtility
 	{

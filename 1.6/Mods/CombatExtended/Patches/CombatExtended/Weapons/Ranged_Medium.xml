@@ -2,7 +2,7 @@
 <Patch>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DMSRC_VizotejaRifle"]/tools</xpath>
+    <xpath>Defs/ThingDef[defName="DMSRC_VizotejaRifle" or defName="DMSRC_SwihhaRifle"]/tools</xpath>
     <value>
       <tools Inherit="False">
         <li Class="CombatExtended.ToolCE">
@@ -23,7 +23,7 @@
   <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
     <defName>DMSRC_VizotejaRifle</defName>
     <statBases>
-      <Mass>8</Mass>
+      <Mass>6</Mass>
       <Bulk>7.3</Bulk>
       <SwayFactor>1.3</SwayFactor>
       <ShotSpread>0.05</ShotSpread>
@@ -55,5 +55,38 @@
     </FireModes>
   </Operation>
 
-
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>DMSRC_SwihhaRifle</defName>
+    <statBases>
+      <Mass>9</Mass>
+      <Bulk>8.1</Bulk>
+      <SwayFactor>1.3</SwayFactor>
+      <ShotSpread>0.05</ShotSpread>
+      <SightsEfficiency>1</SightsEfficiency>
+      <RangedWeapon_Cooldown>0.75</RangedWeapon_Cooldown>
+    </statBases>
+    <Properties>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>DMSRC_Bullet_127x406mmNeedle</defaultProjectile>
+      <warmupTime>0.5</warmupTime>
+      <range>55</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+      <soundCast>DMS_MachineGunLight_Shot</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+      <recoilAmount>1.78</recoilAmount>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>10</magazineSize>
+      <reloadTime>3</reloadTime>
+      <ammoSet>DMSRC_AmmoSet_127x406mmNeedle</ammoSet>
+    </AmmoUser>
+    <FireModes>
+      <aiUseBurstMode>FALSE</aiUseBurstMode>
+      <aiAimMode>AimedShot</aiAimMode>
+    </FireModes>
+  </Operation>
+  
 </Patch>

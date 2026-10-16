@@ -367,7 +367,7 @@ namespace DMSRC
 			Toil toil = ToilMaker.MakeToil("MakeNewToils");
 			toil.initAction = delegate
 			{
-				Overseer.Comp.Connect(Mech, Overseer.Comp.dummyPawn);
+				Overseer.Comp.Connect(Mech);
 			};
 			toil.PlaySoundAtEnd(SoundDefOf.ControlMech_Complete);
 			yield return toil;

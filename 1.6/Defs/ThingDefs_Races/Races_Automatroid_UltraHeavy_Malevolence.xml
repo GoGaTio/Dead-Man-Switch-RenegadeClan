@@ -14,6 +14,10 @@
       <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
       <BandwidthCost>9</BandwidthCost>
       <WastepacksPerRecharge>4</WastepacksPerRecharge>
+
+      <MechBandwidth>39</MechBandwidth>
+      <MechControlGroups>4</MechControlGroups>
+      <FFF_MechCommandRange>39.9</FFF_MechCommandRange>
     </statBases>
     <race>
       <body>DMSRC_Malevolence</body>
@@ -53,10 +57,7 @@
         <turretRotationFollowPawn>true</turretRotationFollowPawn>
         <rotationSmoothTime>0.06</rotationSmoothTime>
       </li>
-      <li Class="DMSRC.CompProperties_CompOverseerMech">
-        <commandRange>39.9</commandRange>
-        <controlGroups>4</controlGroups>
-        <bandwidth>39</bandwidth>
+      <li Class="Fortified.CompProperties_Overseer">
         <instantControl>true</instantControl>
         <canRepair>false</canRepair>
         <selectOverseerIconPath>UI/Icons/DMSRC_SelectMalevolence</selectOverseerIconPath>

@@ -62,7 +62,7 @@ using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 namespace DMSRC
 {
-	public class Dialog_OverseerRechargeSettings : Window
+	/*public class Dialog_OverseerRechargeSettings : Window
 	{
 		private FloatRange range;
 
@@ -122,7 +122,7 @@ namespace DMSRC
 				Close();
 			}
 		}
-	}
+	}*/
 
 	public class Dialog_Renegades : Window
 	{

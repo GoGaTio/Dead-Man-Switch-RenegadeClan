@@ -19,7 +19,7 @@
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
-        <li>questDescription->You have discovered location of feral Malevolence command automatroid.</li>
+        <li>questDescription->You have discovered location of feral Malevolence command automatroid. You can attack and kill it to obtain (*ColonistCount)overlord-class processor(/ColonistCount). Malevolence is guarded by (*Threat)feral automatroids(/Threat).</li>
       </rulesStrings>
     </questDescriptionRules>
     <root Class="QuestNode_Sequence">

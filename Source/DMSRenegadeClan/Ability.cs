@@ -113,7 +113,7 @@ namespace DMSRC
 			{
 				return false;
 			}
-			if (!pawn.RaceProps.IsMechanoid || pawn.Faction == parent.pawn.Faction || pawn.kindDef.isBoss)
+			if (!pawn.RaceProps.IsMechanoid || pawn.Faction == parent.pawn.Faction || pawn.kindDef.isBoss || pawn is Fortified.ArtificialOrganism || pawn is Fortified.ArtificialOrganismHumanlike || pawn is Fortified.IOverseer)
 			{
 				return false;
 			}

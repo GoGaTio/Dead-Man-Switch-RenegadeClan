@@ -124,22 +124,19 @@
     <!--Only from quests and containers-->
     <comps>
       <li Class="CompProperties_Usable">
-        <useJob>TriggerObject</useJob>
-        <useLabel>Attract malevolence threat</useLabel>
-        <useDuration>900</useDuration>
-        <floatMenuFactionIcon>DMS_Legacy</floatMenuFactionIcon>
-      </li>
-      <li Class="DMS.CompPropertiesUseable_SummonRaid">
-        <bossgroupDef>DMSRC_Malevolence</bossgroupDef>
-        <effecterDef>BurnoutMechlinkBoosterUsed</effecterDef>
+        <compClass>CompUseableDatacore</compClass>
+        <useJob>ReadDatacore</useJob>
+        <useLabel>Decrypt transponder</useLabel>
       </li>
       <li Class="CompProperties_UseEffectPlaySound">
-        <soundOnUsed>MechanoidsWakeUp</soundOnUsed>
+        <soundOnUsed>DatacoreRead</soundOnUsed>
       </li>
-      <li Class="CompProperties_UseEffectDestroySelf">
-        <delayTicks>120</delayTicks>
-        <spawnKilledLeavings>false</spawnKilledLeavings>
-        <effecterDef>MechbandBuildingDestroyed</effecterDef>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+      <li Class="CompProperties_UseEffectGiveQuest">
+        <quest>DMSRC_MalevolenceHunt</quest>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Can be decrypted at a research bench.\nSelect a colonist and right-click this to decrypt it.</inspectString>
       </li>
     </comps>
   </ThingDef>

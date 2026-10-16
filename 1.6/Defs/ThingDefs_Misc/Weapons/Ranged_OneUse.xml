@@ -4,7 +4,7 @@
   <ThingDef ParentName="DMS_AutomatroidGun">
     <defName>DMSRC_Gun_DevilRapier</defName>
     <label>Devil's Rapier</label>
-    <description>A Stugna anti-tank missile system mounted on a remote aiming platform.</description>
+    <description>A one-use anti-tank missile system that launches cumulative shell which penetrates thick armor and demolishes anything behind it.</description>
     <graphicData>
       <texPath>Things/Weapons/DMSRC_DevilRapier</texPath>
       <graphicClass>Graphic_Single</graphicClass>

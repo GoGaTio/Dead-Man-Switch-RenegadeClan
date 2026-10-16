@@ -13,7 +13,7 @@ using Verse.AI.Group;
 
 namespace DMSRC
 {
-	[HarmonyPatch(typeof(FloatMenuOptionProvider_DraftedMove), nameof(FloatMenuOptionProvider_DraftedMove.PawnGotoAction))]
+	/*[HarmonyPatch(typeof(FloatMenuOptionProvider_DraftedMove), nameof(FloatMenuOptionProvider_DraftedMove.PawnGotoAction))]
 	public static class Patch_PawnGotoAction
 	{
 		[HarmonyPrefix]
@@ -302,5 +302,5 @@ namespace DMSRC
 				__result.Disabled = false;
 			}
 		}
-	}
+	}*/
 }

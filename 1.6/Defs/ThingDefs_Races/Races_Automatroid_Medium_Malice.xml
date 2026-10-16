@@ -15,6 +15,10 @@
       <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
       <AimingDelayFactor>0.9</AimingDelayFactor>
       <WastepacksPerRecharge>6</WastepacksPerRecharge>
+
+      <MechBandwidth>12</MechBandwidth>
+      <MechControlGroups>2</MechControlGroups>
+      <FFF_MechCommandRange>19.9</FFF_MechCommandRange>
     </statBases>
     <damageMultipliers>
       <li>
@@ -60,10 +64,8 @@
       <Tungsteel>55</Tungsteel>
     </butcherProducts>
     <comps>
-      <li Class="DMSRC.CompProperties_CompOverseerMech">
-        <commandRange>19.9</commandRange>
-        <controlGroups>2</controlGroups>
-        <bandwidth>12</bandwidth>
+      <li Class="Fortified.CompProperties_Overseer">
+        <selectOverseerIconPath>UI/Icons/DMSRC_SelectMalice</selectOverseerIconPath>
       </li>
     </comps>
     <modExtensions>

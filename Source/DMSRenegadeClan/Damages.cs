@@ -35,6 +35,21 @@ using Verse.Steam;
 
 namespace DMSRC
 {
+	public class DamageWorker_Needle : DamageWorker_AddInjury
+	{
+		public override DamageResult Apply(DamageInfo dinfo, Thing victim)
+		{
+			DamageResult damageResult = base.Apply(dinfo, victim);
+			if (!damageResult.deflected && !damageResult.diminished && victim is Pawn pawn && !pawn.health.hediffSet.PartIsMissing(damageResult.LastHitPart))
+			{
+				Hediff_Needle hediff = HediffMaker.MakeHediff(RCDefOf.DMSRC_Needle, pawn, damageResult.LastHitPart) as Hediff_Needle;
+				pawn.health.AddHediff(hediff, null, dinfo, damageResult);
+				damageResult.AddHediff(hediff);
+			}
+			return damageResult;
+		}
+	}
+
 	public class DamageWorker_BeamExplosion : DamageWorker_AddInjury
 	{
 		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)

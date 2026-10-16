@@ -7,7 +7,7 @@ namespace DMSRC
     [DefOf]
     public static class RCDefOf
     {
-        public static PawnKindDef DMSRC_DummyMechanitor;
+        //public static PawnKindDef DMSRC_DummyMechanitor;
 
 		public static PawnKindDef DMSRC_Mech_Saboteur;
 
@@ -15,7 +15,7 @@ namespace DMSRC
 
 		public static PawnKindDef DMSRC_AMO_Warden;
 
-		public static HediffDef DMSRC_DummyPawn;
+		//public static HediffDef DMSRC_DummyPawn;
 
         public static DamageDef DMSRC_Firecracker;
 
@@ -26,6 +26,8 @@ namespace DMSRC
         public static HediffDef DMSRC_ArtificalPregnancy;
 
         public static HediffDef DMSRC_BandwidthRequest;
+
+        public static HediffDef DMSRC_Needle;
 
 		public static JobDef DMSRC_ControlMech;
 

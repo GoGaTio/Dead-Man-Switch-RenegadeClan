@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <CombatExtended.AmmoCategoryDef>
+    <defName>DMSRC_Needle</defName>
+    <label>Needle</label>
+    <labelShort>Needle</labelShort>
+    <description>Long needle for underwater use.</description>
+  </CombatExtended.AmmoCategoryDef>
+
 	<CombatExtended.AmmoCategoryDef>
 		<defName>DMSRC_FSR</defName>
 		<label>FSR</label>

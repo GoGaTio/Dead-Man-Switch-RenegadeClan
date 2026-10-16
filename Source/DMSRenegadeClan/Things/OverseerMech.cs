@@ -57,7 +57,7 @@ using Fortified;
 
 namespace DMSRC
 {
-    public class Hediff_DummyPawn : Hediff
+    /*public class Hediff_DummyPawn : Hediff
     {
         public IOverseer overseer;
     }
@@ -76,103 +76,9 @@ namespace DMSRC
 	public interface ICaravanOwner
 	{
 		bool CanCaravan {  get; }
-	}
+	}*/
 
-	public class OverseerMech : WeaponUsableMech, IOverseer, ICaravanOwner
+	public class OverseerMech : Fortified.OverseerMech
 	{
-		private CompOverseerMech comp;
-
-        public CompOverseerMech Comp
-        {
-            get
-            {
-                if(comp == null)
-                {
-                    comp = GetComp<CompOverseerMech>();
-                }
-                return comp;
-            }
-        }
-
-		public new bool CanCaravan => true;
-
-		public float MinCharge => Comp.minCharge;
-
-		public float MaxCharge => Comp.maxCharge;
-
-        public override void SetFaction(Faction newFaction, Pawn recruiter = null)
-        {
-            base.SetFaction(newFaction, recruiter);
-			if (newFaction != null && newFaction.IsPlayer)
-			{
-				Comp?.UpdateDummy();
-			}
-		}
-
-        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
-        {
-            if (mode != DestroyMode.WillReplace)
-            {
-                Comp.dummyPawn?.mechanitor?.UndraftAllMechs();
-            }
-            base.DeSpawn(mode);
-        }
-
-        public virtual void Notify_NameChanged()
-        {
-			if (Name?.IsValid == true && Comp?.dummyPawn != null)
-			{
-				Comp.dummyPawn.Name = Name;
-			}
-		}
-    }
-
-	public class HumanlikeOverseerMech : HumanlikeMech, IOverseer, ICaravanOwner
-	{
-		private CompOverseerMech comp;
-
-		public CompOverseerMech Comp
-		{
-			get
-			{
-				if (comp == null)
-				{
-					comp = GetComp<CompOverseerMech>();
-				}
-				return comp;
-			}
-		}
-
-		public new bool CanCaravan => true;
-
-		public float MinCharge => Comp.minCharge;
-
-		public float MaxCharge => Comp.maxCharge;
-
-		public override void SetFaction(Faction newFaction, Pawn recruiter = null)
-		{
-			base.SetFaction(newFaction, recruiter);
-			if (newFaction != null && newFaction.IsPlayer)
-			{
-				Comp?.UpdateDummy();
-			}
-		}
-
-		public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
-		{
-			if (mode != DestroyMode.WillReplace)
-			{
-				Comp.dummyPawn?.mechanitor?.UndraftAllMechs();
-			}
-			base.DeSpawn(mode);
-		}
-
-		public virtual void Notify_NameChanged()
-		{
-			if (Name?.IsValid == true && Comp?.dummyPawn != null)
-			{
-				Comp.dummyPawn.Name = Name;
-			}
-		}
 	}
 }

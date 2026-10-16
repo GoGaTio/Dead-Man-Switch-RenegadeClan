@@ -140,7 +140,7 @@
         <kindDef>Combat</kindDef>
         <commonality>100</commonality>
         <options>
-          <DMSRC_Mech_Malice>1</DMSRC_Mech_Malice>
+          <DMSRC_Mech_Malice>0.5</DMSRC_Mech_Malice>
           <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
           <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
           <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
@@ -191,6 +191,7 @@
           <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.6</DMSRC_RenegadeDragoon>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.4</DMSRC_RenegadeDragoon_Explosive>
           <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon_Beam>
+          <DMSRC_AMO_Warden>0.5</DMSRC_AMO_Warden>
         </options>
       </li>
       <li>
@@ -199,7 +200,7 @@
         <commonality>10</commonality>
         <options>
           <DMSRC_Stormtrooper>0.5</DMSRC_Stormtrooper>
-          <DMSRC_Mech_Malice>3</DMSRC_Mech_Malice>
+          <DMSRC_Mech_Malice>1</DMSRC_Mech_Malice>
           <DMS_Mech_Grenadier>6</DMS_Mech_Grenadier>
           <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
           <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
@@ -207,7 +208,7 @@
           <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
           <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
           <DMSRC_Mech_Soldat_R>10</DMSRC_Mech_Soldat_R>
-          <DMSRC_AMO_Warden>0.5</DMSRC_AMO_Warden>
+          <DMSRC_AMO_Warden>1</DMSRC_AMO_Warden>
           <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon_Explosive>
           <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Beam>
         </options>

@@ -9,7 +9,7 @@ using static RimWorld.MechClusterSketch;
 
 namespace DMSRC
 {
-	public class FloatMenuOptionProvider_OverseerMech : FloatMenuOptionProvider
+	/*public class FloatMenuOptionProvider_OverseerMech : FloatMenuOptionProvider
 	{
 		protected override bool Drafted => true;
 
@@ -119,5 +119,5 @@ namespace DMSRC
 				}), mech, new LocalTargetInfo(clickedPawn));
 			}
 		}
-	}
+	}*/
 }

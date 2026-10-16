@@ -58,7 +58,7 @@ using static UnityEngine.GraphicsBuffer;
 
 namespace DMSRC
 {
-    public class CompProperties_CompOverseerMech : CompProperties
+    /*public class CompProperties_CompOverseerMech : CompProperties
     {
         public float commandRange = 34.9f;
 
@@ -300,7 +300,7 @@ namespace DMSRC
                 yield return m;
             }
 			yield return new OverseerMechGizmo(this);
-			/*Command_Action command_Action = new Command_Action();
+			Command_Action command_Action = new Command_Action();
             command_Action.defaultLabel = "CurrentMechWorkMode".Translate() + ": " + WorkMode.LabelCap;
             command_Action.defaultDesc = ;
             command_Action.icon = WorkMode.uiIcon;
@@ -328,7 +328,7 @@ namespace DMSRC
                     Find.WindowStack.Add(new FloatMenu(list));
                 }
             };
-            yield return command_Action;*/
+            yield return command_Action;
         }
 
         public override void CompTick()
@@ -383,5 +383,5 @@ namespace DMSRC
 			Scribe_Values.Look(ref minCharge, "minCharge", defaultValue: 0.05f);
 			Scribe_Values.Look(ref maxCharge, "maxCharge", defaultValue: 1f);
 		}
-    }
+    }*/
 }

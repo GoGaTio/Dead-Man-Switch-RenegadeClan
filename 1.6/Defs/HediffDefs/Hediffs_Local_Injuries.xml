@@ -27,4 +27,40 @@
     </injuryProps>
   </HediffDef>
 
+  <HediffDef>
+    <defName>DMSRC_Needle</defName>
+    <label>swihha needle</label>
+    <hediffClass>DMSRC.Hediff_Needle</hediffClass>
+    <description>A sharp metal needle. While generally not fatal, these are incredibly painful. It must be surgically removed.</description>
+    <tendable>false</tendable>
+    <displayWound>true</displayWound>
+    <initialSeverity>1</initialSeverity>
+    <comps />
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>DMSRC_RemoveNeedle</defName>
+    <label>remove swihha needle</label>
+    <description>Remove swihha needle.</description>
+    <jobString>Removing needles.</jobString>
+    <workerClass>Recipe_RemoveHediff</workerClass>
+    <workAmount>600</workAmount>
+    <hideBodyPartNames>false</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <isViolation>false</isViolation>
+    <removesHediff>DMSRC_Needle</removesHediff>
+    <anesthetize>false</anesthetize>
+    <surgeryOutcomeEffect IsNull="True" />
+    <!-- Always succeeds -->
+    <deathOnFailedSurgeryChance>0</deathOnFailedSurgeryChance>
+    <ingredients>
+      <!-- None-->
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
 </Defs>
