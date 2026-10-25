@@ -456,12 +456,8 @@
     <techHediffsMoney>9999~9999</techHediffsMoney>
     <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
     <weaponTags>
-      <li>A_AP</li>
-      <li>A_MG_Light</li>
-      <li>A_AR_LongRifle</li>
       <li>DMSRC_RenegadeRifle</li>
       <li>DMSRC_AntiTank</li>
-      <li>DMSRC_BeamGraserGun</li>
       <li>DMSRC_NeedleRifle</li>
     </weaponTags>
   </PawnKindDef>

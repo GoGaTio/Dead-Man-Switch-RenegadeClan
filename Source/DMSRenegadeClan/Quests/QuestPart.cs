@@ -172,7 +172,7 @@ namespace DMSRC
 			ticksTillNextWave = (mission.initialWavesCooldown ?? mission.wavesCooldown).RandomInRange;
 			base.Enable(receivedArgs);
 			GameComponent_Renegades comp = GameComponent_Renegades.Find;
-			if (WavesFaction.def == RCDefOf.DMSRC_RenegadeClan)
+			if (WavesFaction.def == RCDefOf.DMSRC_RenegadeClan && comp.PlayerRelation != FactionRelationKind.Hostile)
 			{
 				comp.PlayerRelation = FactionRelationKind.Hostile;
 				comp.playerGoodwill = -200;
@@ -182,6 +182,7 @@ namespace DMSRC
 				comp.DMSFaction.SetRelation(new FactionRelation(Faction.OfPlayerSilentFail, FactionRelationKind.Hostile) { baseGoodwill = -200});
 				comp.enemyWithFleet = true;
 			}
+			site.Map.attackTargetsCache.Notify_FactionHostilityChanged(WavesFaction, Faction.OfPlayer);
 		}
 
 		public virtual Faction WavesFaction

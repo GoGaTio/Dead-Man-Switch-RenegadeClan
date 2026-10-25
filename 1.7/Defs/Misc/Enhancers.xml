@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DMSRC.EnhanceDef>
+    <defName>Tribal</defName>
+    <tag>Tribal</tag>
+    <stuffDefs>
+      <li>Steel</li>
+      <li>Polyester</li>
+    </stuffDefs>
+    <apparelDefs>
+      <DMS_Apparel_TacticalHelmet>4</DMS_Apparel_TacticalHelmet>
+      <DMS_Apparel_TacticalVest>5</DMS_Apparel_TacticalVest>
+      <DMS_Apparel_PowerSkeleton>3</DMS_Apparel_PowerSkeleton>
+    </apparelDefs>
+    <chanceToEnhanceApparel>0.15</chanceToEnhanceApparel>
+    <weaponDefs>
+      <!-- DMS_PDW for fallback if no suitable gun found -->
+      <DMS_PDW>
+        <weight>10</weight>
+        <tag>IndustrialGun</tag>
+      </DMS_PDW>
+      <DMS_PDW>
+        <weight>6</weight>
+        <tag>DMS_MechWeaponShotgun</tag>
+      </DMS_PDW>
+      <DMS_PDW>
+        <weight>6</weight>
+        <tag>DMS_MechWeaponLight</tag>
+      </DMS_PDW>
+      <DMS_Machete>
+        <weight>6</weight>
+        <tag>A_Cut_Melee</tag>
+      </DMS_Machete>
+    </weaponDefs>
+    <chanceToEnhanceWeapon>0.3</chanceToEnhanceWeapon>
+    <reinforcementOptions>
+      <DMS_Mech_Soldat>10</DMS_Mech_Soldat>
+      <DMS_Mech_Dogge>8</DMS_Mech_Dogge>
+      <DMS_Mech_Arquebusier>3</DMS_Mech_Arquebusier>
+      <DMS_Mech_Phalanx>4</DMS_Mech_Phalanx>
+      <DMSRC_Mech_Saboteur>3</DMSRC_Mech_Saboteur>
+      <DMSRC_Mech_Stancher>2</DMSRC_Mech_Stancher>
+    </reinforcementOptions>
+  </DMSRC.EnhanceDef>
+  
+</Defs>

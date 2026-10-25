@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_AutomatroidGun">
+    <defName>DMSRC_VizotejaRifle</defName>
+    <label>Vizoteja rifle</label>
+    <description>A stockless assault rifle manufactured by renegades.</description>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>DMSRC_RenegadeRifle</li>
+      <li>DMS_MechWeaponLight</li>
+    </weaponTags>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_Rifle</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <generateCommonality>0.01</generateCommonality>
+    <statBases>
+      <Mass>3.2</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>1.85</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker Inherit="False" IsNull="True"/>
+    <costList>
+      <Tungsteel>60</Tungsteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_VizotejaRifle</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>24.9</range>
+        <burstShotCount>4</burstShotCount>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <soundCast>DMS_KnuckledusterRevolver_Shot</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>AverageHumanCanUse</EquippableDef>
+      </li>
+    </modExtensions>
+    <tools Inherit="False">
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMSRC_Bullet_VizotejaRifle</defName>
+    <label>bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>13</damageAmountBase>
+      <speed>60</speed>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AutomatroidGun">
+    <defName>DMSRC_SwihhaRifle</defName>
+    <label>Swihha rifle</label>
+    <description>A special underwater semi-auto rifle designed to shoot long needles. While being most effective underwater it is also decent on the ground. It's needles stuck in flesh and mechanical components, worsening their performance.</description>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>Ranged</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>DMSRC_NeedleRifle</li>
+    </weaponTags>
+    <graphicData>
+      <texPath>Things/Weapons/DMSRC_NeedleRifle</texPath>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+    <soundInteract>Interact_AssaultRifle</soundInteract>
+    <generateCommonality>0.05</generateCommonality>
+    <statBases>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.73</AccuracyShort>
+      <AccuracyMedium>0.64</AccuracyMedium>
+      <AccuracyLong>0.14</AccuracyLong>
+      <Mass>7.3</Mass>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker Inherit="False" IsNull="True"/>
+    <costList>
+      <Steel>55</Steel>
+      <ComponentStamped>5</ComponentStamped>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>DMSRC_Bullet_NeedleRifle</defaultProjectile>
+        <warmupTime>0.85</warmupTime>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+        <range>19.9</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>8</muzzleFlashScale>
+      </li>
+    </verbs>
+    <modExtensions>
+      <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+        <def>MF_StandardMuzzleFalsh</def>
+        <drawSize>(0.3,0.3)</drawSize>
+        <offsets>
+          <li>(0.65,0)</li>
+        </offsets>
+      </li>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>LightAutomatroid</EquippableDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>DMSRC_Bullet_NeedleRifle</defName>
+    <label>needle</label>
+    <graphicData>
+      <texPath>Things/Projectile/Needle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.8</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>DMSRC_Needle</damageDef>
+      <stoppingPower>2</stoppingPower>
+      <armorPenetrationBase>0.6</armorPenetrationBase>
+      <damageAmountBase>18</damageAmountBase>
+      <speed>50</speed>
+    </projectile>
+  </ThingDef>
+
+</Defs>

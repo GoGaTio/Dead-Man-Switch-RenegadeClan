@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnGroupKindDef>
+    <defName>DMSRC_MilitaryAid</defName>
+    <workerClass>PawnGroupKindWorker_Normal</workerClass>
+  </PawnGroupKindDef>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>DMSRC_RenegadeClan</defName>
+    <label>renegade clan</label>
+    <categoryTag>DMSRC_RenegadeClan</categoryTag>
+    <description>A network of separatists originated from group of high officers and scientists which stole large research ship containing tons of valuable equipment and technology. They're secretly sponsored by Empire, some Glitterworlds and planetary warlords, allowing them to fight Colonial fleets indirectly. Renegades lack menpower, but technologies, sabotage tactics and natives glowering towards Colonial Fleet allow them keep fighting for their ideas.\n\nThere're rumors inbetween fleet personnel and low-rank officers about strange nature of renegades leader "count" and his real goals.</description>
+    <pawnSingular>renegade</pawnSingular>
+    <pawnsPlural>renegades</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <configurationListOrderPriority>2172</configurationListOrderPriority>
+    <canGenerateQuestSites>false</canGenerateQuestSites>
+    <melaninRange>0~0.1</melaninRange>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <leaderTitle>count</leaderTitle>
+    <hidden>true</hidden>
+    <hiddenIdeo>true</hiddenIdeo>
+    <leaderForceGenerateNewPawn>false</leaderForceGenerateNewPawn>
+    <basicMemberKind>DMSRC_Renegade</basicMemberKind>
+    <factionIconPath>UI/Faction/DMSRC_RenegadeClanIcon</factionIconPath>
+    <fixedName>Renegade clan</fixedName>
+    <settlementNameMaker>DMS_VanguardBase</settlementNameMaker>
+    <fixedIdeo>true</fixedIdeo>
+    <ideoName>Doctrine of the End</ideoName>
+    <ideoDescription>Where is the end of one there is a begining of another. Nothing can last forever. Do what you can do, hide awaiting, watch as the system collapses and you will be awarded for your patience.</ideoDescription>
+    <styles>
+      <li MayRequire="Ludeon.RimWorld.Ideology">DMS_Industrial</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Techist</li>
+    </styles>
+    <allowedCultures>
+      <li MayRequire="Ludeon.RimWorld.Ideology">DMS_Nara_Culture</li>
+    </allowedCultures>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+    </requiredMemes>
+    <allowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+    </allowedMemes>
+    <disallowedPrecepts>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">Execution_Required</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Honorable</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Classic</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Abhorrent</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_HorribleNoSell</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_HorribleSellOK</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">Corpses_Ugly</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Exalted</li>
+
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Respected</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Approved</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">IdeoDiversity_Standard</li>
+    </disallowedPrecepts>
+    <structureMemeWeights Inherit="False">
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">99</Structure_Ideological>
+    </structureMemeWeights>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances Inherit="False">
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">999</Baseliner>
+      </xenotypeChances>
+    </xenotypeSet>
+    <permanentEnemyToEveryoneExcept>
+      <li>DMSRC_PlayerRenegades</li>
+      <li>OutlanderCivil</li>
+      <li>TribeCivil</li>
+      <li>PlayerTribe</li>
+      <li>PlayerColony</li>
+      <li>Ancients</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Beggars</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">Empire</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">ResearchExpedition</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">GravshipCrew</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">TradersGuild</li>
+    </permanentEnemyToEveryoneExcept>
+    <techLevel>Spacer</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>FleetChild</li>
+          <li>Mili_Standard</li>
+          <li>Mili_Expert</li>
+          <li>Civil_Expert</li>
+          <li>Pioneer</li>
+          <li>DMSRC_Researcher</li>
+          <li>Researcher</li>
+          <li>DMSCommon</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <apparelStuffFilter Inherit="False">
+      <thingDefs>
+        <li>Synthread</li>
+        <li>Tungsteel</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </apparelStuffFilter>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <colorSpectrum>
+      <li>(107, 81, 128)</li>
+    </colorSpectrum>
+    <fixedLeaderKinds>
+      <li>DMS_Officer_Leader</li>
+    </fixedLeaderKinds>
+    <attackersDownPercentageRangeForAutoFlee>0.95~1</attackersDownPercentageRangeForAutoFlee>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0.35)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <raidLootMaker>DMSRC_RenegadesLoot</raidLootMaker>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(500, 270)</li>
+        <li>(1000, 500)</li>
+        <li>(3000, 9999)</li>
+        <li>(4000, 99999)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <!-- Infantry + melee mix ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <DMSRC_Mech_Malice>0.5</DMSRC_Mech_Malice>
+          <DMS_Mech_Iguana>0.5</DMS_Mech_Iguana>
+          <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
+          <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
+          <DMS_Mech_Ronin>1</DMS_Mech_Ronin>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Soldat_R>10</DMSRC_Mech_Soldat_R>
+          <DMSRC_Mech_Stancher>6</DMSRC_Mech_Stancher>
+          <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.1</DMSRC_RenegadeDragoon_Beam>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.2</NAT_RustedRenegade>
+          <DMSRC_AMO_Warden>0.5</DMSRC_AMO_Warden>
+          <DMSRC_Stormtrooper>0.25</DMSRC_Stormtrooper>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <DMSRC_Stormtrooper>0.5</DMSRC_Stormtrooper>
+          <NAT_RustedRenegade MayRequire="GoGaTio.NewAnomalyThreats">0.15</NAT_RustedRenegade>
+          <DMSRC_Mech_Malice>1</DMSRC_Mech_Malice>
+          <DMS_Mech_Falcon>3</DMS_Mech_Falcon>
+          <DMSRC_Mech_Soldat_R>8</DMSRC_Mech_Soldat_R>
+          <DMSRC_AMO_Warden>1</DMSRC_AMO_Warden>
+          <DMS_Mech_Dogge>3</DMS_Mech_Dogge>
+          <DMSRC_Mech_Saboteur>3.5</DMSRC_Mech_Saboteur>
+          <DMSRC_Mech_Stancher>3</DMSRC_Mech_Stancher>
+          <DMS_Mech_Sniper>2</DMS_Mech_Sniper>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMS_Mech_Iguana>1</DMS_Mech_Iguana>
+          <DMSRC_Mech_Focus>0.5</DMSRC_Mech_Focus>
+          <DMSRC_Mech_Pavise>0.5</DMSRC_Mech_Pavise>
+        </options>
+      </li>
+      <li>
+        <!-- Heavy -->
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options>
+          <DMS_Mech_Iguana>4</DMS_Mech_Iguana>
+          <DMS_Mech_Caretta>1.5</DMS_Mech_Caretta>
+          <DMSRC_Mech_Malevolence>0.5</DMSRC_Mech_Malevolence>
+          <DMSRC_Mech_Focus>1</DMSRC_Mech_Focus>
+          <DMSRC_Mech_Pavise>2.5</DMSRC_Mech_Pavise>
+          <DMS_Mech_Killdozer>2.5</DMS_Mech_Killdozer>
+          <DMSRC_RenegadeDragoon MayRequire="aoba.deadmanswitch.mobiledragoon">0.6</DMSRC_RenegadeDragoon>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.4</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon_Beam>
+          <DMSRC_AMO_Warden>0.5</DMSRC_AMO_Warden>
+        </options>
+      </li>
+      <li>
+        <!-- breach fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>10</commonality>
+        <options>
+          <DMSRC_Stormtrooper>0.5</DMSRC_Stormtrooper>
+          <DMSRC_Mech_Malice>1</DMSRC_Mech_Malice>
+          <DMS_Mech_Grenadier>6</DMS_Mech_Grenadier>
+          <DMSRC_Mech_Stancher>8</DMSRC_Mech_Stancher>
+          <DMS_Mech_Ronin>3</DMS_Mech_Ronin>
+          <DMS_Mech_Protector>4</DMS_Mech_Protector>
+          <DMS_Mech_Siegebreaker>3</DMS_Mech_Siegebreaker>
+          <DMS_Mech_Kanonier>1</DMS_Mech_Kanonier>
+          <DMSRC_Mech_Soldat_R>10</DMSRC_Mech_Soldat_R>
+          <DMSRC_AMO_Warden>1</DMSRC_AMO_Warden>
+          <DMSRC_RenegadeDragoon_Explosive MayRequire="aoba.deadmanswitch.mobiledragoon">0.3</DMSRC_RenegadeDragoon_Explosive>
+          <DMSRC_RenegadeDragoon_Beam MayRequire="aoba.deadmanswitch.mobiledragoon">0.2</DMSRC_RenegadeDragoon_Beam>
+        </options>
+      </li>
+      <li>
+        <!-- Aid -->
+        <kindDef>DMSRC_MilitaryAid</kindDef>
+        <commonality>10</commonality>
+        <options>
+          <DMS_Mech_Phalanx>2</DMS_Mech_Phalanx>
+          <DMS_Mech_Arquebusier>4</DMS_Mech_Arquebusier>
+          <DMSRC_Mech_Stancher>4.5</DMSRC_Mech_Stancher>
+          <DMS_Mech_Ronin>2</DMS_Mech_Ronin>
+          <DMS_Mech_Protector>5</DMS_Mech_Protector>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <disallowedRaidAgeRestrictions>
+      <li>Children</li>
+    </disallowedRaidAgeRestrictions>
+  </FactionDef>
+
+  <ThingSetMakerDef>
+    <defName>DMSRC_RenegadesLoot</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+            <li>Synthread</li>
+            <li>Uranium</li>
+            <li>Plasteel</li>
+            <li>ComponentIndustrial</li>
+            <li>ComponentStamped</li>
+            <li>Plasfiber</li>
+            <li>Tungsteel</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+</Defs>

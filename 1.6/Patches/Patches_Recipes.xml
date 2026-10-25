@@ -4,6 +4,14 @@
 
   <Operation Class="PatchOperationAdd">
     <success>Always</success>
+    <xpath>Defs/ThingDef[defName = "Human"]/recipes</xpath>
+    <value>
+      <li>DMSRC_RemoveNeedle</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
     <xpath>Defs/RecipeDef[defName = "DMS_ResurrectMediumMech"]/fixedIngredientFilter/thingDefs</xpath>
     <value>
       <li>Corpse_DMSRC_Mech_Saboteur</li>

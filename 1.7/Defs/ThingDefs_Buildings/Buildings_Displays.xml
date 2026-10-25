@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--<ThingDef ParentName="BuildingBase" Name="DMS_ConsoleBase" Abstract="True">
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <thingClass>Building</thingClass>
+    <tickerType>Normal</tickerType>
+    <category>Building</category>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <pathCost>45</pathCost>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <building>
+      <isTargetable>true</isTargetable>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+      <neverBuildable>true</neverBuildable>
+      <paintable>false</paintable>
+    </building>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <fillPercent>0.35</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <passability>PassThroughOnly</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <holdsRoof>true</holdsRoof>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_ConsoleSingle_Nara</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleSingle_Nara</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_ConsoleDouble_Nara</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleDouble_Nara</texPath>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_AccessConsole_Nara</defName>
+    <label>access console</label>
+    <description>A multi-purpose computer interface. Built-in reading device accepts key-cards.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_AccessConsole_Nara</texPath>
+    </graphicData>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <comps>
+      <li Class="Fortified.CompProperties_AccessKeyActivatable">
+        <accessKeyDef>DMS_AccessKey_Nara</accessKeyDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_ConsoleSingle_Neutral</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleSingle_Neutral</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_ConsoleDouble_Neutral</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_ConsoleDouble_Neutral</texPath>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMS_AccessConsole_Neutral</defName>
+    <label>access console</label>
+    <description>A multi-purpose computer interface. Built-in reading device accepts key-cards.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMS_AccessConsole_Neutral</texPath>
+    </graphicData>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <comps>
+      <li Class="Fortified.CompProperties_AccessKeyActivatable">
+        <accessKeyDef>DMS_AccessKey_Neutrals</accessKeyDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMSRC_ConsoleSingle_Renegade</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMSRC_ConsoleSingle_Renegade</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMSRC_ConsoleDouble_Renegade</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMSRC_ConsoleDouble_Renegade</texPath>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMSRC_AccessConsole_Renegade</defName>
+    <label>access console</label>
+    <description>A multi-purpose computer interface. Built-in reading device accepts key-cards.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMSRC_AccessConsole_Renegade</texPath>
+    </graphicData>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <comps>
+      <li Class="Fortified.CompProperties_AccessKeyActivatable">
+        <accessKeyDef>DMSRC_AccessKey_Renegade</accessKeyDef>
+      </li>
+    </comps>
+  </ThingDef>-->
+  
+</Defs>

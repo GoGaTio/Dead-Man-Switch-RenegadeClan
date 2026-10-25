@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingSetMakerDef>
+    <defName>DMSRC_Crate</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+        <li>
+          <weight>8</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <categories>
+                  <li>DMS_Mods</li>
+                </categories>
+              </filter>
+              <countRange>1~2</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li MayRequire="aoba.deadmanswitch.mobiledragoon">
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <categories>
+                  <li>DMS_Module</li>
+                </categories>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>13</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <categories>
+                  <li MayRequire="breadmo.cinders">Cinder_Amorphous</li>
+                </categories>
+                <thingDefs>
+                  <li>DMS_Apparel_PowerSkeleton</li>
+                  <li>DMS_Apparel_HazardSuit</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_PKM</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_BattleRifle</li>
+                  <li>DMS_AssaultRifle</li>
+                  <li>DMS_AssaultShotgun</li>
+                  <li>DMSRC_FSRAssaultRifle</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps" >DMS_KS23K</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_ZlobinRifle</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMS_YekaterinRifle</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>7</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps">DMSAC_StugnaATGM</li>
+                  <li>DMS_DeposableRocketLauncher</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>10</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Shell_HighExplosive</li>
+                  <li>Shell_EMP</li>
+                  <li>Shell_Smoke</li>
+                  <li>Shell_Incendiary</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~5</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef>
+    <defName>DMSRC_PackLoots</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+        <li>
+          <weight>10</weight>
+          <thingSetMaker Class="ThingSetMaker_MarketValue">
+            <fixedParams>
+              <filter>
+                <categories>
+                  <li>Manufactured</li>
+                  <li>Medicine</li>
+                  <li MayRequire="xmb.ancienturbanruins.mo">AM_Manufactured</li>
+                  <li MayRequire="xmb.ancienturbanruins.mo">AM_Electronics</li>
+                  <li MayRequire="xmb.ancienturbanruins.mo">AM_Tool</li>
+                  <li MayRequire="xmb.ancienturbanruins.mo">AM_SpecialComp</li>
+                </categories>
+              </filter>
+              <totalMarketValueRange>1000~2000</totalMarketValueRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>ComponentStamped</li>
+                  <li>ComponentSpacer</li>
+                </thingDefs>
+              </filter>
+              <countRange>2~10</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>MealSurvivalPack</li>
+                </thingDefs>
+              </filter>
+              <countRange>40</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>2</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Shell_HighExplosive</li>
+                  <li>Shell_EMP</li>
+                  <li>Shell_Smoke</li>
+                  <li>Shell_Incendiary</li>
+                </thingDefs>
+              </filter>
+              <countRange>5~10</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef>
+    <defName>DMSRC_Drawer</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+        <!-- Map -->
+        <li MayRequire="Ludeon.RimWorld.Odyssey">
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Trader</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>Map</li>
+                </thingDefs>
+              </filter>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <qualityGenerator>Trader</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>DMS_Schematic</li>
+                  <li>TextBook</li>
+                  <li>Schematic</li>
+                  <li>Novel</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Cash -->
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Gold</li>
+                </thingDefs>
+              </filter>
+              <countRange>10~60</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>0.75</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Silver</li>
+                </thingDefs>
+              </filter>
+              <countRange>150~600</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <!-- Boss caller -->
+        <li>
+          <weight>0.25</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_EncryptedTransmitter</li>
+                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps" >DMSAC_RecoverTransmitter</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>0.25</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMSRC_ContainerTransponder</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>0.1</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMSRC_Neurointerface</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Chocolate</li>
+                  <li>Ambrosia</li>
+                </thingDefs>
+              </filter>
+              <countRange>7~20</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+  <ThingSetMakerDef>
+    <defName>DMSRC_Locker</defName>
+    <root Class="ThingSetMaker_RandomOption">
+      <options>
+        <li>
+          <weight>3</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <qualityGenerator>Trader</qualityGenerator>
+              <filter>
+                <thingDefs>
+                  <li>DMS_Apparel_UnitSuit</li>
+                  <li>Apparel_CollarShirt</li>
+                  <li>Apparel_Parka</li>
+                  <li>Apparel_Pants</li>
+                  <li>DMS_Apparel_GarrisonCap</li>
+                </thingDefs>
+              </filter>
+              <countRange>1~3</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_TacticalPistol</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>1</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Silver</li>
+                </thingDefs>
+              </filter>
+              <countRange>50~250</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>0.5</weight>
+          <thingSetMaker Class="ThingSetMaker_StackCount">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>Chocolate</li>
+                  <li>Ambrosia</li>
+                </thingDefs>
+              </filter>
+              <countRange>3~9</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+      </options>
+    </root>
+  </ThingSetMakerDef>
+
+</Defs>

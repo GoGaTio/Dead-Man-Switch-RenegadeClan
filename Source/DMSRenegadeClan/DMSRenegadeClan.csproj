@@ -75,6 +75,7 @@
     <Compile Include="Harmony\Caravaning.cs" />
     <Compile Include="MapGen\GenStep_BossHunt.cs" />
     <Compile Include="Mod.cs" />
+    <Compile Include="PawnsArrivalModeWorkers.cs" />
     <Compile Include="Quests\QuestNode_DefinedThingDefs.cs" />
     <Compile Include="ScenParts.cs" />
     <Compile Include="Dialog.cs" />

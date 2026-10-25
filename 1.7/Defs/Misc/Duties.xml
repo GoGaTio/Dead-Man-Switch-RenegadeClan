@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <DutyDef>
+    <defName>DMSRC_Sabotage</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="DMSRC.JobGiver_TryPlantBomb"/>
+        <li Class="DMSRC.JobGiver_ForcedGotoSprint" />
+        <li Class="DMSRC.JobGiver_TryPlantBomb"/>
+        <li Class="ThinkNode_ConditionalForcedGoto">
+          <invert>true</invert>
+          <subNodes>
+            <li Class="JobGiver_ExitMapBest">
+              <defaultLocomotion>Sprint</defaultLocomotion>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+</Defs>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_ProcessorCore</defName>
+    <label>Overlord-class processor</label>
+    <description>An array of advanced processors, designed to function as control block and AI core.</description>
+    <possessionCount>0</possessionCount>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_ProcessorCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <descriptionHyperlinks>
+      <ResearchProjectDef>DMSRC_Overseer</ResearchProjectDef>
+    </descriptionHyperlinks>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <RoyalFavorValue>3</RoyalFavorValue>
+      <MaxHitPoints>15</MaxHitPoints>
+      <MarketValue>5100</MarketValue>
+      <Mass>7</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <intricate>true</intricate>
+    <isTechHediff>true</isTechHediff>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>1581198271</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Overlord-class processor studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the Overlord-class processor, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the Overlord-class processor</activateDescString>
+        <jobString>Analyze the Overlord-class processor</jobString>
+        <guiLabelString>Choose who should analyze this</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_ComponentGBEP</defName>
+    <label>gamma beam emissive platform</label>
+    <description>A device that produces a coherent gamma beam. Cannot be replicated on low-tech worlds as it requires Unocttrium for emitter element.</description>
+    <possessionCount>0</possessionCount>
+    <descriptionHyperlinks>
+      <ResearchProjectDef>DMSRC_BeamFocusing</ResearchProjectDef>
+      <ThingDef>DMSRC_DecoyDish</ThingDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_ComponentGBEP</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>25</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <RoyalFavorValue>1</RoyalFavorValue>
+      <MaxHitPoints>150</MaxHitPoints>
+      <MarketValue>950</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <intricate>true</intricate>
+    <isTechHediff>true</isTechHediff>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <analysisID>1581198272</analysisID>
+        <requiresMechanitor>false</requiresMechanitor>
+
+        <!-- Analyzable -->
+
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <completedLetterLabel>Gamma beam emissive platform studied: {RESEARCH} unlocked</completedLetterLabel>
+        <completedLetter>By studying the gamma beam emissive platform, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+        <completedLetterDef>PositiveEvent</completedLetterDef>
+
+        <!-- Interactable -->
+
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+
+        <activateLabelString>Analyze...</activateLabelString>
+        <activateDescString>Analyze the gamma beam emissive platform</activateDescString>
+        <jobString>Analyze the gamma beam emissive platform</jobString>
+        <guiLabelString>Choose who should analyze this.</guiLabelString>
+        <inspectString>Can be analyzed by a colonist.</inspectString>
+
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+</Defs>

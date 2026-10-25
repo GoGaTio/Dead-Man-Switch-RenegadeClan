@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef>
+    <defName>DMSRC_InactiveMech</defName>
+    <label>inactive automatroid</label>
+    <description>Inactive automatroid.</description>
+    <category>Building</category>
+    <thingClass>DMSRC.InactiveMech</thingClass>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <pathCost>42</pathCost>
+    <blockWind>false</blockWind>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.50</fillPercent>
+    <receivesSignals>true</receivesSignals>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <repairable>false</repairable>
+      <deconstructible>false</deconstructible>
+    </building>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <selectable>true</selectable>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <drawerType>RealtimeOnly</drawerType>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_WarheadPlatform</defName>
+    <label>warhead platform</label>
+    <description>Special platform, designed to contain high-power warhead.</description>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_WarheadPlatform_Empty</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0.3</fillPercent>
+    <rotatable>false</rotatable>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <receivesSignals>true</receivesSignals>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>false</ai_chillDestination>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="DMSRC.CompProperties_WarheadPlatform">
+        <chanceToStartFire>0.7</chanceToStartFire>
+        <explosiveRadius>44.9</explosiveRadius>
+        <explosiveDamageType>DMSRC_BombTimed</explosiveDamageType>
+        <damageAmountBase>999</damageAmountBase>
+        <armorPenetrationBase>999</armorPenetrationBase>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+        <graphicData>
+          <texPath>Things/Building/DMSRC_WarheadPlatform</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(2,2)</drawSize>
+        </graphicData>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_PowerTransmitter</defName>
+    <label>power network node</label>
+    <description>Node of underground power network.</description>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_PowerTransmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>true</ai_chillDestination>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <isInert>true</isInert>
+      <claimable>false</claimable>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_LargeBroadcastAntenna</defName>
+    <label>large broadcast antenna</label>
+    <description>Ultra-large broadcast antenna for planetary communication. Allows to control mechanoids over the world from well-defended command center.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LargeBroadcastAntenna</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(10,10)</drawSize>
+      <shadowData>
+        <volume>(5.03,1.0,4.25)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <size>(5,5)</size>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>1</fillPercent>
+    <rotatable>false</rotatable>
+    <receivesSignals>true</receivesSignals>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>3000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>60000</WorkToBuild>
+    </statBases>
+    <costList>
+      <Steel>600</Steel>
+      <Tungsteel>200</Tungsteel>
+      <ComponentStamped>20</ComponentStamped>
+      <ComponentIndustrial>15</ComponentIndustrial>
+      <ComponentTransmitter>5</ComponentTransmitter>
+      <ComponentSpacer>5</ComponentSpacer>
+    </costList>
+    <killedLeavings>
+      <ChunkSlagSteel>8</ChunkSlagSteel>
+      <Steel>100</Steel>
+      <Tungsteel>40</Tungsteel>
+      <ComponentStamped>7</ComponentStamped>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentTransmitter>1</ComponentTransmitter>
+      <ComponentSpacer>1</ComponentSpacer>
+    </killedLeavings>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>false</ai_chillDestination>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <researchPrerequisites>
+      <li>DMSRC_WideBroadcast</li>
+    </researchPrerequisites>
+    <designationCategory>DMS_Category</designationCategory>
+    <uiOrder>4900</uiOrder>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>GeothermalPlant_Ambience</sound>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>5000</basePowerConsumption>
+      </li>
+      <!--CompProperties_BroadcastAntenna should go after CompProperties_Power-->
+      <li Class="DMSRC.CompProperties_BroadcastAntenna">
+        <worldRange>25</worldRange>
+        <worldRangeOtherLayer>15</worldRangeOtherLayer>
+      </li>
+      <li Class="DMSRC.CompProperties_EMPCascade">
+        <effectRadius>19.9</effectRadius>
+        <effectDamage>100</effectDamage>
+        <initialDelayRange>0~30</initialDelayRange>
+        <delayRange>30~60</delayRange>
+        <effectsCountRange>2~3</effectsCountRange>
+        <useRandomAngle>false</useRandomAngle>
+      </li>
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_LargeShieldGenerator</defName>
+    <label>heavy shield generator</label>
+    <description>Ultra-class energy shield generator. Protects large area from incoming projectiles.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LargeShieldGenerator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(10,10)</drawSize>
+      <shadowData>
+        <volume>(5,1.0,5)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <size>(5,5)</size>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <holdsRoof>true</holdsRoof>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>1</fillPercent>
+    <rotatable>false</rotatable>
+    <receivesSignals>true</receivesSignals>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>5000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>60000</WorkToBuild>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>8</ChunkSlagSteel>
+      <Steel>100</Steel>
+      <Tungsteel>40</Tungsteel>
+      <ComponentStamped>7</ComponentStamped>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentTransmitter>1</ComponentTransmitter>
+      <ComponentSpacer>1</ComponentSpacer>
+    </killedLeavings>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>false</ai_chillDestination>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>GeothermalPlant_Ambience</sound>
+      </li>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>50</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptAirProjectiles>true</interceptAirProjectiles>
+        <color>(0.4, 0.4, 0.6)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <minIdleAlpha>0.5</minIdleAlpha>
+        <drawWithNoSelection>True</drawWithNoSelection>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_ProcessComputer</defName>
+    <label>Overlord-class computer</label>
+    <description>Block of advanced processor arrays. It's impossible to designate what exactly they are processing.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_ProcessComputer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(3.8, 3, 2.7)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(3,3)</size>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <holdsRoof>true</holdsRoof>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <receivesSignals>true</receivesSignals>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>60000</WorkToBuild>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>2</ChunkSlagSteel>
+      <Tungsteel>40</Tungsteel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+      <DMSRC_ProcessorCore>1</DMSRC_ProcessorCore>
+    </killedLeavings>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>false</ai_chillDestination>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_AmbientSound">
+        <sound>GeothermalPlant_Ambience</sound>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase" Name="DSMRC_StructuralColumn">
+    <defName>DSMRC_StructuralColumn</defName>
+    <label>structural frame column</label>
+    <description>Structural column which supports facility frame.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_Hole_7x7Column</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(9,9)</drawSize>
+    </graphicData>
+    <size>(7,7)</size>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0.9</fillPercent>
+    <rotatable>false</rotatable>
+    <receivesSignals>true</receivesSignals>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <holdsRoof>true</holdsRoof>
+    <statBases>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>60000</WorkToBuild>
+    </statBases>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>false</ai_chillDestination>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_DrawAdditionalGraphics">
+        <graphics>
+          <li>
+            <texPath>Things/Building/DMSRC_Hole_7x7Column_Top</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(9,9)</drawSize>
+            <drawOffset>(0, 0.3, 4)</drawOffset>
+            <shaderType>Transparent</shaderType>
+          </li>
+        </graphics>
+      </li>
+      <li Class="DMSRC.CompProperties_DestroyFacility">
+        <onlyWhenAllDestroyed>true</onlyWhenAllDestroyed>
+        <ticksToDestroy>300</ticksToDestroy>
+        <wreck>DSMRC_StructuralColumn_Destroyed</wreck>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="DSMRC_StructuralColumn">
+    <defName>DSMRC_StructuralColumn_Destroyed</defName>
+    <label>destroyed structural frame column</label>
+    <description>Destroyed structural column. It no longer supports facility frame.</description>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_Hole_7x7Column_Destroyed</texPath>
+    </graphicData>
+    <size>(7,7)</size>
+    <tickerType>Never</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <blockWind>false</blockWind>
+    <canOverlapZones>false</canOverlapZones>
+    <fillPercent>0</fillPercent>
+    <useHitPoints>false</useHitPoints>
+    <destroyable>false</destroyable>
+    <comps Inherit="False"/>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>DMSRC_LabGestator</defName>
+    <label>AMO gestator</label>
+    <description>A vat filled with special fluid which can transfer substances from storage to creature inside. Mechanisms of the vat will initiate artificial pregnancy and gestate mecha-organical component.\n\nVat must be fed with a constant supply of nutrition to provide the feedstock for gestation.\n\nGestation takes 9 days with normal fertility female, but may last up to 18 days if creature is too old or has fertility-affecting health conditions.\n\nThis tech is considered forbidden by colonial fleet.</description>
+    <thingClass>DMSRC.Building_LabGlass</thingClass>
+    <containedPawnsSelectable>false</containedPawnsSelectable>
+    <uiIconPath>Things/Building/DMSRC_WetwareProducer_Icon</uiIconPath>
+    <uiIconScale>1.45</uiIconScale>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/DMSRC_LabGestator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Mass>50</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <killedLeavings>
+      <ChunkSlagSteel>1</ChunkSlagSteel>
+      <Tungsteel>30</Tungsteel>
+      <Artifuscle>10</Artifuscle>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ComponentStamped>1</ComponentStamped>
+    </killedLeavings>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <blockWind>false</blockWind>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <rotatable>false</rotatable>
+    <receivesSignals>true</receivesSignals>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <artificialForMeditationPurposes>true</artificialForMeditationPurposes>
+      <ai_chillDestination>true</ai_chillDestination>
+      <claimable>false</claimable>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <buildingTags>
+        <li>DMSRC_Quest</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_InvalidOverSubstructure</li>
+    </placeWorkers>
+  </ThingDef>
+
+</Defs>

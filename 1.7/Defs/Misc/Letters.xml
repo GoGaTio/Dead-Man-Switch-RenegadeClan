@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LetterDef>
+    <defName>DMSRC_ContactEvent</defName>
+    <color>(144, 111, 166)</color>
+    <flashColor>(164, 106, 231)</flashColor>
+    <flashInterval>90</flashInterval>
+    <arriveSound>LetterArrive</arriveSound>
+    <letterClass>DMSRC.ChoiceLetter_RenegadesOffer</letterClass>
+  </LetterDef>
+
+</Defs>

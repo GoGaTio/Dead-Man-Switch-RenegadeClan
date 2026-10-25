@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>DMSRC_ContainerNara</defName>
+    <label>container</label>
+    <description>A container with valuable items.</description>
+    <siteTexture>World/Sites/DMSRC_ContainerSite</siteTexture>
+    <expandingIconTexture>World/DMSRC_ContainerSite</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <tags>
+      <li>DMSRC_ContainerNara</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMSRC_ContainerNara</defName>
+    <linkWithSite>DMSRC_ContainerNara</linkWithSite>
+    <order>1460</order>
+    <genStep Class="DMSRC.GenStep_RPrefab">
+      <tag>ContainerNara</tag>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

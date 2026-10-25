@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MapGeneratorDef>
+    <defName>DMSRC_UndergroundWarehouse</defName>
+    <label>underground warehouse</label>
+    <isUnderground>true</isUnderground>
+    <disableCallAid>true</disableCallAid>
+    <pocketMapProperties>
+      <biome>Underground</biome>
+      <temperature>15</temperature>
+      <canBeCleaned>true</canBeCleaned>
+    </pocketMapProperties>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Underground_RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>DMSRC_UndergroundWarehouse_Undergound</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <SitePartDef>
+    <defName>DMSRC_UndergroundWarehouse</defName>
+    <label>underground warehouse</label>
+    <description>A colonial fleet underground warehouse.</description>
+    <siteTexture>World/Sites/DMSRC_LargeSite</siteTexture>
+    <expandingIconTexture>World/DMSRC_UndergroundWarehouse</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <tags>
+      <li>DMSRC_UndergroundWarehouse</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMSRC_UndergroundWarehouse</defName>
+    <linkWithSite>DMSRC_UndergroundWarehouse</linkWithSite>
+    <order>1460</order>
+    <genStep Class="DMSRC.GenStep_RPrefab">
+      <prefabs>
+        <li>DMSRC_LogisticCenter</li>
+      </prefabs>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>DMSRC_UndergroundWarehouse_Undergound</defName>
+    <order>551</order>
+    <genStep Class="DMSRC.GenStep_RPrefab">
+      <useStaticPrefab>true</useStaticPrefab>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

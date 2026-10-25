@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityDef>
+    <defName>DMSRC_EmergencyBattery</defName>
+    <label>emergency battery</label>
+    <description>Use the reserve battery to keep functioning a bit more.</description>
+    <iconPath>UI/Abilities/DMSRC_EmergencyBattery</iconPath>
+    <charges>1</charges>
+    <hostile>false</hostile>
+    <groupAbility>true</groupAbility>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>600000</cooldownTicksRange>
+    <aiCanUse>false</aiCanUse>
+    <ai_IsOffensive>false</ai_IsOffensive>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <warmupTime>0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <soundCast>ShieldMech_Start</soundCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="DMSRC.CompProperties_EmergencyBattery">
+        <amount>30</amount>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>DMSRC_MalevolenceCommand</defName>
+    <label>Tactical calibration</label>
+    <description>Share fire control data with friendly forces within range to improve squad accuracy for short period.</description>
+    <iconPath>UI/Abilities/DMSRC_Command_Malevolence</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <groupDef IsNull="True"/>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hostile>false</hostile>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>DMSRC_MalevolenceCommand</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+    <statBases>
+      <Ability_EffectRadius>14.9</Ability_EffectRadius>
+      <Ability_Duration>500</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <range>14.9</range>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <HediffDef>
+    <defName>DMSRC_MalevolenceCommand</defName>
+    <label>Tactical calibration</label>
+    <description>A large amount of fire control data is being shared with surrounding friendly forces through this unit.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.15, 0.15)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <compClass>Fortified.HediffComp_GiveHediffsInRangeMech</compClass>
+        <range>14.9</range>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
+        <targetingParameters>
+          <canTargetSelf>false</canTargetSelf>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetHumans>true</canTargetHumans>
+          <canTargetMechs>true</canTargetMechs>
+        </targetingParameters>
+        <hediff>DMSRC_MalevolenceCommandReceived</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>DMSRC_MalevolenceCommandReceived</defName>
+    <label>Received tactical data</label>
+    <description>Received tactical data from command automatroid.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 0.15, 0.15)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>15</maxDistance>
+        <customMote>DMSRC_Mote_MalevolenceCommandLine</customMote>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+          <RangedCooldownFactor>-0.25</RangedCooldownFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+</Defs>

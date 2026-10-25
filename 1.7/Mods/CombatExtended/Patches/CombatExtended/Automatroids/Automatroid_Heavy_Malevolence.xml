@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ========== PawnKind Patches ========== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="DMSRC_Mech_Malevolence"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>5</min>
+							<max>8</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/PawnKindDef[defName="DMSRC_Mech_Malevolence"]/combatPower</xpath>
+				<value>
+					<combatPower>950</combatPower>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="DMSRC_Mech_Malevolence"]</xpath>
+				<value>
+					<aiAvoidCover>true</aiAvoidCover>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>QuadrupedTall</bodyShape>
+					</li>
+				</value>
+			</li>
+
+			<!-- ===========-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]/statBases/ShootingAccuracyPawn</xpath>
+				<value>
+					<CarryWeight>300</CarryWeight>
+					<CarryBulk>230</CarryBulk>
+					<AimingAccuracy>1.8</AimingAccuracy>
+					<ShootingAccuracyPawn>2.5</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.04</MeleeDodgeChance>
+					<MeleeCritChance>0.46</MeleeCritChance>
+					<MeleeParryChance>0.34</MeleeParryChance>
+					<MaxHitPoints>500</MaxHitPoints>
+					<NightVisionEfficiency>0.9</NightVisionEfficiency>
+					<ReloadSpeed>2</ReloadSpeed>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>155</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>51</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.8</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]/statBases</xpath>
+				<value>
+					<ArmorRating_Electric>0.5</ArmorRating_Electric>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>4500</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1000</RegenInterval>
+						<RegenValue>25</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>5</Steel>
+							<Tungsteel>5</Tungsteel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>450</MaxOverHeal>
+						<MinArmorPct>0.8</MinArmorPct>
+						<!-- <MinArmorValueSharp>10</MinArmorValueSharp>
+				<MinArmorValueBlunt>22</MinArmorValueBlunt>
+				<MinArmorValueHeat>0.2</MinArmorValueHeat>
+				<MinArmorValueElectric>0.1</MinArmorValueElectric> -->
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>front left leg</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>74</power>
+							<surpriseAttack>
+								<extraMeleeDamages>
+									<li>
+										<def>Stun</def>
+										<amount>25</amount>
+									</li>
+								</extraMeleeDamages>
+							</surpriseAttack>
+							<cooldownTime>3.55</cooldownTime>
+							<linkedBodyPartsGroup>DMSRC_LeftArmoredLeg</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>84</armorPenetrationBlunt>
+							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>front right leg</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>74</power>
+							<surpriseAttack>
+								<extraMeleeDamages>
+									<li>
+										<def>Stun</def>
+										<amount>25</amount>
+									</li>
+								</extraMeleeDamages>
+							</surpriseAttack>
+							<cooldownTime>3.55</cooldownTime>
+							<linkedBodyPartsGroup>DMSRC_RightArmoredLeg</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>84</armorPenetrationBlunt>
+							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>rear left leg</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>44</power>
+							<surpriseAttack>
+								<extraMeleeDamages>
+									<li>
+										<def>Stun</def>
+										<amount>20</amount>
+									</li>
+								</extraMeleeDamages>
+							</surpriseAttack>
+							<cooldownTime>3</cooldownTime>
+							<linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>47</armorPenetrationBlunt>
+							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>rear right leg</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>44</power>
+							<surpriseAttack>
+								<extraMeleeDamages>
+									<li>
+										<def>Stun</def>
+										<amount>20</amount>
+									</li>
+								</extraMeleeDamages>
+							</surpriseAttack>
+							<cooldownTime>3</cooldownTime>
+							<linkedBodyPartsGroup>RightMechanicalLeg</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>47</armorPenetrationBlunt>
+							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>60</power>
+							<cooldownTime>7</cooldownTime>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<chanceFactor>0.01</chanceFactor>
+							<armorPenetrationBlunt>27.5</armorPenetrationBlunt>
+						</li>
+					</tools>
+				</value>
+			</li>
+
+
+			<!--add partial armor-->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="DMSRC_Mech_Malevolence"]</xpath>
+				<value>
+					<li Class="CombatExtended.PartialArmorExt">
+						<stats>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+								<parts>
+									<li>SightSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+								<parts>
+									<li>HearingSensor</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_CompactSenser</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_CompactSenser</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+								<parts>
+									<li>DMSRC_Turret</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+								<parts>
+									<li>DMSRC_Turret</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_HeavyChassis</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_HeavyChassis</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>2.7</ArmorRating_Sharp>
+								<parts>
+									<li>DMSRC_ArmoredHead</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>2.7</ArmorRating_Blunt>
+								<parts>
+									<li>DMSRC_ArmoredHead</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>1.25</ArmorRating_Sharp>
+								<parts>
+									<li>DMSRC_ArmoredLeg</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>1.25</ArmorRating_Blunt>
+								<parts>
+									<li>DMSRC_ArmoredLeg</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Sharp>1</ArmorRating_Sharp>
+								<parts>
+									<li>DMS_ArmourPlate</li>
+								</parts>
+							</li>
+							<li>
+								<useStatic>false</useStatic>
+								<ArmorRating_Blunt>1</ArmorRating_Blunt>
+								<parts>
+									<li>DMS_ArmourPlate</li>
+								</parts>
+							</li>
+						</stats>
+					</li>
+				</value>
+			</li>
+
+
+		</operations>
+	</Operation>
+</Patch>

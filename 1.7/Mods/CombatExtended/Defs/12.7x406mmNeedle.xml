@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>DMSRC_AmmoSet_127x406mmNeedle</defName>
+		<label>12.7x406mm Needle</label>
+		<ammoTypes>
+      <DMSRC_Ammo_127x406mmNeedle>DMSRC_Bullet_127x406mmNeedle</DMSRC_Ammo_127x406mmNeedle>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo127x108mmBase">
+		<defName>DMSRC_Ammo_127x406mmNeedle</defName>
+		<label>12.7x406mm Needle</label>
+    <description>Large caliber bullet based on 12.7x108mm Soviet and designed for underwater use.</description>
+    <graphicData>
+      <texPath>Things/Ammo/DMSRC_127x406mmNeedle</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <ammoClass>DMSRC_Needle</ammoClass>
+    <cookOffProjectile>DMSRC_Bullet_127x406mmNeedle</cookOffProjectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef ParentName="Base127x108mmBullet">
+		<defName>DMSRC_Bullet_127x406mmNeedle</defName>
+		<label>12.7x406mm Needle</label>
+    <graphicData>
+      <texPath>Things/Projectile/Needle</texPath>
+      <drawSize>1.8</drawSize>
+    </graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>DMSRC_Needle</damageDef>
+      <speed>116</speed>
+      <damageAmountBase>29</damageAmountBase>
+      <armorPenetrationSharp>24</armorPenetrationSharp>
+      <armorPenetrationBlunt>492.7</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="AdvancedAmmoRecipeBase">
+    <defName>MakeDMSRC_Ammo_127x406mmNeedle</defName>
+    <label>make 127x406mm (Needle) cartridge x200</label>
+    <description>Craft 200 127x406mm (Needle) cartridges.</description>
+    <jobString>Making 127x406mm (Needle) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>172</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>14</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>Uranium</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <DMSRC_Ammo_127x406mmNeedle>200</DMSRC_Ammo_127x406mmNeedle>
+    </products>
+    <workAmount>7000</workAmount>
+  </RecipeDef>
+
+</Defs>

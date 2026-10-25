@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TraderKindDef>
+    <defName>DMSRC_Renegades</defName>
+    <hideThingsNotWillingToTrade>True</hideThingsNotWillingToTrade>
+    <category>DMSRC_RenegadesMarket</category>
+    <stockGenerators>
+
+      <!-- Resources -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentIndustrial</thingDef>
+        <countRange>20~70</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentSpacer</thingDef>
+        <countRange>8~16</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Steel</thingDef>
+        <countRange>1500~1800</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Plasteel</thingDef>
+        <countRange>200~500</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMS_Ceramics</thingDef>
+        <countRange>1200~1350</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Tungsteel</thingDef>
+        <countRange>750~1200</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentStamped</thingDef>
+        <countRange>12~50</countRange>
+      </li>
+
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentTransmitter</thingDef>
+        <countRange>1~3</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Neurocomputer</thingDef>
+        <countRange>2~5</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ComponentControlChip</thingDef>
+        <countRange>0~1</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMSRC_ComponentGBEP</thingDef>
+        <countRange>0~4</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMSRC_ProcessorCore</thingDef>
+        <countRange>-5~1</countRange>
+      </li>
+
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Uranium</thingDef>
+        <countRange>300~600</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Polyester</thingDef>
+        <countRange>500~800</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Plasfiber</thingDef>
+        <countRange>200~300</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Gold</thingDef>
+        <countRange>100~200</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Neutroamine</thingDef>
+        <countRange>700~1000</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Chemfuel</thingDef>
+        <countRange>600~800</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Chocolate</thingDef>
+        <countRange>20~70</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MedicineUltratech</thingDef>
+        <countRange>25~50</countRange>
+      </li>
+      <li Class="StockGenerator_ReinforcedBarrels">
+        <countRange>8~17</countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>MortarShell</tradeTag>
+        <thingDefCountRange>1~2</thingDefCountRange>
+        <countRange>20~40</countRange>
+      </li>
+
+      <!-- Weapons -->
+      <li Class="DMSRC.StockGenerator_ThingSetMaker">
+        <thingMakerDef>DMSRC_Debug</thingMakerDef>
+      </li>
+
+      <!-- Apparel -->
+      <li Class="StockGenerator_MarketValue">
+        <tradeTag>DMS_Clothing</tradeTag>
+        <countRange>3~7</countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMS_Armor</tradeTag>
+        <thingDefCountRange>2~3</thingDefCountRange>
+        <countRange>1~3</countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>HiTechArmor</tradeTag>
+        <thingDefCountRange>2~4</thingDefCountRange>
+        <countRange>1~2</countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMSRC_AssaultEquipment</tradeTag>
+        <thingDefCountRange>2~4</thingDefCountRange>
+        <countRange>1~3</countRange>
+      </li>
+
+      <!-- Implants -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMS_Bionic</tradeTag>
+        <thingDefCountRange>2~3</thingDefCountRange>
+        <countRange>1~3</countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>DMSRC_Neural</tradeTag>
+        <thingDefCountRange>2~3</thingDefCountRange>
+        <countRange>2~4</countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMSRC_Neurointerface</thingDef>
+        <countRange>-2~1</countRange>
+      </li>
+
+      <!-- Buildings -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMSRC_CompactGenerator</thingDef>
+        <countRange>-5~2</countRange>
+      </li>
+
+      <!-- Exotic -->
+      <li Class="StockGenerator_Tag">
+        <tradeTag>Artifact</tradeTag>
+        <thingDefCountRange>1~4</thingDefCountRange>
+        <countRange>-2~2</countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>ExoticMisc</tradeTag>
+        <thingDefCountRange>1~4</thingDefCountRange>
+        <countRange>1~2</countRange>
+        <excludedThingDefs>
+          <li>Luciferium</li>
+          <!-- already handled by drugs -->
+          <li>ComponentSpacer</li>
+          <!-- already handled by single def -->
+          <li>MedicineUltratech</li>
+          <!-- already handled by single def -->
+        </excludedThingDefs>
+        <customCountRanges>
+          <Hyperweave>50~100</Hyperweave>
+        </customCountRanges>
+      </li>
+
+      <!-- Drugs -->
+      <li Class="StockGenerator_Category">
+        <categoryDef>Drugs</categoryDef>
+        <thingDefCountRange>2~4</thingDefCountRange>
+        <totalPriceRange>2000~4000</totalPriceRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>DMSRC_Queraxen</thingDef>
+        <countRange>30~120</countRange>
+      </li>
+
+      <!-- Genepack -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Genepack</thingDef>
+        <countRange>-2~8</countRange>
+      </li>
+
+      <li Class="StockGenerator_Techprints">
+        <countChances>
+          <li>
+            <count>1</count>
+            <chance>1</chance>
+          </li>
+        </countChances>
+      </li>
+
+      <!-- Archite capsules -->
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>ArchiteCapsule</thingDef>
+        <countRange>-1~2</countRange>
+        <!-- 50% chance for 1~2 -->
+      </li>
+
+      <!-- Buying -->
+      <!--None-->
+
+    </stockGenerators>
+  </TraderKindDef>
+
+</Defs>

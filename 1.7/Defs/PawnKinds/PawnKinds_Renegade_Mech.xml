@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnKindDef ParentName="DMSRC_BaseAutomatroidRenegade">
+    <defName>DMSRC_Mech_Soldat_R</defName>
+    <label>vanguard</label>
+    <race>DMS_Mech_Soldat</race>
+    <isFighter>true</isFighter>
+    <combatPower>80</combatPower>
+    <maxPerGroup>20</maxPerGroup>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/vanguard</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Automatroid/OldTexture/vanguard</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>DMSRC_RenegadeRifle</li>
+      <li>DMSRC_AntiTank</li>
+    </weaponTags>
+  </PawnKindDef>
+
+</Defs>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--<ThingDef Name="DMS_AccessKeyBase" ParentName="ResourceBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <possessionCount>3</possessionCount>
+    <graphicData>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <category>Item</category>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <stackLimit>5</stackLimit>
+    <tradeability>None</tradeability>
+    <selectable>true</selectable>
+    <intricate>true</intricate>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>0.05</Mass>
+      <Flammability>0</Flammability>
+      <MarketValue>200</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AccessKeyBase">
+    <defName>DMS_AccessKey_Nara</defName>
+    <label>Nara Ind. access key</label>
+    <description>A one-use unified access key used by Nara Industries. It can be used to activate terminals, open crates and doors.</description>
+    <graphicData>
+      <texPath>Things/Resource/DMS_AccessKey/Nara</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AccessKeyBase">
+    <defName>DMS_AccessKey_Neutrals</defName>
+    <label>derelict access key</label>
+    <description>A one-use unified access key used by derelict automatroids. It can be used to activate terminals, open crates and doors.</description>
+    <graphicData>
+      <texPath>Things/Resource/DMS_AccessKey/Neutral</texPath>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_AccessKeyBase">
+    <defName>DMSRC_AccessKey_Renegade</defName>
+    <label>Renegades access key</label>
+    <description>A one-use unified access key used by Renegade Clan. It can be used to activate terminals, open crates and doors.</description>
+    <graphicData>
+      <texPath>Things/Resource/DMS_AccessKey/Renegade</texPath>
+    </graphicData>
+  </ThingDef>-->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_ContainerTransponder</defName>
+    <label>container transponder</label>
+    <description>A transponder that designated location of security container even over a great distance.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_ContainerTransmitter</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <category>Item</category>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <stackLimit>5</stackLimit>
+    <tradeability>None</tradeability>
+    <selectable>true</selectable>
+    <statBases>
+      <Mass>0.1</Mass>
+      <Flammability>0</Flammability>
+      <MarketValue>2000</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUseableDatacore</compClass>
+        <useJob>ReadDatacore</useJob>
+        <useLabel>Decrypt transponder</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>DatacoreRead</soundOnUsed>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+      <li Class="CompProperties_UseEffectGiveQuest">
+        <quest>DMSRC_ContainerLoot</quest>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Can be decrypted at a research bench.\nSelect a colonist and right-click this to decrypt it.</inspectString>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_AncientBroadcaster</defName>
+    <label>ancient broadcaster</label>
+    <description>A high-power communication relay to be used in the colony for emergency reinforcements. The identification code of this rescue protocol has long been abandoned, so only those mechanized units that are feral will take the bait.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_AncientBroadcaster</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>ThingWithComps</thingClass>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>1.7</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+      <MarketValue>1800</MarketValue>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>RewardStandardCore</li>
+    </thingSetMakerTags>
+    <tradeability>None</tradeability>
+    <!--Only from quests and containers-->
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUseableDatacore</compClass>
+        <useJob>ReadDatacore</useJob>
+        <useLabel>Decrypt transponder</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>DatacoreRead</soundOnUsed>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+      <li Class="CompProperties_UseEffectGiveQuest">
+        <quest>DMSRC_MalevolenceHunt</quest>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <inspectString>Can be decrypted at a research bench.\nSelect a colonist and right-click this to decrypt it.</inspectString>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DMSRC_TimedBomb</defName>
+    <label>timed bomb</label>
+    <description>An explosive device with adjustable timer. Causes destruction of anything in a small area if damaged or timer runs out.\n\nCan be defused to stop timer and prevent detonation.</description>
+    <graphicData>
+      <texPath>Things/Resource/DMSRC_TimedBomb</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingClass>ThingWithComps</thingClass>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>3</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0</Flammability>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MarketValue>350</MarketValue>
+      <WorkToMake>7000</WorkToMake>
+    </statBases>
+    <costList>
+      <Tungsteel>20</Tungsteel>
+      <Polyester>50</Polyester>
+      <ComponentStamped>2</ComponentStamped>
+      <Shell_HighExplosive>10</Shell_HighExplosive>
+    </costList>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+      <displayPriority>979</displayPriority>
+    </recipeMaker>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <tradeability>Sellable</tradeability>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <compClass>DMSRC.CompUsableAllowTargetMechs</compClass>
+        <useLabel>Plant {0_label}</useLabel>
+        <useDuration>0</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+      <li Class="DMSRC.CompProperties_UseEffectTargetablePlant">
+        <jobDef>DMSRC_PlantBomb</jobDef>
+        <plantDef>DMSRC_TimedBombActive</plantDef>
+        <timerRange>2~4</timerRange>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

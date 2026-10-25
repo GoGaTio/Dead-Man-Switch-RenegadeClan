@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>DMSRC_FrontlineBase</defName>
+    <label>frontline base</label>
+    <description>A colonial fleet frontline base.</description>
+    <siteTexture>World/Sites/DMSRC_MediumSite</siteTexture>
+    <expandingIconTexture>World/DMSRC_FrontlineBase</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <considerEnteringAsAttack>false</considerEnteringAsAttack>
+    <tags>
+      <li>DMSRC_FrontlineBase</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>DMSRC_FrontlineBase</defName>
+    <linkWithSite>DMSRC_FrontlineBase</linkWithSite>
+    <order>1460</order>
+    <genStep Class="DMSRC.GenStep_MissionStructure">
+      <structureDefs>
+        <li>DMSRC_FrontlineBase_A</li>
+      </structureDefs>
+      <forcedFaction>DMS_Army</forcedFaction>
+      <allowedRotation>All</allowedRotation>
+    </genStep>
+  </GenStepDef>
+
+</Defs>

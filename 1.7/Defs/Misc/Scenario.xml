@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ScenPartDef>
+    <defName>DMSRC_PlayerArrivesNearPrefab</defName>
+    <label>structure nearby</label>
+    <category>Fixed</category>
+    <scenPartClass>DMSRC.ScenPart_PlayerArrivesPrefab</scenPartClass>
+  </ScenPartDef>
+
+  <ScenPartDef>
+    <defName>DMSRC_Renegades</defName>
+    <label>renegades relation</label>
+    <category>Fixed</category>
+    <scenPartClass>DMSRC.ScenPart_Renegades</scenPartClass>
+  </ScenPartDef>
+
+  <GoodwillSituationDef>
+    <defName>DMSRC_Renegades</defName>
+    <label>ally with renegades</label>
+    <workerClass>DMSRC.GoodwillSituationWorker_Renegades</workerClass>
+  </GoodwillSituationDef>
+
+  <ScenarioDef ParentName="ScenarioBase">
+    <defName>DMSRC_Scenario</defName>
+    <label>Awaiting Renegades</label>
+    <description>A group of renegades.</description>
+    <scenario>
+      <name>Awaiting Renegades</name>
+      <summary>A group of renegades.</summary>
+      <description>You have been awaiting for decades on this Rimworld till high command gave you an order to begin your activity since local renegades cell is already established.\n\nReinitiate systems of base, activate automatroids, contact renegades clan and begin fighting local Colonial Fleet. Take advantage of technology and you hidden position, use command automatroid to realize sabotage missions on fleet infrastructure.</description>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>DMSRC_PlayerRenegades</factionDef>
+      </playerFaction>
+      <parts>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <summarized>true</summarized>
+          <pawnChoiceCount>5</pawnChoiceCount>
+          <leftBehindPawnKind>DMSRC_OfficerHigh_Player</leftBehindPawnKind>
+          <kindCounts>
+            <li>
+              <kindDef>DMSRC_Thinker_Player</kindDef>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+            <li>
+              <kindDef>DMSRC_OfficerHigh_Player</kindDef>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+          </kindCounts>
+        </li>
+        <!-- Player starting stuff spawn method-->
+        <li Class="DMSRC.ScenPart_PlayerArrivesPrefab">
+          <def>DMSRC_PlayerArrivesNearPrefab</def>
+          <visible>false</visible>
+          <prefabOptions>
+            <li>DMSRC_ScenarioBunker</li>
+          </prefabOptions>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_AssaultRifle</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_MiniMachineGun</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_PDW</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMSRC_FSRPistol</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMS_TacticalPistol</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DMSRC_Mechlink_Buffed</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentTransmitter</thingDef>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>60</count>
+        </li><li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Chemfuel</thingDef>
+          <count>400</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>200</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>3000</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentStamped</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineIndustrial</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentSpacer</thingDef>
+          <count>4</count>
+        </li>
+
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMSRC_Mech_Malice</mechKind>
+          <overseenByPlayerPawnChance>0</overseenByPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMS_Mech_Soldat</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+        <li Class="ScenPart_StartingMech">
+          <def>StartingMech</def>
+          <mechKind>DMS_Mech_Arquebusier</mechKind>
+          <overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+        </li>
+
+        <li Class="ScenPart_DisableMapGen">
+          <def>DisableExostriderRemains</def>
+        </li>
+
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_EquipmentAdvanced</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_EquipmentBasis</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMS_Legion</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMSRC_NeuroChips</project>
+        </li>
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>DMSRC_FSRMunitions</project>
+        </li>
+        <li Class="DMSRC.ScenPart_Renegades">
+          <def>DMSRC_Renegades</def>
+          <enemyWithFleet>true</enemyWithFleet>
+          <relations>Ally</relations>
+          <goodwill>100</goodwill>
+          <startContacted>true</startContacted>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

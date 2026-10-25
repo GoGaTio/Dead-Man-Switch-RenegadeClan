@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>DMSRC_FocusedBeamBurn</defName>
+    <label>beam burn</label>
+    <labelNoun>a beam burn</labelNoun>
+    <description>A beam burn.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>old beam wound</permanentLabel>
+        <instantlyPermanentLabel>permanent beam injury</instantlyPermanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <bleedRate>0.03</bleedRate>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Burned off</destroyedLabel>
+      <destroyedOutLabel>Burned out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>DMSRC_Needle</defName>
+    <label>swihha needle</label>
+    <hediffClass>DMSRC.Hediff_Needle</hediffClass>
+    <description>A sharp metal needle. While generally not fatal, these are incredibly painful. It must be surgically removed.</description>
+    <tendable>false</tendable>
+    <displayWound>true</displayWound>
+    <initialSeverity>1</initialSeverity>
+    <comps />
+  </HediffDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>DMSRC_RemoveNeedle</defName>
+    <label>remove swihha needle</label>
+    <description>Remove swihha needle.</description>
+    <jobString>Removing needles.</jobString>
+    <workerClass>Recipe_RemoveHediff</workerClass>
+    <workAmount>600</workAmount>
+    <hideBodyPartNames>false</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <isViolation>false</isViolation>
+    <removesHediff>DMSRC_Needle</removesHediff>
+    <anesthetize>false</anesthetize>
+    <surgeryOutcomeEffect IsNull="True" />
+    <!-- Always succeeds -->
+    <deathOnFailedSurgeryChance>0</deathOnFailedSurgeryChance>
+    <ingredients>
+      <!-- None-->
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+</Defs>

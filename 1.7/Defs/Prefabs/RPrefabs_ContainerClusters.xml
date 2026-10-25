@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock1</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(6, 0, 0)</li>
+          <li>(7, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(0, 0, 2)</li>
+          <li>(8, 0, 7)</li>
+        </positions>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(6, 0, 2)</li>
+          <li>(2, 0, 5)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(3, 0, 2)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock2</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(4, 0, 3)</li>
+          <li>(7, 0, 6)</li>
+          <li>(6, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(3, 0, 1)</li>
+          <li>(1, 0, 2)</li>
+          <li>(0, 0, 7)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(2, 0, 5)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock3</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(2, 0, 1)</li>
+          <li>(8, 0, 6)</li>
+          <li>(6, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(1, 0, 4)</li>
+          <li>(5, 0, 4)</li>
+          <li>(1, 0, 6)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 2)</li>
+          <li>(5, 0, 6)</li>
+          <li>(7, 0, 7)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <positions>
+          <li>(6, 0, 3)</li>
+          <li>(2, 0, 5)</li>
+        </positions>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock4</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(4, 0, 0)</li>
+          <li>(7, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(7, 0, 0)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(6, 0, 7)</position>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 2)</li>
+          <li>(4, 0, 3)</li>
+          <li>(2, 0, 5)</li>
+        </positions>
+      </DMSRC_PackCrate>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock5</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(4, 0, 1)</li>
+          <li>(7, 0, 1)</li>
+          <li>(5, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(5, 0, 8)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(1, 0, 5)</li>
+          <li>(3, 0, 6)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(6, 0, 2)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock6</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(8, 0, 0)</li>
+          <li>(8, 0, 1)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(8, 0, 2)</li>
+          <li>(2, 0, 3)</li>
+          <li>(3, 0, 4)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(3, 0, 2)</li>
+          <li>(4, 0, 5)</li>
+          <li>(0, 0, 7)</li>
+        </positions>
+      </DMSRC_PackCrate>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock7</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(2, 0, 0)</li>
+          <li>(6, 0, 2)</li>
+          <li>(5, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(0, 0, 5)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(0, 0, 1)</li>
+          <li>(0, 0, 3)</li>
+          <li>(6, 0, 3)</li>
+          <li>(5, 0, 5)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(3, 0, 4)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock8</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(6, 0, 5)</li>
+          <li>(6, 0, 6)</li>
+          <li>(5, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(7, 0, 4)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(6, 0, 1)</li>
+          <li>(1, 0, 4)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(3, 0, 4)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock9</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(5, 0, 1)</li>
+          <li>(2, 0, 6)</li>
+          <li>(6, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(1, 0, 3)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(1, 0, 4)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <position>(6, 0, 3)</position>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(2, 0, 3)</position>
+      </DMSRC_Cargo>
+      <DMSRC_Cargo>
+        <position>(6, 0, 6)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStock10</defName>
+    <tags>
+      <li>WarehouseStock</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(6, 0, 2)</li>
+          <li>(1, 0, 5)</li>
+          <li>(8, 0, 7)</li>
+          <li>(8, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(1, 0, 4)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(7, 0, 5)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(6, 0, 0)</li>
+          <li>(1, 0, 1)</li>
+          <li>(7, 0, 2)</li>
+          <li>(2, 0, 4)</li>
+          <li>(1, 0, 6)</li>
+          <li>(5, 0, 6)</li>
+        </positions>
+      </DMSRC_PackCrate>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <!--=================================================================================-->
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithHole1</defName>
+    <tags>
+      <li>WarehouseStockWithHole</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMS_Hole_7x7Empty>
+        <position>(4, 0, 4)</position>
+      </DMS_Hole_7x7Empty>
+      <DMSRC_Crate>
+        <position>(5, 0, 0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(0, 0, 6)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithHole2</defName>
+    <tags>
+      <li>WarehouseStockWithHole</li>
+    </tags>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(6, 0, 0)</li>
+          <li>(4, 0, 2)</li>
+          <li>(7, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(8, 0, 7)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(7, 0, 0)</li>
+          <li>(1, 0, 1)</li>
+          <li>(7, 0, 3)</li>
+          <li>(0, 0, 7)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMS_Hole_3x3Empty>
+        <position>(4, 0, 4)</position>
+      </DMS_Hole_3x3Empty>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <!--=================================================================================-->
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithContainer1</defName>
+    <tags>
+      <li>WarehouseStockWithContainer</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <pos>(5, 0, 4)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>North, West</rotations>
+      </li>
+    </subPrefabs>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(8, 0, 0)</li>
+          <li>(4, 0, 2)</li>
+          <li>(3, 0, 3)</li>
+          <li>(3, 0, 4)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(8, 0, 1)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(1, 0, 1)</li>
+          <li>(0, 0, 5)</li>
+          <li>(5, 0, 6)</li>
+        </positions>
+      </DMSRC_PackCrate>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithContainer2</defName>
+    <tags>
+      <li>WarehouseStockWithContainer</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <pos>(6, 0, 6)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>North, South, West</rotations>
+      </li>
+    </subPrefabs>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(1, 0, 0)</li>
+          <li>(2, 0, 1)</li>
+          <li>(5, 0, 2)</li>
+          <li>(6, 0, 3)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(2, 0, 4)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <position>(8, 0, 8)</position>
+        <relativeRotation>Clockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <position>(1, 0, 6)</position>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(3, 0, 4)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithContainer3</defName>
+    <tags>
+      <li>WarehouseStockWithContainer</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <pos>(4, 0, 4)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>North, South, West</rotations>
+      </li>
+    </subPrefabs>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <positions>
+          <li>(6, 0, 0)</li>
+          <li>(7, 0, 1)</li>
+        </positions>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(3, 0, 7)</li>
+          <li>(4, 0, 8)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_PackCrate>
+        <positions>
+          <li>(0, 0, 0)</li>
+          <li>(2, 0, 0)</li>
+          <li>(6, 0, 5)</li>
+        </positions>
+      </DMSRC_PackCrate>
+      <DMSRC_Cargo>
+        <position>(1, 0, 4)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+  <DMSRC.RPrefabDef>
+    <defName>DMSRC_WarehouseStockWithContainer4</defName>
+    <tags>
+      <li>WarehouseStockWithContainer</li>
+    </tags>
+    <subPrefabs>
+      <li>
+        <pos>(2, 0, 2)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>All</rotations>
+      </li>
+      <li>
+        <pos>(5, 0, 7)</pos>
+        <tag>ContainerNara</tag>
+        <rotations>North, East, West</rotations>
+      </li>
+    </subPrefabs>
+    <size>(9,9)</size>
+    <things>
+      <DMSRC_Crate>
+        <position>(5, 0, 2)</position>
+        <relativeRotation>Counterclockwise</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Crate>
+        <positions>
+          <li>(2, 0, 5)</li>
+          <li>(1, 0, 6)</li>
+          <li>(1, 0, 7)</li>
+        </positions>
+        <relativeRotation>Opposite</relativeRotation>
+      </DMSRC_Crate>
+      <DMSRC_Cargo>
+        <position>(6, 0, 2)</position>
+      </DMSRC_Cargo>
+    </things>
+  </DMSRC.RPrefabDef>
+
+</Defs>

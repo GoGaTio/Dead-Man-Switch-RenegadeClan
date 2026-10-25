@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DMSRC.RenegadesRequestDef>
+    <defName>TradeRequest</defName>
+    <requestClass>DMSRC.TradeRequest</requestClass>
+    <label>buying request</label>
+    <description>Request a buying offer from renegades.</description>
+    <daysBeforeArrival>1~2</daysBeforeArrival>
+  </DMSRC.RenegadesRequestDef>
+
+  <DMSRC.RenegadesRequestDef>
+    <defName>SellRequest</defName>
+    <requestClass>DMSRC.SellRequest</requestClass>
+    <label>selling request</label>
+    <description>Request a selling offer from renegades.</description>
+    <daysBeforeArrival>0.5~1</daysBeforeArrival>
+    <allowedDefs>
+      <li>Artifuscle</li>
+      <li>ComponentStamped</li>
+    </allowedDefs>
+    <allowedTradeTags>
+      <li>ExoticMisc</li>
+    </allowedTradeTags>
+  </DMSRC.RenegadesRequestDef>
+
+  <DMSRC.RenegadesRequestDef>
+    <defName>BandwidthRequest</defName>
+    <requestClass>DMSRC.BandwidthRequest</requestClass>
+    <label>bandwidth request</label>
+    <description>Request bandwidth for your mechanitor. It will require 125 silver per bandwidth point every 15 days.</description>
+    <minGoodwill>30</minGoodwill>
+  </DMSRC.RenegadesRequestDef>
+
+  <DMSRC.RenegadesRequestDef>
+    <defName>AidRequest</defName>
+    <requestClass>DMSRC.AidRequest</requestClass>
+    <label>military aid request</label>
+    <description>Request a group of renegade fighters to assist you in combat.</description>
+    <minGoodwill>50</minGoodwill>
+  </DMSRC.RenegadesRequestDef>
+  
+</Defs>

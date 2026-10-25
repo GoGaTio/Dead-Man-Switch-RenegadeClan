@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>DMSRC_PlayerRenegades</defName>
+    <label>Renegade group</label>
+    <description>A group of recently aroused renegades.</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>DMSRC_Renegade_Player</basicMemberKind>
+    <pawnSingular>renegade</pawnSingular>
+    <pawnsPlural>renegades</pawnsPlural>
+    <techLevel>Spacer</techLevel>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <allowedCultures><li>Astropolitan</li></allowedCultures>
+    <melaninRange>0~0.1</melaninRange>
+    <backstoryFilters>
+            <li>
+                <categories>
+                    <li>FleetChild</li>
+                    <li>Mili_Standard</li>
+                    <li>Mili_Expert</li>
+<li>Offworld</li>
+                    <li>Civil_Expert</li>
+          <li>Pioneer</li>
+          <li>DMSRC_Researcher</li>
+          <li>Researcher</li>
+          <li>DMSCommon</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+      <li>ClassicStart</li>
+      <li>ClassicStartTechprints</li>
+    </startingTechprintsResearchTags>
+    <apparelStuffFilter Inherit="False">
+      <thingDefs>
+        <li>Synthread</li>
+        <li>Tungsteel</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+
+</Defs>

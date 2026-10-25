@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" Name ="DMSRC_BaseAssaultArmor" ParentName="ApparelBase">
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <thingSetMakerTags>
+      <li>DMSRC_AssaultEquipment</li>
+    </thingSetMakerTags>
+    <tradeTags>
+      <li>DMSRC_AssaultEquipment</li>
+    </tradeTags>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisites>
+        <li>DMSRC_AssaultEquipment</li>
+      </researchPrerequisites>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+      <defaultIngredientFilter>
+        <disallowedThingDefs>
+          <li>Silver</li>
+          <li>Gold</li>
+          <li>DMS_Ceramics</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+      <displayPriority>205</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.5, 1.5)</drawSize>
+    </graphicData>
+    <equippedStatOffsets>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.15</SlaveSuppressionOffset>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
+      <StaggerDurationFactor>-1</StaggerDurationFactor>
+    </equippedStatOffsets>
+    <uiIconScale>1.25</uiIconScale>
+    <generateCommonality>1</generateCommonality>
+    <stuffCategories Inherit="False">
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>14</Mass>
+      <Flammability>0</Flammability>
+      <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      <Insulation_Cold>60</Insulation_Cold>
+      <Insulation_Heat>10</Insulation_Heat>
+      <EquipDelay>12</EquipDelay>
+    </statBases>
+    <apparel>
+      <countsAsClothingForNudity>true</countsAsClothingForNudity>
+      <parentTagDef>ApparelBody</parentTagDef>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Legs</li>
+        <li>Feet</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Middle</li>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>DMSRC_Assault</li>
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+      <soundWear>Wear_PowerArmor</soundWear>
+      <soundRemove>Remove_PowerArmor</soundRemove>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_Biocodable"/>
+    </comps>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>(0.33,0.33,0.33)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.65,0.65,0.65)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>(0.4,0.3,0.15)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <min>(0.3,0.3,0.3)</min>
+          <max>(0.5,0.5,0.5)</max>
+        </li>
+        <li>
+          <weight>6</weight>
+          <min>(0.5,0.5,0.5)</min>
+          <max>(1,1,1)</max>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+  <ThingDef ParentName="DMSRC_BaseAssaultArmor">
+    <defName>DMSRC_Apparel_AssaultArmor</defName>
+    <label>HAP armor</label>
+    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations.\n\nAlso provides vacuum exposure resistance.</description>
+    <costList>
+      <Tungsteel>40</Tungsteel>
+      <Plasfiber>60</Plasfiber>
+      <Uranium>30</Uranium>
+      <ComponentStamped>7</ComponentStamped>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <costStuffCount>120</costStuffCount>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.35</MoveSpeed>
+    </equippedStatOffsets>
+    <graphicData>
+      <texPath>Things/Apparel/DMSRC_AssaultArmor/Apparel_Male_south</texPath>
+    </graphicData>
+    <generateCommonality>1</generateCommonality>
+    <statBases>
+      <WorkToMake>60000</WorkToMake>
+      <StuffEffectMultiplierArmor>1.25</StuffEffectMultiplierArmor>
+    </statBases>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/DMSRC_AssaultArmor/Apparel</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef MayRequire="Ludeon.RimWorld.Royalty" ParentName="DMSRC_BaseAssaultArmor">
+    <defName>DMSRC_Apparel_JumperArmor</defName>
+    <label>HAPJ armor</label>
+    <description>A heavy armor designed to protect wearer from bullets and shrapnel during direct assault operations. Has built-in jump launcher.\n\nAlso provides vacuum exposure resistance.</description>
+    <costList>
+      <Tungsteel>50</Tungsteel>
+      <Plasfiber>60</Plasfiber>
+      <Uranium>30</Uranium>
+      <ComponentStamped>9</ComponentStamped>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Chemfuel>100</Chemfuel>
+    </costList>
+    <costStuffCount>130</costStuffCount>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.4</MoveSpeed>
+    </equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisites>
+        <li>JumpPack</li>
+      </researchPrerequisites>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Apparel/DMSRC_JumperArmor/Apparel_Male_south</texPath>
+    </graphicData>
+    <generateCommonality>0.5</generateCommonality>
+    <statBases>
+      <WorkToMake>65000</WorkToMake>
+      <StuffEffectMultiplierArmor>1.2</StuffEffectMultiplierArmor>
+      <JumpRange>19.9</JumpRange>
+    </statBases>
+    <apparel>
+      <wornGraphicPath>Things/Apparel/DMSRC_JumperArmor/Apparel</wornGraphicPath>
+    </apparel>
+    <comps>
+      <li Class="CompProperties_ApparelReloadable">
+        <maxCharges>5</maxCharges>
+        <ammoDef>Chemfuel</ammoDef>
+        <ammoCountPerCharge>20</ammoCountPerCharge>
+        <baseReloadTicks>60</baseReloadTicks>
+        <soundReload>Standard_Reload</soundReload>
+        <hotKey>Misc4</hotKey>
+        <chargeNoun>jump</chargeNoun>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Jump</verbClass>
+        <label>jump</label>
+        <commandIcon>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</commandIcon>
+        <violent>false</violent>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>True</onlyManualCast>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.5</warmupTime>
+        <warmupEffecter>JumpMechWarmupEffect</warmupEffecter>
+        <flightEffecterDef>JumpMechFlightEffect</flightEffecterDef>
+        <requireLineOfSight>true</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+</Defs>
