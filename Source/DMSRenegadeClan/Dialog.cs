@@ -6,7 +6,7 @@ using Ionic.Zlib;
 using JetBrains.Annotations;
 using KTrie;
 using LudeonTK;
-using NVorbis.NAudioSupport;
+
 using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.IO;
@@ -14,7 +14,7 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using RimWorld.SketchGen;
 using RimWorld.Utility;
-using RuntimeAudioClipLoader;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +29,6 @@ using System.Reflection.Emit;
 using System.Runtime;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;

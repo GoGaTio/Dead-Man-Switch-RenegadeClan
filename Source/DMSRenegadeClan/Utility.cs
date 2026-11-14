@@ -6,7 +6,7 @@ using Ionic.Zlib;
 using JetBrains.Annotations;
 using KTrie;
 using LudeonTK;
-using NVorbis.NAudioSupport;
+
 using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.IO;
@@ -14,7 +14,7 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using RimWorld.SketchGen;
 using RimWorld.Utility;
-using RuntimeAudioClipLoader;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -53,7 +53,6 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
-using static DMSRC.GenStep_RPrefab;
 using static HarmonyLib.Code;
 
 namespace DMSRC
@@ -111,44 +110,6 @@ namespace DMSRC
 			}
 		}
 
-		private static Rot4 Rotation = Rot4.North;
-
-		[DebugAction("DMSRC", "Rotate RPrefab", false, false, false, false, false, 0, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-		public static void RotateRPrefab()
-		{
-			Rotation.Rotate(RotationDirection.Clockwise);
-			Messages.Message("RPrefab rotation: " + Rotation.ToStringHuman(), MessageTypeDefOf.NeutralEvent, historical: false);
-		}
-
-		[DebugAction("DMSRC", "Spawn RPrefab", false, false, false, false, false, 0, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-		public static List<DebugActionNode> SpawnRPrefab()
-		{
-			List<DebugActionNode> list = new List<DebugActionNode>();
-			foreach (RPrefabDef def in DefDatabase<RPrefabDef>.AllDefsListForReading)
-			{
-				list.Add(new DebugActionNode(def.defName ?? "", DebugActionType.ToolMap)
-				{
-					action = delegate
-					{
-						SpawnAtMouseCell(def);
-					}
-				});
-			}
-			return list;
-		}
-		private static void SpawnAtMouseCell(RPrefabDef def)
-		{
-			IntVec3 intVec = UI.MouseCell();
-			Map currentMap = Find.CurrentMap;
-			if (!intVec.InBounds(currentMap))
-			{
-				return;
-			}
-			Rot4 rotation = Rotation;
-			List<Thing> list = new List<Thing>();
-			def.Generate(intVec, rotation, currentMap, null, ref list);
-		}
-
 		[DebugAction("DMSRC", "Contact renegades", false, false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
 		public static void Contact()
 		{
@@ -164,62 +125,6 @@ namespace DMSRC
 			{
 				Messages.Message(CompBroadcastAntenna.affectedTiles.Contains(planetTile).ToString(), MessageTypeDefOf.NeutralEvent, false);
 			}
-		}
-	}
-
-	public static class RPrefabUtility
-	{
-		private static List<RPrefabDef> defs;
-
-		public static List<RPrefabDef> Defs
-		{
-			get
-			{
-				if (defs == null)
-				{
-					defs = DefDatabase<RPrefabDef>.AllDefsListForReading;
-				}
-				return defs;
-			}
-		}
-
-		public static RPrefabDef GetByTag(string tag)
-		{
-			if (Defs.TryRandomElement((x) => x.tags.Contains(tag), out var result))
-			{
-				return result;
-			}
-			return null;
-		}
-
-		public static bool TryGetByTag(string tag, out RPrefabDef result)
-		{
-			result = null;
-			if (Defs.TryRandomElement((x) => x.tags.Contains(tag), out result))
-			{
-				return true;
-			}
-			return false;
-		}
-
-		public static CellRect Clear(this CellRect rect, Map map)
-		{
-			Thing.allowDestroyNonDestroyable = true;
-			try
-			{
-				foreach (IntVec3 c in rect.Cells)
-				{
-					foreach (Thing t in (c).GetThingList(map).ToList())
-					{
-						t.Destroy();
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				Log.Error("Exception while clearing area: " + ex);
-			}
-			return rect;
 		}
 	}
 }

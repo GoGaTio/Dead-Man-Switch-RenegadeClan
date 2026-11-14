@@ -238,8 +238,33 @@
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
     <controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <apparelIgnorePollution>true</apparelIgnorePollution>
     <weaponTags>
     </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DMSRC_DeformedNymphKind">
+    <defName>DMSRC_AMO_DeformedNymph_Secretary</defName>
+    <label>secretary</label>
+    <combatPower>30</combatPower>
+    <apparelMoney>1200~1700</apparelMoney>
+    <minApparelQuality>Good</minApparelQuality>
+    <apparelRequired>
+      <li>DMS_Apparel_GarrisonCoat</li>
+      <li>DMS_Apparel_TacticalVest</li>
+      <li>Apparel_Pants</li>
+      <li>DMS_Apparel_GarrisonCap</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <weaponTags>
+      <li>A_Pistol</li>
+    </weaponTags>
+    <weaponMoney>1000~1600</weaponMoney>
+    <apparelColor>(107, 81, 128)</apparelColor>
+    <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
   </PawnKindDef>
 
   <ThingDef ParentName="BaseAutomatroidHumanRace">

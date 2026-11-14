@@ -40,16 +40,16 @@
     <graphicData>
       <texPath>Things/Resource/DMS_AccessKey/Neutral</texPath>
     </graphicData>
-  </ThingDef>
+  </ThingDef>-->
 
   <ThingDef ParentName="DMS_AccessKeyBase">
-    <defName>DMSRC_AccessKey_Renegade</defName>
+    <defName>DMSRC_AccessKey_Renegades</defName>
     <label>Renegades access key</label>
     <description>A one-use unified access key used by Renegade Clan. It can be used to activate terminals, open crates and doors.</description>
     <graphicData>
-      <texPath>Things/Resource/DMS_AccessKey/Renegade</texPath>
+      <texPath>Things/Resource/DMS_AccessKey/Renegades</texPath>
     </graphicData>
-  </ThingDef>-->
+  </ThingDef>
 
   <ThingDef ParentName="ResourceBase">
     <defName>DMSRC_ContainerTransponder</defName>

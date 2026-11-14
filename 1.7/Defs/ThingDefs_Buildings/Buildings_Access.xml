@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMSRC_ConsoleSingle_Renegade</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMSRC_ConsoleSingle_Renegade</texPath>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMSRC_ConsoleDouble_Renegade</defName>
+    <label>console</label>
+    <description>A multi-purpose computer interface.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMSRC_ConsoleDouble_Renegade</texPath>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="DMS_ConsoleBase">
+    <defName>DMSRC_AccessConsole_Renegade</defName>
+    <label>access console</label>
+    <description>A multi-purpose computer interface. Built-in reading device accepts key-cards.</description>
+    <graphicData>
+      <texPath>Things/Building/Consoles/DMSRC_AccessConsole_Renegade</texPath>
+    </graphicData>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,1)</interactionCellOffset>
+    <comps>
+      <li Class="Fortified.CompProperties_AccessKeyActivatable">
+        <accessKeyDef>DMSRC_AccessKey_Renegades</accessKeyDef>
+        <requireAccessWanter>true</requireAccessWanter>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(0,235,31,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

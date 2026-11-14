@@ -5,7 +5,6 @@ using Ionic.Zlib;
 using JetBrains.Annotations;
 using KTrie;
 using LudeonTK;
-using NVorbis.NAudioSupport;
 using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.IO;
@@ -13,7 +12,6 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using RimWorld.SketchGen;
 using RimWorld.Utility;
-using RuntimeAudioClipLoader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -302,7 +300,7 @@ namespace DMSRC
 			get
 			{
 				GameComponent_Renegades comp = GameComponent_Renegades.Find;
-				if (base.ArchivedOnly || comp?.RenegadesFaction == null || comp.PlayerRelation == FactionRelationKind.Hostile || Faction.OfPlayerSilentFail == null)
+				if (base.ArchivedOnly || comp?.RenegadesFaction == null || Faction.OfPlayerSilentFail == null)
 				{
 					yield return base.Option_Close;
 					yield break;

@@ -2,13 +2,6 @@
 <Defs>
 
   <ScenPartDef>
-    <defName>DMSRC_PlayerArrivesNearPrefab</defName>
-    <label>structure nearby</label>
-    <category>Fixed</category>
-    <scenPartClass>DMSRC.ScenPart_PlayerArrivesPrefab</scenPartClass>
-  </ScenPartDef>
-
-  <ScenPartDef>
     <defName>DMSRC_Renegades</defName>
     <label>renegades relation</label>
     <category>Fixed</category>
@@ -21,7 +14,7 @@
     <workerClass>DMSRC.GoodwillSituationWorker_Renegades</workerClass>
   </GoodwillSituationDef>
 
-  <ScenarioDef ParentName="ScenarioBase">
+  <!--<ScenarioDef ParentName="ScenarioBase">
     <defName>DMSRC_Scenario</defName>
     <label>Awaiting Renegades</label>
     <description>A group of renegades.</description>
@@ -52,7 +45,6 @@
             </li>
           </kindCounts>
         </li>
-        <!-- Player starting stuff spawn method-->
         <li Class="DMSRC.ScenPart_PlayerArrivesPrefab">
           <def>DMSRC_PlayerArrivesNearPrefab</def>
           <visible>false</visible>
@@ -184,5 +176,5 @@
         </li>
       </parts>
     </scenario>
-  </ScenarioDef>
+  </ScenarioDef>-->
 </Defs>
