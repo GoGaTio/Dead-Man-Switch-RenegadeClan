@@ -50,6 +50,7 @@ using Verse.Grammar;
 using Verse.Sound;
 using static HarmonyLib.Code;
 using static RimWorld.MechClusterSketch;
+using static System.Collections.Specialized.BitVector32;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 using static UnityEngine.Scripting.GarbageCollector;
 
@@ -302,7 +303,7 @@ namespace DMSRC
 			get
 			{
 				GameComponent_Renegades comp = GameComponent_Renegades.Find;
-				if (base.ArchivedOnly || comp?.RenegadesFaction == null || comp.PlayerRelation == FactionRelationKind.Hostile || Faction.OfPlayerSilentFail == null)
+				if (base.ArchivedOnly || comp?.RenegadesFaction == null || Faction.OfPlayerSilentFail == null)
 				{
 					yield return base.Option_Close;
 					yield break;
@@ -310,7 +311,7 @@ namespace DMSRC
 				DiaOption optionAccept = new DiaOption("Accept".Translate().CapitalizeFirst());
 				optionAccept.action = delegate
 				{
-					if(comp.DMSFaction != null)
+					if (comp.DMSFaction != null)
 					{
 						comp.DMSFaction.SetRelation(new FactionRelation(Faction.OfPlayerSilentFail, comp.DMSFaction.PlayerRelationKind) { baseGoodwill = -200 });
 						Faction.OfPlayerSilentFail?.TryAffectGoodwillWith(comp.DMSFaction, -200, canSendMessage: true, canSendHostilityLetter: true, RCDefOf.DMSRC_AllyWithRenegades);

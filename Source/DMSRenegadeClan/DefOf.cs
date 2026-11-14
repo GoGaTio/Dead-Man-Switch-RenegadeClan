@@ -57,7 +57,9 @@ namespace DMSRC
 
         public static ThingDef DMSRC_RealityRift;
 
-		public static EffecterDef DMSRC_WetwareProducer_Bubbles;
+        public static ThingDef DMSRC_SecurityContainer_Nara;
+
+        public static EffecterDef DMSRC_WetwareProducer_Bubbles;
 
 		public static StatDef DMSRC_Neurocapacity;
 

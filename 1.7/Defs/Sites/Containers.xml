@@ -18,8 +18,10 @@
     <defName>DMSRC_ContainerNara</defName>
     <linkWithSite>DMSRC_ContainerNara</linkWithSite>
     <order>1460</order>
-    <genStep Class="DMSRC.GenStep_RPrefab">
-      <tag>ContainerNara</tag>
+    <genStep Class="DMSRC.GenStep_PlaceThing">
+      <thingDefs>
+        <li>DMSRC_SecurityContainer_Nara</li>
+      </thingDefs>
     </genStep>
   </GenStepDef>
 

@@ -141,6 +141,7 @@
       <ComponentIndustrial>4</ComponentIndustrial>
       <ComponentStamped>3</ComponentStamped>
       <ComponentSpacer>2</ComponentSpacer>
+      <PulsarEmitterUnit>2</PulsarEmitterUnit>
     </costList>
     <costStuffCount>50</costStuffCount>
     <tickerType>Normal</tickerType>

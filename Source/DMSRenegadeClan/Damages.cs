@@ -93,10 +93,6 @@ namespace DMSRC
 			{
 				return damageResult;
 			}
-			if (!damageResult.deflected && !dinfo.InstantPermanentInjury && FireUtility.ChanceToAttachFireFromEvent(victim) > 0f)
-			{
-				victim.TryAttachFire(Rand.Range(0.35f, 0.65f), dinfo.Instigator);
-			}
 			if (victim.Destroyed && pawn == null)
 			{
 				foreach (IntVec3 item in victim.OccupiedRect())

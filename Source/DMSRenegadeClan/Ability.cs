@@ -1,3 +1,18 @@
+using DelaunatorSharp;
+using Fortified;
+using Gilzoide.ManagedJobs;
+using Ionic.Crc;
+using Ionic.Zlib;
+using JetBrains.Annotations;
+using KTrie;
+using LudeonTK;
+using RimWorld;
+using RimWorld.BaseGen;
+using RimWorld.IO;
+using RimWorld.Planet;
+using RimWorld.QuestGen;
+using RimWorld.SketchGen;
+using RimWorld.Utility;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,20 +34,6 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
-using DelaunatorSharp;
-using Gilzoide.ManagedJobs;
-using Ionic.Crc;
-using Ionic.Zlib;
-using JetBrains.Annotations;
-using KTrie;
-using LudeonTK;
-using RimWorld;
-using RimWorld.BaseGen;
-using RimWorld.IO;
-using RimWorld.Planet;
-using RimWorld.QuestGen;
-using RimWorld.SketchGen;
-using RimWorld.Utility;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -107,7 +108,7 @@ namespace DMSRC
 		public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
 		{
 			Pawn pawn = target.Pawn;
-			if (pawn == null)
+			if (pawn == null || pawn is ArtificialOrganism || pawn is IOverseer)
 			{
 				return false;
 			}

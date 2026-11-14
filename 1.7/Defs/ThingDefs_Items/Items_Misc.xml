@@ -51,6 +51,27 @@
     </graphicData>
   </ThingDef>
 
+  <ThingDef ParentName="DMS_BaseDataCache">
+    <defName>DMSRC_DataCache_Renegades</defName>
+    <label>renegades data cache</label>
+    <description>A record module with its seal intact. A colonist can decrypt it to reveal a renegades-related occultech research project and make some progress on it.</description>
+    <graphicData>
+      <color>(107, 81, 128)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>1500</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="Fortified.CompProperties_UseEffect_DiscoverResearch">
+        <researchProjects>
+          <li>DMSRC_Overseer</li>
+        </researchProjects>
+        <progressAmount>250</progressAmount>
+        <fallbackXpAmount>3000</fallbackXpAmount>
+      </li>
+    </comps>
+  </ThingDef>
+
   <ThingDef ParentName="ResourceBase">
     <defName>DMSRC_ContainerTransponder</defName>
     <label>container transponder</label>

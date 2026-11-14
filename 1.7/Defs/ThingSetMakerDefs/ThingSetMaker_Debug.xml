@@ -80,19 +80,62 @@
           </thingSetMaker>
         </li>
 
-        <!--<li>
-          <chance>0.85</chance>
+        <li>
+          <chance>0.15</chance>
           <thingSetMaker Class="ThingSetMaker_Count">
             <fixedParams>
               <filter>
-                <thingSetMakerTagsToAllow>
-                  <li>Techprint</li>
-                </thingSetMakerTagsToAllow>
+                <thingDefs>
+                  <li>DMS_DataCache_Restricted</li>
+                </thingDefs>
               </filter>
               <countRange>1~2</countRange>
             </fixedParams>
           </thingSetMaker>
-        </li>-->
+        </li>
+
+        <li>
+          <chance>0.05</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_DataCache_Sealed</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <li>
+          <chance>0.02</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_DataCache_Occulted</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+
+        <li>
+          <chance>0.02</chance>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMSRC_DataCache_Renegades</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        
       </options>
     </root>
   </ThingSetMakerDef>

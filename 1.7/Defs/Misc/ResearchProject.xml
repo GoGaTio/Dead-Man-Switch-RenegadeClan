@@ -5,7 +5,7 @@
     <defName>DMSRC_Overseer</defName><!--Old name for compatibility-->
     <label>"Overlord" project</label>
     <description>Project "Overlord" was developed by an almost independent branch of one of the colonial fleets. When Renegade Crisis began they decided to join separatists, providing advanced command Automatroids for growing renegades army. Allows for the construction of advanced self-aware command Automatroids.</description>
-    <baseCost>1000</baseCost>
+    <knowledgeCost>1000</knowledgeCost>
     <techLevel>Ultra</techLevel>
     <prerequisites>
       <li>DMS_Occultech_GestaltEngine</li>

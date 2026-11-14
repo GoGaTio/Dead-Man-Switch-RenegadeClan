@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DMS_DataCache_Sealed"]/comps/li[@Class="Fortified.CompProperties_UseEffect_DiscoverResearch"]/researchProjects</xpath>
+    <value>
+      <li>DMSRC_Overseer</li>
+    </value>
+  </Operation>
 
   <Operation Class="PatchOperationInsert">
     <xpath>Defs/ThinkTreeDef[defName="DMS_Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPlayerControlledMech"]/subNodes/li[@Class="ThinkNode_ConditionalNotFormingCaravan"]/subNodes/li[@Class ="ThinkNode_ConditionalRecharging"]</xpath>
@@ -51,13 +57,13 @@
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMSRC_ProcessorCore</thingDef>
-        <countRange>-18~1</countRange>
+        <countRange>-15~1</countRange>
         <!--5%-->
         <price>Expensive</price>
       </li>
       <li Class="StockGenerator_SingleDef">
         <thingDef>DMSRC_Neurointerface</thingDef>
-        <countRange>-8~1</countRange>
+        <countRange>-7~1</countRange>
         <!--10%-->
         <price>Expensive</price>
       </li>

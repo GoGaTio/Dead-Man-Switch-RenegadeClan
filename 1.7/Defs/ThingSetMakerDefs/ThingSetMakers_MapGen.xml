@@ -243,7 +243,8 @@
               <filter>
                 <thingDefs>
                   <li>DMS_EncryptedTransmitter</li>
-                  <li MayRequire="Aoba.DeadManSwitch.AncientCorps" >DMSAC_RecoverTransmitter</li>
+                  <li>DMSRC_AncientBroadcaster</li>
+                  <li>DMS_DataCache_Restricted</li>
                 </thingDefs>
               </filter>
               <countRange>1~1</countRange>
@@ -251,7 +252,7 @@
           </thingSetMaker>
         </li>
         <li>
-          <weight>0.25</weight>
+          <weight>0.2</weight>
           <thingSetMaker Class="ThingSetMaker_Count">
             <fixedParams>
               <filter>
@@ -273,6 +274,20 @@
                 </thingDefs>
               </filter>
               <countRange>1~1</countRange>
+            </fixedParams>
+          </thingSetMaker>
+        </li>
+        <li>
+          <weight>0.25</weight>
+          <thingSetMaker Class="ThingSetMaker_Count">
+            <fixedParams>
+              <filter>
+                <thingDefs>
+                  <li>DMS_DataCache_Restricted</li>
+                  <li>DMS_DataCache_Sealed</li>
+                </thingDefs>
+              </filter>
+              <countRange>1</countRange>
             </fixedParams>
           </thingSetMaker>
         </li>

@@ -223,8 +223,12 @@
     <preventGravshipLandingOn>true</preventGravshipLandingOn>
   </ThingDef>
 
-  <ThingDef Abstract="True" ParentName="DMSRC_ContainerBase" Name="DMSRC_NaraContainerBase">
+  <ThingDef ParentName="DMSRC_ContainerBase" Name="DMSRC_NaraContainerBase">
+    <defName>DMSRC_SecurityContainer_Nara</defName>
     <label>security container</label>
+    <graphicData>
+      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNara</texPath>
+    </graphicData>
     <placeWorkers>
       <li>PlaceWorker_InvalidOverSubstructure</li>
     </placeWorkers>
@@ -250,27 +254,6 @@
         <defenceFactorRange>20~40</defenceFactorRange>
       </li>
     </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="DMSRC_NaraContainerBase">
-    <defName>DMSRC_SecurityContainer_NaraRed</defName>
-    <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraRed</texPath>
-    </graphicData>
-  </ThingDef>
-
-  <ThingDef ParentName="DMSRC_NaraContainerBase">
-    <defName>DMSRC_SecurityContainer_NaraBlue</defName>
-    <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraBlue</texPath>
-    </graphicData>
-  </ThingDef>
-
-  <ThingDef ParentName="DMSRC_NaraContainerBase">
-    <defName>DMSRC_SecurityContainer_NaraGreen</defName>
-    <graphicData>
-      <texPath>Things/Building/Containers/DMSRC_SecurityContainer/DMSRC_ContainerNaraGreen</texPath>
-    </graphicData>
   </ThingDef>
 
 </Defs>

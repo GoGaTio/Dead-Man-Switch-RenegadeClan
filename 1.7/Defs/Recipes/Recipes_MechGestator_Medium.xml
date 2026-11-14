@@ -5,6 +5,7 @@
     <defName>DMSRC_Make_Saboteur</defName>
     <label>Gestate Saboteur</label>
     <description>Gestate a Saboteur Automatroid.</description>
+    <researchPrerequisite>DMS_DeadMansSwitch</researchPrerequisite>
     <products>
       <DMSRC_Mech_Saboteur>1</DMSRC_Mech_Saboteur>
     </products>

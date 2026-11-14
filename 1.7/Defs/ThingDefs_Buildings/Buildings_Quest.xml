@@ -273,7 +273,7 @@
       <Tungsteel>40</Tungsteel>
       <ComponentStamped>7</ComponentStamped>
       <ComponentIndustrial>5</ComponentIndustrial>
-      <ComponentTransmitter>1</ComponentTransmitter>
+      <PulsarEmitterUnit>2</PulsarEmitterUnit>
       <ComponentSpacer>1</ComponentSpacer>
     </killedLeavings>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>

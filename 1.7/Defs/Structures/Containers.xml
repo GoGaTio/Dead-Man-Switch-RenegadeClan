@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <Fortified.Structures.FFF_StructureDef>
-    <defName>DMSRC_ContainerNara_1</defName>
+    <defName>DMSRC_ContainerNara</defName>
     <size>(3, 3)</size>
     <disableSuggestedRoof>True</disableSuggestedRoof>
     <tags>
@@ -9,37 +9,7 @@
     </tags>
     <elements>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>DMSRC_SecurityContainer_NaraBlue</def>
-        <pos>(1, 0, 1)</pos>
-      </li>
-    </elements>
-  </Fortified.Structures.FFF_StructureDef>
-
-  <Fortified.Structures.FFF_StructureDef>
-    <defName>DMSRC_ContainerNara_2</defName>
-    <size>(3, 3)</size>
-    <disableSuggestedRoof>True</disableSuggestedRoof>
-    <tags>
-      <li>DMSRC_ContainerNara</li>
-    </tags>
-    <elements>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>DMSRC_SecurityContainer_NaraGreen</def>
-        <pos>(1, 0, 1)</pos>
-      </li>
-    </elements>
-  </Fortified.Structures.FFF_StructureDef>
-
-  <Fortified.Structures.FFF_StructureDef>
-    <defName>DMSRC_ContainerNara_3</defName>
-    <size>(3, 3)</size>
-    <disableSuggestedRoof>True</disableSuggestedRoof>
-    <tags>
-      <li>DMSRC_ContainerNara</li>
-    </tags>
-    <elements>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>DMSRC_SecurityContainer_NaraRed</def>
+        <def>DMSRC_SecurityContainer_Nara</def>
         <pos>(1, 0, 1)</pos>
       </li>
     </elements>

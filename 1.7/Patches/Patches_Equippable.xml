@@ -8,4 +8,12 @@
     </value>
   </Operation>
 
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/Fortified.HeavyEquippableDef[defName="LightAutomatroid" or defName="StandardAutomatroid"]/EquippableByRace</xpath>
+    <value>
+      <li>DMSRC_AMO_DeformedNymph</li>
+      <li>DMSRC_AMO_Warden</li>
+    </value>
+  </Operation>
+
 </Patch>

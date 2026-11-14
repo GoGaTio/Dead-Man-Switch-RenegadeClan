@@ -76,7 +76,7 @@ namespace DMSRC
 		public override void CompTick()
 		{
 			base.CompTick();
-			if (check && parent.IsHashIntervalTick(300))
+			if (check && parent.IsHashIntervalTick(300) && !parent.Spawned && PawnOwner != null)
 			{
 				if (disabledByOtherApparel)
 				{

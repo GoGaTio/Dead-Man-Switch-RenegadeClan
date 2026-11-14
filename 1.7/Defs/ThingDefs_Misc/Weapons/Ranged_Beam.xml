@@ -63,9 +63,9 @@
         <beamCurvature>0.6</beamCurvature>
         <stopBurstWithoutLos>false</stopBurstWithoutLos>
         <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamChanceToStartFire>0.05</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.05</beamChanceToAttachFire>
+        <beamFireSizeRange>0.15~0.25</beamFireSizeRange>
         <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
         <beamStartOffset>0.75</beamStartOffset>
         <beamLineFleckChanceCurve>
@@ -156,9 +156,9 @@
         <beamCurvature>0.6</beamCurvature>
         <stopBurstWithoutLos>false</stopBurstWithoutLos>
         <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamChanceToStartFire>0.05</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.05</beamChanceToAttachFire>
+        <beamFireSizeRange>0.15~0.25</beamFireSizeRange>
         <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
         <beamStartOffset>0.05</beamStartOffset>
         <beamLineFleckChanceCurve>
@@ -207,10 +207,10 @@
       </researchPrerequisites>
     </recipeMaker>
     <costList>
-      <Tungsteel>70</Tungsteel>
+      <Tungsteel>100</Tungsteel>
       <DMS_Ceramics>50</DMS_Ceramics>
       <Plasfiber>75</Plasfiber>
-      <ComponentStamped>4</ComponentStamped>
+      <ComponentStamped>8</ComponentStamped>
       <ComponentSpacer>3</ComponentSpacer>
       <DMSRC_ComponentGBEP>3</DMSRC_ComponentGBEP>
     </costList>
@@ -242,9 +242,9 @@
         <beamCurvature>0.6</beamCurvature>
         <stopBurstWithoutLos>false</stopBurstWithoutLos>
         <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamChanceToStartFire>0.05</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.05</beamChanceToAttachFire>
+        <beamFireSizeRange>0.15~0.25</beamFireSizeRange>
         <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
         <beamStartOffset>0.5</beamStartOffset>
         <beamLineFleckChanceCurve>
@@ -310,11 +310,11 @@
       </researchPrerequisites>
     </recipeMaker>
     <costList>
-      <Tungsteel>90</Tungsteel>
+      <Tungsteel>150</Tungsteel>
       <DMS_Ceramics>100</DMS_Ceramics>
       <Plasfiber>100</Plasfiber>
-      <ComponentStamped>6</ComponentStamped>
-      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentStamped>20</ComponentStamped>
+      <ComponentSpacer>5</ComponentSpacer>
       <DMSRC_ComponentGBEP>5</DMSRC_ComponentGBEP>
     </costList>
     <verbs>
@@ -345,9 +345,9 @@
         <beamCurvature>0.6</beamCurvature>
         <stopBurstWithoutLos>false</stopBurstWithoutLos>
         <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamChanceToStartFire>0.05</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.05</beamChanceToAttachFire>
+        <beamFireSizeRange>0.15~0.25</beamFireSizeRange>
         <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
         <beamStartOffset>0.5</beamStartOffset>
         <beamLineFleckChanceCurve>
@@ -425,9 +425,9 @@
         <beamCurvature>0.6</beamCurvature>
         <stopBurstWithoutLos>false</stopBurstWithoutLos>
         <beamEndEffecterDef>DMSRC_FocusedBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamChanceToStartFire>0.05</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.05</beamChanceToAttachFire>
+        <beamFireSizeRange>0.15~0.25</beamFireSizeRange>
         <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
         <beamStartOffset>0.5</beamStartOffset>
         <beamLineFleckChanceCurve>

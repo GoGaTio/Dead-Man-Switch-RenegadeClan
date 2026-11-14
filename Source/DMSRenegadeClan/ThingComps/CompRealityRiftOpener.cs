@@ -53,7 +53,7 @@ using HarmonyLib;
 
 namespace DMSRC
 {
-    public class CompRealityRiftOpener : ThingComp
+    /*public class CompRealityRiftOpener : ThingComp
     {
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
@@ -228,5 +228,5 @@ namespace DMSRC
             Find.WindowStack.Add(new FloatMenu(list));
             return false;
         }
-    }
+    }*/
 }

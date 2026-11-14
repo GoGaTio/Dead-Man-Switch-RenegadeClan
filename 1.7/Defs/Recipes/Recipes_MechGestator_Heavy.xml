@@ -24,7 +24,7 @@
             <li>Tungsteel</li>
           </thingDefs>
         </filter>
-        <count>350</count>
+        <count>400</count>
       </li>
       <li>
         <filter>
@@ -39,7 +39,7 @@
             <li>DMS_Ceramics</li>
           </thingDefs>
         </filter>
-        <count>120</count>
+        <count>150</count>
       </li>
       <li>
         <filter>
@@ -47,7 +47,7 @@
             <li>ComponentStamped</li>
           </thingDefs>
         </filter>
-        <count>10</count>
+        <count>30</count>
       </li>
       <li>
         <filter>
